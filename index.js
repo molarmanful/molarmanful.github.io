@@ -1,10 +1,10 @@
 p=function(){
-  t.innerHTML+='$ <span id=i contenteditable></span>'
+  t.innerHTML+='$ <span id=i onblur=i.focus() contenteditable></span>'
   i.focus()
 }
 p()
 
-onkeydown=function(e){
+onkeypress=function(e){
   e.key=='Enter'&&(
     e.preventDefault(),
     I=i.innerHTML,
@@ -24,5 +24,3 @@ onkeydown=function(e){
     p()
   )
 }
-
-i.onblur=function(){i.focus()}
