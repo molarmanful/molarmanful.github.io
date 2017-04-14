@@ -19,7 +19,7 @@ onkeydown=function(e){
     :I.match(/^\s*help($|\s)/)?
       (t.innerHTML+=h.innerHTML+'\n')
     :I.match(/^\s*about($|\s)/)?
-      (t.innerHTML=a.innerHTML+'\n')
+      (t.innerHTML+=a.innerHTML+'\n')
     :(t.innerHTML+="Command not found. Type 'help' for a list of commands.\n"),
     p()
   )

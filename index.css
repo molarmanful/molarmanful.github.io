@@ -1,9 +1,8 @@
 body {
-  background-color: #000;
+  background-color: #001200;
   color: #32cd32;
   font-family: monospace;
-  text-shadow: 0 0 10px #fff;
-  whitespace: pre;
+  text-shadow: 0 0 10px #0f0;
 }
 a {
   color: #32cd32;
