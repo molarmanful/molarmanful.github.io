@@ -4,7 +4,7 @@ p=function(){
 }
 p()
 
-onkeydown=function(e){
+onkeydown=i.onkeyup=function(e){
   e.key=='Enter'&&(
     e.preventDefault(),
     I=i.innerHTML,
