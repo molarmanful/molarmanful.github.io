@@ -1,5 +1,5 @@
 p=function(){
-  t.innerHTML+='guest@molarmanful:'+(path.length?path.slice(-1):'~')+'$ <span id=i onblur=i.focus() contenteditable></span>'
+  t.innerHTML+='[guest@molarmanful.github.io]$ <span id=i onblur=i.focus() contenteditable></span>'
   i.focus()
 }
 p()
