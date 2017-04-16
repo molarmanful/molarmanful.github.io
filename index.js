@@ -1,10 +1,11 @@
+prompt='[guest@molarmanful.github.io]$ '
 p=function(){
-  t.innerHTML+='[guest@molarmanful.github.io]$ <span id=i onblur=i.focus() contenteditable></span>'
+  t.innerHTML+=prompt+'<span id=i onblur=i.focus() contenteditable></span>'
   i.focus()
 }
 p()
 
-onkeydown=function(e){
+onkeypress=function(e){
   e.which==13&&(
     e.preventDefault(),
     I=i.innerHTML,
