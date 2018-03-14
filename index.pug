@@ -4,6 +4,9 @@ html
     title Ben Pang
     meta(name='viewport' content='width=device-width,initial-scale=1,user-scalable=no')
     link(rel='stylesheet' href='index.css')
+    style body{opacity:0;}
+    noscript
+      style body{opacity:1;}
   body
     .B.c
       .b.h2.w1(style='font-size:20vw') HELLO
@@ -34,3 +37,9 @@ html
       .b.h8.w4(style='font-size:4vw'): a(href='https://twitter.com/molarmanful' target='_blank' style='color:#add8e6') twitter
       .b.h8.w4(style='font-size:4vw'): a(href='https://facebook.com/Array.prototype.map' target='_blank' style='color:#003366') facebook
     .d
+
+    script.
+      onload=function(){
+        document.body.className+=' fadein'
+      }
+      onbeforeunload=function(){scrollTo(0,0)}
