@@ -1,9 +1,9 @@
 mixin sd
-  .b.c(style='margin-top:auto;opacity:0.5')
+  .b.c.sd(style='margin-top:auto;opacity:0.5')
     .b.end.v1 scroll down
     .b.start.v1 &#9660;
 mixin su
-  .b.c(style='margin-bottom:auto;opacity:0.5')
+  .b.c.su(style='margin-bottom:auto;opacity:0.5')
     .b.start.v1 &#9650;
     .b.end.v1 scroll up
 mixin sb
@@ -73,6 +73,12 @@ html
             updateHash:!1,
             before:function(x){$('body').removeClass().addClass('b'+x)}
           })
+        })
+        $('.sd').click(function(){
+          $.scrollify.next()
+        })
+        $('.su').click(function(){
+          $.scrollify.previous()
         })
         $(window).on('beforeunload',function(){scrollTo(0,0)})
       })
