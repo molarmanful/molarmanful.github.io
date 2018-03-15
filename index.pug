@@ -2,44 +2,51 @@ doctype html
 html
   head
     title Ben Pang
+    meta(charset='utf8')
     meta(name='viewport' content='width=device-width,initial-scale=1,user-scalable=no')
     link(rel='stylesheet' href='index.css')
-    style body{opacity:0;}
-    noscript
-      style body{opacity:1;}
-  body
-    .B.c
-      .b.h2.w1(style='font-size:20vw') HELLO
+    style body{display:none;}
+  body.b0
+    .B.c(style='color:#43c59e')
+      .b.h2.w1.bd(style='font-size:20vw;color:#3dfaff') HELLO
       .b.h2.w1(style='font-size:20vw') WORLD
     .d
-    .B.c
+    .B.c(style='color:#b3dec1')
       .b.h2.w1(style='font-size:20vw') I AM
-      .b.h2.w1.bd(style='font-size:10vw') BEN PANG
+      .b.h2.w1.bd(style='font-size:10vw;color:#e5fcf5') BEN PANG
     .d
-    .B.c
+    .B.c(style='color:#7a6563')
       .b.h4.w1(style='font-size:10vw') I DO
-      .b.h2.w1.bd(style='font-size:20vw;color:#ff6961') CRAZY
+      .b.h2.w1.bd(style='font-size:20vw;color:#e56399') CRAZY
       .b.h4.w1(style='font-size:10vw') EXPERIMENTS
     .d
-    .B.c
-      .b.h4.w1.bd(style='font-size:10vw') SOME
-      .b.h4.w1.bd(style='font-size:10vw') STUFF I DO
+    .B.c(style='color:#ffbf46')
+      .b.h4.w1.bd(style='font-size:10vw;color:#8acb88') STUFF I DO
       .b.h8.w4(style='font-size:4vw') programming
       .b.h8.w4(style='font-size:4vw') art/design
       .b.h8.w4(style='font-size:4vw') music
       .b.h8.w4(style='font-size:4vw') speedcubing
       .b.h8.w4(style='font-size:4vw') wizardry
     .d
-    .B.c
-      .b.h2.w1(style='font-size:10vw') SOME LINKS
+    .B.c(style='color:#aaa')
+      .b.h4.w1.bd(style='font-size:10vw') SOME LINKS
       .b.h8.w4(style='font-size:4vw'): a(href='https://github.com/molarmanful' target='_blank' style='color:#222') github
       .b.h8.w4(style='font-size:4vw'): a(href='https://reddit.com/u/molarmanful' target='_blank' style='color:#ff6961') reddit
       .b.h8.w4(style='font-size:4vw'): a(href='https://twitter.com/molarmanful' target='_blank' style='color:#add8e6') twitter
       .b.h8.w4(style='font-size:4vw'): a(href='https://facebook.com/Array.prototype.map' target='_blank' style='color:#003366') facebook
-    .d
-
+    
+    script(src='https://code.jquery.com/jquery-3.3.1.min.js')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/scrollify/1.0.19/jquery.scrollify.min.js')
     script.
-      onload=function(){
-        document.body.className+=' fadein'
-      }
-      onbeforeunload=function(){scrollTo(0,0)}
+      $(function(){
+        $('body').fadeIn(1000,function(){
+          $.scrollify({
+            section:'.B',
+            updateSection:!1,
+            setHeights:!1,
+            scrollSpeed:500,
+            before:function(x){$('body').removeClass().addClass('b'+x)}
+          })
+        })
+        $(window).on('beforeunload',function(){scrollTo(0,0)})
+      })
