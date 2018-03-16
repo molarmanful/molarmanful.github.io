@@ -18,31 +18,31 @@ html
     meta(charset='utf8')
     meta(name='viewport' content='width=device-width,initial-scale=1,user-scalable=no')
     link(rel='stylesheet' href='index.css')
-    style body{display:none;}
   body.b0
     .B.c(style='color:#43c59e')
       +sb
-      .b.bd.end.v5(style='color:#3dfaff') HELLO
+      .b.bd.end.v5.l(style='color:#3dfaff') HELLO
       .b.start.v5 WORLD
       +sd
     .d
     .B.c(style='color:#b3dec1')
       +su
-      .b.end.v10 I AM
+      .b.end.v10.l I AM
       .b.bd.start.v5(style='color:#e5fcf5') BEN PANG
       +sd
     .d
     .B.c(style='color:#7a6563')
       +su
-      .b.h2.end.v5 I DO
-      .b.h8.bd.v10(style='color:#e56399') CRAZY
-      .b.h2.start.v5 EXPERIMENTS
+      .b.c.lpV
+        .b.end.v5 I DO
+        .b.h4.bd.v10(style='color:#e56399') CRAZY
+        .b.start.v5 EXPERIMENTS
       +sd
     .d
     .B.c(style='color:#ffbf46')
       +su
-      .b.bd.end.v5(style='color:#8acb88') STUFF I DO
-      .b.start.c
+      .b.bd.end.v5.l(style='color:#8acb88') STUFF I DO
+      .b.start.c.lv(style='padding-top:10px;padding-bottom:10px')
         .b.v2 programming
         .b.v2 art/design
         .b.v2 music
@@ -52,12 +52,12 @@ html
     .d
     .B.c(style='color:#333')
       +su
-      .b.bd.end.v5 SOME LINKS
-      .b.start.c
-        .b.v2: a(href='https://github.com/molarmanful' target='_blank' style='color:#222') github
-        .b.v2: a(href='https://reddit.com/u/molarmanful' target='_blank' style='color:#ff6961') reddit
-        .b.v2: a(href='https://twitter.com/molarmanful' target='_blank' style='color:#7692ff') twitter
-        .b.v2: a(href='https://facebook.com/Array.prototype.map' target='_blank' style='color:#003366') facebook
+      .b.bd.end.v5.l SOME LINKS
+      .b.start.c.lv(style='padding-top:10px;padding-bottom:10px')
+        .b.v2: a.lh#l0(href='https://github.com/molarmanful' target='_blank') github
+        .b.v2: a.lh#l1(href='https://reddit.com/u/molarmanful' target='_blank') reddit
+        .b.v2: a.lh#l2(href='https://twitter.com/molarmanful' target='_blank') twitter
+        .b.v2: a.lh#l3(href='https://facebook.com/Array.prototype.map' target='_blank') facebook
       +sb
     
     script(src='https://code.jquery.com/jquery-3.3.1.min.js')
@@ -71,8 +71,20 @@ html
             setHeights:!1,
             scrollSpeed:500,
             updateHash:!1,
-            before:function(x){$('body').removeClass().addClass('b'+x)}
+            scrollbars:!1,
+            before:function(x){
+              $('body').removeClass().addClass('b'+x)
+              $('.L,.Lv,.Lp,.Lpv,.LpV').removeClass('L Lv Lp Lpv LpV')
+            },
+            after:function(x){
+              $('.B').eq(x).find('.l').addClass('L')
+              $('.B').eq(x).find('.lv').addClass('Lv')
+              $('.B').eq(x).find('.lp').addClass('Lp')
+              $('.B').eq(x).find('.lpv').addClass('Lpv')
+              $('.B').eq(x).find('.lpV').addClass('LpV')
+            }
           })
+          $('.B').eq(0).find('.l').addClass('L')
         })
         $('.sd').click(function(){
           $.scrollify.next()
