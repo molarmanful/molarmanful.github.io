@@ -1,40 +1,38 @@
-$(function(){
-  cl=function(x){
-    [
-      ['.l','L'],
-      ['.lv','Lv'],
-      ['.lp','Lp'],
-      ['.lpv','Lpv'],
-      ['.lpV','LpV']
-    ].map(function(a){$('.B').eq(x).find(a[0]).addClass(a[1])})
+$(_=>{
+
+  let cl = x=>{
+    [['.l','L'],['.lv','Lv'],['.lp','Lp'],['.lpv','Lpv'],['.lpV','LpV']].map(a=>{
+      $('.B').eq(x).find(a[0]).addClass(a[1])
+    })
   }
-  $('body').fadeIn(1000,function(){
+
+  $('body').fadeIn(1000,_=>{
+
     $.scrollify({
       section:'.B',
-      updateSection:!1,
-      setHeights:!1,
+      updateSection:false,
+      setHeights:false,
       scrollSpeed:500,
-      updateHash:!1,
-      scrollbars:!1,
-      before:function(x){
-        $('body').removeClass().addClass('b'+x)
+      updateHash:false,
+      scrollbars:false,
+      before:x=>{
+        $('body').attr('class','b'+x)
         $('.L,.Lv,.Lp,.Lpv,.LpV').removeClass('L Lv Lp Lpv LpV')
-        ord='□□□□□'.split('')
+        let ord='□□□□□'
         ord[x]='■'
-        $('#side').css({
-          color:$('.B').eq(x).css('color')
-        }).html(ord.join('<br>'))
+        $('#side').css({color:$('.B').eq(x).css('color')}).html(ord.replace(/(?=.)/g,'<br>'))
       },
       after:cl
     })
+
     cl(0)
     $('#side').css('color',$('.B').eq(0).css('color'))
+
   })
-  $('.sd').click(function(){
-    $.scrollify.next()
-  })
-  $('.su').click(function(){
-    $.scrollify.previous()
-  })
-  $(window).on('beforeunload',function(){scrollTo(0,0)})
+
+  $('.sd').click(_=>$.scrollify.next())
+  $('.su').click(_=>$.scrollify.previous())
+
+  $(window).on('beforeunload',_=>scrollTo(0,0))
+
 })
