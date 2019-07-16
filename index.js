@@ -31,8 +31,8 @@ $(_=>{
 
   })
 
-  $('.sd').click(_=> $.fn.fullpage.moveSectionUp())
-  $('.su').click(_=> $.fn.fullpage.moveSectionDown())
+  $('.su').click(_=> $.fn.fullpage.moveSectionUp())
+  $('.sd').click(_=> $.fn.fullpage.moveSectionDown())
 
   $(window).on('beforeunload', _=>scrollTo(0,0))
 })
