@@ -26,15 +26,13 @@ $(_=>{
       }
     })
 
+    $('.su').click(_=> $.fn.fullpage.moveSectionUp())
+    $('.sd').click(_=> $.fn.fullpage.moveSectionDown())
+    $('.nav').click(e=> $.fn.fullpage.moveTo([...e.currentTarget.parentElement.children].indexOf(e.currentTarget)+1))
+
     cl(0)
     $('#side').css('color', $('.B').eq(0).css('color'))
 
-  })
-
-  $('.su').click(_=> $.fn.fullpage.moveSectionUp())
-  $('.sd').click(_=> $.fn.fullpage.moveSectionDown())
-  $('.nav').click(e=>{
-    $.fn.fullpage.moveTo([...e.currentTarget.parentElement.children].indexOf(e.currentTarget)+1)
   })
 
   $(window).on('beforeunload', _=>scrollTo(0,0))
