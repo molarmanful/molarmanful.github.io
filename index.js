@@ -16,10 +16,10 @@ $(_=>{
         $('body').attr('class', 'b'+y.index)
         $('.L,.Lv,.Lp,.Lpv,.LpV').removeClass('L Lv Lp Lpv LpV')
         let occ = 0
-        let ord = '□□□□□'.replace(/./g, a=> occ++ == y.index ? '■' : a)
         $('#side').css({
           color: $('.B').eq(y.index).css('color')
-        }).html(ord.replace(/(?=.)/g, '<br>'))
+        })
+        $('.nav').html('□').eq(y.index).html('■')
       },
       afterLoad: (x,y)=>{
         cl(y.index)
@@ -33,6 +33,9 @@ $(_=>{
 
   $('.su').click(_=> $.fn.fullpage.moveSectionUp())
   $('.sd').click(_=> $.fn.fullpage.moveSectionDown())
+  $('.nav').click(e=>{
+    $.fn.fullpage.moveTo([...e.currentTarget.parentElement.children].indexOf(e.currentTarget)+1)
+  })
 
   $(window).on('beforeunload', _=>scrollTo(0,0))
 })
