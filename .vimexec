@@ -1,1 +1,0 @@
-au BufRead index.pug vs index.styl | setf stylus | sp index.js | setf javascript
