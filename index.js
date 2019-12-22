@@ -1,5 +1,11 @@
 $(_=>{
 
+  $('.B').each(_=>{
+    $('#side').append('<a class="nav">□</a>')
+  })
+  $('.nav').eq(0).html('■')
+  $('#side').css('color', $('.B').eq(0).css('color'))
+
   $('body').fadeIn(1000, _=>{
 
     $('.C').fullpage({
@@ -7,8 +13,7 @@ $(_=>{
       sectionSelector:'.B',
       verticalCentered: false,
       onLeave: (x,y)=>{
-        $('body').attr('class', 'b'+y.index)
-        let occ = 0
+        $('body').attr('class', 'b' + y.index)
         $('#side').css({
           color: $('.B').eq(y.index).css('color')
         })
@@ -16,13 +21,10 @@ $(_=>{
       }
     })
 
-    $('.su').click(_=> $.fn.fullpage.moveSectionUp())
-    $('.sd').click(_=> $.fn.fullpage.moveSectionDown())
-    $('.nav').click(e=> $.fn.fullpage.moveTo([...e.currentTarget.parentElement.children].indexOf(e.currentTarget)+1))
-
-    $('#side').css('color', $('.B').eq(0).css('color'))
-
   })
 
-  $(window).on('beforeunload', _=>scrollTo(0,0))
+  $('.su').click(_=> $.fn.fullpage.moveSectionUp())
+  $('.sd').click(_=> $.fn.fullpage.moveSectionDown())
+  $('.nav').click(e=> $.fn.fullpage.moveTo([...e.currentTarget.parentElement.children].indexOf(e.currentTarget)+1))
+  $(window).on('beforeunload', _=> scrollTo(0,0))
 })
