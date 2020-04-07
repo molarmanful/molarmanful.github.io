@@ -1,16 +1,3 @@
-mixin sd
-  .b.c.sd(style='margin-top:auto;opacity:0.5')
-    .b.end.v1 scroll down
-    .b.start.v1 &#9660;
-mixin su
-  .b.c.su(style='margin-bottom:auto;opacity:0.5')
-    .b.start.v1 &#9650;
-    .b.end.v1 scroll up
-mixin sb
-  .b.c(style='margin-bottom:auto;opacity:0.5')
-    .b.v1 &nbsp;
-    .b.v1 &nbsp;
-
 doctype html
 html
   head
@@ -19,84 +6,31 @@ html
 
     meta(charset='utf8')
     meta(name='viewport' content='width=device-width,initial-scale=1,user-scalable=no')
-    meta(name='description' content='Personal website of Ben Pang (aka molarmanful).')
+    meta(name='description' content='Personal website of Ben Pang.')
 
-    link(rel='stylesheet' href='index.css')
+    link(rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Overpass+Mono&display=swap')
+    link(rel='stylesheet' href='./css/style.css')
 
     link(rel='apple-touch-icon' sizes='180x180' href='./media/apple-touch-icon.png')
     link(rel='icon' type='image/png' sizes='32x32' href='./media/favicon-32x32.png')
     link(rel='icon' type='image/png' sizes='16x16' href='./media/favicon-16x16.png')
     link(rel='manifest' href='./media/site.webmanifest')
 
-  body.b0
+  body
+    script document.body.className += ' fade'
+    .container
+      .window.main.drag
+        .head.dragclick Ben Pang >&nbsp;#[span HOME]
+        .body
+          .side
+            a(href='#home') HOME
+            a(href='#prog') PROGRAMMING
+            a(href='#art') ART
+            a(href='#links') LINKS
+          #home.content.active Hello.
+          #prog.content Test Test 123
+          #art.content
+          #links.content
 
-    .C
-
-      .B.c(style='color:#43c59e')
-        +sb
-        .b.c
-          .b.bd.end.v5.l(style='color:#3dfaff') HELLO
-          .b.start.v5 WORLD
-        +sd
-      .d
-
-      .B.c(style='color:#b3dec1')
-        +su
-        .b.c
-          .b.end.v10.l I AM
-          .b.bd.start.v5(style='color:#e5fcf5') BEN PANG
-        +sd
-      .d
-
-      .B.c(style='color:#7a6563')
-        +su
-        .b.c
-          .b.end.v5 I DO
-          .b.bd.v10.lp(style='color:#e56399') CRAZY
-          .b.start.v5 EXPERIMENTS
-        +sd
-      .d
-
-      .B.c(style='color:#ffbf46')
-        +su
-        .b.c
-          .b.bd.end.v5.l(style='color:#8acb88') STUFF I DO
-          .b.start.c.lv(style='padding-top:10px;padding-bottom:10px')
-            .b.v2 programming
-            .b.v2 art/design
-            .b.v2 music
-            .b.v2 speedcubing
-            .b.v2 wizardry
-        +sd
-      .d
-
-      .B.c(style='color:#a93f55')
-        +su
-        .b.c
-          .b.bd.end.v5.l(style='color:#a93f55') UX PROJECTS
-          .b.start.c.lv(style='padding-top:10px;padding-bottom:10px')
-            .b.v2: a.lh(style='color:#f2545b' href='http://bennyboy.tech/minimalistimer' target='_blank') minimalistimer
-            .b.v2: a.lh(style='color:#f2545b' href='https://nextrope.com' target='_blank') nextrope
-            .b.v2: a.lh(style='color:#f2545b' href='https://rajchman.org' target='_blank') rajchman
-            .b.v2: a.lh(style='color:#f2545b' href='http://bp1574.nyuadim.com' target='_blank') commlab
-            .b.v2: a.lh(style='color:#f2545b' href='http://bennyboy.tech/cubetut' target='_blank') cubetut
-        +sd
-      .d
-
-      .B.c(style='color:#333')
-        +su
-        .b.c
-          .b.bd.end.v5.l SOME LINKS
-          .b.start.c.lv(style='padding-top:10px;padding-bottom:10px')
-            .b.v2: a.lh#l0(href='https://github.com/molarmanful' target='_blank') github
-            .b.v2: a.lh#l1(href='https://reddit.com/u/molarmanful' target='_blank') reddit
-            .b.v2: a.lh#l2(href='https://twitter.com/molarmanful' target='_blank') twitter
-            .b.v2: a.lh#l3(href='https://instagram.com/boywiththepuffyjacket' target='_blank') instagram
-            .b.v2: a.lh#l4(href='https://www.linkedin.com/in/molarmanful' target='_blank') linkedin
-        +sb
-
-    #side.v1
-
-    script(src='https://code.jquery.com/jquery-3.3.1.min.js')
-    script(src='https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.0.7/fullpage.min.js')
-    script(src='index.js')
+    script(src='./js/jquery.min.js')
+    script(src='./js/main.js')

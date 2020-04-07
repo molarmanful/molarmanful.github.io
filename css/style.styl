@@ -1,0 +1,81 @@
+FONTSIZE = 1.2rem
+BORDER = 2px solid #000
+
+*, *:before, *:after
+  box-sizing border-box
+  user-select none !important
+
+html, body
+  width 100%
+  height 100%
+  margin 0
+  background #fff
+  color #000
+  font-family Overpass Mono
+  font-size FONTSIZE
+  letter-spacing -(FONTSIZE / 10)
+  transition 1s all
+  overflow hidden
+
+a
+  color #000
+  text-decoration none
+
+.fade
+  opacity 0
+  transition none
+
+.container
+  width 100%
+  height 100%
+  display flex
+  align-items center
+  justify-content center
+
+.dragclick
+  cursor move
+
+.main
+  width 50%
+  height 50%
+  display flex
+  border BORDER
+  flex-direction column
+
+  & > *
+    max-width 100%
+
+  .head
+    height FONTSIZE
+    padding (FONTSIZE / 2.5)
+    display flex
+    border-bottom BORDER
+    box-sizing content-box
+
+  .body
+    height 100%
+    display flex
+
+    .side
+      border-right BORDER
+      padding (FONTSIZE / 2.5)
+      padding-right (FONTSIZE / 1.5)
+
+      a
+        display block
+        margin-bottom (FONTSIZE / 2.5)
+
+    .content
+      width 100%
+      padding (FONTSIZE / 2.5)
+      padding-right (FONTSIZE / 1.8)
+      display none
+      overflow auto
+
+      &.active
+        display block
+
+#home.active
+  display flex
+  align-items center
+  justify-content center
