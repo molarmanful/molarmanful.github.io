@@ -11,15 +11,29 @@ html, body
   margin 0
   background #fff
   color #000
-  font-family Overpass Mono
+  font-family Overpass Mono, monospace
   font-size FONTSIZE
   letter-spacing -(FONTSIZE / 10)
   transition 1s all
   overflow hidden
 
+::-webkit-scrollbar
+  width 6px
+
+::-webkit-scrollbar-track
+  background #000
+  border-left BORDER
+
+::-webkit-scrollbar-thumb
+  background #fff
+  border-left BORDER
+
 a
   color #000
   text-decoration none
+
+p
+  margin-block-start 0
 
 .fade
   opacity 0
@@ -40,6 +54,7 @@ a
   height 50%
   display flex
   border BORDER
+  background #fff
   flex-direction column
 
   & > *
@@ -48,13 +63,16 @@ a
   .head
     height FONTSIZE
     padding (FONTSIZE / 2.5)
-    display flex
     border-bottom BORDER
     box-sizing content-box
 
   .body
     height 100%
     display flex
+    overflow hidden
+
+    & > *
+      height 100%
 
     .side
       border-right BORDER
@@ -73,9 +91,60 @@ a
       overflow auto
 
       &.active
-        display block
+        display flex
 
-#home.active
-  display flex
+.winimg
+  border BORDER
+  background #fff
+  position absolute
+
+  .head
+    height FONTSIZE
+    padding (FONTSIZE / 2.5)
+    border-bottom BORDER
+    box-sizing content-box
+
+  .close
+    text-align right
+    position absolute
+    right 0
+    top 0
+    margin (FONTSIZE / 2)
+    height FONTSIZE
+    line-height FONTSIZE
+    cursor pointer
+
+  .body
+    padding 1rem
+    display inline-block
+    position relative
+
+    img
+      display block
+      max-width 50vw
+      max-height 80vh
+
+#home
   align-items center
   justify-content center
+
+#art
+  padding 1rem
+
+  .grid
+    width 100%
+
+    .size, .grid-item
+      width calc(25% - 1rem)
+
+    .gutter
+      width 1rem
+
+    .grid-item
+      float left
+      margin-bottom 1rem
+
+      img
+        width 100%
+        transition 1s all
+        cursor pointer

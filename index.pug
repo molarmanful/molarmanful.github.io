@@ -19,18 +19,26 @@ html
   body
     script document.body.className += ' fade'
     .container
-      .window.main.drag
+      #root.main.drag
         .head.dragclick Ben Pang >&nbsp;#[span HOME]
         .body
           .side
             a(href='#home') HOME
-            a(href='#prog') PROGRAMMING
-            a(href='#art') ART
+            a(href='#prog') PROJECTS
+            a(href='#art') ARTWORK
             a(href='#links') LINKS
-          #home.content.active Hello.
+          #home.content.active
+            p#hello Hello.
           #prog.content Test Test 123
           #art.content
+            .grid
+              .size
+              .gutter
+              each i in fs.readdirSync('./media/art')
+                .grid-item
+                  img(src='./media/art/' + i loading='lazy')
           #links.content
 
     script(src='./js/jquery.min.js')
+    script(src='./js/masonry.pkgd.min.js')
     script(src='./js/main.js')
