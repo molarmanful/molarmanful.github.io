@@ -15,6 +15,34 @@ let RootContent = {
   }
 }
 
+let ProjPrev = {
+  props: ['src'],
+  template: `
+    <img :src="src" @click="projClick">
+  `,
+  methods: {
+    getID(){
+      return this.src.replace(/^.*\/(.+)\.\w+$/, '$1')
+    },
+    projInit(){
+      this.$root.winprojs[this.getID()] = {
+        body: this.src
+      }
+    },
+    projClick(e){
+      e.stopPropagation()
+      let win = this.$root.winprojs[this.getID()]
+      if(win){
+        win.ref.show = true
+        bus.$emit('make-top', win.ref)
+      }
+      else {
+        this.projInit()
+      }
+    }
+  }
+}
+
 let ArtPrev = {
   props: ['src'],
   template: `

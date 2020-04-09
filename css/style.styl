@@ -92,7 +92,7 @@ p
       overflow auto
       display flex
 
-.winimg
+.winart, .winproj
   border BORDER
   background #fff
   position absolute
@@ -127,7 +127,7 @@ p
   align-items center
   justify-content center
 
-#art, #proj
+#proj, #art
   padding 1rem
 
   .grid
@@ -146,6 +146,9 @@ p
       img
         width 100%
         cursor pointer
+        transition .1s transform
+        &:hover
+          transform scale(1.1)
 
 #templates
   display none

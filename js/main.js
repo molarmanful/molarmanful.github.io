@@ -1,12 +1,16 @@
 Vue.use(window['vue-masonry-plugin'].VueMasonryPlugin)
+Vue.use(VueLazyload, {
+  observer: true
+})
 
 let vm = new Vue({
   el: '#app',
-  components: {WinArt, WinDrag, RootContent, MasonGrid, MasonGridItem, ArtPrev},
+  components: {WinDrag, WinProj, WinArt, MasonGrid, MasonGridItem, RootContent, ProjPrev, ArtPrev},
   data: {
     show: false,
     tabs: {
       home: 'HOME',
+      about: 'ABOUT',
       proj: 'PROJECTS',
       art: 'ARTWORK',
       links: 'LINKS'
@@ -14,6 +18,7 @@ let vm = new Vue({
     active: 'home',
     hello: 'Hello.',
     scroll: 0,
+    winprojs: {},
     winarts: {}
   },
   methods: {
@@ -23,7 +28,7 @@ let vm = new Vue({
       this.$nextTick(_=>{
         this.$redrawVueMasonry()
       })
-    },
+    }
   },
   mounted(){
     this.show = true

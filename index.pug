@@ -28,32 +28,38 @@ html
           .side
             a(v-for='name, id in tabs' :name='id' @click='sideClick') {{ name }}
 
-          root-content#home(:active='active')
+          root-content#home
             p#hello {{ hello }}
 
-          root-content#proj(:active='active')
+          root-content#about
+            p 
+
+          root-content#proj
             mason-grid
               each i in fs.readdirSync('./media/projects')
                 mason-grid-item
-                  img(src='./media/projects/' + i)
+                  proj-prev(src='./media/projects/' + i)
 
-          root-content#art(:active='active')
+          root-content#art
             mason-grid
               each i in fs.readdirSync('./media/art')
                 mason-grid-item
                   art-prev(src='./media/art/' + i)
 
-          root-content#links(:active='active')
+          root-content#links
 
       win-art(v-for='data, id in winarts' :id='id' :data='data')
+      win-proj(v-for='data, id in winprojs' :id='id' :data='data')
 
 
     script(src='./js/vue.min.js')
 
+    script(src='./js/vue-lazyload.js')
     script(src='./js/masonry.pkgd.min.js')
     script(src='./js/vue-masonry-plugin-window.js')
 
     script(src='./js/bus.js')
+    //script(src='./js/projects.js')
 
     script(src='./js/components/win.js')
     script(src='./js/components/mason.js')
