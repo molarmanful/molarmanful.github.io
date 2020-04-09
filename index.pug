@@ -16,29 +16,47 @@ html
     link(rel='icon' type='image/png' sizes='16x16' href='./media/favicon-16x16.png')
     link(rel='manifest' href='./media/site.webmanifest')
 
-  body
-    script document.body.className += ' fade'
-    .container
-      #root.main.drag
-        .head.dragclick Ben Pang >&nbsp;#[span HOME]
-        .body
-          .side
-            a(href='#home') HOME
-            a(href='#prog') PROJECTS
-            a(href='#art') ARTWORK
-            a(href='#links') LINKS
-          #home.content.active
-            p#hello Hello.
-          #prog.content Test Test 123
-          #art.content
-            .grid
-              .size
-              .gutter
-              each i in fs.readdirSync('./media/art')
-                .grid-item
-                  img(src='./media/art/' + i loading='lazy')
-          #links.content
 
-    script(src='./js/jquery.min.js')
+  body
+
+    #app.container(:class='show && "show"')
+
+      win-drag#root.main
+        template(v-slot:title) Ben Pang > {{ tabs[active] }}
+        .body
+
+          .side
+            a(v-for='name, id in tabs' :name='id' @click='sideClick') {{ name }}
+
+          root-content#home(:active='active')
+            p#hello {{ hello }}
+
+          root-content#proj(:active='active')
+            mason-grid
+              each i in fs.readdirSync('./media/projects')
+                mason-grid-item
+                  img(src='./media/projects/' + i)
+
+          root-content#art(:active='active')
+            mason-grid
+              each i in fs.readdirSync('./media/art')
+                mason-grid-item
+                  art-prev(src='./media/art/' + i)
+
+          root-content#links(:active='active')
+
+      win-art(v-for='data, id in winarts' :id='id' :data='data')
+
+
+    script(src='./js/vue.min.js')
+
     script(src='./js/masonry.pkgd.min.js')
+    script(src='./js/vue-masonry-plugin-window.js')
+
+    script(src='./js/bus.js')
+
+    script(src='./js/components/win.js')
+    script(src='./js/components/mason.js')
+    script(src='./js/components/misc.js')
+
     script(src='./js/main.js')

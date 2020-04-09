@@ -4,9 +4,9 @@
   "description": "Personal site",
   "main": "index.js",
   "dependencies": {
-    "jquery": "^3.4.1",
-    "masonry-layout": "^4.2.2",
-    "pug": "^2.0.4"
+    "pug": "^2.0.4",
+    "vue": "^2.6.11",
+    "vue-masonry": "^0.11.8"
   },
   "devDependencies": {},
   "scripts": {
