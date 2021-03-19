@@ -1,1 +1,0 @@
-au BufWritePost index.pug !node comp/pug.js > index.html
