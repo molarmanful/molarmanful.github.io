@@ -1,0 +1,47 @@
+{
+  "name": "molarmanful.github.io",
+  "version": "1.0.0",
+  "description": "Personal site",
+  "main": "index.js",
+  "dependencies": {
+    "alpinejs": "^2.8.1",
+    "aos": "^2.3.4"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.13.10",
+    "@babel/preset-env": "^7.13.10",
+    "@tailwindcss/typography": "^0.4.0",
+    "autoprefixer": "^10.2.5",
+    "babel-loader": "^8.2.2",
+    "css-loader": "^5.1.3",
+    "extract-loader": "^5.1.0",
+    "file-loader": "^6.2.0",
+    "html-webpack-plugin": "^5.3.1",
+    "markdown-it": "^12.0.4",
+    "postcss": "^8.2.8",
+    "postcss-loader": "^5.2.0",
+    "postcss-preset-env": "^6.7.0",
+    "pug": "^3.0.2",
+    "pug-loader": "^2.4.0",
+    "style-loader": "^2.0.0",
+    "tailwindcss": "^2.0.4",
+    "vanilla-lazyload": "^17.3.1",
+    "webpack": "^5.27.0",
+    "webpack-cli": "^4.5.0",
+    "webpack-dev-server": "^3.11.2"
+  },
+  "scripts": {
+    "start": "webpack serve --mode=development --open",
+    "build": "export NODE_ENV=production && webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/molarmanful/molarmanful.github.io.git"
+  },
+  "author": "Benjamin Pang",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/molarmanful/molarmanful.github.io/issues"
+  },
+  "homepage": "https://github.com/molarmanful/molarmanful.github.io#readme"
+}

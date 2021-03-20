@@ -1,0 +1,29 @@
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    meta(name='viewport' content='width=device-width, initial-scale=1.0')
+    title Ben Pang
+    link(rel='preconnect' href='https://fonts.gstatic.com')
+    link(rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Syne:wght@500&family=Trispace:wght@200&display=swap')
+
+  body.font-tri.overflow-x-hidden
+
+    header.flex.w-screen.h-screen(data-aos='fade-in')
+      .m-auto(class='lg:w-3/4 sm:h-1/4 md:h-1/2 lg:h-3/4 2xl:h-1/3')
+        h1.text-7xl.mb-4(class='lg:text-9xl') BEN PANG
+        small.text-xl(class='lg:text-3xl') I make weird things happen
+          span(x-data x-init='setInterval(_=>{Index.glitch($el)}, 500)') .
+      img.absolute.bottom-0.right-0.opacity-50.w-full(class='md:w-auto max-h-1/2 lg:h-3/4' src=require('./media/me.svg'))
+
+    mixin thumb(name)
+      img.lazy.w-full.mb-8(
+        alt=name
+        src=require(`./tiny/${name}_tiny.png`)
+        data-src=require(`./thumbnails/${name}_thumb.png`))
+
+    section.flex.w-screen
+      div(class='md:container md:mx-auto')
+        .masonry
+          each f in htmlWebpackPlugin.options.art
+            +thumb(f)
