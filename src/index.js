@@ -1,12 +1,17 @@
 import 'alpinejs'
 import AOS from 'aos'
 import LazyLoad from 'vanilla-lazyload'
+import SmoothScroll from 'smooth-scroll'
 
 import 'aos/dist/aos.css'
 import './style.css'
 
 AOS.init()
 window.lazy = new LazyLoad({})
+window.scroll = new SmoothScroll('a[href*="#"]', {
+  updateURL: false,
+  speedAsDuration: true
+})
 
 window.Index = {
   glitch(e){
