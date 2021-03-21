@@ -17,10 +17,8 @@ window.Index = {
   },
 }
 
-onload = _=>{
-  document.body.classList.remove('opacity-0', 'pointer-events-none')
-  document.body.classList.add('opacity-100')
-}
+document.body.classList.remove('opacity-0', 'pointer-events-none')
+document.body.classList.add('opacity-100')
 
 onbeforeunload = _=>{
   document.body.classList.remove('transition-opacity', 'opacity-100')
