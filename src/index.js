@@ -16,3 +16,13 @@ window.Index = {
     }, 50)
   },
 }
+
+onload = _=>{
+  fade.classList.remove('opacity-100')
+  fade.classList.add('opacity-0', 'pointer-events-none')
+}
+
+onbeforeunload = _=>{
+  document.body.style.opacity = 0
+  scrollTo(0, 0)
+}

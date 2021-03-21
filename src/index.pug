@@ -3,34 +3,93 @@ html
   head
     meta(charset='utf-8')
     meta(name='viewport' content='width=device-width, initial-scale=1.0')
+    meta(name='description' content='I make weird things happen.')
     title Ben Pang
     link(rel='preconnect' href='https://fonts.gstatic.com')
-    link(rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Syne:wght@500&family=Trispace:wght@200&display=swap')
+    link(rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Syne:wght@500&family=Trispace:wght@200;300;500&display=swap')
 
-  body.font-tri.overflow-x-hidden.bg-gray-900.text-gray-200
+  body.font-tri.overflow-x-hidden.bg-gray-900.text-gray-200.font-extralight.select-text
+
+    #fade.fixed.z-50.transition-opacity.duration-1000.w-screen.h-screen.bg-gray-900
 
     header.relative.flex.w-screen.h-screen
-      .absolute.bottom-0.right-0.w-auto(class='h-1/2 lg:h-3/4' data-aos='fade-right')
+      .absolute.bottom-0.right-0.w-auto(class='h-1/2 lg:h-3/4')
         img.h-full(src=require('./media/me_red_500.svg'))
-      .m-auto.z-10(class='lg:w-3/4 h-1/4 md:h-1/3 lg:h-3/4 2xl:h-1/3' data-aos='fade-in')
-        h1.text-7xl.mb-4(class='lg:text-9xl') BEN PANG
-        small.text-xl.ml-2(class='lg:text-3xl') I make weird things happen
+      .m-auto.z-10(class='lg:w-3/4 h-1/4 md:h-1/3 lg:h-3/4 2xl:h-1/3')
+        h1.text-7xl.mb-4.text-red-500(class='lg:text-9xl') BEN PANG
+        small.text-xl.ml-2.text-red-500(class='lg:text-3xl') I make weird things happen
           span(x-data x-init='setInterval(_=>{Index.glitch($el)}, 500)') .
 
-    mixin thumb(name)
-      img.lazy.w-full.mb-8(
-        data-aos='fade-up'
-        alt=name
-        src=require(`./tiny/${name}_tiny.png`)
-        data-src=require(`./thumbnails/${name}_thumb.png`))
+    mixin sec(name)
+      section.flex.w-screen.divide-x.divide-gray-800
+        div
+          .vert.sticky.top-0.pl-4.pt-4.pb-32.text-7xl(class='lg:text-9xl' data-aos='fade-right')
+            h1.text-gray-800.transform.origin-center.rotate-180.inline-block.select-none= name
+        .px-5.max-w-full(class='md:container')
+          block
+          .mb-16(class='lg:mb-32')
+
+    +sec('ART')
+      .masonry
+        each f in htmlWebpackPlugin.options.art
+          a(href='' @click=``)
+            img.lazy.w-full.mb-8(data-aos='fade-up' alt=f src=require(`./tiny/${f}_tiny.png`) data-src=require(`./thumbnails/${f}_thumb.png`))
+
+    +sec('DEV')
+      mixin proj(name, url)
+        div(data-aos='fade-up')
+          a.transition-colors.duration-500.text-gray-600.text-3xl.mr-8(
+            class='hover:text-red-500 md:text-5xl md:text-gray-700 lg:text-7xl'
+            href=!url ? `https://bennyboy.tech/${name}` : url == 1 ? `https://github.com/molarmanful/${name}` : url
+            target='_blank')= name
+
+      .flex.flex-wrap
+        +proj('simian')
+        +proj('esmin', 1)
+        +proj('infinite_gene_ray')
+        +proj('mindreaders_digest')
+        +proj('linlang', 'https://github.com/molarmanful/lin')
+        +proj('exhibit')
+        +proj('laruelle', 1)
+        +proj('30mff', 'http://bp1574.nyuadim.com/30mff')
+        +proj('idea_comic', 'http://bp1574.nyuadim.com/comic')
+        +proj('hot_wok', 'http://bp1574.nyuadim.com/hotwok')
+        +proj('botb', 'http://bp1574.nyuadim.com/botb')
+        +proj('10k_ips', 'https://github.com/molarmanful/ipisp')
+        +proj('symmatrix')
+        +proj('higp_final', 'https://bennyboy.tech/higp')
+        +proj('pycube', 1)
+        +proj('rajchman', 'https://rajchman.org')
+        +proj('nextrope', 'https://nextrope.com')
+        +proj('codinglang', 1)
+        +proj('wonderlang', 'https://github.com/wonderlang')
+        +proj('jsasciiart')
+        +proj('return', 1)
+        +proj('cubetut')
+        +proj('gcube', 1)
+        +proj('glucca', 1)
+        +proj('ಠ_ಠ', 'https://github.com/molarmanful/-_-')
+        +proj('minimalistimer')
 
     section.flex.w-screen.divide-x.divide-gray-800
-      div
-        .vert.sticky.top-0.pl-4.pt-4.text-7xl(class='lg:text-9xl' data-aos='fade-right')
-          h1.text-gray-800.transform.origin-center.rotate-180.inline-block ART
-      .px-5(class='md:container')
-        .masonry.mb-8
-          each f in htmlWebpackPlugin.options.art
-            +thumb(f)
+      div.hidden(class='lg:inline-block')
+        .vert.pl-4.text-7xl(class='lg:text-9xl')
+          h1.text-gray-800 &nbsp;
 
-    section.flex.w-screen.divide-x.divide-gray-800
+      .p-16.w-full.bg-gray-300.text-gray-600.text-l.font-light(class='lg:w-auto lg:container lg:text-2xl')
+        h1.text-4xl.mb-8.text-gray-900(class='md:text-5xl lg:text-6xl 2xl:text-8xl' data-aos='fade-in') WHO EVEN IS THIS GUY?
+
+        div(class='xl:divide-x xl:divide-gray-400 xl:flex')
+          .paras(class='xl:w-5/6 xl:ml-4' data-aos='fade-in')
+            p.text-xl.text-gray-700(class='md:text-2xl lg:text-4xl') I am #[span.bold.text-red-500 BENJAMIN PANG], a primarily self-taught programmer and artist who is currently interested in the bridging of art and technology to create new modes of expression.
+            p I was born and raised in California's Bay Area and currently reside in Abu Dhabi, UAE for undergraduate studies at NYU Abu Dhabi. First exposed to coding in middle school, I now have #[span.bold(x-data x-text='new Date().getFullYear() - 2012')]+ years of programming experience. This experience is supplemented by academic as well as practical training in a variety of skills related to design, art, and engineering. I hope to apply these skills to create meaningful works that address the many issues of our technology-saturated world.
+            p In my free time, I like running, longboard dancing, making art, playing saxophone, and solving Rubik's Cubes.
+
+          div(class='xl:w-1/6 xl:ml-8 xl:px-8 xl:mt-0')
+            h2.text-2xl.text-gray-900.mb-4(class='md:text-3xl lg:text-5xl' data-aos='fade-left') LINKS
+            ul.mx-4.text-red-500(data-aos='fade-left')
+              li: a.duration-500.animate-colors(class='hover:text-gray-900' href='https://github.com/molarmanful' target='_blank') Github
+              li: a.duration-500.animate-colors(class='hover:text-pink-600' href='https://instagram.com/bandidojim' target='_blank') Instagram
+              li: a.duration-500.animate-colors(class='hover:text-blue-600' href='https://linkedin.com/in/molarmanful' target='_blank') LinkedIn
+              li: a.duration-500.animate-colors(class='hover:text-green-700' href='https://codegolf.stackexchange.com/users/41247/mama-fun-roll' target='_blank') PPCG.SE
+              li: a.duration-500.animate-colors(class='hover:text-purple-600' href='https://docs.google.com/document/d/13Hy3akmfz9tvyFH6awZ8riWSCivtYQZa3TE-f_CGszI/edit?usp=sharing' target='_blank') CV

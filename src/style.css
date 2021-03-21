@@ -2,8 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+::selection {
+  @apply text-gray-50 bg-red-500;
+}
+
 h1, h2, h3, h4, h5, h6 {
-  @apply font-syne text-gray-50;
+  @apply font-syne;
 }
 
 .masonry {
@@ -13,6 +17,14 @@ h1, h2, h3, h4, h5, h6 {
 
 .vert {
   writing-mode: vertical-lr;
+}
+
+.bold {
+  @apply font-medium font-tri;
+}
+
+.paras p {
+  @apply mb-8;
 }
 
 @screen md {
