@@ -1,0 +1,25 @@
+- blocks = {}
+
+mixin set(key)
+  - blocks[key] = this.block
+
+mixin layout(name)
+  html.bg-gray-900
+    head
+      meta(charset='utf-8')
+      meta(name='viewport' content='width=device-width, initial-scale=1.0')
+      title Ben Pang | #{name}
+      link(rel='preconnect' href='https://fonts.gstatic.com')
+      link(rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Syne:wght@500&family=Trispace:wght@200;300;500&display=swap')
+    body.font-tri.overflow-x-hidden.text-gray-300.font-extralight.select-text.transition-opacity.opacity-0.pointer-events-none.text-xl.scrollbar-thin.scrollbar-thumb-gray-800
+      .relative.w-screen.h-screen
+        .w-full.h-screen
+          img.lazy.m-auto.w-full.h-full.object-contain(alt=name src=require(`../tiny/${name}_tiny.png`) data-src=require(`../art/${name}.png`))
+        .relative.flex.w-screen
+          .mx-auto.p-8.w-full(class='max-w-prose')
+            h1.text-red-500.text-3xl
+              - blocks.title()
+            p.bold.text-gray-500.text-2xl
+              - blocks.info()
+            p.text-xl.mt-4
+              - blocks.desc()

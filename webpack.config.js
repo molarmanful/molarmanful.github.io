@@ -16,7 +16,11 @@ module.exports = {
   plugins: [
     $pug('index', {
       art: fs.readdirSync('./src/art').map(f=> path.parse(f).name)
-    })
+    }),
+    ...fs.readdirSync('./src/items').map(f=> new HtmlWebpackPlugin({
+      filename: `${path.parse(f).name}.html`,
+      template: `src/items/${f}`
+    }))
   ],
   module: {
     rules: [

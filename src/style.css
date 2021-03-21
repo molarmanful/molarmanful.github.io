@@ -10,6 +10,10 @@ h1, h2, h3, h4, h5, h6 {
   @apply font-syne;
 }
 
+body.overflow-hidden {
+  overflow: hidden !important;
+}
+
 .masonry {
   column-count: 1;
   column-gap: 2rem;
@@ -25,6 +29,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .paras p {
   @apply mb-8;
+  hyphens: auto;
 }
 
 @screen md {

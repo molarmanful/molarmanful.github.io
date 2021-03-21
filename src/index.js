@@ -23,7 +23,7 @@ onload = _=>{
 }
 
 onbeforeunload = _=>{
-  document.body.classList.remove('opacity-100', 'transition-opacity')
+  document.body.classList.remove('transition-opacity', 'opacity-100')
   document.body.classList.add('opacity-0')
   scrollTo(0, 0)
 }
