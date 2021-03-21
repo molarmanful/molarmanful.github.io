@@ -1,6 +1,7 @@
 const path = require('path')
 const fs = require('fs')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const {CleanWebpackPlugin} = require('clean-webpack-plugin')
 
 const $pug = (x, options={})=> new HtmlWebpackPlugin({
   template: `src/${x}.pug`,
@@ -15,6 +16,9 @@ module.exports = {
     clean: true
   },
   plugins: [
+    new CleanWebpackPlugin({
+      verbose: true
+    }),
     $pug('index', {
       art: fs.readdirSync('./src/art').map(f=> path.parse(f).name)
     }),
