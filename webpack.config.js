@@ -2,6 +2,7 @@ const path = require('path')
 const fs = require('fs')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const {CleanWebpackPlugin} = require('clean-webpack-plugin')
+const FaviconsWebpackPlugin = require('favicons-webpack-plugin')
 
 const $pug = (x, options={})=> new HtmlWebpackPlugin({
   template: `src/${x}.pug`,
@@ -16,6 +17,7 @@ module.exports = {
     clean: true
   },
   plugins: [
+    new FaviconsWebpackPlugin(),
     new CleanWebpackPlugin({
       verbose: true
     }),
