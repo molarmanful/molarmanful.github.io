@@ -18,11 +18,12 @@ window.Index = {
 }
 
 onload = _=>{
-  fade.classList.remove('opacity-100')
-  fade.classList.add('opacity-0', 'pointer-events-none')
+  document.body.classList.remove('opacity-0', 'pointer-events-none')
+  document.body.classList.add('opacity-100')
 }
 
 onbeforeunload = _=>{
-  document.body.style.opacity = 0
+  document.body.classList.remove('opacity-100', 'transition-opacity')
+  document.body.classList.add('opacity-0')
   scrollTo(0, 0)
 }

@@ -1,5 +1,5 @@
 doctype html
-html
+html.bg-gray-900
   head
     meta(charset='utf-8')
     meta(name='viewport' content='width=device-width, initial-scale=1.0')
@@ -8,13 +8,11 @@ html
     link(rel='preconnect' href='https://fonts.gstatic.com')
     link(rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Syne:wght@500&family=Trispace:wght@200;300;500&display=swap')
 
-  body.font-tri.overflow-x-hidden.bg-gray-900.text-gray-200.font-extralight.select-text
-
-    #fade.fixed.z-50.transition-opacity.duration-1000.w-screen.h-screen.bg-gray-900
+  body.font-tri.overflow-x-hidden.text-gray-200.font-extralight.select-text.transition-opacity.opacity-0.pointer-events-none
 
     header.relative.flex.w-screen.h-screen
       .absolute.bottom-0.right-0.w-auto(class='h-1/2 lg:h-3/4')
-        img.h-full(src=require('./media/me_red_500.svg'))
+        img.h-full(src=require('./media/me_red_500.svg') draggable='false')
       .m-auto.z-10(class='lg:w-3/4 h-1/4 md:h-1/3 lg:h-3/4 2xl:h-1/3')
         h1.text-7xl.mb-4.text-red-500(class='lg:text-9xl') BEN PANG
         small.text-xl.ml-2.text-red-500(class='lg:text-3xl') I make weird things happen
@@ -33,7 +31,7 @@ html
       .masonry
         each f in htmlWebpackPlugin.options.art
           a(href='' @click=``)
-            img.lazy.w-full.mb-8(data-aos='fade-up' alt=f src=require(`./tiny/${f}_tiny.png`) data-src=require(`./thumbnails/${f}_thumb.png`))
+            img.lazy.w-full.mb-8(draggable='false' data-aos='fade-up' alt=f src=require(`./tiny/${f}_tiny.png`) data-src=require(`./thumbnails/${f}_thumb.png`))
 
     +sec('DEV')
       mixin proj(name, url)
@@ -84,6 +82,7 @@ html
             p.text-xl.text-gray-700(class='md:text-2xl lg:text-4xl') I am #[span.bold.text-red-500 BENJAMIN PANG], a primarily self-taught programmer and artist who is currently interested in the bridging of art and technology to create new modes of expression.
             p I was born and raised in California's Bay Area and currently reside in Abu Dhabi, UAE for undergraduate studies at NYU Abu Dhabi. First exposed to coding in middle school, I now have #[span.bold(x-data x-text='new Date().getFullYear() - 2012')]+ years of programming experience. This experience is supplemented by academic as well as practical training in a variety of skills related to design, art, and engineering. I hope to apply these skills to create meaningful works that address the many issues of our technology-saturated world.
             p In my free time, I like running, longboard dancing, making art, playing saxophone, and solving Rubik's Cubes.
+            p This portfolio/website is open-source! You can view the code #[a.text-red-500.duration-500.animate-colors(class='hover:text-red-400' href='https://github.com/molarmanful/molarmanful.github.io' target='_blank') here].
 
           div(class='xl:w-1/6 xl:ml-8 xl:px-8 xl:mt-0')
             h2.text-2xl.text-gray-900.mb-4(class='md:text-3xl lg:text-5xl' data-aos='fade-left') LINKS
