@@ -34,7 +34,7 @@ html.bg-gray-900
         x-ref='modal'
         :class='{"opacity-1": selected, "opacity-0": !selected, "pointer-events-none": !selected}'
         @click='selected = ""')
-        .fixed.flex.items-center.justify-center.top-0.right-0.text-9xl.w-16.h-16.text-gray-800 &times;
+        .fixed.flex.items-center.justify-center.top-0.right-0.text-9xl.w-16.h-16.text-gray-800.cursor-pointer.select-none &times;
         iframe.w-full.h-full(:src='selected && selected + ".html"')
 
       .masonry
