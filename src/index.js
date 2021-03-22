@@ -26,7 +26,10 @@ history.scrollRestoration = 'manual'
 
 document.body.classList.add('transition-opacity')
 
-onload = _=>{
+const load = _=>{
   document.body.style.opacity = 1
   document.body.classList.remove('pointer-events-none')
 }
+
+if(window.fastload) load()
+else onload = load
