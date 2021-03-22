@@ -22,11 +22,11 @@ window.Index = {
   },
 }
 
-onbeforeunload = _=>{
-  document.body.classList.remove('transition-opacity', 'opacity-100')
-  document.body.classList.add('opacity-0')
-  scrollTo(0, 0)
-}
+history.scrollRestoration = 'manual'
 
-document.body.classList.add('opacity-100')
-document.body.classList.remove('opacity-0', 'pointer-events-none')
+document.body.classList.add('transition-opacity')
+
+onload = _=>{
+  document.body.style.opacity = 1
+  document.body.classList.remove('pointer-events-none')
+}
