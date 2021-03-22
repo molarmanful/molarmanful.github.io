@@ -22,8 +22,10 @@ window.Index = {
   },
 }
 
-document.body.classList.remove('opacity-0', 'pointer-events-none')
-document.body.classList.add('opacity-100')
+addEventListener('DOMContentLoaded', _=>{
+  document.body.classList.add('opacity-100')
+  document.body.classList.remove('opacity-0', 'pointer-events-none')
+})
 
 onbeforeunload = _=>{
   document.body.classList.remove('transition-opacity', 'opacity-100')
