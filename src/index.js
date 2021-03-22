@@ -22,13 +22,11 @@ window.Index = {
   },
 }
 
-addEventListener('DOMContentLoaded', _=>{
-  document.body.classList.add('opacity-100')
-  document.body.classList.remove('opacity-0', 'pointer-events-none')
-})
-
 onbeforeunload = _=>{
   document.body.classList.remove('transition-opacity', 'opacity-100')
   document.body.classList.add('opacity-0')
   scrollTo(0, 0)
 }
+
+document.body.classList.add('opacity-100')
+document.body.classList.remove('opacity-0', 'pointer-events-none')
