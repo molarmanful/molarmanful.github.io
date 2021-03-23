@@ -6,13 +6,13 @@ mixin set(key)
 mixin layout(name)
   html.bg-gray-900
     head
-      include ../head.pug
+      include /head.pug
       title Ben Pang | #{name}
     body.font-tri.overflow-x-hidden.text-gray-300.font-extralight.select-text.transition-opacity.opacity-0.pointer-events-none.text-xl.scrollbar-thin.scrollbar-thumb-gray-800.bg-gray-900
       script window.fastload = true
       .relative.w-screen.h-screen
         .w-full(class='md:h-screen')
-          img.lazy.m-auto.w-full.h-full.object-contain(alt=name src=require(`../tiny/${name}_tiny.png`) data-src=require(`../art/${name}.png`))
+          img.lazy.m-auto.w-full.h-full.object-contain(alt=name src=`media/${name}_tiny.png` data-src=`media/${name}.png`)
         .relative.flex.w-screen
           .mx-auto.p-8.w-full(class='max-w-prose')
             h1.text-red-500.text-3xl
@@ -21,3 +21,5 @@ mixin layout(name)
               - blocks.info()
             p.text-xl.mt-4
               - blocks.desc()
+
+      include /foot.pug
