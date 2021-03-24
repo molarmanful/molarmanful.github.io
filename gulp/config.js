@@ -19,6 +19,7 @@ module.exports = {
       build: 'css',
     },
     rollup: {
+      src: 'index.js',
       build: 'js',
     },
     favicons: {
@@ -39,11 +40,14 @@ module.exports = {
     },
     rollup: {
       input: 'src/index.js',
-      output: {format: 'esm'},
+      output: {format: 'iife'},
       plugins: [
         nodeResolve(),
         commonjs()
       ]
+    },
+    server: {
+      port: 8080,
     }
   }
 }

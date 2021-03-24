@@ -13,9 +13,14 @@ gulp.task('pug', _=>
       gulp.src([
         getPath(paths.build, paths.postcss.build, '*.css'),
         getPath(paths.build, paths.rollup.build, '*.js'),
-        getPath(paths.build, paths.favicons.build, '*.html'),
+        getPath(paths.build, paths.favicons.build, '*.html')
       ], {
-        cwd: getPath(paths.build)
+        cwd: getPath(paths.build),
+        read: false,
+        transform(p, f){
+          if(p.match(/\.html$/)) return f.contents.toString('utf8')
+          return inject.transform.apply(inject.transform, arguments)
+        },
       })
     ))
     .pipe(flatten())

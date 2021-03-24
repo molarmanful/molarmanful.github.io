@@ -5,16 +5,24 @@ const buffer = require('vinyl-buffer')
 
 requireDir('gulp/tasks', {recurse: true})
 
-gulp.task(
-  'build',
-  gulp.series(
-    'clean',
-    gulp.parallel(
-      'postcss',
-      'rollup',
-      'images',
-      'favicons'
-    ),
-    'pug',
-  )
-)
+gulp.task('dev', gulp.series(
+  'clean',
+  gulp.parallel(
+    'postcss',
+    'rollup',
+    'images',
+  ),
+  'pug',
+  gulp.parallel('watch', 'server')
+))
+
+gulp.task('build', gulp.series(
+  'clean',
+  gulp.parallel(
+    'postcss:prod',
+    'rollup',
+    'images',
+    // 'favicons'
+  ),
+  'pug'
+))

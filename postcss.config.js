@@ -4,9 +4,6 @@ module.exports = {
     require('postcss-import')({
       path: ['..']
     }),
-    require('tailwindcss'),
-    require('cssnano')({
-      preset: 'default'
-    })
+    require('tailwindcss')
   ],
 }
