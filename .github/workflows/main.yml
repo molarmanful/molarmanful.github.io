@@ -2,9 +2,9 @@ name: github pages
 
 on:
   push:
-    branches: [ v2 ]
+    branches: [ v2-gulp ]
   pull_request:
-    branches: [ v2 ]
+    branches: [ v2-gulp ]
   workflow_dispatch:
 
 jobs:
