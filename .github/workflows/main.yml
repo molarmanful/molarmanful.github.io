@@ -20,7 +20,7 @@ jobs:
           node-version: 14
           
       - name: install
-        run: npm i
+        run: npm ci && npm i gulp
         
       - name: build
         run: npm run build
