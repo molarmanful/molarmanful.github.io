@@ -44,7 +44,7 @@ html.bg-gray-900.overflow-x-hidden(
 
     mixin sec(name)
       section.flex.w-screen(class='lg:divide-x lg:divide-gray-800')&attributes(attributes)
-        div.hidden(class='lg:inline-block')
+        .hidden(class='lg:inline-block')
           .vert.sticky.top-0.pl-4.pt-4.pb-32.text-7xl(class='lg:text-9xl' data-aos='fade-right')
             h1.text-gray-800.transform.origin-center.rotate-180.inline-block.select-none= name
         .px-5.max-w-full(class='md:container')
@@ -110,7 +110,7 @@ html.bg-gray-900.overflow-x-hidden(
         +proj('minimalistimer')
 
     section.flex.w-screen.divide-x.divide-gray-800#abt
-      div.hidden(class='lg:inline-block')
+      .hidden(class='lg:inline-block')
         .vert.pl-4.text-7xl(class='lg:text-9xl') &nbsp;
 
       .p-16.w-full.bg-gray-300.text-gray-600.text-l.font-light(class='lg:w-auto lg:container lg:text-2xl lg:mb-16')

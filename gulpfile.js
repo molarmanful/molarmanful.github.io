@@ -20,7 +20,7 @@ gulp.task('build', gulp.series(
   'clean',
   gulp.parallel(
     'postcss:prod',
-    'rollup',
+    'rollup:prod',
     'images',
     // 'favicons'
   ),
