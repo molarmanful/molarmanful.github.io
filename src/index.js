@@ -7,7 +7,11 @@ import 'aos/dist/aos.css'
 import './style.css'
 
 AOS.init()
-window.lazy = new LazyLoad({})
+window.lazy = new LazyLoad({
+  callback_loaded(){
+    AOS.refresh()
+  },
+})
 window.scroll = new SmoothScroll('a[href*="#"]', {
   updateURL: false,
   speedAsDuration: true
@@ -33,3 +37,5 @@ const load = _=>{
 
 if(window.fastload) load()
 else onload = load
+
+let scrollRef = 0
