@@ -12,10 +12,13 @@ mixin layout(name)
       script window.fastload = true
       .relative.w-screen.h-screen
         .w-full(class='md:h-screen')
-          img.lazy.m-auto.w-full.h-full.object-contain(alt=name src=require(`../tiny/${name}_tiny.png`) data-src=require(`../art/${name}.png`))
+          if blocks.custom
+            blocks.custom()
+          else
+            img.lazy.m-auto.w-full.h-full.object-contain(alt=name src=require(`../tiny/${name}_tiny`) data-src=require(`../art/${name}`))
         .relative.flex.w-screen
           .mx-auto.p-8.w-full(class='max-w-prose')
-            h1.text-red-500.text-3xl
+            h1.text-red-500.text-3xl.uppercase
               - blocks.title()
             p.bold.text-gray-500.text-2xl
               - blocks.info()

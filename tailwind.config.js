@@ -1,4 +1,8 @@
 module.exports = {
+  purge: [
+    './src/index.pug',
+    './src/items/template.pug'
+  ],
   darkMode: false, // or 'media' or 'class'
   theme: {
     fontFamily: {

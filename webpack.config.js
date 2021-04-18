@@ -24,7 +24,9 @@ module.exports = {
     $pug('index', {
       art: fs.readdirSync('./src/art').map(f=> path.parse(f).name)
     }),
-    ...fs.readdirSync('./src/items').map(f=> new HtmlWebpackPlugin({
+    ...fs.readdirSync('./src/items').filter(f=>
+      !~fs.readdirSync('./src/old').map(g=> path.parse(g).name).indexOf(path.parse(f).name)
+    ).map(f=> new HtmlWebpackPlugin({
       filename: `${path.parse(f).name}.html`,
       template: `src/items/${f}`
     }))
@@ -58,6 +60,14 @@ module.exports = {
         test: /\.(png|jpe?g|gif|svg)$/i,
         include: path.resolve(__dirname, 'src'),
         type: 'asset'
+      },
+      {
+        include: [
+          path.resolve(__dirname, 'src', 'art'),
+          path.resolve(__dirname, 'src', 'thumbnails'),
+          path.resolve(__dirname, 'src', 'tiny'),
+        ],
+        type: 'asset/resource'
       },
     ],
   },
