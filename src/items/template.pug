@@ -4,21 +4,21 @@ mixin set(key)
   - blocks[key] = this.block
 
 mixin layout(name)
-  html.bg-gray-900
+  html.bg-black
     head
       include ../head.pug
       title Ben Pang | #{name}
-    body.font-tri.overflow-x-hidden.text-gray-300.font-extralight.select-text.transition-opacity.opacity-0.pointer-events-none.text-xl.scrollbar-thin.scrollbar-thumb-gray-800.bg-gray-900
+    body.font-tri.overflow-x-hidden.text-gray-400.font-extralight.select-text.transition-opacity.opacity-0.pointer-events-none.text-xl.scrollbar-thin.scrollbar-thumb-gray-900.bg-black
       script window.fastload = true
       .relative.w-screen.h-screen
         .w-full(class='md:h-screen')
           if blocks.custom
-            blocks.custom()
+            - blocks.custom()
           else
             img.lazy.m-auto.w-full.h-full.object-contain(alt=name src=require(`../tiny/${name}_tiny`) data-src=require(`../art/${name}`))
         .relative.flex.w-screen
           .mx-auto.p-8.w-full(class='max-w-prose')
-            h1.text-red-500.text-3xl.uppercase
+            h1.text-white.text-3xl.uppercase
               - blocks.title()
             p.bold.text-gray-500.text-2xl
               - blocks.info()
