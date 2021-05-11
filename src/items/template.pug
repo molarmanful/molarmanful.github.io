@@ -11,9 +11,12 @@ mixin layout(name)
     body.font-tri.overflow-x-hidden.text-gray-400.font-extralight.select-text.transition-opacity.opacity-0.pointer-events-none.text-xl.scrollbar-thin.scrollbar-thumb-gray-900.bg-black
       script window.fastload = true
       .relative.w-screen.h-screen
-        .w-full(class='md:h-screen')
+        .w-full(class='md:h-screen' style='min-height: 50%')
           if blocks.custom
             - blocks.custom()
+          else if blocks.lbox
+            .h-full.center-flex
+              img.lazy.m-auto.w-full.h-full.object-contain(class='md:p-8 md:max-w-prose' alt=name src=require(`../tiny/${name}_tiny`) data-src=require(`../art/${name}`))
           else
             img.lazy.m-auto.w-full.h-full.object-contain(alt=name src=require(`../tiny/${name}_tiny`) data-src=require(`../art/${name}`))
         .relative.flex.w-screen

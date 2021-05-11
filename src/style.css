@@ -32,6 +32,18 @@ body.overflow-hidden {
   hyphens: auto;
 }
 
+.center-flex {
+  @apply flex items-center justify-center;
+}
+
+.vid {
+  @apply aspect-w-16 aspect-h-9;
+}
+
+.lazy:not(.loaded){
+  image-rendering: pixelated;
+}
+
 a {
   @apply text-gray-100 duration-500;
 }

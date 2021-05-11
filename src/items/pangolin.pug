@@ -1,7 +1,8 @@
 include template.pug
 
++set('lbox') 1
 +set('title') Project Pangolin
 +set('info') Paper/Cardboard Installation, 2021
 +set('desc') Inspired by pangolins and cardboard homeless shelters, I sought to create a colorful sculpture that I could become a part of.
-  img.mt-8.m-auto.w-full.h-full.object-contain(alt='pangolin stare' src=require(`../media/pangolin_stare.png`))
+  img.mt-8.m-auto.w-full(alt='pangolin stare' src=require(`../media/pangolin_stare.png`))
 +layout('pangolin')

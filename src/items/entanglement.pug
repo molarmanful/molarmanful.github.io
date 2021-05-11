@@ -1,6 +1,10 @@
 include template.pug
 
-+set('custom'): iframe.m-auto.w-full.h-full.object-contain(src="https://www.youtube.com/embed/w4ff_J_T12k" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen)
++set('custom')
+  .h-full.center-flex
+    .w-full(class='md:w-1/2')
+      .aspect-w-16.aspect-h-9
+        iframe(src="https://www.youtube.com/embed/w4ff_J_T12k" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen)
 +set('title') Entanglement
 +set('info') OpenFrameworks, 2021
 +set('desc') In this piece, I was inspired by particle accelerator graphics. I treated this project as a way to play around with Bezier curves in generative art.
