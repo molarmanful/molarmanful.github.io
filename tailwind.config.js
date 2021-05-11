@@ -1,7 +1,7 @@
 module.exports = {
   purge: [
     './src/index.pug',
-    './src/items/template.pug'
+    './src/items/*.pug'
   ],
   darkMode: false, // or 'media' or 'class'
   theme: {
