@@ -1,0 +1,8 @@
+mixin sec(name)
+  section.flex.w-screen(class='lg:divide-x lg:divide-gray-700')&attributes(attributes)
+    .hidden(class='lg:inline-block' data-aos='fade-right')
+      .vert.sticky.top-0.pl-4.pt-4.pb-32.text-7xl(class='lg:text-9xl')
+        h1.text-gray-700.transform.origin-center.rotate-180.inline-block.select-none= name
+    .px-5.max-w-full(class='md:container')
+      block
+      .mb-16(class='lg:mb-32')

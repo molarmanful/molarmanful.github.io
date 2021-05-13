@@ -1,0 +1,21 @@
+nav
+
+  .fixed.top-2.right-2.h-16.w-16.bg-gray-700.z-30.cursor-pointer.flex.transition-colors(class='hover:bg-gray-200' @mouseenter='dropped = true' @click='dropped = true')
+    svg.m-auto.fill-current.text-black(class='w-1/2 h-1/2' viewBox='0 0 100 100' alt='menu')
+      rect(width='100' height='20')
+      rect(width='100' height='20' y='40')
+      rect(width='100' height='20' y='80')
+
+  .p-4.fixed.top-2.right-2.bg-black.z-40.transition-transform.transform.origin-top-right(
+    x-show='dropped'
+    @mouseleave='dropped=false'
+    @click.away='dropped = false'
+    x-transition:enter-start='scale-0'
+    x-transition:enter-end='scale-100'
+    x-transition:leave-start='scale-100'
+    x-transition:leave-end='scale-0')
+    ul.text-gray-200.font-syne.text-3xl.leading-8(@click='dropped = false')
+      li: a.cursor-pointer.transition-colors(class='hover:text-gray-500' href='#top') TOP
+      li: a.cursor-pointer.transition-colors(class='hover:text-gray-500' href='#art') ART
+      li: a.cursor-pointer.transition-colors(class='hover:text-gray-500' href='#dev') DEV
+      li: a.cursor-pointer.transition-colors(class='hover:text-gray-500' href='#abt') ABT

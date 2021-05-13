@@ -45,7 +45,7 @@ body.overflow-hidden {
 }
 
 a {
-  @apply text-gray-100 duration-500;
+  @apply text-gray-100 duration-500 transition-colors;
 }
 
 a:hover {
