@@ -37,7 +37,7 @@
     "webpack-dev-server": "^3.11.2"
   },
   "scripts": {
-    "start": "rm -rf dist && rm -f src/items/*.html && webpack serve --mode=development --open",
+    "start": "rm -rf dist && rm -f src/items/*.html && NODE_ENV=development webpack serve",
     "build": "export NODE_ENV=production && webpack"
   },
   "repository": {

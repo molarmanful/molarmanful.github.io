@@ -14,9 +14,12 @@ include section.pug
 
   .masonry
     each f in htmlWebpackPlugin.options.art
-      .cursor-pointer(@click.prevent=`selected = "${f}"` data-aos='fade-up')
-        img.lazy.w-full.mb-8.filter.transition(
-          class='hover:brightness-50'
+      .cursor-pointer(
+        @click.prevent=`selected = "${f}"`
+        data-aos='fade-up')
+
+        img.lazy.w-full.mb-8.border.border-black.graiscale.transition(
+          class='hover:border-white'
           draggable='false'
           alt=f
           src=require(`./tiny/${f}_tiny`)

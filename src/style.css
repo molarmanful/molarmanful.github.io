@@ -14,9 +14,33 @@ body.overflow-hidden {
   overflow: hidden !important;
 }
 
+.scanlines::after {
+  @apply fixed inset-0 z-40 w-full h-full pointer-events-none;
+  content: '';
+  background: repeating-linear-gradient(0deg, rgba(255,255,255,0.05) 0px, rgba(255,255,255,0.05) 2px, rgba(255,255,255,0) 2px, rgba(255,255,255,0) 4px);
+}
+
 .masonry {
   column-count: 1;
   column-gap: 2rem;
+}
+
+.graiscale:hover {
+  filter: brightness(50%) sepia(1) hue-rotate(-182deg) saturate(115%) brightness(86%);
+}
+
+.text-stroked {
+  text-shadow:
+    -1px -1px 0 currentColor,
+    -1px  1px 0 currentColor,
+     1px -1px 0 currentColor,
+     1px  1px 0 currentColor,
+     var(--aber, 0 0 0);
+  -webkit-text-fill-color: black;
+}
+
+.aberration {
+  --aber: -2px -2px 0 #0ff, 2px  2px 0 #f0f;
 }
 
 .vert {
