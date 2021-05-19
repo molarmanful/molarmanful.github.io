@@ -10,26 +10,40 @@ body.overflow-hidden {
   overflow: hidden !important;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   @apply uppercase font-syne;
 }
 
-@supports(-moz-context-properties: fill){
-  #filters{
-    position:fixed;
-    height:0;
+@supports (-moz-context-properties: fill) {
+  #filters {
+    position: fixed;
+    height: 0;
   }
 }
 
 .scanlines::after {
   @apply fixed inset-0 z-40 w-full h-full pointer-events-none;
+
   content: '';
-  background: repeating-linear-gradient(0deg, rgba(255,255,255,0.05) 0px, rgba(255,255,255,0.05) 2px, rgba(255,255,255,0) 2px, rgba(255,255,255,0) 4px);
+  background: repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.05) 0, rgba(255, 255, 255, 0.05) 2px, rgba(255, 255, 255, 0) 2px, rgba(255, 255, 255, 0) 4px);
 }
 
 .masonry {
   column-count: 1;
   column-gap: 2rem;
+
+  @screen md {
+    column-count: 3;
+  }
+
+  @screen lg {
+    column-count: 4;
+  }
 }
 
 .graiscale:hover {
@@ -40,14 +54,14 @@ h1, h2, h3, h4, h5, h6 {
   text-shadow:
     -1px -1px var(--stroke-color),
     -1px  1px var(--stroke-color),
-     1px -1px var(--stroke-color),
-     1px  1px var(--stroke-color),
+    1px -1px var(--stroke-color),
+    1px  1px var(--stroke-color),
     var(--aber, 0 0 transparent);
   -webkit-text-fill-color: black;
 }
 
 .text-stroked.text-gray-500 {
-  --stroke-color: #6B7280;
+  --stroke-color: #6b7280;
 }
 
 .text-stroked.text-white {
@@ -72,6 +86,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .paras p {
   @apply mb-8;
+
   hyphens: auto;
 }
 
@@ -83,26 +98,14 @@ h1, h2, h3, h4, h5, h6 {
   @apply aspect-w-16 aspect-h-9;
 }
 
-.lazy:not(.loaded){
+.lazy:not(.loaded) {
   image-rendering: pixelated;
 }
 
 a {
   @apply text-gray-100 duration-500 transition-colors;
-}
 
-a:hover {
-  @apply text-gray-500;
-}
-
-@screen md {
-  .masonry {
-    column-count: 3;
-  }
-}
-
-@screen lg {
-  .masonry {
-    column-count: 4;
+  &:hover {
+    @apply text-gray-500;
   }
 }

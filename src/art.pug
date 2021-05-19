@@ -4,7 +4,9 @@ include section.pug
   .fixed.w-screen.h-screen.inset-x-0.inset-y-0.transition-opacity.bg-black.z-50.py-16.overflow-hidden(
     x-ref='modal'
     :class='{"opacity-1": selected, "opacity-0 pointer-events-none": !selected}'
-    @click='selected = ""; iloaded = false')
+    @click='iClose()'
+    @keyup.escape.window='iClose()'
+    @i-close.window='iClose()')
 
     .fixed.flex.top-0.right-0.w-16.h-16.cursor-pointer
       svg.m-auto.fill-current.text-gray-700(class='w-1/2 h-1/2' viewBox='0 0 100 100' alt='close')
