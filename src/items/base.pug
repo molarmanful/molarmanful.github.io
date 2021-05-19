@@ -33,8 +33,8 @@ mixin art(name)
 mixin old(name)
   +image()(alt=name src=require(`../tiny/${name}_tiny`) data-src=require(`../old/${name}`))&attributes(attributes)
 
-mixin media(name)
-  +image()(alt=name data-src=require(`../media/${name}`))&attributes(attributes)
+mixin media(name, ext='png')
+  +image()(alt=name src=require(`../media/tiny/${name}_tiny.${ext}`) data-src=require(`../media/${name}.${ext}`))&attributes(attributes)
 
 mixin vid()
   .max-h-screen.w-full.mx-auto(class='md:w-1/2')
