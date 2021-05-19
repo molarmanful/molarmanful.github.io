@@ -1,0 +1,12 @@
+include base.pug
+
++base()
+  +prose()
+    +heading() THE PHYSICAL COLLECTION
+    +subheading() Sculptures and installations which follow arbitrary rules and fulfill arbitrary purposes.
+
+  +vid().mb-8
+    iframe.lazy(data-src="https://www.youtube.com/embed/wKVds1zi6Xg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen)
+  +art('wireball')
+  +art('pangolin')
+  +image(alt='pangolin stare' data-src=require(`../media/pangolin_stare.png`))

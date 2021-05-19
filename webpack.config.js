@@ -22,10 +22,11 @@ module.exports = {
       verbose: true
     }),
     $pug('index', {
-      art: fs.readdirSync('./src/art').map(f=> path.parse(f).name)
+      art: fs.readdirSync('./src/art').map(f=> path.parse(f).name),
+      covers: fs.readdirSync('./src/covers').map(f=> path.parse(f).name),
     }),
     ...fs.readdirSync('./src/items').filter(f=>
-      !~fs.readdirSync('./src/old').map(g=> path.parse(g).name).indexOf(path.parse(f).name)
+      ~fs.readdirSync('./src/covers').map(g=> path.parse(g).name).indexOf(path.parse(f).name)
     ).map(f=> new HtmlWebpackPlugin({
       filename: `${path.parse(f).name}.html`,
       template: `src/items/${f}`
@@ -63,7 +64,9 @@ module.exports = {
       },
       {
         include: [
+          path.resolve(__dirname, 'src', 'covers'),
           path.resolve(__dirname, 'src', 'art'),
+          path.resolve(__dirname, 'src', 'old'),
           path.resolve(__dirname, 'src', 'thumbnails'),
           path.resolve(__dirname, 'src', 'tiny'),
         ],

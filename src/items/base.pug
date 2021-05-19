@@ -1,0 +1,42 @@
+mixin base()
+  html.bg-black(lang='en')
+    head
+      include ../head.pug
+      title Ben Pang | #{name}
+    body.font-tri.overflow-x-hidden.text-gray-400.font-extralight.select-text.opacity-0.pointer-events-none.text-xl.scrollbar-thin.scrollbar-thumb-gray-700.bg-black.duration-500
+      script document.body.style.opacity = 0
+      block
+
+mixin prose()
+  .relative.flex.w-screen
+    .mx-auto.p-16.w-full(class='max-w-prose' style='hyphens: auto')&attributes(attributes)
+      block
+
+mixin heading()
+  h1.text-gray-500.text-4xl.uppercase.text-stroked.mb-12(class='md:text-5xl lg:text-6xl 2xl:text-8xl' style='hyphens: manual')&attributes(attributes)
+    block
+
+mixin subheading()
+  p.text-gray-300.text-xl(class='md:text-2xl lg:text-4xl')&attributes(attributes)
+    block
+
+mixin text()
+  p.text-xl.mt-8&attributes(attributes)
+    block
+
+mixin image()
+  img.lazy.m-auto.w-full.max-h-screen.mb-8.object-contain&attributes(attributes)
+
+mixin art(name)
+  +image()(alt=name src=require(`../tiny/${name}_tiny`) data-src=require(`../art/${name}`))&attributes(attributes)
+
+mixin old(name)
+  +image()(alt=name src=require(`../tiny/${name}_tiny`) data-src=require(`../old/${name}`))&attributes(attributes)
+
+mixin media(name)
+  +image()(alt=name data-src=require(`../media/${name}`))&attributes(attributes)
+
+mixin vid()
+  .max-h-screen.w-full.mx-auto(class='md:w-1/2')
+    .aspect-w-16.aspect-h-9&attributes(attributes)
+      block

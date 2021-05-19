@@ -1,0 +1,30 @@
+include base.pug
+
++base()
+  +prose()
+    +heading() Custom Languages
+    +subheading() Weird and wholly impractical. Programming languages which I've made throughout the years for recreational - NOT PRACTICAL - purposes.
+
+    +subheading().font-bold.mt-16.mb-8 Coding
+    +text() No, it's not a typo; the language really is called Coding. Conceived from #[a(href='https://www.reddit.com/r/ProgrammerHumor/comments/5gfomg/til_most_people_go_to_special_training_for_years/' target='_blank') a running joke on r/ProgrammerHumor], I quickly cobbled together what is best described as "stack-based HTML." Another reasonable descriptor would be "Pug's weird adoptive little brother."
+    +text() #[a(href='https://github.com/molarmanful/codinglang' target='_blank') Source]
+
+    +subheading().font-bold.mt-16.mb-8 lin
+    +text() This was one of my few attempts at creating an actually practical language. lin is a stack-based functional language which is designed to be easily implemented and used, even with its unconventional syntax patterns.
+    +text() #[a(href='https://github.com/molarmanful/lin' target='_blank') Source]
+
+    +subheading().font-bold.mt-16.mb-8 Wonder
+    +text() Another one of my attempts at creating an actually practical language, Wonder was quite ambitious; among other odd features, I implemented a rudimentary package manager. It was meant to be an accessible alternative to Haskell, another lazy functional language.
+    +text() #[a(href='https://github.com/molarmanful/codinglang' target='_blank') Source]
+
+    +subheading().font-bold.mt-16.mb-8 ESMin
+    +text() Optimized for code-golfing, ESMin sacrifices a standard 256-character code page for a larger 1024-character code page. This serves as a compromise between program byte size and language robustness. The result is an absolute mess of a language which no longer works due to browser updates over the years.
+    +text() #[a(href='https://github.com/molarmanful/esmin' target='_blank') Source]
+
+    +subheading().font-bold.mt-16.mb-8 RETURN
+    +text() RETURN is an extension of DUP, a barebones stack-based esolang. Its purpose was to make DUP more viable for code challenges by adding more commands and stacks.
+    +text() #[a(href='https://github.com/molarmanful/RETURN' target='_blank') Source]
+
+    +subheading().font-bold.mt-16.mb-8 bitman
+    +text() bitman is another offshoot of DUP made specifically to manipulate bits. Its main feature is its ability to store arbitrary bit sizes, theoretically allowing for things like bignumber math.
+    +text() #[a(href='https://github.com/molarmanful/bitman' target='_blank') Source]

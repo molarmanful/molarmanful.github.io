@@ -6,12 +6,19 @@
   @apply text-black bg-white;
 }
 
+body.overflow-hidden {
+  overflow: hidden !important;
+}
+
 h1, h2, h3, h4, h5, h6 {
   @apply uppercase font-syne;
 }
 
-body.overflow-hidden {
-  overflow: hidden !important;
+@supports(-moz-context-properties: fill){
+  #filters{
+    position:fixed;
+    height:0;
+  }
 }
 
 .scanlines::after {
@@ -31,16 +38,28 @@ body.overflow-hidden {
 
 .text-stroked {
   text-shadow:
-    -1px -1px 0 currentColor,
-    -1px  1px 0 currentColor,
-     1px -1px 0 currentColor,
-     1px  1px 0 currentColor,
-     var(--aber, 0 0 0);
+    -1px -1px var(--stroke-color),
+    -1px  1px var(--stroke-color),
+     1px -1px var(--stroke-color),
+     1px  1px var(--stroke-color),
+    var(--aber, 0 0 transparent);
   -webkit-text-fill-color: black;
+}
+
+.text-stroked.text-gray-500 {
+  --stroke-color: #6B7280;
+}
+
+.text-stroked.text-white {
+  --stroke-color: #fff;
 }
 
 .aberration {
   --aber: -2px -2px 0 #0ff, 2px  2px 0 #f0f;
+}
+
+.aberration1 {
+  --aber: -1px -1px 0 #0ff, 1px  1px 0 #f0f;
 }
 
 .vert {

@@ -1,6 +1,5 @@
 doctype html
-html.bg-black.overflow-x-hidden(
-  class='md:overflow-x-visible'
+html.bg-black(
   lang='en'
   x-data='{selected: "", dropped: false, iloaded: false}')
 
@@ -9,11 +8,12 @@ html.bg-black.overflow-x-hidden(
     meta(name='description' content='I make weird things happen.')
     title Ben Pang
 
-  body.scanlines.scrollbar-thin.scrollbar-thumb-gray-900.font-tri.text-gray-200.font-extralight.select-text.pointer-events-none.bg-black.duration-500
+  body.scanlines.scrollbar-thin.scrollbar-thumb-gray-700.font-tri.text-gray-200.font-extralight.select-text.pointer-events-none.bg-black.duration-500.overflow-x-hidden(:class='{"overflow-hidden": selected}')
     script document.body.style.opacity = 0
+    include filters.pug
 
     include nav.pug
     include header.pug
-    include art.pug
-    include dev.pug
     include about.pug
+    include art.pug
+    // include dev.pug

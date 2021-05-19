@@ -1,0 +1,5 @@
+svg.hidden#filters
+  defs
+    filter#stroke-filter
+      feMorphology(operator='dilate' radius='1')
+      feComposite(operator='xor' in='SourceGraphic')

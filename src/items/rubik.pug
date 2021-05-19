@@ -1,0 +1,39 @@
+include base.pug
+
++base()
+  +prose()
+    +heading() The Rubik Collection
+    +subheading() A simple puzzle that has stumped the world for decades. Gadgets and trinkets for the aspiring cuber.
+
+  +prose()
+    +subheading().font-bold A Cube Tutorial
+    +media('cubetut.png').mt-8
+    +text() An interactive tutorial for solving the Rubik's Cube, featuring a clean UI and a companion cube that hides pieces based on the step.
+    +text() #[a(href='https://bennyboy.tech/cubetut' target='_blank') Website] (best viewed on desktop)
+      |<br>#[a(href='https://github.com/molarmanful/cubetut' target='_blank') Source]
+
+  +prose()
+    +subheading().font-bold pycube
+    +media('pycube.png').mt-8
+    +text() Made in collaboration with Jimoh Yusuf. A reimplementation of the Rubik's Cube in Processing.py with mouse/keyboard modes and timing.
+    +text() #[a(href='https://github.com/molarmanful/pycube' target='_blank') Source]
+
+  +prose()
+    +subheading().font-bold gCube
+    +media('gcube.png').mt-8
+    +text() Made in collaboration with Michael Casebolt. A web framework for cube simulation with extensive visual customization options.
+    +text() #[a(href='https://codepen.io/collection/XOLVLQ' target='_blank') Demos]
+      |<br>#[a(href='https://github.com/molarmanful/gCube' target='_blank') Source]
+
+  +prose()
+    +subheading().font-bold MinimalisTimer
+    +media('minimalistimer.png').mt-8
+    +text() When MinimalisTimer was first created, there weren't many options for cube timers that had mobile-friendly responsive designs. MinimalisTimer was my answer to this problem, focusing on clean UI and accessibility for both mobile and desktop devices.
+    +text() #[a(href='https://bennyboy.tech/minimalistimer' target='_blank') Website]
+      |<br>#[a(href='https://github.com/molarmanful/minimalistimer' target='_blank') Source]
+
+  +prose()
+    +subheading().font-bold PLL Trainer
+    +media('pll.png').mt-8
+    +text() The precursor to MinimalisTimer and my first foray into creating responsive web apps. PLL Trainer was made for speedcubers looking to improve their PLL algorithms execution.
+    +text() #[a(href='https://codepen.io/molarmanful/full/VYLqLz' target='_blank') Website]

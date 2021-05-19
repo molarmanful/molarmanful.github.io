@@ -1,5 +1,5 @@
 nav
-  .fixed.top-2.right-2.h-16.w-16.border.border-gray-700.text-gray-700.bg-black.z-30.cursor-pointer.flex.transition-colors(
+  .fixed.top-2.right-2.h-16.w-16.border.border-gray-500.text-gray-500.bg-black.z-30.cursor-pointer.flex.transition-colors(
     @mouseenter='dropped = true'
     @click='dropped = true')
 
@@ -8,16 +8,16 @@ nav
       rect(width='100' height='20' y='40')
       rect(width='100' height='20' y='80')
 
-  .p-4.fixed.top-2.right-2.bg-black.z-40.transition-transform.transform.origin-top-right(
+  .p-4.fixed.top-2.right-2.bg-black.z-40.transition-transform.transform.origin-top-right.border.border-gray-500(
     x-show='dropped'
     @mouseleave='dropped=false'
+    @mouseenter.away='dropped=false'
     @click.away='dropped = false'
     x-transition:enter-start='scale-0'
     x-transition:enter-end='scale-100'
     x-transition:leave-start='scale-100'
     x-transition:leave-end='scale-0')
-    ul.text-gray-200.font-syne.text-3xl.leading-8(@click='dropped = false')
-      li: a.cursor-pointer.transition-colors(class='hover:text-gray-500' href='#top') TOP
-      li: a.cursor-pointer.transition-colors(class='hover:text-gray-500' href='#art') ART
-      li: a.cursor-pointer.transition-colors(class='hover:text-gray-500' href='#dev') DEV
-      li: a.cursor-pointer.transition-colors(class='hover:text-gray-500' href='#abt') ABT
+    ul.font-syne.text-3xl.leading-8(@click='dropped = false')
+      li: a.text-gray-500.cursor-pointer.transition-colors(class='hover:text-white' href='#top') TOP
+      li: a.text-gray-500.cursor-pointer.transition-colors(class='hover:text-white' href='#abt') ABT
+      li: a.text-gray-500.cursor-pointer.transition-colors(class='hover:text-white' href='#art') ART
