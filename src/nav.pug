@@ -8,7 +8,7 @@ nav
       rect(width='100' height='20' y='40')
       rect(width='100' height='20' y='80')
 
-  .p-4.fixed.top-2.right-2.bg-black.z-40.transition-transform.transform.origin-top-right.border.border-gray-500(
+  .p-4.fixed.top-2.right-2.bg-black.z-40.transition-transform.ease-in-out.duration-200.transform.origin-top-right.border.border-gray-500(
     x-show='dropped'
     @mouseleave='dropped=false'
     @mouseenter.away='dropped=false'

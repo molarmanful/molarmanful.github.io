@@ -1,7 +1,5 @@
 doctype html
-html.bg-black(
-  lang='en'
-  x-data='index()')
+html.bg-black(lang='en' x-data='index()' x-init='genWord()')
 
   head
     include head.pug
@@ -17,16 +15,3 @@ html.bg-black(
     include about.pug
     include art.pug
     // include dev.pug
-
-    script.
-      function index(){
-        return {
-          selected: '',
-          dropped: false,
-          iloaded: false,
-          iClose(){
-            this.selected = ''
-            this.iloaded = false
-          }
-        }
-      }
