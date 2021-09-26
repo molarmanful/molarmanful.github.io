@@ -29,7 +29,7 @@ onload = _=>{
   document.body.classList.remove('pointer-events-none')
 }
 
-let bank = ['weird', 'weird art', 'software', 'hardware', 'design', 'experimental', 'alien', 'wizard']
+let bank = ['weird', 'weird art', '2D art', '3D art', 'generative', 'design', 'experimental', 'surreal', 'wizard']
 let i = 0
 
 window.index = _=>({
