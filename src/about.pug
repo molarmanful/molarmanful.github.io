@@ -15,10 +15,14 @@ include section.pug
 
         div(class='xl:w-1/6 xl:ml-8 xl:px-8 xl:mt-0')
           h2.text-2xl.text-stroked.text-gray-500.mb-4(class='md:text-3xl lg:text-5xl' data-aos='fade-left') LINKS
+          mixin link(x):
+            li: a.text-gray-500.text-underline.duration-500.transition-colors(class='hover:text-white' href=x target='_blank')
+              block
           ul.mx-2(data-aos='fade-left')
-            li: a.text-gray-500.text-underline.duration-500.transition-colors(class='hover:text-white' href='https://github.com/molarmanful' target='_blank') Github
-            li: a.text-gray-500.text-underline.duration-500.transition-colors(class='hover:text-white' href='https://instagram.com/bandidojim' target='_blank') Instagram
-            li: a.text-gray-500.text-underline.duration-500.transition-colors(class='hover:text-white' href='https://society6.com/bandidojim' target='_blank') Society6
-            li: a.text-gray-500.text-underline.duration-500.transition-colors(class='hover:text-white' href='https://linkedin.com/in/molarmanful' target='_blank') LinkedIn
-            li: a.text-gray-500.text-underline.duration-500.transition-colors(class='hover:text-white' href='https://codegolf.stackexchange.com/users/41247/mama-fun-roll' target='_blank') PPCG.SE
-            li: a.text-gray-500.text-underline.duration-500.transition-colors(class='hover:text-white' href='https://docs.google.com/document/d/13Hy3akmfz9tvyFH6awZ8riWSCivtYQZa3TE-f_CGszI/edit?usp=sharing' target='_blank') CV
+            +link('https://github.com/molarmanful') Github
+            +link('https://instagram.com/bandidojim') Instagram
+            +link('https://bandidojim.artstation.com') ArtStation
+            +link('https://linkedin.com/in/molarmanful') LinkedIn
+            +link('https://society6.com/bandidojim') Society6
+            +link('https://codegolf.stackexchange.com/users/41247/mama-fun-roll') PPCG.SE
+            +link('https://docs.google.com/document/d/13Hy3akmfz9tvyFH6awZ8riWSCivtYQZa3TE-f_CGszI/edit?usp=sharing') CV
