@@ -10,7 +10,7 @@ import './style.css'
 AOS.init()
 
 window.lazy = new LazyLoad({
-  callback_loaded(){
+  callback_loaded() {
     AOS.refresh()
   },
 })
@@ -24,7 +24,7 @@ history.scrollRestoration = 'manual'
 
 document.body.classList.add('transition-opacity')
 
-onload = _=>{
+onload = _ => {
   document.body.style.opacity = 1
   document.body.classList.remove('pointer-events-none')
 }
@@ -32,20 +32,20 @@ onload = _=>{
 let bank = ['weird', 'weird art', '2D art', '3D art', 'generative', 'design', 'experimental', 'surreal', 'wizard']
 let i = 0
 
-window.index = _=>({
+window.index = _ => ({
   selected: '',
   dropped: false,
   iloaded: false,
   word: bank[0],
   clas: '',
 
-  iClose(){
+  iClose() {
     this.selected = ''
     this.iloaded = false
   },
 
-  genWord(){
-    setInterval(_=>{
+  genWord() {
+    setInterval(_ => {
       i = (i + 1) % bank.length
 
       let w = bank[i]
@@ -53,12 +53,12 @@ window.index = _=>({
       let steps = lev.getSteps()
       let j = 0;
 
-      let n = setInterval(_=>{
+      let n = setInterval(_ => {
 
-        if(j < steps.length){
+        if (j < steps.length) {
           let s = steps[j]
           s[1]--, s[2]--
-          switch(s[0]){
+          switch (s[0]) {
             case 'substitute':
               this.word = this.word.slice(0, s[1]) + w[s[2]] + this.word.slice(s[1] + 1)
               break
