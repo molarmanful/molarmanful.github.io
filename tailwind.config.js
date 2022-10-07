@@ -1,10 +1,9 @@
 module.exports = {
   mode: 'jit',
-  purge: [
+  content: [
     './src/*.pug',
     './src/items/*.pug'
   ],
-  darkMode: false, // or 'media' or 'class'
   theme: {
     fontFamily: {
       syne: 'Syne, sans-serif',

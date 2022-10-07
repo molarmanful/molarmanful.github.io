@@ -1,32 +1,28 @@
 name: deploy to gh-pages
 
 on:
-  push:
-    branches: [ v2 ]
-  pull_request:
-    branches: [ v2 ]
-  workflow_dispatch:
+  push
+  pull_request
+  workflow_dispatch
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - name: checkout
-        uses: actions/checkout@v2.3.4
-        
-      - name: node setup
-        uses: actions/setup-node@v1
+        uses: actions/checkout@v3
+      - name: node
+        uses: actions/setup-node@v3
         with:
-          node-version: 14
-          
-      - name: install
+          node-version: '*'
+      - name: deps
         run: npm ci
-        
       - name: build
         run: npm run build
-          
-      - name: deploy
-        uses: JamesIves/github-pages-deploy-action@4.1.0
+      - name: upload
+        uses: actions/upload-pages-artifact@v1
         with:
-          branch: gh-pages
-          folder: dist
+          path: dist
+      - name: deploy
+        id: deployment
+        uses: actions/deploy-pages@v1 
