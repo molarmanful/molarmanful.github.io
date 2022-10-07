@@ -2,7 +2,7 @@ include section.pug
 
 +sec('WORK')#art
   .px-5.max-w-full(class='md:container')
-    .fixed.w-screen.h-screen.inset-x-0.inset-y-0.transition-opacity.bg-black.z-50.py-16.overflow-hidden.overscroll-none(
+    .fixed.w-screen.h-screen.inset-x-0.inset-y-0.transition-opacity.bg-black.z-50.py-16.overflow-hidden.overscroll-contain(
       x-ref='modal'
       :class='{"opacity-1": selected, "opacity-0 pointer-events-none": !selected}'
       @click='iClose()'
