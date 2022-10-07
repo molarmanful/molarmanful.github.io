@@ -16,12 +16,13 @@ html {
 	}
 }
 
-body {
+html, body {
   overflow-x: hidden;
+  position: relative;
+}
 
-  &.overflow-hidden {
-    overflow: hidden !important;
-  }
+body.overflow-hidden {
+  overflow: hidden !important;
 }
 
 h1,
