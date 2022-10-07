@@ -33,6 +33,10 @@ window.index = _ => ({
   word: bank[0],
   clas: '',
 
+  iOpen(x) {
+    this.selected = x
+  },
+
   iClose() {
     this.selected = ''
     this.iloaded = false

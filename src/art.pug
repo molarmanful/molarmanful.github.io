@@ -2,7 +2,7 @@ include section.pug
 
 +sec('WORK')#art
   .px-5.max-w-full(class='md:container')
-    .fixed.w-screen.h-screen.inset-x-0.inset-y-0.transition-opacity.bg-black.z-50.py-16.overflow-hidden(
+    .fixed.w-screen.h-screen.inset-x-0.inset-y-0.transition-opacity.bg-black.z-50.py-16.overflow-hidden.overscroll-none(
       x-ref='modal'
       :class='{"opacity-1": selected, "opacity-0 pointer-events-none": !selected}'
       @click='iClose()'
@@ -22,7 +22,7 @@ include section.pug
     .grid.grid-cols-1.gap-8(class='md:grid-cols-3 lg:grid-cols-4')
       each f in htmlWebpackPlugin.options.covers
         .cursor-pointer(
-          @click.prevent=`selected = "${f}"`
+          @click.prevent=`iOpen("${f}")`
           data-aos='fade-up')
 
           img.lazy.w-full.border.border-black.graiscale.transition(
