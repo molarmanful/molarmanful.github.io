@@ -1,7 +1,6 @@
-import 'alpinejs'
+import Alpine from 'alpinejs'
 import AOS from 'aos'
 import LazyLoad from 'vanilla-lazyload'
-import SmoothScroll from 'smooth-scroll'
 import Levenshtein from './levenshtein'
 
 import 'aos/dist/aos.css'
@@ -13,11 +12,6 @@ window.lazy = new LazyLoad({
   callback_loaded() {
     AOS.refresh()
   },
-})
-
-window.scroll = new SmoothScroll('a[href*="#"]', {
-  updateURL: false,
-  speedAsDuration: true
 })
 
 history.scrollRestoration = 'manual'
@@ -44,7 +38,7 @@ window.index = _ => ({
     this.iloaded = false
   },
 
-  genWord() {
+  init() {
     setInterval(_ => {
       i = (i + 1) % bank.length
 
@@ -76,3 +70,6 @@ window.index = _ => ({
     }, 1500)
   },
 })
+
+window.Alpine = Alpine
+Alpine.start()
