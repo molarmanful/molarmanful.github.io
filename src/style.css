@@ -16,8 +16,12 @@ html {
 	}
 }
 
-body.overflow-hidden {
-  overflow: hidden !important;
+body {
+  overflow-x: hidden;
+
+  &.overflow-hidden {
+    overflow: hidden !important;
+  }
 }
 
 h1,
@@ -40,7 +44,7 @@ h6 {
   @apply fixed inset-0 z-40 w-full h-full pointer-events-none;
 
   content: '';
-  background: repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.05) 0, rgba(255, 255, 255, 0.05) 2px, rgba(255, 255, 255, 0) 2px, rgba(255, 255, 255, 0) 4px);
+  background: repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.05) 0, rgba(255, 255, 255, 0.05) 2px, rgba(0, 0, 0, 0) 2px, rgba(0, 0, 0, 0) 4px);
 }
 
 .masonry {
