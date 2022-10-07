@@ -1,10 +1,10 @@
 const path = require('path')
 const fs = require('fs')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-const {CleanWebpackPlugin} = require('clean-webpack-plugin')
+const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin')
 
-const $pug = (x, options={})=> new HtmlWebpackPlugin({
+const $pug = (x, options = {}) => new HtmlWebpackPlugin({
   template: `src/${x}.pug`,
   ...options
 })
@@ -22,12 +22,12 @@ module.exports = {
       verbose: true
     }),
     $pug('index', {
-      art: fs.readdirSync('./src/art').map(f=> path.parse(f).name),
-      covers: fs.readdirSync('./src/covers').map(f=> path.parse(f).name),
+      art: fs.readdirSync('./src/art').map(f => path.parse(f).name),
+      covers: fs.readdirSync('./src/covers').map(f => path.parse(f).name),
     }),
-    ...fs.readdirSync('./src/items').filter(f=>
-      ~fs.readdirSync('./src/covers').map(g=> path.parse(g).name).indexOf(path.parse(f).name)
-    ).map(f=> new HtmlWebpackPlugin({
+    ...fs.readdirSync('./src/items').filter(f =>
+      ~fs.readdirSync('./src/covers').map(g => path.parse(g).name).indexOf(path.parse(f).name)
+    ).map(f => new HtmlWebpackPlugin({
       filename: `${path.parse(f).name}.html`,
       template: `src/items/${f}`
     }))
@@ -37,12 +37,6 @@ module.exports = {
       {
         test: /\.js$/i,
         include: path.resolve(__dirname, 'src'),
-        use: {
-          loader: 'babel-loader',
-          options: {
-            presets: ['@babel/preset-env'],
-          },
-        },
       },
       {
         test: /\.css$/i,
@@ -75,7 +69,6 @@ module.exports = {
     ],
   },
   devServer: {
-    contentBase: path.resolve(__dirname, 'dist'),
-    watchContentBase: true,
+    static: path.resolve(__dirname, 'dist'),
   },
 }
