@@ -48,7 +48,6 @@ mixin vid_()
   .aspect-w-16.aspect-h-9&attributes(attributes)
     block
 
-
 mixin vid()
   .max-h-screen.w-full.mx-auto(class='md:w-1/2')
     +vid_()&attributes(attributes)
@@ -58,3 +57,7 @@ mixin vidw()
   .max-h-screen.w-full.mx-auto
     +vid_()&attributes(attributes)
       block
+
+mixin imr(a)
+  .h-screen.w-full.mx-auto.mt-8
+    video.lazy.h-full.w-full.object-contain(data-src=`https://i.imgur.com/${a}.mp4` autoplay loop)
