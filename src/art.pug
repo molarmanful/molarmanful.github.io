@@ -20,7 +20,7 @@ include section.pug
         @load='iloaded = true')
 
     .grid.grid-cols-1.gap-8(class='md:grid-cols-3 lg:grid-cols-4')
-      each f in htmlWebpackPlugin.options.covers
+      each f in covers
         .cursor-pointer(
           @click.prevent=`iOpen("${f}")`
           data-aos='fade-up')

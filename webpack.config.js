@@ -1,16 +1,21 @@
 const path = require('path')
 const fs = require('fs')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin')
-
-const $pug = (x, options = {}) => new HtmlWebpackPlugin({
-  template: `src/${x}.pug`,
-  ...options
-})
+const PugPlugin = require('pug-plugin')
 
 module.exports = {
-  entry: './src/index.js',
+  entry:
+    fs.readdirSync('./src/items').filter(f =>
+      fs.readdirSync('./src/covers')
+        .map(g => path.parse(g).name)
+        .includes(path.parse(f).name)
+    ).reduce((o, f) => {
+      o[path.parse(f).name] = './src/items/' + f
+      return o
+    }, {
+      index: './src/index.pug'
+    }),
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js',
@@ -21,22 +26,22 @@ module.exports = {
     new CleanWebpackPlugin({
       verbose: true
     }),
-    $pug('index', {
-      art: fs.readdirSync('./src/art').map(f => path.parse(f).name),
-      covers: fs.readdirSync('./src/covers').map(f => path.parse(f).name),
+    new PugPlugin({
+      verbose: true
     }),
-    ...fs.readdirSync('./src/items').filter(f =>
-      ~fs.readdirSync('./src/covers').map(g => path.parse(g).name).indexOf(path.parse(f).name)
-    ).map(f => new HtmlWebpackPlugin({
-      filename: `${path.parse(f).name}.html`,
-      template: `src/items/${f}`
-    }))
   ],
   module: {
     rules: [
       {
-        test: /\.js$/i,
+        test: /\.pug$/i,
         include: path.resolve(__dirname, 'src'),
+        loader: PugPlugin.loader,
+        options: {
+          data: {
+            art: fs.readdirSync('./src/art').map(f => path.parse(f).name),
+            covers: fs.readdirSync('./src/covers').map(f => path.parse(f).name),
+          },
+        },
       },
       {
         test: /\.css$/i,
@@ -44,12 +49,11 @@ module.exports = {
           path.resolve(__dirname, 'src'),
           path.resolve(__dirname, 'node_modules/aos/dist')
         ],
-        use: ['style-loader', 'css-loader', 'postcss-loader'],
+        use: ['css-loader', 'postcss-loader'],
       },
       {
-        test: /\.pug$/i,
+        test: /\.js$/i,
         include: path.resolve(__dirname, 'src'),
-        use: ['pug-loader']
       },
       {
         test: /\.(png|jpe?g|gif|svg)$/i,

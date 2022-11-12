@@ -3,9 +3,6 @@ import AOS from 'aos'
 import LazyLoad from 'vanilla-lazyload'
 import Levenshtein from './levenshtein'
 
-import 'aos/dist/aos.css'
-import './style.css'
-
 AOS.init()
 
 window.lazy = new LazyLoad({
