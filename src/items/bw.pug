@@ -5,12 +5,12 @@ include base.pug
     +heading() The Black & White Collection
     +subheading() Monochrome artwork drawn with a mouse in Krita/MS Paint. Studies of contrast, shading, and value blending techniques.
 
-  +art('hand')
-  +art('valueblending')
-  +art('blackpanther')
-  +art('scream')
-  +art('dehumanized')
-  +art('scrawnyman')
-  +art('mood')
-  +old('walter')
-  +old('yee')
+  +img('hand', require(TINY('hand')), require(ART('hand')))
+  +img('valueblending', require(TINY('valueblending')), require(ART('valueblending')))
+  +img('blackpanther', require(TINY('blackpanther')), require(ART('blackpanther')))
+  +img('scream', require(TINY('scream')), require(ART('scream')))
+  +img('dehumanized', require(TINY('dehumanized')), require(ART('dehumanized')))
+  +img('scrawnyman', require(TINY('scrawnyman')), require(ART('scrawnyman')))
+  +img('mood', require(TINY('mood')), require(ART('mood')))
+  +img('walter', require(TINY('walter')), require(OLD('walter')))
+  +img('yee', require(TINY('yee')), require(OLD('yee')))

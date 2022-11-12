@@ -6,19 +6,14 @@ const PugPlugin = require('pug-plugin')
 
 module.exports = {
   entry:
-    fs.readdirSync('./src/items').filter(f =>
-      fs.readdirSync('./src/covers')
-        .map(g => path.parse(g).name)
-        .includes(path.parse(f).name)
-    ).reduce((o, f) => {
-      o[path.parse(f).name] = './src/items/' + f
-      return o
-    }, {
+    fs.readdirSync('./src/items').reduce((o, f) => (
+      o[path.parse(f).name] = './src/items/' + f,
+      o
+    ), {
       index: './src/index.pug'
     }),
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'bundle.js',
     clean: true
   },
   plugins: [
@@ -40,6 +35,11 @@ module.exports = {
           data: {
             art: fs.readdirSync('./src/art').map(f => path.parse(f).name),
             covers: fs.readdirSync('./src/covers').map(f => path.parse(f).name),
+            TINY: x => `../tiny/${x}.tiny`,
+            MTINY: (x, y = 'png') => `../media/tiny/${x}_tiny.${y}`,
+            ART: x => `../art/${x}.x`,
+            OLD: x => `../old/${x}.x`,
+            MEDIA: (x, y = 'png') => `../media/${x}.${y}`,
           },
         },
       },
@@ -49,7 +49,8 @@ module.exports = {
           path.resolve(__dirname, 'src'),
           path.resolve(__dirname, 'node_modules/aos/dist')
         ],
-        use: ['css-loader', 'postcss-loader'],
+        type: 'asset/resource',
+        use: 'postcss-loader',
       },
       {
         test: /\.js$/i,

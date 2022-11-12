@@ -7,6 +7,6 @@ include base.pug
 
   +vid().mb-8
     iframe.lazy(data-src="https://www.youtube.com/embed/wKVds1zi6Xg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen)
-  +art('wireball')
-  +art('pangolin')
-  +media('pangolin_stare')
+  +img('wireball', require(TINY('wireball')), require(ART('wireball')))
+  +img('pangolin', require(TINY('pangolin')), require(ART('pangolin')))
+  +img('pangolin_stare', require(MTINY('pangolin_stare')), require(MEDIA('pangolin_stare')))

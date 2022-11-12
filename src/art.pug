@@ -24,12 +24,11 @@ include section.pug
         .cursor-pointer(
           @click.prevent=`iOpen("${f}")`
           data-aos='fade-up')
-
           img.lazy.w-full.border.border-black.graiscale.transition(
             class='hover:border-white'
             draggable='false'
             alt=f
-            src=require(`./tiny/${f}_tiny`)
-            data-src=require(`./covers/${f}`))
+            src=require(`./tiny/${f}.tiny`)
+            data-src=require(`./covers/${f}.x`))
 
     .mb-16(class='lg:mb-32')

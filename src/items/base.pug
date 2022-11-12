@@ -8,8 +8,8 @@ mixin base()
       block
 
       script.
-        onkeyup = e=>{
-          if(e.key == 'Escape') parent.dispatchEvent(new CustomEvent('i-close'))
+        onkeyup = e => {
+          if (e.key == 'Escape') parent.dispatchEvent(new CustomEvent('i-close'))
         }
 
 mixin prose()
@@ -33,13 +33,16 @@ mixin image()
   img.lazy.m-auto.w-full.max-h-screen.mb-8.object-contain&attributes(attributes)
 
 mixin art(name)
-  +image()(alt=name src=require(`../tiny/${name}_tiny`) data-src=require(`../art/${name}`))&attributes(attributes)
+  +image()(alt=name src=require(`../tiny/${name}.tiny`) data-src=require(`../art/${name}.x`))&attributes(attributes)
 
 mixin old(name)
-  +image()(alt=name src=require(`../tiny/${name}_tiny`) data-src=require(`../old/${name}`))&attributes(attributes)
+  +image()(alt=name src=require(`../tiny/${name}.tiny`) data-src=require(`../old/${name}.x`))&attributes(attributes)
 
 mixin media(name, ext='png')
   +image()(alt=name src=require(`../media/tiny/${name}_tiny.${ext}`) data-src=require(`../media/${name}.${ext}`))&attributes(attributes)
+
+mixin img(name, a, b)
+  +image()(alt=name src=a data-src=b)&attributes(attributes)
 
 mixin vid()
   .max-h-screen.w-full.mx-auto(class='md:w-1/2')
