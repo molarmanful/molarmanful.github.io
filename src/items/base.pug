@@ -44,7 +44,17 @@ mixin media(name, ext='png')
 mixin img(name, a, b)
   +image()(alt=name src=a data-src=b)&attributes(attributes)
 
+mixin vid_()
+  .aspect-w-16.aspect-h-9&attributes(attributes)
+    block
+
+
 mixin vid()
   .max-h-screen.w-full.mx-auto(class='md:w-1/2')
-    .aspect-w-16.aspect-h-9&attributes(attributes)
+    +vid_()&attributes(attributes)
+      block
+
+mixin vidw()
+  .max-h-screen.w-full.mx-auto
+    +vid_()&attributes(attributes)
       block

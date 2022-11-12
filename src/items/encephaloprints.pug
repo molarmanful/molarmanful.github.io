@@ -1,0 +1,18 @@
+include base.pug
+
++base()
+  +prose()
+    +heading() Encephalo Prints
+    +subheading() 2022 - An interactive installation in which generative visuals react in realtime to brain activity read from an EEG headset.
+    +text() #[a(href='https://bennyboy.tech/capstone' target='_blank') Devblog]
+    +text() Throughout the day, our mind flows between different states of focus, distraction, stress, relaxation, and so on. How the mind flows between these mental states can be affected by external or internal stimuli; each person has their own unique way of falling in and out of these states.
+    +text() We never really get the chance to see our minds' flowing patterns; instead, we express our mental state through facial expressions, body language, verbal cues, and physical actions. #[em Encephaloprints] provides users with the opportunity to see just how similar yet unique each person's mind can be.
+
+    +img('enc3', require(MTINY('enc3')), require(MEDIA('enc3'))).mt-8
+    +img('enc4', require(MTINY('enc4')), require(MEDIA('enc4')))
+    +img('enc1', require(MTINY('enc1', 'jpg')), require(MEDIA('enc1', 'jpg')))
+    +img('enc2', require(MTINY('enc2', 'jpg')), require(MEDIA('enc2', 'jpg')))
+    +vidw()
+      iframe.lazy(data-src="https://www.youtube.com/embed/JNYylaVTg4s" title="Encephaloprints" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen)
+    +vidw().mt-8
+      iframe.lazy(data-src="https://www.youtube.com/embed/KRco3BU-Rzs" title="Encephaloprints" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen)

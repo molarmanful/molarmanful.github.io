@@ -1,0 +1,13 @@
+include base.pug
+
++base()
+  +prose()
+    +heading() Mechanically Minimalist Recliner
+    +subheading() 2022 - A prototype chair that plays with the contrast between rigidity and flexibility. Made from clear acrylic and bungee cords.
+
+    +img('mmr', require(MTINY('mmr')), require(MEDIA('mmr'))).mt-8
+    +img('mmr1', require(MTINY('mmr1')), require(MEDIA('mmr1')))
+    +img('mmr2', require(MTINY('mmr2')), require(MEDIA('mmr2')))
+    +img('mmr-poster', require(MTINY('mmr-poster')), require(MEDIA('mmr-poster')))
+    +vidw()
+      iframe.lazy(data-src="https://www.youtube.com/embed/raL5G8X2FRs" title="MMR" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen)
