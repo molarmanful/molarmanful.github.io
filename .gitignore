@@ -1,4 +1,4 @@
 node_modules
 src/*.html
 src/*/*.html
-dist/
+dist

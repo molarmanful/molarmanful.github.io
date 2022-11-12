@@ -1,10 +1,11 @@
-const path = require('path')
-const fs = require('fs')
-const { CleanWebpackPlugin } = require('clean-webpack-plugin')
-const FaviconsWebpackPlugin = require('favicons-webpack-plugin')
-const PugPlugin = require('pug-plugin')
+import path from 'path'
+import fs from 'fs'
+import CopyPlugin from 'copy-webpack-plugin'
+import PugPlugin from 'pug-plugin'
 
-module.exports = {
+let dir = x => new URL(x, import.meta.url).pathname
+
+export default {
   entry:
     fs.readdirSync('./src/items').reduce((o, f) => (
       o[path.parse(f).name] = './src/items/' + f,
@@ -12,14 +13,11 @@ module.exports = {
     ), {
       index: './src/index.pug'
     }),
-  output: {
-    path: path.resolve(__dirname, 'dist'),
-    clean: true
-  },
   plugins: [
-    new FaviconsWebpackPlugin(),
-    new CleanWebpackPlugin({
-      verbose: true
+    new CopyPlugin({
+      patterns: [
+        { from: './src/favicons' },
+      ],
     }),
     new PugPlugin({
       verbose: true
@@ -29,7 +27,7 @@ module.exports = {
     rules: [
       {
         test: /\.pug$/i,
-        include: path.resolve(__dirname, 'src'),
+        include: dir('src'),
         loader: PugPlugin.loader,
         options: {
           data: {
@@ -46,34 +44,34 @@ module.exports = {
       {
         test: /\.css$/i,
         include: [
-          path.resolve(__dirname, 'src'),
-          path.resolve(__dirname, 'node_modules/aos/dist')
+          dir('src'),
+          dir('node_modules/aos/dist'),
         ],
         type: 'asset/resource',
         use: 'postcss-loader',
       },
       {
         test: /\.js$/i,
-        include: path.resolve(__dirname, 'src'),
+        include: dir('src'),
       },
       {
         test: /\.(png|jpe?g|gif|svg)$/i,
-        include: path.resolve(__dirname, 'src'),
+        include: dir('src'),
         type: 'asset'
       },
       {
         include: [
-          path.resolve(__dirname, 'src', 'covers'),
-          path.resolve(__dirname, 'src', 'art'),
-          path.resolve(__dirname, 'src', 'old'),
-          path.resolve(__dirname, 'src', 'thumbnails'),
-          path.resolve(__dirname, 'src', 'tiny'),
+          dir('src/covers'),
+          dir('src/art'),
+          dir('src/old'),
+          dir('src/thumbnails'),
+          dir('src/tiny'),
         ],
         type: 'asset/resource'
       },
     ],
   },
   devServer: {
-    static: path.resolve(__dirname, 'dist'),
+    static: dir('dist'),
   },
 }
