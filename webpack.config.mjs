@@ -19,9 +19,7 @@ export default {
         { from: './src/favicons' },
       ],
     }),
-    new PugPlugin({
-      verbose: true
-    }),
+    new PugPlugin(),
   ],
   module: {
     rules: [
