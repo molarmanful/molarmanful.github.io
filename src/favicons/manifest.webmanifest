@@ -1,14 +1,14 @@
 {
-  "name": null,
-  "short_name": null,
-  "description": null,
+  "name": "Ben Pang",
+  "short_name": "Ben Pang",
+  "description": "Programmer/artist and graduate student at NYU ITP.",
   "dir": "auto",
   "lang": "en-US",
   "display": "standalone",
   "orientation": "any",
   "start_url": "/?homescreen=1",
-  "background_color": "#fff",
-  "theme_color": "#fff",
+  "background_color": "#000",
+  "theme_color": "#000",
   "icons": [
     {
       "src": "/android-chrome-36x36.png",
