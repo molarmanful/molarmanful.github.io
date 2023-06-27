@@ -17,7 +17,6 @@
   ]
   let i = 0
   let word = bank[i]
-  let clas = ''
 
   onMount(_ => {
     setInterval(_ => {
@@ -54,22 +53,13 @@
       <h1 aberration text="6xl lg:9xl stroked stroked-white">BEN PANG</h1>
       <small text="xl lg:3xl gray-200" block ml="1 lg:2">
         I make
-        <br class="md:hidden" />
-        <div
-          inline-flex
-          overflow-hidden
-          align-top
-          transition
-          duration-500
-          whitespace-pre
-          bold
-          class={clas}
-        >
+        <br class="lg:hidden" />
+        <div inline-flex align-top transition duration-500 whitespace-pre bold>
           {word}
         </div>
-        <br class="md:hidden" />
+        <br class="lg:hidden" />
         things
-        <br class="md:hidden" />
+        <br class="lg:hidden" />
         happen.
       </small>
     </div>

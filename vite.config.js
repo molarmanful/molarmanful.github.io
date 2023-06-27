@@ -37,7 +37,6 @@ export default {
         [/^text-stroked-(.+)$/, colorResolver('--stroke-color', 'text-stroked'), { autocomplete: 'text-stroked-$colors' }],
         ['aberration', { '--aber': '-2px -2px 0 #0ff, 2px 2px 0 #f0f' }],
         ['aberration1', { '--aber': '-1px -1px 0 #0ff, 1px 1px 0 #f0f' }],
-        ['vert', { 'writing-mode': 'vertical-lr' }],
       ],
       shortcuts: [
         {
@@ -59,7 +58,6 @@ export default {
     'src/art/**',
     'src/covers/**',
     'src/media/**',
-    'src/thumbnails/**',
     'src/tiny/**',
   ],
 }

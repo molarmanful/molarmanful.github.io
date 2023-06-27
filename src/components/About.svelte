@@ -1,5 +1,5 @@
 <script>
-  import Section from './Section.svelte'
+  import { Section, A } from './mixins'
 
   let links = [
     ['Github', 'https://github.com/molarmanful'],
@@ -56,13 +56,12 @@
             secretly making art.
           </p>
           <p data-aos="fade-in">
-            This personal website is open-source! You can view the code
-            <a
+            This personal website is open-source! You can view the code <A
               text-gray="100 hover:500"
               duration-500
               transition-colors
               href="https://github.com/molarmanful/molarmanful.github.io"
-              target="_blank">here</a
+              >here</A
             >.
           </p>
         </div>
@@ -78,14 +77,15 @@
           <menu mx-2 data-aos="fade-left">
             {#each links as [name, link]}
               <li>
-                <a
-                  text="gray-500 hover:white"
+                <A
+                  un-text="gray-500 hover:white"
                   underline
                   duration-500
                   transition-colors
                   href={link}
-                  target="_blank">{name}</a
                 >
+                  {name}
+                </A>
               </li>
             {/each}
           </menu>

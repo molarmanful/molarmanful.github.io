@@ -1,23 +1,20 @@
 <script>
   import { onMount } from 'svelte'
-  import Section from './Section.svelte'
-  import Item from './Item.svelte'
+  import { Section } from './mixins'
 
-  let selected
+  export let selected
   let ON = x => (selected = x)
-  export let covers
-  export let tiny
-  export let lazy
+  export let D
 
   onMount(_ => {
-    lazy.update()
+    D.lazy.update()
   })
 </script>
 
 <Section name="WORK" id="art">
-  <div border="lg:l gray-500" px-5 class="md:container">
+  <div w-full border="lg:l gray-500" px-5 class="lg:container">
     <div grid="~ cols-1 sm:cols-2 md:cols-3 lg:cols-4" gap-8>
-      {#each covers as [name, cover]}
+      {#each D.covers as [name, cover]}
         <div
           role="gridcell"
           tabindex="0"
@@ -34,7 +31,7 @@
             class="lazy graiscale"
             draggable="false"
             alt={name}
-            src={tiny.get(name)}
+            src={D.tiny.get(name)}
             data-src={cover}
           />
         </div>
@@ -43,5 +40,3 @@
     <div mb="16 lg:32" />
   </div>
 </Section>
-
-<Item {selected} />

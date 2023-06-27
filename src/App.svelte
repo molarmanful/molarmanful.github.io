@@ -1,34 +1,41 @@
 <script>
   import { onMount } from 'svelte'
+  import { classList } from 'svelte-body'
   import { fade } from 'svelte/transition'
   import AOS from 'aos'
   import LazyLoad from 'vanilla-lazyload'
+  import Filters from './components/Filters.svelte'
   import Nav from './components/Nav.svelte'
   import Header from './components/Header.svelte'
   import Art from './components/Art.svelte'
   import About from './components/About.svelte'
-  import Filters from './components/Filters.svelte'
+  import Modal from './components/Modal.svelte'
 
   let loaded = false
+  let selected
 
-  let process = x =>
-    new Map(
-      Object.entries(x).map(([a, b]) => [
-        a.replace(/^.+\/(\w+)\.\w+$/, '$1'),
-        b,
-      ])
-    )
+  let process = (x, r = /^.+\/([\w-]+)\.\w+$/) =>
+    new Map(Object.entries(x).map(([a, b]) => [a.replace(r, '$1'), b]))
 
-  let covers = process(
-    import.meta.glob('./covers/*.x', { eager: true, as: 'url' })
-  )
-  let tiny = process(
-    import.meta.glob('./tiny/*.tiny', { eager: true, as: 'url' })
-  )
+  let D = {
+    covers: process(
+      import.meta.glob('./covers/*.x', { eager: true, as: 'url' })
+    ),
+    tiny: process(
+      import.meta.glob('./tiny/*.tiny', { eager: true, as: 'url' })
+    ),
+    items: process(import.meta.glob('./components/items/*.svelte')),
+    art: process(import.meta.glob('./art/*.x', { eager: true, as: 'url' })),
+    media: process(import.meta.glob('./media/*', { eager: true, as: 'url' })),
+    media_tiny: process(
+      import.meta.glob('./media/tiny/*', { eager: true, as: 'url' }),
+      /^.+\/([\w-]+)_tiny\.\w+$/
+    ),
+  }
 
   AOS.init()
 
-  let lazy = new LazyLoad({
+  D.lazy = new LazyLoad({
     callback_loaded() {
       AOS.refresh()
     },
@@ -42,11 +49,14 @@
 </script>
 
 {#if loaded}
-  <main in:fade={{ duration: 500 }} overflow-x-hidden class="scanlines">
+  <main overflow-x-clip in:fade={{ duration: 500 }} class="scanlines">
     <Filters />
     <Nav />
     <Header />
     <About />
-    <Art {covers} {tiny} {lazy} />
+    <Art bind:selected {D} />
+    <Modal bind:selected {D} />
   </main>
 {/if}
+
+<svelte:body use:classList={{ 'overflow-hidden': selected }} />
