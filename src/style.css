@@ -1,7 +1,3 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 ::selection {
   @apply text-black bg-white;
 }
@@ -17,8 +13,7 @@ html {
 }
 
 html, body {
-  position: relative;
-  background-color: #000;
+  @apply position-relative bg-black;
 }
 
 h1,
@@ -32,81 +27,23 @@ h6 {
 
 @supports (-moz-context-properties: fill) {
   #filters {
-    position: fixed;
-    height: 0;
+    @apply position-fixed h-0;
   }
 }
 
 .scanlines::after {
-  @apply fixed inset-0 z-40 w-full h-full pointer-events-none;
+  @apply fixed inset-0 z-40 screen pointer-events-none;
 
   content: '';
   background: repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.05) 0, rgba(255, 255, 255, 0.05) 2px, rgba(0, 0, 0, 0) 2px, rgba(0, 0, 0, 0) 4px);
-}
-
-.masonry {
-  column-count: 1;
-  column-gap: 2rem;
-
-  @screen md {
-    column-count: 3;
-  }
-
-  @screen lg {
-    column-count: 4;
-  }
 }
 
 .graiscale:hover {
   filter: brightness(50%) sepia(1) hue-rotate(-182deg) saturate(115%) brightness(86%);
 }
 
-.text-stroked {
-  text-shadow:
-    -1px -1px var(--stroke-color),
-    -1px  1px var(--stroke-color),
-    1px -1px var(--stroke-color),
-    1px  1px var(--stroke-color),
-    var(--aber, 0 0 transparent);
-  -webkit-text-fill-color: black;
-}
-
-.text-stroked.text-gray-500 {
-  --stroke-color: #6b7280;
-}
-
-.text-stroked.text-white {
-  --stroke-color: #fff;
-}
-
-.aberration {
-  --aber: -2px -2px 0 #0ff, 2px  2px 0 #f0f;
-}
-
-.aberration1 {
-  --aber: -1px -1px 0 #0ff, 1px  1px 0 #f0f;
-}
-
-.vert {
-  writing-mode: vertical-lr;
-}
-
-.bold {
-  @apply font-medium font-tri;
-}
-
 .paras p {
-  @apply mb-8;
-
-  hyphens: auto;
-}
-
-.center-flex {
-  @apply flex items-center justify-center;
-}
-
-.vid {
-  @apply aspect-w-16 aspect-h-9;
+  @apply mb-8 hyphens-auto;
 }
 
 .lazy:not(.loaded) {
@@ -114,7 +51,7 @@ h6 {
 }
 
 a {
-  @apply text-gray-100 duration-500 transition-colors;
+  @apply text-gray-100 duration-500 transition-colors no-underline;
 
   &:hover {
     @apply text-gray-500;

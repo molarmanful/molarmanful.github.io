@@ -1,0 +1,65 @@
+import { svelte } from '@sveltejs/vite-plugin-svelte'
+import favicon from 'vite-plugin-favicons-inject'
+import unocss from 'unocss/vite'
+import { presetAttributify, presetUno, presetWebFonts, transformerDirectives } from 'unocss'
+import extractorSvelte from '@unocss/extractor-svelte'
+import { presetScrollbar } from 'unocss-preset-scrollbar'
+import { colorResolver } from '@unocss/preset-mini/utils'
+
+export default {
+  plugins: [
+    unocss({
+      presets: [
+        presetAttributify(),
+        presetUno(),
+        presetWebFonts({
+          provider: 'google',
+          fonts: {
+            syne: 'Syne',
+            tri: 'Trispace:200,300,500',
+          },
+        }),
+        presetScrollbar(),
+      ],
+      transformers: [
+        transformerDirectives(),
+      ],
+      rules: [
+        ['text-stroked', {
+          'text-shadow':
+            '-1px -1px var(--stroke-color),' +
+            '-1px  1px var(--stroke-color),' +
+            '1px -1px var(--stroke-color),' +
+            '1px  1px var(--stroke-color),' +
+            'var(--aber, 0 0 transparent)',
+          '-webkit-text-fill-color': '#000',
+        }],
+        [/^text-stroked-(.+)$/, colorResolver('--stroke-color', 'text-stroked'), { autocomplete: 'text-stroked-$colors' }],
+        ['aberration', { '--aber': '-2px -2px 0 #0ff, 2px 2px 0 #f0f' }],
+        ['aberration1', { '--aber': '-1px -1px 0 #0ff, 1px 1px 0 #f0f' }],
+        ['vert', { 'writing-mode': 'vertical-lr' }],
+      ],
+      shortcuts: [
+        {
+          'scroll': 'scrollbar scrollbar-thumb-color-gray-700 scrollbar-track-color-black',
+          'bold': 'font-medium font-tri',
+          'center-flex': 'flex items-center justify-center',
+          'screen': 'w-screen h-screen',
+          'full': 'w-full h-full',
+          'navitem': 'text-gray-500 cursor-pointer transition-colors hover:text-white',
+        },
+        [/^ofade-([\d]*)$/, ([, c]) => `transition-opacity duration-${c}`],
+      ],
+      extractors: [extractorSvelte],
+    }),
+    favicon(),
+    svelte(),
+  ],
+  assetsInclude: [
+    'src/art/**',
+    'src/covers/**',
+    'src/media/**',
+    'src/thumbnails/**',
+    'src/tiny/**',
+  ],
+}

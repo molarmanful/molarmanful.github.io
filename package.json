@@ -1,33 +1,19 @@
 {
   "name": "molarmanful.github.io",
-  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "version": "0.0.0",
   "description": "Personal site",
   "main": "index.js",
   "dependencies": {
-    "alpinejs": "^3.10.3",
-    "aos": "^2.3.4"
-  },
-  "devDependencies": {
-    "@tailwindcss/aspect-ratio": "^0.4.2",
-    "@tailwindcss/typography": "^0.5.7",
-    "autoprefixer": "^10.4.12",
-    "copy-webpack-plugin": "^11.0.0",
-    "favicons": "^7.0.2",
-    "postcss": "^8.4.17",
-    "postcss-loader": "^7.0.1",
-    "postcss-preset-env": "^7.8.2",
-    "pug-plugin": "^4.5.0",
-    "style-loader": "^3.3.1",
-    "tailwind-scrollbar": "^2.0.1",
-    "tailwindcss": "^3.1.8",
-    "vanilla-lazyload": "^17.8.3",
-    "webpack": "^5.74.0",
-    "webpack-cli": "^4.10.0",
-    "webpack-dev-server": "^4.11.1"
+    "aos": "^2.3.4",
+    "svelte": "^4.0.0",
+    "vanilla-lazyload": "^17.8.3"
   },
   "scripts": {
-    "start": "rm -rf dist && rm -f src/items/*.html && NODE_ENV=development npx webpack serve",
-    "build": "export NODE_ENV=production && webpack"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
   },
   "repository": {
     "type": "git",
@@ -38,5 +24,17 @@
   "bugs": {
     "url": "https://github.com/molarmanful/molarmanful.github.io/issues"
   },
-  "homepage": "https://github.com/molarmanful/molarmanful.github.io#readme"
+  "homepage": "https://github.com/molarmanful/molarmanful.github.io#readme",
+  "devDependencies": {
+    "@sveltejs/vite-plugin-svelte": "^2.4.2",
+    "@types/react": "^18.2.14",
+    "@types/react-dom": "^18.2.6",
+    "@unocss/extractor-svelte": "^0.53.4",
+    "@unocss/preset-mini": "^0.53.4",
+    "@unocss/reset": "^0.53.4",
+    "unocss": "^0.53.4",
+    "unocss-preset-scrollbar": "^0.2.1",
+    "vite": "^4.3.9",
+    "vite-plugin-favicons-inject": "^2.2.0"
+  }
 }
