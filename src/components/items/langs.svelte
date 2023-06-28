@@ -5,7 +5,7 @@
   export let D
 
   onMount(_ => {
-    D.lazy.update()
+    D.update()
   })
 </script>
 

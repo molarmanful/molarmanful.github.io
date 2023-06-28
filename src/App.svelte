@@ -17,6 +17,8 @@
   let process = (x, r = /^.+\/([\w-]+)\.\w+$/) =>
     new Map(Object.entries(x).map(([a, b]) => [a.replace(r, '$1'), b]))
 
+  AOS.init()
+
   let D = {
     covers: process(
       import.meta.glob('./covers/*.x', { eager: true, as: 'url' })
@@ -31,15 +33,15 @@
       import.meta.glob('./media/tiny/*', { eager: true, as: 'url' }),
       /^.+\/([\w-]+)_tiny\.\w+$/
     ),
-  }
-
-  AOS.init()
-
-  D.lazy = new LazyLoad({
-    callback_loaded() {
-      AOS.refresh()
+    lazy: new LazyLoad({
+      callback_loaded() {
+        AOS.refresh()
+      },
+    }),
+    update() {
+      this.lazy.update()
     },
-  })
+  }
 
   history.scrollRestoration = 'manual'
 
