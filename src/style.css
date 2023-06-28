@@ -52,8 +52,8 @@ h6 {
 
 a {
   @apply text-gray-100 duration-500 transition-colors no-underline;
+}
 
-  &:hover {
-    @apply text-gray-500;
-  }
+a:hover {
+  @apply text-gray-500;
 }

@@ -24,6 +24,7 @@ export default {
       transformers: [
         transformerDirectives(),
       ],
+      safelist: [],
       rules: [
         ['text-stroked', {
           'text-shadow':
