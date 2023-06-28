@@ -17,8 +17,6 @@
   let process = (x, r = /^.+\/([\w-]+)\.\w+$/) =>
     new Map(Object.entries(x).map(([a, b]) => [a.replace(r, '$1'), b]))
 
-  AOS.init()
-
   let D = {
     covers: process(
       import.meta.glob('./covers/*.x', { eager: true, as: 'url' })
@@ -42,6 +40,8 @@
       this.lazy.update()
     },
   }
+
+  AOS.init()
 
   history.scrollRestoration = 'manual'
 
