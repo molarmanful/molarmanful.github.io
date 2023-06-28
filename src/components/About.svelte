@@ -18,8 +18,7 @@
 <Section id="abt">
   <div w-full border="t lg:l gray-500">
     <div
-      px-16
-      pt-16
+      p="x-8 t-8 md:x-16 md:t-16"
       w="full lg:auto"
       text="l lg:2xl gray-400"
       font-light
