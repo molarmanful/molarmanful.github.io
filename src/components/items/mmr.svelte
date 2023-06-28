@@ -21,5 +21,5 @@
   <MediaImg {D} name="mmr1" />
   <MediaImg {D} name="mmr2" />
   <MediaImg {D} name="mmr-poster" />
-  <YTVideo a="raL5G8X2FRs" title="MMR" />
+  <YTVideo x a="raL5G8X2FRs" title="MMR" />
 </Prose>
