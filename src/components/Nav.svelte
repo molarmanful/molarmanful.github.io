@@ -52,7 +52,7 @@
       use:clickout
       on:clickout={OFF}
     >
-      <menu font-syne text-3xl leading-8>
+      <menu font-1 text-3xl leading-8>
         {#each ['top', 'abt', 'art'] as i}
           <li>
             <a navitem href={'#' + i} on:click={OFF}>{i.toUpperCase()}</a>

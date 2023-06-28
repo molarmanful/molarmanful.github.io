@@ -51,7 +51,7 @@
     </svg>
     <div m-auto z-10 h="1/4 md:1/3" w="lg:3/4">
       <h1 aberration text="6xl lg:9xl stroked stroked-white">BEN PANG</h1>
-      <small text="xl lg:3xl gray-200" block ml="1 lg:2">
+      <small text="xl lg:3xl gray-200" font-extralight block ml="1 lg:2">
         I make
         <br class="lg:hidden" />
         <div inline-flex align-top transition duration-500 whitespace-pre bold>

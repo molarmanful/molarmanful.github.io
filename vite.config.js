@@ -15,8 +15,8 @@ export default {
         presetWebFonts({
           provider: 'google',
           fonts: {
-            syne: 'Syne',
-            tri: 'Trispace:200,300,500',
+            1: 'Syne',
+            2: 'Hanken Grotesk:200,300,500',
           },
         }),
         presetScrollbar(),
@@ -42,7 +42,7 @@ export default {
       shortcuts: [
         {
           'scroll': 'scrollbar scrollbar-thumb-color-gray-700 scrollbar-track-color-black',
-          'bold': 'font-medium font-tri',
+          'bold': 'font-medium font-2',
           'center-flex': 'flex items-center justify-center',
           'screen': 'w-screen h-screen',
           'full': 'w-full h-full',

@@ -21,7 +21,6 @@
       p="x-8 t-8 md:x-16 md:t-16"
       w="full lg:auto"
       text="l lg:2xl gray-400"
-      font-light
       class="lg:container"
     >
       <h1
@@ -34,7 +33,11 @@
 
       <div pb-32 divide="xl:x gray-500" class="xl:flex">
         <div class="paras xl:w-5/6 xl:ml-4">
-          <p text="xl gray-300 md:2xl lg:4xl" data-aos="fade-in">
+          <p
+            text="xl gray-300 md:2xl lg:4xl"
+            font-extralight
+            data-aos="fade-in"
+          >
             <span bold text-red-50>BENJAMIN PANG</span> is a primarily self-taught
             artist / programmer from San Francisco, CA and a graduate student at
             NYU ITP.
