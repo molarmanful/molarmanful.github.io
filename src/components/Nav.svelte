@@ -25,7 +25,7 @@
     transition-colors
     on:mouseenter={ON}
     on:click={ON}
-    on:keypress={ON}
+    on:keypress={_ => {}}
   >
     <svg m-auto fill-current w="1/2" h="1/2" viewBox="0 0 100 100" alt="menu">
       <rect width="100" height="20" />

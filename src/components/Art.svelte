@@ -21,7 +21,7 @@
           cursor-pointer
           outline-0
           on:click|preventDefault={ON(name)}
-          on:keypress={ON(name)}
+          on:keypress={_ => {}}
           data-aos="fade-up"
         >
           <img

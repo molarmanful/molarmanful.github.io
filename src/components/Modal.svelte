@@ -34,7 +34,7 @@
         viewBox="0 0 100 100"
         alt="close"
         on:click={OFF}
-        on:keyup={escOFF}
+        on:keyup={_ => {}}
       >
         <g transform="rotate(45, 50, 50)">
           <rect width="100" height="20" y="40" />
