@@ -18,9 +18,10 @@
     inset-0
     bg-black
     z-50
-    py-16
+    pt-16
     overflow-hidden
     overscroll-contain
+    divide="y gray-700"
   >
     <div fixed flex top-0 right-0 w-16 h-16 cursor-pointer>
       <svg
