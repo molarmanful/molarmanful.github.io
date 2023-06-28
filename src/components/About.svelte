@@ -78,7 +78,6 @@
               <li>
                 <A
                   un-text="gray-500 hover:white"
-                  underline
                   duration-500
                   transition-colors
                   href={link}
