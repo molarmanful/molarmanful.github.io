@@ -15,7 +15,7 @@
     Zero-player games with squares that live many, many lives.
   </Subheading>
 
-  <div pt-16 />
+  <div mt-16 />
   <MediaImg {D} name="3species" />
   <Text>
     3-Species Ecosystem - <A href="https://bennyboy.tech/RobotaPsyche/midterm"
@@ -25,7 +25,7 @@
     >
   </Text>
 
-  <div pt-16 />
+  <div mt-16 />
   <MediaImg {D} name="rainbow" />
   <Text>
     Reddit Rainbow (feat. Adham Chakohi) - <A
@@ -33,7 +33,7 @@
     >, <A href="https://github.com/molarmanful/rainbow">Source</A>
   </Text>
 
-  <div pt-16 />
+  <div mt-16 />
   <MediaImg {D} name="waterworks" />
   <Text>
     Waterworks - <A href="https://codepen.io/molarmanful/full/XzbwpP">Website</A

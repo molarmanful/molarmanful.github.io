@@ -1,11 +1,12 @@
 <script>
   import { Video } from '.'
 
+  export let x = false
   export let title
   export let a
 </script>
 
-<Video x {...$$props}>
+<Video {x} {...$$props}>
   <iframe
     class="lazy"
     data-src={`https://youtube.com/embed/${a}`}

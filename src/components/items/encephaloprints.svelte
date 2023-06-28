@@ -42,7 +42,7 @@
   <MediaImg {D} name="enc4" />
   <MediaImg {D} name="enc1" />
   <MediaImg {D} name="enc2" />
-  <YTVideo a="JNYylaVTg4s" title="Encephaloprints" />
+  <YTVideo x a="JNYylaVTg4s" title="Encephaloprints" />
   <div mt-8 />
-  <YTVideo a="KRco3BU-Rzs" title="Encephaloprints" />
+  <YTVideo x a="KRco3BU-Rzs" title="Encephaloprints" />
 </Prose>

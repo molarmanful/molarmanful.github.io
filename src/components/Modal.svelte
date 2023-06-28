@@ -52,7 +52,7 @@
           full
           scroll
           overflow-x-hidden
-          text-gray-400
+          text="xl gray-400"
         >
           <svelte:component this={item.default} {D} />
         </div>
