@@ -18,6 +18,7 @@
   <Text>
     <A href="https://bennyboy.tech/mindreaders-digest">Website</A> (best viewed with
     a physical keyboard)
+    <br />
     <A href="https://github.com/molarmanful/mindreaders-digest">Source</A>
   </Text>
 
