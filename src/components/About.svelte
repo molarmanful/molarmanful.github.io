@@ -50,8 +50,8 @@
           <p data-aos="fade-in">
             Drawing influences from a wide variety of classical and contemporary
             artists, music, digital multimedia, and personal experiences, his
-            work explores sensory confusion, coping mechanisms, and loneliness
-            under the guise of technical experimentation.
+            work uses technical experimentation to explore sensory confusion,
+            coping mechanisms, and loneliness in the post-digital age.
           </p>
           <p data-aos="fade-in">
             He is currently building odd programming languages, living life, and
