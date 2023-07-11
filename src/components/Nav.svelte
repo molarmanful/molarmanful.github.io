@@ -5,6 +5,16 @@
   let dropped = false
   let ON = _ => (dropped = true)
   let OFF = _ => (dropped = false)
+
+  let GOTO = e => {
+    e.preventDefault()
+    scrollTo({
+      top: document.getElementById(
+        new URL(e.currentTarget).hash.replace(/#/, '')
+      ).offsetTop,
+      behavior: 'smooth',
+    })
+  }
 </script>
 
 <nav>
@@ -55,7 +65,9 @@
       <menu font-1 text-3xl leading-8>
         {#each ['top', 'abt', 'art'] as i}
           <li>
-            <a navitem href={'#' + i} on:click={OFF}>{i.toUpperCase()}</a>
+            <a navitem href={'#' + i} on:click={GOTO}>
+              {i.toUpperCase()}
+            </a>
           </li>
         {/each}
       </menu>
