@@ -14,7 +14,7 @@
 <Section name="WORK" id="art">
   <div w-full border="lg:l gray-500" px-5 class="lg:container">
     <div grid="~ cols-1 sm:cols-2 md:cols-3 lg:cols-4" gap-8>
-      {#each D.covers as [name, cover]}
+      {#each [...D.covers].sort(_ => 0.5 - Math.random()) as [name, cover]}
         <div
           role="gridcell"
           tabindex="0"

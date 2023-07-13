@@ -30,8 +30,3 @@
 <div mt-8 />
 <ArtImg {D} name="skullmap" />
 <ArtImg {D} name="pinkdunes" />
-<ArtImg {D} name="insomnia" />
-<ArtImg {D} name="goated" />
-<ArtImg {D} name="letshangout" />
-<ArtImg {D} name="jigglyscuff" />
-<ArtImg {D} name="buffkirby" />

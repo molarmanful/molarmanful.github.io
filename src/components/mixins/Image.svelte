@@ -9,7 +9,7 @@
   class="lazy"
   m-auto
   w-full
-  max-h-screen
+  max-h-full
   mb-8
   object-contain
   alt={name}

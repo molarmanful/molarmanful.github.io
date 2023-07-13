@@ -17,7 +17,7 @@
   </Subheading>
 
   <div mt-16 />
-  <Subheading bold="">sclin</Subheading>
+  <Subheading bold>sclin</Subheading>
   <Text>
     A formidable successor to lin. sclin packages functional and array
     programming paradigms into a stack-based language tuned for maximum
@@ -26,7 +26,7 @@
   <Text><A href="https://github.com/molarmanful/sclin">Source</A></Text>
 
   <div mt-16 />
-  <Subheading bold="">Coding</Subheading>
+  <Subheading bold>Coding</Subheading>
   <Text>
     No, it's not a typo; the language really is called Coding. Conceived from <A
       href="https://www.reddit.com/r/ProgrammerHumor/comments/5gfomg/til_most_people_go_to_special_training_for_years/"
@@ -38,7 +38,7 @@
   <Text><A href="https://github.com/molarmanful/codinglang">Source</A></Text>
 
   <div mt-16 />
-  <Subheading bold="">lin</Subheading>
+  <Subheading bold>lin</Subheading>
   <Text>
     This was one of my few attempts at creating anything remotely close to a
     practical language. lin was a stack-based functional language which is
@@ -48,7 +48,7 @@
   <Text><A href="https://github.com/molarmanful/lin">Source</A></Text>
 
   <div mt-16 />
-  <Subheading bold="">Wonder</Subheading>
+  <Subheading bold>Wonder</Subheading>
   <Text>
     Another one of my attempts at accommodating some semblance of practicality,
     Wonder was quite ambitious; among other odd features, I worked on a
@@ -58,7 +58,7 @@
   <Text><A href="https://github.com/wonderlang/wonder">Source</A></Text>
 
   <div mt-16 />
-  <Subheading bold="">ESMin</Subheading>
+  <Subheading bold>ESMin</Subheading>
   <Text>
     Optimized for code-golfing, ESMin sacrificed a standard 256-character code
     page for a larger 1024-character code page. This served as a compromise
@@ -69,7 +69,7 @@
   <Text><A href="https://github.com/molarmanful/esmin">Source</A></Text>
 
   <div mt-16 />
-  <Subheading bold="">RETURN</Subheading>
+  <Subheading bold>RETURN</Subheading>
   <Text>
     RETURN was an extension of DUP, a barebones stack-based esolang. Its purpose
     was to make DUP more viable for code challenges by adding more commands and
@@ -78,7 +78,7 @@
   <Text><A href="https://github.com/molarmanful/RETURN">Source</A></Text>
 
   <div mt-16 />
-  <Subheading bold="">bitman</Subheading>
+  <Subheading bold>bitman</Subheading>
   <Text>
     bitman was another offshoot of DUP made specifically to manipulate bits. Its
     main feature was its ability to store arbitrary bit sizes, theoretically

@@ -17,9 +17,9 @@
   </Subheading>
 
   <div mt-16 />
-  <Subheading bold="">A Cube Tutorial</Subheading>
   <div mt-8 />
   <MediaImg {D} name="cubetut" />
+  <Subheading bold>A Cube Tutorial</Subheading>
   <Text>
     An interactive tutorial for solving the Rubik's Cube, featuring a clean UI
     and a companion cube that hides pieces based on the step.
@@ -31,9 +31,9 @@
   </Text>
 
   <div mt-16 />
-  <Subheading bold="">pycube</Subheading>
   <div mt-8 />
   <MediaImg {D} name="pycube" />
+  <Subheading bold>pycube</Subheading>
   <Text>
     Made in collaboration with Jimoh Yusuf. A reimplementation of the Rubik's
     Cube in Processing.py with mouse/keyboard modes and timing.
@@ -43,9 +43,9 @@
   </Text>
 
   <div mt-16 />
-  <Subheading bold="">gCube</Subheading>
   <div mt-8 />
   <MediaImg {D} name="gcube" />
+  <Subheading bold>gCube</Subheading>
   <Text>
     Made in collaboration with Michael Casebolt. A web framework for cube
     simulation with extensive visual customization options.
@@ -57,9 +57,9 @@
   </Text>
 
   <div mt-16 />
-  <Subheading bold="">MinimalisTimer</Subheading>
   <div mt-8 />
   <MediaImg {D} name="minimalistimer" />
+  <Subheading bold>MinimalisTimer</Subheading>
   <Text>
     When MinimalisTimer was first created, there weren't many options for cube
     timers that had mobile-friendly responsive designs. MinimalisTimer was my
@@ -73,9 +73,9 @@
   </Text>
 
   <div mt-16 />
-  <Subheading bold="">PLL Trainer</Subheading>
   <div mt-8 />
   <MediaImg {D} name="pll" />
+  <Subheading bold>PLL Trainer</Subheading>
   <Text>
     The precursor to MinimalisTimer and my first foray into creating responsive
     web apps. PLL Trainer was made for speedcubers looking to improve their PLL

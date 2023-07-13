@@ -24,7 +24,7 @@
     virtual exhibition space that displays contemporary Asian art.
   </Subheading>
   <Text>
-    <A href="https://bennyboy.tech/capstone">Website</A> (best viewed with a physical
+    <A href="https://bennyboy.tech/exhibit">Website</A> (best viewed with a physical
     keyboard)<br /><A href="https://github.com/molarmanful/exhibit">Source</A>
   </Text>
 

@@ -21,27 +21,44 @@
     pt-16
     overflow-hidden
     overscroll-contain
-    divide="y gray-700"
   >
-    <div fixed flex top-0 right-0 w-16 h-16 cursor-pointer>
-      <svg
+    <div
+      fixed
+      flex="~ row"
+      top-0
+      left-0
+      w-full
+      h-16
+      border="b-1 gray-700"
+      text="8 gray-600"
+    >
+      <div flex ml-4 h-full><span m-auto>{selected}</span></div>
+      <div
         role="button"
         tabindex="0"
-        m-auto
-        fill-current
-        text-gray-700
-        w="1/2"
-        h="1/2"
-        viewBox="0 0 100 100"
-        alt="close"
+        flex
+        ml-auto
+        w-16
+        h-full
+        cursor-pointer
         on:click={OFF}
         on:keyup={_ => {}}
       >
-        <g transform="rotate(45, 50, 50)">
-          <rect width="100" height="20" y="40" />
-          <rect width="20" height="100" x="40" />
-        </g>
-      </svg>
+        <svg
+          m-auto
+          fill-current
+          text-gray-700
+          w="1/2"
+          h="1/2"
+          viewBox="0 0 100 100"
+          alt="close"
+        >
+          <g transform="rotate(45, 50, 50)">
+            <rect width="100" height="20" y="40" />
+            <rect width="20" height="100" x="40" />
+          </g>
+        </svg>
+      </div>
     </div>
 
     {#if D.items.has(selected)}
