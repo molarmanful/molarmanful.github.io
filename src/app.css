@@ -1,0 +1,63 @@
+::selection {
+  @apply text-black bg-white;
+}
+
+html, body {
+  @apply position-relative bg-black;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media screen and (prefers-reduced-motion: reduce) {
+	html {
+		scroll-behavior: auto;
+	}
+}
+
+body {
+ @apply scroll font-2 font-300 tracking-wide select-text text-gray-200
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @apply uppercase font-1;
+}
+
+@supports (-moz-context-properties: fill) {
+  #filters {
+    @apply position-fixed h-0;
+  }
+}
+
+[scanlines]::after {
+  @apply fixed inset-0 z-40 screen pointer-events-none;
+
+  content: '';
+  background: repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.05) 0, rgba(255, 255, 255, 0.05) 2px, rgba(0, 0, 0, 0) 2px, rgba(0, 0, 0, 0) 4px);
+}
+
+[graiscale]:hover {
+  filter: brightness(50%) sepia(1) hue-rotate(-182deg) saturate(115%) brightness(86%);
+}
+
+.lazy:not(.loaded) {
+  image-rendering: pixelated;
+}
+
+iframe.lazy:not(.loaded) {
+  @apply bg-gray-950
+}
+
+a {
+  @apply text-gray-100 duration-500 transition-colors no-underline;
+}
+
+a:hover {
+  @apply text-gray-500;
+}

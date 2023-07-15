@@ -6,9 +6,19 @@
   "description": "Personal site",
   "main": "index.js",
   "dependencies": {
+    "@sveltejs/adapter-static": "^2.0.2",
+    "@sveltejs/kit": "^1.22.3",
+    "@unocss/extractor-svelte": "^0.53.5",
+    "@unocss/preset-mini": "^0.53.5",
+    "@unocss/reset": "^0.53.5",
     "aos": "^2.3.4",
-    "svelte": "^4.0.0",
-    "vanilla-lazyload": "^17.8.3"
+    "svelte": "^4.0.5",
+    "svelte-body": "^1.4.0",
+    "unocss": "^0.53.5",
+    "unocss-preset-scrollbar": "^0.2.1",
+    "vanilla-lazyload": "^17.8.4",
+    "vite": "^4.4.4",
+    "vite-plugin-favicons-inject": "^2.2.0"
   },
   "scripts": {
     "dev": "vite",
@@ -26,16 +36,7 @@
   },
   "homepage": "https://github.com/molarmanful/molarmanful.github.io#readme",
   "devDependencies": {
-    "@sveltejs/vite-plugin-svelte": "^2.4.2",
-    "@types/react": "^18.2.14",
-    "@types/react-dom": "^18.2.6",
-    "@unocss/extractor-svelte": "^0.53.4",
-    "@unocss/preset-mini": "^0.53.4",
-    "@unocss/reset": "^0.53.4",
-    "svelte-body": "^1.4.0",
-    "unocss": "^0.53.4",
-    "unocss-preset-scrollbar": "^0.2.1",
-    "vite": "^4.3.9",
-    "vite-plugin-favicons-inject": "^2.2.0"
+    "@types/react": "^18.2.15",
+    "@types/react-dom": "^18.2.7"
   }
 }

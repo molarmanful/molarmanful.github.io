@@ -1,5 +1,5 @@
 node_modules
-src/*.html
-src/*/*.html
 dist
+build
+.svelte-kit
 OLD

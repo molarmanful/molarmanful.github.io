@@ -2,7 +2,7 @@
 
 dirs=(covers art)
 
-cd src || exit
+cd src/lib || exit
 rm -rf tiny media/tiny
 mkdir -p tiny media/tiny
 
