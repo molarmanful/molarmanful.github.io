@@ -43,11 +43,6 @@ jobs:
           key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
           restore-keys: |
             ${{ runner.os }}-pnpm-store-
-      - name: apt pkgs
-        uses: awalsh128/cache-apt-pkgs-action@latest
-        with:
-          packages: imagemagick
-          version: 1.0
       - name: pnpm deps
         run: pnpm i
       - name: build

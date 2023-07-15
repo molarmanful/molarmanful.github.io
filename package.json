@@ -21,8 +21,8 @@
     "vite": "^4.4.4"
   },
   "scripts": {
-    "dev": "util/pre.sh && vite",
-    "build": "util/pre.sh && vite build",
+    "dev": "vite",
+    "build": "vite build",
     "preview": "vite preview"
   },
   "repository": {
