@@ -23,6 +23,9 @@ dependencies:
   aos:
     specifier: ^2.3.4
     version: 2.3.4
+  favicons:
+    specifier: ^7.1.3
+    version: 7.1.3
   svelte:
     specifier: ^4.0.5
     version: 4.0.5
@@ -41,9 +44,6 @@ dependencies:
   vite:
     specifier: ^4.4.4
     version: 4.4.4
-  vite-plugin-favicons-inject:
-    specifier: ^2.2.0
-    version: 2.2.0
 
 devDependencies:
   '@types/react':
@@ -1700,12 +1700,6 @@ packages:
 
   /vanilla-lazyload@17.8.4:
     resolution: {integrity: sha512-LP1fP0nl7SZom6wojLJXzj2du69txtPfDOoWQWgLDU8mz7NBrWL2Txx6p84f6d+gTEcGbA9lUynAx5CS0rqWsg==}
-    dev: false
-
-  /vite-plugin-favicons-inject@2.2.0:
-    resolution: {integrity: sha512-MaqZE3IjwFffIED38yKcI5BKGkV039N6ilhPeOfW4TILzSKMBNd8Q0ehu0mwbl1emWH2tGcuwV3ZIzDKfb0vIQ==}
-    dependencies:
-      favicons: 7.1.3
     dev: false
 
   /vite@4.4.4:

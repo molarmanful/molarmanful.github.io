@@ -46,9 +46,11 @@ jobs:
       - name: deps
         run: pnpm i
       - name: build
-        run: |
-          pnpm run build
-          touch build/.nojekyll
+        uses: ruipinto/ImageMagick-action@v1
+        with:
+          command: |
+            pnpm run build
+            touch build/.nojekyll
       - name: upload
         uses: actions/upload-pages-artifact@v1
         with:

@@ -3,3 +3,6 @@ dist
 build
 .svelte-kit
 OLD
+static/favicons
+src/lib/tiny
+src/lib/media/tiny

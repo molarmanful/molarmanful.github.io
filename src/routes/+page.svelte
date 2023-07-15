@@ -1,7 +1,8 @@
 <script>
   import { onMount } from 'svelte'
-  import { classList, style } from 'svelte-body'
+  import { classList } from 'svelte-body'
   import AOS from 'aos'
+  import Favicons from '$lib/Favicons.svelte'
   import Filters from '$lib/Filters.svelte'
   import Nav from '$lib/Nav.svelte'
   import Header from '$lib/Header.svelte'
@@ -66,6 +67,7 @@
     name="description"
     content="Programmer/artist and graduate student at NYU ITP."
   />
+  <Favicons />
 </svelte:head>
 
 <svelte:body use:classList={[selected && 'overflow-hidden']} />
