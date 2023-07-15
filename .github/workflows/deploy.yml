@@ -46,7 +46,7 @@ jobs:
       - name: deps
         run: pnpm i
       - name: build
-        uses: ruipinto/ImageMagick-action@v1
+        uses: jruipinto/ImageMagick-action@v1
         with:
           command: |
             pnpm run build
