@@ -9,7 +9,7 @@ export default {
     import.meta.glob('$lib/covers/*', {
       eager: true,
       import: 'default',
-      query: { w: 32, h: 32, fit: 'contain', quality: 50 },
+      query: { w: 32, quality: 50 },
     })
   ),
   art: process(import.meta.glob('$lib/art/*', { eager: true, as: 'url' })),
@@ -17,7 +17,7 @@ export default {
     import.meta.glob('$lib/art/*', {
       eager: true,
       import: 'default',
-      query: { w: 32, h: 32, fit: 'contain', quality: 50 },
+      query: { w: 32, quality: 50 },
     })
   ),
   media: process(
@@ -27,7 +27,7 @@ export default {
     import.meta.glob('$lib/media/*', {
       eager: true,
       import: 'default',
-      query: { w: 32, h: 32, fit: 'contain', quality: 50 },
+      query: { w: 32, quality: 50 },
     })
   ),
   items: process(import.meta.glob('$lib/items/*')),
