@@ -1,3 +1,4 @@
 #!/bin/bash
 
-util/tiny.sh && node util/fav.js
+# util/tiny.sh
+node util/fav.js

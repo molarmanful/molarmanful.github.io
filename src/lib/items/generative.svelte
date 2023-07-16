@@ -8,6 +8,7 @@
     A,
     MediaImg,
     YTVideo,
+    IVideo,
   } from '../mixins'
 
   export let D
@@ -34,7 +35,7 @@
   </Text>
 
   <div mt-16 />
-  <YTVideo x a="w4ff_J_T12k" title="Entanglement" />
+  <IVideo a="Z04vm99" title="Entanglement" />
   <Text>
     Entanglement - <A href="https://github.com/molarmanful/entanglement"
       >Source</A

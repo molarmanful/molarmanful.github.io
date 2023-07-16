@@ -21,23 +21,39 @@
   let tops = []
   let selected
 
-  let process = (x, r = /^.+\/([\w-]+)\.\w+$/) =>
+  let process = (x, { r = /^.+\/([\w-]+)\.\w+$/ } = {}) =>
     new Map(Object.entries(x).map(([a, b]) => [a.replace(r, '$1'), b]))
 
   let D = {
     covers: process(
       import.meta.glob('$lib/covers/*', { eager: true, as: 'url' })
     ),
-    tiny: process(import.meta.glob('$lib/tiny/*', { eager: true, as: 'url' })),
-    items: process(import.meta.glob('$lib/items/*')),
+    covers_tiny: process(
+      import.meta.glob('$lib/covers/*', {
+        eager: true,
+        import: 'default',
+        query: { w: 32, h: 32, fit: 'contain', quality: 50 },
+      })
+    ),
     art: process(import.meta.glob('$lib/art/*', { eager: true, as: 'url' })),
+    art_tiny: process(
+      import.meta.glob('$lib/art/*', {
+        eager: true,
+        import: 'default',
+        query: { w: 32, h: 32, fit: 'contain', quality: 50 },
+      })
+    ),
     media: process(
       import.meta.glob('$lib/media/*', { eager: true, as: 'url' })
     ),
     media_tiny: process(
-      import.meta.glob('$lib/media/tiny/*', { eager: true, as: 'url' }),
-      /^.+\/([\w-]+)_tiny\.\w+$/
+      import.meta.glob('$lib/media/*', {
+        eager: true,
+        import: 'default',
+        query: { w: 32, h: 32, fit: 'contain', quality: 50 },
+      })
     ),
+    items: process(import.meta.glob('$lib/items/*')),
     lazy: { update() {} },
     update() {
       this.lazy.update()
@@ -56,6 +72,7 @@
 
   onMount(_ => {
     requestAnimationFrame(_ => {
+      scrollTo(0, 0)
       loaded = true
     })
   })

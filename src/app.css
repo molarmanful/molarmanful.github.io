@@ -7,12 +7,12 @@ html, body {
 }
 
 html {
-  scroll-behavior: smooth;
+  @apply scroll-smooth;
 }
 
 @media screen and (prefers-reduced-motion: reduce) {
 	html {
-		scroll-behavior: auto;
+		@apply scroll-auto;
 	}
 }
 

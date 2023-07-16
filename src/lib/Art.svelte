@@ -40,7 +40,7 @@
             graiscale
             draggable="false"
             {name}
-            a={D.tiny}
+            a={D.covers_tiny}
             b={D.covers}
           />
         </div>
