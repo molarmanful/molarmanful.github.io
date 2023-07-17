@@ -2,9 +2,10 @@
   import LazyLoad from 'vanilla-lazyload'
   import { browser } from '$app/environment'
   import { ExtLayout, A } from '$lib/mixins'
+  import D from '$lib/js/D'
 
   export let data
-  let { D, name, module } = data
+  let { name, module } = data
 
   if (browser) {
     D.lazy = new LazyLoad()
