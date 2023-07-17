@@ -52,7 +52,7 @@ h6 {
 }
 
 .lazy:not(.loaded, [src]) {
-  @apply bg-gray-950;
+  @apply bg-gray-900;
 }
 
 a {
