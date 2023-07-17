@@ -61,13 +61,13 @@
             secretly making art.
           </Text>
           <Text data-aos="fade-in">
-            This personal website is open-source! You can view the code <A
+            This website is <A
               text-gray="100 hover:500"
               duration-500
               transition-colors
               href="https://github.com/molarmanful/molarmanful.github.io"
-              >here</A
-            >.
+              >open-source</A
+            >!
           </Text>
         </div>
 

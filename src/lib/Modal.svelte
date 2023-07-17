@@ -37,6 +37,7 @@
         </A>
       </div>
       <button
+        aria-label="close modal"
         bg-transparent
         flex
         ml-auto
