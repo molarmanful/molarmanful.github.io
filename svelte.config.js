@@ -5,5 +5,12 @@ export default {
   preprocess: vitePreprocess,
   kit: {
     adapter: adapter(),
+    prerender: {
+      entries: [
+        '*',
+        '/items',
+        '/items/*',
+      ],
+    },
   },
 }

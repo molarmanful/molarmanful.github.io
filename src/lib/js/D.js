@@ -31,4 +31,5 @@ export default {
     })
   ),
   items: process(import.meta.glob('$lib/items/*')),
+  update() { },
 }

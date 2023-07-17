@@ -1,5 +1,6 @@
 <script>
   import { fade } from 'svelte/transition'
+  import { ItemBar, A } from './mixins'
 
   export let selected
   export let D
@@ -10,7 +11,9 @@
   }
 </script>
 
-{#if selected}
+<svelte:window on:keyup={escOFF} />
+
+{#if selected && D.items.has(selected)}
   <div
     transition:fade={{ duration: 200 }}
     fixed
@@ -22,17 +25,17 @@
     overflow-hidden
     overscroll-contain
   >
-    <div
-      fixed
-      flex="~ row"
-      top-0
-      left-0
-      w-full
-      h-16
-      border="b-1 gray-700"
-      text="8 gray-600"
-    >
-      <div flex ml-4 h-full><span m-auto>{selected}</span></div>
+    <ItemBar>
+      <div flex ml-4 h-full>
+        <A
+          un-text="inherit"
+          decoration="none"
+          m="auto"
+          href="/items/{selected}"
+        >
+          {selected}
+        </A>
+      </div>
       <button
         bg-transparent
         flex
@@ -58,24 +61,20 @@
           </g>
         </svg>
       </button>
-    </div>
+    </ItemBar>
 
-    {#if D.items.has(selected)}
-      {#await D.items.get(selected)()}
-        <br />
-      {:then item}
-        <div
-          in:fade={{ duration: 200 }}
-          full
-          scroll
-          overflow-x-hidden
-          text="xl gray-400"
-        >
-          <svelte:component this={item.default} {D} />
-        </div>
-      {/await}
-    {/if}
+    {#await D.items.get(selected)()}
+      <br />
+    {:then item}
+      <div
+        in:fade={{ duration: 200 }}
+        full
+        scroll
+        overflow-x-hidden
+        text="xl gray-400"
+      >
+        <svelte:component this={item.default} {D} />
+      </div>
+    {/await}
   </div>
 {/if}
-
-<svelte:window on:keyup={escOFF} />

@@ -1,5 +1,6 @@
 <script>
   export let href
+  export let t = void 0
 </script>
 
 <a
@@ -7,6 +8,6 @@
   decoration-1
   decoration-offset="[.25rem]"
   {href}
-  target="_blank"
+  target={t ? void 0 : '_blank'}
   {...$$props}><slot /></a
 >
