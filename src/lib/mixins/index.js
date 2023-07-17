@@ -1,5 +1,4 @@
 export { default as Section } from './Section.svelte'
-export { default as ExtLayout } from './ExtLayout.svelte'
 export { default as ItemBar } from './ItemBar.svelte'
 export { default as Prose } from './Prose.svelte'
 export { default as Heading } from './Heading.svelte'
