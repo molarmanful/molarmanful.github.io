@@ -2,7 +2,8 @@
   @apply text-black bg-white;
 }
 
-html, body {
+html,
+body {
   @apply position-relative bg-black;
 }
 
@@ -11,13 +12,13 @@ html {
 }
 
 @media screen and (prefers-reduced-motion: reduce) {
-	html {
-		@apply scroll-auto;
-	}
+  html {
+    @apply scroll-auto;
+  }
 }
 
 body {
- @apply scroll font-2 font-300 tracking-wide select-text text-gray-200
+  @apply scroll font-2 font-300 tracking-wide select-text text-gray-200
 }
 
 h1,
@@ -47,11 +48,11 @@ h6 {
 }
 
 .lazy:not(.loaded) {
-  image-rendering: pixelated;
+  @apply image-render-pixel;
 }
 
-iframe.lazy:not(.loaded) {
-  @apply bg-gray-950
+.lazy:not(.loaded, [src]) {
+  @apply bg-gray-950;
 }
 
 a {

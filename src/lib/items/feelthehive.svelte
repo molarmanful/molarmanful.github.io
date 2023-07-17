@@ -45,5 +45,5 @@
 
   <div mt-16 />
   <MediaImg {D} name="fth" />
-  <YTVideo x a="r74HAS_mBL0" title="FEEL THE HIVE" />
+  <YTVideo a="r74HAS_mBL0" title="FEEL THE HIVE" />
 </Prose>

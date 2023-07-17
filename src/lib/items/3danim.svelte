@@ -17,9 +17,9 @@
   </Subheading>
 </Prose>
 
-<IVideo a="w7IX9su" />
-<IVideo a="oYMfkuN" />
-<IVideo a="EoKZMzB" />
+<IVideo a="w7IX9su" aspect="portrait" />
+<IVideo a="oYMfkuN" aspect="portrait" />
+<IVideo a="EoKZMzB" aspect="portrait" />
 <IVideo a="rB07cpT" />
 <IVideo a="I3wS09x" />
 <IVideo a="m5pFFvV" />

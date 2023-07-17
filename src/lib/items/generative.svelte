@@ -35,7 +35,7 @@
   </Text>
 
   <div mt-16 />
-  <IVideo a="Z04vm99" title="Entanglement" />
+  <IVideo a="QmXN4z9" title="Entanglement" aspect="video" />
   <Text>
     Entanglement - <A href="https://github.com/molarmanful/entanglement"
       >Source</A
@@ -43,7 +43,7 @@
   </Text>
 
   <div mt-16 />
-  <YTVideo x a="f_mWTjxUbqk" title="Joy of Abstract Art with Rob Boss" />
+  <YTVideo a="f_mWTjxUbqk" title="Joy of Abstract Art with Rob Boss" />
   <Text>
     Joy of Abstract Art with Rob Boss - <A
       href="https://github.com/molarmanful/rob-boss">Source</A
@@ -51,7 +51,7 @@
   </Text>
 
   <div mt-16 />
-  <MediaImg {D} name="cycle" />
+  <IVideo a="Z04vm99" title="Bezier Pulse" aspect="video" />
   <Text>
     Bezier Pulse - <A href="https://github.com/molarmanful/bezier-pulse"
       >Source</A

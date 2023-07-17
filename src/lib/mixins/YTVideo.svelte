@@ -1,12 +1,12 @@
 <script>
-  import { Video } from '.'
+  import Video from './Video.svelte'
 
-  export let x = false
   export let title
   export let a
+  export let aspect = 'video'
 </script>
 
-<Video {x} {...$$props}>
+<Video {aspect}>
   <iframe
     class="lazy"
     data-src={`https://youtube.com/embed/${a}`}

@@ -26,7 +26,7 @@
 <ArtImg {D} name="foryasmin" />
 <ArtImg {D} name="kai" />
 <div mt-8 />
-<YTVideo a="5kqdi0ExSMo" title="Family Dinner" />
+<YTVideo a="5kqdi0ExSMo" title="Family Dinner" aspect="square" />
 <div mt-8 />
 <ArtImg {D} name="skullmap" />
 <ArtImg {D} name="pinkdunes" />

@@ -52,5 +52,5 @@
   <MediaImg {D} name="hyponormal4" />
   <MediaImg {D} name="hyponormal5" />
   <MediaImg {D} name="hyponormal6" />
-  <YTVideo x a="EeSWXgkycRY" title="HYPONORMAL" />
+  <YTVideo a="EeSWXgkycRY" title="HYPONORMAL" />
 </Prose>
