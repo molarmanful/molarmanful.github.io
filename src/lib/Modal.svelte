@@ -73,6 +73,7 @@
         scroll
         overflow-x-hidden
         text="xl gray-400"
+        class="lazy"
       >
         <svelte:component this={item.default} {D} />
       </div>

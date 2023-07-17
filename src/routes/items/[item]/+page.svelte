@@ -4,6 +4,7 @@
   import D from '$lib/js/D'
 
   export let data
+
   let { name, module } = data
   let desc
 

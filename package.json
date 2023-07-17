@@ -38,6 +38,7 @@
   "homepage": "https://github.com/molarmanful/molarmanful.github.io#readme",
   "devDependencies": {
     "@types/react": "^18.2.15",
-    "@types/react-dom": "^18.2.7"
+    "@types/react-dom": "^18.2.7",
+    "stylelint-config-standard": "^34.0.0"
   }
 }

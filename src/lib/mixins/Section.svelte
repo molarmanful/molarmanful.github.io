@@ -2,7 +2,6 @@
   import { offtop } from '../js/util'
 
   export let name = ''
-  let el
   export let ot = _ => {}
 </script>
 

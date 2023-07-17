@@ -18,7 +18,7 @@ html {
 }
 
 body {
-  @apply scroll font-2 font-300 tracking-wide select-text text-gray-200
+  @apply scroll font-2 font-300 tracking-wide select-text text-gray-200;
 }
 
 h1,
@@ -40,11 +40,18 @@ h6 {
   @apply fixed inset-0 z-40 screen pointer-events-none;
 
   content: '';
-  background: repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.05) 0, rgba(255, 255, 255, 0.05) 2px, rgba(0, 0, 0, 0) 2px, rgba(0, 0, 0, 0) 4px);
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(255, 255, 255, 0.05) 0,
+    rgba(255, 255, 255, 0.05) 2px,
+    rgba(0, 0, 0, 0) 2px,
+    rgba(0, 0, 0, 0) 4px
+  );
 }
 
 [graiscale]:hover {
-  filter: brightness(50%) sepia(1) hue-rotate(-182deg) saturate(115%) brightness(86%);
+  filter: brightness(50%) sepia(1) hue-rotate(-182deg) saturate(115%)
+    brightness(86%);
 }
 
 .lazy:not(.loaded) {

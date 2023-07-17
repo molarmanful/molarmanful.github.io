@@ -23,7 +23,7 @@
 </ItemBar>
 <div screen flex="~ col" overflow-hidden>
   <div mt-16 />
-  <div w-full scroll overflow="y-auto x-hidden" text="xl gray-400">
+  <div w-full splash scroll overflow="y-auto x-hidden" text="xl gray-400">
     <slot />
   </div>
 </div>
