@@ -6,6 +6,7 @@
 
   export let data
   let { name, module } = data
+  let desc
 
   if (browser) {
     D.lazy = new LazyLoad()
@@ -17,18 +18,19 @@
 
 <svelte:head>
   <title>{name} | Ben Pang</title>
+  <meta name="description" content={desc} />
 </svelte:head>
 
 <ExtLayout>
   <div slot="bar" flex ml-4 h-full>
     <span m-auto>
-      <A un-text="inherit" decoration="none" href="/" t>ben</A>
+      <A t un-text="inherit" decoration="none" href="/">ben</A>
       /
-      <A un-text="inherit" decoration="none" href="/items" t>items</A>
+      <A t un-text="inherit" decoration="none" href="/items">items</A>
       /
-      <A un-text="inherit" decoration="none" href="/items/{name}" t>{name}</A>
+      <A t un-text="inherit" decoration="none" href="/items/{name}">{name}</A>
     </span>
   </div>
 
-  <svelte:component this={module} {D} />
+  <svelte:component this={module} {D} bind:desc />
 </ExtLayout>

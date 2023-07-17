@@ -18,7 +18,6 @@
 
   <div mt-16 />
   <Subheading bold>A Cube Tutorial</Subheading>
-  <div mt-8 />
   <MediaImg {D} name="cubetut" />
   <Text>
     An interactive tutorial for solving the Rubik's Cube, featuring a clean UI
@@ -32,7 +31,6 @@
 
   <div mt-16 />
   <Subheading bold>pycube</Subheading>
-  <div mt-8 />
   <MediaImg {D} name="pycube" />
   <Text>
     Made in collaboration with Jimoh Yusuf. A reimplementation of the Rubik's
@@ -44,7 +42,6 @@
 
   <div mt-16 />
   <Subheading bold>gCube</Subheading>
-  <div mt-8 />
   <MediaImg {D} name="gcube" />
   <Text>
     Made in collaboration with Michael Casebolt. A web framework for cube
@@ -58,7 +55,6 @@
 
   <div mt-16 />
   <Subheading bold>MinimalisTimer</Subheading>
-  <div mt-8 />
   <MediaImg {D} name="minimalistimer" />
   <Text>
     When MinimalisTimer was first created, there weren't many options for cube
@@ -74,7 +70,6 @@
 
   <div mt-16 />
   <Subheading bold>PLL Trainer</Subheading>
-  <div mt-8 />
   <MediaImg {D} name="pll" />
   <Text>
     The precursor to MinimalisTimer and my first foray into creating responsive

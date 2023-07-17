@@ -3,6 +3,8 @@
   import { Prose, Heading, Subheading, Text, A } from '../mixins'
 
   export let D
+  export let desc =
+    "Weird and wholly impractical. Programming languages which I've made throughout the years for recreational - NOT PRODUCTION - purposes."
 
   onMount(_ => {
     D.update()
@@ -11,10 +13,7 @@
 
 <Prose>
   <Heading>CUSTOM LANGUAGES</Heading>
-  <Subheading>
-    Weird and wholly impractical. Programming languages which I've made
-    throughout the years for recreational - NOT PRODUCTION - purposes.
-  </Subheading>
+  <Subheading>{desc}</Subheading>
 
   <div mt-16 />
   <Subheading bold>sclin</Subheading>

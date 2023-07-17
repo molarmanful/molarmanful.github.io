@@ -11,6 +11,8 @@
   } from '../mixins'
 
   export let D
+  export let desc =
+    '2022. An abstract Unity study of worldbuilding centered around non-Euclidean traversal mechanics.'
 
   onMount(_ => {
     D.update()
@@ -19,10 +21,7 @@
 
 <Prose>
   <Heading>HYPO NORMAL</Heading>
-  <Subheading>
-    2022. An abstract Unity study of worldbuilding centered around non-Euclidean
-    traversal mechanics.
-  </Subheading>
+  <Subheading>{desc}</Subheading>
   <Text>
     <A href="https://bandidojim.itch.io/hyponormal">Website</A>
   </Text>

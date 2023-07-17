@@ -3,6 +3,8 @@
   import { Prose, Heading, Subheading, Text, A, MediaImg } from '../mixins'
 
   export let D
+  export let desc =
+    "2020 - Made in collaboration with Leo El-Azhab and Mai Khaled. Data visualization of the UAE's ISPs and their constituent IP addresses to provoke discussions about net neutrality and security."
 
   onMount(_ => {
     D.update()
@@ -11,11 +13,7 @@
 
 <Prose>
   <Heading>10K IPS</Heading>
-  <Subheading>
-    2020 - Made in collaboration with Leo El-Azhab and Mai Khaled. Data
-    visualization of the UAE's ISPs and their constituent IP addresses to
-    provoke discussions about net neutrality and security.
-  </Subheading>
+  <Subheading>{desc}</Subheading>
   <Text>
     <A href="https://bennyboy.tech/ipisp">Website</A>
     <br />

@@ -7,7 +7,7 @@
 
 <Image
   border="1 black hover:white"
-  mb="0"
+  mt="0"
   transition=""
   graiscale
   draggable="false"

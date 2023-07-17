@@ -12,6 +12,7 @@
   } from '../mixins'
 
   export let D
+  export let desc = 'From code blossoms art. Works created with autonomous systems to spawn infinite variation.'
 
   onMount(_ => {
     D.update()
@@ -20,10 +21,7 @@
 
 <Prose>
   <Heading>THE GENERATIVE COLLECTION</Heading>
-  <Subheading>
-    From code blossoms art. Works created with autonomous systems to spawn
-    infinite variation.
-  </Subheading>
+  <Subheading>{desc}</Subheading>
 
   <div mt-16 />
   <MediaImg {D} name="nihilism" />

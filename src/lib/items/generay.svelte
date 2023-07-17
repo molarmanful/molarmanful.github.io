@@ -3,6 +3,8 @@
   import { Prose, Heading, Subheading, Text, A, MediaImg } from '../mixins'
 
   export let D
+  export let desc =
+    "2021. A procedurally-generated website based on Gene Ray's Time Cube."
 
   onMount(_ => {
     D.update()
@@ -11,9 +13,7 @@
 
 <Prose>
   <Heading>INFINITE GENE RAY</Heading>
-  <Subheading>
-    2021. A procedurally-generated website based on Gene Ray's Time Cube.
-  </Subheading>
+  <Subheading>{desc}</Subheading>
   <Text>
     <A href="https://bennyboy.tech/infinite-gene-ray">Website</A>
     <br />

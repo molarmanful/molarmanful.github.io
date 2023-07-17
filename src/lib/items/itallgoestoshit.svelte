@@ -3,6 +3,8 @@
   import { Prose, Heading, Subheading, Text, A, MediaImg } from '../mixins'
 
   export let D
+  export let desc =
+    '2023. An interactive 3D web experience inspired by the slow yet frighteningly inevitable progression of dementia.'
 
   onMount(_ => {
     D.update()
@@ -11,10 +13,7 @@
 
 <Prose>
   <Heading>IT ALL GOES TO SHIT</Heading>
-  <Subheading>
-    2023. An interactive 3D web experience inspired by the slow yet
-    frighteningly inevitable progression of dementia.
-  </Subheading>
+  <Subheading>{desc}</Subheading>
   <Text>
     <A href="https://bennyboy.tech/itallgoestoshit">Website</A> (best viewed on desktop)
     <br />

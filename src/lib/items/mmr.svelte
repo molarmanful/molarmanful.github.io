@@ -3,6 +3,8 @@
   import { Prose, Heading, Subheading, MediaImg, YTVideo } from '../mixins'
 
   export let D
+  export let desc =
+    '2022 - A prototype chair that plays with the contrast between rigidity and flexibility. Made from clear acrylic and bungee cords.'
 
   onMount(_ => {
     D.update()
@@ -11,10 +13,7 @@
 
 <Prose>
   <Heading>MECHANICALLY MINIMALIST RECLINER</Heading>
-  <Subheading>
-    2022 - A prototype chair that plays with the contrast between rigidity and
-    flexibility. Made from clear acrylic and bungee cords.
-  </Subheading>
+  <Subheading>{desc}</Subheading>
 
   <div mt-16 />
   <MediaImg {D} name="mmr" />

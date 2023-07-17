@@ -3,6 +3,8 @@
   import { Prose, Heading, Subheading, ArtImg } from '../mixins'
 
   export let D
+  export let desc =
+    'Optical oddities that bend the rules of virtual reality. Rendered in Cinema 4D + Redshift.'
 
   onMount(_ => {
     D.update()
@@ -11,10 +13,7 @@
 
 <Prose>
   <Heading>THE 3D STILL COLLECTION</Heading>
-  <Subheading>
-    Optical oddities that bend the rules of virtual reality. Rendered in Cinema
-    4D + Redshift.
-  </Subheading>
+  <Subheading>{desc}</Subheading>
 </Prose>
 
 <ArtImg {D} name="dysmorphicdream" />

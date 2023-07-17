@@ -3,6 +3,8 @@
   import { Prose, Heading, Subheading, Text, A, MediaImg } from '../mixins'
 
   export let D
+  export let desc =
+    '2020. An e-magazine from a hypothetical future in which thought-based communication is made possible via brain implants.'
 
   onMount(_ => {
     D.update()
@@ -11,10 +13,7 @@
 
 <Prose>
   <Heading>MINDREADER'S DIGEST</Heading>
-  <Subheading>
-    2020. An e-magazine from a hypothetical future in which thought-based
-    communication is made possible via brain implants.
-  </Subheading>
+  <Subheading>{desc}</Subheading>
   <Text>
     <A href="https://bennyboy.tech/mindreaders-digest">Website</A> (best viewed with
     a physical keyboard)

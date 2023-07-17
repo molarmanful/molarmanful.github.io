@@ -3,6 +3,8 @@
   import { Prose, Heading, Subheading, ArtImg } from '../mixins'
 
   export let D
+  export let desc =
+    'Monochrome artwork drawn with pen and paper or a mouse in Krita/MS Paint. Studies of contrast, shading, and value blending techniques.'
 
   onMount(_ => {
     D.update()
@@ -11,10 +13,7 @@
 
 <Prose>
   <Heading>THE BLACK & WHITE COLLECTION</Heading>
-  <Subheading>
-    Monochrome artwork drawn with pen and paper or a mouse in Krita/MS Paint.
-    Studies of contrast, shading, and value blending techniques.
-  </Subheading>
+  <Subheading>{desc}</Subheading>
 </Prose>
 
 <ArtImg {D} name="imperfect" />

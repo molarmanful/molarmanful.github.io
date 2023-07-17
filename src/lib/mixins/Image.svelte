@@ -3,7 +3,7 @@
   export let x = false
   export let a
   export let b
-  export let mb = 8
+  export let mt = 8
 </script>
 
 <img
@@ -11,7 +11,7 @@
   m-auto
   w-full
   max-h-full
-  {mb}
+  {mt}
   object-contain
   alt={name}
   src={x ? a : a.get(name)}
@@ -19,4 +19,4 @@
   {...$$props}
 />
 
-<div hidden mb="0 8" />
+<div hidden mt="0 8" />

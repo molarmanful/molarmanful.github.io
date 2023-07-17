@@ -3,6 +3,8 @@
   import { Prose, Heading, Subheading, ArtImg } from '../mixins'
 
   export let D
+  export let desc =
+    'Scalable compositions of geometries and abstract oddities. Made with Illustrator and Hexels.'
 
   onMount(_ => {
     D.update()
@@ -11,10 +13,7 @@
 
 <Prose>
   <Heading>THE VECTOR COLLECTION</Heading>
-  <Subheading>
-    Scalable compositions of geometries and abstract oddities. Made with
-    Illustrator and Hexels.
-  </Subheading>
+  <Subheading>{desc}</Subheading>
 </Prose>
 
 <ArtImg {D} name="plane" />

@@ -11,6 +11,8 @@
   } from '../mixins'
 
   export let D
+  export let desc =
+    'An interactive installation in which generative visuals react in realtime to brain activity read from an EEG headset.'
 
   onMount(_ => {
     D.update()
@@ -19,10 +21,7 @@
 
 <Prose>
   <Heading>ENCEPHALO PRINTS</Heading>
-  <Subheading>
-    An interactive installation in which generative visuals react in realtime to
-    brain activity read from an EEG headset.
-  </Subheading>
+  <Subheading>{desc}</Subheading>
   <Text><A href="https://bennyboy.tech/capstone">Devblog</A></Text>
   <Text>
     Throughout the day, our mind flows between different states of focus,
@@ -43,6 +42,5 @@
   <MediaImg {D} name="enc1" />
   <MediaImg {D} name="enc2" />
   <YTVideo a="JNYylaVTg4s" title="Encephaloprints" />
-  <div mt-8 />
   <YTVideo a="KRco3BU-Rzs" title="Encephaloprints" />
 </Prose>

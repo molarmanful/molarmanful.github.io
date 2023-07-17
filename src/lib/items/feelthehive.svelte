@@ -11,6 +11,8 @@
   } from '../mixins'
 
   export let D
+  export let desc =
+    '2022. An Internet-powered backscratcher that converts clicks and taps to scratches.'
 
   onMount(_ => {
     D.update()
@@ -19,10 +21,7 @@
 
 <Prose>
   <Heading>FEEL THE HIVE</Heading>
-  <Subheading>
-    2022. An Internet-powered backscratcher that converts clicks and taps to
-    scratches.
-  </Subheading>
+  <Subheading>{desc}</Subheading>
   <Text>
     <A href="https://wp.nyu.edu/itp_multisensory_design/project-ben">Devblog</A>
     <br />

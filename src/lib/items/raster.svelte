@@ -3,6 +3,8 @@
   import { Prose, Heading, Subheading, ArtImg, YTVideo } from '../mixins'
 
   export let D
+  export let desc =
+    'Because black & white is fun, but so is color. Drawn with a mouse in HEAVYPAINT/Krita/MS Paint.'
 
   onMount(_ => {
     D.update()
@@ -11,10 +13,7 @@
 
 <Prose>
   <Heading>THE RASTER COLLECTION</Heading>
-  <Subheading>
-    Because black & white is fun, but so is color. Drawn with a mouse in
-    HEAVYPAINT/Krita/MS Paint.
-  </Subheading>
+  <Subheading>{desc}</Subheading>
 </Prose>
 
 <ArtImg {D} name="fashionablegirl" />
@@ -25,7 +24,6 @@
 <ArtImg {D} name="blossoms" />
 <ArtImg {D} name="foryasmin" />
 <ArtImg {D} name="kai" />
-<div mt-8 />
 <YTVideo a="5kqdi0ExSMo" title="Family Dinner" aspect="square" />
 <div mt-8 />
 <ArtImg {D} name="skullmap" />

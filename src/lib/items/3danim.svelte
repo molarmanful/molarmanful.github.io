@@ -3,6 +3,8 @@
   import { Prose, Heading, Subheading, IVideo } from '../mixins'
 
   export let D
+  export let desc =
+    'Blurring the lines between real and unreal, one render at a time. Rendered in Cinema 4D + Redshift.'
 
   onMount(_ => {
     D.update()
@@ -11,10 +13,7 @@
 
 <Prose>
   <Heading>THE 3D ANIM COLLECTION</Heading>
-  <Subheading>
-    Blurring the lines between real and unreal, one render at a time. Rendered
-    in Cinema 4D + Redshift.
-  </Subheading>
+  <Subheading>{desc}</Subheading>
 </Prose>
 
 <IVideo a="w7IX9su" aspect="portrait" />
