@@ -1,10 +1,10 @@
 <script>
   import { onMount } from 'svelte'
-  import { Prose, Heading, Subheading, MediaImg, YTVideo } from '../mixins'
+  import { Prose, Heading, Subheading, MediaImg, YTVideo, Sp } from '../mixins'
 
   export let D
   export let desc =
-    '2022 - A prototype chair that plays with the contrast between rigidity and flexibility. Made from clear acrylic and bungee cords.'
+    '2022 - Mechanically Minimalist Recliner. A prototype chair that plays with the contrast between rigidity and flexibility. Made from clear acrylic and bungee cords.'
 
   onMount(_ => {
     D.update()
@@ -12,10 +12,10 @@
 </script>
 
 <Prose>
-  <Heading>MECHANICALLY MINIMALIST RECLINER</Heading>
+  <Heading>MMR</Heading>
   <Subheading>{desc}</Subheading>
 
-  <div mt-16 />
+  <Sp />
   <MediaImg {D} name="mmr" />
   <MediaImg {D} name="mmr1" />
   <MediaImg {D} name="mmr2" />

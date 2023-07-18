@@ -1,5 +1,12 @@
-<div relative flex w-screen>
-  <div mx-auto p="8 md:16" w-full max-w-prose text-xl prose {...$$props}>
+<div relative flex w-full>
+  <div
+    mx-auto
+    w-full
+    p="t-8 b-6 md:t-16 lg:b-12"
+    max-w-prose
+    prose
+    {...$$props}
+  >
     <slot />
   </div>
 </div>

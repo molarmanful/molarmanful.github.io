@@ -18,7 +18,7 @@ html {
 }
 
 body {
-  @apply scroll font-2 font-300 tracking-wide select-text text-gray-200;
+  @apply scroll font-2 font-300 tracking-wide select-text text-gray-200 type-4;
 }
 
 h1,
@@ -52,6 +52,10 @@ h6 {
 [graiscale]:hover {
   filter: brightness(50%) sepia(1) hue-rotate(-182deg) saturate(115%)
     brightness(86%);
+}
+
+:is(.prose, [prose]) :is(h1, h2, p):not([noprose]) {
+  @apply mx-6 md:mx-0;
 }
 
 .lazy:not(.loaded) {

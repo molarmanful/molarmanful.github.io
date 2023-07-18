@@ -1,6 +1,6 @@
 <script>
   import { onMount } from 'svelte'
-  import { Prose, Heading, Subheading, Text, A, MediaImg } from '../mixins'
+  import { Prose, Heading, Subheading, Text, A, MediaImg, Sp } from '../mixins'
 
   export let D
   export let desc =
@@ -12,7 +12,7 @@
 </script>
 
 <Prose>
-  <Heading>MINDREADER'S DIGEST</Heading>
+  <Heading>MIND<wbr />READER'S DIGEST</Heading>
   <Subheading>{desc}</Subheading>
   <Text>
     <A href="https://bennyboy.tech/mindreaders-digest">Website</A> (best viewed with
@@ -21,7 +21,7 @@
     <A href="https://github.com/molarmanful/mindreaders-digest">Source</A>
   </Text>
 
-  <div mt-16 />
+  <Sp />
   <MediaImg {D} name="mindreader" />
   <MediaImg {D} name="mindreader-desc" />
   <MediaImg {D} name="mindreader-article" />

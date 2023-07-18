@@ -1,6 +1,6 @@
 <script>
   import { onMount } from 'svelte'
-  import { Prose, Heading, Subheading, Text, A } from '../mixins'
+  import { Prose, Heading, Subheading, Text, A, Sp } from '../mixins'
 
   export let D
   export let desc =
@@ -15,7 +15,6 @@
   <Heading>CUSTOM LANGUAGES</Heading>
   <Subheading>{desc}</Subheading>
 
-  <div mt-16 />
   <Subheading bold>sclin</Subheading>
   <Text>
     A formidable successor to lin. sclin packages functional and array
@@ -24,7 +23,6 @@
   </Text>
   <Text><A href="https://github.com/molarmanful/sclin">Source</A></Text>
 
-  <div mt-16 />
   <Subheading bold>Coding</Subheading>
   <Text>
     No, it's not a typo; the language really is called Coding. Conceived from <A
@@ -36,7 +34,6 @@
   </Text>
   <Text><A href="https://github.com/molarmanful/codinglang">Source</A></Text>
 
-  <div mt-16 />
   <Subheading bold>lin</Subheading>
   <Text>
     This was one of my few attempts at creating anything remotely close to a
@@ -46,7 +43,6 @@
   </Text>
   <Text><A href="https://github.com/molarmanful/lin">Source</A></Text>
 
-  <div mt-16 />
   <Subheading bold>Wonder</Subheading>
   <Text>
     Another one of my attempts at accommodating some semblance of practicality,
@@ -56,7 +52,6 @@
   </Text>
   <Text><A href="https://github.com/wonderlang/wonder">Source</A></Text>
 
-  <div mt-16 />
   <Subheading bold>ESMin</Subheading>
   <Text>
     Optimized for code-golfing, ESMin sacrificed a standard 256-character code
@@ -67,7 +62,6 @@
   </Text>
   <Text><A href="https://github.com/molarmanful/esmin">Source</A></Text>
 
-  <div mt-16 />
   <Subheading bold>RETURN</Subheading>
   <Text>
     RETURN was an extension of DUP, a barebones stack-based esolang. Its purpose
@@ -76,7 +70,6 @@
   </Text>
   <Text><A href="https://github.com/molarmanful/RETURN">Source</A></Text>
 
-  <div mt-16 />
   <Subheading bold>bitman</Subheading>
   <Text>
     bitman was another offshoot of DUP made specifically to manipulate bits. Its

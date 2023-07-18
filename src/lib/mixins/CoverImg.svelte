@@ -6,7 +6,7 @@
 </script>
 
 <Image
-  border="1 black hover:white"
+  border="1 transparent hover:white"
   mt="0"
   transition=""
   graiscale

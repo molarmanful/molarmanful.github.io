@@ -16,7 +16,6 @@
     for the aspiring cuber.
   </Subheading>
 
-  <div mt-16 />
   <Subheading bold>A Cube Tutorial</Subheading>
   <MediaImg {D} name="cubetut" />
   <Text>
@@ -29,7 +28,6 @@
     <A href="https://github.com/molarmanful/cubetut">Source</A>
   </Text>
 
-  <div mt-16 />
   <Subheading bold>pycube</Subheading>
   <MediaImg {D} name="pycube" />
   <Text>
@@ -40,7 +38,6 @@
     <A href="https://github.com/molarmanful/pycube">Source</A>
   </Text>
 
-  <div mt-16 />
   <Subheading bold>gCube</Subheading>
   <MediaImg {D} name="gcube" />
   <Text>
@@ -53,7 +50,6 @@
     <A href="https://github.com/molarmanful/pycube">Source</A>
   </Text>
 
-  <div mt-16 />
   <Subheading bold>MinimalisTimer</Subheading>
   <MediaImg {D} name="minimalistimer" />
   <Text>
@@ -68,7 +64,6 @@
     <A href="https://github.com/molarmanful/minimalistimer">Source</A>
   </Text>
 
-  <div mt-16 />
   <Subheading bold>PLL Trainer</Subheading>
   <MediaImg {D} name="pll" />
   <Text>

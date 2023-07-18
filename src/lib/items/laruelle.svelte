@@ -1,6 +1,6 @@
 <script>
   import { onMount } from 'svelte'
-  import { Prose, Heading, Subheading, Text, A, MediaImg } from '../mixins'
+  import { Prose, Heading, Subheading, Text, A, MediaImg, Sp } from '../mixins'
 
   export let D
   export let desc =
@@ -16,6 +16,6 @@
   <Subheading>{desc}</Subheading>
   <Text><A href="https://github.com/molarmanful/laruelle">Source</A></Text>
 
-  <div mt-16 />
+  <Sp />
   <MediaImg {D} name="laruelle" />
 </Prose>

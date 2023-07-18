@@ -8,6 +8,7 @@
     A,
     MediaImg,
     YTVideo,
+    Sp,
   } from '../mixins'
 
   export let D
@@ -20,7 +21,7 @@
 </script>
 
 <Prose>
-  <Heading>ENCEPHALO PRINTS</Heading>
+  <Heading>ENCEPHALO<wbr />PRINTS</Heading>
   <Subheading>{desc}</Subheading>
   <Text><A href="https://bennyboy.tech/capstone">Devblog</A></Text>
   <Text>
@@ -36,7 +37,7 @@
     the opportunity to see just how similar yet unique each person's mind can be.
   </Text>
 
-  <div mt-16 />
+  <Sp />
   <MediaImg {D} name="enc3" />
   <MediaImg {D} name="enc4" />
   <MediaImg {D} name="enc1" />

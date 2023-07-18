@@ -8,6 +8,7 @@
     A,
     MediaImg,
     YTVideo,
+    Sp,
   } from '../mixins'
 
   export let D
@@ -42,7 +43,7 @@
     servo scratches, potentially to the point of discomfort for the host.
   </Text>
 
-  <div mt-16 />
+  <Sp />
   <MediaImg {D} name="fth" />
   <YTVideo a="r74HAS_mBL0" title="FEEL THE HIVE" />
 </Prose>

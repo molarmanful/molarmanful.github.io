@@ -2,11 +2,14 @@
   export let bold = void 0
 </script>
 
-<p
-  text="xl md:2xl lg:4xl gray-300"
-  font-200={bold ? void 0 : ''}
-  {bold}
+<h2
+  type-5
+  case="normal"
+  font="2"
+  text=" gray-300"
+  m="t-6 lg:t-12"
+  class={bold ? 'bold' : 'font-200'}
   {...$$props}
 >
   <slot />
-</p>
+</h2>

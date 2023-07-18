@@ -1,6 +1,6 @@
 <script>
   import { onMount } from 'svelte'
-  import { Prose, Heading, Subheading, Text, A, MediaImg } from '../mixins'
+  import { Prose, Heading, Subheading, Text, A, MediaImg, Sp } from '../mixins'
 
   export let D
   export let desc =
@@ -22,6 +22,6 @@
     <A href="https://timecube.2enp.com">Inspiration</A>
   </Text>
 
-  <div mt-16 />
+  <Sp />
   <MediaImg {D} name="generay" />
 </Prose>

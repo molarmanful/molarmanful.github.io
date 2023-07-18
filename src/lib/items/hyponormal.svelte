@@ -8,6 +8,7 @@
     A,
     MediaImg,
     YTVideo,
+    Sp,
   } from '../mixins'
 
   export let D
@@ -20,7 +21,7 @@
 </script>
 
 <Prose>
-  <Heading>HYPO NORMAL</Heading>
+  <Heading>HYPO<wbr />NORMAL</Heading>
   <Subheading>{desc}</Subheading>
   <Text>
     <A href="https://bandidojim.itch.io/hyponormal">Website</A>
@@ -43,7 +44,7 @@
     who fell before you - to the ground.
   </Text>
 
-  <div mt-16 />
+  <Sp />
   <MediaImg {D} name="hyponormal0" />
   <MediaImg {D} name="hyponormal1" />
   <MediaImg {D} name="hyponormal2" />

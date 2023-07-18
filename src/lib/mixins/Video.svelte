@@ -2,7 +2,7 @@
   export let aspect = 'video'
 </script>
 
-<div max-full mx-auto mt-8 {aspect}>
+<div max-full mx-auto m="t-6 md:t-8" {aspect}>
   <slot />
 </div>
 

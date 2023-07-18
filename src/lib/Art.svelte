@@ -1,6 +1,6 @@
 <script>
   import { onMount } from 'svelte'
-  import { Section, CoverImg } from './mixins'
+  import { Section, ItemGrid, CoverImg } from './mixins'
 
   export let selected
   export let D
@@ -21,13 +21,20 @@
 </script>
 
 <Section name="WORK" id="art" ot={update}>
-  <div w-full border="lg:l gray-500" p="x-5 b-16 lg:b-32" container="lg:~">
-    <div grid="~ cols-1 sm:cols-2 md:cols-3 lg:cols-4" gap-8>
+  <div
+    w-screen
+    border="xl:l gray-500"
+    p="x-5 b-16 md:x-8 lg:b-32"
+    mx-auto
+    container="lg:"
+  >
+    <ItemGrid>
       {#each [...D.covers].sort(_ => 0.5 - Math.random()) as [name, _]}
         <button
           aria-label="open modal for {name}"
           cursor-pointer
-          outline-0
+          bg-transparent
+          outline-none
           on:click|preventDefault={ON(name)}
           on:keypress={_ => {}}
           data-aos="fade-up"
@@ -35,6 +42,6 @@
           <CoverImg {name} {D} />
         </button>
       {/each}
-    </div>
+    </ItemGrid>
   </div>
 </Section>

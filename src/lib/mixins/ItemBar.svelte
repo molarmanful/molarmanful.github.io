@@ -6,7 +6,7 @@
   w-full
   h-16
   border="b-1 gray-700"
-  text="8 gray-600"
+  text="gray-600"
   bg-black
   {...$$props}
 >

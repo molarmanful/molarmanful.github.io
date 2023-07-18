@@ -1,5 +1,5 @@
 <script>
-  import { Section, Subheading, Text, A } from './mixins'
+  import { Section, Heading, Subheading, Text, A } from './mixins'
 
   export let top = { name: 'abt' }
 
@@ -22,78 +22,80 @@
   }
 </script>
 
-<Section ot={update}>
-  <div w-full border="t lg:l gray-500">
-    <div
-      p="x-8 t-8 md:x-16 md:t-16"
-      w="full lg:auto"
-      text="l lg:2xl gray-400"
-      container="lg:~"
-    >
-      <h1
-        text="4xl md:5xl lg:6xl 2xl:8xl stroked stroked-gray-500"
-        mb-12
-        data-aos="fade-in"
+<Section ot={update} bord="true">
+  <div
+    border="xl:(t l) gray-500"
+    p="t-8 md:(x-8 t-16) lg:x-16"
+    text="gray-400"
+    w-screen
+    mx-auto
+    container="lg:~"
+  >
+    <div max-w="lt-lg:prose" mx="lt-lg:auto" prose>
+      <Heading data-aos="fade-in">WHO EVEN IS THIS GUY?</Heading>
+    </div>
+
+    <div pb="16 lg:32" divide="lg:x gray-500" flex="lg:~">
+      <div w="lg:5/6" max-w="lt-xl:prose" mx="lt-lg:auto" px-2 prose>
+        <Subheading data-aos="fade-in">
+          <span bold text-red-50>BENJAMIN PANG</span> is a primarily self-taught
+          artist / programmer from San Francisco, CA and a graduate student at NYU
+          ITP.
+        </Subheading>
+        <Text data-aos="fade-in">
+          With a background in software development and the sciences, he mainly
+          deals with interactive installations, multimedia experiences, and
+          CGI/VFX art.
+        </Text>
+        <Text data-aos="fade-in">
+          Drawing influences from a wide variety of classical and contemporary
+          artists, music, digital multimedia, and personal experiences, his work
+          uses technical experimentation to explore sensory confusion, coping
+          mechanisms, and loneliness in the post-digital age.
+        </Text>
+        <Text data-aos="fade-in">
+          He is currently building odd programming languages, living life, and
+          secretly making art.
+        </Text>
+        <Text data-aos="fade-in">
+          This website is <A
+            text-gray="100 hover:500"
+            duration-500
+            transition-colors
+            href="https://github.com/molarmanful/molarmanful.github.io"
+            >open-source</A
+          >!
+        </Text>
+      </div>
+
+      <div
+        m="t-8 x-auto lg:(t-12 l-8 r-unset) xl:l-16"
+        px="6 md:0 lg:8"
+        max-w-prose
+        prose
       >
-        WHO EVEN IS THIS GUY?
-      </h1>
-
-      <div pb-32 divide="xl:x gray-500" flex="xl:~">
-        <div w="xl:5/6" m="xl:l-4 xl:r-8" prose>
-          <Subheading data-aos="fade-in">
-            <span bold text-red-50>BENJAMIN PANG</span> is a primarily self-taught
-            artist / programmer from San Francisco, CA and a graduate student at
-            NYU ITP.
-          </Subheading>
-          <Text data-aos="fade-in">
-            With a background in software development and the sciences, he
-            mainly deals with interactive installations, multimedia experiences,
-            and CGI/VFX art.
-          </Text>
-          <Text data-aos="fade-in">
-            Drawing influences from a wide variety of classical and contemporary
-            artists, music, digital multimedia, and personal experiences, his
-            work uses technical experimentation to explore sensory confusion,
-            coping mechanisms, and loneliness in the post-digital age.
-          </Text>
-          <Text data-aos="fade-in">
-            He is currently building odd programming languages, living life, and
-            secretly making art.
-          </Text>
-          <Text data-aos="fade-in">
-            This website is <A
-              text-gray="100 hover:500"
-              duration-500
-              transition-colors
-              href="https://github.com/molarmanful/molarmanful.github.io"
-              >open-source</A
-            >!
-          </Text>
-        </div>
-
-        <div w="xl:1/6" m="t-8 xl:l-8 xl:t-0" p="xl:x-8">
-          <h2
-            text="2xl md:3xl lg:5xl stroked stroked-gray-500"
-            mb-4
-            data-aos="fade-left"
-          >
-            LINKS
-          </h2>
-          <menu mx-2 data-aos="fade-left">
-            {#each links as [name, link]}
-              <li>
-                <A
-                  un-text="gray-500 hover:white"
-                  duration-500
-                  transition-colors
-                  href={link}
-                >
-                  {name}
-                </A>
-              </li>
-            {/each}
-          </menu>
-        </div>
+        <h2
+          type-6
+          text=" stroked stroked-gray-500"
+          data-aos="fade-left"
+          noprose
+        >
+          LINKS
+        </h2>
+        <menu m="t-2 x-2 lg:t-4" data-aos="fade-left">
+          {#each links as [name, link]}
+            <li>
+              <A
+                un-text="gray-500 hover:white"
+                duration-500
+                transition-colors
+                href={link}
+              >
+                {name}
+              </A>
+            </li>
+          {/each}
+        </menu>
       </div>
     </div>
   </div>

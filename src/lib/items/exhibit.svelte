@@ -8,6 +8,7 @@
     A,
     MediaImg,
     YTVideo,
+    Sp,
   } from '../mixins'
 
   export let D
@@ -26,7 +27,7 @@
     keyboard)<br /><A href="https://github.com/molarmanful/exhibit">Source</A>
   </Text>
 
-  <div mt-16 />
+  <Sp />
   <MediaImg {D} name="exhibit" />
   <MediaImg {D} name="exhibit_desc" />
 </Prose>

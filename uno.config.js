@@ -3,6 +3,7 @@ import {
   presetUno,
   presetWebFonts,
   transformerDirectives,
+  transformerVariantGroup,
 } from 'unocss'
 import extractorSvelte from '@unocss/extractor-svelte'
 import { presetScrollbar } from 'unocss-preset-scrollbar'
@@ -16,13 +17,25 @@ export default {
       provider: 'google',
       fonts: {
         1: 'Syne',
-        2: 'Hanken Grotesk:200,300,500',
+        2: 'Hanken Grotesk:200,300,400',
       },
     }),
     presetScrollbar(),
   ],
-  transformers: [transformerDirectives()],
+  transformers: [transformerDirectives(), transformerVariantGroup()],
   safelist: [],
+  theme: {
+    breakpoints: {
+      xs: '320px',
+      sm: '640px',
+      md: '768px',
+      lg: '1024px',
+      xl: '1280px',
+      '2xl': '1536px',
+      // '3xl': '2304px',
+      // '4xl': '3072px',
+    },
+  },
   rules: [
     [
       'text-stroked',
@@ -48,7 +61,7 @@ export default {
     {
       scroll:
         'scrollbar scrollbar-thumb-color-gray-700 scrollbar-track-color-black',
-      bold: 'font-medium font-2',
+      bold: 'font-400 font-2',
       prose: 'hyphens-auto',
       'center-flex': 'flex items-center justify-center',
       screen: 'w-screen h-screen',
@@ -57,6 +70,11 @@ export default {
       navitem:
         'text-gray-500 cursor-pointer transition-colors hover:text-white bg-transparent',
       'aspect-portrait': 'aspect-9/16',
+      'type-4': 'text-base  md:text-lg   lg:text-xl   xl:text-2xl',
+      'type-5': 'text-xl    md:text-2xl  lg:text-3xl  xl:text-4xl',
+      'type-6': 'text-2xl   md:text-3xl  lg:text-4xl  xl:text-5xl',
+      'type-7': 'text-4xl   md:text-5xl  lg:text-6xl  xl:text-7xl',
+      'type-8': 'text-6xl   md:text-7xl  lg:text-8xl             ',
     },
     [/^ofade-([\d]*)$/, ([, c]) => `transition-opacity duration-${c}`],
   ],

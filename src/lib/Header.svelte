@@ -1,5 +1,6 @@
 <script>
   import { onMount } from 'svelte'
+  import { Subheading } from '$lib/mixins'
   import { offtop } from './js/util'
   import me from './media/me.svg'
   import lev from './js/lev'
@@ -57,19 +58,11 @@
         href={me + '#lines'}
       />
     </svg>
-    <div m-auto z-10 h="1/4 md:1/3" w="lg:3/4">
-      <h1 aberration text="6xl lg:9xl stroked stroked-white">BEN PANG</h1>
-      <small text="xl lg:3xl gray-200" font-200 block m="t-4 l-1 lg:l-2">
-        I make
-        <br un-hidden="lg:~" />
-        <span whitespace-pre bold>
-          {word}
-        </span>
-        <br un-hidden="lg:~" />
-        things
-        <br un-hidden="lg:~" />
-        happen.
-      </small>
+    <div m="auto xl:(l-1/8 r-auto y-auto) 2xl:l-1/4" z-10 h="1/4 md:1/3">
+      <h1 type-8 aberration text=" stroked stroked-white">BEN PANG</h1>
+      <Subheading text-gray="200" block m="t-4 l-1 lg:l-2">
+        I make <span whitespace-pre bold>{word}</span> things.
+      </Subheading>
     </div>
   </div>
 </header>

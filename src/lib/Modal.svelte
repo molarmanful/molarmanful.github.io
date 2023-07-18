@@ -67,13 +67,7 @@
     {#await D.items.get(selected)()}
       <br />
     {:then item}
-      <div
-        in:fade={{ duration: 200 }}
-        full
-        scroll
-        overflow-x-hidden
-        text="xl gray-400"
-      >
+      <div in:fade={{ duration: 200 }} full scroll overflow-x-hidden>
         <svelte:component this={item.default} {D} />
       </div>
     {/await}
