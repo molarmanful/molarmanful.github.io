@@ -41,21 +41,15 @@ export default {
       'text-stroked',
       {
         'text-shadow':
-          '-1px -1px var(--stroke-color),' +
-          '-1px  1px var(--stroke-color),' +
-          '1px -1px var(--stroke-color),' +
-          '1px  1px var(--stroke-color),' +
+          '-1px -1px currentColor,' +
+          '-1px  1px currentColor,' +
+          '1px -1px currentColor,' +
+          '1px  1px currentColor,' +
           'var(--aber, 0 0 transparent)',
         '-webkit-text-fill-color': '#000',
       },
     ],
-    [
-      /^text-stroked-(.+)$/,
-      colorResolver('--stroke-color', 'text-stroked'),
-      { autocomplete: 'text-stroked-$colors' },
-    ],
-    ['aberration', { '--aber': '-2px -2px 0 #0ff, 2px 2px 0 #f0f' }],
-    ['aberration1', { '--aber': '-1px -1px 0 #0ff, 1px 1px 0 #f0f' }],
+    ['aberration', { 'text-shadow': '-2px -2px 0 #f0f, 2px 2px 0 #0ff' }],
   ],
   shortcuts: [
     {

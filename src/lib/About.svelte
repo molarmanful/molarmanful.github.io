@@ -76,7 +76,7 @@
       >
         <h2
           type-6
-          text=" stroked stroked-gray-500"
+          text=" stroked gray-500"
           data-aos="fade-left"
           noprose
         >
