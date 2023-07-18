@@ -56,6 +56,24 @@
 
   $: factor = Math.max(0, scrollY / innerHeight)
 
+  let aber = Array(4).fill(0)
+  let cd0 = 0
+  let cd1 = 0
+  setInterval(_ => {
+    if (cd0) {
+      aber = aber.map(_ => Math.random() * 6 - 3)
+      cd0--
+      return
+    }
+    if (cd1) {
+      aber = Array(4).fill(0)
+      cd1--
+      return
+    }
+    cd0 = 0 | (Math.random() * 10)
+    cd1 = 0 | (Math.random() * 20)
+  }, 50)
+
   onMount(_ => {
     setInterval(_ => {
       word = bank[i]
@@ -95,7 +113,17 @@
       bg="lt-xl:black/69"
       style:opacity={1 - factor * 2}
     >
-      <h1 type-8 aberration text=" white">BEN PANG</h1>
+      <h1
+        type-8
+        aberration
+        style:--aber0="{aber[0]}px"
+        style:--aber1="{aber[1]}px"
+        style:--aber2="{aber[2]}px"
+        style:--aber3="{aber[3]}px"
+        text=" white"
+      >
+        BEN PANG
+      </h1>
       <Subheading text-gray="200" block m="t-4 l-1 lg:l-2">
         I make <span whitespace-pre bold>{word}</span> things.
       </Subheading>

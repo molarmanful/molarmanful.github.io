@@ -49,7 +49,13 @@ export default {
         '-webkit-text-fill-color': '#000',
       },
     ],
-    ['aberration', { 'text-shadow': '-2px -2px 0 #f0f, 2px 2px 0 #0ff' }],
+    [
+      'aberration',
+      {
+        'text-shadow':
+          'var(--aber0, -2) var(--aber1, -2) 0 #f0f, var(--aber2, 2) var(--aber3, 2) 0 #0ff',
+      },
+    ],
   ],
   shortcuts: [
     {
