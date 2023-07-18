@@ -53,7 +53,7 @@ export default {
       'aberration',
       {
         'text-shadow':
-          'var(--aber0, -2) var(--aber1, -2) 0 #f0f, var(--aber2, 2) var(--aber3, 2) 0 #0ff',
+          'var(--aber0, -2) var(--aber1, -2) 0 #f0f, var(--aber2, 2) var(--aber3, 2) 0 #0ff, var(--aber4, 0) var(--aber5, 0) 0 #0f0',
       },
     ],
   ],

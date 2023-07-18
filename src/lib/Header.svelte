@@ -33,7 +33,7 @@
     'stroke-red-500',
     'stroke-cyan-500',
     'stroke-pink-500',
-    'stroke-green-500',
+    'stroke-teal-500',
     'stroke-yellow-500',
   ]
   if (browser) {
@@ -56,7 +56,7 @@
 
   $: factor = Math.max(0, scrollY / innerHeight)
 
-  let aber = Array(4).fill(0)
+  let aber = Array(6).fill(0)
   let cd0 = 0
   let cd1 = 0
   setInterval(_ => {
@@ -66,7 +66,7 @@
       return
     }
     if (cd1) {
-      aber = Array(4).fill(0)
+      aber = Array(6).fill(0)
       cd1--
       return
     }
@@ -120,6 +120,8 @@
         style:--aber1="{aber[1]}px"
         style:--aber2="{aber[2]}px"
         style:--aber3="{aber[3]}px"
+        style:--aber4="{aber[4]}px"
+        style:--aber5="{aber[5]}px"
         text=" white"
       >
         BEN PANG
