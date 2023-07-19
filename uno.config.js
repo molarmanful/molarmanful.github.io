@@ -35,6 +35,10 @@ export default {
       // '3xl': '2304px',
       // '4xl': '3072px',
     },
+    media: {
+      mobile_long: '(max-aspect-ratio: 1/2)',
+      squarish: '(max-aspect-ratio: 16/11)',
+    },
   },
   rules: [
     [

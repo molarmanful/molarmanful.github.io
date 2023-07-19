@@ -8,13 +8,7 @@ body {
 }
 
 html {
-  @apply scroll-smooth;
-}
-
-@media screen and (prefers-reduced-motion: reduce) {
-  html {
-    @apply scroll-auto;
-  }
+  @apply scroll-smooth motion-reduce:scroll-auto;
 }
 
 body {

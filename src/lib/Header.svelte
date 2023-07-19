@@ -94,8 +94,8 @@
     <svg
       absolute
       bottom-0
-      right="0 portrait:50%"
-      un-transform="portrait:translate-x-1/2"
+      right="0 media-squarish:40%"
+      un-transform="media-squarish:translate-x-1/2"
       mx-auto
       h="full xl:3/4"
       viewBox="0 0 1587 1080"
@@ -105,12 +105,12 @@
       {/if}
     </svg>
     <div
-      m="auto xl:(l-1/8 r-auto y-auto) 2xl:l-1/4"
+      m="auto xl:(l-1/8 r-auto y-auto) 2xl:l-1/5"
       z-10
       h="xl:1/3"
       p-8
       backdrop="lt-xl:grayscale"
-      bg="lt-xl:black/69"
+      bg="lt-xl:black/42"
       style:opacity={1 - factor * 2}
     >
       <h1
