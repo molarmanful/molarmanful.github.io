@@ -1,109 +1,32 @@
 <script>
-  import { onMount } from 'svelte'
-  import { Subheading } from '$lib/mixins'
-  import { browser } from '$app/environment'
+  import { HeaderTitle, HeaderSubtitle, HeaderSplash } from '$lib/mixins'
   import { offtop } from './js/util'
-  import me from './media/me.svg?raw'
-  import lev from './js/lev'
 
   export let top = { name: 'top' }
-
-  let bank = [
-    'weird',
-    'weird art',
-    '2D art',
-    '3D art',
-    '4D art',
-    'generative',
-    'design',
-    'experimental',
-    'surreal',
-    'wizard',
-  ]
-  let i = 0
-  let word = bank[i]
 
   let update = n => {
     top.n = n
     top = top
   }
 
-  let lines
-  let colors = [
-    'stroke-red-500',
-    'stroke-cyan-500',
-    'stroke-pink-500',
-    'stroke-teal-500',
-    'stroke-yellow-500',
-  ]
-  if (browser) {
-    lines = new DOMParser()
-      .parseFromString(me, 'image/svg+xml')
-      .getElementById('lines')
-    console.log(lines)
-
-    for (let line of lines.childNodes) {
-      line.classList.add(
-        'fill-transparent',
-        'stroke-1',
-        colors[0 | (Math.random() * colors.length)]
-      )
-    }
-  }
-
   let scrollY
   let innerHeight
 
   $: factor = Math.max(0, scrollY / innerHeight)
-
-  let aber = Array(6).fill(0)
-  let cd0 = 0
-  let cd1 = 0
-  setInterval(_ => {
-    if (cd0) {
-      aber = aber.map(_ => Math.random() * 6 - 3)
-      cd0--
-      return
-    }
-    if (cd1) {
-      aber = Array(6).fill(0)
-      cd1--
-      return
-    }
-    cd0 = 0 | (Math.random() * 10)
-    cd1 = 0 | (Math.random() * 20)
-  }, 50)
-
-  onMount(_ => {
-    setInterval(_ => {
-      word = bank[i]
-      i = (i + 1) % bank.length
-      let steps = lev(word, bank[i])
-      let n = setInterval(_ => {
-        if (steps.length) word = steps.pop()
-        else clearInterval(n)
-      }, 50)
-    }, 1500)
-  })
 </script>
 
 <svelte:window bind:scrollY bind:innerHeight />
 
 <header relative screen use:offtop={{ update }}>
   <div fixed flex full style:filter="hue-rotate({factor * -69}deg)">
-    <svg
-      absolute
-      bottom-0
+    <HeaderSplash
+      absolute=""
+      bottom="0"
       right="0 media-squarish:40%"
       un-transform="media-squarish:translate-x-1/2"
-      mx-auto
+      mx="auto"
       h="full xl:3/4"
-      viewBox="0 0 1587 1080"
-    >
-      {#if lines}
-        {@html lines.outerHTML}
-      {/if}
-    </svg>
+    />
     <div
       m="auto xl:(l-1/8 r-auto y-auto) 2xl:l-1/5"
       z-10
@@ -113,22 +36,8 @@
       bg="lt-xl:black/42"
       style:opacity={1 - factor * 2}
     >
-      <h1
-        type-8
-        aberration
-        style:--aber0="{aber[0]}px"
-        style:--aber1="{aber[1]}px"
-        style:--aber2="{aber[2]}px"
-        style:--aber3="{aber[3]}px"
-        style:--aber4="{aber[4]}px"
-        style:--aber5="{aber[5]}px"
-        text=" white"
-      >
-        BEN PANG
-      </h1>
-      <Subheading text-gray="200" block m="t-4 l-1 lg:l-2">
-        I make <span whitespace-pre bold>{word}</span> things.
-      </Subheading>
+      <HeaderTitle />
+      <HeaderSubtitle block="" m="t-4 l-1 lg:l-2" />
     </div>
   </div>
 </header>

@@ -1,7 +1,7 @@
 <script>
   import LazyLoad from 'vanilla-lazyload'
   import { browser } from '$app/environment'
-  import { ItemGrid, A, CoverImg } from '$lib/mixins'
+  import { ArtGrid, A, CoverImg } from '$lib/mixins'
   import D from '$lib/js/D'
   import { onMount } from 'svelte'
 
@@ -22,9 +22,9 @@
 </svelte:head>
 
 <div w-full m-auto p="x-5 y-5 lg:y-16" container="lg:~">
-  <ItemGrid>
-    {#each [...D.covers].sort(_ => 0.5 - Math.random()) as [name, _]}
+  <ArtGrid {D} let:covers>
+    {#each covers as [name, _]}
       <A href="/items/{name}" t><CoverImg {name} {D} /></A>
     {/each}
-  </ItemGrid>
+  </ArtGrid>
 </div>

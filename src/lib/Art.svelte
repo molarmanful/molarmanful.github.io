@@ -1,6 +1,6 @@
 <script>
   import { onMount } from 'svelte'
-  import { Section, ItemGrid, CoverImg } from './mixins'
+  import { Section, ArtGrid, CoverImg } from './mixins'
 
   export let selected
   export let D
@@ -28,8 +28,8 @@
     mx-auto
     container="lg:"
   >
-    <ItemGrid>
-      {#each [...D.covers].sort(_ => 0.5 - Math.random()) as [name, _]}
+    <ArtGrid {D} let:covers>
+      {#each covers as [name, _]}
         <button
           aria-label="open modal for {name}"
           cursor-pointer
@@ -42,6 +42,6 @@
           <CoverImg {name} {D} />
         </button>
       {/each}
-    </ItemGrid>
+    </ArtGrid>
   </div>
 </Section>

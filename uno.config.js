@@ -7,7 +7,6 @@ import {
 } from 'unocss'
 import extractorSvelte from '@unocss/extractor-svelte'
 import { presetScrollbar } from 'unocss-preset-scrollbar'
-import { colorResolver } from '@unocss/preset-mini/utils'
 
 export default {
   presets: [
