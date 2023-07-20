@@ -10,7 +10,10 @@
   let OFF = _ => (dropped = false)
 
   let GOTO = top => {
-    if (browser) scrollTo({ top, behavior: 'smooth' })
+    if (browser) {
+      dropped = false
+      scrollTo({ top, behavior: 'smooth' })
+    }
   }
 </script>
 

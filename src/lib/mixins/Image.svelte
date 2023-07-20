@@ -15,5 +15,5 @@
   alt={name}
   src={x ? a : a.get(name)}
   data-src={x ? b : b.get(name)}
-  {...$$props}
+  {...$$restProps}
 />

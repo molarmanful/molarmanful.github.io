@@ -4,8 +4,6 @@
   export let name = ''
   export let ot = _ => {}
   export let bord = false
-
-  let sideW
 </script>
 
 <section
@@ -16,7 +14,7 @@
   backdrop="grayscale"
   use:offtop={{ update: ot }}
   border={bord ? 'lt-xl:t gray-500' : void 0}
-  {...$$props}
+  {...$$restProps}
 >
   <div hidden flex="xl:~ 1 col" data-aos="fade-right">
     <div type-7 write-vertical-left sticky top-0 p="t-6 b-32 xl:x-4" ml-auto>

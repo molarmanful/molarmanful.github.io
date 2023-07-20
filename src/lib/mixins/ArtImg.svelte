@@ -5,4 +5,4 @@
   export let name
 </script>
 
-<Image {name} a={D.art_tiny} b={D.art} {...$$props} />
+<Image {name} a={D.art_tiny} b={D.art} {...$$restProps} />

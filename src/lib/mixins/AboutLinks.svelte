@@ -14,7 +14,7 @@
   ]
 </script>
 
-<div prose {...$$props}>
+<div prose {...$$restProps}>
   <h2 type-6 text=" stroked gray-500" data-aos="fade-left" noprose>LINKS</h2>
   <menu m="t-2 x-2 lg:t-4" data-aos="fade-left">
     {#each links as [name, link]}

@@ -8,7 +8,7 @@
   border="b-1 gray-700"
   text="gray-600"
   bg-black
-  {...$$props}
+  {...$$restProps}
 >
   <slot />
 </div>

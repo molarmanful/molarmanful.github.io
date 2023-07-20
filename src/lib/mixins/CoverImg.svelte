@@ -14,5 +14,5 @@
   {name}
   a={D.covers_tiny}
   b={D.covers}
-  {...$$props}
+  {...$$restProps}
 />

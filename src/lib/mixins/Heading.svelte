@@ -3,7 +3,7 @@
   text=" stroked gray-500"
   uppercase
   hyphens-manual
-  {...$$props}
+  {...$$restProps}
 >
   <slot />
 </h1>

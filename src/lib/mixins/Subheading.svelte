@@ -9,7 +9,7 @@
   text=" gray-300"
   m="t-6 lg:t-12"
   class={bold ? 'bold' : 'font-200'}
-  {...$$props}
+  {...$$restProps}
 >
   <slot />
 </h2>
