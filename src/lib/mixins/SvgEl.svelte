@@ -7,8 +7,9 @@
   let t = 3000
 
   let f = _ => {
+    t = (0 | (Math.random() * 3 + 1)) * 1000
+    setTimeout(f, t)
     stroke = colors[0 | (Math.random() * colors.length)]
-    setTimeout(f, (t = (0 | (Math.random() * 3 + 1)) * 1000))
   }
 
   f()
