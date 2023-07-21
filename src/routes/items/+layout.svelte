@@ -30,13 +30,12 @@
     </span>
   </div>
 </ItemBar>
-<div screen flex="~ col" overflow-hidden>
+<div screen pt-16 flex="~ col" overflow-hidden>
   <div
     w-full
     splash
     scroll
     overflow="y-auto x-hidden"
-    mt-16
     p="b-4 lg:0"
     bind:this={el}
   >
