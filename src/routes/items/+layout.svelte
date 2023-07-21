@@ -30,7 +30,8 @@
     </span>
   </div>
 </ItemBar>
-<div screen pt-16 flex="~ col" overflow-hidden>
+
+<div max-screen pt-16 overflow-hidden>
   <div
     w-full
     splash
