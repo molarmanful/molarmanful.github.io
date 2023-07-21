@@ -3,11 +3,12 @@
   import me from '../js/me'
 
   let colors = [
+    'stroke-pink-500',
     'stroke-red-500',
     'stroke-yellow-500',
     'stroke-teal-500',
     'stroke-cyan-500',
-    'stroke-pink-500',
+    'stroke-purple-500',
   ]
 </script>
 
