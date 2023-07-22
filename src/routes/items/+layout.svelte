@@ -32,7 +32,7 @@
     </div>
   </ItemBar>
 
-  <div full scroll overflow-x-hidden p="b-4 lg:0" bind:this={el}>
+  <div full scroll overflow-x-hidden pb="4 lg:0" bind:this={el}>
     <slot />
   </div>
 </div>
