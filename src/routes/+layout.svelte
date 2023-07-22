@@ -1,13 +1,13 @@
 <script>
   import { onMount, setContext } from 'svelte'
-  import Favicons from '$lib/Favicons.svelte'
+  import { writable } from 'svelte/store'
   import { browser } from '$app/environment'
+  import Favicons from '$lib/Favicons.svelte'
 
   import '@unocss/reset/tailwind-compat.css'
   import 'uno.css'
   import 'aos/dist/aos.css'
   import '../app.css'
-  import { writable } from 'svelte/store'
 
   let loaded = false
 

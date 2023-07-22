@@ -18,7 +18,7 @@
 </script>
 
 <div screen inset-0 pt-16 overflow-hidden>
-  <ItemBar z="10">
+  <ItemBar>
     <div flex ml-4 h-full>
       <span m-auto text-nowrap>
         <A t un-text="inherit" decoration="none" href="/">ben</A>

@@ -9,5 +9,7 @@
   decoration-offset="[.25rem]"
   {href}
   target={t ? void 0 : '_blank'}
-  {...$$restProps}><slot /></a
+  {...$$restProps}
 >
+  <slot />
+</a>
