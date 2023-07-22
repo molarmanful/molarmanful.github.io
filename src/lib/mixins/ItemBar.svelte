@@ -1,8 +1,8 @@
 <div
   fixed
-  flex="~ row"
   top-0
-  left-0
+  inset-x-0
+  flex="~ row"
   w-full
   h-16
   border="b-1 gray-700"

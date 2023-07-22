@@ -17,29 +17,22 @@
   })
 </script>
 
-<ItemBar z="10">
-  <div flex ml-4 h-full>
-    <span m-auto text-nowrap>
-      <A t un-text="inherit" decoration="none" href="/">ben</A>
-      {#each crumbs as [name, href]}
-        &gt;
-        <A t un-text="inherit" decoration="none" {href}>
-          {name}
-        </A>
-      {/each}
-    </span>
-  </div>
-</ItemBar>
+<div screen inset-0 pt-16 overflow-hidden overscroll-contain>
+  <ItemBar z="10">
+    <div flex ml-4 h-full>
+      <span m-auto text-nowrap>
+        <A t un-text="inherit" decoration="none" href="/">ben</A>
+        {#each crumbs as [name, href]}
+          &gt;
+          <A t un-text="inherit" decoration="none" {href}>
+            {name}
+          </A>
+        {/each}
+      </span>
+    </div>
+  </ItemBar>
 
-<div max-screen pt-16 overflow-hidden>
-  <div
-    w-full
-    splash
-    scroll
-    overflow="y-auto x-hidden"
-    p="b-4 lg:0"
-    bind:this={el}
-  >
+  <div full scroll overflow-x-hidden p="b-4 lg:0" bind:this={el}>
     <slot />
   </div>
 </div>

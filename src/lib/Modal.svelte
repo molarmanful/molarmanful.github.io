@@ -64,9 +64,7 @@
       </button>
     </ItemBar>
 
-    {#await D.items.get(selected)()}
-      <br />
-    {:then item}
+    {#await D.items.get(selected)() then item}
       <div in:fade={{ duration: 200 }} full scroll overflow-x-hidden>
         <svelte:component this={item.default} {D} />
       </div>
