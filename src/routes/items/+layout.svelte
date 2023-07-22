@@ -17,7 +17,7 @@
   })
 </script>
 
-<div screen inset-0 pt-16 overflow-hidden overscroll-contain>
+<div screen inset-0 pt-16 overflow-hidden>
   <ItemBar z="10">
     <div flex ml-4 h-full>
       <span m-auto text-nowrap>
