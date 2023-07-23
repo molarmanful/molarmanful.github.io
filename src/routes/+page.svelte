@@ -1,5 +1,4 @@
 <script>
-  import { getContext } from 'svelte'
   import { classList } from 'svelte-body'
   import AOS from 'aos'
   import Filters from '$lib/Filters.svelte'
@@ -14,8 +13,6 @@
 
   let tops = []
   let selected
-
-  getContext('scan').set(true)
 
   if (browser) {
     AOS.init()

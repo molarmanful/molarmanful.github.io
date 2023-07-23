@@ -1,6 +1,5 @@
 <script>
-  import { onMount, setContext } from 'svelte'
-  import { writable } from 'svelte/store'
+  import { onMount } from 'svelte'
   import { browser } from '$app/environment'
   import Favicons from '$lib/Favicons.svelte'
 
@@ -10,13 +9,6 @@
   import '../app.css'
 
   let loaded = false
-
-  let scanS = writable(false)
-  let scan
-  scanS.subscribe(s => {
-    scan = s
-  })
-  setContext('scan', scanS)
 
   if (browser) {
     history.scrollRestoration = 'manual'
@@ -34,11 +26,6 @@
   <Favicons />
 </svelte:head>
 
-<main
-  overflow-x-clip
-  scanlines={scan ? '' : void 0}
-  ofade-500
-  class={loaded ? 'opacity-100' : 'opacity-0'}
->
+<main overflow-x-clip ofade-500 class={loaded ? 'opacity-100' : 'opacity-0'}>
   <slot />
 </main>

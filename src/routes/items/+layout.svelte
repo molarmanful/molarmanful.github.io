@@ -1,11 +1,12 @@
 <script>
   import { ItemBar, A } from '$lib/mixins'
-  import { page } from '$app/stores'
   import { afterNavigate } from '$app/navigation'
+  import { send, receive } from '$lib/js/crossfade'
 
+  export let data
   let el
 
-  $: crumbs = $page.url.pathname.split`/`
+  $: crumbs = data.pathname.split`/`
     .slice(1)
     .reduce((a, x) => [...a, [x, a[a.length - 1][1] + '/' + x]], [['', '']])
     .slice(1)
@@ -17,22 +18,33 @@
   })
 </script>
 
-<div screen inset-0 pt-16 overflow-hidden>
-  <ItemBar>
-    <div flex ml-4 h-full>
-      <span m-auto text-nowrap>
-        <A t un-text="inherit" decoration="none" href="/">ben</A>
-        {#each crumbs as [name, href]}
-          &gt;
-          <A t un-text="inherit" decoration="none" {href}>
-            {name}
-          </A>
-        {/each}
-      </span>
-    </div>
-  </ItemBar>
-
-  <div full scroll overflow-x-hidden pb="4 lg:0" bind:this={el}>
-    <slot />
+<ItemBar z="10">
+  <div flex ml-4 h-full>
+    <span m-auto text-nowrap>
+      <A t un-text="inherit" decoration="none" href="/">ben</A>
+      {#each crumbs as [name, href]}
+        &gt;
+        <A t un-text="inherit" decoration="none" {href}>
+          {name}
+        </A>
+      {/each}
+    </span>
   </div>
-</div>
+</ItemBar>
+
+{#key data.pathname}
+  <div
+    in:receive={{ key: 'a' }}
+    out:send={{ key: 'a' }}
+    absolute
+    screen
+    inset-0
+    pt-16
+    overflow-hidden
+    bg-black
+  >
+    <div full scroll overflow-x-hidden pb="4 lg:0" bind:this={el}>
+      <slot />
+    </div>
+  </div>
+{/key}
