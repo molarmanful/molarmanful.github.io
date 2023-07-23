@@ -1,5 +1,6 @@
 export { default as Section } from './Section.svelte'
 export { default as ItemBar } from './ItemBar.svelte'
+export { default as ItemBody } from './ItemBody.svelte'
 export { default as HeaderTitle } from './HeaderTitle.svelte'
 export { default as HeaderSubtitle } from './HeaderSubtitle.svelte'
 export { default as HeaderSplash } from './HeaderSplash.svelte'

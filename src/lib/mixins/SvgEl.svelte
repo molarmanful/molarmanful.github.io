@@ -1,23 +1,27 @@
 <svelte:options namespace="svg" />
 
 <script>
+  import { writable } from 'svelte/store'
+
+  export let D
   export let name
-  export let colors
-  let stroke
-  let t = 3000
 
-  let f = _ => {
-    stroke = colors[0 | (Math.random() * colors.length)]
-    t = (0 | (Math.random() * 300 + 100)) * 10
-    setTimeout(f, t)
-  }
+  let color = ''
+  let d = 3000
+  let ts = writable(d)
 
-  f()
+  D.randt(_ => {
+    color = D.randc(500)
+  }, ts)
+
+  ts.subscribe(t => {
+    d = t
+  })
 </script>
 
 <svelte:element
   this={name}
   {...$$restProps}
-  class="fill-transparent transition-stroke stroke-1 {stroke}"
-  style:transition-duration="{t}ms"
+  class="fill-transparent transition-color stroke-1 stroke-current {color}"
+  style:transition-duration="{d}ms"
 />

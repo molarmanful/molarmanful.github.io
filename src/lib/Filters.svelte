@@ -1,4 +1,4 @@
-<svg hidden id="filters">
+<svg hidden>
   <defs>
     <filter id="stroke-filter">
       <feMorphology operator="dilate" radius="1" />

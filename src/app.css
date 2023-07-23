@@ -12,7 +12,7 @@ html {
 }
 
 body {
-  @apply scroll font-2 font-300 tracking-wide select-text text-gray-200 type-4;
+  @apply scroll font-2 font-300 tracking-wide select-text text-gray-400 type-4;
 }
 
 h1,
@@ -44,7 +44,7 @@ h6 {
 }
 
 [graiscale]:hover {
-  filter: brightness(50%) sepia(1) hue-rotate(-182deg) saturate(115%)
+  filter: brightness(50%) sepia(1) hue-rotate(182deg) saturate(50%)
     brightness(86%);
 }
 

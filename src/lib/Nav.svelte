@@ -3,6 +3,7 @@
   import { scale } from 'svelte/transition'
   import { clickout } from './js/util'
 
+  export let D
   export let tops
 
   let dropped = false
@@ -25,7 +26,7 @@
     right-2
     h-16
     w-16
-    border="1 gray-500"
+    border="1 current"
     text-gray-500
     bg-black
     z-30
@@ -54,7 +55,8 @@
       top-2
       right-2
       bg-black
-      border="1 gray-500"
+      border="1 current"
+      text-gray-500
       ease-in-out
       origin-top-right
       on:mouseleave={OFF}

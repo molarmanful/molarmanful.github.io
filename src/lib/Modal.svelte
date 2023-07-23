@@ -1,6 +1,6 @@
 <script>
   import { fade } from 'svelte/transition'
-  import { ItemBar, A } from './mixins'
+  import { ItemBar, ItemBody, A } from './mixins'
 
   export let selected
   export let D
@@ -27,12 +27,7 @@
   >
     <ItemBar>
       <div flex ml-4 h-full>
-        <A
-          un-text="inherit"
-          decoration="none"
-          m="auto"
-          href="/items/{selected}"
-        >
+        <A item decoration="none" m="auto" href="/items/{selected}">
           {selected}
         </A>
       </div>
@@ -50,7 +45,6 @@
         <svg
           m-auto
           fill-current
-          text-gray-700
           w="1/2"
           h="1/2"
           viewBox="0 0 100 100"
@@ -64,10 +58,12 @@
       </button>
     </ItemBar>
 
-    {#await D.items.get(selected)() then item}
-      <div in:fade={{ duration: 200 }} full scroll overflow-x-hidden>
-        <svelte:component this={item.default} {D} />
-      </div>
-    {/await}
+    <ItemBody>
+      {#await D.items.get(selected)() then item}
+        <div full in:fade={{ duration: 200 }}>
+          <svelte:component this={item.default} {D} />
+        </div>
+      {/await}
+    </ItemBody>
   </div>
 {/if}

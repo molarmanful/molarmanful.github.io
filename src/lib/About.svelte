@@ -13,7 +13,6 @@
   <div
     border="xl:(t l) gray-500"
     p="t-8 md:(x-8 t-16) lg:x-16"
-    text="gray-400"
     w-screen
     mx-auto
     container="lg:~"

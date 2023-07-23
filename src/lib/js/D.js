@@ -20,9 +20,7 @@ export default {
       query: { w: 32, quality: 50 },
     })
   ),
-  media: process(
-    import.meta.glob('$lib/media/*', { eager: true, as: 'url' })
-  ),
+  media: process(import.meta.glob('$lib/media/*', { eager: true, as: 'url' })),
   media_tiny: process(
     import.meta.glob('$lib/media/*', {
       eager: true,
@@ -31,5 +29,15 @@ export default {
     })
   ),
   items: process(import.meta.glob('$lib/items/*')),
-  update() { },
+  update() {},
+  factor: 0,
+  randt(f, ts, r = _ => 0 | (Math.random() * 3000 + 1000)) {
+    let f1 = _ => {
+      f()
+      let t = r()
+      setTimeout(f1, t)
+      ts.set(t)
+    }
+    f1()
+  },
 }

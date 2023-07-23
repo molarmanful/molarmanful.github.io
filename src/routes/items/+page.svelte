@@ -22,8 +22,8 @@
 </svelte:head>
 
 <div w-full m-auto p="x-5 y-5 lg:y-16" container="lg:~">
-  <ArtGrid {D} let:covers>
-    {#each covers as [name, _]}
+  <ArtGrid>
+    {#each D.covers as [name, _]}
       <A href="/items/{name}" t><CoverImg {name} {D} /></A>
     {/each}
   </ArtGrid>

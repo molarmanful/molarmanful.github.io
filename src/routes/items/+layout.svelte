@@ -1,30 +1,22 @@
 <script>
-  import { ItemBar, A } from '$lib/mixins'
-  import { afterNavigate } from '$app/navigation'
+  import { ItemBar, ItemBody, A } from '$lib/mixins'
   import { send, receive } from '$lib/js/crossfade'
 
   export let data
-  let el
 
   $: crumbs = data.pathname.split`/`
     .slice(1)
     .reduce((a, x) => [...a, [x, a[a.length - 1][1] + '/' + x]], [['', '']])
     .slice(1)
-
-  afterNavigate(_ => {
-    requestAnimationFrame(_ => {
-      el.scrollTo(0, 0)
-    })
-  })
 </script>
 
-<ItemBar z="10">
+<ItemBar>
   <div flex ml-4 h-full>
     <span m-auto text-nowrap>
-      <A t un-text="inherit" decoration="none" href="/">ben</A>
+      <A t item decoration="none" href="/">ben</A>
       {#each crumbs as [name, href]}
         &gt;
-        <A t un-text="inherit" decoration="none" {href}>
+        <A t item decoration="none" {href}>
           {name}
         </A>
       {/each}
@@ -33,18 +25,9 @@
 </ItemBar>
 
 {#key data.pathname}
-  <div
-    in:receive={{ key: 'a' }}
-    out:send={{ key: 'a' }}
-    absolute
-    screen
-    inset-0
-    pt-16
-    overflow-hidden
-    bg-black
-  >
-    <div full scroll overflow-x-hidden pb="4 lg:0" bind:this={el}>
+  <div in:receive={{ key: 'a' }} out:send={{ key: 'a' }}>
+    <ItemBody>
       <slot />
-    </div>
+    </ItemBody>
   </div>
 {/key}

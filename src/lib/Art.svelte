@@ -1,5 +1,4 @@
 <script>
-  import { onMount } from 'svelte'
   import { Section, ArtGrid, CoverImg } from './mixins'
 
   export let selected
@@ -14,10 +13,6 @@
     top.n = n
     top = top
   }
-
-  onMount(_ => {
-    D.update()
-  })
 </script>
 
 <Section name="WORK" id="art" ot={update}>
@@ -28,8 +23,8 @@
     mx-auto
     container="lg:"
   >
-    <ArtGrid {D} let:covers>
-      {#each covers as [name, _]}
+    <ArtGrid>
+      {#each D.covers as [name, _]}
         <button
           aria-label="open modal for {name}"
           cursor-pointer
@@ -39,7 +34,7 @@
           on:keypress={_ => {}}
           data-aos="fade-up"
         >
-          <CoverImg {name} {D} />
+          <CoverImg {D} {name} />
         </button>
       {/each}
     </ArtGrid>
