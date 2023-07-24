@@ -12,13 +12,11 @@
 
   let tops = []
   let selected
-  let scrollY
-  let innerHeight
 
   if (browser) {
     AOS.init()
     D.lazy = new LazyLoad({
-      callback_loaded(e) {
+      callback_loaded() {
         AOS.refresh()
       },
     })
@@ -26,31 +24,7 @@
       D.lazy.update()
     }
   }
-
-  $: D.factor = Math.max(0, scrollY / innerHeight)
-
-  D.colors = {
-    400: [
-      'text-pink-400',
-      'text-red-400',
-      'text-yellow-400',
-      'text-teal-400',
-      'text-cyan-400',
-      'text-purple-400',
-    ],
-    500: [
-      'text-pink-500',
-      'text-red-500',
-      'text-yellow-500',
-      'text-teal-500',
-      'text-cyan-500',
-      'text-purple-500',
-    ],
-  }
-  D.randc = b => D.colors[b][0 | (Math.random() * D.colors[b].length)]
 </script>
-
-<svelte:window bind:scrollY bind:innerHeight />
 
 <svelte:head>
   <title>Ben Pang</title>
@@ -62,8 +36,8 @@
 
 <svelte:body use:classList={[selected && 'overflow-hidden']} />
 
-<Nav {D} {tops} />
-<Header {D} bind:top={tops[0]} />
+<Nav {tops} />
+<Header bind:top={tops[0]} />
 <About bind:top={tops[1]} />
 <Art {D} bind:top={tops[2]} bind:selected />
 <Modal {D} bind:selected />

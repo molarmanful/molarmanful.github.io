@@ -1,20 +1,20 @@
 <script>
-  import { HeaderTitle, HeaderSubtitle, HeaderSplash } from '$lib/mixins'
+  import { HeaderTitle, HeaderSubtitle, HeaderSplash, Factor } from './mixins'
   import { offtop } from './js/util'
 
-  export let D
   export let top = { name: 'top' }
 
+  let factor
   let update = n => {
     top.n = n
     top = top
   }
 </script>
 
+<Factor bind:factor />
 <header relative screen use:offtop={{ update }}>
-  <div fixed flex full style:filter="hue-rotate({D.factor * -69}deg)">
+  <div fixed flex full style:filter="hue-rotate({factor * -69}deg)">
     <HeaderSplash
-      {D}
       absolute=""
       bottom="0"
       right="0 media-squarish:40%"
@@ -29,7 +29,7 @@
       p-8
       backdrop="lt-xl:grayscale"
       bg="lt-xl:black/42"
-      style:opacity={1 - D.factor * 2}
+      style:opacity={1 - factor * 2}
     >
       <HeaderTitle />
       <HeaderSubtitle block="" m="t-4 l-1 lg:l-2" />

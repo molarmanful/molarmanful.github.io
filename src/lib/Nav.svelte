@@ -1,11 +1,13 @@
 <script>
-  import { browser } from '$app/environment'
+  import { onMount } from 'svelte'
   import { scale } from 'svelte/transition'
+  import { browser } from '$app/environment'
   import { clickout } from './js/util'
+  import { Factor, RColor } from './mixins'
 
-  export let D
-  export let tops
+  export let tops = []
 
+  let factor, cs
   let dropped = false
   let ON = _ => (dropped = true)
   let OFF = _ => (dropped = false)
@@ -16,7 +18,24 @@
       scrollTo({ top, behavior: 'smooth' })
     }
   }
+
+  let ic = 0
+  let pulse = 2000
+  let len = 4
+  let clrs = [...Array(len)].map(_ => 'text-gray-500')
+
+  onMount(_ => {
+    let i = len - 1
+    setInterval(_ => {
+      if (i == len - 1) ic = (ic + 1) % cs[500].length
+      clrs[i] = cs[500][ic]
+      i = (i + 1) % len
+    }, pulse / len)
+  })
 </script>
+
+<Factor bind:factor />
+<RColor bind:cs />
 
 <nav>
   <button
@@ -27,20 +46,30 @@
     h-16
     w-16
     border="1 current"
-    text-gray-500
     bg-black
     z-30
     cursor-pointer
     flex
-    transition-colors
+    transition-color
+    style:transition-duration="{pulse}ms"
+    class={clrs[len - 1]}
+    style:filter="hue-rotate({factor * -69}deg) grayscale({factor * 1.2})"
     on:mouseenter={ON}
     on:click={ON}
     on:keyup={_ => {}}
   >
-    <svg m-auto fill-current w="1/2" h="1/2" viewBox="0 0 100 100" alt="menu">
-      <rect width="100" height="20" />
-      <rect width="100" height="20" y="40" />
-      <rect width="100" height="20" y="80" />
+    <svg m-auto w="1/2" h="1/2" viewBox="0 0 100 100" alt="menu">
+      {#each tops as _, i}
+        <rect
+          width="100"
+          height="20"
+          y={i * 40}
+          fill-current
+          transition-color
+          style:transition-duration="{pulse}ms"
+          class={clrs[i]}
+        />
+      {/each}
     </svg>
   </button>
 
@@ -56,17 +85,27 @@
       right-2
       bg-black
       border="1 current"
-      text-gray-500
       ease-in-out
       origin-top-right
+      transition-color
+      class={clrs[len - 1]}
+      style:transition-duration="{pulse}ms"
       on:mouseleave={OFF}
       use:clickout
       on:clickout={OFF}
     >
       <menu font-1 text-3xl leading-8>
-        {#each tops as top}
+        {#each tops as top, i}
           <li>
-            <button navitem on:click={GOTO(top.n)}>
+            <button
+              on:click={GOTO(top.n)}
+              cursor-pointer
+              bg-transparent
+              style:transition="color {pulse}ms, filter 500ms"
+              transition-ease
+              filter="hover:(brightness-0 invert)"
+              class={clrs[i]}
+            >
               {top.name.toUpperCase()}
             </button>
           </li>

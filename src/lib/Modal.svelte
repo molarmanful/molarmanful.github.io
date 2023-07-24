@@ -38,13 +38,16 @@
         ml-auto
         w-16
         h-full
+        border="l-1 current"
         cursor-pointer
         on:click={OFF}
         on:keyup={_ => {}}
       >
         <svg
           m-auto
-          fill-current
+          transition-fill
+          duration-500
+          un-fill="current hover:white"
           w="1/2"
           h="1/2"
           viewBox="0 0 100 100"

@@ -1,4 +1,4 @@
-export function clickout(node) {
+export const clickout = node => {
   let f = e => {
     if (!node.contains(e.target))
       node.dispatchEvent(new CustomEvent('clickout'))
@@ -12,7 +12,7 @@ export function clickout(node) {
   }
 }
 
-export function offtop(node, { update }) {
+export const offtop = (node, { update }) => {
   let ro = new ResizeObserver(_ => {
     update(node.offsetTop)
   })

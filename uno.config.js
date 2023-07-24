@@ -70,8 +70,6 @@ export default {
       screen: 'w-screen h-screen',
       full: 'w-full h-full',
       'max-full': 'max-w-full max-h-full',
-      navitem:
-        'text-gray-500 cursor-pointer transition-colors hover:text-white bg-transparent',
       'aspect-portrait': 'aspect-9/16',
       'type-4': 'text-base md:text-lg  lg:text-xl  xl:text-2xl             ',
       'type-5': 'text-xl   md:text-2xl lg:text-3xl xl:text-4xl             ',

@@ -30,14 +30,4 @@ export default {
   ),
   items: process(import.meta.glob('$lib/items/*')),
   update() {},
-  factor: 0,
-  randt(f, ts, r = _ => 0 | (Math.random() * 3000 + 1000)) {
-    let f1 = _ => {
-      f()
-      let t = r()
-      setTimeout(f1, t)
-      ts.set(t)
-    }
-    f1()
-  },
 }
