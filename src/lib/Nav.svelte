@@ -19,6 +19,8 @@
     }
   }
 
+  $: filter = `hue-rotate(${factor * -69}deg) grayscale(${factor * 1.2})`
+
   let ic = 0
   let pulse = 2000
   let len = 4
@@ -53,7 +55,7 @@
     transition-color
     style:transition-duration="{pulse}ms"
     class={clrs[len - 1]}
-    style:filter="hue-rotate({factor * -69}deg) grayscale({factor * 1.2})"
+    style:filter
     on:mouseenter={ON}
     on:click={ON}
     on:keyup={_ => {}}
@@ -90,6 +92,7 @@
       transition-color
       class={clrs[len - 1]}
       style:transition-duration="{pulse}ms"
+      style:filter
       on:mouseleave={OFF}
       use:clickout
       on:clickout={OFF}
