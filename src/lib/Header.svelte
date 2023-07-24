@@ -1,6 +1,6 @@
 <script>
-  import { HeaderTitle, HeaderSubtitle, HeaderSplash, Factor } from './mixins'
   import { offtop } from './js/util'
+  import { Factor, HeaderSplash, HeaderSubtitle, HeaderTitle } from './mixins'
 
   export let top = { name: 'top' }
 
@@ -12,6 +12,7 @@
 </script>
 
 <Factor bind:factor />
+
 <header relative screen use:offtop={{ update }}>
   <div fixed flex full style:filter="hue-rotate({factor * -69}deg)">
     <HeaderSplash

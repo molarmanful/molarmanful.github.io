@@ -1,14 +1,8 @@
 <script>
-  import { onMount } from 'svelte'
   import { Prose, Heading, Subheading, Text, A, MediaImg, Sp } from '../mixins'
 
-  export let D
   export let desc =
     "2021. A procedurally-generated website based on Gene Ray's Time Cube."
-
-  onMount(_ => {
-    D.update()
-  })
 </script>
 
 <Prose>
@@ -23,5 +17,5 @@
   </Text>
 
   <Sp />
-  <MediaImg {D} name="generay" />
+  <MediaImg name="generay" />
 </Prose>

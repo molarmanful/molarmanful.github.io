@@ -1,12 +1,5 @@
 <script>
-  import { onMount } from 'svelte'
   import { Prose, Heading, Subheading, Text, A, MediaImg, Sp } from '../mixins'
-
-  export let D
-
-  onMount(_ => {
-    D.update()
-  })
 </script>
 
 <Prose>
@@ -17,7 +10,7 @@
 
   <Sp />
   <Subheading bold>3-Species Ecosystem</Subheading>
-  <MediaImg {D} name="3species" />
+  <MediaImg name="3species" />
   <Text>
     <A href="https://bennyboy.tech/RobotaPsyche/midterm">Website</A>
     <br />
@@ -28,7 +21,7 @@
 
   <Sp />
   <Subheading bold>Reddit Rainbow (feat. Adham Chakohi)</Subheading>
-  <MediaImg {D} name="rainbow" />
+  <MediaImg name="rainbow" />
   <Text>
     <A href="https://bennyboy.tech/rainbow">Website</A>
     <br />
@@ -37,7 +30,7 @@
 
   <Sp />
   <Subheading bold>Waterworks</Subheading>
-  <MediaImg {D} name="waterworks" />
+  <MediaImg name="waterworks" />
   <Text>
     <A href="https://codepen.io/molarmanful/full/XzbwpP">Website</A>
   </Text>

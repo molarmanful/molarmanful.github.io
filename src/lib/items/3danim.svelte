@@ -1,14 +1,8 @@
 <script>
-  import { onMount } from 'svelte'
   import { Prose, Heading, Subheading, IVideo } from '../mixins'
 
-  export let D
   export let desc =
     'Blurring the lines between real and unreal, one render at a time. Rendered in Cinema 4D + Redshift.'
-
-  onMount(_ => {
-    D.update()
-  })
 </script>
 
 <Prose>

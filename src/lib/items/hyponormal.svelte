@@ -1,5 +1,4 @@
 <script>
-  import { onMount } from 'svelte'
   import {
     Prose,
     Heading,
@@ -11,13 +10,8 @@
     Sp,
   } from '../mixins'
 
-  export let D
   export let desc =
     '2022. An abstract Unity study of worldbuilding centered around non-Euclidean traversal mechanics.'
-
-  onMount(_ => {
-    D.update()
-  })
 </script>
 
 <Prose>
@@ -45,12 +39,12 @@
   </Text>
 
   <Sp />
-  <MediaImg {D} name="hyponormal0" />
-  <MediaImg {D} name="hyponormal1" />
-  <MediaImg {D} name="hyponormal2" />
-  <MediaImg {D} name="hyponormal3" />
-  <MediaImg {D} name="hyponormal4" />
-  <MediaImg {D} name="hyponormal5" />
-  <MediaImg {D} name="hyponormal6" />
+  <MediaImg name="hyponormal0" />
+  <MediaImg name="hyponormal1" />
+  <MediaImg name="hyponormal2" />
+  <MediaImg name="hyponormal3" />
+  <MediaImg name="hyponormal4" />
+  <MediaImg name="hyponormal5" />
+  <MediaImg name="hyponormal6" />
   <YTVideo a="EeSWXgkycRY" title="HYPONORMAL" />
 </Prose>

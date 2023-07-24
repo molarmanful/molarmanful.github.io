@@ -1,16 +1,18 @@
 <script>
   import { onMount } from 'svelte'
   import { scale } from 'svelte/transition'
+
+  import { clickout, colors } from './js/util'
+  import { Factor } from './mixins'
+
   import { browser } from '$app/environment'
-  import { clickout } from './js/util'
-  import { Factor, RColor } from './mixins'
 
   export let tops = []
 
-  let factor, cs
+  let factor
   let dropped = false
-  let ON = _ => (dropped = true)
-  let OFF = _ => (dropped = false)
+  let ON = () => (dropped = true)
+  let OFF = () => (dropped = false)
 
   let GOTO = top => {
     if (browser) {
@@ -24,20 +26,19 @@
   let ic = 0
   let pulse = 2000
   let len = 4
-  let clrs = [...Array(len)].map(_ => 'text-gray-500')
+  let clrs = [...Array(len)].map(() => 'text-gray-500')
 
-  onMount(_ => {
+  onMount(() => {
     let i = len - 1
-    setInterval(_ => {
-      if (i == len - 1) ic = (ic + 1) % cs[500].length
-      clrs[i] = cs[500][ic]
+    setInterval(() => {
+      if (i == len - 1) ic = (ic + 1) % colors[500].length
+      clrs[i] = colors[500][ic]
       i = (i + 1) % len
     }, pulse / len)
   })
 </script>
 
 <Factor bind:factor />
-<RColor bind:cs />
 
 <nav>
   <button
@@ -58,9 +59,10 @@
     style:filter
     on:mouseenter={ON}
     on:click={ON}
-    on:keyup={_ => {}}
+    on:keyup={() => {}}
   >
     <svg m-auto w="1/2" h="1/2" viewBox="0 0 100 100" alt="menu">
+      <!-- eslint-disable-next-line no-unused-vars -->
       {#each tops as _, i}
         <rect
           width="100"

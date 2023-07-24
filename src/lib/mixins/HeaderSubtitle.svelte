@@ -1,6 +1,7 @@
 <script>
-  import { Subheading } from '$lib/mixins'
   import lev from '../js/lev'
+
+  import { Subheading } from '$lib/mixins'
 
   let bank = [
     'weird',
@@ -16,11 +17,11 @@
   let i = 0
   let word = bank[i]
 
-  setInterval(_ => {
+  setInterval(() => {
     word = bank[i]
     i = (i + 1) % bank.length
     let steps = lev(word, bank[i])
-    let n = setInterval(_ => {
+    let n = setInterval(() => {
       if (steps.length) word = steps.pop()
       else clearInterval(n)
     }, 50)

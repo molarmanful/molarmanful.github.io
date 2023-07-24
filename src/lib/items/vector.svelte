@@ -1,14 +1,8 @@
 <script>
-  import { onMount } from 'svelte'
   import { Prose, Heading, Subheading, ArtImg } from '../mixins'
 
-  export let D
   export let desc =
     'Scalable compositions of geometries and abstract oddities. Made with Illustrator and Hexels.'
-
-  onMount(_ => {
-    D.update()
-  })
 </script>
 
 <Prose>
@@ -16,25 +10,25 @@
   <Subheading>{desc}</Subheading>
 </Prose>
 
-<ArtImg {D} name="plane" />
-<ArtImg {D} name="meltdown" />
-<ArtImg {D} name="bang" />
-<ArtImg {D} name="crow" />
-<ArtImg {D} name="beetle" />
-<ArtImg {D} name="jellyfish" />
-<ArtImg {D} name="somanyhands" />
-<ArtImg {D} name="deepspider" />
-<ArtImg {D} name="botfight" />
-<ArtImg {D} name="tpdneoldman" />
-<ArtImg {D} name="somerandomwoman" />
-<ArtImg {D} name="woman" />
-<ArtImg {D} name="synthwoman" />
-<ArtImg {D} name="haringrun" />
-<ArtImg {D} name="tvdude" />
-<ArtImg {D} name="snowman" />
-<ArtImg {D} name="lama" />
-<ArtImg {D} name="cobra" />
-<ArtImg {D} name="hand2" />
-<ArtImg {D} name="cake" />
-<ArtImg {D} name="weirdface" />
-<ArtImg {D} name="freefall" />
+<ArtImg name="plane" />
+<ArtImg name="meltdown" />
+<ArtImg name="bang" />
+<ArtImg name="crow" />
+<ArtImg name="beetle" />
+<ArtImg name="jellyfish" />
+<ArtImg name="somanyhands" />
+<ArtImg name="deepspider" />
+<ArtImg name="botfight" />
+<ArtImg name="tpdneoldman" />
+<ArtImg name="somerandomwoman" />
+<ArtImg name="woman" />
+<ArtImg name="synthwoman" />
+<ArtImg name="haringrun" />
+<ArtImg name="tvdude" />
+<ArtImg name="snowman" />
+<ArtImg name="lama" />
+<ArtImg name="cobra" />
+<ArtImg name="hand2" />
+<ArtImg name="cake" />
+<ArtImg name="weirdface" />
+<ArtImg name="freefall" />

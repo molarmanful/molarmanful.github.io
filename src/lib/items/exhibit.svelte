@@ -1,22 +1,8 @@
 <script>
-  import { onMount } from 'svelte'
-  import {
-    Prose,
-    Heading,
-    Subheading,
-    Text,
-    A,
-    MediaImg,
-    YTVideo,
-    Sp,
-  } from '../mixins'
+  import { Prose, Heading, Subheading, Text, A, MediaImg, Sp } from '../mixins'
 
-  export let D
   export let desc =
     '2020 - made in collaboration with Li Cheng and Amy Kang. A concept for a virtual exhibition space that displays contemporary Asian art.'
-  onMount(_ => {
-    D.update()
-  })
 </script>
 
 <Prose>
@@ -28,6 +14,6 @@
   </Text>
 
   <Sp />
-  <MediaImg {D} name="exhibit" />
-  <MediaImg {D} name="exhibit_desc" />
+  <MediaImg name="exhibit" />
+  <MediaImg name="exhibit_desc" />
 </Prose>

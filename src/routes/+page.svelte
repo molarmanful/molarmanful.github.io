@@ -1,14 +1,16 @@
 <script>
-  import { classList } from 'svelte-body'
-  import { browser } from '$app/environment'
   import AOS from 'aos'
-  import Nav from '$lib/Nav.svelte'
-  import Header from '$lib/Header.svelte'
-  import Art from '$lib/Art.svelte'
-  import About from '$lib/About.svelte'
-  import Modal from '$lib/Modal.svelte'
+  import { setContext } from 'svelte'
+  import { classList } from 'svelte-body'
   import LazyLoad from 'vanilla-lazyload'
+
+  import { browser } from '$app/environment'
+  import About from '$lib/About.svelte'
+  import Art from '$lib/Art.svelte'
+  import Header from '$lib/Header.svelte'
   import D from '$lib/js/D'
+  import Modal from '$lib/Modal.svelte'
+  import Nav from '$lib/Nav.svelte'
 
   let tops = []
   let selected
@@ -20,10 +22,12 @@
         AOS.refresh()
       },
     })
-    D.update = _ => {
+    D.update = () => {
       D.lazy.update()
     }
   }
+
+  setContext('D', D)
 </script>
 
 <svelte:head>
@@ -39,5 +43,5 @@
 <Nav {tops} />
 <Header bind:top={tops[0]} />
 <About bind:top={tops[1]} />
-<Art {D} bind:top={tops[2]} bind:selected />
-<Modal {D} bind:selected />
+<Art bind:top={tops[2]} bind:selected />
+<Modal bind:selected />

@@ -1,11 +1,14 @@
 <script>
+  import { getContext } from 'svelte'
   import { fade } from 'svelte/transition'
-  import { ItemBar, ItemBody, A } from './mixins'
+
+  import { ItemBar, ItemBody, A, UpWrap } from './mixins'
+
+  let D = getContext('D')
 
   export let selected
-  export let D
 
-  let OFF = _ => (selected = void 0)
+  let OFF = () => (selected = void 0)
   let escOFF = e => {
     if (e.key == 'Escape') OFF()
   }
@@ -41,7 +44,7 @@
         border="l-1 current"
         cursor-pointer
         on:click={OFF}
-        on:keyup={_ => {}}
+        on:keyup={() => {}}
       >
         <svg
           m-auto
@@ -64,7 +67,7 @@
     <ItemBody>
       {#await D.items.get(selected)() then item}
         <div full in:fade={{ duration: 200 }}>
-          <svelte:component this={item.default} {D} />
+          <UpWrap item={item.default} />
         </div>
       {/await}
     </ItemBody>

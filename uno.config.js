@@ -1,3 +1,4 @@
+import extractorSvelte from '@unocss/extractor-svelte'
 import {
   presetAttributify,
   presetUno,
@@ -5,8 +6,9 @@ import {
   transformerDirectives,
   transformerVariantGroup,
 } from 'unocss'
-import extractorSvelte from '@unocss/extractor-svelte'
 import { presetScrollbar } from 'unocss-preset-scrollbar'
+
+import { allColors } from './src/lib/js/util'
 
 export default {
   presets: [
@@ -22,7 +24,7 @@ export default {
     presetScrollbar(),
   ],
   transformers: [transformerDirectives(), transformerVariantGroup()],
-  safelist: [],
+  safelist: [...allColors],
   theme: {
     // breakpoints: {
     //   xs: '320px',

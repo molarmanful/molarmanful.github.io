@@ -1,12 +1,5 @@
 <script>
-  import { onMount } from 'svelte'
   import { Prose, Heading, Subheading, Text, A, MediaImg } from '../mixins'
-
-  export let D
-
-  onMount(_ => {
-    D.update()
-  })
 </script>
 
 <Prose>
@@ -17,7 +10,7 @@
   </Subheading>
 
   <Subheading bold>A Cube Tutorial</Subheading>
-  <MediaImg {D} name="cubetut" />
+  <MediaImg name="cubetut" />
   <Text>
     An interactive tutorial for solving the Rubik's Cube, featuring a clean UI
     and a companion cube that hides pieces based on the step.
@@ -29,7 +22,7 @@
   </Text>
 
   <Subheading bold>pycube</Subheading>
-  <MediaImg {D} name="pycube" />
+  <MediaImg name="pycube" />
   <Text>
     Made in collaboration with Jimoh Yusuf. A reimplementation of the Rubik's
     Cube in Processing.py with mouse/keyboard modes and timing.
@@ -39,7 +32,7 @@
   </Text>
 
   <Subheading bold>gCube</Subheading>
-  <MediaImg {D} name="gcube" />
+  <MediaImg name="gcube" />
   <Text>
     Made in collaboration with Michael Casebolt. A web framework for cube
     simulation with extensive visual customization options.
@@ -51,7 +44,7 @@
   </Text>
 
   <Subheading bold>MinimalisTimer</Subheading>
-  <MediaImg {D} name="minimalistimer" />
+  <MediaImg name="minimalistimer" />
   <Text>
     When MinimalisTimer was first created, there weren't many options for cube
     timers that had mobile-friendly responsive designs. MinimalisTimer was my
@@ -65,7 +58,7 @@
   </Text>
 
   <Subheading bold>PLL Trainer</Subheading>
-  <MediaImg {D} name="pll" />
+  <MediaImg name="pll" />
   <Text>
     The precursor to MinimalisTimer and my first foray into creating responsive
     web apps. PLL Trainer was made for speedcubers looking to improve their PLL

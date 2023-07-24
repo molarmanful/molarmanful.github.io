@@ -1,5 +1,4 @@
 <script>
-  import { onMount } from 'svelte'
   import {
     Prose,
     Heading,
@@ -11,13 +10,8 @@
     Sp,
   } from '../mixins'
 
-  export let D
   export let desc =
     '2022. An Internet-powered backscratcher that converts clicks and taps to scratches.'
-
-  onMount(_ => {
-    D.update()
-  })
 </script>
 
 <Prose>
@@ -44,6 +38,6 @@
   </Text>
 
   <Sp />
-  <MediaImg {D} name="fth" />
+  <MediaImg name="fth" />
   <YTVideo a="r74HAS_mBL0" title="FEEL THE HIVE" />
 </Prose>

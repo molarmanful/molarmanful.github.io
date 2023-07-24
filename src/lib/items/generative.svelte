@@ -1,5 +1,4 @@
 <script>
-  import { onMount } from 'svelte'
   import {
     Prose,
     Heading,
@@ -11,13 +10,8 @@
     IVideo,
   } from '../mixins'
 
-  export let D
   export let desc =
     'From code blossoms art. Works created with autonomous systems to spawn infinite variation.'
-
-  onMount(_ => {
-    D.update()
-  })
 </script>
 
 <Prose>
@@ -25,7 +19,7 @@
   <Subheading>{desc}</Subheading>
 
   <Subheading bold>Nihilism</Subheading>
-  <MediaImg {D} name="nihilism" />
+  <MediaImg name="nihilism" />
   <Text>
     <A
       href="https://colab.research.google.com/drive/1DjUw9jp47cCAorEm0pN2cj4_1ksG8hBS?usp=sharing"

@@ -2,7 +2,7 @@
   import { offtop } from '../js/util'
 
   export let name = ''
-  export let ot = _ => {}
+  export let ot = () => {}
   export let bord = false
 </script>
 

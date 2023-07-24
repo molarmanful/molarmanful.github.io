@@ -1,6 +1,11 @@
 <script>
-  import { ItemBar, ItemBody, A } from '$lib/mixins'
+  import { setContext, afterUpdate } from 'svelte'
+  import LazyLoad from 'vanilla-lazyload'
+
+  import { browser } from '$app/environment'
   import { send, receive } from '$lib/js/crossfade'
+  import D from '$lib/js/D'
+  import { ItemBar, ItemBody, A } from '$lib/mixins'
 
   export let data
 
@@ -8,6 +13,19 @@
     .slice(1)
     .reduce((a, x) => [...a, [x, a[a.length - 1][1] + '/' + x]], [['', '']])
     .slice(1)
+
+  if (browser) {
+    D.lazy = new LazyLoad()
+    D.update = () => {
+      D.lazy.update()
+    }
+  }
+
+  setContext('D', D)
+
+  afterUpdate(() => {
+    D.update()
+  })
 </script>
 
 <ItemBar>

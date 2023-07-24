@@ -3,9 +3,9 @@
   let cd0 = 0
   let cd1 = 0
 
-  setInterval(_ => {
+  setInterval(() => {
     if (cd0) {
-      aber = aber.map(_ => Math.random() * 6 - 3)
+      aber = aber.map(() => Math.random() * 6 - 3)
       cd0--
       return
     }

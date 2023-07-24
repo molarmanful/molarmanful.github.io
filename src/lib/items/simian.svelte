@@ -1,14 +1,8 @@
 <script>
-  import { onMount } from 'svelte'
   import { Prose, Heading, Subheading, Text, A, MediaImg, Sp } from '../mixins'
 
-  export let D
   export let desc =
     '2021. Somewhat Interesting Machine with Intelligence of Artificial Nature, a frontend-only train-your-own-chatbot interface that pushes the limits of what is possible in client-side AI.'
-
-  onMount(_ => {
-    D.update()
-  })
 </script>
 
 <Prose>
@@ -22,5 +16,5 @@
   </Text>
 
   <Sp />
-  <MediaImg {D} name="simian" />
+  <MediaImg name="simian" />
 </Prose>

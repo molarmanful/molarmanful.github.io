@@ -1,11 +1,14 @@
 <script>
+  import { getContext } from 'svelte'
+
   import { Section, ArtGrid, CoverImg } from './mixins'
 
+  let D = getContext('D')
+
   export let selected
-  export let D
   export let top = { name: 'art' }
 
-  let ON = x => {
+  let ON = x => () => {
     selected = x
   }
 
@@ -24,17 +27,17 @@
     container="lg:"
   >
     <ArtGrid>
-      {#each D.covers as [name, _]}
+      {#each D.covers as [name]}
         <button
           aria-label="open modal for {name}"
           cursor-pointer
           bg-transparent
           outline-none
           on:click|preventDefault={ON(name)}
-          on:keypress={_ => {}}
+          on:keypress={() => {}}
           data-aos="fade-up"
         >
-          <CoverImg {D} {name} />
+          <CoverImg {name} />
         </button>
       {/each}
     </ArtGrid>

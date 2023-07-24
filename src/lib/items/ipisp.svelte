@@ -1,14 +1,8 @@
 <script>
-  import { onMount } from 'svelte'
   import { Prose, Heading, Subheading, Text, A, MediaImg, Sp } from '../mixins'
 
-  export let D
   export let desc =
     "2020 - Made in collaboration with Leo El-Azhab and Mai Khaled. Data visualization of the UAE's ISPs and their constituent IP addresses to provoke discussions about net neutrality and security."
-
-  onMount(_ => {
-    D.update()
-  })
 </script>
 
 <Prose>
@@ -21,5 +15,5 @@
   </Text>
 
   <Sp />
-  <MediaImg {D} name="ipisp" />
+  <MediaImg name="ipisp" />
 </Prose>

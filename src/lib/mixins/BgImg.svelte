@@ -1,5 +1,7 @@
 <script>
-  export let D
+  import { getContext } from 'svelte'
+
+  let D = getContext('D')
   export let a
   export let name
 </script>

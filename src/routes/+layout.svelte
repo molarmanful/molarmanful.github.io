@@ -1,5 +1,6 @@
 <script>
   import { onMount } from 'svelte'
+
   import { browser } from '$app/environment'
   import Favicons from '$lib/Favicons.svelte'
 
@@ -14,8 +15,8 @@
     history.scrollRestoration = 'manual'
   }
 
-  onMount(_ => {
-    requestAnimationFrame(_ => {
+  onMount(() => {
+    requestAnimationFrame(() => {
       scrollTo(0, 0)
       loaded = true
     })

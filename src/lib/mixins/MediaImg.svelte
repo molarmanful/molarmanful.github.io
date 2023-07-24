@@ -1,7 +1,9 @@
 <script>
+  import { getContext } from 'svelte'
+
   import { Image } from '.'
 
-  export let D
+  let D = getContext('D')
   export let name
 </script>
 

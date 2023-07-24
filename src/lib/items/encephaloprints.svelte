@@ -1,5 +1,4 @@
 <script>
-  import { onMount } from 'svelte'
   import {
     Prose,
     Heading,
@@ -11,13 +10,8 @@
     Sp,
   } from '../mixins'
 
-  export let D
   export let desc =
     'An interactive installation in which generative visuals react in realtime to brain activity read from an EEG headset.'
-
-  onMount(_ => {
-    D.update()
-  })
 </script>
 
 <Prose>
@@ -38,10 +32,10 @@
   </Text>
 
   <Sp />
-  <MediaImg {D} name="enc3" />
-  <MediaImg {D} name="enc4" />
-  <MediaImg {D} name="enc1" />
-  <MediaImg {D} name="enc2" />
+  <MediaImg name="enc3" />
+  <MediaImg name="enc4" />
+  <MediaImg name="enc1" />
+  <MediaImg name="enc2" />
   <YTVideo a="JNYylaVTg4s" title="Encephaloprints" />
   <YTVideo a="KRco3BU-Rzs" title="Encephaloprints" />
 </Prose>

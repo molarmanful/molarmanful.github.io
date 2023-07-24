@@ -1,7 +1,8 @@
-import favicons from 'favicons'
 import fs from 'fs/promises'
 import path from 'path'
 import url from 'url'
+
+import favicons from 'favicons'
 
 let cwd = url.fileURLToPath(new URL('.', import.meta.url))
 let out = path.resolve(cwd, '../static/favicons')

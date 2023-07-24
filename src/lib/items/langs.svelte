@@ -1,14 +1,8 @@
 <script>
-  import { onMount } from 'svelte'
-  import { Prose, Heading, Subheading, Text, A, Sp } from '../mixins'
+  import { Prose, Heading, Subheading, Text, A } from '../mixins'
 
-  export let D
   export let desc =
     "Weird and wholly impractical. Programming languages which I've made throughout the years for recreational - NOT PRODUCTION - purposes."
-
-  onMount(_ => {
-    D.update()
-  })
 </script>
 
 <Prose>

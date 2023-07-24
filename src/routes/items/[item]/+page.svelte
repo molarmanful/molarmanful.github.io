@@ -1,19 +1,8 @@
 <script>
-  import LazyLoad from 'vanilla-lazyload'
-  import { browser } from '$app/environment'
-  import D from '$lib/js/D'
-
   export let data
 
   let { name, module } = data
   let desc
-
-  if (browser) {
-    D.lazy = new LazyLoad()
-    D.update = _ => {
-      D.lazy.update()
-    }
-  }
 </script>
 
 <svelte:head>
@@ -21,4 +10,4 @@
   <meta name="description" content={desc} />
 </svelte:head>
 
-<svelte:component this={module} {D} bind:desc />
+<svelte:component this={module} bind:desc />
