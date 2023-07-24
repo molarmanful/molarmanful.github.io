@@ -12,7 +12,7 @@
   border="1 transparent hover:white"
   mt="0"
   transition=""
-  graiscale
+  graiscale="hover:"
   draggable="false"
   {name}
   a={D.covers_tiny}

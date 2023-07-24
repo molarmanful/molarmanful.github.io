@@ -55,6 +55,13 @@ export default {
       },
     ],
     [
+      'graiscale',
+      {
+        filter:
+          'brightness(50%) sepia(1) hue-rotate(180deg) saturate(50%) brightness(86%)',
+      },
+    ],
+    [
       'aberration',
       {
         'text-shadow':

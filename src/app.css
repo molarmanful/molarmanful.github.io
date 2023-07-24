@@ -24,15 +24,16 @@ h6 {
   @apply uppercase font-1;
 }
 
-@supports (-moz-context-properties: fill) {
-  #filters {
-    @apply position-fixed h-0;
-  }
+a {
+  @apply text-gray-100 duration-500 transition-colors no-underline;
+}
+
+a:hover {
+  @apply text-gray-500;
 }
 
 [scanlines]::after {
   @apply fixed inset-0 z-40 screen pointer-events-none;
-
   content: '';
   background: repeating-linear-gradient(
     0deg,
@@ -41,11 +42,6 @@ h6 {
     rgba(0, 0, 0, 0) 2px,
     rgba(0, 0, 0, 0) 4px
   );
-}
-
-[graiscale]:hover {
-  filter: brightness(50%) sepia(1) hue-rotate(180deg) saturate(50%)
-    brightness(86%);
 }
 
 :is(.prose, [prose]) :is(h1, h2, p):not([noprose]) {
@@ -58,12 +54,4 @@ h6 {
 
 .lazy:not(.loaded, [src]) {
   @apply bg-gray-900;
-}
-
-a {
-  @apply text-gray-100 duration-500 transition-colors no-underline;
-}
-
-a:hover {
-  @apply text-gray-500;
 }
