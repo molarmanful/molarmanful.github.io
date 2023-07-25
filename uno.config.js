@@ -24,7 +24,7 @@ export default {
     presetScrollbar(),
   ],
   transformers: [transformerDirectives(), transformerVariantGroup()],
-  safelist: [...allColors],
+  safelist: [...allColors, 'aspect-video', 'aspect-portrait', 'aspect-square'],
   theme: {
     // breakpoints: {
     //   xs: '320px',

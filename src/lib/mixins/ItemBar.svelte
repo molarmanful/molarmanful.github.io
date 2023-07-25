@@ -1,10 +1,10 @@
-<div fixed top-0 inset-x-0 h-18 p="2 b-0" z-10>
+<div fixed h-18 inset-x-0 p="2 b-0" top-0 z-10>
   <div
+    bg-black
+    border="1 current"
     flex="~ row"
     full
-    border="1 current"
     text-gray-500
-    bg-black
     {...$$restProps}
   >
     <slot />

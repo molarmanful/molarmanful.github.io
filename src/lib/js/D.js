@@ -1,33 +1,33 @@
-let process = (x, { r = /^.+\/([\w-]+)\.\w+$/ } = {}) =>
+let makeMap = (x, { r = /^.+\/([\w-]+)\.\w+$/ } = {}) =>
   new Map(Object.entries(x).map(([a, b]) => [a.replace(r, '$1'), b]))
 
 export default {
-  covers: process(
+  covers: makeMap(
     import.meta.glob('$lib/covers/*', { eager: true, as: 'url' })
   ),
-  covers_tiny: process(
+  covers_tiny: makeMap(
     import.meta.glob('$lib/covers/*', {
       eager: true,
       import: 'default',
       query: { w: 32, quality: 50 },
     })
   ),
-  art: process(import.meta.glob('$lib/art/*', { eager: true, as: 'url' })),
-  art_tiny: process(
+  art: makeMap(import.meta.glob('$lib/art/*', { eager: true, as: 'url' })),
+  art_tiny: makeMap(
     import.meta.glob('$lib/art/*', {
       eager: true,
       import: 'default',
       query: { w: 32, quality: 50 },
     })
   ),
-  media: process(import.meta.glob('$lib/media/*', { eager: true, as: 'url' })),
-  media_tiny: process(
+  media: makeMap(import.meta.glob('$lib/media/*', { eager: true, as: 'url' })),
+  media_tiny: makeMap(
     import.meta.glob('$lib/media/*', {
       eager: true,
       import: 'default',
       query: { w: 32, quality: 50 },
     })
   ),
-  items: process(import.meta.glob('$lib/items/*')),
+  items: makeMap(import.meta.glob('$lib/items/*')),
   update() {},
 }

@@ -29,7 +29,7 @@
   </Text>
 
   <Subheading bold>Entanglement</Subheading>
-  <IVideo a="QmXN4z9" title="Entanglement" aspect="video" />
+  <IVideo a="QmXN4z9" aspect="video" title="Entanglement" />
   <Text>
     <A href="https://github.com/molarmanful/entanglement">Source</A>
   </Text>
@@ -41,7 +41,7 @@
   </Text>
 
   <Subheading bold>Bezier Pulse</Subheading>
-  <IVideo a="Z04vm99" title="Bezier Pulse" aspect="video" />
+  <IVideo a="Z04vm99" aspect="video" title="Bezier Pulse" />
   <Text>
     <A href="https://github.com/molarmanful/bezier-pulse">Source</A>
   </Text>

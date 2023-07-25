@@ -18,24 +18,24 @@
   }
 </script>
 
-<Section name="WORK" id="art" ot={update}>
+<Section id="art" name="WORK" ot={update}>
   <div
-    w-screen
     border="xl:l gray-500"
-    p="x-5 b-16 md:x-8 lg:b-32"
-    mx-auto
     container="lg:"
+    mx-auto
+    p="x-5 b-16 md:x-8 lg:b-32"
+    w-screen
   >
     <ArtGrid>
       {#each D.covers as [name]}
         <button
           aria-label="open modal for {name}"
-          cursor-pointer
           bg-transparent
+          cursor-pointer
+          data-aos="fade-up"
           outline-none
           on:click|preventDefault={ON(name)}
           on:keypress={() => {}}
-          data-aos="fade-up"
         >
           <CoverImg {name} />
         </button>

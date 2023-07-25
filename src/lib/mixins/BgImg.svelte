@@ -7,14 +7,14 @@
 </script>
 
 <img
+  class="lazy"
   alt={name}
+  blur
+  data-src={D[a].get(name)}
+  draggable="false"
   fixed
   full
   object="center cover"
-  draggable="false"
-  src={D[a + '_tiny'].get(name)}
-  data-src={D[a].get(name)}
-  class="lazy"
   opacity-50
-  blur
+  src={D[a + '_tiny'].get(name)}
 />

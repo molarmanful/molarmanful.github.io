@@ -27,6 +27,6 @@
   <Favicons />
 </svelte:head>
 
-<main overflow-x-clip ofade-500 class={loaded ? 'opacity-100' : 'opacity-0'}>
+<main class={loaded ? 'opacity-100' : 'opacity-0'} ofade-500 overflow-x-clip>
   <slot />
 </main>

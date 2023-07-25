@@ -42,74 +42,73 @@
 
 <nav>
   <button
-    aria-label="open menu"
-    fixed
-    top-2
-    right-2
-    h-16
-    w-16
-    border="1 current"
-    bg-black
-    z-30
-    cursor-pointer
-    flex
-    transition-color
     style:transition-duration="{pulse}ms"
-    class={clrs[len - 1]}
     style:filter
+    class={clrs[len - 1]}
+    aria-label="open menu"
+    bg-black
+    border="1 current"
+    cursor-pointer
+    fixed
+    flex
+    h-16
+    right-2
+    top-2
+    transition-color
+    w-16
+    z-30
     on:mouseenter={ON}
     on:click={ON}
     on:keyup={() => {}}
   >
-    <svg m-auto w="1/2" h="1/2" viewBox="0 0 100 100" alt="menu">
-      <!-- eslint-disable-next-line no-unused-vars -->
+    <svg alt="menu" h="1/2" m-auto viewBox="0 0 100 100" w="1/2">
       {#each tops as _, i}
         <rect
-          width="100"
-          height="20"
-          y={i * 40}
-          fill-current
-          transition-color
           style:transition-duration="{pulse}ms"
           class={clrs[i]}
-        />
+          fill-current
+          height="20"
+          transition-color
+          width="100"
+          y={i * 40}
+        ></rect>
       {/each}
     </svg>
   </button>
 
   {#if dropped}
     <div
-      transition:scale={{ duration: 200 }}
-      role="menu"
-      tabindex="0"
-      fixed
-      z-40
-      p-4
-      top-2
-      right-2
+      style:transition-duration="{pulse}ms"
+      style:filter
+      class={clrs[len - 1]}
       bg-black
       border="1 current"
       ease-in-out
+      fixed
       origin-top-right
+      p-4
+      right-2
+      role="menu"
+      tabindex="0"
+      top-2
       transition-color
-      class={clrs[len - 1]}
-      style:transition-duration="{pulse}ms"
-      style:filter
+      z-40
       on:mouseleave={OFF}
-      use:clickout
       on:clickout={OFF}
+      use:clickout
+      transition:scale={{ duration: 200 }}
     >
-      <menu font-1 text-3xl leading-8>
+      <menu font-1 leading-8 text-3xl>
         {#each tops as top, i}
           <li>
             <button
-              on:click={GOTO(top.n)}
-              cursor-pointer
-              bg-transparent
               style:transition="color {pulse}ms, filter 500ms"
-              transition-ease
-              filter="hover:(brightness-0 invert)"
               class={clrs[i]}
+              bg-transparent
+              cursor-pointer
+              filter="hover:(brightness-0 invert)"
+              transition-ease
+              on:click={GOTO(top.n)}
             >
               {top.name.toUpperCase()}
             </button>

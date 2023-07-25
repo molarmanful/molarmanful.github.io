@@ -7,12 +7,12 @@
 </script>
 
 <a
-  underline
-  decoration-1
   class="{item ? 'text-inherit hover:text-white' : void 0} {clazz}"
+  decoration-1
   decoration-offset="[.25rem]"
   {href}
   target={t ? void 0 : '_blank'}
+  underline
   {...$$restProps}
 >
   <slot />

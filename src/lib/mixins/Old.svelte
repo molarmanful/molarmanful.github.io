@@ -6,4 +6,4 @@
   export let old
 </script>
 
-<Image alt={name} src={tiny.get(name)} data-src={old.get(name)} />
+<Image alt={name} data-src={old.get(name)} src={tiny.get(name)} />

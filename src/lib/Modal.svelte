@@ -18,47 +18,47 @@
 
 {#if selected && D.items.has(selected)}
   <div
-    transition:fade={{ duration: 200 }}
-    fixed
-    screen
-    inset-0
     bg-black
-    z-50
-    pt-16
+    fixed
+    inset-0
     overflow-hidden
     overscroll-contain
+    pt-16
+    screen
+    z-50
+    transition:fade={{ duration: 200 }}
   >
     <ItemBar>
-      <div flex ml-4 h-full>
-        <A item decoration="none" m="auto" href="/items/{selected}">
+      <div flex h-full ml-4>
+        <A decoration="none" href="/items/{selected}" item m="auto">
           {selected}
         </A>
       </div>
       <button
         aria-label="close modal"
         bg-transparent
-        flex
-        ml-auto
-        w-16
-        h-full
         border="l-1 current"
         cursor-pointer
+        flex
+        h-full
+        ml-auto
+        w-16
         on:click={OFF}
         on:keyup={() => {}}
       >
         <svg
+          alt="close"
+          duration-500
+          h="1/2"
           m-auto
           transition-fill
-          duration-500
           un-fill="current hover:white"
-          w="1/2"
-          h="1/2"
           viewBox="0 0 100 100"
-          alt="close"
+          w="1/2"
         >
           <g transform="rotate(45, 50, 50)">
-            <rect width="100" height="20" y="40" />
-            <rect width="20" height="100" x="40" />
+            <rect height="20" width="100" y="40"></rect>
+            <rect height="100" width="20" x="40"></rect>
           </g>
         </svg>
       </button>

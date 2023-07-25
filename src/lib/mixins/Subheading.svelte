@@ -3,12 +3,12 @@
 </script>
 
 <h2
-  type-5
+  class={bold ? 'bold' : 'font-200'}
   case="normal"
   font="2"
-  text=" gray-300"
   m="t-6 lg:t-12"
-  class={bold ? 'bold' : 'font-200'}
+  text=" gray-300"
+  type-5
   {...$$restProps}
 >
   <slot />

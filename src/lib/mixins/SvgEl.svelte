@@ -10,7 +10,7 @@
   <svelte:element
     this={name}
     {...$$restProps}
-    class="fill-transparent transition-color stroke-1 stroke-current {c}"
     style:transition-duration="{t}ms"
+    class="fill-transparent transition-color stroke-1 stroke-current {c}"
   />
 </RColor>

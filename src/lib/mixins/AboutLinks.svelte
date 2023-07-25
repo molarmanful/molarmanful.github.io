@@ -15,15 +15,15 @@
 </script>
 
 <div prose {...$$restProps}>
-  <h2 type-6 text=" stroked gray-500" data-aos="fade-left" noprose>LINKS</h2>
-  <menu m="t-2 x-2 lg:t-4" data-aos="fade-left">
+  <h2 data-aos="fade-left" noprose text=" stroked gray-500" type-6>LINKS</h2>
+  <menu data-aos="fade-left" m="t-2 x-2 lg:t-4">
     {#each links as [name, link]}
       <li>
         <A
-          un-text="gray-500 hover:white"
           duration-500
-          transition-colors
           href={link}
+          transition-colors
+          un-text="gray-500 hover:white"
         >
           {name}
         </A>

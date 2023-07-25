@@ -20,15 +20,15 @@
 </script>
 
 <h1
-  type-8
-  aberration
   style:--aber0="{aber[0]}px"
   style:--aber1="{aber[1]}px"
   style:--aber2="{aber[2]}px"
   style:--aber3="{aber[3]}px"
   style:--aber4="{aber[4]}px"
   style:--aber5="{aber[5]}px"
+  aberration
   text-white
+  type-8
 >
   BEN PANG
 </h1>

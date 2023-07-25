@@ -29,5 +29,5 @@
 </script>
 
 <Subheading text-gray-200 {...$$restProps}>
-  I make <span whitespace-pre bold>{word}</span> things.
+  I make <span bold whitespace-pre>{word}</span> things.
 </Subheading>

@@ -10,7 +10,7 @@
   <title>items | Ben Pang</title>
 </svelte:head>
 
-<div w-full m-auto p="x-5 y-5 lg:y-16" container="lg:~">
+<div container="lg:~" m-auto p="x-5 y-5 lg:y-16" w-full>
   <ArtGrid>
     {#each D.covers as [name]}
       <A href="/items/{name}" t><CoverImg {name} /></A>

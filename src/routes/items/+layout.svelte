@@ -29,12 +29,12 @@
 </script>
 
 <ItemBar>
-  <div flex ml-4 h-full>
+  <div flex h-full ml-4>
     <span m-auto text-nowrap>
-      <A t item decoration="none" href="/">ben</A>
+      <A decoration="none" href="/" item t>ben</A>
       {#each crumbs as [name, href]}
         &gt;
-        <A t item decoration="none" {href}>
+        <A decoration="none" {href} item t>
           {name}
         </A>
       {/each}
