@@ -14,8 +14,9 @@
   b={D.covers}
   border="1 transparent hover:white"
   draggable="false"
-  graiscale="hover:"
+  graiscale="hover: active:"
   mt="0"
+  outline="0"
   transition=""
   {...$$restProps}
 />

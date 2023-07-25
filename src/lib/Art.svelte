@@ -8,7 +8,8 @@
   export let selected
   export let top = { name: 'art' }
 
-  let ON = x => () => {
+  let ON = x => e => {
+    e.target.blur()
     selected = x
   }
 
@@ -33,7 +34,6 @@
           bg-transparent
           cursor-pointer
           data-aos="fade-up"
-          outline-none
           on:click|preventDefault={ON(name)}
           on:keypress={() => {}}
         >

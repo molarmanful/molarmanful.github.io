@@ -74,8 +74,7 @@
         origin-top-right
         p-4
         right-2
-        role="menu"
-        tabindex="0"
+        role="navigation"
         top-2
         transition-color
         z-40
