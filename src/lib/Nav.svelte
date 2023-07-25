@@ -9,7 +9,10 @@
   export let tops = []
 
   let dropped = false
-  let ON = () => (dropped = true)
+  let ON = e => {
+    dropped = true
+    e.target.blur()
+  }
   let OFF = () => (dropped = false)
 
   let GOTO = top => {
@@ -28,19 +31,21 @@
 
 <nav use:ccolor={{ pulse, len, f: x => (clrs = x) }}>
   <button
-    style:transition-duration="{pulse}ms"
+    style:transition-duration="{pulse}ms, 400ms, 400ms"
     style:filter
     class={clrs[len - 1]}
-    aria-label="open menu"
+    aria-label="open navigation menu"
     bg-black
-    border="1 current"
+    border="1 current focus:white"
     cursor-pointer
     fixed
     flex
     h-16
+    outline-0
     right-2
     top-2
-    transition-color
+    transition-color,border-color,filter
+    var_x="focus:white"
     w-16
     z-30
     on:mouseenter={ON}
@@ -50,11 +55,11 @@
     <svg alt="menu" h="1/2" m-auto viewBox="0 0 100 100" w="1/2">
       {#each Array(3).keys() as i}
         <rect
-          style:transition-duration="{pulse}ms"
+          style:transition-duration="{pulse}ms, 400ms"
           class={clrs[i]}
-          fill-current
           height="20"
-          transition-color
+          transition-color,fill
+          un-fill="[var(--x,currentColor)]"
           width="100"
           y={i * 40}
         ></rect>

@@ -69,6 +69,12 @@ export default {
           'var(--aber0, -2) var(--aber1, -2) 0 #f0f, var(--aber2, 2) var(--aber3, 2) 0 #0ff, var(--aber4, 0) var(--aber5, 0) 0 #0f0',
       },
     ],
+    [
+      /var_x-(.+)/,
+      ([, x]) => ({
+        '--x': x,
+      }),
+    ],
   ],
   shortcuts: [
     {
@@ -77,7 +83,7 @@ export default {
       bold: 'font-400 font-2',
       prose: 'hyphens-auto',
       cover:
-        'transition hover:graiscale focus:graiscale outline-none border-(1 transparent)',
+        'transition hover:graiscale focus:graiscale outline-0 border-(1 transparent)',
       screen: 'w-screen h-screen',
       full: 'w-full h-full',
       'max-full': 'max-w-full max-h-full',

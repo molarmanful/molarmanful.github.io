@@ -31,6 +31,7 @@
         h="xl:1/3"
         m="auto xl:(l-1/8 r-auto y-auto) 2xl:l-1/5"
         p-8
+        transition-opacity-400
         z-10
       >
         <HeaderTitle />
