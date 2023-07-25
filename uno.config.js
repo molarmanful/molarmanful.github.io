@@ -8,7 +8,7 @@ import {
 } from 'unocss'
 import { presetScrollbar } from 'unocss-preset-scrollbar'
 
-import { allColors } from './src/lib/js/util'
+import { allColors } from './src/lib/js/static'
 
 export default {
   presets: [
@@ -57,6 +57,7 @@ export default {
     [
       'graiscale',
       {
+        'border-color': 'white',
         filter:
           'brightness(50%) sepia(1) hue-rotate(180deg) saturate(50%) brightness(86%)',
       },
@@ -75,7 +76,8 @@ export default {
         'scrollbar scrollbar-thumb-color-gray-700 scrollbar-track-color-black',
       bold: 'font-400 font-2',
       prose: 'hyphens-auto',
-      'center-flex': 'flex items-center justify-center',
+      cover:
+        'transition hover:graiscale focus:graiscale outline-none border-(1 transparent)',
       screen: 'w-screen h-screen',
       full: 'w-full h-full',
       'max-full': 'max-w-full max-h-full',

@@ -30,16 +30,19 @@
   >
     <ArtGrid>
       {#each D.covers as [name]}
-        <button
-          aria-label="open modal for {name}"
-          bg-transparent
-          cursor-pointer
-          data-aos="fade-up"
-          on:click|preventDefault={ON(name)}
-          on:keypress={() => {}}
-        >
-          <CoverImg {name} />
-        </button>
+        <div data-aos="fade-up">
+          <button
+            aria-label="open entry: {name}"
+            bg-transparent
+            cover
+            cursor-pointer
+            w-full
+            on:click|preventDefault={ON(name)}
+            on:keypress={() => {}}
+          >
+            <CoverImg {name} />
+          </button>
+        </div>
       {/each}
     </ArtGrid>
   </div>

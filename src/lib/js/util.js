@@ -1,5 +1,7 @@
 import { readable } from 'svelte/store'
 
+import { colors } from './static'
+
 import { browser } from '$app/environment'
 
 export const sfactor = () => {
@@ -17,18 +19,6 @@ export const sfactor = () => {
     }
   })
 }
-
-let c = {
-  weights: [500],
-  colors: 'rose red orange amber yellow lime green emerald teal cyan sky blue indigo violet purple fuchsia pink'
-    .split` `,
-}
-export const colors = Object.fromEntries(
-  c.weights.map(w => [w, c.colors.map(c => `text-${c}-${w}`)])
-)
-export const allColors = c.weights.flatMap(w =>
-  c.colors.map(c => `text-${c}-${w}`)
-)
 
 export const rcolor = (
   _,
