@@ -1,7 +1,7 @@
 <script>
   import { setContext, afterUpdate } from 'svelte'
-  import LazyLoad from 'vanilla-lazyload'
   import { fade } from 'svelte/transition'
+  import LazyLoad from 'vanilla-lazyload'
 
   import { browser } from '$app/environment'
   import { send, receive } from '$lib/js/crossfade'
