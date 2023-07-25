@@ -62,7 +62,7 @@
     on:keyup={() => {}}
   >
     <svg alt="menu" h="1/2" m-auto viewBox="0 0 100 100" w="1/2">
-      {#each tops as _, i}
+      {#each Array(3).keys() as i}
         <rect
           style:transition-duration="{pulse}ms"
           class={clrs[i]}

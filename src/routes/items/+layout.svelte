@@ -1,6 +1,7 @@
 <script>
   import { setContext, afterUpdate } from 'svelte'
   import LazyLoad from 'vanilla-lazyload'
+  import { fade } from 'svelte/transition'
 
   import { browser } from '$app/environment'
   import { send, receive } from '$lib/js/crossfade'
@@ -33,10 +34,12 @@
     <span m-auto text-nowrap>
       <A decoration="none" href="/" item t>ben</A>
       {#each crumbs as [name, href]}
-        &gt;
-        <A decoration="none" {href} item t>
-          {name}
-        </A>
+        <span transition:fade={{ duration: 200 }}>
+          &gt;
+          <A decoration="none" {href} item t>
+            {name}
+          </A>
+        </span>
       {/each}
     </span>
   </div>
