@@ -2,7 +2,7 @@
   import { useClickOutside } from '@grail-ui/svelte'
   import { scale } from 'svelte/transition'
 
-  import { Factor, CColor } from './mixins'
+  import { ccolor, sfactor } from './js/util'
 
   import { browser } from '$app/environment'
 
@@ -19,87 +19,86 @@
     }
   }
 
-  let factor
-  $: filter = `hue-rotate(${factor * -69}deg) grayscale(${factor * 1.2})`
+  let factor = sfactor()
+  let clrs = []
+  let pulse = 2000
+  let len = 4
+  $: filter = `hue-rotate(${$factor * -69}deg) grayscale(${$factor * 1.2})`
 </script>
 
-<Factor bind:factor />
+<nav use:ccolor={{ pulse, len, f: x => (clrs = x) }}>
+  <button
+    style:transition-duration="{pulse}ms"
+    style:filter
+    class={clrs[len - 1]}
+    aria-label="open menu"
+    bg-black
+    border="1 current"
+    cursor-pointer
+    fixed
+    flex
+    h-16
+    right-2
+    top-2
+    transition-color
+    w-16
+    z-30
+    on:mouseenter={ON}
+    on:click={ON}
+    on:keyup={() => {}}
+  >
+    <svg alt="menu" h="1/2" m-auto viewBox="0 0 100 100" w="1/2">
+      {#each Array(3).keys() as i}
+        <rect
+          style:transition-duration="{pulse}ms"
+          class={clrs[i]}
+          fill-current
+          height="20"
+          transition-color
+          width="100"
+          y={i * 40}
+        ></rect>
+      {/each}
+    </svg>
+  </button>
 
-<CColor let:clrs let:len let:pulse>
-  <nav>
-    <button
+  {#if dropped}
+    <div
       style:transition-duration="{pulse}ms"
       style:filter
       class={clrs[len - 1]}
-      aria-label="open menu"
       bg-black
       border="1 current"
-      cursor-pointer
+      ease-in-out
       fixed
-      flex
-      h-16
+      origin-top-right
+      p-4
       right-2
+      role="navigation"
       top-2
       transition-color
-      w-16
-      z-30
-      on:mouseenter={ON}
-      on:click={ON}
-      on:keyup={() => {}}
+      z-40
+      on:mouseleave={OFF}
+      use:useClickOutside={{ handler: OFF }}
+      transition:scale={{ duration: 200 }}
     >
-      <svg alt="menu" h="1/2" m-auto viewBox="0 0 100 100" w="1/2">
-        {#each Array(3).keys() as i}
-          <rect
-            style:transition-duration="{pulse}ms"
-            class={clrs[i]}
-            fill-current
-            height="20"
-            transition-color
-            width="100"
-            y={i * 40}
-          ></rect>
+      <menu font-1 leading-8 text-3xl>
+        {#each tops as top, i}
+          <li>
+            <button
+              style:transition="color {pulse}ms, filter 500ms"
+              class={clrs[i]}
+              bg-transparent
+              cursor-pointer
+              filter="hover:(brightness-0 invert)"
+              transition-ease
+              on:click={GOTO(top.n)}
+            >
+              {top.name.toUpperCase()}
+            </button>
+          </li>
         {/each}
-      </svg>
-    </button>
-
-    {#if dropped}
-      <div
-        style:transition-duration="{pulse}ms"
-        style:filter
-        class={clrs[len - 1]}
-        bg-black
-        border="1 current"
-        ease-in-out
-        fixed
-        origin-top-right
-        p-4
-        right-2
-        role="navigation"
-        top-2
-        transition-color
-        z-40
-        on:mouseleave={OFF}
-        use:useClickOutside={{ handler: OFF }}
-        transition:scale={{ duration: 200 }}
-      >
-        <menu font-1 leading-8 text-3xl>
-          {#each tops as top, i}
-            <li>
-              <button
-                style:transition="color {pulse}ms, filter 500ms"
-                class={clrs[i]}
-                bg-transparent
-                cursor-pointer
-                filter="hover:(brightness-0 invert)"
-                transition-ease
-                on:click={GOTO(top.n)}
-              >
-                {top.name.toUpperCase()}
-              </button>
-            </li>
-          {/each}
-        </menu>
-      </div>
-    {/if}
-  </nav>
-</CColor>
+      </menu>
+    </div>
+  {/if}
+</nav>

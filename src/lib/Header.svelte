@@ -1,28 +1,21 @@
 <script>
-  import {
-    Factor,
-    HeaderSplash,
-    HeaderSubtitle,
-    HeaderTitle,
-    OffTop,
-  } from './mixins'
+  import { sfactor } from './js/util'
+  import { HeaderSplash, HeaderSubtitle, HeaderTitle, OffTop } from './mixins'
 
   export let top = { name: 'top' }
 
-  let factor
-  let ot
+  let factor = sfactor()
 
+  let ot
   $: {
     top.n = ot
     top = top
   }
 </script>
 
-<Factor bind:factor />
-
 <OffTop bind:ot let:useResizeObserver>
   <header relative screen use:useResizeObserver>
-    <div style:filter="hue-rotate({factor * -69}deg)" fixed flex full>
+    <div style:filter="hue-rotate({$factor * -69}deg)" fixed flex full>
       <HeaderSplash
         absolute=""
         bottom="0"
@@ -32,7 +25,7 @@
         un-transform="media-squarish:translate-x-1/2"
       />
       <div
-        style:opacity={1 - factor * 2}
+        style:opacity={1 - $factor * 2}
         backdrop="lt-xl:grayscale"
         bg="lt-xl:black/42"
         h="xl:1/3"

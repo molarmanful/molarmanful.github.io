@@ -1,16 +1,23 @@
 <svelte:options namespace="svg" />
 
 <script>
-  import { RColor } from '.'
+  import { rcolor } from '../js/util'
 
   export let name
+  let c = 'text-gray-500'
+  let t = 0
 </script>
 
-<RColor let:c let:t>
-  <svelte:element
-    this={name}
-    {...$$restProps}
-    style:transition-duration="{t}ms"
-    class="fill-transparent transition-color stroke-1 stroke-current {c}"
-  />
-</RColor>
+<svelte:element
+  this={name}
+  style:transition-duration="{t}ms"
+  class="fill-transparent transition-color stroke-1 stroke-current {c}"
+  use:rcolor={{
+    c,
+    f: (x, y) => {
+      c = x
+      t = y
+    },
+  }}
+  {...$$restProps}
+/>

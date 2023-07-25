@@ -4,7 +4,6 @@
   export let top = { name: 'abt' }
 
   let ot
-
   $: {
     top.n = ot
     top = top

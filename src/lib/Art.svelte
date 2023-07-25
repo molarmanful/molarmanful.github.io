@@ -14,7 +14,6 @@
   }
 
   let ot
-
   $: {
     top.n = ot
     top = top
