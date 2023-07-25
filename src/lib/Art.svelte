@@ -13,13 +13,15 @@
     selected = x
   }
 
-  let update = n => {
-    top.n = n
+  let ot
+
+  $: {
+    top.n = ot
     top = top
   }
 </script>
 
-<Section id="art" name="WORK" ot={update}>
+<Section id="art" name="WORK" bind:ot>
   <div
     border="xl:l gray-500"
     container="lg:"

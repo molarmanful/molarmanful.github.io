@@ -1,7 +1,7 @@
 <script>
+  import { useClickOutside } from '@grail-ui/svelte'
   import { scale } from 'svelte/transition'
 
-  import { clickout } from './js/util'
   import { Factor, CColor } from './mixins'
 
   import { browser } from '$app/environment'
@@ -79,8 +79,7 @@
         transition-color
         z-40
         on:mouseleave={OFF}
-        on:clickout={OFF}
-        use:clickout
+        use:useClickOutside={{ handler: OFF }}
         transition:scale={{ duration: 200 }}
       >
         <menu font-1 leading-8 text-3xl>

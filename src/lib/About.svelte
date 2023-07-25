@@ -3,13 +3,15 @@
 
   export let top = { name: 'abt' }
 
-  let update = n => {
-    top.n = n
+  let ot
+
+  $: {
+    top.n = ot
     top = top
   }
 </script>
 
-<Section bord="true" ot={update}>
+<Section bord="true" bind:ot>
   <div
     border="xl:(t l) gray-500"
     container="lg:~"
