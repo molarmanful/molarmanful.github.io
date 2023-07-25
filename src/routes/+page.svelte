@@ -22,9 +22,6 @@
         AOS.refresh()
       },
     })
-    D.update = () => {
-      D.lazy.update()
-    }
   }
 
   setContext('D', D)
