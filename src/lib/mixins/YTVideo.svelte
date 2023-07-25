@@ -1,5 +1,11 @@
 <script>
-  import Video from './Video.svelte'
+  import { getContext } from 'svelte'
+
+  import { lazy } from '../js/util'
+
+  import { Video } from '.'
+
+  let D = getContext('D')
 
   export let title
   export let a
@@ -8,12 +14,12 @@
 
 <Video {aspect}>
   <iframe
-    class="lazy"
     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
     allowfullscreen
     data-src={`https://youtube.com/embed/${a}`}
     frameborder="0"
     full
     {title}
+    use:lazy={{ D }}
   />
 </Video>

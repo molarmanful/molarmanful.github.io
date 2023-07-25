@@ -1,5 +1,5 @@
 <script>
-  import { setContext, afterUpdate } from 'svelte'
+  import { setContext } from 'svelte'
   import { fade } from 'svelte/transition'
   import LazyLoad from 'vanilla-lazyload'
 
@@ -17,16 +17,9 @@
 
   if (browser) {
     D.lazy = new LazyLoad()
-    D.update = () => {
-      D.lazy.update()
-    }
   }
 
   setContext('D', D)
-
-  afterUpdate(() => {
-    D.update()
-  })
 </script>
 
 <ItemBar>

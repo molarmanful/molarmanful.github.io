@@ -44,7 +44,7 @@
     outline-0
     right-2
     top-2
-    transition-color,border-color,filter
+    transition="color,border-color,filter"
     var_x="focus:white"
     w-16
     z-30
@@ -58,7 +58,7 @@
           style:transition-duration="{pulse}ms, 400ms"
           class={clrs[i]}
           height="20"
-          transition-color,fill
+          transition="color,fill"
           un-fill="[var(--x,currentColor)]"
           width="100"
           y={i * 40}

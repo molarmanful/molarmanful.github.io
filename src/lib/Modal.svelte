@@ -2,7 +2,7 @@
   import { getContext } from 'svelte'
   import { fade } from 'svelte/transition'
 
-  import { ItemBar, ItemBody, A, UpWrap } from './mixins'
+  import { ItemBar, ItemBody, A } from './mixins'
 
   let D = getContext('D')
 
@@ -67,7 +67,7 @@
     <ItemBody>
       {#await D.items.get(selected)() then item}
         <div full in:fade={{ duration: 200 }}>
-          <UpWrap item={item.default} />
+          <svelte:component this={item.default} />
         </div>
       {/await}
     </ItemBody>

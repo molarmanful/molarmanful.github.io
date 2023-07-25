@@ -69,3 +69,8 @@ export const ccolor = (_, { pulse = 2000, len = 4, f = () => {} }) => {
     },
   }
 }
+
+export const lazy = (node, { D }) => {
+  node.classList.add('lazy')
+  D.lazy.update()
+}

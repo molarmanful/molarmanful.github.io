@@ -29,5 +29,4 @@ export default {
     })
   ),
   items: makeMap(import.meta.glob('$lib/items/*')),
-  update() {},
 }
