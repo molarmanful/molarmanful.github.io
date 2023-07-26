@@ -4,6 +4,7 @@ semi: false
 singleQuote: true
 arrowParens: "avoid"
 svelteSelfCloseElements: always
+svelteSelfCloseComponents: always
 plugins: [prettier-plugin-svelte]
 overrides:
   - files: "*.svelte"

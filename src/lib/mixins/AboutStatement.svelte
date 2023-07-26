@@ -25,7 +25,7 @@
     This website is <A
       duration-500
       href="https://github.com/molarmanful/molarmanful.github.io"
-      text-gray="100 hover:500"
+      text-gray="100"
       transition-colors>open-source</A
     >!
   </Text>

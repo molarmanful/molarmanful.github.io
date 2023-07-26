@@ -1,4 +1,5 @@
 <script>
+  import { createKeyStroke } from '@grail-ui/svelte'
   import { getContext } from 'svelte'
   import { fade } from 'svelte/transition'
 
@@ -9,12 +10,12 @@
   export let selected
 
   let OFF = () => (selected = void 0)
-  let escOFF = e => {
-    if (e.key == 'Escape') OFF()
-  }
-</script>
 
-<svelte:window on:keyup={escOFF} />
+  createKeyStroke({
+    key: ['Escape'],
+    handler: OFF,
+  })
+</script>
 
 {#if selected && D.items.has(selected)}
   <div
@@ -38,7 +39,6 @@
         aria-label="close modal"
         bg-transparent
         border="l-1 current"
-        cursor-pointer
         flex
         h-full
         ml-auto
@@ -52,7 +52,7 @@
           h="1/2"
           m-auto
           transition-fill
-          un-fill="current hover:white"
+          un-fill="current [&:hover,&:focus]:white"
           viewBox="0 0 100 100"
           w="1/2"
         >

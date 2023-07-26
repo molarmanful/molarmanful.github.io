@@ -1,5 +1,9 @@
 <script>
-  import { useClickOutside } from '@grail-ui/svelte'
+  import {
+    useClickOutside,
+    createFocusTrap,
+    createKeyStroke,
+  } from '@grail-ui/svelte'
   import { scale } from 'svelte/transition'
 
   import { ccolor, sfactor } from './js/util'
@@ -8,12 +12,25 @@
 
   export let tops = []
 
+  let { deactivate, useFocusTrap } = createFocusTrap({
+    immediate: true,
+    initialFocus: false,
+  })
+
   let dropped = false
   let ON = e => {
     dropped = true
     e.target.blur()
   }
-  let OFF = () => (dropped = false)
+  let OFF = () => {
+    dropped = false
+    deactivate()
+  }
+
+  createKeyStroke({
+    key: ['Escape'],
+    handler: OFF,
+  })
 
   let GOTO = top => {
     if (browser) {
@@ -85,6 +102,7 @@
       z-40
       on:mouseleave={OFF}
       use:useClickOutside={{ handler: OFF }}
+      use:useFocusTrap
       transition:scale={{ duration: 200 }}
     >
       <menu font-1 leading-8 text-3xl>
@@ -95,7 +113,7 @@
               class={clrs[i]}
               bg-transparent
               cursor-pointer
-              filter="hover:(brightness-0 invert)"
+              filter="[&:hover,&:focus]:(brightness-0 invert)"
               transition-ease
               on:click={GOTO(top.n)}
             >

@@ -5,10 +5,8 @@
 
   let D = getContext('D')
 
-  export let name
+  export let name, a, b
   export let x = false
-  export let a
-  export let b
   export let mt = void 0
 </script>
 

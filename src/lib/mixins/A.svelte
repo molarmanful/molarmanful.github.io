@@ -7,7 +7,7 @@
 </script>
 
 <a
-  class="{item ? 'text-inherit hover:text-white' : void 0} {clazz}"
+  class="{item ? '[&:hover,&:focus]:text-white' : ''} {clazz}"
   decoration-1
   decoration-offset="[.25rem]"
   {href}

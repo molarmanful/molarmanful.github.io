@@ -2,11 +2,7 @@
   let el
 </script>
 
-<svelte:window
-  on:keydown={() => {
-    el.focus()
-  }}
-/>
+<svelte:window on:keydown={() => el.focus()} />
 
 <div
   absolute

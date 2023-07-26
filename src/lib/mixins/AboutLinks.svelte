@@ -19,12 +19,7 @@
   <menu data-aos="fade-left" m="t-2 x-2 lg:t-4">
     {#each links as [name, link]}
       <li>
-        <A
-          duration-500
-          href={link}
-          transition-colors
-          un-text="gray-500 hover:white"
-        >
+        <A duration-500 href={link} item text-gray="500" transition-colors>
           {name}
         </A>
       </li>

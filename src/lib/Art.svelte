@@ -35,7 +35,6 @@
             aria-label="open entry: {name}"
             bg-transparent
             cover
-            cursor-pointer
             w-full
             on:click|preventDefault={ON(name)}
             on:keypress={() => {}}

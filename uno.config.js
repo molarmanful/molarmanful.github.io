@@ -83,7 +83,7 @@ export default {
       bold: 'font-400 font-2',
       prose: 'hyphens-auto',
       cover:
-        'transition hover:graiscale focus:graiscale outline-0 border-(1 transparent)',
+        'transition [&:hover,&:focus]:graiscale outline-0 border-(1 transparent)',
       screen: 'w-screen h-screen',
       full: 'w-full h-full',
       'max-full': 'max-w-full max-h-full',

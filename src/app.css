@@ -28,7 +28,8 @@ a {
   @apply text-gray-100 duration-500 transition-colors no-underline;
 }
 
-a:hover {
+a:hover,
+a:focus {
   @apply text-gray-500;
 }
 

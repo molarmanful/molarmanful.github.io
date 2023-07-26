@@ -7,8 +7,7 @@
 
   let D = getContext('D')
 
-  export let title
-  export let a
+  export let title, a
   export let aspect = 'video'
 </script>
 
