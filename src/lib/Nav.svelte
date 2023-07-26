@@ -12,7 +12,7 @@
 
   export let tops = []
 
-  let { deactivate, useFocusTrap } = createFocusTrap({
+  let { hasFocus, deactivate, useFocusTrap } = createFocusTrap({
     immediate: true,
     initialFocus: false,
   })
@@ -22,14 +22,17 @@
     dropped = true
     e.target.blur()
   }
-  let OFF = () => {
-    dropped = false
-    deactivate()
-  }
+  let OFF =
+    (check = false) =>
+    () => {
+      if (check && $hasFocus) return
+      dropped = false
+      deactivate()
+    }
 
   createKeyStroke({
     key: ['Escape'],
-    handler: OFF,
+    handler: OFF(),
   })
 
   let GOTO = top => {
@@ -63,7 +66,7 @@
   ></NavIcon>
 
   {#if dropped}
-    <div contents use:useClickOutside={{ handler: OFF }} use:useFocusTrap>
+    <div contents use:useClickOutside={{ handler: OFF() }} use:useFocusTrap>
       <NavBody
         {clrs}
         {filter}
@@ -73,15 +76,19 @@
         right="2"
         top="2"
         z="40"
-        on:mouseleave={OFF}
+        on:mouseleave={OFF(true)}
+        on:keypress={ON}
       >
         {#each tops as top, i}
           <li>
             <button
-              style:transition="color {pulse}ms, filter 500ms"
+              style:transition="color {pulse}ms, filter 500ms, border-color
+              500ms"
               class={clrs[i]}
               bg-transparent
+              border="b-1 transparent focus:white"
               filter="[&:hover,&:focus]:(brightness-0 invert)"
+              outline-0
               on:click={GOTO(top.n)}
             >
               {top.name.toUpperCase()}
