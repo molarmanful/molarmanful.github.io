@@ -18,6 +18,9 @@ export { default as YTVideo } from './YTVideo.svelte'
 export { default as Sp } from './Sp.svelte'
 export { default as OffTop } from './OffTop.svelte'
 
+export { default as NavIcon } from './NavIcon.svelte'
+export { default as NavBody } from './NavBody.svelte'
+
 export { default as HeaderTitle } from './HeaderTitle.svelte'
 export { default as HeaderSubtitle } from './HeaderSubtitle.svelte'
 export { default as HeaderSplash } from './HeaderSplash.svelte'
