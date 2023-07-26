@@ -16,10 +16,10 @@
 
 <div prose {...$$restProps}>
   <h2 data-aos="fade-left" noprose text=" stroked gray-500" type-6>LINKS</h2>
-  <menu data-aos="fade-left" m="t-2 x-2 lg:t-4">
+  <menu data-aos="fade-left" m="t-2 x-2 lg:t-4" text-gray-500>
     {#each links as [name, link]}
       <li>
-        <A duration-500 href={link} item text-gray="500" transition-colors>
+        <A duration-500 href={link} item transition-colors>
           {name}
         </A>
       </li>
