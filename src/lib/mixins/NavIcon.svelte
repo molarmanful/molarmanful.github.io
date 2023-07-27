@@ -6,7 +6,7 @@
   style:transition="color {pulse}ms, border-color 400ms, filter 400ms"
   style:filter
   class={clrs[len - 1]}
-  aria-label="open navigation menu"
+  aria-label="nav menu"
   bg-black
   border="1 current focus:white"
   ease

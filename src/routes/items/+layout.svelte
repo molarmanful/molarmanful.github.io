@@ -1,6 +1,6 @@
 <script>
   import { createFocusTrap } from '@grail-ui/svelte'
-  import { afterUpdate, setContext } from 'svelte'
+  import { setContext } from 'svelte'
   import { fade } from 'svelte/transition'
   import LazyLoad from 'vanilla-lazyload'
 

@@ -43,7 +43,7 @@
         </A>
       </div>
       <button
-        aria-label="close modal"
+        aria-label="close entry"
         bg-transparent
         border="1 current"
         box-content
