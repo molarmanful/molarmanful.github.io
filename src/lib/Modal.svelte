@@ -9,12 +9,18 @@
 
   export let selected
 
-  let OFF = () => (selected = void 0)
-
   let el
-  let { useFocusTrap } = createFocusTrap({
-    immediate: true,
-    initialFocus: () => el,
+  let { activate, useFocusTrap } = createFocusTrap({
+    setReturnFocus: () => el,
+  })
+
+  let OFF = () => {
+    selected = void 0
+  }
+
+  createKeyStroke({
+    key: ['Tab'],
+    handler: activate,
   })
 
   createKeyStroke({
@@ -51,7 +57,7 @@
         flex
         h-full
         m="l-auto t--1px r--1px"
-        outline-0
+        outline-none
         text="[&:hover,&:focus]:white"
         transition-color
         w-16

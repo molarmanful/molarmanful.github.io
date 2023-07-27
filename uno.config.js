@@ -83,10 +83,10 @@ export default {
       bold: 'font-400 font-2',
       prose: 'hyphens-auto',
       cover:
-        'transition [&:hover,&:focus]:graiscale outline-0 border-(1 transparent)',
+        'transition [&:hover,&:focus]:graiscale outline-none border-(1 transparent)',
       under: 'underline decoration-(1 offset-[.25rem])',
       focunder:
-        '[&:hover,&:focus]:text-white focus:decoration-white decoration-transparent outline-0',
+        '[&:hover,&:focus]:text-white focus:decoration-white decoration-transparent outline-none',
       screen: 'w-screen h-screen',
       full: 'w-full h-full',
       'max-full': 'max-w-full max-h-full',

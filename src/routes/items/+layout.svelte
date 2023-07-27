@@ -1,5 +1,5 @@
 <script>
-  import { createFocusTrap } from '@grail-ui/svelte'
+  import { createFocusTrap, createKeyStroke } from '@grail-ui/svelte'
   import { setContext } from 'svelte'
   import { fade } from 'svelte/transition'
   import LazyLoad from 'vanilla-lazyload'
@@ -23,9 +23,13 @@
   setContext('D', D)
 
   let el
-  let { useFocusTrap } = createFocusTrap({
-    immediate: true,
-    initialFocus: () => el,
+  let { activate, useFocusTrap } = createFocusTrap({
+    setReturnFocus: () => el,
+  })
+
+  createKeyStroke({
+    key: ['Tab'],
+    handler: activate,
   })
 </script>
 

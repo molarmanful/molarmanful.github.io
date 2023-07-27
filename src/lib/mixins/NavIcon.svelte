@@ -11,7 +11,7 @@
   border="1 current focus:white"
   ease
   h-16
-  outline-0
+  outline-none
   var_x="focus:white"
   w-16
   on:mouseenter

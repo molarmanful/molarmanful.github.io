@@ -1,5 +1,11 @@
 <script>
+  import { onMount } from 'svelte'
+
   export let el
+
+  onMount(() => {
+    el.focus()
+  })
 </script>
 
 <div
@@ -16,11 +22,11 @@
     bind:this={el}
     border="1 t-0 gray-500"
     full
-    outline-0
+    outline-none
     overflow-x-hidden
     pb="4 lg:0"
     scroll
-    tabindex="0"
+    tabindex="-1"
   >
     <slot />
   </article>

@@ -12,7 +12,7 @@
 
   export let tops = []
 
-  let { deactivate, useFocusTrap } = createFocusTrap({
+  let { useFocusTrap } = createFocusTrap({
     immediate: true,
     initialFocus: false,
   })
@@ -24,7 +24,6 @@
   }
   let OFF = () => {
     dropped = false
-    deactivate()
   }
 
   createKeyStroke({
@@ -86,7 +85,7 @@
               border="b-1 transparent focus:white"
               ease
               filter="[&:hover,&:focus]:(brightness-0 invert)"
-              outline-0
+              outline-none
               on:click={GOTO(top.n)}
             >
               {top.name.toUpperCase()}
