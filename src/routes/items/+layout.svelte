@@ -31,23 +31,23 @@
 
 <div contents use:useFocusTrap>
   <ItemBar>
-    <div flex h-full ml-4>
-      <span m-auto text-nowrap>
-        <A href="/" item t tabindex="0">ben</A>
+    <nav aria-label="breadcrumbs" flex h-full ml-4>
+      <ol flex="~ nowrap" list-none m-auto>
+        <li><A href="/" item t tabindex="0">ben</A></li>
         {#each crumbs as [name, href], i}
-          <span transition:fade={{ duration: 200 }}>
-            &gt;
+          <li transition:fade={{ duration: 200 }}>
+            <span aria-hidden>&nbsp;&gt;</span>
             {#if i == crumbs.length - 1}
-              {name}
+              <span aria-current="page">{name}</span>
             {:else}
               <A {href} item t tabindex="0">
                 {name}
               </A>
             {/if}
-          </span>
+          </li>
         {/each}
-      </span>
-    </div>
+      </ol>
+    </nav>
   </ItemBar>
 
   {#key data.pathname}
