@@ -19,17 +19,16 @@
       <HeaderSplash
         absolute=""
         bottom="0"
-        h="full xl:3/4"
+        h="full"
         mx="auto"
         right="0 media-squarish:40%"
         un-transform="media-squarish:translate-x-1/2"
       />
       <div
         style:opacity={1 - $factor * 2}
-        backdrop="lt-xl:grayscale"
         bg="lt-xl:black/42"
-        h="xl:1/3"
-        m="auto xl:(l-1/8 r-auto y-auto) 2xl:l-1/5"
+        m-auto
+        mix-blend-difference
         p-8
         transition-opacity-400
         z-10
