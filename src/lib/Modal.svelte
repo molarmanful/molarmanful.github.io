@@ -30,7 +30,8 @@
 </script>
 
 {#if selected && D.items.has(selected)}
-  <div
+  <dialog
+    aria-label="entry: {selected}"
     bg-black
     fixed
     inset-0
@@ -87,5 +88,5 @@
         </div>
       {/await}
     </ItemBody>
-  </div>
+  </dialog>
 {/if}
