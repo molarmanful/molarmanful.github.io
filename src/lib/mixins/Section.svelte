@@ -22,6 +22,7 @@
         <h1
           inline-block
           origin-center
+          role={name ? void 0 : 'none'}
           rotate-180
           select-none
           text="stroked gray-500"
@@ -33,7 +34,9 @@
     <slot />
     <div border={bord ? 't gray-500' : void 0} flex="xl:~ 1" hidden>
       <div mr-auto p="t-6 b-32 xl:x-4" top-0 type-7 write-vertical-left>
-        <h1 inline-block origin-center rotate-180 select-none>&nbsp;</h1>
+        <h1 inline-block origin-center role="none" rotate-180 select-none>
+          &nbsp;
+        </h1>
       </div>
     </div>
   </section>
