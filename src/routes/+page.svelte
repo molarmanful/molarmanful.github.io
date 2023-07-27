@@ -1,4 +1,5 @@
 <script>
+  import { createFocusTrap } from '@grail-ui/svelte'
   import AOS from 'aos'
   import { setContext } from 'svelte'
   import { classList } from 'svelte-body'
@@ -25,6 +26,11 @@
   }
 
   setContext('D', D)
+
+  let { useFocusTrap } = createFocusTrap({
+    immediate: true,
+    initialFocus: false,
+  })
 </script>
 
 <svelte:head>
@@ -37,8 +43,10 @@
 
 <svelte:body use:classList={[selected && 'overflow-hidden']} />
 
-<Nav {tops} />
-<Header bind:top={tops[0]} />
-<About bind:top={tops[1]} />
-<Art bind:top={tops[2]} bind:selected />
-<Modal bind:selected />
+<div contents use:useFocusTrap>
+  <Nav {tops} />
+  <Header bind:top={tops[0]} />
+  <About bind:top={tops[1]} />
+  <Art bind:top={tops[2]} bind:selected />
+  <Modal bind:selected />
+</div>

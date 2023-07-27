@@ -1,5 +1,5 @@
 <script>
-  import { createKeyStroke } from '@grail-ui/svelte'
+  import { createKeyStroke, createFocusTrap } from '@grail-ui/svelte'
   import { getContext } from 'svelte'
   import { fade } from 'svelte/transition'
 
@@ -10,6 +10,12 @@
   export let selected
 
   let OFF = () => (selected = void 0)
+
+  let el
+  let { useFocusTrap } = createFocusTrap({
+    immediate: true,
+    initialFocus: () => el,
+  })
 
   createKeyStroke({
     key: ['Escape'],
@@ -27,32 +33,36 @@
     pt-16
     screen
     z-50
+    use:useFocusTrap
     transition:fade={{ duration: 200 }}
   >
     <ItemBar>
       <div flex h-full ml-4>
-        <A decoration="none" href="/items/{selected}" item m="auto">
+        <A href="/items/{selected}" item m="auto">
           {selected}
         </A>
       </div>
       <button
         aria-label="close modal"
         bg-transparent
-        border="l-1 current"
+        border="1 current"
+        box-content
+        duration-500
         flex
         h-full
-        ml-auto
+        m="l-auto t--1px r--1px"
+        outline-0
+        text="[&:hover,&:focus]:white"
+        transition-color
         w-16
         on:click={OFF}
         on:keyup={() => {}}
       >
         <svg
           alt="close"
-          duration-500
+          fill-current
           h="1/2"
           m-auto
-          transition-fill
-          un-fill="current [&:hover,&:focus]:white"
           viewBox="0 0 100 100"
           w="1/2"
         >
@@ -64,7 +74,7 @@
       </button>
     </ItemBar>
 
-    <ItemBody>
+    <ItemBody bind:el>
       {#await D.items.get(selected)() then item}
         <div full in:fade={{ duration: 200 }}>
           <svelte:component this={item.default} />

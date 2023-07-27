@@ -13,7 +13,7 @@
 <div container="lg:~" m-auto p="x-5 y-5 lg:y-16" w-full>
   <ArtGrid>
     {#each D.covers as [name]}
-      <A cover="" href="/items/{name}" t>
+      <A cover="" href="/items/{name}" t tabindex="0">
         <CoverImg {name} />
       </A>
     {/each}

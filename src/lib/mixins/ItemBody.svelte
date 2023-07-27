@@ -1,8 +1,6 @@
 <script>
-  let el
+  export let el
 </script>
-
-<svelte:window on:keydown={() => el.focus()} />
 
 <div
   absolute
@@ -13,7 +11,8 @@
   screen
   {...$$restProps}
 >
-  <div
+  <!-- svelte-ignore a11y-no-noninteractive-tabindex -->
+  <article
     bind:this={el}
     border="1 t-0 gray-500"
     full
@@ -21,8 +20,8 @@
     overflow-x-hidden
     pb="4 lg:0"
     scroll
-    tabindex="-1"
+    tabindex="0"
   >
     <slot />
-  </div>
+  </article>
 </div>

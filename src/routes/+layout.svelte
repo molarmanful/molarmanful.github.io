@@ -1,5 +1,4 @@
 <script>
-  import { createFocusTrap } from '@grail-ui/svelte'
   import { onMount } from 'svelte'
 
   import { browser } from '$app/environment'
@@ -11,11 +10,6 @@
   import '../app.css'
 
   let loaded = false
-
-  let { useFocusTrap } = createFocusTrap({
-    immediate: true,
-    initialFocus: false,
-  })
 
   if (browser) {
     history.scrollRestoration = 'manual'
@@ -33,11 +27,6 @@
   <Favicons />
 </svelte:head>
 
-<main
-  class={loaded ? 'opacity-100' : 'opacity-0'}
-  ofade-500
-  overflow-x-clip
-  use:useFocusTrap
->
+<main class={loaded ? 'opacity-100' : 'opacity-0'} ofade-500 overflow-x-clip>
   <slot />
 </main>

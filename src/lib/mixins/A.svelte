@@ -7,12 +7,10 @@
 </script>
 
 <a
-  class="{item ? 'text-inherit [&:hover,&:focus]:text-white' : ''} {clazz}"
-  decoration-1
-  decoration-offset="[.25rem]"
+  class="{item ? 'text-inherit focunder' : ''} {clazz}"
   {href}
   target={t ? void 0 : '_blank'}
-  underline
+  under
   {...$$restProps}
 >
   <slot />

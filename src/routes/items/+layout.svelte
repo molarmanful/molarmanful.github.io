@@ -1,5 +1,6 @@
 <script>
-  import { setContext } from 'svelte'
+  import { createFocusTrap } from '@grail-ui/svelte'
+  import { afterUpdate, setContext } from 'svelte'
   import { fade } from 'svelte/transition'
   import LazyLoad from 'vanilla-lazyload'
 
@@ -20,28 +21,40 @@
   }
 
   setContext('D', D)
+
+  let el
+  let { useFocusTrap } = createFocusTrap({
+    immediate: true,
+    initialFocus: () => el,
+  })
 </script>
 
-<ItemBar>
-  <div flex h-full ml-4>
-    <span m-auto text-nowrap>
-      <A decoration="none" href="/" item t>ben</A>
-      {#each crumbs as [name, href]}
-        <span transition:fade={{ duration: 200 }}>
-          &gt;
-          <A decoration="none" {href} item t>
-            {name}
-          </A>
-        </span>
-      {/each}
-    </span>
-  </div>
-</ItemBar>
+<div contents use:useFocusTrap>
+  <ItemBar>
+    <div flex h-full ml-4>
+      <span m-auto text-nowrap>
+        <A href="/" item t tabindex="0">ben</A>
+        {#each crumbs as [name, href], i}
+          <span transition:fade={{ duration: 200 }}>
+            &gt;
+            {#if i == crumbs.length - 1}
+              {name}
+            {:else}
+              <A {href} item t tabindex="0">
+                {name}
+              </A>
+            {/if}
+          </span>
+        {/each}
+      </span>
+    </div>
+  </ItemBar>
 
-{#key data.pathname}
-  <div in:receive={{ key: 'a' }} out:send={{ key: 'a' }}>
-    <ItemBody>
-      <slot />
-    </ItemBody>
-  </div>
-{/key}
+  {#key data.pathname}
+    <div in:receive={{ key: 'a' }} out:send={{ key: 'a' }}>
+      <ItemBody bind:el>
+        <slot />
+      </ItemBody>
+    </div>
+  {/key}
+</div>
