@@ -1,11 +1,5 @@
 <script>
-  import { onMount } from 'svelte'
-
   export let el
-
-  onMount(() => {
-    el.focus()
-  })
 </script>
 
 <div
@@ -17,9 +11,10 @@
   screen
   {...$$restProps}
 >
-  <!-- svelte-ignore a11y-no-noninteractive-tabindex -->
+  <!-- svelte-ignore a11y-autofocus -->
   <article
     bind:this={el}
+    autofocus
     border="1 t-0 gray-500"
     full
     outline-none

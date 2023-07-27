@@ -30,7 +30,7 @@
 </script>
 
 {#if selected && D.items.has(selected)}
-  <dialog
+  <div
     aria-label="entry: {selected}"
     bg-black
     fixed
@@ -38,6 +38,7 @@
     overflow-hidden
     overscroll-contain
     pt-16
+    role="dialog"
     screen
     z-50
     use:useFocusTrap
@@ -88,5 +89,5 @@
         </div>
       {/await}
     </ItemBody>
-  </dialog>
+  </div>
 {/if}
