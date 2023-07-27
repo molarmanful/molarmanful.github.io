@@ -48,6 +48,7 @@
 
 <nav use:ccolor={{ pulse, len, f: x => (clrs = x) }}>
   <NavIcon
+    aria-expanded={dropped}
     {clrs}
     {filter}
     fixed=""
