@@ -1,9 +1,9 @@
 <script>
-  import { createKeyStroke, createFocusTrap } from '@grail-ui/svelte'
+  import { createFocusTrap, createKeyStroke } from '@grail-ui/svelte'
   import { getContext } from 'svelte'
   import { fade } from 'svelte/transition'
 
-  import { ItemBar, ItemBody, A } from './mixins'
+  import { A, ItemBar, ItemBody } from './mixins'
 
   let D = getContext('D')
 
@@ -46,7 +46,7 @@
   >
     <ItemBar>
       <div flex h-full ml-4>
-        <A href="/items/{selected}" item m="auto">
+        <A href="/work/{selected}" item m="auto">
           {selected}
         </A>
       </div>

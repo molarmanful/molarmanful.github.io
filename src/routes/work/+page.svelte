@@ -1,19 +1,20 @@
 <script>
   import { getContext } from 'svelte'
 
-  import { ArtGrid, A, CoverImg } from '$lib/mixins'
+  import { A, ArtGrid, CoverImg, Heading } from '$lib/mixins'
 
   let D = getContext('D')
 </script>
 
 <svelte:head>
-  <title>items | Ben Pang</title>
+  <title>work | Ben Pang</title>
 </svelte:head>
 
 <div container="lg:~" m-auto p="x-5 y-5 lg:y-16" w-full>
+  <Heading mb="5 md:8">WORK</Heading>
   <ArtGrid>
     {#each D.covers as [name]}
-      <A cover="" href="/items/{name}" t tabindex="0">
+      <A cover="" href="/work/{name}" t tabindex="0">
         <CoverImg {name} />
       </A>
     {/each}

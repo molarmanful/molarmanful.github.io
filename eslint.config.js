@@ -64,6 +64,12 @@ export default [
           'newlines-between': 'always',
         },
       ],
+      'sort-imports': [
+        1,
+        {
+          ignoreDeclarationSort: true,
+        },
+      ],
     },
   },
 

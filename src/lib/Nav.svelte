@@ -1,12 +1,12 @@
 <script>
   import {
-    useClickOutside,
     createFocusTrap,
     createKeyStroke,
+    useClickOutside,
   } from '@grail-ui/svelte'
 
   import { ccolor, sfactor } from './js/util'
-  import { NavIcon, NavBody } from './mixins'
+  import { NavBody, NavIcon } from './mixins'
 
   import { browser } from '$app/environment'
 

@@ -1,5 +1,5 @@
 <script>
-  import { Prose, Heading, Subheading, Text, A, MediaImg, Sp } from '../mixins'
+  import { A, Heading, MediaImg, Prose, Sp, Subheading, Text } from '../mixins'
 
   export let desc =
     '2019 - made in collaboration with Jana Počuchová. An interactive webcomic about creative block and ideation.'

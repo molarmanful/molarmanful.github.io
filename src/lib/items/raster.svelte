@@ -1,5 +1,5 @@
 <script>
-  import { Prose, Heading, Subheading, ArtImg, YTVideo } from '../mixins'
+  import { ArtImg, Heading, Prose, Subheading, YTVideo } from '../mixins'
 
   export let desc =
     'Because black & white is fun, but so is color. Drawn with a mouse in HEAVYPAINT/Krita/MS Paint.'

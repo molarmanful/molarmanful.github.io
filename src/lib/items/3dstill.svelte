@@ -1,5 +1,5 @@
 <script>
-  import { Prose, Heading, Subheading, ArtImg } from '../mixins'
+  import { ArtImg, Heading, Prose, Subheading } from '../mixins'
 
   export let desc =
     'Optical oddities that bend the rules of virtual reality. Rendered in Cinema 4D + Redshift.'

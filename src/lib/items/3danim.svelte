@@ -1,5 +1,5 @@
 <script>
-  import { Prose, Heading, Subheading, IVideo } from '../mixins'
+  import { Heading, IVideo, Prose, Subheading } from '../mixins'
 
   export let desc =
     'Blurring the lines between real and unreal, one render at a time. Rendered in Cinema 4D + Redshift.'

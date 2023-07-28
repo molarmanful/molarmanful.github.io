@@ -1,5 +1,5 @@
 <script>
-  import { Prose, Heading, Subheading, Text, A, MediaImg } from '../mixins'
+  import { A, Heading, MediaImg, Prose, Subheading, Text } from '../mixins'
 </script>
 
 <Prose>

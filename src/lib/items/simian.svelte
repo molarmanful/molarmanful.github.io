@@ -1,5 +1,5 @@
 <script>
-  import { Prose, Heading, Subheading, Text, A, MediaImg, Sp } from '../mixins'
+  import { A, Heading, MediaImg, Prose, Sp, Subheading, Text } from '../mixins'
 
   export let desc =
     '2021. Somewhat Interesting Machine with Intelligence of Artificial Nature, a frontend-only train-your-own-chatbot interface that pushes the limits of what is possible in client-side AI.'

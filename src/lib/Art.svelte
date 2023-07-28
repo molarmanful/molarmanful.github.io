@@ -1,7 +1,7 @@
 <script>
   import { getContext } from 'svelte'
 
-  import { Section, ArtGrid, CoverImg } from './mixins'
+  import { ArtGrid, CoverImg, Heading, Section } from './mixins'
 
   let D = getContext('D')
 
@@ -28,6 +28,7 @@
     p="x-5 b-16 md:x-8 lg:b-32"
     w-screen
   >
+    <Heading mb="5 md:8" un-hidden="xl:" un-text="center">WORK</Heading>
     <ArtGrid>
       {#each D.covers as [name]}
         <div data-aos="fade-up">

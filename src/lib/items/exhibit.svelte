@@ -1,5 +1,5 @@
 <script>
-  import { Prose, Heading, Subheading, Text, A, MediaImg, Sp } from '../mixins'
+  import { A, Heading, MediaImg, Prose, Sp, Subheading, Text } from '../mixins'
 
   export let desc =
     '2020 - made in collaboration with Li Cheng and Amy Kang. A concept for a virtual exhibition space that displays contemporary Asian art.'

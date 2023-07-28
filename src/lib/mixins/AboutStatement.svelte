@@ -1,5 +1,5 @@
 <script>
-  import { Subheading, Text, A } from '.'
+  import { A, Subheading, Text } from '.'
 </script>
 
 <div prose {...$$restProps}>

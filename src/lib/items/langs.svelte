@@ -1,5 +1,5 @@
 <script>
-  import { Prose, Heading, Subheading, Text, A } from '../mixins'
+  import { A, Heading, Prose, Subheading, Text } from '../mixins'
 
   export let desc =
     "Weird and wholly impractical. Programming languages which I've made throughout the years for recreational - NOT PRODUCTION - purposes."

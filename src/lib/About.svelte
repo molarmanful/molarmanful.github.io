@@ -1,5 +1,5 @@
 <script>
-  import { Section, Heading, AboutStatement, AboutLinks } from './mixins'
+  import { AboutLinks, AboutStatement, Heading, Section } from './mixins'
 
   export let top = { name: 'abt' }
 

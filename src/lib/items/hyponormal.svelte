@@ -1,13 +1,13 @@
 <script>
   import {
-    Prose,
+    A,
     Heading,
+    MediaImg,
+    Prose,
+    Sp,
     Subheading,
     Text,
-    A,
-    MediaImg,
     YTVideo,
-    Sp,
   } from '../mixins'
 
   export let desc =

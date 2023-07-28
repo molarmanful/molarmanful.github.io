@@ -1,5 +1,5 @@
 <script>
-  import { Prose, Heading, Subheading, Text, A, MediaImg, Sp } from '../mixins'
+  import { A, Heading, MediaImg, Prose, Sp, Subheading, Text } from '../mixins'
 
   export let desc =
     "2019 - made in collaboration with Ganjina Oripova and Fay Zhuang. Website for a silent short film made in 30 minutes which poked fun at the culture around Apple's AirPods."
