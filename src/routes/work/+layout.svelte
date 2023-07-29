@@ -8,6 +8,7 @@
   import { receive, send } from '$lib/js/crossfade'
   import D from '$lib/js/D'
   import { A, ItemBar, ItemBody } from '$lib/mixins'
+  import { writable } from 'svelte/store'
 
   export let data
 
@@ -23,6 +24,10 @@
   setContext('D', D)
 
   let el
+  let elS = writable()
+  $: elS.set(el)
+  setContext('focus', elS)
+
   let { activate, useFocusTrap } = createFocusTrap({
     setReturnFocus: () => el,
   })

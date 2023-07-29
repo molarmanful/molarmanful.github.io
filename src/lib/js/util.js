@@ -1,4 +1,5 @@
 import { readable } from 'svelte/store'
+import { tabbable } from 'tabbable'
 
 import { colors } from './static'
 
@@ -73,4 +74,30 @@ export const ccolor = (_, { pulse = 2000, len = 4, f = () => {} }) => {
 export const lazy = (node, { D }) => {
   node.classList.add('lazy')
   D.lazy.update()
+}
+
+export const gridData = (node, { f = () => {} }) => {
+  let g = () => {
+    let styles = getComputedStyle(node)
+    let p = v =>
+      styles.getPropertyValue(v).split` `.filter(x => x != '0px').length
+    f({
+      length: node.childElementCount,
+      rows: p('grid-template-rows'),
+      cols: p('grid-template-columns'),
+    })
+  }
+
+  g()
+  addEventListener('resize', g)
+
+  return {
+    destroy() {
+      removeEventListener('resize', g)
+    },
+  }
+}
+
+export const tabs = (node, { f = () => {} }) => {
+  f(tabbable(node))
 }

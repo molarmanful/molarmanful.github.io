@@ -1,9 +1,5 @@
 <script>
-  import { getContext } from 'svelte'
-
   import { A, ArtGrid, CoverImg, Heading } from '$lib/mixins'
-
-  let D = getContext('D')
 </script>
 
 <svelte:head>

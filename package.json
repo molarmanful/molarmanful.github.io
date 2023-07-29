@@ -17,6 +17,7 @@
     "focus-trap": "^7.5.2",
     "svelte": "^4.0.5",
     "svelte-body": "^1.4.0",
+    "tabbable": "^6.2.0",
     "unocss": "^0.53.5",
     "unocss-preset-scrollbar": "^0.2.1",
     "vanilla-lazyload": "^17.8.4",

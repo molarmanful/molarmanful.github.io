@@ -38,6 +38,9 @@ dependencies:
   svelte-body:
     specifier: ^1.4.0
     version: 1.4.0(svelte@4.0.5)
+  tabbable:
+    specifier: ^6.2.0
+    version: 6.2.0
   unocss:
     specifier: ^0.53.5
     version: 0.53.5(postcss@8.4.26)(vite@4.4.4)
