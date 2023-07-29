@@ -40,22 +40,22 @@
   }
 
   createKeyStroke({
-    key: ['W', 'ArrowUp'],
+    key: ['ArrowUp'],
     handler: wrap(i => i - cs),
   })
 
   createKeyStroke({
-    key: ['A', 'ArrowLeft'],
+    key: ['ArrowLeft'],
     handler: wrap(i => i - 1),
   })
 
   createKeyStroke({
-    key: ['S', 'ArrowDown'],
+    key: ['ArrowDown'],
     handler: wrap(i => i + cs),
   })
 
   createKeyStroke({
-    key: ['D', 'ArrowRight'],
+    key: ['ArrowRight'],
     handler: wrap(i => i + 1),
   })
 </script>
