@@ -1,9 +1,5 @@
 <script>
-  import { getContext } from 'svelte'
-
   import { ArtGrid, CoverImg, Heading, Section } from './mixins'
-
-  let D = getContext('D')
 
   export let selected
   export let top = { name: 'art' }
@@ -29,21 +25,19 @@
     w-screen
   >
     <Heading mb="5 md:8" un-hidden="xl:" un-text="center">WORK</Heading>
-    <ArtGrid>
-      {#each D.covers as [name]}
-        <div data-aos="fade-up">
-          <button
-            aria-label="open entry: {name}"
-            bg-transparent
-            cover
-            w-full
-            on:click|preventDefault={ON(name)}
-            on:keypress={() => {}}
-          >
-            <CoverImg {name} />
-          </button>
-        </div>
-      {/each}
+    <ArtGrid let:n={name}>
+      <div data-aos="fade-up">
+        <button
+          aria-label="open entry: {name}"
+          bg-transparent
+          cover
+          w-full
+          on:click|preventDefault={ON(name)}
+          on:keypress={() => {}}
+        >
+          <CoverImg {name} />
+        </button>
+      </div>
     </ArtGrid>
   </div>
 </Section>
