@@ -13,7 +13,7 @@
 <Section bord="true" bind:ot>
   <div
     border="xl:(t l) gray-500"
-    container="lg:~"
+    container="lg:"
     mx-auto
     p="t-8 md:(x-8 t-16) lg:x-16"
     w-screen
@@ -22,7 +22,7 @@
       <Heading data-aos="fade-in">WHO EVEN IS THIS GUY?</Heading>
     </div>
 
-    <div divide="lg:x gray-500" flex="lg:~" pb="16 lg:32">
+    <div divide="lg:x gray-500" flex="lg:" pb="16 lg:32">
       <AboutStatement max-w="lt-xl:prose" mx="lt-lg:auto" px="2" w="lg:5/6" />
 
       <AboutLinks

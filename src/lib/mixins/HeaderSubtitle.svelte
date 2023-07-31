@@ -28,6 +28,6 @@
   }, 1500)
 </script>
 
-<Subheading text-gray-200 {...$$restProps}>
+<Subheading {...$$restProps}>
   I make <span bold whitespace-pre>{word}</span> things.
 </Subheading>

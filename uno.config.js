@@ -70,6 +70,16 @@ export default {
       },
     ],
     [
+      'aber-drop',
+      {
+        filter:
+          'drop-shadow(var(--aber0, -2) var(--aber1, -2) 0 #f0f) ' +
+          'drop-shadow(var(--aber2, 2) var(--aber3, 2) 0 #0ff) ' +
+          'drop-shadow(var(--aber4, 0) var(--aber5, 0) 0 #0f0)',
+        '-webkit-text-fill-color': '#000',
+      },
+    ],
+    [
       /var_x-(.+)/,
       ([, x]) => ({
         '--x': x,
@@ -90,6 +100,7 @@ export default {
       screen: 'w-screen h-screen',
       full: 'w-full h-full',
       'max-full': 'max-w-full max-h-full',
+      'max-screen': 'max-w-screen max-h-screen',
       'aspect-portrait': 'aspect-9/16',
       'type-4': 'text-base md:text-lg  lg:text-xl  xl:text-2xl             ',
       'type-5': 'text-xl   md:text-2xl lg:text-3xl xl:text-4xl             ',

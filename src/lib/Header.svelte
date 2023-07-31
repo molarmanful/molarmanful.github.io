@@ -25,17 +25,22 @@
         un-transform="media-squarish:translate-x-1/2"
       />
       <div
+        style:opacity={1 - $factor * 4}
+        mix-blend-difference
+        transition-opacity-400
+      >
+        <HeaderTitle />
+      </div>
+      <!-- <div
         style:opacity={1 - $factor * 2}
         bg="lt-xl:black/42"
         m-auto
         mix-blend-difference
         p-8
-        transition-opacity-400
-        z-10
+        transition="opacity-400 delay-100"
       >
-        <HeaderTitle />
         <HeaderSubtitle block="" m="t-4 l-1 lg:l-2" />
-      </div>
+      </div> -->
     </div>
   </header>
 </OffTop>

@@ -1,4 +1,6 @@
 <script>
+  import ben from '$lib/media/benpang.svg'
+
   let aber = Array(6).fill(0)
   let cd0 = 0
   let cd1 = 0
@@ -26,9 +28,20 @@
   style:--aber3="{aber[3]}px"
   style:--aber4="{aber[4]}px"
   style:--aber5="{aber[5]}px"
-  aberration
-  text-white
-  type-8
+  aber-drop
+  {...$$restProps}
 >
-  BEN PANG
+  <div absolute inset-0 p-8 screen>
+    <svg
+      alt="BEN PANG"
+      container="lg:"
+      fill-gray-200
+      full
+      m-auto
+      object-contain
+      rotate--10
+    >
+      <use href="{ben}#main"></use>
+    </svg>
+  </div>
 </h1>
