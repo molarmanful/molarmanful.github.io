@@ -73,9 +73,9 @@ export default {
       'aber-drop',
       {
         filter:
-          'drop-shadow(var(--aber0, -2) var(--aber1, -2) 0 #f0f) ' +
-          'drop-shadow(var(--aber2, 2) var(--aber3, 2) 0 #0ff) ' +
-          'drop-shadow(var(--aber4, 0) var(--aber5, 0) 0 #0f0)',
+          'drop-shadow(var(--aber0, -2) var(--aber1, -2) 0 #f00) ' +
+          'drop-shadow(var(--aber2, 2) var(--aber3, 2) 0 #0f0) ' +
+          'drop-shadow(var(--aber4, 0) var(--aber5, 0) 0 #00f)',
         '-webkit-text-fill-color': '#000',
       },
     ],
