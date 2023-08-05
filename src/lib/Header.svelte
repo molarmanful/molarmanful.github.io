@@ -1,5 +1,5 @@
 <script>
-  import { sfactor, redmote } from './js/util'
+  import { redmote, sfactor } from './js/util'
   import { HeaderSplash, HeaderTitle, OffTop } from './mixins'
 
   export let top = { name: 'top' }

@@ -31,7 +31,7 @@
       WORK
     </Heading>
     <ArtGrid let:n={name}>
-      <div data-aos="fade-{fo ? 'up' : 'in'}">
+      <div data-aos="fade-{fo ? 'up' : 'in'}" flex>
         <button
           aria-label="open entry: {name}"
           bg-transparent
