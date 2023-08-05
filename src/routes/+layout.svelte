@@ -17,7 +17,7 @@
 
   onMount(() => {
     requestAnimationFrame(() => {
-      scrollTo(0, 0)
+      scrollTo({ top: 0, behavior: 'instant' })
       loaded = true
     })
   })
