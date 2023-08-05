@@ -2,16 +2,6 @@
   @apply text-black bg-white;
 }
 
-:root {
-  --h-scr: 100vh;
-}
-
-@supports (height: 100svh) {
-  :root {
-    --h-scr: 100svh;
-  }
-}
-
 html,
 body {
   @apply position-relative bg-black;
@@ -22,7 +12,7 @@ html {
 }
 
 body {
-  @apply sticky screen scroll overflow-x-hidden font-2 font-300 tracking-wide select-text text-gray-400 type-4;
+  @apply scroll font-2 font-300 tracking-wide select-text text-gray-400 type-4;
 }
 
 h1,
