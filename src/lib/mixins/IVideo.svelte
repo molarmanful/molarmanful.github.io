@@ -12,7 +12,7 @@
 </script>
 
 <Video {aspect}>
-  <div class="aspect-{aspect}" max-full mt-8 mx-auto>
+  <div class="aspect-{aspect}" max-full mx-auto>
     <video autoplay full loop muted object-contain playsinline use:lazy={{ D }}>
       <source data-src={`https://i.imgur.com/${a}.mp4`} type="video/mp4" />
     </video>
