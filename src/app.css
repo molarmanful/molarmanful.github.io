@@ -2,6 +2,16 @@
   @apply text-black bg-white;
 }
 
+:root {
+  --h-scr: 100vh;
+}
+
+@supports (height: 100lvh) {
+  :root {
+    --h-scr: 100lvh;
+  }
+}
+
 html,
 body {
   @apply position-relative bg-black;
