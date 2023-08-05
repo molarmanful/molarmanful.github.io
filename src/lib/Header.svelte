@@ -1,5 +1,5 @@
 <script>
-  import { sfactor } from './js/util'
+  import { sfactor, redmote } from './js/util'
   import { HeaderSplash, HeaderTitle, OffTop } from './mixins'
 
   export let top = { name: 'top' }
@@ -11,6 +11,8 @@
     top.n = ot
     top = top
   }
+
+  let rm = redmote()
 </script>
 
 <OffTop bind:ot let:useResizeObserver>
@@ -26,8 +28,9 @@
       />
       <div
         style:opacity={1 - $factor * 4}
+        style:transform={rm ? `translateY(-${$factor * 10}%)` : 'none'}
         mix-blend-difference
-        transition-opacity-400
+        transition-transform,opacity-400
       >
         <HeaderTitle />
       </div>

@@ -21,10 +21,15 @@ export const sfactor = () => {
   })
 }
 
-export const fadeonly = () => {
+let mqwrap = q => {
   if (!browser) return
-  return readable(matchMedia('(hover: none), (prefers-reduced-motion: reduce)'))
+  return readable(matchMedia(q))
 }
+
+export const fadeonly = () =>
+  mqwrap('(hover: none), (prefers-reduced-motion: reduce)')
+
+export const redmote = () => mqwrap('(prefers-reduced-motion: reduce)')
 
 export const rcolor = (
   _,
