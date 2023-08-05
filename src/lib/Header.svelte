@@ -34,7 +34,8 @@
       >
         <HeaderTitle />
       </div>
-      <!-- <div
+      <!--
+      <div
         style:opacity={1 - $factor * 2}
         bg="lt-xl:black/42"
         m-auto
@@ -43,7 +44,8 @@
         transition="opacity-400 delay-100"
       >
         <HeaderSubtitle block="" m="t-4 l-1 lg:l-2" />
-      </div> -->
+      </div>
+      -->
     </div>
   </header>
 </OffTop>
