@@ -6,9 +6,9 @@
   --h-scr: 100vh;
 }
 
-@supports (height: 100lvh) {
+@supports (height: 100svh) {
   :root {
-    --h-scr: 100lvh;
+    --h-scr: 100svh;
   }
 }
 
