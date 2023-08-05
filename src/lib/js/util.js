@@ -23,7 +23,7 @@ export const sfactor = () => {
 
 let mqwrap = q => {
   if (!browser) return
-  return readable(matchMedia(q))
+  return readable(matchMedia(q).matches)
 }
 
 export const fadeonly = () =>
