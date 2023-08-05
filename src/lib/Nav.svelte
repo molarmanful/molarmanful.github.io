@@ -34,7 +34,7 @@
   let GOTO = top => {
     if (browser) {
       dropped = false
-      scrollTo({ top, behavior: 'smooth' })
+      scrollTo({ top })
     }
   }
 
