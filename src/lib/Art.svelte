@@ -27,7 +27,7 @@
     p="x-5 b-16 md:x-8 lg:b-32"
     w-screen
   >
-    <Heading data-aos="fade" mb="5 md:8" un-hidden="xl:" un-text="center">
+    <Heading data-aos="fade-in" mb="5 md:8" un-hidden="xl:" un-text="center">
       WORK
     </Heading>
     <ArtGrid let:n={name}>
