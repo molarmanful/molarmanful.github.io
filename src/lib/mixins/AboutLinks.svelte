@@ -16,19 +16,19 @@
     ],
   ]
 
-  let fo = fadeonly
+  let fo = fadeonly()
 </script>
 
 <div prose {...$$restProps}>
   <h2
-    data-aos="fade-{fo ? 'left' : 'in'}"
+    data-aos="fade-{$fo ? 'in' : 'left'}"
     noprose
     text=" stroked gray-500"
     type-6
   >
     LINKS
   </h2>
-  <menu data-aos="fade-{fo ? 'left' : 'in'}" m="t-2 x-2 lg:t-4" text-gray-500>
+  <menu data-aos="fade-{$fo ? 'in' : 'left'}" m="t-2 x-2 lg:t-4" text-gray-500>
     {#each links as [name, link]}
       <li>
         <A decoration="current" href={link} item>
