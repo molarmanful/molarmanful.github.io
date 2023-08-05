@@ -13,7 +13,7 @@
 <img
   alt={name}
   data-src={x ? b : b.get(name)}
-  m="x-auto {mt ? 't-0' : 't-4 md:t-8'}"
+  m="x-auto {mt ? 't-0' : 't-6 md:t-8'}"
   max-h-full
   object-contain
   src={x ? a : a.get(name)}

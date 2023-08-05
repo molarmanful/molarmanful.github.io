@@ -1,4 +1,5 @@
 <script>
+  import { fadeonly } from './js/util'
   import { ArtGrid, CoverImg, Heading, Section } from './mixins'
 
   export let selected
@@ -14,6 +15,8 @@
     top.n = ot
     top = top
   }
+
+  let fo = fadeonly()
 </script>
 
 <Section id="art" name="WORK" bind:ot>
@@ -24,9 +27,11 @@
     p="x-5 b-16 md:x-8 lg:b-32"
     w-screen
   >
-    <Heading mb="5 md:8" un-hidden="xl:" un-text="center">WORK</Heading>
+    <Heading data-aos="fade" mb="5 md:8" un-hidden="xl:" un-text="center">
+      WORK
+    </Heading>
     <ArtGrid let:n={name}>
-      <div data-aos="fade-up">
+      <div data-aos="fade-{fo ? 'up' : 'in'}">
         <button
           aria-label="open entry: {name}"
           bg-transparent

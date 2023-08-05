@@ -1,9 +1,13 @@
 <script>
+  import { fadeonly } from '../js/util'
+
   import { OffTop } from '.'
 
   export let name = ''
   export let bord = false
   export let ot = 0
+
+  let fo = fadeonly()
 </script>
 
 <OffTop bind:ot let:useResizeObserver>
@@ -16,7 +20,7 @@
     use:useResizeObserver
     {...$$restProps}
   >
-    <div data-aos="fade-right" flex="xl: 1 col" hidden>
+    <div data-aos="fade-{fo ? 'right' : 'in'}" flex="xl: 1 col" hidden>
       <div ml-auto p="t-6 b-32 xl:x-4" sticky top-0 type-7 write-vertical-left>
         <svelte:element
           this={name ? 'h1' : 'div'}

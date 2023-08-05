@@ -21,6 +21,11 @@ export const sfactor = () => {
   })
 }
 
+export const fadeonly = () => {
+  if (!browser) return
+  return readable(matchMedia('(hover: none), (prefers-reduced-motion: reduce)'))
+}
+
 export const rcolor = (
   _,
   {

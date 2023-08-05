@@ -1,6 +1,6 @@
 <script>
   import { sfactor } from './js/util'
-  import { HeaderSplash, HeaderSubtitle, HeaderTitle, OffTop } from './mixins'
+  import { HeaderSplash, HeaderTitle, OffTop } from './mixins'
 
   export let top = { name: 'top' }
 
