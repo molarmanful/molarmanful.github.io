@@ -1,4 +1,5 @@
 import extractorSvelte from '@unocss/extractor-svelte'
+import { colorResolver } from '@unocss/preset-mini/utils'
 import {
   presetAttributify,
   presetUno,
@@ -43,16 +44,17 @@ export default {
   },
   rules: [
     [
-      'text-stroked',
-      {
-        'text-shadow':
-          '-1px -1px currentColor,' +
-          '-1px  1px currentColor,' +
-          '1px -1px currentColor,' +
-          '1px  1px currentColor,' +
-          'var(--aber, 0 0 transparent)',
-        '-webkit-text-fill-color': '#000',
-      },
+      /^text-stroked-(.+)$/,
+      (...a) =>
+        Object.assign(colorResolver('--stroke-color', 'text-stroked')(...a), {
+          'text-shadow':
+            '-1px -1px var(--stroke-color),' +
+            '-1px  1px var(--stroke-color),' +
+            '1px -1px var(--stroke-color),' +
+            '1px  1px var(--stroke-color)',
+          '-webkit-text-fill-color': '#000',
+        }),
+      { autocomplete: 'text-stroked-$colors' },
     ],
     [
       'graiscale',
