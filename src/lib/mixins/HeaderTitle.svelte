@@ -35,7 +35,7 @@
     <svg
       alt="BEN PANG"
       container="lg:"
-      fill-gray-200
+      fill-slate-500
       full
       m-auto
       object-contain

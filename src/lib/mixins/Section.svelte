@@ -34,11 +34,11 @@
         </svelte:element>
       </div>
     </div>
-    <div bg="black/80">
+    <div bg="black/69">
       <slot />
     </div>
     <div
-      bg="black/80"
+      bg="black/69"
       border={bord ? 't gray-500' : void 0}
       flex="xl: 1"
       hidden

@@ -44,7 +44,7 @@ export const redmote = () => mqwrap('(prefers-reduced-motion: reduce)')
 export const rcolor = (
   _,
   {
-    b = 500,
+    b = 700,
     c = '',
     rc = x => 0 | (Math.random() * x.length),
     rt = () => 0 | (Math.random() * 3000 + 1000),

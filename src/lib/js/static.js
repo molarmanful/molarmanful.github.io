@@ -1,5 +1,5 @@
 let c = {
-  weights: [500],
+  weights: [500, 700],
   colors: 'rose red orange amber yellow lime green emerald teal cyan sky blue indigo violet purple fuchsia pink'
     .split` `,
 }

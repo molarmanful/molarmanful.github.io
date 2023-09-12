@@ -4,7 +4,7 @@
   import { rcolor } from '../js/util'
 
   export let name
-  let c = 'text-gray-500'
+  let c = 'text-gray-900'
   let t = 0
 </script>
 
