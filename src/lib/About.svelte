@@ -12,7 +12,7 @@
 
 <Section bord="true" bind:ot>
   <div
-    border="xl:(t l) gray-500"
+    border="3xl:(t l) gray-500"
     container="lg:"
     mx-auto
     p="t-8 md:(x-8 t-16) lg:x-16"

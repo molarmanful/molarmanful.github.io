@@ -21,13 +21,13 @@
 
 <Section id="art" name="WORK" bind:ot>
   <div
-    border="xl:l gray-500"
+    border="3xl:l gray-500"
     container="lg:"
     mx-auto
     p="x-5 b-16 md:x-8 lg:b-32"
     w-screen
   >
-    <Heading data-aos="fade-in" mb="5 md:8" un-hidden="xl:" un-text="center">
+    <Heading data-aos="fade-in" mb="5 md:8" un-hidden="3xl:" un-text="center">
       WORK
     </Heading>
     <ArtGrid let:n={name}>

@@ -27,16 +27,26 @@ export default {
   transformers: [transformerDirectives(), transformerVariantGroup()],
   safelist: [...allColors, 'aspect-video', 'aspect-portrait', 'aspect-square'],
   theme: {
-    // breakpoints: {
-    //   xs: '320px',
-    //   sm: '640px',
-    //   md: '768px',
-    //   lg: '1024px',
-    //   xl: '1280px',
-    //   '2xl': '1536px',
-    //   '3xl': '2304px',
-    //   '4xl': '3072px',
-    // },
+    breakpoints: {
+      xs: '320px',
+      sm: '640px',
+      md: '768px',
+      lg: '1024px',
+      xl: '1280px',
+      '2xl': '1536px',
+      '3xl': '1792px',
+    },
+    container: {
+      maxWidth: {
+        xs: '320px',
+        sm: '640px',
+        md: '768px',
+        lg: '1024px',
+        xl: '1280px',
+        '2xl': '1536px',
+        '3xl': '1536px',
+      },
+    },
     media: {
       mobile_long: '(max-aspect-ratio: 1/2)',
       squarish: '(max-aspect-ratio: 16/11)',
