@@ -21,7 +21,7 @@
     "unocss": "^0.57.7",
     "unocss-preset-scrollbar": "^0.3.0",
     "vanilla-lazyload": "^17.8.5",
-    "vite": "^5.0.2",
+    "vite": "^5.0.5",
     "vite-imagetools": "^6.2.5"
   },
   "scripts": {
