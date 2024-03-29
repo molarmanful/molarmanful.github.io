@@ -1,7 +1,7 @@
 <script>
   import { A, Heading, MediaImg, Prose, Sp, Subheading, Text } from '../mixins'
 
-  export let desc =
+  export const desc =
     "2020. Using visualization techniques to gain data-driven insights into Laruelle's Dictionary of Non-Philosophy."
 </script>
 

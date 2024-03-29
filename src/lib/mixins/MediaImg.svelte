@@ -3,7 +3,7 @@
 
   import { Image } from '.'
 
-  let D = getContext('D')
+  const D = getContext('D')
   export let name
 </script>
 

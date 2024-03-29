@@ -1,4 +1,4 @@
-let makeMap = (x, { r = /^.+\/([\w-]+)\.\w+$/ } = {}) =>
+const makeMap = (x, { r = /^.+\/([\w-]+)\.\w+$/ } = {}) =>
   new Map(Object.entries(x).map(([a, b]) => [a.replace(r, '$1'), b]))
 
 export default {

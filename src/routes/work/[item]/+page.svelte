@@ -1,7 +1,7 @@
 <script>
   export let data
 
-  let { name, module } = data
+  const { name, module } = data
   let desc
 </script>
 

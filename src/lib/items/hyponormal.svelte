@@ -10,7 +10,7 @@
     YTVideo,
   } from '../mixins'
 
-  export let desc =
+  export const desc =
     '2022. An abstract Unity study of worldbuilding centered around non-Euclidean traversal mechanics.'
 </script>
 

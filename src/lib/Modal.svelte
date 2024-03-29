@@ -5,18 +5,17 @@
 
   import { A, ItemBar, ItemBody } from './mixins'
 
-  let D = getContext('D')
+  const D = getContext('D')
 
   export let selected
-
-  let el
-  let { activate, useFocusTrap } = createFocusTrap({
-    setReturnFocus: () => el,
-  })
-
-  let OFF = () => {
+  const OFF = () => {
     selected = void 0
   }
+
+  let el
+  const { activate, useFocusTrap } = createFocusTrap({
+    setReturnFocus: () => el,
+  })
 
   createKeyStroke({
     key: ['Tab'],

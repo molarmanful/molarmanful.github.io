@@ -3,7 +3,7 @@
 
   import { Subheading } from '$lib/mixins'
 
-  let bank = [
+  const bank = [
     'weird',
     'weird art',
     '2D art',
@@ -20,7 +20,7 @@
   setInterval(() => {
     word = bank[i]
     i = (i + 1) % bank.length
-    let steps = lev(word, bank[i])
+    const steps = lev(word, bank[i])
     let n = setInterval(() => {
       if (steps.length) word = steps.pop()
       else clearInterval(n)

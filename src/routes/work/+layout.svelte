@@ -28,7 +28,7 @@
   $: elS.set(el)
   setContext('focus', elS)
 
-  let { activate, useFocusTrap } = createFocusTrap({
+  const { activate, useFocusTrap } = createFocusTrap({
     setReturnFocus: () => el,
   })
 

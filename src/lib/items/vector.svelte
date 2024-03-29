@@ -1,7 +1,7 @@
 <script>
   import { ArtImg, Heading, Prose, Subheading } from '../mixins'
 
-  export let desc =
+  export const desc =
     'Scalable compositions of geometries and abstract oddities. Made with Illustrator and Hexels.'
 </script>
 

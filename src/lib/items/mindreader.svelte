@@ -1,7 +1,7 @@
 <script>
   import { A, Heading, MediaImg, Prose, Sp, Subheading, Text } from '../mixins'
 
-  export let desc =
+  export const desc =
     '2020. An e-magazine from a hypothetical future in which thought-based communication is made possible via brain implants.'
 </script>
 

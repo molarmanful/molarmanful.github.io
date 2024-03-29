@@ -11,7 +11,7 @@
 <svelte:element
   this={name}
   style:transition-duration="{t}ms"
-  class="fill-transparent stroke-1 stroke-current transition-color{c}"
+  class="{c} fill-transparent stroke-1 stroke-current transition-color"
   use:rcolor={{
     c,
     f: (x, y) => {

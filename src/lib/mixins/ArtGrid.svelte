@@ -8,10 +8,10 @@
 
   import { gridData, tabs } from '../js/util'
 
-  let D = getContext('D')
+  const D = getContext('D')
 
-  let rfocus = getContext('focus')
-  let { hasFocus, activate, deactivate, useFocusTrap } = createFocusTrap({
+  const rfocus = getContext('focus')
+  const { hasFocus, activate, deactivate, useFocusTrap } = createFocusTrap({
     clickOutsideDeactivates: true,
     setReturnFocus: () => $rfocus || false,
   })
@@ -30,11 +30,11 @@
     },
   })
 
-  let wrap = f => e => {
+  const wrap = f => e => {
     if ($hasFocus) {
       e.preventDefault()
-      let i = ts.indexOf($activeElement)
-      let i1 = f(i)
+      const i = ts.indexOf($activeElement)
+      const i1 = f(i)
       if (0 <= i1 && i1 < ts.length) ts[i1].focus()
     }
   }

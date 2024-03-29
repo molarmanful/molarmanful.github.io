@@ -1,7 +1,7 @@
 <script>
   import { A, Heading, Prose, Subheading, Text } from '../mixins'
 
-  export let desc =
+  export const desc =
     "Weird and wholly impractical. Programming languages which I've made throughout the years for recreational - NOT PRODUCTION - purposes."
 </script>
 

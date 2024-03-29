@@ -1,7 +1,7 @@
 <script>
   import { Heading, MediaImg, Prose, Sp, Subheading, YTVideo } from '../mixins'
 
-  export let desc =
+  export const desc =
     '2022 - Mechanically Minimalist Recliner. A prototype chair that plays with the contrast between rigidity and flexibility. Made from clear acrylic and bungee cords.'
 </script>
 

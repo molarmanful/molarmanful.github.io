@@ -12,17 +12,17 @@
 
   export let tops = []
 
-  let { useFocusTrap } = createFocusTrap({
+  const { useFocusTrap } = createFocusTrap({
     immediate: true,
     initialFocus: false,
   })
 
   let dropped = false
-  let ON = e => {
+  const ON = e => {
     dropped = true
     e.target.blur()
   }
-  let OFF = () => {
+  const OFF = () => {
     dropped = false
   }
 
@@ -31,7 +31,7 @@
     handler: OFF,
   })
 
-  let GOTO = top => {
+  const GOTO = top => {
     if (browser) {
       dropped = false
       scrollTo({ top })
@@ -40,8 +40,8 @@
 
   let factor = sfactor()
   let clrs = []
-  let pulse = 2000
-  let len = 4
+  const pulse = 2000
+  const len = 4
   $: filter = `hue-rotate(${$factor * -69}deg) grayscale(${$factor * 1.2})`
 </script>
 

@@ -10,7 +10,7 @@
     YTVideo,
   } from '../mixins'
 
-  export let desc =
+  export const desc =
     '2022. An Internet-powered backscratcher that converts clicks and taps to scratches.'
 </script>
 

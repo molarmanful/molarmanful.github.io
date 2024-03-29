@@ -5,7 +5,7 @@
 
   import { Video } from '.'
 
-  let D = getContext('D')
+  const D = getContext('D')
 
   export let title, a
   export let aspect = 'video'

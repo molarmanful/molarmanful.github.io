@@ -1,7 +1,7 @@
 <script>
   import { ArtImg, Heading, Prose, Subheading, YTVideo } from '../mixins'
 
-  export let desc =
+  export const desc =
     'Because black & white is fun, but so is color. Drawn with a mouse in HEAVYPAINT/Krita/MS Paint.'
 </script>
 

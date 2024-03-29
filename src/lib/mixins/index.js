@@ -11,6 +11,7 @@ export { default as Image } from './Image.svelte'
 export { default as ArtImg } from './ArtImg.svelte'
 export { default as MediaImg } from './MediaImg.svelte'
 export { default as CoverImg } from './CoverImg.svelte'
+export { default as PxImg } from './PxImg.svelte'
 
 export { default as Video } from './Video.svelte'
 export { default as IVideo } from './IVideo.svelte'

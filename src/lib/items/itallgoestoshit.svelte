@@ -1,7 +1,7 @@
 <script>
   import { A, Heading, MediaImg, Prose, Sp, Subheading, Text } from '../mixins'
 
-  export let desc =
+  export const desc =
     '2023. An interactive 3D web experience inspired by the slow yet frighteningly inevitable progression of dementia.'
 </script>
 

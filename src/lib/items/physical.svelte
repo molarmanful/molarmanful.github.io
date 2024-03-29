@@ -1,7 +1,7 @@
 <script>
   import { ArtImg, Heading, MediaImg, Prose, Subheading } from '../mixins'
 
-  export let desc =
+  export const desc =
     'Sculptures and installations which follow arbitrary rules and fulfill arbitrary purposes.'
 </script>
 

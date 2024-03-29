@@ -1,7 +1,7 @@
 <script>
   import { A, Heading, MediaImg, Prose, Sp, Subheading, Text } from '../mixins'
 
-  export let desc =
+  export const desc =
     "2021. A procedurally-generated website based on Gene Ray's Time Cube."
 </script>
 

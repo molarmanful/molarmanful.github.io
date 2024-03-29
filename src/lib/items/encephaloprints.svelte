@@ -10,7 +10,7 @@
     YTVideo,
   } from '../mixins'
 
-  export let desc =
+  export const desc =
     'An interactive installation in which generative visuals react in realtime to brain activity read from an EEG headset.'
 </script>
 

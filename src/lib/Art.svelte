@@ -5,7 +5,7 @@
   export let selected
   export let top = { name: 'art' }
 
-  let ON = x => e => {
+  const ON = x => e => {
     e.target.blur()
     selected = x
   }

@@ -1,7 +1,7 @@
 <script>
   import { ArtImg, Heading, Prose, Subheading } from '../mixins'
 
-  export let desc =
+  export const desc =
     'Monochrome artwork drawn with pen and paper or a mouse in Krita/MS Paint. Studies of contrast, shading, and value blending techniques.'
 </script>
 

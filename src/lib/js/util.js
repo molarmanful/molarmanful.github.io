@@ -8,9 +8,9 @@ import { browser } from '$app/environment'
 export const sfactor = () => {
   if (!browser) return
 
-  let f = () => scrollY / innerHeight
+  const f = () => scrollY / innerHeight
   return readable(f(), set => {
-    let g = () => set(f())
+    const g = () => set(f())
     addEventListener('scroll', g)
     addEventListener('resize', g)
 
@@ -21,13 +21,13 @@ export const sfactor = () => {
   })
 }
 
-let mqwrap = q => {
+const mqwrap = q => {
   if (!browser) return
 
-  let mql = matchMedia(q)
-  let f = () => mql.matches
+  const mql = matchMedia(q)
+  const f = () => mql.matches
   return readable(f(), set => {
-    let g = () => set(f())
+    const g = () => set(f())
     mql.addEventListener('change', g)
 
     return () => {
@@ -56,7 +56,7 @@ export const rcolor = (
   f(c, t)
 
   let to
-  let loop = () => {
+  const loop = () => {
     t = rt()
     f(colors[b][rc(colors[b])], t)
     to = setTimeout(loop, t)
@@ -74,7 +74,7 @@ export const rcolor = (
 export const ccolor = (_, { pulse = 2000, len = 4, f = () => {} }) => {
   let ic = 0
   let i = len - 1
-  let clrs = [...Array(len)].map(() => 'text-gray-500')
+  const clrs = [...Array(len)].map(() => 'text-gray-500')
   f({ clrs, len, pulse })
 
   let iv = setInterval(() => {
@@ -97,9 +97,9 @@ export const lazy = (node, { D }) => {
 }
 
 export const gridData = (node, { f = () => {} }) => {
-  let g = () => {
-    let styles = getComputedStyle(node)
-    let p = v =>
+  const g = () => {
+    const styles = getComputedStyle(node)
+    const p = v =>
       styles.getPropertyValue(v).split` `.filter(x => x != '0px').length
     f({
       length: node.childElementCount,

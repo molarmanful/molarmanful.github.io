@@ -27,7 +27,7 @@
 
   setContext('D', D)
 
-  let { useFocusTrap } = createFocusTrap({
+  const { useFocusTrap } = createFocusTrap({
     immediate: true,
     initialFocus: false,
   })
