@@ -1,17 +1,19 @@
 <script>
   import { onMount } from 'svelte'
 
-  import { Image } from '.'
+  export let alt, src
 
   let el
+  let loaded = false
 
   const rsz = () => {
     const w = el.naturalWidth
+    console.log(w)
     el.style.width = w * ~~Math.max(1, el.parentElement.clientWidth / w) + 'px'
+    loaded = true
   }
 
   onMount(() => {
-    rsz()
     addEventListener('resize', rsz)
 
     return () => {
@@ -20,4 +22,19 @@
   })
 </script>
 
-<Image image-render-pixel="" max-h-initial="" bind:el {...$$restProps} />
+<div w-full>
+  <img
+    bind:this={el}
+    class={loaded ? 'opacity-100' : 'opacity-0'}
+    {alt}
+    block
+    image-render-pixel
+    loading="lazy"
+    m-auto
+    max-w-screen
+    ofade-200
+    {src}
+    {...$$restProps}
+    on:load={rsz}
+  />
+</div>

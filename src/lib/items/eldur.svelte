@@ -26,7 +26,7 @@
   <Text><A href="https://github.com/molarmanful/kirsch">Source</A></Text>
 </Prose>
 
-{#each srcs as src}
-  {@const s = `https://github.com/molarmanful/eldur/raw/main/img/eldur${src}.png`}
-  <PxImg name="eldur{src}" a={s} b={s} x="1" />
+{#each srcs as s}
+  {@const src = `https://github.com/molarmanful/eldur/raw/main/img/eldur${s}.png`}
+  <PxImg alt="eldur{s}" {src} x="1" />
 {/each}
