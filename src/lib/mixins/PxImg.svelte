@@ -5,15 +5,12 @@
 
   let el
 
-  let style
-
   const rsz = () => {
     const w = el.naturalWidth
     el.style.width = w * ~~Math.max(1, el.parentElement.clientWidth / w) + 'px'
   }
 
   onMount(() => {
-    style = getComputedStyle(el)
     rsz()
     addEventListener('resize', rsz)
 
