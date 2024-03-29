@@ -3,7 +3,11 @@ let makeMap = (x, { r = /^.+\/([\w-]+)\.\w+$/ } = {}) =>
 
 export default {
   covers: makeMap(
-    import.meta.glob('$lib/covers/*', { eager: true, as: 'url' })
+    import.meta.glob('$lib/covers/*', {
+      eager: true,
+      query: '?url',
+      import: 'default',
+    })
   ),
   covers_tiny: makeMap(
     import.meta.glob('$lib/covers/*', {
@@ -12,7 +16,13 @@ export default {
       query: { w: 32, quality: 50 },
     })
   ),
-  art: makeMap(import.meta.glob('$lib/art/*', { eager: true, as: 'url' })),
+  art: makeMap(
+    import.meta.glob('$lib/art/*', {
+      eager: true,
+      query: '?url',
+      import: 'default',
+    })
+  ),
   art_tiny: makeMap(
     import.meta.glob('$lib/art/*', {
       eager: true,
@@ -20,7 +30,13 @@ export default {
       query: { w: 32, quality: 50 },
     })
   ),
-  media: makeMap(import.meta.glob('$lib/media/*', { eager: true, as: 'url' })),
+  media: makeMap(
+    import.meta.glob('$lib/media/*', {
+      eager: true,
+      query: '?url',
+      import: 'default',
+    })
+  ),
   media_tiny: makeMap(
     import.meta.glob('$lib/media/*', {
       eager: true,

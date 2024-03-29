@@ -4,6 +4,7 @@ import imprt from 'eslint-plugin-import'
 import svelte from 'eslint-plugin-svelte'
 import globals from 'globals'
 import svelteParser from 'svelte-eslint-parser'
+import unocss from '@unocss/eslint-config/flat'
 
 export default [
   {
@@ -86,6 +87,8 @@ export default [
       'no-unused-vars': 1,
     },
   },
+
+  unocss,
 
   prettier,
 ]
