@@ -8,8 +8,12 @@
 
   const rsz = () => {
     const w = el.naturalWidth
-    console.log(w)
+    const pw = el.parentElement.clientWidth
     el.style.width = w * ~~Math.max(1, el.parentElement.clientWidth / w) + 'px'
+    el.style.imageRendering = 'initial'
+    if (pw >= w) {
+      el.style.imageRendering = 'pixelated'
+    }
     loaded = true
   }
 
@@ -25,7 +29,7 @@
 <div w-full>
   <img
     bind:this={el}
-    class="{loaded ? 'opacity-100' : 'opacity-0'} sm:image-render-pixel"
+    class={loaded ? 'opacity-100' : 'opacity-0'}
     {alt}
     block
     loading="lazy"
