@@ -1,5 +1,5 @@
 <script>
-  import ben from '$lib/media/benpang.svg'
+  import ben from '$lib/media/benpang.svg?url'
 
   let aber = Array(6).fill(0)
   let cd0 = 0

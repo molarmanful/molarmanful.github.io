@@ -25,13 +25,12 @@
 <div w-full>
   <img
     bind:this={el}
-    class={loaded ? 'opacity-100' : 'opacity-0'}
+    class="{loaded ? 'opacity-100' : 'opacity-0'} sm:image-render-pixel"
     {alt}
     block
-    image-render-pixel
     loading="lazy"
-    m-auto
-    max-w-screen
+    m="x-auto t-6 md:t-8"
+    max-w-full
     ofade-200
     {src}
     {...$$restProps}
