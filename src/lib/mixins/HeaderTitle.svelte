@@ -1,6 +1,4 @@
 <script>
-  import ben from '$lib/media/benpang.svg?url'
-
   let aber = Array(6).fill(0)
   let cd0 = 0
   let cd1 = 0
@@ -41,7 +39,7 @@
       object-contain
       rotate--10
     >
-      <use href="{ben}#main"></use>
+      <use href="/benpang.svg#main"></use>
     </svg>
   </div>
 </h1>
