@@ -1,11 +1,5 @@
 <script>
-  import { getContext } from 'svelte'
-
-  import { lazy } from '../js/util'
-
   import { Video } from '.'
-
-  const D = getContext('D')
 
   export let title, a
   export let aspect = 'video'
@@ -18,7 +12,7 @@
     data-src={`https://youtube.com/embed/${a}`}
     frameborder="0"
     full
+    loading="lazy"
     {title}
-    use:lazy={{ D }}
   />
 </Video>

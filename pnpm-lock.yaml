@@ -86,15 +86,9 @@ devDependencies:
   unocss-preset-scrollbar:
     specifier: ^0.3.1
     version: 0.3.1(unocss@0.57.7)
-  vanilla-lazyload:
-    specifier: ^17.9.0
-    version: 17.9.0
   vite:
     specifier: ^5.2.7
     version: 5.2.7
-  vite-imagetools:
-    specifier: ^6.2.9
-    version: 6.2.9
 
 packages:
 
@@ -3050,13 +3044,6 @@ packages:
       sharp: 0.32.6
     dev: true
 
-  /imagetools-core@6.0.4:
-    resolution: {integrity: sha512-N1qs5qn7u9nR3kboISkYuvJm8MohiphCfBa+wx1UOropVaFis9/mh6wuDPLHJNhl6/64C7q2Pch5NASVKAaSrg==}
-    engines: {node: '>=12.0.0'}
-    dependencies:
-      sharp: 0.33.3
-    dev: true
-
   /import-fresh@3.3.0:
     resolution: {integrity: sha512-veYYhQa+D1QBKznvhUHxb8faxlrwUnxseDAbAp457E0wLNio2bOSKnjYDhMj+YiAq61xrMGhQk9iXVk5FzgQMw==}
     engines: {node: '>=6'}
@@ -4801,26 +4788,12 @@ packages:
       spdx-expression-parse: 3.0.1
     dev: true
 
-  /vanilla-lazyload@17.9.0:
-    resolution: {integrity: sha512-VOuNHn6xCXmC1I/Lz2cB/l1ScpsY2aXcymXzxtbsMmLQ2qiHr2KlBeJ7uf2Su/yqKTLkgdDWahznb/ae5YzZNA==}
-    dev: true
-
   /vite-imagetools@5.0.8:
     resolution: {integrity: sha512-oFNfc58iLz1lHFsIKQy+wp0RNcZjiaDeHYTexYowpf4RYx9tZ97eWEcw8lQ1jDT8AnOso6XZi5iGjLNAeTR9Tw==}
     engines: {node: '>=12.0.0'}
     dependencies:
       '@rollup/pluginutils': 5.1.0
       imagetools-core: 4.1.0
-    transitivePeerDependencies:
-      - rollup
-    dev: true
-
-  /vite-imagetools@6.2.9:
-    resolution: {integrity: sha512-C4ZYhgj2vAj43/TpZ06XlDNP0p/7LIeYbgUYr+xG44nM++4HGX6YZBKAYpiBNgiCFUTJ6eXkRppWBrfPMevgmg==}
-    engines: {node: '>=12.0.0'}
-    dependencies:
-      '@rollup/pluginutils': 5.1.0
-      imagetools-core: 6.0.4
     transitivePeerDependencies:
       - rollup
     dev: true

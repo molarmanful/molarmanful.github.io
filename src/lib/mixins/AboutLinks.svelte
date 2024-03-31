@@ -3,7 +3,7 @@
 
   import { A } from '.'
 
-  let links = [
+  const links = [
     ['Github', 'https://github.com/molarmanful'],
     ['Instagram', 'https://instagram.com/bandidojim'],
     ['ArtStation', 'https://bandidojim.artstation.com'],
@@ -16,7 +16,7 @@
     ],
   ]
 
-  let fo = fadeonly()
+  const fo = fadeonly()
 </script>
 
 <div prose {...$$restProps}>

@@ -100,15 +100,14 @@ export default {
   ],
   shortcuts: [
     {
-      scroll:
-        'scrollbar scrollbar-thumb-color-gray-700 scrollbar-track-color-black',
+      scroll: 'scrollbar-(thumb-color-gray-700 track-color-black)',
       bold: 'font-400 font-2',
       prose: 'hyphens-auto',
       cover:
         'transition [&:hover,&:focus]:graiscale outline-none border-(1 transparent)',
       under: 'underline decoration-(1 offset-[.25rem])',
       focunder:
-        '[&:hover,&:focus]:text-white focus:decoration-white decoration-transparent outline-none',
+        '[&:hover,&:focus]:text-white focus:decoration-white decoration-transparent outline-none border-(1 transparent) focus:border-current',
       screen: 'w-screen h-screen',
       full: 'w-full h-full',
       'max-full': 'max-w-full max-h-full',

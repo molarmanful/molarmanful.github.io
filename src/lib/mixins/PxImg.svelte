@@ -32,6 +32,7 @@
     class={loaded ? 'opacity-100' : 'opacity-0'}
     {alt}
     block
+    decoding="async"
     loading="lazy"
     m="x-auto t-6 md:t-8"
     max-w-full

@@ -3,11 +3,8 @@
   import { setContext } from 'svelte'
   import { writable } from 'svelte/store'
   import { fade } from 'svelte/transition'
-  import LazyLoad from 'vanilla-lazyload'
 
-  import { browser } from '$app/environment'
   import { receive, send } from '$lib/js/crossfade'
-  import D from '$lib/js/D'
   import { A, ItemBar, ItemBody } from '$lib/mixins'
 
   export let data
@@ -17,15 +14,9 @@
     .reduce((a, x) => [...a, [x, a[a.length - 1][1] + '/' + x]], [['', '']])
     .slice(1)
 
-  if (browser) {
-    D.lazy = new LazyLoad()
-  }
-
-  setContext('D', D)
-
   let el
   let elS = writable()
-  $: elS.set(el)
+  $: $elS = el
   setContext('focus', elS)
 
   const { activate, useFocusTrap } = createFocusTrap({

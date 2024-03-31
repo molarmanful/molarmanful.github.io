@@ -3,7 +3,6 @@
   import AOS from 'aos'
   import { setContext } from 'svelte'
   import { classList } from 'svelte-body'
-  import LazyLoad from 'vanilla-lazyload'
 
   import { browser } from '$app/environment'
   import About from '$lib/About.svelte'
@@ -18,11 +17,6 @@
 
   if (browser) {
     AOS.init()
-    D.lazy = new LazyLoad({
-      callback_loaded() {
-        AOS.refresh()
-      },
-    })
   }
 
   setContext('D', D)

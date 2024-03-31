@@ -23,10 +23,12 @@
   </Text>
   <Text data-aos="fade-in">
     This website is <A
+      border="1 transparent focus:current"
       duration-500
       href="https://github.com/molarmanful/molarmanful.github.io"
-      text-gray="100"
-      transition-colors>open-source</A
+      outline="none"
+      transition-colors
+      un-text="gray-100 focus:white">open-source</A
     >!
   </Text>
 </div>
