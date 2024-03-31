@@ -5,43 +5,22 @@ export default {
   covers: makeMap(
     import.meta.glob('$lib/covers/*', {
       eager: true,
-      query: '?url',
       import: 'default',
-    })
-  ),
-  covers_tiny: makeMap(
-    import.meta.glob('$lib/covers/*', {
-      eager: true,
-      import: 'default',
-      query: { w: 32, quality: 50 },
+      query: { url: true, as: 'run:32' },
     })
   ),
   art: makeMap(
     import.meta.glob('$lib/art/*', {
       eager: true,
-      query: '?url',
       import: 'default',
-    })
-  ),
-  art_tiny: makeMap(
-    import.meta.glob('$lib/art/*', {
-      eager: true,
-      import: 'default',
-      query: { w: 32, quality: 50 },
+      query: { url: true, as: 'run:32' },
     })
   ),
   media: makeMap(
     import.meta.glob('$lib/media/*', {
       eager: true,
-      query: '?url',
       import: 'default',
-    })
-  ),
-  media_tiny: makeMap(
-    import.meta.glob('$lib/media/*', {
-      eager: true,
-      import: 'default',
-      query: { w: 32, quality: 50 },
+      query: { url: true, as: 'run:32' },
     })
   ),
   items: makeMap(import.meta.glob('$lib/items/*')),

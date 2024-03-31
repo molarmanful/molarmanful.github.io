@@ -7,4 +7,4 @@
   export let name
 </script>
 
-<Image {name} a={D.media_tiny} b={D.media} {...$$restProps} />
+<Image {name} b={D.media} {...$$restProps} />

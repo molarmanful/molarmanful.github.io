@@ -7,4 +7,4 @@
   export let name
 </script>
 
-<Image {name} a={D.art_tiny} b={D.art} {...$$restProps} />
+<Image {name} b={D.art} {...$$restProps} />

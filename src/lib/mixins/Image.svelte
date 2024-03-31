@@ -1,23 +1,25 @@
 <script>
-  import { getContext } from 'svelte'
+  import Img from '@zerodevx/svelte-img'
 
-  import { lazy } from '../js/util'
-
-  const D = getContext('D')
-
-  export let name, a, b
+  export let name, b
   export let x = false
   export let mt = void 0
+
+  let loaded
 </script>
 
-<img
+<Img
+  class="{loaded ? 'loaded' : ''} laz"
   alt={name}
-  data-src={x ? b : b.get(name)}
+  bg="contain!"
   m="x-auto {mt ? 't-0' : 't-6 md:t-8'}"
-  max-h-full
-  object-contain
-  src={x ? a : a.get(name)}
-  w-full
-  use:lazy={{ D }}
+  max-h="full"
+  object="contain"
+  src={x ? b : b.get(name)}
+  text="0"
+  w="full"
+  on:load={() => {
+    loaded = true
+  }}
   {...$$restProps}
 />

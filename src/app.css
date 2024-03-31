@@ -49,7 +49,7 @@ a:focus {
   @apply mx-6 md:mx-0;
 }
 
-.lazy:not(.loaded) {
+:is(.lazy, .laz):not(.loaded) {
   @apply image-render-pixel;
 }
 

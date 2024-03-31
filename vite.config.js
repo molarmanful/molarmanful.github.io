@@ -1,7 +1,15 @@
 import { sveltekit } from '@sveltejs/kit/vite'
+import { imagetools } from '@zerodevx/svelte-img/vite'
 import unocss from 'unocss/vite'
-import { imagetools } from 'vite-imagetools'
 
 export default {
-  plugins: [imagetools(), unocss(), sveltekit()],
+  plugins: [
+    imagetools({
+      profiles: {
+        run: new URLSearchParams('w=1920&format=avif;webp;jpg'),
+      },
+    }),
+    unocss(),
+    sveltekit(),
+  ],
 }

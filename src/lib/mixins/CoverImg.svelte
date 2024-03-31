@@ -8,11 +8,4 @@
   export let name
 </script>
 
-<Image
-  {name}
-  a={D.covers_tiny}
-  b={D.covers}
-  draggable="false"
-  mt="0"
-  {...$$restProps}
-/>
+<Image {name} b={D.covers} draggable="false" mt="0" {...$$restProps} />
