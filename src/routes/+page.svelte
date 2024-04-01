@@ -1,14 +1,12 @@
 <script>
   import { createFocusTrap } from '@grail-ui/svelte'
   import AOS from 'aos'
-  import { setContext } from 'svelte'
   import { classList } from 'svelte-body'
 
   import { browser } from '$app/environment'
   import About from '$lib/About.svelte'
   import Art from '$lib/Art.svelte'
   import Header from '$lib/Header.svelte'
-  import D from '$lib/js/D'
   import Modal from '$lib/Modal.svelte'
   import Nav from '$lib/Nav.svelte'
 
@@ -18,8 +16,6 @@
   if (browser) {
     AOS.init()
   }
-
-  setContext('D', D)
 
   const { useFocusTrap } = createFocusTrap({
     immediate: true,

@@ -1,8 +1,9 @@
 <script>
-  import { onMount } from 'svelte'
+  import { onMount, setContext } from 'svelte'
 
   import { browser } from '$app/environment'
   import Favicons from '$lib/Favicons.svelte'
+  import D from '$lib/js/D'
 
   import '@unocss/reset/tailwind-compat.css'
   import 'uno.css'
@@ -10,6 +11,8 @@
   import '../app.css'
 
   let loaded = false
+
+  setContext('D', D)
 
   if (browser) {
     history.scrollRestoration = 'manual'
