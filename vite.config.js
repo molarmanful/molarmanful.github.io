@@ -6,7 +6,7 @@ export default {
   plugins: [
     imagetools({
       profiles: {
-        run: new URLSearchParams('w=1920&format=avif;webp;jpg'),
+        run: new URLSearchParams('h=1080&format=avif;webp;jpg'),
       },
     }),
     unocss(),
