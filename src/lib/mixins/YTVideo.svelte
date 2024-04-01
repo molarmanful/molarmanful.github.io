@@ -9,10 +9,10 @@
   <iframe
     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
     allowfullscreen
-    data-src={`https://youtube.com/embed/${a}`}
     frameborder="0"
     full
     loading="lazy"
+    src={`https://youtube.com/embed/${a}`}
     {title}
   />
 </Video>
