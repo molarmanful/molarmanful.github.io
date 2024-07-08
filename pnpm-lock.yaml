@@ -7,10 +7,6 @@ settings:
 importers:
 
   .:
-    dependencies:
-      '@sveltejs/vite-plugin-svelte':
-        specifier: ^3.1.1
-        version: 3.1.1(svelte@4.2.18)(vite@5.3.3)
     devDependencies:
       '@grail-ui/svelte':
         specifier: ^0.11.0
@@ -21,6 +17,9 @@ importers:
       '@sveltejs/kit':
         specifier: ^2.5.18
         version: 2.5.18(@sveltejs/vite-plugin-svelte@3.1.1(svelte@4.2.18)(vite@5.3.3))(svelte@4.2.18)(vite@5.3.3)
+      '@sveltejs/vite-plugin-svelte':
+        specifier: ^3.1.1
+        version: 3.1.1(svelte@4.2.18)(vite@5.3.3)
       '@types/react':
         specifier: ^18.3.3
         version: 18.3.3
