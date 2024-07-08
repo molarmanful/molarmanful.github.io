@@ -1,12 +1,14 @@
-trailingComma: "es5"
+---
+plugins: [prettier-plugin-svelte]
+trailingComma: es5
 tabWidth: 2
 semi: false
 singleQuote: true
-arrowParens: "avoid"
+arrowParens: avoid
 svelteSelfCloseElements: always
 svelteSelfCloseComponents: always
-plugins: [prettier-plugin-svelte]
+experimentalTernaries: true
 overrides:
-  - files: "*.svelte"
+  - files: '*.svelte'
     options:
       parser: svelte
