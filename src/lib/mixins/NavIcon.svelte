@@ -1,5 +1,5 @@
 <script>
-  export let pulse, filter, clrs, len
+  let { pulse, filter, clrs, len, ...props } = $props()
 </script>
 
 <button
@@ -7,17 +7,14 @@
   style:filter
   class={clrs[len - 1]}
   aria-label="nav menu"
-  bg-black
+  bg="black"
   border="1 current focus:white"
-  ease
-  h-16
-  outline-none
+  ease=""
+  h="16"
+  outline="none"
   var_x="focus:white"
-  w-16
-  on:mouseenter
-  on:click
-  on:keyup
-  {...$$restProps}
+  w="16"
+  {...props}
 >
   <svg alt="menu" h="1/2" m-auto viewBox="0 0 100 100" w="1/2">
     {#each Array(3).keys() as i}

@@ -1,5 +1,5 @@
 <script>
-  export let bold = void 0
+  let { bold, children, ...props } = $props()
 </script>
 
 <h2
@@ -8,8 +8,8 @@
   font="2"
   m="t-6 lg:t-12"
   text=" gray-300"
-  type-5
-  {...$$restProps}
+  type="5"
+  {...props}
 >
-  <slot />
+  {@render children()}
 </h2>

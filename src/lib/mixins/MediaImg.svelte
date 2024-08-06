@@ -3,8 +3,9 @@
 
   import { Image } from '.'
 
+  let { name, ...props } = $props()
+
   const D = getContext('D')
-  export let name
 </script>
 
-<Image {name} b={D.media} {...$$restProps} />
+<Image {name} b={D.media} {...props} />

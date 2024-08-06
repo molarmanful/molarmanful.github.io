@@ -1,23 +1,18 @@
 <script>
-  import {
-    createFocusTrap,
-    createKeyStroke,
-    useClickOutside,
-  } from '@grail-ui/svelte'
-
-  import { ccolor, sfactor } from './js/util'
+  import { colors } from './js/static'
+  import { FocusTrap, clickout, sfactor } from './js/util.svelte'
   import { NavBody, NavIcon } from './mixins'
 
   import { browser } from '$app/environment'
 
-  export let tops = []
+  let { tops = [] } = $props()
 
-  const { useFocusTrap } = createFocusTrap({
+  const { useFocusTrap } = new FocusTrap({
     immediate: true,
     initialFocus: false,
-  })
+  }).fns
 
-  let dropped = false
+  let dropped = $state(false)
   const ON = e => {
     dropped = true
     e.target.blur()
@@ -26,11 +21,6 @@
     dropped = false
   }
 
-  createKeyStroke({
-    key: ['Escape'],
-    handler: OFF,
-  })
-
   const GOTO = top => {
     if (browser) {
       dropped = false
@@ -38,14 +28,39 @@
     }
   }
 
-  let factor = sfactor()
-  let clrs = []
+  let factor = $state(0)
+  sfactor(x => (factor = x))
+
   const pulse = 2000
   const len = 4
-  $: filter = `hue-rotate(${$factor * -69}deg) grayscale(${$factor * 1.2})`
+  const clrs = $state([...Array(len)].map(() => 'text-gray-500'))
+  let filter = $derived(
+    `hue-rotate(${factor * -69}deg) grayscale(${factor * 1.2})`
+  )
+  let ic = 0
+  let i = len - 1
+
+  $effect(() => {
+    const iv = setInterval(() => {
+      if (i == len - 1) ic = (ic + 1) % colors[500].length
+      clrs[i] = colors[500][ic]
+      i = (i + 1) % len
+    }, pulse / len)
+
+    return () => clearInterval(iv)
+  })
+
+  let el = $state()
+  clickout(() => el, OFF)
 </script>
 
-<nav use:ccolor={{ pulse, len, f: x => (clrs = x) }}>
+<svelte:window
+  onkeydown={e => {
+    if (e.key == 'Escape') OFF()
+  }}
+/>
+
+<nav>
   <NavIcon
     aria-expanded={dropped}
     {clrs}
@@ -53,27 +68,26 @@
     fixed=""
     flex=""
     {len}
+    onclick={ON}
+    onmouseenter={ON}
     {pulse}
     right="2"
     top="2"
     z="30"
-    on:mouseenter={ON}
-    on:click={ON}
-    on:keyup={() => {}}
   ></NavIcon>
 
   {#if dropped}
-    <div contents use:useClickOutside={{ handler: OFF }} use:useFocusTrap>
+    <div bind:this={el} contents use:useFocusTrap>
       <NavBody
         {clrs}
         {filter}
         fixed=""
         {len}
+        onmouseleave={OFF}
         {pulse}
         right="2"
         top="2"
         z="40"
-        on:mouseleave={OFF}
       >
         {#each tops as top, i}
           <li>
@@ -85,8 +99,8 @@
               border="b-1 transparent focus:white"
               ease
               filter="[&:hover,&:focus]:(brightness-0 invert)"
+              onclick={GOTO(top.n)}
               outline-none
-              on:click={GOTO(top.n)}
             >
               {top.name.toUpperCase()}
             </button>

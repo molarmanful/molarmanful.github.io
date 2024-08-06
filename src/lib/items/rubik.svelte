@@ -1,13 +1,13 @@
 <script>
   import { A, Heading, MediaImg, Prose, Subheading, Text } from '../mixins'
+
+  export const desc =
+    'A simple puzzle that has stumped the world for decades. Gadgets and trinkets for the aspiring cuber.'
 </script>
 
 <Prose>
   <Heading>THE RUBIK COLLECTION</Heading>
-  <Subheading>
-    A simple puzzle that has stumped the world for decades. Gadgets and trinkets
-    for the aspiring cuber.
-  </Subheading>
+  <Subheading>{desc}</Subheading>
 
   <Subheading bold>A Cube Tutorial</Subheading>
   <MediaImg name="cubetut" />

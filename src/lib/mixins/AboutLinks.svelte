@@ -1,7 +1,9 @@
 <script>
-  import { fadeonly } from '../js/util'
+  import { fadeonly } from '../js/util.svelte'
 
   import { A } from '.'
+
+  let { ...props } = $props()
 
   const links = [
     ['Github', 'https://github.com/molarmanful'],
@@ -19,16 +21,20 @@
   const fo = fadeonly()
 </script>
 
-<div prose {...$$restProps}>
+<div prose="" {...props}>
   <h2
-    data-aos="fade-{$fo ? 'in' : 'left'}"
+    data-aos="fade-{fo.matches ? 'in' : 'left'}"
     noprose
     text-stroked-gray-500
     type-6
   >
     LINKS
   </h2>
-  <menu data-aos="fade-{$fo ? 'in' : 'left'}" m="t-2 x-2 lg:t-4" text-gray-500>
+  <menu
+    data-aos="fade-{fo.matches ? 'in' : 'left'}"
+    m="t-2 x-2 lg:t-4"
+    text-gray-500
+  >
     {#each links as [name, link]}
       <li>
         <A decoration="current" href={link} item>
