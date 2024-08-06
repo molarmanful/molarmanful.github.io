@@ -3,9 +3,9 @@
 
   import { Image } from '.'
 
-  const D = getContext('D')
+  let { name, ...props } = $props()
 
-  export let name
+  const D = getContext('D')
 </script>
 
-<Image {name} b={D.covers} draggable="false" mt="0" {...$$restProps} />
+<Image {name} b={D.covers} draggable="false" mt="0" {...props} />

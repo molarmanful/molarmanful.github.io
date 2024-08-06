@@ -1,8 +1,7 @@
 <script>
   import { Video } from '.'
 
-  export let title, a
-  export let aspect = 'video'
+  let { title, a, aspect = 'video' } = $props()
 </script>
 
 <Video {aspect}>
@@ -14,5 +13,5 @@
     loading="lazy"
     src={`https://youtube.com/embed/${a}`}
     {title}
-  />
+  ></iframe>
 </Video>

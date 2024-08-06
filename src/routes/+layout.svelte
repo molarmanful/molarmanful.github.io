@@ -10,7 +10,9 @@
   import 'aos/dist/aos.css'
   import '../app.css'
 
-  let loaded = false
+  let { children } = $props()
+
+  let loaded = $state(false)
 
   setContext('D', D)
 
@@ -18,11 +20,9 @@
     history.scrollRestoration = 'manual'
   }
 
-  onMount(() => {
-    requestAnimationFrame(() => {
-      scrollTo({ top: 0, behavior: 'instant' })
-      loaded = true
-    })
+  $effect(() => {
+    scrollTo({ top: 0, behavior: 'instant' })
+    loaded = true
   })
 </script>
 
@@ -31,5 +31,5 @@
 </svelte:head>
 
 <main class={loaded ? 'opacity-100' : 'opacity-0'} ofade-500 overflow-x-clip>
-  <slot />
+  {@render children()}
 </main>

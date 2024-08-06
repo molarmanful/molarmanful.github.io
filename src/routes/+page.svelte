@@ -1,26 +1,26 @@
 <script>
-  import { createFocusTrap } from '@grail-ui/svelte'
   import AOS from 'aos'
+  import { setContext } from 'svelte'
   import { classList } from 'svelte-body'
 
   import { browser } from '$app/environment'
   import About from '$lib/About.svelte'
   import Art from '$lib/Art.svelte'
   import Header from '$lib/Header.svelte'
+  import { FocusTrap } from '$lib/js/util.svelte'
   import Modal from '$lib/Modal.svelte'
   import Nav from '$lib/Nav.svelte'
 
-  let tops = []
-  let selected
+  const tops = $state([])
+  const selected = $state({ x: void 0 })
+  setContext('selected', selected)
 
-  if (browser) {
-    AOS.init()
-  }
+  if (browser) AOS.init()
 
-  const { useFocusTrap } = createFocusTrap({
+  const { useFocusTrap } = new FocusTrap({
     immediate: true,
     initialFocus: false,
-  })
+  }).fns
 </script>
 
 <svelte:head>
@@ -31,12 +31,12 @@
   />
 </svelte:head>
 
-<svelte:body use:classList={[selected && 'overflow-hidden']} />
+<svelte:body use:classList={[selected.x && 'overflow-hidden']} />
 
 <div contents use:useFocusTrap>
   <Nav {tops} />
-  <Header bind:top={tops[0]} />
-  <About bind:top={tops[1]} />
-  <Art bind:top={tops[2]} bind:selected />
-  <Modal bind:selected />
+  <Header top={x => (tops[0] = x)} />
+  <About top={x => (tops[1] = x)} />
+  <Art top={x => (tops[2] = x)} />
+  <Modal />
 </div>

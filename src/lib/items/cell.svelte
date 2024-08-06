@@ -1,12 +1,13 @@
 <script>
   import { A, Heading, MediaImg, Prose, Sp, Subheading, Text } from '../mixins'
+
+  export const desc =
+    'Zero-player games with squares that live many, many lives.'
 </script>
 
 <Prose>
   <Heading>THE CELL COLLECTION</Heading>
-  <Subheading>
-    Zero-player games with squares that live many, many lives.
-  </Subheading>
+  <Subheading>{desc}</Subheading>
 
   <Sp />
   <Subheading bold>3-Species Ecosystem</Subheading>

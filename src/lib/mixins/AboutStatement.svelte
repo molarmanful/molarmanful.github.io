@@ -1,8 +1,10 @@
 <script>
   import { A, Subheading, Text } from '.'
+
+  let { ...props } = $props()
 </script>
 
-<div prose {...$$restProps}>
+<div prose="" {...props}>
   <Subheading data-aos="fade-in">
     <span bold text-red-50>BENJAMIN PANG</span> is a primarily self-taught artist
     / programmer from San Francisco, CA and a graduate student at NYU ITP.

@@ -1,33 +1,33 @@
 <script>
-  import { createFocusTrap, createKeyStroke } from '@grail-ui/svelte'
   import { setContext } from 'svelte'
-  import { writable } from 'svelte/store'
   import { fade } from 'svelte/transition'
 
   import { receive, send } from '$lib/js/crossfade'
+  import { FocusTrap } from '$lib/js/util.svelte'
   import { A, ItemBar, ItemBody } from '$lib/mixins'
 
-  export let data
+  let { data, children } = $props()
 
-  $: crumbs = data.pathname.split`/`
-    .slice(1)
-    .reduce((a, x) => [...a, [x, a[a.length - 1][1] + '/' + x]], [['', '']])
-    .slice(1)
+  let crumbs = $derived(
+    data.pathname.split`/`
+      .slice(1)
+      .reduce((a, x) => [...a, [x, a[a.length - 1][1] + '/' + x]], [['', '']])
+      .slice(1)
+  )
 
-  let el
-  let elS = writable()
-  $: $elS = el
-  setContext('focus', elS)
+  let el = $state({ x: void 0 })
+  setContext('focus', () => el)
 
-  const { activate, useFocusTrap } = createFocusTrap({
-    setReturnFocus: () => el,
-  })
-
-  createKeyStroke({
-    key: ['Tab'],
-    handler: activate,
-  })
+  const { activate, useFocusTrap } = new FocusTrap({
+    setReturnFocus: () => el.x,
+  }).fns
 </script>
+
+<svelte:window
+  onkeydown={e => {
+    if (e.key == 'Tab') activate()
+  }}
+/>
 
 <div contents use:useFocusTrap>
   <ItemBar>
@@ -36,7 +36,7 @@
         <li><A href="/" item t tabindex="0">ben</A></li>
         {#each crumbs as [name, href], i}
           <li transition:fade={{ duration: 200 }}>
-            <span aria-hidden>&nbsp;&gt;</span>
+            <span aria-hidden="true">&nbsp;&gt;</span>
             {#if i == crumbs.length - 1}
               <span aria-current="page">{name}</span>
             {:else}
@@ -53,7 +53,7 @@
   {#key data.pathname}
     <div in:receive={{ key: 'a' }} out:send={{ key: 'a' }}>
       <ItemBody bind:el>
-        <slot />
+        {@render children()}
       </ItemBody>
     </div>
   {/key}

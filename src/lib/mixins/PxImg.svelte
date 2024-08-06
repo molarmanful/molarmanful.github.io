@@ -1,10 +1,8 @@
 <script>
-  import { onMount } from 'svelte'
+  let { alt, src, ...props } = $props()
 
-  export let alt, src
-
-  let el
-  let loaded = false
+  let el = $state()
+  let loaded = $state(false)
 
   const rsz = () => {
     const w = el.naturalWidth
@@ -17,7 +15,7 @@
     loaded = true
   }
 
-  onMount(() => {
+  $effect(() => {
     addEventListener('resize', rsz)
 
     return () => {
@@ -31,14 +29,14 @@
     bind:this={el}
     class={loaded ? 'opacity-100' : 'opacity-0'}
     {alt}
-    block
+    block=""
     decoding="async"
     loading="lazy"
     m="x-auto t-6 md:t-8"
-    max-w-full
-    ofade-200
+    max-w="full"
+    ofade="200"
+    onload={rsz}
     {src}
-    {...$$restProps}
-    on:load={rsz}
+    {...props}
   />
 </div>

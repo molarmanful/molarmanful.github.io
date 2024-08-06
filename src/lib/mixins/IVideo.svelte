@@ -1,8 +1,7 @@
 <script>
   import { Video } from '.'
 
-  export let a
-  export let aspect = 'square'
+  let { a, aspect = 'square' } = $props()
 </script>
 
 <Video {aspect}>

@@ -1,36 +1,42 @@
 <script>
-  import { createFocusTrap, createKeyStroke } from '@grail-ui/svelte'
   import { getContext } from 'svelte'
   import { fade } from 'svelte/transition'
 
+  import { FocusTrap } from './js/util.svelte'
   import { A, ItemBar, ItemBody } from './mixins'
+
+  let selected = getContext('selected')
 
   const D = getContext('D')
 
-  export let selected
+  let el = $state({ x: void 0 })
+  const { activate, useFocusTrap } = new FocusTrap({
+    setReturnFocus: () => el.x || false,
+  }).fns
+
   const OFF = () => {
-    selected = void 0
+    selected.x = void 0
   }
-
-  let el
-  const { activate, useFocusTrap } = createFocusTrap({
-    setReturnFocus: () => el,
-  })
-
-  createKeyStroke({
-    key: ['Tab'],
-    handler: activate,
-  })
-
-  createKeyStroke({
-    key: ['Escape'],
-    handler: OFF,
-  })
 </script>
 
-{#if selected && D.items.has(selected)}
+<svelte:window
+  onkeydown={e => {
+    if (!selected.x) return
+
+    switch (e.key) {
+      case 'Tab':
+        activate()
+        break
+      case 'Escape':
+        OFF()
+        break
+    }
+  }}
+/>
+
+{#if selected.x && D.items.has(selected.x)}
   <div
-    aria-label="entry: {selected}"
+    aria-label="entry: {selected.x}"
     bg-black
     fixed
     inset-0
@@ -45,9 +51,10 @@
   >
     <ItemBar>
       <div flex h-full ml-4>
-        <A href="/work/{selected}" item m="auto">
-          {selected}
-        </A>
+        <span m-auto>
+          {selected.x} -
+          <A decoration="current" href="/work/{selected.x}" item>permalink</A>
+        </span>
       </div>
       <button
         aria-label="close entry"
@@ -58,12 +65,11 @@
         flex
         h-full
         m="l-auto t--1px r--1px"
+        onclick={OFF}
         outline-none
         text="[&:hover,&:focus]:white"
         transition-color
         w-16
-        on:click={OFF}
-        on:keyup={() => {}}
       >
         <svg
           alt="close"
@@ -82,7 +88,7 @@
     </ItemBar>
 
     <ItemBody bind:el>
-      {#await D.items.get(selected)() then item}
+      {#await D.items.get(selected.x)() then item}
         <div full in:fade={{ duration: 200 }}>
           <svelte:component this={item.default} />
         </div>

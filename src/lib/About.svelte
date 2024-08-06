@@ -1,16 +1,10 @@
 <script>
   import { AboutLinks, AboutStatement, Heading, Section } from './mixins'
 
-  export let top = { name: 'abt' }
-
-  let ot
-  $: {
-    top.n = ot
-    top = top
-  }
+  let { top } = $props()
 </script>
 
-<Section bord="true" bind:ot>
+<Section bord="true" nav="abt" {top}>
   <div
     border="3xl:(t l) gray-500"
     container="lg:"

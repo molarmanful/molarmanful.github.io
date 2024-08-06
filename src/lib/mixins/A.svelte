@@ -1,17 +1,20 @@
 <script>
-  export let href
-  export let t = void 0
-  export let item = false
-  let clazz = ''
-  export { clazz as class }
+  let {
+    href,
+    t,
+    item = false,
+    class: clazz = '',
+    children,
+    ...props
+  } = $props()
 </script>
 
 <a
   class="{item ? 'text-inherit focunder' : ''} {clazz}"
   {href}
   target={t ? void 0 : '_blank'}
-  under
-  {...$$restProps}
+  under=""
+  {...props}
 >
-  <slot />
+  {@render children()}
 </a>
