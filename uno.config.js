@@ -2,6 +2,7 @@ import extractorSvelte from '@unocss/extractor-svelte'
 import { colorResolver } from '@unocss/preset-mini/utils'
 import {
   presetAttributify,
+  presetIcons,
   presetUno,
   presetWebFonts,
   transformerDirectives,
@@ -23,6 +24,12 @@ export default {
       },
     }),
     presetScrollbar(),
+    presetIcons({
+      extraProperties: {
+        display: 'inline-block',
+        'vertical-align': 'middle',
+      },
+    }),
   ],
   transformers: [transformerDirectives(), transformerVariantGroup()],
   safelist: [...allColors, 'aspect-video', 'aspect-portrait', 'aspect-square'],

@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/molarmanful/molarmanful.github.io#readme",
   "devDependencies": {
+    "@iconify-json/ph": "^1.1.14",
     "@sveltejs/adapter-static": "^3.0.2",
     "@sveltejs/kit": "^2.5.20",
     "@sveltejs/vite-plugin-svelte": "^3.1.1",

@@ -1,16 +1,11 @@
 <script>
   import { colors } from './js/static'
-  import { FocusTrap, clickout, sfactor } from './js/util.svelte'
+  import { clickout, sfactor } from './js/util.svelte'
   import { NavBody, NavIcon } from './mixins'
 
   import { browser } from '$app/environment'
 
   let { tops = [] } = $props()
-
-  const { useFocusTrap } = new FocusTrap({
-    immediate: true,
-    initialFocus: false,
-  }).fns
 
   let dropped = $state(false)
   const ON = e => {
@@ -60,7 +55,7 @@
   }}
 />
 
-<nav>
+<nav bind:this={el}>
   <NavIcon
     aria-expanded={dropped}
     {clrs}
@@ -77,36 +72,33 @@
   ></NavIcon>
 
   {#if dropped}
-    <div bind:this={el} contents use:useFocusTrap>
-      <NavBody
-        {clrs}
-        {filter}
-        fixed=""
-        {len}
-        onmouseleave={OFF}
-        {pulse}
-        right="2"
-        top="2"
-        z="40"
-      >
-        {#each tops as top, i}
-          <li>
-            <button
-              style:transition="color {pulse}ms, border-color 500ms, filter
-              500ms"
-              class={clrs[i]}
-              bg-transparent
-              border="b-1 transparent focus:white"
-              ease
-              filter="[&:hover,&:focus]:(brightness-0 invert)"
-              onclick={GOTO(top.n)}
-              outline-none
-            >
-              {top.name.toUpperCase()}
-            </button>
-          </li>
-        {/each}
-      </NavBody>
-    </div>
+    <NavBody
+      {clrs}
+      {filter}
+      fixed=""
+      {len}
+      onmouseleave={OFF}
+      {pulse}
+      right="2"
+      top="2"
+      z="40"
+    >
+      {#each tops as top, i}
+        <li>
+          <button
+            style:transition="color {pulse}ms, border-color 500ms, filter 500ms"
+            class={clrs[i]}
+            bg-transparent
+            border="b-1 transparent focus:white"
+            ease
+            filter="[&:hover,&:focus]:(brightness-0 invert)"
+            onclick={GOTO(top.n)}
+            outline-none
+          >
+            {top.name.toUpperCase()}
+          </button>
+        </li>
+      {/each}
+    </NavBody>
   {/if}
 </nav>

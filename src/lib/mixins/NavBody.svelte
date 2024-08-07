@@ -1,7 +1,14 @@
 <script>
   import { scale } from 'svelte/transition'
 
+  import { FocusTrap } from '../js/util.svelte'
+
   let { pulse, filter, clrs, len, children, ...props } = $props()
+
+  const { useFocusTrap } = new FocusTrap({
+    immediate: true,
+    initialFocus: false,
+  }).fns
 </script>
 
 <div
@@ -14,6 +21,7 @@
   p="4"
   role="navigation"
   transition="color"
+  use:useFocusTrap
   transition:scale={{ duration: 200 }}
   {...props}
 >

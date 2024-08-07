@@ -24,10 +24,10 @@
 </script>
 
 <svelte:head>
-  <title>Ben Pang</title>
+  <title>Ben Pang / BandidoJim</title>
   <meta
     name="description"
-    content="Programmer/artist and graduate student at NYU ITP."
+    content="Creative technologist, experimental artist, digital designer, font creator, programming language enthusiast."
   />
 </svelte:head>
 

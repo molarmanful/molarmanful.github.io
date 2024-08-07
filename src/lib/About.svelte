@@ -17,10 +17,15 @@
     </div>
 
     <div divide="lg:x gray-500" flex="lg:" pb="16 lg:32">
-      <AboutStatement max-w="lt-xl:prose" mx="lt-lg:auto" px="2" w="lg:5/6" />
+      <AboutStatement
+        max-w="prose xl:[80ch]"
+        mx="lt-lg:auto"
+        px="2"
+        w="lg:5/6"
+      />
 
       <AboutLinks
-        m="t-8 x-auto lg:(t-12 l-8 r-unset) xl:l-16"
+        m="t-8 x-auto lg:(t-12 l-auto r-unset)"
         max-w="prose"
         px="6 md:0 lg:8"
       />
