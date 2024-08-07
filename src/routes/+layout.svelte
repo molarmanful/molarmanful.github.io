@@ -1,5 +1,5 @@
 <script>
-  import { onMount, setContext } from 'svelte'
+  import { setContext } from 'svelte'
 
   import { browser } from '$app/environment'
   import Favicons from '$lib/Favicons.svelte'
@@ -16,9 +16,23 @@
 
   setContext('D', D)
 
-  if (browser) {
-    history.scrollRestoration = 'manual'
-  }
+  let vloader
+  if (browser)
+    vloader = new IntersectionObserver(
+      entries => {
+        for (const { isIntersecting, target } of entries) {
+          if (isIntersecting) {
+            target.load()
+            target.autoplay = true
+            vloader.unobserve(target)
+          }
+        }
+      },
+      { threshold: 0.1 }
+    )
+  setContext('vloader', vloader)
+
+  if (browser) history.scrollRestoration = 'manual'
 
   $effect(() => {
     scrollTo({ top: 0, behavior: 'instant' })

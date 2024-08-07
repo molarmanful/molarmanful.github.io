@@ -1,5 +1,5 @@
 <script>
-  import { activeElement, useEventListener } from 'runed'
+  import { useEventListener } from 'runed'
   import { getContext } from 'svelte'
   import { tabbable } from 'tabbable'
 
@@ -16,10 +16,12 @@
   })
   const { activate, deactivate, useFocusTrap } = ft.fns
 
+  let activeElement = $state()
+
   const wrap = (e, f) => {
     if (ft.hasFocus) {
       e.preventDefault()
-      const i = ts.indexOf(activeElement.current)
+      const i = ts.indexOf(activeElement)
       const i1 = f(i)
       if (0 <= i1 && i1 < ts.length) ts[i1].focus()
     }
@@ -42,7 +44,7 @@
 
   $effect(() => {
     if (el) {
-      el.contains(activeElement.current) ? activate() : deactivate()
+      el.contains(activeElement) ? activate() : deactivate()
       ts = tabbable(el)
       calcgrid()
     }
@@ -55,7 +57,7 @@
     switch (e.key) {
       case 'Escape':
         deactivate()
-        activeElement.current.blur()
+        activeElement.blur()
         break
       case 'ArrowUp':
         wrap(e, i => i - cs)
@@ -72,6 +74,8 @@
     }
   }}
 />
+
+<svelte:document bind:activeElement />
 
 <div
   bind:this={el}
