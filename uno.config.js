@@ -64,12 +64,14 @@ export default {
       /^text-stroked-(.+)$/,
       (...a) =>
         Object.assign(colorResolver('--stroke-color', 'text-stroked')(...a), {
-          'text-shadow':
-            '-1px -1px var(--stroke-color),' +
-            '-1px  1px var(--stroke-color),' +
-            '1px -1px var(--stroke-color),' +
-            '1px  1px var(--stroke-color)',
-          '-webkit-text-fill-color': '#000',
+          // 'text-shadow':
+          //   '-1px -1px var(--stroke-color),' +
+          //   '-1px  1px var(--stroke-color),' +
+          //   '1px -1px var(--stroke-color),' +
+          //   '1px  1px var(--stroke-color)',
+          '-webkit-text-stroke-color': '1px var(--stroke-color)',
+          'color': '#000',
+          'paint-order': 'stroke fill',
         }),
       { autocomplete: 'text-stroked-$colors' },
     ],
