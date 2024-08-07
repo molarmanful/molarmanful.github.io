@@ -39,10 +39,10 @@
       </svelte:element>
     </div>
   </div>
-  <div bg="black/69" flex="lt-3xl:1">{@render children()}</div>
+  <div bg="black/85" flex="lt-3xl:1">{@render children()}</div>
   <div
     class="lt-3xl:hidden"
-    bg="black/69"
+    bg="black/85"
     border={bord ? 't gray-500' : void 0}
     flex="3xl:1"
   ></div>
