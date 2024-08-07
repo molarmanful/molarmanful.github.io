@@ -100,7 +100,7 @@ export default {
   ],
   shortcuts: [
     {
-      scroll: 'scrollbar-(thumb-color-gray-700 track-color-black)',
+      scroll: 'scrollbar-(~ thumb-color-gray-700 track-color-black)',
       bold: 'font-400 font-2',
       prose: 'hyphens-auto',
       cover:
