@@ -6,7 +6,7 @@
 
 <Video {aspect}>
   <div class="aspect-{aspect}" max-full mx-auto>
-    <video autoplay full loop muted object-contain playsinline>
+    <video autoplay full loop muted object-contain playsinline preload="none">
       <source src="https://i.imgur.com/{a}.mp4" type="video/mp4" />
     </video>
   </div>
