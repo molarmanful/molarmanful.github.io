@@ -50,7 +50,7 @@
   style:--aber4="{-aber}px"
   style:--aber5="{aber}px"
   aber-drop=""
-  transition="filter-1000"
+  transition-filter-1000
   {...props}
 >
   <div absolute inset-0 p-8 screen>
@@ -63,7 +63,8 @@
       object-contain
       rotate--10
       stroke={ready ? '#f00' : '#fff'}
-      transition="stroke-1000"
+      stroke-1
+      transition-stroke-1000
     >
       <use href="/benpang.svg#main"></use>
     </svg>
