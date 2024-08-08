@@ -1,9 +1,12 @@
 <svelte:options namespace="svg" />
 
 <script>
+  import { getContext } from 'svelte'
+
   import { colors } from '../js/static'
 
   let { name, ...props } = $props()
+  const loaded = getContext('loaded')
 
   const b = 700
   const rt = (a = 3000, b = 1000) => 0 | (Math.random() * a + b)
@@ -26,6 +29,8 @@
   }
 
   $effect(() => {
+    if (!loaded.x) return
+
     to = setTimeout(() => {
       len_o = 0
       loop()

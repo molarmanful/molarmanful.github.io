@@ -5,8 +5,7 @@
   import { ArtGrid, CoverImg, Heading, Section } from './mixins'
 
   let { top } = $props()
-
-  let selected = getContext('selected')
+  const selected = getContext('selected')
 
   const ON = x => e => {
     e.preventDefault()

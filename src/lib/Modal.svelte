@@ -5,8 +5,7 @@
   import { FocusTrap } from './js/util.svelte'
   import { A, ItemBar, ItemBody } from './mixins'
 
-  let selected = getContext('selected')
-
+  const selected = getContext('selected')
   const D = getContext('D')
 
   let el = $state({ x: void 0 })
@@ -38,13 +37,13 @@
   <div
     aria-label="entry: {selected.x}"
     bg-black
+    dscreen
     fixed
     inset-0
     overflow-hidden
     overscroll-contain
     pt-16
     role="dialog"
-    dscreen
     z-50
     use:useFocusTrap
     transition:fade={{ duration: 200 }}

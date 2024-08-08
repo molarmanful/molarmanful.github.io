@@ -6,10 +6,9 @@
   import { FocusTrap } from '../js/util.svelte'
 
   let { children, ...props } = $props()
-
   const D = getContext('D')
-
   let rfocus = getContext('focus')?.()
+
   const ft = new FocusTrap({
     clickOutsideDeactivates: true,
     setReturnFocus: () => rfocus?.x || false,

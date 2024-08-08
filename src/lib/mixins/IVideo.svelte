@@ -4,11 +4,10 @@
   import { Video } from '.'
 
   let { a, aspect = 'square' } = $props()
+  const vloader = getContext('vloader')
 
   let el = $state()
   let loaded = $state(false)
-
-  const vloader = getContext('vloader')
 
   $effect(() => {
     vloader.observe(el)

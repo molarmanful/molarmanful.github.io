@@ -1,12 +1,17 @@
 <script>
+  import { getContext } from 'svelte'
+
   let { ...props } = $props()
+  const loaded = getContext('loaded')
 
   let aber = $state(0.1)
-  let loaded = $state(false)
+  let ready = $state(false)
 
   $effect(() => {
+    if (!loaded.x) return
+
     const t = setTimeout(() => {
-      loaded = true
+      ready = true
       aber = 4
     }, 1000)
 
@@ -57,7 +62,7 @@
       m-auto
       object-contain
       rotate--10
-      stroke={loaded ? '#f00' : '#fff'}
+      stroke={ready ? '#f00' : '#fff'}
       transition="stroke-1000"
     >
       <use href="/benpang.svg#main"></use>

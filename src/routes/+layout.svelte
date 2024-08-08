@@ -12,9 +12,10 @@
 
   let { children } = $props()
 
-  let loaded = $state(false)
-
   setContext('D', D)
+
+  let loaded = $state({ x: false })
+  setContext('loaded', loaded)
 
   let vloader
   if (browser)
@@ -36,7 +37,7 @@
 
   $effect(() => {
     scrollTo({ top: 0, behavior: 'instant' })
-    loaded = true
+    loaded.x = true
   })
 </script>
 
@@ -44,6 +45,6 @@
   <Favicons />
 </svelte:head>
 
-<main class={loaded ? 'opacity-100' : 'opacity-0'} ofade-500 overflow-x-clip>
+<main class={loaded.x ? 'opacity-100' : 'opacity-0'} ofade-500 overflow-x-clip>
   {@render children()}
 </main>
