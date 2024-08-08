@@ -9,7 +9,7 @@
   const rt = () => 0 | (Math.random() * 3000 + 1000)
 
   let c = $state('text-black')
-  let t = $state(rt())
+  let t = $state(0)
 
   let to
   const loop = () => {
@@ -19,7 +19,7 @@
   }
 
   $effect(() => {
-    to = setTimeout(loop, t)
+    to = setTimeout(loop, rt())
 
     return () => clearTimeout(to)
   })

@@ -37,26 +37,28 @@
   // })
 </script>
 
-<h1 {...props}>
+<h1
+  style:--aber0="{-aber}px"
+  style:--aber1="{aber}px"
+  style:--aber2="{-aber}px"
+  style:--aber3="{aber}px"
+  style:--aber4="{-aber}px"
+  style:--aber5="{aber}px"
+  aber-drop=""
+  transition="filter-1000"
+  {...props}
+>
   <div absolute inset-0 p-8 screen>
     <svg
-      style:--aber0="{-aber}px"
-      style:--aber1="{aber}px"
-      style:--aber2="{-aber}px"
-      style:--aber3="{aber}px"
-      style:--aber4="{-aber}px"
-      style:--aber5="{aber}px"
-      aber-drop=""
       alt="BEN PANG"
       container="lg:"
-      fill-black
-      fill-opacity-1
+      fill-transparent
       full
       m-auto
       object-contain
       rotate--10
       stroke={loaded ? '#f00' : '#fff'}
-      transition="property-drop-shadow,stroke-color duration-1000"
+      transition="stroke-1000"
     >
       <use href="/benpang.svg#main"></use>
     </svg>

@@ -29,7 +29,7 @@
     <div
       style:opacity={1 - factor * 4}
       style:transform={fo.matches ? 'none' : `translateY(-${factor * 10}%)`}
-      transition-transform,opacity-400
+      transition="property-transform,opacity"
     >
       <HeaderTitle />
     </div>
