@@ -6,7 +6,7 @@
   let { name, ...props } = $props()
 
   const b = 700
-  const rt = () => 0 | (Math.random() * 3000 + 1000)
+  const rt = (a = 3000, b = 1000) => 0 | (Math.random() * a + b)
 
   let c = $state('text-black')
   let t = $state(0)
@@ -19,7 +19,7 @@
   }
 
   $effect(() => {
-    to = setTimeout(loop, rt())
+    to = setTimeout(loop, rt(1000))
 
     return () => clearTimeout(to)
   })
