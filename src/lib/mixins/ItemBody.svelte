@@ -8,7 +8,7 @@
   inset="0"
   overflow="hidden"
   p="2 t-18"
-  screen=""
+  dscreen=""
   {...props}
 >
   <!-- svelte-ignore a11y_autofocus -->
