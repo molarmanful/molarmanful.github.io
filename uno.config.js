@@ -69,7 +69,7 @@ export default {
           //   '-1px  1px var(--stroke-color),' +
           //   '1px -1px var(--stroke-color),' +
           //   '1px  1px var(--stroke-color)',
-          '-webkit-text-stroke-color': '1px var(--stroke-color)',
+          '-webkit-text-stroke': '1px var(--stroke-color)',
           'color': '#000',
           'paint-order': 'stroke fill',
         }),
