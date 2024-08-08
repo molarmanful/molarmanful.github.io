@@ -21,7 +21,7 @@
     <HeaderSplash
       absolute=""
       bottom="0"
-      h="[100lvh]"
+      h="lvh"
       mx="auto"
       right="0 media-squarish:40%"
       un-transform="media-squarish:translate-x-1/2"
