@@ -5,23 +5,21 @@
 
   let { name, ...props } = $props()
 
-  let c = $state('text-gray-900')
-  let t = $state(0)
-
   const b = 700
-  const d = 0
-  const rc = x => 0 | (Math.random() * x.length)
   const rt = () => 0 | (Math.random() * 3000 + 1000)
+
+  let c = $state('text-black')
+  let t = $state(rt())
 
   let to
   const loop = () => {
     t = rt()
-    c = colors[b][rc(colors[b])]
+    c = colors[b][0 | (Math.random() * colors[b].length)]
     to = setTimeout(loop, t)
   }
 
   $effect(() => {
-    to = setTimeout(loop, d)
+    to = setTimeout(loop, t)
 
     return () => clearTimeout(to)
   })
