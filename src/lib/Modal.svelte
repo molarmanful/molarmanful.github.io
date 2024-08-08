@@ -44,7 +44,7 @@
     overscroll-contain
     pt-16
     role="dialog"
-    screen
+    dscreen
     z-50
     use:useFocusTrap
     transition:fade={{ duration: 200 }}
