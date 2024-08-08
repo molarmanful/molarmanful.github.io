@@ -10,6 +10,13 @@
 
   let c = $state('text-black')
   let t = $state(0)
+  let len_a = $state(0)
+  let len_o = $state(0)
+
+  const getlen = node => {
+    len_a = node.getTotalLength()
+    len_o = node.getTotalLength()
+  }
 
   let to
   const loop = () => {
@@ -19,7 +26,10 @@
   }
 
   $effect(() => {
-    to = setTimeout(loop, rt(1000))
+    to = setTimeout(() => {
+      len_o = 0
+      loop()
+    }, 1000)
 
     return () => clearTimeout(to)
   })
@@ -27,7 +37,11 @@
 
 <svelte:element
   this={name}
+  style:transition="color, stroke-dashoffset ease-out"
   style:transition-duration="{t}ms"
-  class="{c} fill-transparent stroke-1 stroke-current transition-color"
+  style:stroke-dasharray={len_a}
+  style:stroke-dashoffset={len_o}
+  class="{c} fill-transparent stroke-1 stroke-current"
+  use:getlen
   {...props}
 />
