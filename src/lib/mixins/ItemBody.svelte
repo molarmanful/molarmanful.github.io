@@ -5,15 +5,15 @@
 <div
   absolute=""
   bg="black"
+  dscreen=""
   inset="0"
   overflow="hidden"
   p="2 t-18"
-  dscreen=""
   {...props}
 >
   <!-- svelte-ignore a11y_autofocus -->
   <article
-    bind:this={el.x}
+    bind:this={el}
     autofocus
     border="1 t-0 gray-500"
     full

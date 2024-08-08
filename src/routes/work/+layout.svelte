@@ -15,8 +15,8 @@
       .slice(1)
   )
 
-  let el = $state({ x: void 0 })
-  setContext('focus', () => el)
+  const el = $state({ x: void 0 })
+  setContext('focus', el)
 
   const { activate, useFocusTrap } = new FocusTrap({
     setReturnFocus: () => el.x,
@@ -52,7 +52,7 @@
 
   {#key data.pathname}
     <div in:receive={{ key: 'a' }} out:send={{ key: 'a' }}>
-      <ItemBody bind:el>
+      <ItemBody bind:el={el.x}>
         {@render children()}
       </ItemBody>
     </div>
