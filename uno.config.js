@@ -117,10 +117,12 @@ export default {
       under: 'underline decoration-(1 offset-[.25rem])',
       focunder:
         '[&:hover,&:focus]:text-white focus:decoration-white decoration-transparent outline-none border-(1 transparent) focus:border-current',
-      screen: 'w-screen h-screen',
+      screen: 'w-screen h-lvh',
+      dscreen: 'w-screen h-dvh',
       full: 'w-full h-full',
       'max-full': 'max-w-full max-h-full',
       'max-screen': 'max-w-screen max-h-lvh',
+      'max-dscreen': 'max-w-screen max-h-dvh',
       'aspect-portrait': 'aspect-9/16',
       'type-4': 'text-base md:text-lg  lg:text-xl  xl:text-2xl             ',
       'type-5': 'text-xl   md:text-2xl lg:text-3xl xl:text-4xl             ',
