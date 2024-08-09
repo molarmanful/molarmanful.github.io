@@ -61,20 +61,19 @@ export default {
   },
   rules: [
     [
-      /^text-stroked-(.+)$/,
-      (...a) =>
-        Object.assign(colorResolver('--stroke-color', 'text-stroked')(...a), {
-          // 'text-shadow':
-          //   '-1px -1px var(--stroke-color),' +
-          //   '-1px  1px var(--stroke-color),' +
-          //   '1px -1px var(--stroke-color),' +
-          //   '1px  1px var(--stroke-color)',
-          '-webkit-text-stroke': 'max(2px, .03em) var(--stroke-color)',
-          'text-stroke': 'max(2px, .03em) var(--stroke-color)',
-          color: '#000',
-          'paint-order': 'stroke fill',
-        }),
-      { autocomplete: 'text-stroked-$colors' },
+      'text-stroked',
+      {
+        // 'text-shadow':
+        //   '-1px -1px var(--stroke-color),' +
+        //   '-1px  1px var(--stroke-color),' +
+        //   '1px -1px var(--stroke-color),' +
+        //   '1px  1px var(--stroke-color)',
+        '-webkit-text-stroke': 'max(2px, .03em) currentColor',
+        'text-stroke': 'max(2px, .03em) currentColor',
+        '-webkit-text-fill-color': '#000',
+        'text-fill-color': '#000',
+        'paint-order': 'stroke fill',
+      },
     ],
     [
       'graiscale',

@@ -2,7 +2,7 @@
   import { getContext } from 'svelte'
 
   import { fadeonly } from './js/util.svelte'
-  import { ArtGrid, CoverImg, Heading, Section } from './mixins'
+  import { A, ArtGrid, CoverImg, Heading, Section } from './mixins'
 
   let { top } = $props()
   const selected = getContext('selected')
@@ -25,7 +25,7 @@
     w-screen
   >
     <Heading data-aos="fade-in" mb="5 md:8" un-hidden="3xl:" un-text="center">
-      WORK
+      <A href="/work" item un-text="stroked [&:hover,&:focus]:white">WORK</A>
     </Heading>
     <ArtGrid>
       {#snippet children(name)}
