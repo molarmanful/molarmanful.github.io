@@ -15,12 +15,12 @@
   const selected = $state({ x: void 0 })
   setContext('selected', selected)
 
-  if (browser) AOS.init()
-
   const { useFocusTrap } = new FocusTrap({
     immediate: true,
     initialFocus: false,
   }).fns
+
+  if (browser) AOS.init()
 </script>
 
 <svelte:head>
