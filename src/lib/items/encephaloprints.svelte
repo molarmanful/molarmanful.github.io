@@ -1,3 +1,9 @@
+<script context="module">
+  export const desc =
+    '2022. An interactive installation in which generative visuals react in realtime to brain activity read from an EEG headset.'
+  export const tags = ['physical', 'digital', 'art', 'iot']
+</script>
+
 <script>
   import {
     A,
@@ -9,9 +15,6 @@
     Text,
     YTVideo,
   } from '../mixins'
-
-  export const desc =
-    'An interactive installation in which generative visuals react in realtime to brain activity read from an EEG headset.'
 </script>
 
 <Prose>

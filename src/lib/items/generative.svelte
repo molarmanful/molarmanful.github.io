@@ -1,3 +1,9 @@
+<script context="module">
+  export const desc =
+    'From code blossoms art. Works created with autonomous systems to spawn infinite variation.'
+  export const tags = ['digital', 'dev', 'art']
+</script>
+
 <script>
   import {
     A,
@@ -9,9 +15,6 @@
     Text,
     YTVideo,
   } from '../mixins'
-
-  export const desc =
-    'From code blossoms art. Works created with autonomous systems to spawn infinite variation.'
 </script>
 
 <Prose>

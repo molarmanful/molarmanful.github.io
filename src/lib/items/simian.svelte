@@ -1,8 +1,11 @@
-<script>
-  import { A, Heading, MediaImg, Prose, Sp, Subheading, Text } from '../mixins'
-
+<script context="module">
   export const desc =
     '2021. Somewhat Interesting Machine with Intelligence of Artificial Nature, a frontend-only train-your-own-chatbot interface that pushes the limits of what is possible in client-side AI.'
+  export const tags = ['digital', 'front-end', 'dev', 'design', 'art']
+</script>
+
+<script>
+  import { A, Heading, MediaImg, Prose, Sp, Subheading, Text } from '../mixins'
 </script>
 
 <Prose>

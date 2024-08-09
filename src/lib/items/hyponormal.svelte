@@ -1,3 +1,9 @@
+<script context="module">
+  export const desc =
+    '2022. An abstract Unity study of worldbuilding centered around non-Euclidean traversal mechanics.'
+  export const tags = ['3d', 'digital', 'game', 'dev', 'art']
+</script>
+
 <script>
   import {
     A,
@@ -9,9 +15,6 @@
     Text,
     YTVideo,
   } from '../mixins'
-
-  export const desc =
-    '2022. An abstract Unity study of worldbuilding centered around non-Euclidean traversal mechanics.'
 </script>
 
 <Prose>

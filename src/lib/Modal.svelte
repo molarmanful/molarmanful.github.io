@@ -88,7 +88,7 @@
 
     <ItemBody bind:el>
       <div full in:fade={{ duration: 200 }}>
-        <svelte:component this={D.items.get(selected.x)} />
+        <svelte:component this={D.items.get(selected.x).default} />
       </div>
     </ItemBody>
   </div>

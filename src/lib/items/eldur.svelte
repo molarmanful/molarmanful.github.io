@@ -1,8 +1,11 @@
+<script context="module">
+  export const desc =
+    '2024. An eccentric bitmap microfont for all your spellcasting needs.'
+  export const tags = ['typography', 'design']
+</script>
+
 <script>
   import { A, Heading, Prose, PxImg, Subheading, Text } from '../mixins'
-
-  export const desc =
-    'An eccentric bitmap microfont for all your spellcasting needs.'
 
   const srcs = [
     '',

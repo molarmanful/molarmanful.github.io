@@ -1,8 +1,19 @@
-<script>
-  import { A, Heading, MediaImg, Prose, Subheading, Text } from '../mixins'
-
+<script context="module">
   export const desc =
     'An experimental chatroom that enables mere mortals to communicate with the gods.'
+  export const tags = [
+    'digital',
+    'full-stack',
+    'front-end',
+    'back-end',
+    'dev',
+    'design',
+    'art',
+  ]
+</script>
+
+<script>
+  import { A, Heading, MediaImg, Prose, Subheading, Text } from '../mixins'
 </script>
 
 <Prose>

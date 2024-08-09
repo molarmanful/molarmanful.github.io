@@ -1,6 +1,8 @@
 const makeMap = (x, { r = /^.+\/([\w-]+)\.\w+$/ } = {}) =>
   new Map(Object.entries(x).map(([a, b]) => [a.replace(r, '$1'), b]))
 
+const items = makeMap(import.meta.glob('$lib/items/*', { eager: true }))
+
 export default {
   covers: makeMap(
     import.meta.glob('$lib/covers/*', {
@@ -23,7 +25,6 @@ export default {
       query: { url: true, as: 'run:32' },
     })
   ),
-  items: makeMap(
-    import.meta.glob('$lib/items/*', { eager: true, import: 'default' })
-  ),
+  items,
+  tags: new Map([...items].map(([k, v]) => [k, v.tags || []])),
 }

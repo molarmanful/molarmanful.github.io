@@ -1,8 +1,11 @@
-<script>
-  import { ArtImg, Heading, Prose, Subheading } from '../mixins'
-
+<script context="module">
   export const desc =
     'Optical oddities that bend the rules of virtual reality. Rendered in Cinema 4D + Redshift.'
+  export const tags = ['3d', 'digital', 'art']
+</script>
+
+<script>
+  import { ArtImg, Heading, Prose, Subheading } from '../mixins'
 </script>
 
 <Prose>

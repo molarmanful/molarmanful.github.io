@@ -1,8 +1,11 @@
-<script>
-  import { Heading, IVideo, Prose, Subheading } from '../mixins'
-
+<script context="module">
   export const desc =
     'Blurring the lines between real and unreal, one render at a time. Rendered in Cinema 4D + Redshift.'
+  export const tags = ['3d', 'digital', 'art']
+</script>
+
+<script>
+  import { Heading, IVideo, Prose, Subheading } from '../mixins'
 </script>
 
 <Prose>

@@ -1,8 +1,11 @@
-<script>
-  import { A, Heading, MediaImg, Prose, Subheading, Text } from '../mixins'
-
+<script context="module">
   export const desc =
     'Logo and brand identity for a student-oriented VC fund at NYUAD.'
+  export const tags = ['branding', 'design']
+</script>
+
+<script>
+  import { A, Heading, MediaImg, Prose, Subheading, Text } from '../mixins'
 </script>
 
 <Prose>

@@ -1,7 +1,10 @@
+<script context="module">
+  export const desc = '2023. A versatile bitmap font with an organic flair.'
+  export const tags = ['typography', 'design', 'dev']
+</script>
+
 <script>
   import { A, Heading, Prose, PxImg, Subheading, Text } from '../mixins'
-
-  export const desc = 'A versatile bitmap font with an organic flair.'
 </script>
 
 <Prose>

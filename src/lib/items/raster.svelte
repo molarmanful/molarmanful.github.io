@@ -1,8 +1,11 @@
-<script>
-  import { ArtImg, Heading, Prose, Subheading, YTVideo } from '../mixins'
-
+<script context="module">
   export const desc =
     'Because black & white is fun, but so is color. Drawn with a mouse in HEAVYPAINT/Krita/MS Paint.'
+  export const tags = ['2d', 'digital', 'art']
+</script>
+
+<script>
+  import { ArtImg, Heading, Prose, Subheading, YTVideo } from '../mixins'
 </script>
 
 <Prose>

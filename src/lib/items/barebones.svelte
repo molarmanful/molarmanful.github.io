@@ -1,8 +1,11 @@
-<script>
-  import { A, Heading, MediaImg, Prose, Subheading, Text } from '../mixins'
-
+<script context="module">
   export const desc =
     'A web art piece centered around the premise of an anti-social, self-destructive website.'
+  export const tags = ['front-end', 'digital', 'dev', 'art']
+</script>
+
+<script>
+  import { A, Heading, MediaImg, Prose, Subheading, Text } from '../mixins'
 </script>
 
 <Prose>

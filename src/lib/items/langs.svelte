@@ -1,8 +1,11 @@
-<script>
-  import { A, Heading, Prose, Subheading, Text } from '../mixins'
-
+<script context="module">
   export const desc =
     "Weird and wholly impractical. Programming languages which I've made throughout the years for recreational - NOT PRODUCTION - purposes."
+  export const tags = ['digital', 'dev']
+</script>
+
+<script>
+  import { A, Heading, Prose, Subheading, Text } from '../mixins'
 </script>
 
 <Prose>

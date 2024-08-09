@@ -1,8 +1,11 @@
-<script>
-  import { A, Heading, MediaImg, Prose, Sp, Subheading, Text } from '../mixins'
-
+<script context="module">
   export const desc =
     '2020. An e-magazine from a hypothetical future in which thought-based communication is made possible via brain implants.'
+  export const tags = ['digital', 'front-end', 'dev', 'design', 'art']
+</script>
+
+<script>
+  import { A, Heading, MediaImg, Prose, Sp, Subheading, Text } from '../mixins'
 </script>
 
 <Prose>

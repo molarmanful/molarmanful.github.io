@@ -4,6 +4,7 @@
   import { tabbable } from 'tabbable'
 
   import { FocusTrap } from '../js/util.svelte'
+  import { ArtFilter } from '../mixins'
 
   let { children, ...props } = $props()
   const D = getContext('D')
@@ -75,6 +76,8 @@
 />
 
 <svelte:document bind:activeElement />
+
+<ArtFilter />
 
 <div
   bind:this={el}

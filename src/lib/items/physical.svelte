@@ -1,8 +1,11 @@
-<script>
-  import { ArtImg, Heading, MediaImg, Prose, Subheading } from '../mixins'
-
+<script context="module">
   export const desc =
     'Sculptures and installations which follow arbitrary rules and fulfill arbitrary purposes.'
+  export const tags = ['physical', 'art']
+</script>
+
+<script>
+  import { ArtImg, Heading, MediaImg, Prose, Subheading } from '../mixins'
 </script>
 
 <Prose>

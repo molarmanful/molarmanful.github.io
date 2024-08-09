@@ -1,8 +1,11 @@
-<script>
-  import { A, Heading, MediaImg, Prose, Sp, Subheading, Text } from '../mixins'
-
+<script context="module">
   export const desc =
     'Zero-player games with squares that live many, many lives.'
+  export const tags = ['digital', 'dev', 'art']
+</script>
+
+<script>
+  import { A, Heading, MediaImg, Prose, Sp, Subheading, Text } from '../mixins'
 </script>
 
 <Prose>

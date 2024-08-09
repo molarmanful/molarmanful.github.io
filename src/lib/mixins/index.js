@@ -28,6 +28,7 @@ export { default as HeaderSplash } from './HeaderSplash.svelte'
 export { default as AboutStatement } from './AboutStatement.svelte'
 export { default as AboutLinks } from './AboutLinks.svelte'
 
+export { default as ArtFilter } from './ArtFilter.svelte'
 export { default as ArtGrid } from './ArtGrid.svelte'
 export { default as ItemBar } from './ItemBar.svelte'
 export { default as ItemBody } from './ItemBody.svelte'

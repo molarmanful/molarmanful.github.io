@@ -1,8 +1,11 @@
+<script context="module">
+  export const desc =
+    'A simple puzzle that has stumped the world for decades. Digital gadgets for the aspiring cuber.'
+  export const tags = ['3d', 'digital', 'front-end', 'dev', 'design']
+</script>
+
 <script>
   import { A, Heading, MediaImg, Prose, Subheading, Text } from '../mixins'
-
-  export const desc =
-    'A simple puzzle that has stumped the world for decades. Gadgets and trinkets for the aspiring cuber.'
 </script>
 
 <Prose>
