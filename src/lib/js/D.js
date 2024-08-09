@@ -23,5 +23,7 @@ export default {
       query: { url: true, as: 'run:32' },
     })
   ),
-  items: makeMap(import.meta.glob('$lib/items/*', { eager: true })),
+  items: makeMap(
+    import.meta.glob('$lib/items/*', { eager: true, import: 'default' })
+  ),
 }

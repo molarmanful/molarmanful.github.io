@@ -16,4 +16,4 @@
   {/if}
 </svelte:head>
 
-<svelte:component this={D.items.get(name).default} bind:desc />
+<svelte:component this={D.items.get(name)} bind:desc />
