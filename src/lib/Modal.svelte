@@ -87,11 +87,9 @@
     </ItemBar>
 
     <ItemBody bind:el>
-      {#await D.items.get(selected.x)() then item}
-        <div full in:fade={{ duration: 200 }}>
-          <svelte:component this={item.default} />
-        </div>
-      {/await}
+      <div full in:fade={{ duration: 200 }}>
+        <svelte:component this={D.items.get(selected.x).default} />
+      </div>
     </ItemBody>
   </div>
 {/if}

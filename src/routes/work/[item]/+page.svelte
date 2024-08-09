@@ -1,7 +1,11 @@
 <script>
-  let { data } = $props()
+  import { getContext } from 'svelte'
 
-  const { name, module } = data
+  let { data } = $props()
+  const D = getContext('D')
+
+  const { name } = data
+
   let desc = $state('')
 </script>
 
@@ -12,4 +16,4 @@
   {/if}
 </svelte:head>
 
-<svelte:component this={module} bind:desc />
+<svelte:component this={D.items.get(name).default} bind:desc />
