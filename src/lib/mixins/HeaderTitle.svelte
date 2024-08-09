@@ -42,19 +42,17 @@
   // })
 </script>
 
-<h1
-  style:--aber0="{-aber}px"
-  style:--aber1="{aber}px"
-  style:--aber2="{-aber}px"
-  style:--aber3="{aber}px"
-  style:--aber4="{-aber}px"
-  style:--aber5="{aber}px"
-  aber-drop=""
-  transition-filter="1000"
-  {...props}
->
+<h1 {...props}>
   <div absolute inset-0 p-8 screen>
     <svg
+      style:--aber0="{-aber}px"
+      style:--aber1="{aber}px"
+      style:--aber2="{-aber}px"
+      style:--aber3="{aber}px"
+      style:--aber4="{-aber}px"
+      style:--aber5="{aber}px"
+      class="transition-filter,stroke-1000"
+      aber-drop
       alt="BEN PANG"
       container="lg:"
       fill-transparent
@@ -64,7 +62,7 @@
       rotate--10
       stroke={ready ? '#f00' : '#fff'}
       stroke-1
-      transition-stroke-1000
+      transform-gpu
     >
       <use href="/benpang.svg#main"></use>
     </svg>
