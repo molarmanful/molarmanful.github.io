@@ -10,6 +10,7 @@
     'game',
     'collection',
   ]
+  export const year = 2021
 </script>
 
 <script>

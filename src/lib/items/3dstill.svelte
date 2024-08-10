@@ -2,6 +2,7 @@
   export const desc =
     'Optical oddities that bend the rules of virtual reality. Rendered in Cinema 4D + Redshift.'
   export const tags = ['3d', 'digital', 'art', 'collection']
+  export const year = 2024
 </script>
 
 <script>

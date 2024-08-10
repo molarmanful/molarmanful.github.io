@@ -2,6 +2,7 @@
   export const desc =
     "Weird and wholly impractical. Programming languages which I've made throughout the years for recreational - NOT PRODUCTION - purposes."
   export const tags = ['digital', 'dev', 'proglang', 'collection']
+  export const year = 2024
 </script>
 
 <script>

@@ -17,7 +17,11 @@ export default {
       import: 'default',
       query: { url: true, as: 'run:32' },
     }),
-    x => x.sort(([a], [b]) => ~~items.get(b).year - ~~items.get(a).year)
+    x =>
+      x.sort(
+        ([a], [b]) =>
+          (items.get(b).year || 1 / 0) - (items.get(a).year || 1 / 0)
+      )
   ),
   items,
   tags: new Map([...items].map(([k, v]) => [k, new Set(v.tags)])),

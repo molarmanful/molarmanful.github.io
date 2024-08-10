@@ -2,6 +2,7 @@
   export const desc =
     'From code blossoms art. Works created with autonomous systems to spawn infinite variation.'
   export const tags = ['digital', 'dev', 'art', 'collection']
+  export const year = 2021
 </script>
 
 <script>
