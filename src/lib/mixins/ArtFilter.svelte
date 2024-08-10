@@ -9,9 +9,23 @@
   const D = getContext('D')
 
   const alltags = $derived(
-    new Set(
-      ordered.reduce((a, [b, t]) => (t ? a.union(D.tags.get(b)) : a), new Set())
-    )
+    [
+      ...new Set(
+        ordered.reduce(
+          (a, [b, t]) => (t ? a.union(D.tags.get(b)) : a),
+          new Set()
+        )
+      ),
+    ]
+      .sort()
+      .reduce(
+        (a, b) => {
+          a[+!actives.has(b)].push(b)
+          return a
+        },
+        [[], []]
+      )
+      .flat()
   )
 
   $effect(() => {
@@ -41,7 +55,7 @@
         </button>
       </li>
     {/if}
-    {#each [...alltags].sort() as tag (tag)}
+    {#each alltags as tag (tag)}
       <li>
         <button
           class={actives.has(tag) ? 'text-green' : 'text-gray-500'}

@@ -44,6 +44,7 @@
     const cols = p('grid-template-columns')
     cs = cols
   }
+
   $effect(() => {
     if (el) {
       el.contains(activeElement) ? activate() : deactivate()
@@ -51,6 +52,7 @@
       calcgrid()
     }
   })
+
   useEventListener(() => window, 'resize', calcgrid)
 
   let actives = $state(new SvelteSet())
