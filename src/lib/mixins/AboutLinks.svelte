@@ -10,7 +10,7 @@
     ['i-ph-instagram-logo', 'Instagram', 'https://instagram.com/bandidojim'],
     // ['', 'ArtStation', 'https://bandidojim.artstation.com'],
     ['i-ph-linkedin-logo', 'LinkedIn', 'https://linkedin.com/in/molarmanful'],
-    // ['', 'Society6', 'https://society6.com/bandidojim'],
+    // ['i-ph-shopping-cart', 'Society6', 'https://society6.com/bandidojim'],
     [
       'i-ph-golf',
       'PPCG.SE',
