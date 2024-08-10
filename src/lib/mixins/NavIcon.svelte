@@ -7,8 +7,8 @@
   style:filter
   class={clrs[len - 1]}
   aria-label="nav menu"
+  b="1 current focus:white"
   bg="black"
-  border="1 current focus:white"
   ease=""
   h="16"
   outline="none"

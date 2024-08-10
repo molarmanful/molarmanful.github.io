@@ -6,7 +6,7 @@
 
 <Section bord="true" nav="abt" {top}>
   <div
-    border="3xl:(t l) gray-500"
+    b="3xl:(t l) gray-500"
     container="lg:"
     mx-auto
     p="t-8 md:(x-8 t-16) lg:x-16"

@@ -1,5 +1,4 @@
 import extractorSvelte from '@unocss/extractor-svelte'
-import { colorResolver } from '@unocss/preset-mini/utils'
 import {
   presetAttributify,
   presetIcons,
@@ -113,10 +112,10 @@ export default {
       bold: 'font-400 font-2',
       prose: 'hyphens-auto',
       cover:
-        'transition [&:hover,&:focus]:graiscale outline-none border-(1 transparent)',
+        'transition [&:hover,&:focus]:graiscale outline-none b-(1 transparent)',
       under: 'underline decoration-(1 offset-[.25rem])',
       focunder:
-        '[&:hover,&:focus]:text-white focus:decoration-white decoration-transparent outline-none border-(1 transparent) focus:border-current',
+        '[&:hover,&:focus]:text-white focus:decoration-white decoration-transparent outline-none b-(1 transparent) focus:b-current',
       screen: 'w-screen h-lvh',
       dscreen: 'w-screen h-dvh',
       full: 'w-full h-full',

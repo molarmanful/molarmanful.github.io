@@ -26,5 +26,5 @@ export default {
     })
   ),
   items,
-  tags: new Map([...items].map(([k, v]) => [k, v.tags || []])),
+  tags: new Map([...items].map(([k, v]) => [k, new Set(v.tags)])),
 }

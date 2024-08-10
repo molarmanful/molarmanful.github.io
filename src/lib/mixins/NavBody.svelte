@@ -15,8 +15,8 @@
   style:transition-duration="{pulse}ms"
   style:filter
   class={clrs[len - 1]}
+  b="1 current"
   bg="black"
-  border="1 current"
   origin="top-right"
   p="4"
   role="navigation"

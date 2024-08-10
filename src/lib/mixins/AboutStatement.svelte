@@ -27,7 +27,7 @@
   </Text>
   <Text data-aos="fade-in">
     This website is <A
-      border="1 transparent focus:current"
+      b="1 transparent focus:current"
       duration-500
       href="https://github.com/molarmanful/molarmanful.github.io"
       outline="none"

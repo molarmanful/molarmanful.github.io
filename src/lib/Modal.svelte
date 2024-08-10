@@ -57,8 +57,8 @@
       </div>
       <button
         aria-label="close entry"
+        b="1 current"
         bg-transparent
-        border="1 current"
         box-content
         duration-500
         flex

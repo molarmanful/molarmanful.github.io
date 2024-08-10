@@ -88,8 +88,8 @@
           <button
             style:transition="color {pulse}ms, border-color 500ms, filter 500ms"
             class={clrs[i]}
+            b="b-1 transparent focus:white"
             bg-transparent
-            border="b-1 transparent focus:white"
             ease
             filter="[&:hover,&:focus]:(brightness-0 invert)"
             onclick={GOTO(top.n)}

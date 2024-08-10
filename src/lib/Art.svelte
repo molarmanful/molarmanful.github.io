@@ -1,7 +1,6 @@
 <script>
   import { getContext } from 'svelte'
 
-  import { fadeonly } from './js/util.svelte'
   import { A, ArtGrid, CoverImg, Heading, Section } from './mixins'
 
   let { top } = $props()
@@ -12,13 +11,11 @@
     e.target.blur()
     selected.x = x
   }
-
-  let fo = fadeonly()
 </script>
 
 <Section name="WORK" nav="art" {top}>
   <div
-    border="3xl:l gray-500"
+    b="3xl:l gray-500"
     container="lg:"
     mx-auto
     p="x-5 b-16 md:x-8 lg:b-32"
@@ -27,19 +24,18 @@
     <Heading data-aos="fade-in" mb="5 md:8" un-hidden="3xl:" un-text="center">
       <A href="/work" item un-text="stroked [&:hover,&:focus]:white">WORK</A>
     </Heading>
-    <ArtGrid>
-      {#snippet children(name)}
-        <div data-aos="fade-{fo.matches ? 'in' : 'up'}" flex>
-          <button
-            aria-label="open entry: {name}"
-            bg-transparent
-            cover
-            onclick={ON(name)}
-            w-full
-          >
-            <CoverImg {name} />
-          </button>
-        </div>
+    <ArtGrid aos>
+      {#snippet children(name, on)}
+        <button
+          aria-label="open entry: {name}"
+          bg-transparent
+          cover
+          disabled={!on}
+          onclick={ON(name)}
+          w-full
+        >
+          <CoverImg {name} />
+        </button>
       {/snippet}
     </ArtGrid>
   </div>

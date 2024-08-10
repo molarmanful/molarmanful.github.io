@@ -20,16 +20,15 @@
   <div style:filter="hue-rotate({factor * -69}deg)" fixed flex full>
     <HeaderSplash
       absolute=""
-      top="0"
       h="lvh"
       mx="auto"
       right="0 media-squarish:40%"
+      top="0"
       un-transform="media-squarish:translate-x-1/2"
     />
     <div
       style:opacity={1 - factor * 4}
       style:transform={fo.matches ? 'none' : `translateY(-${factor * 10}%)`}
-      class="transition-transform,opacity-400"
     >
       <HeaderTitle />
     </div>

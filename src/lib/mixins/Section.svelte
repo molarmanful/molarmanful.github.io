@@ -9,13 +9,13 @@
     ot => top?.({ name: nav, n: ot })
   )
 
-  let fo = fadeonly()
+  const fo = fadeonly()
 </script>
 
 <section
   bind:this={el}
+  b={bord ? 'lt-3xl:t gray-500' : void 0}
   backdrop="grayscale"
-  border={bord ? 'lt-3xl:t gray-500' : void 0}
   flex=""
   relative=""
   w="screen"
@@ -42,8 +42,8 @@
   <div bg="black/80" flex="lt-3xl:1">{@render children()}</div>
   <div
     class="lt-3xl:hidden"
+    b={bord ? 't gray-500' : void 0}
     bg="black/80"
-    border={bord ? 't gray-500' : void 0}
     flex="3xl:1"
   ></div>
 </section>

@@ -1,12 +1,15 @@
 <script>
+  import 'core-js/proposals/set-methods-v2'
+  import autoAnimate from '@formkit/auto-animate'
   import { useEventListener } from 'runed'
   import { getContext } from 'svelte'
+  import { SvelteSet } from 'svelte/reactivity'
   import { tabbable } from 'tabbable'
 
-  import { FocusTrap } from '../js/util.svelte'
+  import { FocusTrap, fadeonly } from '../js/util.svelte'
   import { ArtFilter } from '../mixins'
 
-  let { children, ...props } = $props()
+  let { aos, children, ...props } = $props()
   const D = getContext('D')
   let rfocus = getContext('focus')
 
@@ -15,8 +18,8 @@
     setReturnFocus: () => rfocus?.x || false,
   })
   const { activate, deactivate, useFocusTrap } = ft.fns
-
   let activeElement = $state()
+  const fo = fadeonly()
 
   const wrap = (e, f) => {
     if (ft.hasFocus) {
@@ -41,7 +44,6 @@
     const cols = p('grid-template-columns')
     cs = cols
   }
-
   $effect(() => {
     if (el) {
       el.contains(activeElement) ? activate() : deactivate()
@@ -50,6 +52,23 @@
     }
   })
   useEventListener(() => window, 'resize', calcgrid)
+
+  let actives = $state(new SvelteSet())
+  const covers = [...D.covers.keys()].map(a => [a, true])
+  let ordered = $derived(
+    actives.size ?
+      covers
+        .reduce(
+          (a, [b]) => {
+            const t = actives.isSubsetOf(D.tags.get(b))
+            a[+!t].push([b, t])
+            return a
+          },
+          [[], []]
+        )
+        .flat()
+    : covers
+  )
 </script>
 
 <svelte:window
@@ -74,19 +93,26 @@
     }
   }}
 />
-
 <svelte:document bind:activeElement />
 
-<ArtFilter />
+<ArtFilter data-aos={aos && 'fade-in'} mb="5 md:8" {ordered} bind:actives />
 
 <div
   bind:this={el}
   gap="5 md:8"
   grid="~ cols-1 sm:cols-2 md:cols-3 xl:cols-4"
+  use:autoAnimate
   use:useFocusTrap
   {...props}
 >
-  {#each D.covers as [name]}
-    {@render children(name)}
+  {#each ordered as [name, on] (name)}
+    <div
+      class={on ? '' : 'opacity-10! pointer-events-none'}
+      data-aos={aos && `fade-${fo.matches ? 'in' : 'up'}`}
+      flex
+      transition-opacity
+    >
+      {@render children(name, on)}
+    </div>
   {/each}
 </div>
