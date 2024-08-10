@@ -56,3 +56,7 @@ a:focus {
 .lazy:not(.loaded, [src]) {
   @apply bg-gray-900;
 }
+
+[btn] {
+  @apply b-(1 current) bg-transparent outline-none px-2 py-1 transition-color whitespace-nowrap [&:hover,&:focus,&:active]:text-white;
+}

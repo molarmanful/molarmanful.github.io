@@ -17,24 +17,31 @@
 <div {...props}>
   <p bold mb-3>Filter:</p>
   <menu flex="~ wrap" gap-3 use:autoAnimate>
+    {#if actives.size}
+      <li>
+        <button
+          aria-label="clear all filtered tags"
+          btn
+          onclick={() => {
+            actives.clear()
+          }}
+          text-pink-500
+        >
+          clear
+        </button>
+      </li>
+    {/if}
     {#each [...alltags].sort() as tag (tag)}
       <li>
         <button
           class={actives.has(tag) ? 'text-green' : 'text-gray-500'}
           aria-label="filter by tag: {tag}"
-          b="1 current"
-          bg-transparent
+          btn
           onclick={e => {
             if (actives.has(tag)) actives.delete(tag)
             else actives.add(tag)
             e.target.blur()
           }}
-          outline-none
-          px-2
-          py-1
-          text="[&:hover,&:focus,&:active]:white"
-          transition-color
-          whitespace-nowrap
         >
           {tag}
         </button>
