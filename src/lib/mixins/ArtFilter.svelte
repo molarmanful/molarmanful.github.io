@@ -2,6 +2,7 @@
   import 'core-js/proposals/set-methods-v2'
   import autoAnimate from '@formkit/auto-animate'
   import { getContext } from 'svelte'
+  import { SvelteSet } from 'svelte/reactivity'
 
   let { actives = $bindable(), ordered, ...props } = $props()
 
@@ -12,6 +13,15 @@
       ordered.reduce((a, [b, t]) => (t ? a.union(D.tags.get(b)) : a), new Set())
     )
   )
+
+  $effect(() => {
+    const x = sessionStorage.getItem('actives')
+    if (x) actives = new SvelteSet(JSON.parse(x))
+  })
+
+  $effect(() => {
+    sessionStorage.setItem('actives', JSON.stringify([...actives]))
+  })
 </script>
 
 <div {...props}>

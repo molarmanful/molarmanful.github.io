@@ -1,6 +1,5 @@
 <script>
   import { getContext } from 'svelte'
-  import { SvelteSet } from 'svelte/reactivity'
 
   import { A, ArtGrid, CoverImg, Heading, Section } from './mixins'
 
@@ -12,8 +11,6 @@
     e.target.blur()
     selected.x = x
   }
-
-  let actives = $state(new SvelteSet())
 </script>
 
 <Section name="WORK" nav="art" {top}>
@@ -27,7 +24,7 @@
     <Heading data-aos="fade-in" mb="5 md:8" un-hidden="3xl:" un-text="center">
       <A href="/work" item un-text="stroked [&:hover,&:focus]:white">WORK</A>
     </Heading>
-    <ArtGrid aos bind:actives>
+    <ArtGrid aos>
       {#snippet children(name, on)}
         <button
           aria-label="open entry: {name}"

@@ -3,12 +3,13 @@
   import autoAnimate from '@formkit/auto-animate'
   import { useEventListener } from 'runed'
   import { getContext } from 'svelte'
+  import { SvelteSet } from 'svelte/reactivity'
   import { tabbable } from 'tabbable'
 
   import { FocusTrap, fadeonly } from '../js/util.svelte'
   import { ArtFilter } from '../mixins'
 
-  let { actives = $bindable(), aos, children, ...props } = $props()
+  let { aos, children, ...props } = $props()
   const D = getContext('D')
   let rfocus = getContext('focus')
 
@@ -52,6 +53,7 @@
   })
   useEventListener(() => window, 'resize', calcgrid)
 
+  let actives = $state(new SvelteSet())
   const covers = [...D.covers.keys()].map(a => [a, true])
   let ordered = $derived(
     actives.size ?
