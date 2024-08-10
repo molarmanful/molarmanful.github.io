@@ -9,10 +9,7 @@
 
   const alltags = $derived(
     new Set(
-      ordered.reduce(
-        (a, [b, t]) => t ? a.union(D.tags.get(b)) : a,
-        new Set()
-      )
+      ordered.reduce((a, [b, t]) => (t ? a.union(D.tags.get(b)) : a), new Set())
     )
   )
 </script>
