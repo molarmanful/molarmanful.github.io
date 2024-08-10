@@ -1,7 +1,7 @@
 <script context="module">
   export const desc =
     'Monochrome artwork drawn with pen and paper or a mouse in Krita/MS Paint. Studies of contrast, shading, and value blending techniques.'
-  export const tags = ['2d', 'digital', 'art']
+  export const tags = ['2d', 'digital', 'art', 'collection']
 </script>
 
 <script>

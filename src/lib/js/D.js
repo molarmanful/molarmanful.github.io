@@ -1,5 +1,12 @@
-const makeMap = (x, { r = /^.+\/([\w-]+)\.\w+$/ } = {}) =>
-  new Map(Object.entries(x).map(([a, b]) => [a.replace(r, '$1'), b]))
+const makeMap = (x, f = x => x) =>
+  new Map(
+    f(
+      Object.entries(x).map(([a, b]) => [
+        a.replace(/^.+\/(.+?)\.\w+$/, '$1'),
+        b,
+      ])
+    )
+  )
 
 const items = makeMap(import.meta.glob('$lib/items/*', { eager: true }))
 
@@ -9,8 +16,11 @@ export default {
       eager: true,
       import: 'default',
       query: { url: true, as: 'run:32' },
-    })
+    }),
+    x => x.sort(([a], [b]) => ~~items.get(b).year - ~~items.get(a).year)
   ),
+  items,
+  tags: new Map([...items].map(([k, v]) => [k, new Set(v.tags)])),
   art: makeMap(
     import.meta.glob('$lib/art/*', {
       eager: true,
@@ -25,6 +35,4 @@ export default {
       query: { url: true, as: 'run:32' },
     })
   ),
-  items,
-  tags: new Map([...items].map(([k, v]) => [k, new Set(v.tags)])),
 }

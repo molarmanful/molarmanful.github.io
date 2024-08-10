@@ -2,6 +2,7 @@
   export const desc =
     '2021. Somewhat Interesting Machine with Intelligence of Artificial Nature, a frontend-only train-your-own-chatbot interface that pushes the limits of what is possible in client-side AI.'
   export const tags = ['digital', 'front-end', 'dev', 'design', 'art']
+  export const year = 2021
 </script>
 
 <script>

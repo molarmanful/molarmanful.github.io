@@ -1,7 +1,7 @@
 <script context="module">
   export const desc =
     'Sculptures and installations which follow arbitrary rules and fulfill arbitrary purposes.'
-  export const tags = ['physical', 'art']
+  export const tags = ['physical', 'art', 'collection']
 </script>
 
 <script>

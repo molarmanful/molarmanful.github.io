@@ -2,6 +2,7 @@
   export const desc =
     '2020. An e-magazine from a hypothetical future in which thought-based communication is made possible via brain implants.'
   export const tags = ['digital', 'front-end', 'dev', 'design', 'art']
+  export const year = 2020
 </script>
 
 <script>

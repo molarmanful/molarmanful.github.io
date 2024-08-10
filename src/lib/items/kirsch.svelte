@@ -1,6 +1,7 @@
 <script context="module">
-  export const desc = '2023. A versatile bitmap font with an organic flair.'
+  export const desc = '2024. A versatile bitmap font with an organic flair.'
   export const tags = ['typography', 'design', 'dev']
+  export const year = 2024
 </script>
 
 <script>

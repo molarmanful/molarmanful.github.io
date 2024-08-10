@@ -1,7 +1,7 @@
 <script context="module">
   export const desc =
     'From code blossoms art. Works created with autonomous systems to spawn infinite variation.'
-  export const tags = ['digital', 'dev', 'art']
+  export const tags = ['digital', 'dev', 'art', 'collection']
 </script>
 
 <script>

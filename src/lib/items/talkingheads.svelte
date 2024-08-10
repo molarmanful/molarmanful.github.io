@@ -1,6 +1,6 @@
 <script context="module">
   export const desc =
-    'An experimental chatroom that enables mere mortals to communicate with the gods.'
+    '2023. An experimental chatroom that enables mere mortals to communicate with the gods.'
   export const tags = [
     'digital',
     'full-stack',
@@ -10,6 +10,7 @@
     'design',
     'art',
   ]
+  export const year = 2023
 </script>
 
 <script>

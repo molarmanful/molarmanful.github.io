@@ -1,7 +1,7 @@
 <script context="module">
   export const desc =
     'Optical oddities that bend the rules of virtual reality. Rendered in Cinema 4D + Redshift.'
-  export const tags = ['3d', 'digital', 'art']
+  export const tags = ['3d', 'digital', 'art', 'collection']
 </script>
 
 <script>

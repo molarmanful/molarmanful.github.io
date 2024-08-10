@@ -1,7 +1,7 @@
 <script context="module">
   export const desc =
     "Weird and wholly impractical. Programming languages which I've made throughout the years for recreational - NOT PRODUCTION - purposes."
-  export const tags = ['digital', 'dev']
+  export const tags = ['digital', 'dev', 'proglang', 'collection']
 </script>
 
 <script>

@@ -11,6 +11,7 @@
     'art',
     'iot',
   ]
+  export const year = 2022
 </script>
 
 <script>

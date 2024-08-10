@@ -1,7 +1,8 @@
 <script context="module">
   export const desc =
-    'Logo and brand identity for a student-oriented VC fund at NYUAD.'
+    '2021. Logo and brand identity for a student-oriented VC fund at NYUAD.'
   export const tags = ['branding', 'design']
+  export const year = 2021
 </script>
 
 <script>

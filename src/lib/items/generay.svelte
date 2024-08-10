@@ -2,6 +2,7 @@
   export const desc =
     "2021. A procedurally-generated website based on Gene Ray's Time Cube."
   export const tags = ['digital', 'front-end', 'dev', 'design', 'art']
+  export const year = 2021
 </script>
 
 <script>
