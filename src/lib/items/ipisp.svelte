@@ -19,5 +19,5 @@
   </Text>
 
   <Sp />
-  <MediaImg name="ipisp" />
+  <MediaImg name="ipisp" alt="The 10k IPs website." />
 </Prose>

@@ -21,5 +21,5 @@
   </Text>
 
   <Sp />
-  <MediaImg name="generay" />
+  <MediaImg name="generay" alt="The Infinite Gene Ray website." />
 </Prose>

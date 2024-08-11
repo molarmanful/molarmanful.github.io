@@ -51,6 +51,9 @@
   </Text>
 
   <Sp />
-  <MediaImg name="fth" />
+  <MediaImg
+    name="fth"
+    alt="Ben Pang wearing the Feel the Hive backscratcher rig."
+  />
   <YTVideo a="r74HAS_mBL0" title="FEEL THE HIVE" />
 </Prose>

@@ -17,5 +17,5 @@
   </Text>
 
   <Sp />
-  <MediaImg name="idea" />
+  <MediaImg name="idea" alt="The Idea website." />
 </Prose>

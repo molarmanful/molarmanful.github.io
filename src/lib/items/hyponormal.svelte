@@ -43,12 +43,27 @@
   </Text>
 
   <Sp />
-  <MediaImg name="hyponormal0" />
-  <MediaImg name="hyponormal1" />
-  <MediaImg name="hyponormal2" />
-  <MediaImg name="hyponormal3" />
-  <MediaImg name="hyponormal4" />
-  <MediaImg name="hyponormal5" />
-  <MediaImg name="hyponormal6" />
+  <MediaImg name="hyponormal0" alt="Mountain shrouded in red sandstorm." />
+  <MediaImg
+    name="hyponormal1"
+    alt="Kneeling figures shrouded in red sandstorm."
+  />
+  <MediaImg
+    name="hyponormal2"
+    alt="Classical Greco-Roman style statue with glowing blue eyes."
+  />
+  <MediaImg
+    name="hyponormal3"
+    alt="Figures reaching out towards a glowing blue portal."
+  />
+  <MediaImg
+    name="hyponormal4"
+    alt="Glowing red portal surrounded by a ruined building."
+  />
+  <MediaImg name="hyponormal5" alt="Glowing blue Egyptian style obelisk." />
+  <MediaImg
+    name="hyponormal6"
+    alt="Figures prostrating in front of glowing blue obelisk."
+  />
   <YTVideo a="EeSWXgkycRY" title="HYPONORMAL" />
 </Prose>

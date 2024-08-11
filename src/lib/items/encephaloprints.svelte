@@ -36,10 +36,19 @@
   </Text>
 
   <Sp />
-  <MediaImg name="enc3" />
-  <MediaImg name="enc4" />
-  <MediaImg name="enc1" />
-  <MediaImg name="enc2" />
+  <MediaImg
+    name="enc3"
+    alt="Installation space for the Encephaloprints exhibit."
+  />
+  <MediaImg name="enc4" alt="Encephaloprints exhibit on opening night." />
+  <MediaImg
+    name="enc1"
+    alt="Visitor interfacing with the Encephaloprints exhibition via EEG headband."
+  />
+  <MediaImg
+    name="enc2"
+    alt="Visitor interfacing with the Encephaloprints exhibition via EEG headband."
+  />
   <YTVideo a="JNYylaVTg4s" title="Encephaloprints" />
   <YTVideo a="KRco3BU-Rzs" title="Encephaloprints" />
 </Prose>

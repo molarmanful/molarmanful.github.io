@@ -6,6 +6,7 @@
 </script>
 
 <script>
+  import { artalt } from '../js/util.svelte'
   import { ArtImg, Heading, Prose, Subheading } from '../mixins'
 </script>
 
@@ -14,17 +15,20 @@
   <Subheading>{desc}</Subheading>
 </Prose>
 
-<ArtImg name="imperfect" />
-<ArtImg name="entropia" />
+<ArtImg name="imperfect" alt={artalt("WHY CAN'T I BE PERFECT?")} />
+<ArtImg name="entropia" alt={artalt('ENTROPIA')} />
 <ArtImg name="ruler" />
-<ArtImg name="sketchedfaces" />
-<ArtImg name="sketchedfaces2" />
-<ArtImg name="hand" />
-<ArtImg name="valueblending" />
-<ArtImg name="blackpanther" />
-<ArtImg name="scream" />
-<ArtImg name="dehumanized" />
-<ArtImg name="scrawnyman" />
-<ArtImg name="mood" />
-<ArtImg name="walter" />
-<ArtImg name="yee" />
+<ArtImg name="sketchedfaces" alt="Quick stylized character sketches." />
+<ArtImg
+  name="sketchedfaces2"
+  alt="Quick character sketches and notes done during an art museum excursion in Sharjah, UAE."
+/>
+<ArtImg name="hand" alt={artalt('HAND')} />
+<ArtImg name="valueblending" alt={artalt('SPHERE')} />
+<ArtImg name="blackpanther" alt={artalt('BLACK PANTHER')} />
+<ArtImg name="scream" alt={artalt('SCREAM')} />
+<ArtImg name="dehumanized" alt={artalt('DEHUMANIZED')} />
+<ArtImg name="scrawnyman" alt={artalt('SCRAWNY MAN')} />
+<ArtImg name="mood" alt={artalt('MOOD')} />
+<ArtImg name="walter" alt={artalt('WALTER')} />
+<ArtImg name="yee" alt={artalt('YEE')} />

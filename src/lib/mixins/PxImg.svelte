@@ -1,5 +1,5 @@
 <script>
-  let { alt, src, ...props } = $props()
+  let { src, ...props } = $props()
 
   let el = $state()
   let loaded = $state(false)
@@ -28,7 +28,6 @@
   <img
     bind:this={el}
     class={loaded ? 'opacity-100' : 'opacity-0'}
-    {alt}
     block=""
     decoding="async"
     loading="lazy"

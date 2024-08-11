@@ -18,6 +18,12 @@
   </Text>
 
   <Sp />
-  <MediaImg name="exhibit" />
-  <MediaImg name="exhibit_desc" />
+  <MediaImg
+    name="exhibit"
+    alt="The Performing Identity virtual exhibit space."
+  />
+  <MediaImg
+    name="exhibit_desc"
+    alt="Description of the Performing Identity exhibit."
+  />
 </Prose>

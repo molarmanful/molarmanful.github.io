@@ -1,6 +1,6 @@
 <script context="module">
   export const desc =
-    '2020. An e-magazine from a hypothetical future in which thought-based communication is made possible via brain implants.'
+    '2020. An e-magazine from a hypothetical retro-future in which thought-based communication is made possible via brain implants.'
   export const tags = ['digital', 'front-end', 'dev', 'design', 'art']
   export const year = 2020
 </script>
@@ -20,7 +20,16 @@
   </Text>
 
   <Sp />
-  <MediaImg name="mindreader" />
-  <MediaImg name="mindreader-desc" />
-  <MediaImg name="mindreader-article" />
+  <MediaImg
+    name="mindreader"
+    alt="The MindReader's Digest e-magazine interface."
+  />
+  <MediaImg
+    name="mindreader-desc"
+    alt="Description of the MindReader's Digest."
+  />
+  <MediaImg
+    name="mindreader-article"
+    alt="Sample article from the MindReader's Digest."
+  />
 </Prose>

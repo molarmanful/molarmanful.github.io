@@ -6,6 +6,7 @@
 </script>
 
 <script>
+  import { artalt } from '../js/util.svelte'
   import { ArtImg, Heading, MediaImg, Prose, Subheading } from '../mixins'
 </script>
 
@@ -14,6 +15,9 @@
   <Subheading>{desc}</Subheading>
 </Prose>
 
-<ArtImg name="wireball" />
-<ArtImg name="pangolin" />
-<MediaImg name="pangolin_stare" />
+<ArtImg name="wireball" alt={artalt('WIREBALL')} />
+<ArtImg name="pangolin" alt={artalt('PROJECT PANGOLIN')} />
+<MediaImg
+  name="pangolin_stare"
+  alt="Ben Pang peeking out from underneath Project Pangolin."
+/>

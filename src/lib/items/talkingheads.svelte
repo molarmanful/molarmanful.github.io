@@ -25,5 +25,5 @@
     <br />
     <A href="https://github.com/molarmanful/talking-heads">Source</A>
   </Text>
-  <MediaImg name="talking-heads" />
+  <MediaImg name="talking-heads" alt="The talking-heads chatroom." />
 </Prose>

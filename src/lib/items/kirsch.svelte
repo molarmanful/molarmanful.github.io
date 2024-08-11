@@ -16,6 +16,6 @@
 </Prose>
 
 <PxImg
-  name="kirsch sample"
+  alt="Sample of the kirsch font."
   src="https://github.com/molarmanful/kirsch/raw/master/img/all.png"
 />

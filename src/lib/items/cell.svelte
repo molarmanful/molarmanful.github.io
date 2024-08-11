@@ -15,7 +15,7 @@
 
   <Sp />
   <Subheading bold>3-Species Ecosystem</Subheading>
-  <MediaImg name="3species" />
+  <MediaImg name="3species" alt="Screenshot of 3-Species Ecosystem." />
   <Text>
     <A href="https://bennyboy.tech/RobotaPsyche/midterm">Website</A>
     <br />
@@ -26,7 +26,7 @@
 
   <Sp />
   <Subheading bold>Reddit Rainbow (feat. Adham Chakohi)</Subheading>
-  <MediaImg name="rainbow" />
+  <MediaImg name="rainbow" alt="Screenshot of Reddit Rainbow." />
   <Text>
     <A href="https://bennyboy.tech/rainbow">Website</A>
     <br />
@@ -35,7 +35,7 @@
 
   <Sp />
   <Subheading bold>Waterworks</Subheading>
-  <MediaImg name="waterworks" />
+  <MediaImg name="waterworks" alt="Screenshot of Waterworks." />
   <Text>
     <A href="https://codepen.io/molarmanful/full/XzbwpP">Website</A>
   </Text>

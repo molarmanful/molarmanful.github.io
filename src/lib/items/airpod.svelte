@@ -17,5 +17,5 @@
   </Text>
 
   <Sp />
-  <MediaImg name="30mff" />
+  <MediaImg name="30mff" alt="The Airpod Addiction website." />
 </Prose>

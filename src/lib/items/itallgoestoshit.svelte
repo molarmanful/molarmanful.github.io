@@ -19,5 +19,5 @@
   </Text>
 
   <Sp />
-  <MediaImg name="itallgoestoshit" />
+  <MediaImg name="itallgoestoshit" alt="The itallgoestoshit web experience." />
 </Prose>

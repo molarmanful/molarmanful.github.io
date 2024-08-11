@@ -19,5 +19,5 @@
   </Text>
 
   <Sp />
-  <MediaImg name="barebones" />
+  <MediaImg name="barebones" alt="The barebones website." />
 </Prose>

@@ -6,6 +6,7 @@
 </script>
 
 <script>
+  import { artalt } from '../js/util.svelte'
   import {
     A,
     Heading,
@@ -23,7 +24,7 @@
   <Subheading>{desc}</Subheading>
 
   <Subheading bold>Nihilism</Subheading>
-  <MediaImg name="nihilism" />
+  <MediaImg name="nihilism" alt={artalt('NIHILISM')} />
   <Text>
     <A
       href="https://colab.research.google.com/drive/1DjUw9jp47cCAorEm0pN2cj4_1ksG8hBS?usp=sharing"

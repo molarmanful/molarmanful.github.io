@@ -15,5 +15,8 @@
   <Text><A href="https://github.com/molarmanful/laruelle">Source</A></Text>
 
   <Sp />
-  <MediaImg name="laruelle" />
+  <MediaImg
+    name="laruelle"
+    alt="A directed graph of lexical items and cited philosophers in Francois Laruelles' Dictionary of Non-Philosophy."
+  />
 </Prose>

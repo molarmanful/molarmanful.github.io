@@ -14,9 +14,9 @@
   <Subheading>{desc}</Subheading>
 
   <Sp />
-  <MediaImg name="mmr" />
-  <MediaImg name="mmr1" />
-  <MediaImg name="mmr2" />
-  <MediaImg name="mmr-poster" />
+  <MediaImg name="mmr" alt="The Mechanically Minimalist Recliner (MMR)." />
+  <MediaImg name="mmr1" alt="The MMR unfolded into recliner mode." />
+  <MediaImg name="mmr2" alt="The MMR folded into chair mode." />
+  <MediaImg name="mmr-poster" alt="Poster for the MMR." />
   <YTVideo a="raL5G8X2FRs" title="MMR" />
 </Prose>
