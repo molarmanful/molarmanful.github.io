@@ -66,7 +66,7 @@
     : covers
   )
   const not_chosen = $derived(covers.difference(chosen))
-  const ordered = $derived([chosen, not_chosen].flatMap(a => [...a].sort()))
+  const ordered = $derived([chosen, not_chosen].flatMap(a => [...a]))
 </script>
 
 <svelte:window
