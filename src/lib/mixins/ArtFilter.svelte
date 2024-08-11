@@ -4,15 +4,15 @@
   import { getContext } from 'svelte'
   import { SvelteSet } from 'svelte/reactivity'
 
-  let { actives = $bindable(), ordered, ...props } = $props()
+  let { actives = $bindable(), chosen, ...props } = $props()
 
   const D = getContext('D')
 
   const [all, xs] = $derived(
-    ordered.reduce(
-      ([a0, a1], [b, t]) => {
+    [...D.covers.keys()].reduce(
+      ([a0, a1], b) => {
         const c = D.tags.get(b)
-        return [a0.union(c), t ? a1.union(c) : a1]
+        return [a0.union(c), chosen.has(b) ? a1.union(c) : a1]
       },
       [new Set(), new Set()]
     )
@@ -20,7 +20,7 @@
   const not_actives = $derived(xs.difference(actives))
   const not_xs = $derived(all.difference(xs))
   const alltags = $derived(
-    [actives, not_actives].flatMap(a => [...a].sort())
+    [actives, not_actives, not_xs].flatMap(a => [...a].sort())
   )
 
   $effect(() => {
@@ -53,16 +53,12 @@
     {#each alltags as tag (tag)}
       <li>
         <button
-          class={
-            actives.has(tag) ?
-              'text-green'
-            : xs.has(tag) ?
-              'text-gray-500'
-            : 'text-gray-800'
-          }
-          disabled={not_xs.has(tag)}
+          class={actives.has(tag) ? 'text-green'
+          : xs.has(tag) ? 'text-gray-500'
+          : 'text-gray-800 pointer-events-none'}
           aria-label="filter by tag: {tag}"
           btn
+          disabled={not_xs.has(tag)}
           onclick={e => {
             if (actives.has(tag)) actives.delete(tag)
             else actives.add(tag)

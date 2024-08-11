@@ -29,7 +29,7 @@
   const pulse = 2000
   const len = 4
   const clrs = $state([...Array(len)].map(() => 'text-gray-500'))
-  let filter = $derived(
+  const filter = $derived(
     `hue-rotate(${factor * -69}deg) grayscale(${factor * 1.2})`
   )
   let ic = 0

@@ -5,6 +5,8 @@
   import { FocusTrap } from './js/util.svelte'
   import { A, ItemBar, ItemBody } from './mixins'
 
+  import { page } from '$app/stores'
+
   const selected = getContext('selected')
   const D = getContext('D')
 
@@ -15,6 +17,7 @@
 
   const OFF = () => {
     selected.x = void 0
+    history.back()
   }
 </script>
 
@@ -33,7 +36,7 @@
   }}
 />
 
-{#if selected.x && D.items.has(selected.x)}
+{#if $page.state.modal && D.items.has(selected.x)}
   <div
     aria-label="entry: {selected.x}"
     bg-black

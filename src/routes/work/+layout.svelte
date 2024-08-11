@@ -8,7 +8,7 @@
 
   let { data, children } = $props()
 
-  let crumbs = $derived(
+  const crumbs = $derived(
     data.pathname.split`/`
       .slice(1)
       .reduce((a, x) => [...a, [x, a[a.length - 1][1] + '/' + x]], [['', '']])

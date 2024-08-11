@@ -6,7 +6,7 @@
 
   const { name } = data
 
-  let { default: item, desc } = $derived(D.items.get(name))
+  const { default: item, desc } = $derived(D.items.get(name))
 </script>
 
 <svelte:head>

@@ -18,7 +18,7 @@ export const offtop = (x, f) =>
 export const clickout = (x, handle = () => {}) => {
   if (!browser) return
 
-  let el = $derived(x())
+  const el = $derived(x())
   useEventListener(
     document,
     'click',

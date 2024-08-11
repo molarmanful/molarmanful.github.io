@@ -56,21 +56,17 @@
   useEventListener(() => window, 'resize', calcgrid)
 
   let actives = $state(new SvelteSet())
-  const covers = [...D.covers.keys()].map(a => [a, true])
-  let ordered = $derived(
+  const covers = new Set(D.covers.keys())
+  const chosen = $derived(
     actives.size ?
-      covers
-        .reduce(
-          (a, [b]) => {
-            const t = actives.isSubsetOf(D.tags.get(b))
-            a[+!t].push([b, t])
-            return a
-          },
-          [[], []]
-        )
-        .flat()
+      [...covers].reduce(
+        (a, b) => (actives.isSubsetOf(D.tags.get(b)) ? a.add(b) : a),
+        new Set()
+      )
     : covers
   )
+  const not_chosen = $derived(covers.difference(chosen))
+  const ordered = $derived([chosen, not_chosen].flatMap(a => [...a].sort()))
 </script>
 
 <svelte:window
@@ -97,7 +93,7 @@
 />
 <svelte:document bind:activeElement />
 
-<ArtFilter data-aos={aos && 'fade-in'} mb="5 md:8" {ordered} bind:actives />
+<ArtFilter {chosen} data-aos={aos && 'fade-in'} mb="5 md:8" bind:actives />
 
 <div
   bind:this={el}
@@ -107,7 +103,8 @@
   use:useFocusTrap
   {...props}
 >
-  {#each ordered as [name, on] (name)}
+  {#each ordered as name (name)}
+    {@const on = chosen.has(name)}
     <div
       class={on ? '' : 'opacity-10! pointer-events-none'}
       data-aos={aos && `fade-${fo.matches ? 'in' : 'up'}`}
