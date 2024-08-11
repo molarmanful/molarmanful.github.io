@@ -36,19 +36,20 @@
 <div {...props}>
   <p bold mb-3>Filter:</p>
   <menu flex="~ wrap" gap-3 use:autoAnimate>
-    <li>
-      <button
-        aria-label="clear all filtered tags"
-        btn
-        onclick={() => {
-          actives.clear()
-        }}
-        disabled={actives.size}
-        class={actives.size ? 'text-pink-500' : 'text-gray-800'}
-      >
-        clear
-      </button>
-    </li>
+    {#if actives.size}
+      <li>
+        <button
+          aria-label="clear all filtered tags"
+          btn
+          onclick={() => {
+            actives.clear()
+          }}
+          text-pink-500
+        >
+          clear
+        </button>
+      </li>
+    {/if}
     {#each alltags as tag (tag)}
       <li>
         <button
