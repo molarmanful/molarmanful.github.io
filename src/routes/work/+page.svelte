@@ -18,7 +18,7 @@
         t
         tabindex={on ? 0 : void 0}
       >
-        <CoverImg {name} />
+        <CoverImg {name} alt="Open project entry: {name}." />
       </A>
     {/snippet}
   </ArtGrid>

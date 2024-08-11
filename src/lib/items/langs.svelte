@@ -2,7 +2,7 @@
   export const desc =
     "Weird and wholly impractical. Programming languages which I've made throughout the years for recreational - NOT PRODUCTION - purposes."
   export const tags = ['digital', 'dev', 'proglang', 'collection']
-  export const year = 2024
+  export const year = 2022
 </script>
 
 <script>
@@ -12,14 +12,6 @@
 <Prose>
   <Heading>CUSTOM LANGUAGES</Heading>
   <Subheading>{desc}</Subheading>
-
-  <Subheading bold>sclin</Subheading>
-  <Text>
-    A formidable successor to lin. sclin packages functional and array
-    programming paradigms into a stack-based language tuned for maximum
-    expressiveness.
-  </Text>
-  <Text><A href="https://github.com/molarmanful/sclin">Source</A></Text>
 
   <Subheading bold>Coding</Subheading>
   <Text>

@@ -6,7 +6,7 @@
 </script>
 
 <script>
-  import { A, Heading, MediaImg, Prose, Subheading, Text } from '../mixins'
+  import { A, Heading, MediaImg, Prose, Sp, Subheading, Text } from '../mixins'
 </script>
 
 <Prose>
@@ -17,5 +17,7 @@
     <br />
     <A href="https://github.com/molarmanful/barebones">Source</A>
   </Text>
+
+  <Sp />
   <MediaImg name="barebones" />
 </Prose>

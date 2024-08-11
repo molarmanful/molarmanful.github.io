@@ -27,14 +27,14 @@
     <ArtGrid aos>
       {#snippet children(name, on)}
         <button
-          aria-label="open entry: {name}"
+          aria-label="open project entry: {name}"
           bg-transparent
           cover
           disabled={!on}
           onclick={ON(name)}
           w-full
         >
-          <CoverImg {name} />
+          <CoverImg {name} alt="Open project entry: {name}." />
         </button>
       {/snippet}
     </ArtGrid>

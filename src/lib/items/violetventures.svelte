@@ -6,7 +6,7 @@
 </script>
 
 <script>
-  import { A, Heading, MediaImg, Prose, Subheading, Text } from '../mixins'
+  import { A, Heading, MediaImg, Prose, Sp, Subheading, Text } from '../mixins'
 </script>
 
 <Prose>
@@ -19,6 +19,8 @@
       Figma
     </A>
   </Text>
+
+  <Sp />
   <MediaImg name="vv_concept" />
   <MediaImg name="vv_knockout" />
 </Prose>

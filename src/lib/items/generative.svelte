@@ -33,7 +33,7 @@
   </Text>
 
   <Subheading bold>Entanglement</Subheading>
-  <IVideo a="QmXN4z9" aspect="video" title="Entanglement" />
+  <IVideo a="QmXN4z9" aspect="video" />
   <Text>
     <A href="https://github.com/molarmanful/entanglement">Source</A>
   </Text>
