@@ -1,6 +1,6 @@
 <script context="module">
   export const desc =
-    '2022 - Mechanically Minimalist Recliner. A prototype chair that plays with the contrast between rigidity and flexibility. Made from clear acrylic and bungee cords.'
+    '2022. Mechanically Minimalist Recliner, a prototype chair that plays with the contrast between rigidity and flexibility. Made from clear acrylic and bungee cords.'
   export const tags = ['physical', 'design', 'art']
   export const year = 2022
 </script>
