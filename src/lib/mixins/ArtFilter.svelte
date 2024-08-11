@@ -18,7 +18,7 @@
     )
   )
   const not_actives = $derived(xs.difference(actives))
-  // const not_xs = $derived(all.difference(xs))
+  const not_xs = $derived(all.difference(xs))
   const alltags = $derived(
     [actives, not_actives].flatMap(a => [...a].sort())
   )
@@ -36,20 +36,19 @@
 <div {...props}>
   <p bold mb-3>Filter:</p>
   <menu flex="~ wrap" gap-3 use:autoAnimate>
-    {#if actives.size}
-      <li>
-        <button
-          aria-label="clear all filtered tags"
-          btn
-          onclick={() => {
-            actives.clear()
-          }}
-          text-pink-500
-        >
-          clear
-        </button>
-      </li>
-    {/if}
+    <li>
+      <button
+        aria-label="clear all filtered tags"
+        btn
+        onclick={() => {
+          actives.clear()
+        }}
+        disabled={actives.size}
+        class={actives.size ? 'text-pink-500' : 'text-gray-800'}
+      >
+        clear
+      </button>
+    </li>
     {#each alltags as tag (tag)}
       <li>
         <button
