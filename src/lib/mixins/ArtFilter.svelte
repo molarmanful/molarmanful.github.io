@@ -8,22 +8,19 @@
 
   const D = getContext('D')
 
+  const [all, xs] = $derived(
+    ordered.reduce(
+      ([a0, a1], [b, t]) => {
+        const c = D.tags.get(b)
+        return [a0.union(c), t ? a1.union(c) : a1]
+      },
+      [new Set(), new Set()]
+    )
+  )
+  const not_actives = $derived(xs.difference(actives))
+  const not_xs = $derived(all.difference(xs))
   const alltags = $derived(
-    [
-      ...ordered.reduce(
-        (a, [b, t]) => (t ? a.union(D.tags.get(b)) : a),
-        new Set()
-      ),
-    ]
-      .sort()
-      .reduce(
-        (a, b) => {
-          a[+!actives.has(b)].push(b)
-          return a
-        },
-        [[], []]
-      )
-      .flat()
+    [actives, not_actives, not_xs].flatMap(a => [...a].sort())
   )
 
   $effect(() => {
@@ -56,7 +53,14 @@
     {#each alltags as tag (tag)}
       <li>
         <button
-          class={actives.has(tag) ? 'text-green' : 'text-gray-500'}
+          class={
+            actives.has(tag) ?
+              'text-green'
+            : xs.has(tag) ?
+              'text-gray-500'
+            : 'text-gray-800'
+          }
+          disabled={not_xs.has(tag)}
           aria-label="filter by tag: {tag}"
           btn
           onclick={e => {
