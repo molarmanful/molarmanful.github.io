@@ -4,7 +4,6 @@
   import { classList } from 'svelte-body'
 
   import { browser } from '$app/environment'
-  import { pushState } from '$app/navigation'
   import About from '$lib/About.svelte'
   import Art from '$lib/Art.svelte'
   import Header from '$lib/Header.svelte'
@@ -15,10 +14,6 @@
   const tops = $state([])
   const selected = $state({ x: void 0 })
   setContext('selected', selected)
-
-  $effect(() => {
-    if (selected.x) pushState('', { modal: true })
-  })
 
   const { useFocusTrap } = new FocusTrap({
     immediate: true,
