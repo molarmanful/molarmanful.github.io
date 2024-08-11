@@ -18,9 +18,9 @@
     )
   )
   const not_actives = $derived(xs.difference(actives))
-  const not_xs = $derived(all.difference(xs))
+  // const not_xs = $derived(all.difference(xs))
   const alltags = $derived(
-    [actives, not_actives, not_xs].flatMap(a => [...a].sort())
+    [actives, not_actives].flatMap(a => [...a].sort())
   )
 
   $effect(() => {
