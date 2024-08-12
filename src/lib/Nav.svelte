@@ -3,8 +3,6 @@
   import { clickout, sfactor } from './js/util.svelte'
   import { NavBody, NavIcon } from './mixins'
 
-  import { browser } from '$app/environment'
-
   let { tops = [] } = $props()
 
   let dropped = $state(false)
@@ -15,12 +13,9 @@
   const OFF = () => {
     dropped = false
   }
-
   const GOTO = top => {
-    if (browser) {
-      dropped = false
-      scrollTo({ top })
-    }
+    dropped = false
+    scrollTo({ top })
   }
 
   let factor = $state(0)
@@ -73,6 +68,7 @@
 
   {#if dropped}
     <NavBody
+      {GOTO}
       {clrs}
       {filter}
       fixed=""
@@ -81,24 +77,8 @@
       {pulse}
       right="2"
       top="2"
+      {tops}
       z="40"
-    >
-      {#each tops as top, i}
-        <li>
-          <button
-            style:transition="color {pulse}ms, border-color 500ms, filter 500ms"
-            class={clrs[i]}
-            b="b-1 transparent focus:white"
-            bg-transparent
-            ease
-            filter="[&:hover,&:focus]:(brightness-0 invert)"
-            onclick={GOTO(top.n)}
-            outline-none
-          >
-            {top.name.toUpperCase()}
-          </button>
-        </li>
-      {/each}
-    </NavBody>
+    />
   {/if}
 </nav>
