@@ -7,10 +7,10 @@
 
   let { selected } = $props()
   const D = getContext('D')
-  $inspect(selected)
 
   let el = $state({ x: void 0 })
-  const { activate, useFocusTrap } = new FocusTrap({
+  let active = false
+  const { activate, deactivate, useFocusTrap } = new FocusTrap({
     setReturnFocus: () => el.x || false,
   }).fns
 
@@ -26,9 +26,13 @@
     switch (e.key) {
       case 'Tab':
         activate()
+        active = true
         break
       case 'Escape':
-        OFF()
+        if (active) {
+          deactivate()
+          active = false
+        } else OFF()
         break
     }
   }}
