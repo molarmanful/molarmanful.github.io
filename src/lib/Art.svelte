@@ -1,15 +1,15 @@
 <script>
-  import { getContext } from 'svelte'
-
   import { A, ArtGrid, CoverImg, Heading, Section } from './mixins'
 
+  import { pushState } from '$app/navigation'
+
+
   let { top } = $props()
-  const selected = getContext('selected')
 
   const ON = x => e => {
     e.preventDefault()
     e.target.blur()
-    selected.x = x
+    pushState('', { selected: x })
   }
 </script>
 

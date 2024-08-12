@@ -1,9 +1,8 @@
 <script>
   import AOS from 'aos'
-  import { setContext } from 'svelte'
   import { classList } from 'svelte-body'
 
-  import { browser } from '$app/environment'
+  import { page } from '$app/stores'
   import About from '$lib/About.svelte'
   import Art from '$lib/Art.svelte'
   import Header from '$lib/Header.svelte'
@@ -12,15 +11,15 @@
   import Nav from '$lib/Nav.svelte'
 
   const tops = $state([])
-  const selected = $state({ x: void 0 })
-  setContext('selected', selected)
 
   const { useFocusTrap } = new FocusTrap({
     immediate: true,
     initialFocus: false,
   }).fns
 
-  if (browser) AOS.init()
+  $effect(() => {
+    AOS.init()
+  })
 </script>
 
 <svelte:head>
@@ -31,12 +30,12 @@
   />
 </svelte:head>
 
-<svelte:body use:classList={[selected.x && 'overflow-hidden']} />
+<svelte:body use:classList={[$page.state.selected && 'overflow-hidden']} />
 
 <div contents use:useFocusTrap>
   <Nav {tops} />
   <Header top={x => (tops[0] = x)} />
   <About top={x => (tops[1] = x)} />
   <Art top={x => (tops[2] = x)} />
-  <Modal />
+  <Modal selected={$page.state.selected} />
 </div>

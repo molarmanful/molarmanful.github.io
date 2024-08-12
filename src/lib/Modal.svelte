@@ -5,8 +5,9 @@
   import { FocusTrap } from './js/util.svelte'
   import { A, ItemBar, ItemBody } from './mixins'
 
-  const selected = getContext('selected')
+  let { selected } = $props()
   const D = getContext('D')
+  $inspect(selected)
 
   let el = $state({ x: void 0 })
   const { activate, useFocusTrap } = new FocusTrap({
@@ -14,13 +15,13 @@
   }).fns
 
   const OFF = () => {
-    selected.x = void 0
+    history.back()
   }
 </script>
 
 <svelte:window
   onkeydown={e => {
-    if (!selected.x) return
+    if (!selected) return
 
     switch (e.key) {
       case 'Tab':
@@ -33,9 +34,9 @@
   }}
 />
 
-{#if D.items.has(selected.x)}
+{#if selected && D.items.has(selected)}
   <div
-    aria-label="entry: {selected.x}"
+    aria-label="entry: {selected}"
     bg-black
     dscreen
     fixed
@@ -51,8 +52,8 @@
     <ItemBar>
       <div flex h-full ml-4>
         <span m-auto>
-          {selected.x} -
-          <A decoration="current" href="/work/{selected.x}" item>permalink</A>
+          {selected} -
+          <A decoration="current" href="/work/{selected}" item>permalink</A>
         </span>
       </div>
       <button
@@ -88,7 +89,7 @@
 
     <ItemBody bind:el>
       <div full in:fade={{ duration: 200 }}>
-        <svelte:component this={D.items.get(selected.x).default} />
+        <svelte:component this={D.items.get(selected).default} />
       </div>
     </ItemBody>
   </div>

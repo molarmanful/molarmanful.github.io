@@ -23,7 +23,7 @@
     [actives, not_actives, not_xs].flatMap(a => [...a].sort())
   )
 
-  $effect(() => {
+  $effect.pre(() => {
     const x = sessionStorage.getItem('actives')
     if (x) actives = new SvelteSet(JSON.parse(x))
   })
