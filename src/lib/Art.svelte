@@ -3,13 +3,12 @@
 
   import { pushState } from '$app/navigation'
 
-
   let { top } = $props()
 
   const ON = x => e => {
     e.preventDefault()
     e.target.blur()
-    pushState('', { selected: x })
+    pushState('/work/' + x, { selected: x })
   }
 </script>
 
