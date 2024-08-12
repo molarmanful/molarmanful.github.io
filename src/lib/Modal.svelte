@@ -15,7 +15,6 @@
 
   const OFF = () => {
     selected.x = void 0
-    history.back()
   }
 </script>
 
