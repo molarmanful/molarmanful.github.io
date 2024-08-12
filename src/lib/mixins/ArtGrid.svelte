@@ -46,11 +46,10 @@
   }
 
   $effect(() => {
-    if (el) {
-      el.contains(activeElement) ? activate() : deactivate()
-      ts = tabbable(el)
-      calcgrid()
-    }
+    if (!el) return
+    el.contains(activeElement) ? activate() : deactivate()
+    ts = tabbable(el)
+    calcgrid()
   })
 
   useEventListener(() => window, 'resize', calcgrid)
