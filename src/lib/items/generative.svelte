@@ -15,7 +15,7 @@
     Prose,
     Subheading,
     Text,
-    YTVideo,
+    // YTVideo,
   } from '../mixins'
 </script>
 
@@ -39,11 +39,13 @@
     <A href="https://github.com/molarmanful/entanglement">Source</A>
   </Text>
 
+  <!--
   <Subheading bold>Joy of Abstract Art with Rob Boss</Subheading>
   <YTVideo a="f_mWTjxUbqk" title="Joy of Abstract Art with Rob Boss" />
   <Text>
     <A href="https://github.com/molarmanful/rob-boss">Source</A>
   </Text>
+  -->
 
   <Subheading bold>Bezier Pulse</Subheading>
   <IVideo a="Z04vm99" aspect="video" title="Bezier Pulse" />
