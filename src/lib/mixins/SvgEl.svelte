@@ -15,11 +15,7 @@
   let t = $state(0)
   let len_a = $state(0)
   let len_o = $state(0)
-
-  const getlen = node => {
-    len_a = node.getTotalLength()
-    len_o = node.getTotalLength()
-  }
+  let el = $state()
 
   let to
   const loop = () => {
@@ -29,7 +25,10 @@
   }
 
   $effect(() => {
-    if (!loaded.x) return
+    if (!loaded.x || !el.getTotalLength) return
+
+    len_a = el.getTotalLength()
+    len_o = el.getTotalLength()
 
     to = setTimeout(() => {
       len_o = 0
@@ -42,11 +41,11 @@
 
 <svelte:element
   this={name}
+  bind:this={el}
   style:transition="color, stroke-dashoffset ease-out"
   style:transition-duration="{t}ms"
   style:stroke-dasharray={len_a}
   style:stroke-dashoffset={len_o}
   class="{c} fill-transparent stroke-1 stroke-current"
-  use:getlen
   {...props}
 />
