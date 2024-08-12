@@ -21,13 +21,12 @@
   if (browser)
     vloader = new IntersectionObserver(
       entries => {
-        for (const { isIntersecting, target } of entries) {
+        for (const { isIntersecting, target } of entries)
           if (isIntersecting) {
             target.load()
             target.autoplay = true
             vloader.unobserve(target)
           }
-        }
       },
       { threshold: 0.1 }
     )

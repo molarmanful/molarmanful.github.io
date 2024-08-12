@@ -37,5 +37,7 @@
   <Header top={x => (tops[0] = x)} />
   <About top={x => (tops[1] = x)} />
   <Art top={x => (tops[2] = x)} />
-  <Modal selected={$page.state.selected} />
+  <Modal
+    selected={$page.state.selected || $page.url.searchParams.get('item')}
+  />
 </div>

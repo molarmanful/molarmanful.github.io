@@ -56,8 +56,8 @@
     <ItemBar>
       <div flex h-full ml-4>
         <span m-auto>
-          {selected}
-          <!-- <A decoration="current" href="/work/{selected}" item>permalink</A> -->
+          {selected} -
+          <A decoration="current" href="/work/{selected}" item>permalink</A>
         </span>
       </div>
       <button
