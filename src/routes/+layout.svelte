@@ -1,5 +1,6 @@
 <script>
   import { setContext } from 'svelte'
+  import { SvelteSet } from 'svelte/reactivity'
 
   import { browser } from '$app/environment'
   import Favicons from '$lib/Favicons.svelte'
@@ -16,6 +17,13 @@
 
   let loaded = $state({ x: false })
   setContext('loaded', loaded)
+
+  const actives = $state({ x: new SvelteSet() })
+  setContext('actives', actives)
+  export const snapshot = {
+    capture: () => [...actives.x],
+    restore: x => (actives.x = new SvelteSet(x)),
+  }
 
   let vloader
   if (browser)

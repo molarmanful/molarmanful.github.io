@@ -3,7 +3,6 @@
   import autoAnimate from '@formkit/auto-animate'
   import { useEventListener } from 'runed'
   import { getContext } from 'svelte'
-  import { SvelteSet } from 'svelte/reactivity'
   import { tabbable } from 'tabbable'
 
   import { FocusTrap, fadeonly } from '../js/util.svelte'
@@ -11,7 +10,8 @@
 
   let { aos, children, ...props } = $props()
   const D = getContext('D')
-  let rfocus = getContext('focus')
+  const rfocus = getContext('focus')
+  const actives = getContext('actives')
 
   const ft = new FocusTrap({
     clickOutsideDeactivates: true,
@@ -54,12 +54,11 @@
 
   useEventListener(() => window, 'resize', calcgrid)
 
-  let actives = $state(new SvelteSet())
   const covers = new Set(D.covers.keys())
   const chosen = $derived(
-    actives.size ?
+    actives.x.size ?
       [...covers].reduce(
-        (a, b) => (actives.isSubsetOf(D.tags.get(b)) ? a.add(b) : a),
+        (a, b) => (actives.x.isSubsetOf(D.tags.get(b)) ? a.add(b) : a),
         new Set()
       )
     : covers
@@ -92,7 +91,7 @@
 />
 <svelte:document bind:activeElement />
 
-<ArtFilter {chosen} data-aos={aos && 'fade-in'} mb="5 md:8" bind:actives />
+<ArtFilter {chosen} data-aos={aos && 'fade-in'} mb="5 md:8" />
 
 <div
   bind:this={el}
