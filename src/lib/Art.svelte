@@ -8,7 +8,7 @@
   const ON = x => e => {
     e.preventDefault()
     e.target.blur()
-    pushState('?item=' + x, { selected: x })
+    pushState('', { selected: x })
   }
 </script>
 

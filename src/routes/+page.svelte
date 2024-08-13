@@ -1,7 +1,9 @@
 <script>
   import AOS from 'aos'
+  import { derived } from 'svelte/store'
   import { classList } from 'svelte-body'
 
+  import { browser } from '$app/environment'
   import { page } from '$app/stores'
   import About from '$lib/About.svelte'
   import Art from '$lib/Art.svelte'
@@ -17,6 +19,15 @@
     initialFocus: false,
   }).fns
 
+  const pstate = derived(
+    page,
+    (_, set) => {
+      if (!browser) return
+      set(history.state['sveltekit:states'] ?? {})
+    },
+    {}
+  )
+
   $effect(() => {
     AOS.init()
   })
@@ -30,14 +41,12 @@
   />
 </svelte:head>
 
-<svelte:body use:classList={[$page.state.selected && 'overflow-hidden']} />
+<svelte:body use:classList={[$pstate.selected && 'overflow-hidden']} />
 
 <div contents use:useFocusTrap>
   <Nav {tops} />
   <Header top={x => (tops[0] = x)} />
   <About top={x => (tops[1] = x)} />
   <Art top={x => (tops[2] = x)} />
-  <Modal
-    selected={$page.state.selected || $page.url.searchParams.get('item')}
-  />
+  <Modal selected={$pstate.selected} />
 </div>
