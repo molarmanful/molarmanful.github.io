@@ -6,7 +6,7 @@
 
   const { name } = data
 
-  const { default: item, desc } = $derived(D.items.get(name))
+  const { default: Item, desc } = $derived(D.items.get(name))
 </script>
 
 <svelte:head>
@@ -16,4 +16,4 @@
   {/if}
 </svelte:head>
 
-<svelte:component this={item} />
+<Item />

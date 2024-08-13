@@ -8,6 +8,8 @@
   let { selected } = $props()
   const D = getContext('D')
 
+  const Item = $derived(D.items.get(selected)?.default)
+
   let el = $state({ x: void 0 })
   let active = false
   const { activate, deactivate, useFocusTrap } = new FocusTrap({
@@ -93,7 +95,7 @@
 
     <ItemBody bind:el>
       <div full in:fade={{ duration: 200 }}>
-        <svelte:component this={D.items.get(selected).default} />
+        <Item />
       </div>
     </ItemBody>
   </div>
