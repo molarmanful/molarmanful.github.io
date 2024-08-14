@@ -25,7 +25,7 @@
 </script>
 
 <div {...props}>
-  <p bold mb-3>Filter:</p>
+  <h3 bold mb-3>Filter:</h3>
   <menu flex="~ wrap" gap-3 use:autoAnimate>
     {#if actives.x.size}
       <li>
