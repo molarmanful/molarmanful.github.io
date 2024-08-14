@@ -1,9 +1,13 @@
 <script>
+  import { getContext } from 'svelte'
+
   import { A, ArtGrid, CoverImg, Heading } from '$lib/mixins'
+
+  const D = getContext('D')
 </script>
 
 <svelte:head>
-  <title>work | Ben Pang / BandidoJim</title>
+  <title>work | {D.title}</title>
 </svelte:head>
 
 <div container="lg:" m-auto p="x-5 y-5 lg:y-16" w-full>

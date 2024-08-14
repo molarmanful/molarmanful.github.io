@@ -10,7 +10,7 @@
 </script>
 
 <svelte:head>
-  <title>{name} | Ben Pang / BandidoJim</title>
+  <title>{name} | {D.title}</title>
   {#if desc}
     <meta name="description" content={desc} />
   {/if}

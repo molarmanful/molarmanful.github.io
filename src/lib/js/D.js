@@ -11,6 +11,7 @@ const makeMap = (x, f = x => x) =>
 const items = makeMap(import.meta.glob('$lib/items/*', { eager: true }))
 
 export default {
+  title: 'Ben Pang / BandidoJim / Molarmanful',
   covers: makeMap(
     import.meta.glob('$lib/covers/*', {
       eager: true,

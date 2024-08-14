@@ -1,5 +1,6 @@
 <script>
   import AOS from 'aos'
+  import { getContext } from 'svelte'
   import { derived } from 'svelte/store'
   import { classList } from 'svelte-body'
 
@@ -11,6 +12,8 @@
   import { FocusTrap } from '$lib/js/util.svelte'
   import Modal from '$lib/Modal.svelte'
   import Nav from '$lib/Nav.svelte'
+
+  const D = getContext('D')
 
   const tops = $state([])
 
@@ -34,7 +37,7 @@
 </script>
 
 <svelte:head>
-  <title>Ben Pang / BandidoJim</title>
+  <title>{D.title}</title>
   <meta
     name="description"
     content="Creative technologist, experimental artist, digital designer, font creator, programming language enthusiast."
