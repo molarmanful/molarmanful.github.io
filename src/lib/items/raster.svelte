@@ -6,6 +6,7 @@
 </script>
 
 <script>
+  import { artalt } from '../js/util.svelte'
   import { ArtImg, Heading, Prose, Subheading, YTVideo } from '../mixins'
 </script>
 
@@ -14,14 +15,14 @@
   <Subheading>{desc}</Subheading>
 </Prose>
 
-<ArtImg name="fashionablegirl" />
-<ArtImg name="flintstoneshouse" />
-<ArtImg name="caveopening" />
-<ArtImg name="wackoface" />
-<ArtImg name="busta" />
-<ArtImg name="blossoms" />
-<ArtImg name="foryasmin" />
-<ArtImg name="kai" />
+<ArtImg name="fashionablegirl" alt={artalt('SOME GIRL')} />
+<ArtImg name="flintstoneshouse" alt={artalt('FLINTSTONES HOUSE')} />
+<ArtImg name="caveopening" alt={artalt('SOME CAVE')} />
+<ArtImg name="wackoface" alt={artalt('WACKOFACE')} />
+<ArtImg name="busta" alt={artalt('BUSTA RHYMES')} />
+<ArtImg name="blossoms" alt={artalt('Fox Sleeping Under Cherry Blossoms')} />
+<ArtImg name="foryasmin" alt={artalt('For Yasmin')} />
+<ArtImg name="kai" alt={artalt('For Kai')} />
 <YTVideo a="5kqdi0ExSMo" aspect="square" title="Family Dinner" />
-<ArtImg name="skullmap" />
-<ArtImg name="pinkdunes" />
+<ArtImg name="skullmap" alt={artalt('A BEAUTIFUL COMPLEXTION')} />
+<ArtImg name="pinkdunes" alt={artalt('PINK DUNES')} />
