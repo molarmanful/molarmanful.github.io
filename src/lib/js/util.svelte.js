@@ -30,8 +30,9 @@ export const clickout = (x, handle = () => {}) => {
 }
 
 export const fadeonly = () =>
-  new MediaQuery('(hover: none), (prefers-reduced-motion: reduce)')
+  browser && new MediaQuery('(hover: none), (prefers-reduced-motion: reduce)')
 
-export const redmote = () => new MediaQuery('(prefers-reduced-motion: reduce)')
+export const redmote = () =>
+  browser && new MediaQuery('(prefers-reduced-motion: reduce)')
 
 export const artalt = name => `Artwork: "${name}" by BandidoJim.`
