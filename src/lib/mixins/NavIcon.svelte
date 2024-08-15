@@ -1,11 +1,16 @@
 <script>
+  import { getContext } from 'svelte'
+
   let { pulse, filter, clrs, len, ...props } = $props()
+
+  const loaded = getContext('loaded')
 </script>
 
 <button
-  style:transition="color {pulse}ms, border-color 400ms, filter 400ms"
+  style:transition="color {pulse}ms, border-color 400ms, filter 400ms, transform
+  400ms"
   style:filter
-  class={clrs[len - 1]}
+  class="{clrs[len - 1]} {loaded.x ? 'translate-x-0' : 'translate-x-17'}"
   aria-label="nav menu"
   b="1 current focus:white"
   bg="black"
