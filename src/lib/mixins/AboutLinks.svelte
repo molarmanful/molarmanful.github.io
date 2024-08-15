@@ -35,13 +35,13 @@
   >
     LINKS
   </h2>
-  <menu
-    data-aos="fade-{fo.matches ? 'in' : 'left'}"
-    m="t-2 x-2 lg:t-4"
-    text-gray-500
-  >
-    {#each links as [icon, name, link]}
-      <li>
+  <menu id="anchor-abt-links" m="t-2 x-2 lg:t-4" text-gray-500>
+    {#each links as [icon, name, link], i}
+      <li
+        data-aos="fade-{fo.matches ? 'in' : 'left'}"
+        data-aos-anchor="#anchor-abt-links"
+        data-aos-delay={i * 100}
+      >
         <A href={link} item>
           <div class={icon}></div>
           <span under>{name}</span>

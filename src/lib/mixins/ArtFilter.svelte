@@ -5,7 +5,7 @@
 
   import { FocusTrap } from '../js/util.svelte'
 
-  let { chosen, ...props } = $props()
+  let { aos, chosen, ...props } = $props()
 
   const D = getContext('D')
   const rfocus = getContext('focus')
@@ -56,10 +56,15 @@
 <svelte:document bind:activeElement />
 
 <div {...props}>
-  <h3 bold mb-1.5>Filter:</h3>
-  <menu bind:this={el} use:autoAnimate use:useFocusTrap>
+  <h3 bold data-aos={aos && 'fade-in'} mb-1.5>Filter:</h3>
+  <menu bind:this={el} id="anchor-filter" use:autoAnimate use:useFocusTrap>
     {#if actives.x.size}
-      <li inline-block m-1.5>
+      <li
+        data-aos={aos && 'fade-in'}
+        data-aos-anchor="#anchor-filter"
+        inline-block
+        m-1.5
+      >
         <button
           aria-label="clear all filtered tags"
           btn
@@ -71,8 +76,14 @@
           clear
         </button>
       </li>
-    {/if}{#each alltags as tag (tag)}
-      <li inline-block m-1.5>
+    {/if}{#each alltags as tag, i (tag)}
+      <li
+        data-aos={aos && 'fade-in'}
+        data-aos-anchor="#anchor-filter"
+        data-aos-delay={50 * (i + !!actives.x.size)}
+        inline-block
+        m-1.5
+      >
         <button
           class={actives.x.has(tag) ? 'text-green'
           : xs.has(tag) ? 'text-gray-500'

@@ -9,7 +9,7 @@
     b="3xl:(t l) gray-500"
     container="lg:"
     mx-auto
-    p="t-8 md:(x-8 t-16) lg:x-16"
+    p="t-8 md:(x-8 t-16)"
     w-screen
   >
     <div max-w="lt-lg:prose" mx="lt-lg:auto" prose>
@@ -17,12 +17,7 @@
     </div>
 
     <div divide="lg:x gray-500" flex="lg:" pb="16 lg:32">
-      <AboutStatement
-        max-w="prose xl:[80ch]"
-        mx="lt-lg:auto"
-        px="2"
-        w="lg:5/6"
-      />
+      <AboutStatement max-w="prose xl:[80ch]" mx="lt-lg:auto" px="2" />
 
       <AboutLinks
         m="t-8 x-auto lg:(t-12 l-auto r-unset)"
