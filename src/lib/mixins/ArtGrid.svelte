@@ -101,11 +101,12 @@
   use:useFocusTrap
   {...props}
 >
-  {#each ordered as name (name)}
+  {#each ordered as name, i (name)}
     {@const on = chosen.has(name)}
     <div
       class={on ? '' : 'opacity-10! pointer-events-none'}
       data-aos={aos && `fade-${fo.matches ? 'in' : 'up'}`}
+      data-aos-delay={aos && 100 * (i % cs)}
       flex
       transition-opacity
     >
