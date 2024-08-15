@@ -13,16 +13,16 @@
   const rfocus = getContext('focus')
   const actives = getContext('actives')
 
-  const ft = new FocusTrap({
+  const { activate, deactivate, useFocusTrap } = new FocusTrap({
     clickOutsideDeactivates: true,
     setReturnFocus: () => rfocus?.x || false,
-  })
-  const { activate, deactivate, useFocusTrap } = ft.fns
+  }).fns
+  let el = $state()
   let activeElement = $state()
+  const focused = $derived(el?.contains(activeElement))
   const fo = fadeonly()
 
   const wrap = (e, f) => {
-    if (!el.contains(activeElement)) return
     activate()
     e.preventDefault()
     const i = ts.indexOf(activeElement)
@@ -30,7 +30,6 @@
     if (0 <= i1 && i1 < ts.length) ts[i1].focus()
   }
 
-  let el = $state()
   let ts = $state([])
   let cs = $state(1)
 
@@ -68,6 +67,7 @@
 
 <svelte:window
   onkeydown={e => {
+    if (!focused) return
     switch (e.key) {
       case 'Escape':
         deactivate()

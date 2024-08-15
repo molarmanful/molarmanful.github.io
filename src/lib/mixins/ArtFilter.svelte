@@ -3,10 +3,21 @@
   import autoAnimate from '@formkit/auto-animate'
   import { getContext } from 'svelte'
 
+  import { FocusTrap } from '../js/util.svelte'
+
   let { chosen, ...props } = $props()
 
   const D = getContext('D')
+  const rfocus = getContext('focus')
   const actives = getContext('actives')
+
+  const { activate, deactivate, useFocusTrap } = new FocusTrap({
+    clickOutsideDeactivates: true,
+    setReturnFocus: () => rfocus?.x || false,
+  }).fns
+  let el = $state()
+  let activeElement = $state()
+  const focused = $derived(el?.contains(activeElement))
 
   const [all, xs] = $derived(
     [...D.covers.keys()].reduce(
@@ -24,9 +35,29 @@
   )
 </script>
 
+<svelte:window
+  onkeydown={e => {
+    if (!focused) return
+    switch (e.key) {
+      case ' ':
+      case 'Enter':
+        activate()
+        break
+      case 'Tab':
+        deactivate()
+        break
+      case 'Escape':
+        deactivate()
+        activeElement.blur()
+        break
+    }
+  }}
+/>
+<svelte:document bind:activeElement />
+
 <div {...props}>
   <h3 bold mb-3>Filter:</h3>
-  <menu flex="~ wrap" gap-3 use:autoAnimate>
+  <menu bind:this={el} flex="~ wrap" gap-3 use:autoAnimate use:useFocusTrap>
     {#if actives.x.size}
       <li>
         <button
