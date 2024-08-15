@@ -33,14 +33,14 @@
   <ItemBar>
     <nav aria-label="breadcrumbs" flex h-full ml-4>
       <ol flex="~ nowrap" list-none m-auto>
-        <li><A href="/" item t tabindex="0">ben</A></li>
+        <li><A data-sveltekit-reload href="/" item t>ben</A></li>
         {#each crumbs as [name, href], i}
           <li transition:fade={{ duration: 200 }}>
             <span aria-hidden="true">&nbsp;&gt;</span>
             {#if i == crumbs.length - 1}
               <span aria-current="page">{name}</span>
             {:else}
-              <A {href} item t tabindex="0">
+              <A {href} item t>
                 {name}
               </A>
             {/if}
