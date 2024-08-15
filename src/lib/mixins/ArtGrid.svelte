@@ -94,8 +94,9 @@
 
 <div
   bind:this={el}
+  cols="1 sm:2 md:3 xl:4"
   gap="5 md:8"
-  grid="~ cols-1 sm:cols-2 md:cols-3 xl:cols-4"
+  grid=""
   use:autoAnimate
   use:useFocusTrap
   {...props}
