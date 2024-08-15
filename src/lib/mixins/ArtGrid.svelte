@@ -90,7 +90,7 @@
 />
 <svelte:document bind:activeElement />
 
-<ArtFilter {chosen} data-aos={aos && 'fade-in'} mb="5 md:8" />
+<ArtFilter {chosen} data-aos={aos && 'fade-in'} mb="3.5 md:6.5" />
 
 <div
   bind:this={el}

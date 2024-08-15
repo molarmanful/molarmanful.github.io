@@ -56,10 +56,10 @@
 <svelte:document bind:activeElement />
 
 <div {...props}>
-  <h3 bold mb-3>Filter:</h3>
-  <menu bind:this={el} flex="~ wrap" gap-3 use:autoAnimate use:useFocusTrap>
+  <h3 bold mb-1.5>Filter:</h3>
+  <menu bind:this={el} use:autoAnimate use:useFocusTrap>
     {#if actives.x.size}
-      <li>
+      <li inline-block m-1.5>
         <button
           aria-label="clear all filtered tags"
           btn
@@ -71,9 +71,8 @@
           clear
         </button>
       </li>
-    {/if}
-    {#each alltags as tag (tag)}
-      <li>
+    {/if}{#each alltags as tag (tag)}
+      <li inline-block m-1.5>
         <button
           class={actives.x.has(tag) ? 'text-green'
           : xs.has(tag) ? 'text-gray-500'
