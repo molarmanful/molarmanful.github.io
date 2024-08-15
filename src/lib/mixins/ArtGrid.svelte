@@ -22,12 +22,12 @@
   const fo = fadeonly()
 
   const wrap = (e, f) => {
-    if (ft.hasFocus) {
-      e.preventDefault()
-      const i = ts.indexOf(activeElement)
-      const i1 = f(i)
-      if (0 <= i1 && i1 < ts.length) ts[i1].focus()
-    }
+    if (!el.contains(activeElement)) return
+    activate()
+    e.preventDefault()
+    const i = ts.indexOf(activeElement)
+    const i1 = f(i)
+    if (0 <= i1 && i1 < ts.length) ts[i1].focus()
   }
 
   let el = $state()
@@ -47,7 +47,6 @@
 
   $effect(() => {
     if (!el) return
-    el.contains(activeElement) ? activate() : deactivate()
     ts = tabbable(el)
     calcgrid()
   })
