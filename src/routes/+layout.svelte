@@ -15,7 +15,7 @@
 
   setContext('D', D)
 
-  let loaded = $state({ x: false })
+  const loaded = $state({ x: false })
   setContext('loaded', loaded)
 
   const actives = $state({ x: new SvelteSet() })
