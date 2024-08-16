@@ -13,7 +13,7 @@
 </script>
 
 <svg
-  style:transform={rm ? `scale(${1 + 0.1 * Math.min(1, factor)})` : void 0}
+  style:--un-scale={rm ? `scale(${1 + 0.1 * Math.min(1, factor)})` : void 0}
   viewBox="0 0 1587 1080"
   {...props}
 >
