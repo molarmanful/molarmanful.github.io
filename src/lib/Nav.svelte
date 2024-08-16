@@ -36,9 +36,6 @@
 
     return () => clearInterval(iv)
   })
-
-  let el = $state()
-  clickout(() => el, OFF)
 </script>
 
 <svelte:window
@@ -47,7 +44,7 @@
   }}
 />
 
-<nav bind:this={el}>
+<nav use:clickout={{ f: OFF }}>
   <NavIcon
     aria-expanded={dropped}
     {color}

@@ -1,4 +1,4 @@
-import { MediaQuery, useEventListener, useResizeObserver } from 'runed'
+import { MediaQuery, useEventListener } from 'runed'
 
 import { browser } from '$app/environment'
 
@@ -12,15 +12,14 @@ export const sfactor = f => {
   useEventListener(window, 'resize', g)
 }
 
-export const clickout = (x, handle = () => {}) => {
+export const clickout = (node, { f = () => {} }) => {
   if (!browser) return
 
-  const el = $derived(x())
   useEventListener(
     document,
     'click',
     e => {
-      if (el && !el.contains(e.target) && !e.defaultPrevented) handle()
+      if (node && !node.contains(e.target) && !e.defaultPrevented) f(e)
     },
     true
   )
