@@ -19,23 +19,20 @@
   }
 
   let factor = $state(0)
-  sfactor(x => (factor = x))
-
-  const pulse = 2000
-  const len = 4
-  const clrs = $state([...Array(len)].map(() => 'text-gray-500'))
   const filter = $derived(
     `hue-rotate(${factor * -69}deg) grayscale(${factor * 1.2})`
   )
-  let ic = 0
-  let i = len - 1
+  sfactor(x => (factor = x))
+
+  const pulse = 2000
+  let color = $state('text-gray-500')
 
   $effect(() => {
+    let ic = 0
     const iv = setInterval(() => {
-      if (i == len - 1) ic = (ic + 1) % colors[500].length
-      clrs[i] = colors[500][ic]
-      i = (i + 1) % len
-    }, pulse / len)
+      color = colors[500][ic]
+      ic = (ic + 1) % colors[500].length
+    }, pulse)
 
     return () => clearInterval(iv)
   })
@@ -53,11 +50,10 @@
 <nav bind:this={el}>
   <NavIcon
     aria-expanded={dropped}
-    {clrs}
+    {color}
     {filter}
     fixed=""
     flex=""
-    {len}
     onclick={ON}
     onmouseenter={ON}
     {pulse}
@@ -69,10 +65,9 @@
   {#if dropped}
     <NavBody
       {GOTO}
-      {clrs}
+      {color}
       {filter}
       fixed=""
-      {len}
       onmouseleave={OFF}
       {pulse}
       right="2"

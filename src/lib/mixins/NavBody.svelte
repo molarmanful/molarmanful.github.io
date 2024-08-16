@@ -3,15 +3,7 @@
 
   import { FocusTrap } from '../js/util.svelte'
 
-  let {
-    tops = [],
-    GOTO = () => {},
-    pulse,
-    filter,
-    clrs,
-    len,
-    ...props
-  } = $props()
+  let { tops = [], GOTO = () => {}, pulse, filter, color, ...props } = $props()
 
   const { useFocusTrap } = new FocusTrap({
     immediate: true,
@@ -22,7 +14,7 @@
 <div
   style:transition-duration="{pulse}ms"
   style:filter
-  class={clrs[len - 1]}
+  class={color}
   b="1 current"
   bg="black"
   origin="top-right"
@@ -34,11 +26,11 @@
   {...props}
 >
   <menu font-1 leading-8 text-3xl>
-    {#each tops as top, i}
+    {#each tops as top}
       <li>
         <button
-          style:transition="color {pulse}ms, border-color 500ms, filter 500ms"
-          class={clrs[i]}
+          style:transition="color {pulse}ms, border-color {pulse / 4}ms"
+          class={color}
           b="b-1 transparent focus:white"
           bg-transparent
           ease

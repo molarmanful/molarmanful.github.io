@@ -1,36 +1,37 @@
 <script>
   import { getContext } from 'svelte'
 
-  let { pulse, filter, clrs, len, ...props } = $props()
+  let { pulse, filter, color, ...props } = $props()
 
   const loaded = getContext('loaded')
 </script>
 
 <button
-  style:transition="color {pulse}ms, border-color 400ms, filter 400ms, transform
-  400ms"
+  style:transition="color {pulse}ms, border-color {pulse / 5}ms, transform {pulse /
+    5}ms"
   style:filter
-  class="{clrs[len - 1]} {loaded.x ? 'translate-x-0' : 'translate-x-17'}"
+  class="{color} {loaded.x ? 'translate-x-0' : 'translate-x-17'}"
   aria-label="nav menu"
   b="1 current focus:white"
   bg="black"
-  ease=""
+  ease="linear"
   h="16"
   outline="none"
   var_x="focus:white"
   w="16"
   {...props}
 >
-  <svg alt="menu" h="1/2" m-auto viewBox="0 0 100 100" w="1/2">
+  <svg alt="menu" h="1/2" m-auto viewBox="0 0 5 5" w="1/2">
     {#each Array(3).keys() as i}
       <rect
-        style:transition="color {pulse}ms, fill 400ms"
-        class={clrs[i]}
-        ease
-        height="20"
+        style:transition="color {pulse / 4}ms {(pulse / 4) * (i + 1)}ms, fill {pulse /
+          5}ms"
+        class={color}
+        ease-linear
+        height="1"
         un-fill="[var(--x,currentColor)]"
-        width="100"
-        y={i * 40}
+        width="5"
+        y={i * 2}
       ></rect>
     {/each}
   </svg>
