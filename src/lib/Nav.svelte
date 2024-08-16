@@ -13,9 +13,9 @@
   const OFF = () => {
     dropped = false
   }
-  const GOTO = top => {
+  const GOTO = top => () => {
     dropped = false
-    scrollTo({ top })
+    scrollTo({ top: document.getElementById(top).offsetTop })
   }
 
   let factor = $state(0)

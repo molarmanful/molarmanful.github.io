@@ -12,9 +12,6 @@ export const sfactor = f => {
   useEventListener(window, 'resize', g)
 }
 
-export const offtop = (x, f) =>
-  useResizeObserver(x, entries => f(entries[0]?.target.offsetTop))
-
 export const clickout = (x, handle = () => {}) => {
   if (!browser) return
 

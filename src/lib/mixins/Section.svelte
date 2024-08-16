@@ -1,19 +1,25 @@
 <script>
-  import { fadeonly, offtop } from '../js/util.svelte'
+  import { fadeonly } from '../js/util.svelte'
 
-  let { name = '', nav = '', top, bord = false, children, ...props } = $props()
+  let {
+    name = '',
+    nav = '',
+    top = () => {},
+    bord = false,
+    children,
+    ...props
+  } = $props()
 
   let el = $state()
-  offtop(
-    () => el,
-    ot => top?.({ name: nav, n: ot })
-  )
 
   const fo = fadeonly()
+
+  top(nav)
 </script>
 
 <section
   bind:this={el}
+  id={nav}
   b={bord ? 'lt-3xl:t gray-500' : void 0}
   backdrop="grayscale"
   flex=""

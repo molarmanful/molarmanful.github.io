@@ -43,10 +43,10 @@
           bg-transparent
           ease
           filter="[&:hover,&:focus]:(brightness-0 invert)"
-          onclick={GOTO(top.n)}
+          onclick={GOTO(top)}
           outline-none
         >
-          {top.name.toUpperCase()}
+          {top.toUpperCase()}
         </button>
       </li>
     {/each}

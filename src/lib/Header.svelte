@@ -1,22 +1,18 @@
 <script>
-  import { fadeonly, offtop, sfactor } from './js/util.svelte'
+  import { fadeonly, sfactor } from './js/util.svelte'
   import { HeaderSplash, HeaderTitle } from './mixins'
 
-  let { top } = $props()
+  let { top = () => {} } = $props()
 
   let factor = $state(0)
   sfactor(x => (factor = x))
 
-  let el = $state()
-  offtop(
-    () => el,
-    ot => top?.({ name: 'top', n: ot })
-  )
-
   const fo = fadeonly()
+
+  top('top')
 </script>
 
-<header bind:this={el} relative screen>
+<header id="top" relative screen>
   <div style:filter="hue-rotate({factor * -69}deg)" fixed flex full>
     <HeaderSplash
       absolute=""

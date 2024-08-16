@@ -1,7 +1,7 @@
 <script>
   import { AboutLinks, AboutStatement, Heading, Section } from './mixins'
 
-  let { top } = $props()
+  let { top = () => {} } = $props()
 </script>
 
 <Section bord="true" nav="abt" {top}>
