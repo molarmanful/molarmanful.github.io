@@ -8,6 +8,6 @@
 
 <svg viewBox="0 0 1587 1080" {...props}>
   {#each me as el}
-    <SvgEl name={el.this} {...el.attr} />
+    <SvgEl name={el.this} len={el.len} {...el.attr} />
   {/each}
 </svg>

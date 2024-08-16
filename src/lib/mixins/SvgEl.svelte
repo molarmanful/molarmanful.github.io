@@ -5,7 +5,7 @@
 
   import { colors } from '../js/static'
 
-  let { name, ...props } = $props()
+  let { len, name, ...props } = $props()
   const loaded = getContext('loaded')
 
   const b = 700
@@ -13,7 +13,6 @@
 
   let c = $state('text-black')
   let t = $state(0)
-  let len_a = $state(0)
   let len_o = $state(0)
   let el = $state()
 
@@ -25,10 +24,9 @@
   }
 
   $effect(() => {
-    if (!loaded.x || !el.getTotalLength) return
+    if (!loaded.x) return
 
-    len_a = el.getTotalLength()
-    len_o = el.getTotalLength()
+    len_o = len
 
     to = setTimeout(() => {
       len_o = 0
@@ -44,7 +42,7 @@
   bind:this={el}
   style:transition="color, stroke-dashoffset ease-out"
   style:transition-duration="{t}ms"
-  style:stroke-dasharray={len_a}
+  style:stroke-dasharray={len}
   style:stroke-dashoffset={len_o}
   class="{c} fill-transparent stroke-1 stroke-current"
   {...props}
