@@ -54,6 +54,7 @@
       class="transition-filter,stroke-1000"
       aber-drop
       alt="BEN PANG"
+      antialiased
       container="lg:"
       fill-transparent
       full
@@ -62,7 +63,6 @@
       rotate--10
       stroke={ready ? '#f00' : '#fff'}
       stroke-1
-      transform-gpu
     >
       <use href="/benpang.svg#main"></use>
     </svg>
