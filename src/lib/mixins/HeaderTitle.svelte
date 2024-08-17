@@ -54,13 +54,13 @@
       class="transition-filter,stroke-1000"
       aber-drop
       alt="BEN PANG"
-      antialiased
       container="lg:"
       fill-transparent
       full
       m-auto
       object-contain
       rotate--10
+      rotate-z-360
       stroke={ready ? '#f00' : '#fff'}
       stroke-1
     >
