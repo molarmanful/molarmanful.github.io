@@ -104,11 +104,11 @@
   {#each ordered as name, i (name)}
     {@const on = chosen.has(name)}
     <div
-      class={on ? '' : 'opacity-10! pointer-events-none'}
+      class={on ? '' : 'brightness-10 pointer-events-none!'}
       data-aos={aos && `fade-${fo.matches ? 'in' : 'up'}`}
       data-aos-delay={aos && 100 * (i % cs)}
       flex
-      transition-opacity
+      transition-filter,opacity,transform
     >
       {@render children(name, on)}
     </div>
