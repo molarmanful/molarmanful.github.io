@@ -40,7 +40,11 @@
     )
   setContext('vloader', vloader)
 
-  if (browser) history.scrollRestoration = 'manual'
+  if (browser) {
+    history.scrollRestoration = 'manual'
+
+    DeviceOrientationEvent?.requestPermission?.()
+  }
 
   $effect(() => {
     scrollTo({ top: 0, behavior: 'instant' })
