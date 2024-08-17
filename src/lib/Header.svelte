@@ -21,7 +21,7 @@
         y: (mouse.y / innerHeight - 1) * fac_inv,
       }
   )
-  const scale = $derived(rm.matches || 1 + 0.1 * fac_inv)
+  const scale = $derived(1 + 0.1 * fac_inv)
 
   const splash_rel = $derived({
     x: -1.5 * mouse_rel.x,
@@ -30,12 +30,6 @@
   const title_rel = $derived({
     x: mouse_rel.x,
     y: mouse_rel.y - !fo.matches * factor * 10,
-  })
-
-  $effect(() => {
-    if (!fo) return
-    mouse.x = innerWidth / 2
-    mouse.y = innerHeight / 2
   })
 
   top('top')
