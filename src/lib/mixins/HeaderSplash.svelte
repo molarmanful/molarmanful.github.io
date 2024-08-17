@@ -2,7 +2,7 @@
   import { getContext } from 'svelte'
 
   import me from '../js/me'
-  import { redmote, sfactor } from '../js/util.svelte'
+  import { fadeonly, redmote, sfactor } from '../js/util.svelte'
 
   import { SvgEl } from '.'
 
@@ -11,9 +11,10 @@
 
   let factor = $state(0)
   const rm = redmote()
+  const fo = fadeonly()
   const fac_inv = $derived(Math.max(0, 1 - factor))
   const scale = $derived(
-    perm == 'granted' ? rm.matches || 1 + 0.1 * fac_inv : void 0
+    !fo.matches || perm == 'granted' ? rm.matches || 1 + 0.1 * fac_inv : void 0
   )
   sfactor(x => (factor = x))
 
