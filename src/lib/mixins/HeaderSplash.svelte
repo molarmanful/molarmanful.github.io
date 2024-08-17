@@ -1,21 +1,15 @@
 <script>
-  import { getContext } from 'svelte'
-
   import me from '../js/me'
-  import { fadeonly, redmote, sfactor } from '../js/util.svelte'
+  import { redmote, sfactor } from '../js/util.svelte'
 
   import { SvgEl } from '.'
 
   let { ...props } = $props()
-  const perm = getContext('perm')
 
   let factor = $state(0)
   const rm = redmote()
-  const fo = fadeonly()
   const fac_inv = $derived(Math.max(0, 1 - factor))
-  const scale = $derived(
-    !fo.matches || perm == 'granted' ? rm.matches || 1 + 0.1 * fac_inv : void 0
-  )
+  const scale = $derived(rm.matches || 1 + 0.1 * fac_inv)
   sfactor(x => (factor = x))
 
   let innerWidth = $state(0)
@@ -33,10 +27,6 @@
 </script>
 
 <svelte:window
-  ondeviceorientation={({ beta, gamma }) => {
-    mouse.x = (gamma * innerWidth) / 180
-    mouse.y = (beta * innerHeight) / 180
-  }}
   onmousemove={({ clientX, clientY }) => {
     mouse.x = clientX
     mouse.y = clientY

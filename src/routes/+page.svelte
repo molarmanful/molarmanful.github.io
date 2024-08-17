@@ -1,6 +1,6 @@
 <script>
   import AOS from 'aos'
-  import { getContext, setContext } from 'svelte'
+  import { getContext } from 'svelte'
   import { derived } from 'svelte/store'
   import { classList } from 'svelte-body'
 
@@ -16,9 +16,6 @@
   const D = getContext('D')
 
   const tops = $state([])
-
-  const perm = $state({ x: void 0 })
-  setContext('perm', perm)
 
   const { useFocusTrap } = new FocusTrap({
     immediate: true,
@@ -46,12 +43,6 @@
     content="Creative technologist, experimental artist, digital designer, font creator, programming language enthusiast."
   />
 </svelte:head>
-
-<svelte:document
-  onclick={async () => {
-    perm.x = await DeviceOrientationEvent?.requestPermission?.()
-  }}
-/>
 
 <svelte:body use:classList={[$pstate.selected && 'overflow-hidden']} />
 
