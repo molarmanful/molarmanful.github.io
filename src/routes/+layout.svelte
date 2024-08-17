@@ -42,8 +42,6 @@
 
   if (browser) {
     history.scrollRestoration = 'manual'
-
-    DeviceOrientationEvent?.requestPermission?.()
   }
 
   $effect(() => {

@@ -44,6 +44,12 @@
   />
 </svelte:head>
 
+<svelte:document
+  onclick={() => {
+    DeviceOrientationEvent?.requestPermission?.()
+  }}
+/>
+
 <svelte:body use:classList={[$pstate.selected && 'overflow-hidden']} />
 
 <div contents use:useFocusTrap>
