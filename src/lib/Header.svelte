@@ -20,7 +20,7 @@
       mx="auto"
       right="0 media-squarish:40%"
       top="0"
-      un-transform="media-squarish:translate-x-1/2"
+      un-transform="~ media-squarish:translate-x-1/2"
     />
     <div
       style:opacity={1 - factor * 4}

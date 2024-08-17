@@ -7,13 +7,15 @@
   let { ...props } = $props()
 
   let factor = $state(0)
-  sfactor(x => (factor = x))
-
   const rm = redmote()
+  const scale = $derived(rm ? 1 + 0.1 * Math.min(1, factor) : void 0)
+  sfactor(x => (factor = x))
 </script>
 
 <svg
-  style:--un-scale={rm ? `scale(${1 + 0.1 * Math.min(1, factor)})` : void 0}
+  style:--un-scale-x={scale}
+  style:--un-scale-y={scale}
+  un-transform=""
   viewBox="0 0 1587 1080"
   {...props}
 >
