@@ -67,7 +67,7 @@ export default {
         //   '-1px  1px var(--stroke-color),' +
         //   '1px -1px var(--stroke-color),' +
         //   '1px  1px var(--stroke-color)',
-        '-webkit-text-stroke': 'max(2px, .03em) currentColor',
+        '-webkit-text-stroke': '2px currentColor',
         'text-stroke': 'max(2px, .03em) currentColor',
         '-webkit-text-fill-color': '#000',
         'text-fill-color': '#000',
