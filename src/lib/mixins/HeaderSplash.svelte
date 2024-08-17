@@ -28,8 +28,8 @@
 
 <svelte:window
   ondeviceorientation={({ beta, gamma }) => {
-    mouse.x = ((gamma + 90) * innerWidth) / 180
-    mouse.y = ((beta + 90) * innerHeight) / 180
+    mouse.x = (gamma * innerWidth) / 180
+    mouse.y = (beta * innerHeight) / 180
   }}
   onmousemove={({ clientX, clientY }) => {
     mouse.x = clientX
