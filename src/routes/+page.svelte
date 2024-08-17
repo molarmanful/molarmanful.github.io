@@ -1,6 +1,6 @@
 <script>
   import AOS from 'aos'
-  import { getContext } from 'svelte'
+  import { getContext, setContext } from 'svelte'
   import { derived } from 'svelte/store'
   import { classList } from 'svelte-body'
 
@@ -16,6 +16,9 @@
   const D = getContext('D')
 
   const tops = $state([])
+
+  const perm = $state({ x: void 0 })
+  setContext('perm', perm)
 
   const { useFocusTrap } = new FocusTrap({
     immediate: true,
@@ -45,8 +48,8 @@
 </svelte:head>
 
 <svelte:document
-  onclick={() => {
-    DeviceOrientationEvent?.requestPermission?.()
+  onclick={async () => {
+    perm.x = await DeviceOrientationEvent?.requestPermission?.()
   }}
 />
 

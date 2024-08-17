@@ -1,15 +1,20 @@
 <script>
+  import { getContext } from 'svelte'
+
   import me from '../js/me'
   import { redmote, sfactor } from '../js/util.svelte'
 
   import { SvgEl } from '.'
 
   let { ...props } = $props()
+  const perm = getContext('perm')
 
   let factor = $state(0)
   const rm = redmote()
   const fac_inv = $derived(Math.max(0, 1 - factor))
-  const scale = $derived(rm.matches || 1 + 0.1 * fac_inv)
+  const scale = $derived(
+    perm == 'granted' ? rm.matches || 1 + 0.1 * fac_inv : void 0
+  )
   sfactor(x => (factor = x))
 
   let innerWidth = $state(0)
