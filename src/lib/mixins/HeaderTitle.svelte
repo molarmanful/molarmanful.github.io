@@ -59,8 +59,7 @@
       full
       m-auto
       object-contain
-      rotate--10
-      rotate-z-360
+      rotate-z--10
       stroke={ready ? '#f00' : '#fff'}
       stroke-1
     >
