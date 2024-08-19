@@ -1,7 +1,38 @@
 <script>
+  import lev from './js/lev'
+  import { colors } from './js/static'
   import { AboutLinks, AboutStatement, Heading, Section } from './mixins'
 
   let { top = () => {} } = $props()
+
+  const bank = [
+    'WEIRD',
+    'WEIRD ART',
+    '2D ART',
+    '3D ART',
+    '4D ART',
+    'DESIGN',
+    'DYNAMIC',
+    'DIGITAL',
+    'RADICAL',
+    'WIZARD',
+  ]
+  let i = 0
+  let word = $state(bank[i])
+
+  $effect(() => {
+    const t = setInterval(() => {
+      word = bank[i]
+      i = (i + 1) % bank.length
+      const steps = lev(word, bank[i])
+      let n = setInterval(() => {
+        if (steps.length) word = steps.pop()
+        else clearInterval(n)
+      }, 50)
+    }, 1500)
+
+    return () => clearInterval(t)
+  })
 </script>
 
 <Section bord="true" nav="abt" {top}>
@@ -13,7 +44,14 @@
     w-screen
   >
     <div max-w="lt-lg:prose" mx="lt-lg:auto" prose>
-      <Heading data-aos="fade-in">WHO EVEN IS THIS GUY?</Heading>
+      <Heading data-aos="fade-in">
+        I MAKE
+        <br un-hidden="xs1:" />
+        <span text-slate-400 transition-color-500 whitespace-nowrap>{word}</span
+        >
+        <br un-hidden="xs2:" />
+        THINGS.
+      </Heading>
     </div>
 
     <div divide="lg:x gray-500" flex="lg:" pb="16 lg:32">

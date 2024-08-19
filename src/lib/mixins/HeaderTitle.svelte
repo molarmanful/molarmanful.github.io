@@ -31,7 +31,7 @@
       stroke="hsl(0, 100%, {(1 - dist) * 50 + 50}%)"
       stroke-1
     >
-      <use href="/benpang.svg#main"></use>
+      <use href="/benpang.svg#main" vector-effect="non-scaling-stroke"></use>
     </svg>
   </div>
 </h1>

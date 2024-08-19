@@ -35,6 +35,8 @@ export default {
   theme: {
     breakpoints: {
       xs: '320px',
+      xs1: '390px',
+      xs2: '520px',
       sm: '640px',
       md: '768px',
       lg: '1024px',
