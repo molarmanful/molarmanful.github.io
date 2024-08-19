@@ -1,6 +1,5 @@
 <script>
   import lev from './js/lev'
-  import { colors } from './js/static'
   import { AboutLinks, AboutStatement, Heading, Section } from './mixins'
 
   let { top = () => {} } = $props()
