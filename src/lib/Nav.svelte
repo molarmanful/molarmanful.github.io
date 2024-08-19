@@ -1,6 +1,6 @@
 <script>
   import { colors } from './js/static'
-  import { clickout, sfactor } from './js/util.svelte'
+  import { sfactor } from './js/util.svelte'
   import { NavBody, NavIcon } from './mixins'
 
   let { tops = [] } = $props()
@@ -44,7 +44,7 @@
   }}
 />
 
-<nav use:clickout={{ f: OFF }}>
+<nav>
   <NavIcon
     aria-expanded={dropped}
     {color}
@@ -60,6 +60,18 @@
   ></NavIcon>
 
   {#if dropped}
+    <button
+      cursor-initial
+      fixed
+      onmousedown={OFF}
+      ontouchstart={OFF}
+      opacity-0
+      screen
+      tabindex="-1"
+      z-30
+    >
+      Close Navigation
+    </button>
     <NavBody
       {GOTO}
       {color}
