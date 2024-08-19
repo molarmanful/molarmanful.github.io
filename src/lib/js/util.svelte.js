@@ -8,20 +8,22 @@ export const sfactor = f => {
   if (!browser) return
 
   const g = () => f(scrollY / innerHeight || 0)
+
   useEventListener(window, 'scroll', g)
   useEventListener(window, 'resize', g)
 }
 
 export const clickout = (node, { f = () => {} }) => {
   if (!browser) return
+  
+  const g = e => {
+    if (node && !node.contains(e.target) && !e.defaultPrevented) f(e)
+  }
 
   useEventListener(
-    document,
-    'click',
-    e => {
-      if (node && !node.contains(e.target) && !e.defaultPrevented) f(e)
-    },
-    true
+    document.body,
+    document.body.ontouchstart ? 'touchstart' : 'click',
+    g
   )
 }
 
