@@ -30,7 +30,7 @@
   <h2
     data-aos="fade-{fo.matches ? 'in' : 'left'}"
     noprose
-    text="stroked gray-500"
+    text="stroked gray-400"
     type-6
   >
     LINKS

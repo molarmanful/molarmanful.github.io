@@ -17,7 +17,7 @@
     b="3xl:l gray-500"
     container="lg:"
     mx-auto
-    p="x-5 b-16 md:x-8 lg:b-32"
+    p="x-5 b-16 md:x-8 lg:b-32 xl:x-16"
     w-screen
   >
     <Heading data-aos="fade-in" mb="5 md:8" un-hidden="3xl:" un-text="center">

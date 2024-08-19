@@ -86,7 +86,7 @@
       >
         <button
           class={actives.x.has(tag) ? 'text-green'
-          : xs.has(tag) ? 'text-gray-500'
+          : xs.has(tag) ? 'text-gray-400'
           : 'text-gray-800 pointer-events-none'}
           aria-label="filter by tag: {tag}"
           btn

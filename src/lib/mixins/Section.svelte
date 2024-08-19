@@ -39,7 +39,7 @@
         origin="center"
         rotate="180"
         select="none"
-        text="stroked gray-500"
+        text="stroked gray-400"
       >
         {name}
       </svelte:element>

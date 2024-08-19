@@ -9,7 +9,7 @@
     b="3xl:(t l) gray-500"
     container="lg:"
     mx-auto
-    p="t-8 md:(x-8 t-16)"
+    p="t-8 md:(x-8 t-16) xl:x-16"
     w-screen
   >
     <div max-w="lt-lg:prose" mx="lt-lg:auto" prose>

@@ -6,8 +6,8 @@
   class={bold ? 'bold' : 'font-200'}
   case="normal"
   font="2"
-  m="t-6 lg:t-12"
-  text=" gray-300"
+  mt="6 lg:12"
+  text="gray-300"
   type="5"
   {...props}
 >
