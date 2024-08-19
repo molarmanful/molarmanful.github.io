@@ -20,11 +20,7 @@ export const clickout = (node, { f = () => {} }) => {
     if (node && !node.contains(e.target) && !e.defaultPrevented) f(e)
   }
 
-  useEventListener(
-    document.body,
-    document.body.ontouchstart ? 'touchstart' : 'click',
-    g
-  )
+  useEventListener(document.body, 'click', g)
 }
 
 export const fadeonly = () =>
