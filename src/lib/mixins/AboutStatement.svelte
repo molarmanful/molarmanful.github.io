@@ -34,7 +34,7 @@
     He is building odd programming languages, designing bitmap fonts, living
     life, and secretly making art.
   </Text>
-  <Text data-aos="fade-in" italic="">
+  <Text data-aos="fade-in" italic="" text="gray-500">
     This website is <A
       b="1 transparent focus:current"
       duration-500
