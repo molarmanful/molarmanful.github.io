@@ -13,6 +13,7 @@
     '4D ART',
     'DESIGN',
     'DYNAMIC',
+    'PHYSICAL',
     'DIGITAL',
     'RADICAL',
     'WIZARD',
