@@ -56,7 +56,7 @@
 <svelte:document bind:activeElement />
 
 <div {...props}>
-  <h3 bold data-aos={aos && 'fade-in'} mb-1.5>Filter:</h3>
+  <h3 bold data-aos={aos && 'fade-in'} mb-1.5 text-gray-500>Filter:</h3>
   <menu bind:this={el} id="anchor-filter" use:autoAnimate use:useFocusTrap>
     {#if actives.x.size}
       <li
@@ -85,8 +85,8 @@
         m-1.5
       >
         <button
-          class={actives.x.has(tag) ? 'text-green'
-          : xs.has(tag) ? 'text-gray-400'
+          class={actives.x.has(tag) ? 'text-green-500'
+          : xs.has(tag) ? 'text-gray-500'
           : 'text-gray-800 pointer-events-none'}
           aria-label="filter by tag: {tag}"
           btn

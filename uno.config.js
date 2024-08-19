@@ -62,11 +62,6 @@ export default {
     [
       'text-stroked',
       {
-        // 'text-shadow':
-        //   '-1px -1px currentColor,' +
-        //   '-1px  1px currentColor,' +
-        //   '1px -1px currentColor,' +
-        //   '1px  1px currentColor',
         '-webkit-text-stroke': '2px currentColor',
         'text-stroke': '2px currentColor',
         '-webkit-text-fill-color': '#000',

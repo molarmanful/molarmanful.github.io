@@ -9,29 +9,6 @@
   })
 
   const dist = $derived(Math.min(1, Math.hypot(mouse_rel.x, mouse_rel.y) * 2))
-
-  // let aber = $state([])
-  // let cd0 = 0
-  // let cd1 = 0
-  //
-  // $effect(() => {
-  //   const i = setInterval(() => {
-  //     if (cd0) {
-  //       aber = aber.map(() => Math.random() * 6 - 3)
-  //       cd0--
-  //       return
-  //     }
-  //     if (cd1) {
-  //       aber = Array(6).fill(0)
-  //       cd1--
-  //       return
-  //     }
-  //     cd0 = 0 | (Math.random() * 10)
-  //     cd1 = 0 | (Math.random() * 20)
-  //   }, 50)
-  //
-  //   return () => clearInterval(i)
-  // })
 </script>
 
 <h1 {...props}>
