@@ -37,6 +37,7 @@
 
 <svelte:window
   onmousemove={({ clientX, clientY }) => {
+    if (fo.matches) return
     mouse.x = clientX / innerWidth
     mouse.y = clientY / innerHeight
   }}
