@@ -12,13 +12,13 @@
 
   let innerWidth = $state(0)
   let innerHeight = $state(0)
-  const mouse = $state({ x: 0, y: 0 })
+  const mouse = $state({ x: 0.5, y: 0.5 })
   const mouse_rel = $derived(
     rm.matches || factor >= 1 ?
       { x: 0, y: 0 }
     : {
-        x: ((mouse.x / innerWidth) * 2 - 1) * fac_inv,
-        y: ((mouse.y / innerHeight) * 2 - 1) * fac_inv,
+        x: (mouse.x * 2 - 1) * fac_inv,
+        y: (mouse.y * 2 - 1) * fac_inv,
       }
   )
   const scale = $derived(1 + 0.1 * fac_inv)
@@ -37,8 +37,8 @@
 
 <svelte:window
   onmousemove={({ clientX, clientY }) => {
-    mouse.x = clientX
-    mouse.y = clientY
+    mouse.x = clientX / innerWidth
+    mouse.y = clientY / innerHeight
   }}
   bind:innerWidth
   bind:innerHeight
@@ -62,7 +62,7 @@
       absolute
       inset-0
     >
-      <HeaderTitle />
+      <HeaderTitle {mouse_rel} />
     </div>
     <!--
       <div

@@ -8,7 +8,7 @@
   let { len, name, ...props } = $props()
   const loaded = getContext('loaded')
 
-  const b = 700
+  const b = 500
   const rt = (a = 3000, b = 1000) => 0 | (Math.random() * a + b)
 
   let c = $state('text-black')

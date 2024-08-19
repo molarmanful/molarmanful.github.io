@@ -1,22 +1,14 @@
 <script>
-  import { getContext } from 'svelte'
+  let { mouse_rel, ...props } = $props()
 
-  let { ...props } = $props()
-  const loaded = getContext('loaded')
+  let aber = $state(4)
 
-  let aber = $state(0.1)
-  let ready = $state(false)
-
-  $effect(() => {
-    if (!loaded.x) return
-
-    const t = setTimeout(() => {
-      ready = true
-      aber = 4
-    }, 1000)
-
-    return () => clearTimeout(t)
+  const aber_rel = $derived({
+    x: -Math.min(0.5, Math.max(-0.5, mouse_rel.x)) * 2 * aber,
+    y: -Math.min(0.5, Math.max(-0.5, mouse_rel.y)) * 2 * aber,
   })
+
+  const dist = $derived(Math.min(1, Math.hypot(mouse_rel.x, mouse_rel.y) * 2))
 
   // let aber = $state([])
   // let cd0 = 0
@@ -45,13 +37,12 @@
 <h1 {...props}>
   <div absolute inset-0 p-8 screen>
     <svg
-      style:--aber0="{-aber}px"
-      style:--aber1="{aber}px"
-      style:--aber2="{-aber}px"
-      style:--aber3="{aber}px"
-      style:--aber4="{-aber}px"
-      style:--aber5="{aber}px"
-      class="transition-filter,stroke-1000"
+      style:--aber0="{aber_rel.x}px"
+      style:--aber1="{aber_rel.y}px"
+      style:--aber2="{aber_rel.x}px"
+      style:--aber3="{aber_rel.y}px"
+      style:--aber4="{aber_rel.x}px"
+      style:--aber5="{aber_rel.y}px"
       aber-drop
       alt="BEN PANG"
       container="lg:"
@@ -60,7 +51,7 @@
       m-auto
       object-contain
       rotate-z--10
-      stroke={ready ? '#f00' : '#fff'}
+      stroke="hsl(0, 100%, {(1 - dist) * 50 + 50}%)"
       stroke-1
     >
       <use href="/benpang.svg#main"></use>
