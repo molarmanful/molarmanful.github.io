@@ -17,19 +17,19 @@
     rm.matches || factor >= 1 ?
       { x: 0, y: 0 }
     : {
-        x: (mouse.x / innerWidth - 1) * fac_inv,
-        y: (mouse.y / innerHeight - 1) * fac_inv,
+        x: ((mouse.x / innerWidth) * 2 - 1) * fac_inv,
+        y: ((mouse.y / innerHeight) * 2 - 1) * fac_inv,
       }
   )
   const scale = $derived(1 + 0.1 * fac_inv)
 
   const splash_rel = $derived({
-    x: -1.5 * mouse_rel.x,
-    y: -1.5 * mouse_rel.y,
+    x: -mouse_rel.x,
+    y: -mouse_rel.y,
   })
   const title_rel = $derived({
-    x: mouse_rel.x,
-    y: mouse_rel.y - !fo.matches * factor * 10,
+    x: 0.5 * mouse_rel.x,
+    y: 0.5 * mouse_rel.y - !fo.matches * factor * 10,
   })
 
   top('top')
