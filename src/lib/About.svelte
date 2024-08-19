@@ -10,7 +10,6 @@
     '2D ART',
     '3D ART',
     '4D ART',
-    'DESIGN',
     'DYNAMIC',
     'PHYSICAL',
     'DIGITAL',
