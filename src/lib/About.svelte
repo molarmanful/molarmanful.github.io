@@ -35,7 +35,7 @@
   })
 </script>
 
-<Section bord="true" nav="abt" {top}>
+<Section bord="true" data-aos="fade-in" nav="abt" {top}>
   <div
     b="3xl:(t l) gray-500"
     container="lg:"
