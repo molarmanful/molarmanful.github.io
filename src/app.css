@@ -12,7 +12,11 @@ html {
 }
 
 body {
-  @apply scroll font-2 font-300 tracking-wide select-text text-gray-400 type-4;
+  @apply cursor-pointer scroll font-2 font-300 tracking-wide select-text text-gray-400 type-4;
+}
+
+body > * {
+  @apply cursor-unset;
 }
 
 h1,
