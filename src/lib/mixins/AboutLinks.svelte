@@ -6,17 +6,34 @@
   let { ...props } = $props()
 
   const links = [
-    ['i-ph-github-logo', 'Github', 'https://github.com/molarmanful'],
-    ['i-ph-instagram-logo', 'Instagram', 'https://instagram.com/bandidojim'],
+    [
+      '[&:hover,&:focus]:text-green',
+      'i-ph-github-logo',
+      'Github',
+      'https://github.com/molarmanful',
+    ],
+    [
+      '[&:hover,&:focus]:text-fuchsia',
+      'i-ph-instagram-logo',
+      'Instagram',
+      'https://instagram.com/bandidojim',
+    ],
     // ['', 'ArtStation', 'https://bandidojim.artstation.com'],
-    ['i-ph-linkedin-logo', 'LinkedIn', 'https://linkedin.com/in/molarmanful'],
+    [
+      '[&:hover,&:focus]:text-blue',
+      'i-ph-linkedin-logo',
+      'LinkedIn',
+      'https://linkedin.com/in/molarmanful',
+    ],
     // ['i-ph-shopping-cart', 'Society6', 'https://society6.com/bandidojim'],
     [
+      '[&:hover,&:focus]:text-yellow',
       'i-ph-golf',
       'PPCG.SE',
       'https://codegolf.stackexchange.com/users/41247/mama-fun-roll',
     ],
     [
+      '',
       'i-ph-file-text',
       'CV',
       'https://docs.google.com/document/d/13Hy3akmfz9tvyFH6awZ8riWSCivtYQZa3TE-f_CGszI/edit?usp=sharing',
@@ -36,13 +53,13 @@
     LINKS
   </h2>
   <menu id="anchor-abt-links" m="t-2 x-2 lg:t-4" text-gray-500>
-    {#each links as [icon, name, link], i}
+    {#each links as [color, icon, name, link], i}
       <li
         data-aos="fade-{fo.matches ? 'in' : 'left'}"
         data-aos-anchor="#anchor-abt-links"
         data-aos-delay={i * 100}
       >
-        <A href={link} item>
+        <A class={color} decoration="none!" href={link} item>
           <div class={icon}></div>
           <span under>{name}</span>
         </A>

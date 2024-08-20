@@ -11,8 +11,8 @@
     '3D ART',
     '4D ART',
     'DYNAMIC',
-    'PHYSICAL',
     'DIGITAL',
+    'PHYSICAL',
     'RADICAL',
     'WIZARD',
   ]
@@ -46,8 +46,9 @@
       <Heading data-aos="fade-in">
         I MAKE
         <br un-hidden="xs1:" />
-        <span text-slate-400 transition-color-500 whitespace-nowrap>{word}</span
-        >
+        <span text-unstroked whitespace-nowrap>
+          {word}
+        </span>
         <br un-hidden="xs2:" />
         THINGS.
       </Heading>

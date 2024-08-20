@@ -72,6 +72,16 @@ export default {
       },
     ],
     [
+      'text-unstroked',
+      {
+        '-webkit-text-stroke': 'initial',
+        'text-stroke': 'initial',
+        '-webkit-text-fill-color': 'initial',
+        'text-fill-color': 'initial',
+        'paint-order': 'normal',
+      },
+    ],
+    [
       'graiscale',
       {
         'border-color': 'white',
@@ -90,9 +100,9 @@ export default {
       'aber-drop',
       {
         filter:
-          // 'drop-shadow(var(--aber0) var(--aber1) #f00) ' +
-          'drop-shadow(var(--aber2) var(--aber3) #0f0) ' +
-          'drop-shadow(var(--aber4) var(--aber5) #00f)',
+          // 'drop-shadow(var(--aber0) var(--aber1) var(--shad) #f00) ' +
+          'drop-shadow(var(--aber0) var(--aber1) var(--shad) #0f0) ' +
+          'drop-shadow(var(--aber0) var(--aber1) var(--shad) #00f)',
         // '-webkit-text-fill-color': '#000',
       },
     ],
