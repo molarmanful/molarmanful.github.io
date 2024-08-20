@@ -21,9 +21,9 @@
   </Text>
 
   <Sp />
-  <MediaImg name="vv_concept" class="Violet Ventures logo statement." />
+  <MediaImg name="vv_concept" alt="Violet Ventures logo statement." />
   <MediaImg
     name="vv_knockout"
-    class="Sample of the Violet Ventures branding and color palette."
+    alt="Sample of the Violet Ventures branding and color palette."
   />
 </Prose>
