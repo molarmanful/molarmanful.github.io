@@ -1,3 +1,5 @@
+import { colors as unoColors } from '@unocss/preset-uno/colors'
+
 const c = {
   weights: [500, 700],
   colors: 'rose red orange amber yellow lime green emerald teal cyan sky blue indigo violet purple fuchsia pink'
@@ -10,4 +12,8 @@ export const colors = Object.fromEntries(
 
 export const allColors = c.weights.flatMap(w =>
   c.colors.map(c => `text-${c}-${w}`)
+)
+
+export const hexes = Object.fromEntries(
+  c.weights.map(w => [w, c.colors.map(c => [c, unoColors[c][w]])])
 )

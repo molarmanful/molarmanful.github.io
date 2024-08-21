@@ -37,7 +37,7 @@ export default {
 
   theme: {
     colors: {
-      accent: colors.amber,
+      accent: colors.pink,
       bord: colors.indigo,
       head: colors.teal,
       text: colors.slate,

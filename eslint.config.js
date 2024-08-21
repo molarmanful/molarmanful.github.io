@@ -22,8 +22,10 @@ export default [
     },
   },
 
+  ...svelte.configs['flat/prettier'],
+
   {
-    files: ['**/*.svelte'],
+    files: ['**/*.svelte', '**/*.svelte.js'],
     languageOptions: {
       parser: svelteParser,
     },
@@ -31,8 +33,6 @@ export default [
       svelte,
     },
     rules: {
-      ...svelte.configs.base.overrides[0].rules,
-      ...svelte.configs.prettier.rules,
       'svelte/sort-attributes': 1,
     },
   },
@@ -84,7 +84,14 @@ export default [
       },
     },
     rules: {
-      'no-unused-vars': 1,
+      'no-unused-vars': [
+        1,
+        {
+          argsIgnorePattern: '^_',
+          varsIgnorePattern: '^_',
+          caughtErrorsIgnorePattern: '^_',
+        },
+      ],
     },
   },
 

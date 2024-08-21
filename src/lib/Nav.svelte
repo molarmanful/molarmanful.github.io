@@ -1,5 +1,5 @@
 <script>
-  import { colors } from './js/static'
+  import { hexes } from './js/static'
   import { sfactor } from './js/util.svelte'
   import { NavBody, NavIcon } from './mixins'
 
@@ -24,15 +24,17 @@
   // )
   sfactor(x => (factor = x))
 
-  let col = $state('text-bord')
+  let col = $state('#818cf8')
   const pulse = $derived(factor > 0.8 ? 400 : 2000)
-  const color = $derived(factor > 0.8 ? 'text-bord' : col)
+  const color = $derived(
+    `color-mix(in oklab, #6366f1 ${Math.min(1, factor) * 100}%, ${col})`
+  )
 
   $effect(() => {
     let ic = 0
     const iv = setInterval(() => {
-      col = colors[500][ic]
-      ic = (ic + 1) % colors[500].length
+      col = hexes[500][ic]
+      ic = (ic + 1) % hexes[500].length
     }, pulse)
 
     return () => clearInterval(iv)

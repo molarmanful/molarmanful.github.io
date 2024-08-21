@@ -10,7 +10,8 @@
   style:transition="color {pulse}ms, border-color {pulse / 5}ms, transform {pulse /
     5}ms"
   style:filter
-  class="{color} {loaded.x ? 'translate-x-0' : 'translate-x-17'}"
+  style:color
+  class={loaded.x ? 'translate-x-0' : 'translate-x-17'}
   aria-label="nav menu"
   b="1 current focus:white"
   bg="black"
@@ -26,7 +27,7 @@
       <rect
         style:transition="color {pulse / 4}ms {(pulse / 4) * (i + 1)}ms, fill {pulse /
           5}ms"
-        class={color}
+        style:color
         ease-linear
         height="1"
         un-fill="[var(--x,currentColor)]"

@@ -14,7 +14,7 @@
 <div
   style:transition-duration="{pulse}ms"
   style:filter
-  class={color}
+  style:color
   b="1 current"
   bg="black"
   origin="top-right"
@@ -30,7 +30,7 @@
       <li>
         <button
           style:transition="color {pulse}ms, border-color {pulse / 4}ms"
-          class={color}
+          style:color
           b="b-1 transparent focus:white"
           bg-transparent
           ease
