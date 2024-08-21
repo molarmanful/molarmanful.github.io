@@ -15,7 +15,7 @@
   <article
     bind:this={el}
     autofocus
-    b="1 t-0 gray-500"
+    b="1 t-0 bord"
     full
     outline-none
     overflow-x-hidden

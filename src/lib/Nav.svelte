@@ -19,18 +19,19 @@
   }
 
   let factor = $state(0)
-  const filter = $derived(
-    `hue-rotate(${factor * -69}deg) grayscale(${factor * 1.2})`
-  )
+  // const filter = $derived(
+  //   `hue-rotate(${factor * -69}deg) grayscale(${factor * 1.2})`
+  // )
   sfactor(x => (factor = x))
 
-  const pulse = 2000
-  let color = $state('text-gray-500')
+  let col = $state('text-bord')
+  const pulse = $derived(factor > 0.8 ? 400 : 2000)
+  const color = $derived(factor > 0.8 ? 'text-bord' : col)
 
   $effect(() => {
     let ic = 0
     const iv = setInterval(() => {
-      color = colors[500][ic]
+      col = colors[500][ic]
       ic = (ic + 1) % colors[500].length
     }, pulse)
 
@@ -48,7 +49,6 @@
   <NavIcon
     aria-expanded={dropped}
     {color}
-    {filter}
     fixed=""
     flex=""
     onclick={ON}
@@ -75,7 +75,6 @@
     <NavBody
       {GOTO}
       {color}
-      {filter}
       fixed=""
       onmouseleave={OFF}
       {pulse}

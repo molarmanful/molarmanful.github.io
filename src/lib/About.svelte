@@ -34,9 +34,9 @@
   })
 </script>
 
-<Section bord="true" data-aos="fade-in" nav="abt" {top}>
+<Section bord data-aos="fade-in" nav="abt" {top}>
   <div
-    b="3xl:(t l) gray-500"
+    b="3xl:(t l) bord"
     container="lg:"
     mx-auto
     p="t-8 md:(x-8 t-16) xl:x-16"
@@ -54,7 +54,7 @@
       </Heading>
     </div>
 
-    <div divide="lg:x gray-500" flex="lg:" pb="16 lg:32">
+    <div divide="lg:x bord" flex="lg:" pb="16 lg:32">
       <AboutStatement max-w="prose xl:[80ch]" mx="lt-lg:auto" px="2" />
 
       <AboutLinks

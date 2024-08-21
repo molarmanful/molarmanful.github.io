@@ -1,4 +1,5 @@
 import extractorSvelte from '@unocss/extractor-svelte'
+import { colors } from '@unocss/preset-uno/colors'
 import {
   presetAttributify,
   presetIcons,
@@ -9,7 +10,7 @@ import {
 } from 'unocss'
 import { presetScrollbar } from 'unocss-preset-scrollbar'
 
-import { allColors } from './src/lib/js/static'
+import { allColors } from './src/lib/js/static.js'
 
 export default {
   presets: [
@@ -30,9 +31,17 @@ export default {
       },
     }),
   ],
+
   transformers: [transformerDirectives(), transformerVariantGroup()],
   safelist: [...allColors, 'aspect-video', 'aspect-portrait', 'aspect-square'],
+
   theme: {
+    colors: {
+      accent: colors.emerald,
+      bord: colors.indigo,
+      head: colors.pink,
+      text: colors.slate,
+    },
     breakpoints: {
       xs: '320px',
       xs1: '390px',
@@ -60,6 +69,7 @@ export default {
       squarish: '(max-aspect-ratio: 16/11)',
     },
   },
+
   rules: [
     [
       'text-stroked',
@@ -84,9 +94,7 @@ export default {
     [
       'graiscale',
       {
-        'border-color': 'white',
-        filter:
-          'brightness(50%) sepia(1) hue-rotate(180deg) saturate(50%) brightness(86%)',
+        filter: 'url(/colorize.svg#colorize)',
       },
     ],
     [
@@ -113,13 +121,14 @@ export default {
       }),
     ],
   ],
+
   shortcuts: [
     {
-      scroll: 'scrollbar-(~ thumb-color-gray-700 track-color-black)',
+      scroll: 'scrollbar-(~ thumb-color-bord track-color-black)',
       bold: 'font-400 font-2',
       prose: 'hyphens-auto',
       cover:
-        'transition [&:hover,&:focus]:graiscale outline-none b-(1 transparent)',
+        'transition [&:hover,&:focus]:b-bord outline-none b-(1 transparent) relative',
       under: 'underline decoration-(1 offset-[.25rem])',
       focunder:
         '[&:hover,&:focus]:text-white focus:decoration-white decoration-transparent outline-none b-(1 transparent) focus:b-current',

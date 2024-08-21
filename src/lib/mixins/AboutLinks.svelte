@@ -7,7 +7,7 @@
 
   const links = [
     [
-      '[&:hover,&:focus]:text-green',
+      '[&:hover,&:focus]:text-slate',
       'i-ph-github-logo',
       'Github',
       'https://github.com/molarmanful',
@@ -27,7 +27,7 @@
     ],
     // ['i-ph-shopping-cart', 'Society6', 'https://society6.com/bandidojim'],
     [
-      '[&:hover,&:focus]:text-yellow',
+      '[&:hover,&:focus]:text-green',
       'i-ph-golf',
       'PPCG.SE',
       'https://codegolf.stackexchange.com/users/41247/mama-fun-roll',
@@ -47,17 +47,18 @@
   <h2
     data-aos="fade-{fo.matches ? 'in' : 'left'}"
     noprose
-    text="stroked gray-500"
+    text="stroked head"
     type-6
   >
     LINKS
   </h2>
-  <menu id="anchor-abt-links" m="t-2 x-2 lg:t-4" text-gray-500>
+  <menu id="anchor-abt-links" m="t-2 x-2 lg:t-4">
     {#each links as [color, icon, name, link], i}
       <li
         data-aos="fade-{fo.matches ? 'in' : 'left'}"
         data-aos-anchor="#anchor-abt-links"
         data-aos-delay={i * 100}
+        text-accent
       >
         <A class={color} decoration="none!" href={link} item>
           <div class={icon}></div>

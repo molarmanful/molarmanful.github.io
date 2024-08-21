@@ -3,11 +3,10 @@
 </script>
 
 <h2
-  class={bold ? 'bold' : 'font-200'}
+  class={bold ? 'bold text-head' : 'font-200 text-text-300'}
   case="normal"
   font="2"
   mt="6 lg:12"
-  text="gray-300"
   type="5"
   {...props}
 >

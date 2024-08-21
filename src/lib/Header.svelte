@@ -29,7 +29,7 @@
   })
   const title_rel = $derived({
     x: 0.5 * mouse_rel.x,
-    y: 0.5 * mouse_rel.y - !fo.matches * factor * 10,
+    y: 0.5 * mouse_rel.y,
   })
 
   top('top')
@@ -59,7 +59,8 @@
     />
     <div
       style:opacity={1 - factor * 4}
-      style:transform="translateX({title_rel.x}%) translateY({title_rel.y}%)"
+      style:transform="skewX({title_rel.x}deg) skewY({title_rel.y}deg) rotateX({title_rel.x}deg)
+      rotateY({title_rel.y}deg) translateY({-!fo.matches * factor * 10}%)"
       absolute
       inset-0
     >

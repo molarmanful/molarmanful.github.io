@@ -54,6 +54,8 @@
   <Favicons />
 </svelte:head>
 
+<div scanlines text-bord></div>
+
 <main class={loaded.x ? 'opacity-100' : 'opacity-0'} ofade-500 overflow-x-clip>
   {@render children()}
 </main>

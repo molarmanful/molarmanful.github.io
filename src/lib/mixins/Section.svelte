@@ -10,17 +10,14 @@
     ...props
   } = $props()
 
-  let el = $state()
-
   const fo = fadeonly()
 
   top(nav)
 </script>
 
 <section
-  bind:this={el}
   id={nav}
-  b={bord ? 'lt-3xl:t gray-500' : void 0}
+  b={bord ? 'lt-3xl:t bord' : void 0}
   backdrop="grayscale"
   flex=""
   relative=""
@@ -39,7 +36,7 @@
         origin="center"
         rotate="180"
         select="none"
-        text="stroked gray-500"
+        text="stroked bord"
       >
         {name}
       </svelte:element>
@@ -48,7 +45,7 @@
   <div bg="black/80" flex="lt-3xl:1">{@render children()}</div>
   <div
     class="lt-3xl:hidden"
-    b={bord ? 't gray-500' : void 0}
+    b={bord ? 't bord' : void 0}
     bg="black/80"
     flex="3xl:1"
   ></div>

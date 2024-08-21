@@ -1,5 +1,7 @@
 ::selection {
-  @apply text-black bg-white;
+  @apply bg-current;
+  -webkit-text-fill-color: #000;
+  text-fill-color: #000;
 }
 
 html,
@@ -12,7 +14,7 @@ html {
 }
 
 body {
-  @apply scroll font-2 font-300 tracking-wide select-text text-gray-400 type-4;
+  @apply scroll font-2 font-300 tracking-wide select-text text-text type-4;
 }
 
 h1,
@@ -25,23 +27,23 @@ h6 {
 }
 
 a {
-  @apply text-gray-100 duration-500 transition-colors no-underline;
+  @apply text-accent duration-500 transition-colors no-underline;
 }
 
 a:hover,
 a:focus {
-  @apply text-gray-500;
+  @apply text-white;
 }
 
 [scanlines]::after {
-  @apply fixed inset-0 z-40 screen pointer-events-none;
+  @apply fixed inset-0 z-100 screen pointer-events-none opacity-7;
   content: '';
   background: repeating-linear-gradient(
     0deg,
-    rgba(255, 255, 255, 0.05) 0,
-    rgba(255, 255, 255, 0.05) 2px,
-    rgba(0, 0, 0, 0) 2px,
-    rgba(0, 0, 0, 0) 4px
+    currentColor 0,
+    currentColor 1px,
+    #000 1px,
+    #000 2px
   );
 }
 
@@ -54,7 +56,7 @@ a:focus {
 }
 
 .lazy:not(.loaded, [src]) {
-  @apply bg-gray-900;
+  @apply bg-bord-900;
 }
 
 [btn] {
@@ -69,4 +71,12 @@ a:focus {
   [btn]:hover {
     @apply text-white;
   }
+}
+
+:is([cover]:hover, [cover]:focus) img {
+  @apply filter-none;
+}
+
+:is([cover]:hover, [cover]:focus) [colize] {
+  @apply opacity-0;
 }
