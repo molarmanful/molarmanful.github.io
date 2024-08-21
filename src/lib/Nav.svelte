@@ -27,7 +27,7 @@
   let col = $state('#818cf8')
   const pulse = $derived(factor > 0.8 ? 400 : 2000)
   const color = $derived(
-    `color-mix(in oklab, #6366f1 ${Math.min(1, factor) * 100}%, ${col})`
+    `color-mix(in oklab, #818cf8 ${Math.min(1, factor) * 100}%, ${col})`
   )
 
   $effect(() => {
