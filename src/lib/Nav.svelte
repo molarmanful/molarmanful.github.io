@@ -3,7 +3,7 @@
   import { sfactor } from './js/util.svelte'
   import { NavBody, NavIcon } from './mixins'
 
-  let { tops = [] } = $props()
+  const { tops = [] } = $props()
 
   let dropped = $state(false)
   const ON = e => {

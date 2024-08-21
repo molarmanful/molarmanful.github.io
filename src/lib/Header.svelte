@@ -2,7 +2,7 @@
   import { fadeonly, redmote, sfactor } from './js/util.svelte'
   import { HeaderSplash, HeaderTitle } from './mixins'
 
-  let { top = () => {} } = $props()
+  const { top = () => {} } = $props()
 
   let factor = $state(0)
   const rm = redmote()

@@ -1,5 +1,5 @@
 <script>
-  let { children, ...props } = $props()
+  const { children, ...props } = $props()
 </script>
 
 <div

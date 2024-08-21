@@ -1,7 +1,7 @@
 <script>
   import Img from '@zerodevx/svelte-img'
 
-  let { name, b, x = false, mt, ...props } = $props()
+  const { name, b, x = false, mt, ...props } = $props()
 
   let loaded = $state(false)
 </script>

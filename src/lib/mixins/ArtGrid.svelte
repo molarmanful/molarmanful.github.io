@@ -8,7 +8,7 @@
   import { FocusTrap, fadeonly } from '../js/util.svelte'
   import { ArtFilter } from '../mixins'
 
-  let { aos, children, ...props } = $props()
+  const { aos, children, ...props } = $props()
   const D = getContext('D')
   const rfocus = getContext('focus')
   const actives = getContext('actives')

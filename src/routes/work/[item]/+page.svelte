@@ -1,7 +1,7 @@
 <script>
   import { getContext } from 'svelte'
 
-  let { data } = $props()
+  const { data } = $props()
   const D = getContext('D')
 
   const { name } = data

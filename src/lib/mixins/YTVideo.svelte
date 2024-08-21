@@ -1,7 +1,7 @@
 <script>
   import { Video } from '.'
 
-  let { title, a, aspect = 'video' } = $props()
+  const { title, a, aspect = 'video' } = $props()
 </script>
 
 <Video {aspect}>

@@ -1,5 +1,5 @@
 <script>
-  let { t, item = false, class: clazz = '', children, ...props } = $props()
+  const { t, item = false, class: clazz = '', children, ...props } = $props()
 </script>
 
 <a

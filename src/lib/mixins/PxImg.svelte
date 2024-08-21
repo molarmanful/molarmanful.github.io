@@ -1,5 +1,5 @@
 <script>
-  let { src, ...props } = $props()
+  const { src, ...props } = $props()
 
   let el = $state()
   let loaded = $state(false)

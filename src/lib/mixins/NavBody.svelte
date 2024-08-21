@@ -3,7 +3,7 @@
 
   import { FocusTrap } from '../js/util.svelte'
 
-  let { tops = [], GOTO = () => {}, pulse, filter, color, ...props } = $props()
+  const { tops = [], GOTO = () => {}, pulse, filter, color, ...props } = $props()
 
   const { useFocusTrap } = new FocusTrap({
     immediate: true,

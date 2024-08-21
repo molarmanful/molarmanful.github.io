@@ -1,7 +1,7 @@
 <script>
   import { getContext } from 'svelte'
 
-  let { pulse, filter, color, ...props } = $props()
+  const { pulse, filter, color, ...props } = $props()
 
   const loaded = getContext('loaded')
 </script>

@@ -3,7 +3,7 @@
 
   import { A } from '.'
 
-  let { ...props } = $props()
+  const { ...props } = $props()
 
   const links = [
     [

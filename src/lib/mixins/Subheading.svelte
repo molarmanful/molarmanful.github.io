@@ -1,5 +1,5 @@
 <script>
-  let { bold, children, ...props } = $props()
+  const { bold, children, ...props } = $props()
 </script>
 
 <h2

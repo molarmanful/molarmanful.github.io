@@ -2,7 +2,7 @@
   import lev from './js/lev'
   import { AboutLinks, AboutStatement, Heading, Section } from './mixins'
 
-  let { top = () => {} } = $props()
+  const { top = () => {} } = $props()
 
   const bank = [
     'WEIRD',

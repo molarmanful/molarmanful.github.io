@@ -1,7 +1,7 @@
 <script>
   import { A, Subheading, Text } from '.'
 
-  let { ...props } = $props()
+  const { ...props } = $props()
 </script>
 
 {#snippet h3(text, c = 'text-bord')}

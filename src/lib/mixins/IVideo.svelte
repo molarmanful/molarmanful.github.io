@@ -3,7 +3,7 @@
 
   import { Video } from '.'
 
-  let { a, aspect = 'square' } = $props()
+  const { a, aspect = 'square' } = $props()
   const vloader = getContext('vloader')
 
   let el = $state()

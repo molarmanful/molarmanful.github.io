@@ -5,7 +5,7 @@
 
   import { FocusTrap } from '../js/util.svelte'
 
-  let { aos, chosen, ...props } = $props()
+  const { aos, chosen, ...props } = $props()
 
   const D = getContext('D')
   const rfocus = getContext('focus')

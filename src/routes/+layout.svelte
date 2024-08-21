@@ -11,7 +11,7 @@
   import 'aos/dist/aos.css'
   import '../app.css'
 
-  let { children } = $props()
+  const { children } = $props()
 
   setContext('D', D)
 

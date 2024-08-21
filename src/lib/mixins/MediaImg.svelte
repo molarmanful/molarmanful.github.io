@@ -3,7 +3,7 @@
 
   import { Image } from '.'
 
-  let { name, ...props } = $props()
+  const { name, ...props } = $props()
   const D = getContext('D')
 </script>
 

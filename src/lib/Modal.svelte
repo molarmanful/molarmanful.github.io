@@ -5,7 +5,7 @@
   import { FocusTrap } from './js/util.svelte'
   import { A, ItemBar, ItemBody } from './mixins'
 
-  let { selected } = $props()
+  const { selected } = $props()
   const D = getContext('D')
 
   const Item = $derived(D.items.get(selected)?.default)

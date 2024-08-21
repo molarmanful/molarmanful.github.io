@@ -3,7 +3,7 @@
 
   import { SvgEl } from '.'
 
-  let { scale, splash_rel, ...props } = $props()
+  const { scale, splash_rel, ...props } = $props()
 </script>
 
 <svg

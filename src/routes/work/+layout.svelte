@@ -6,7 +6,7 @@
   import { FocusTrap } from '$lib/js/util.svelte'
   import { A, ItemBar, ItemBody } from '$lib/mixins'
 
-  let { data, children } = $props()
+  const { data, children } = $props()
 
   const crumbs = $derived(
     data.pathname.split`/`

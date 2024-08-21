@@ -3,7 +3,7 @@
 
   import { pushState } from '$app/navigation'
 
-  let { top } = $props()
+  const { top } = $props()
 
   const ON = x => e => {
     e.preventDefault()

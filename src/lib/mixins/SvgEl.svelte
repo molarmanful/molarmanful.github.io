@@ -5,7 +5,7 @@
 
   import { colors } from '../js/static'
 
-  let { len, name, ...props } = $props()
+  const { len, name, ...props } = $props()
   const loaded = getContext('loaded')
 
   const b = 500

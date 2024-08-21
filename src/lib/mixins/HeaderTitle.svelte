@@ -1,5 +1,5 @@
 <script>
-  let { mouse_rel, ...props } = $props()
+  const { mouse_rel, ...props } = $props()
 
   const aber = 4
   const shad = 4
