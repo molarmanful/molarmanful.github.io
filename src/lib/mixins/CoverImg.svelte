@@ -24,6 +24,5 @@
   full
   inset-0
   mix-blend-color
-  opacity-50
   transition-opacity
 ></div>
