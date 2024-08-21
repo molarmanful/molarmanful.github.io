@@ -41,6 +41,8 @@ export default {
       bord: colors.indigo,
       head: colors.teal,
       text: colors.slate,
+      yes: colors.teal,
+      no: colors.pink,
     },
     breakpoints: {
       xs: '320px',
