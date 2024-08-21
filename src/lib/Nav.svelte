@@ -1,9 +1,11 @@
 <script>
+  import { getContext } from 'svelte'
+
   import { hexes } from './js/static'
-  import { sfactor } from './js/util.svelte'
   import { NavBody, NavIcon } from './mixins'
 
   const { tops = [] } = $props()
+  const factor = getContext('factor')
 
   let dropped = $state(false)
   const ON = e => {
@@ -18,17 +20,15 @@
     scrollTo({ top: document.getElementById(top).offsetTop })
   }
 
-  let factor = $state(0)
   // const filter = $derived(
-  //   `hue-rotate(${factor * -69}deg) grayscale(${factor * 1.2})`
+  //   `hue-rotate(${factor.x * -69}deg) grayscale(${factor.x * 1.2})`
   // )
-  sfactor(x => (factor = x))
 
   let col = $state('#818cf8')
   const pls = $state(2000)
-  const pulse = $derived(factor > 0.5 ? 0 : pls)
+  const pulse = $derived(factor.x > 0.5 ? 0 : pls)
   const color = $derived(
-    `color-mix(in oklab, #818cf8 ${Math.max(0, Math.min(1, factor * 2 - 1)) * 100}%, ${col})`
+    `color-mix(in oklab, #818cf8 ${Math.max(0, Math.min(1, factor.x * 2 - 1)) * 100}%, ${col})`
   )
 
   $effect(() => {

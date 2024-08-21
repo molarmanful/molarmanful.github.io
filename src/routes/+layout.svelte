@@ -5,7 +5,7 @@
   import { browser } from '$app/environment'
   import Favicons from '$lib/Favicons.svelte'
   import D from '$lib/js/D'
-
+  import { sfactor } from '$lib/js/util.svelte'
   import '@unocss/reset/tailwind-compat.css'
   import 'uno.css'
   import 'aos/dist/aos.css'
@@ -24,6 +24,10 @@
     restore: x => (actives.x = new SvelteSet(x)),
   }
   setContext('actives', actives)
+
+  const factor = $state({ x: 0 })
+  sfactor(x => (factor.x = x))
+  setContext('factor', factor)
 
   let vloader
   if (browser)
