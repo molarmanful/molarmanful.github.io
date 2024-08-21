@@ -84,10 +84,10 @@ a:focus {
   }
 
   [cover] img {
-    @apply brightness-69 saturation-20;
+    filter: contrast(0.8) brightness(0.5);
   }
 
   [colize] {
-    @apply opacity-50;
+    @apply opacity-80;
   }
 }

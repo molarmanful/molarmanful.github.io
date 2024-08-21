@@ -3,7 +3,7 @@
 
   import { Image } from '.'
 
-  const { name, ...props } = $props()
+  const { name, i, ...props } = $props()
   const D = getContext('D')
 </script>
 
@@ -16,11 +16,11 @@
   {...props}
 />
 <div
+  class={i[0] % 2 == i[1] % 2 ? 'bg-head' : 'bg-accent'}
   absolute
-  bg-accent
   colize
   full
   inset-0
   mix-blend-color
-  transition-opacity
+  transition-400
 ></div>

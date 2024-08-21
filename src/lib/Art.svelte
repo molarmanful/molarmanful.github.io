@@ -24,7 +24,7 @@
       <A href="/work" item un-text="stroked head! hover:white!">WORK</A>
     </Heading>
     <ArtGrid aos>
-      {#snippet children(name, on)}
+      {#snippet children(name, on, i)}
         <button
           aria-label="open project entry: {name}"
           bg-transparent
@@ -33,7 +33,7 @@
           onclick={ON(name)}
           w-full
         >
-          <CoverImg {name} alt="Open project entry: {name}." />
+          <CoverImg {name} alt="Open project entry: {name}." {i} />
         </button>
       {/snippet}
     </ArtGrid>

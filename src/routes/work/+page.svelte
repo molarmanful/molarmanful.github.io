@@ -13,7 +13,7 @@
 <div container="lg:" m-auto p="x-5 y-5 lg:y-16" w-full>
   <Heading align="center" mb="5 md:8">WORK</Heading>
   <ArtGrid>
-    {#snippet children(name, on)}
+    {#snippet children(name, on, i)}
       <A
         aria-disabled={!on}
         cover=""
@@ -22,7 +22,7 @@
         t
         tabindex={on ? 0 : void 0}
       >
-        <CoverImg {name} alt="Open project entry: {name}." />
+        <CoverImg {name} alt="Open project entry: {name}." {i} />
       </A>
     {/snippet}
   </ArtGrid>

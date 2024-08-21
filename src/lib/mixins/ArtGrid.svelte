@@ -110,7 +110,7 @@
       flex
       transition-filter,opacity,transform
     >
-      {@render children(name, on)}
+      {@render children(name, on, [(i / cs) | 0, i % cs])}
     </div>
   {/each}
 </div>
