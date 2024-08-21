@@ -71,7 +71,7 @@
           onclick={() => {
             actives.x.clear()
           }}
-          text-head
+          text-no
         >
           clear
         </button>
@@ -85,7 +85,7 @@
         m-1.5
       >
         <button
-          class={actives.x.has(tag) ? 'text-accent'
+          class={actives.x.has(tag) ? 'text-yes'
           : xs.has(tag) ? 'text-bord'
           : 'text-bord-900 pointer-events-none'}
           aria-label="filter by tag: {tag}"
