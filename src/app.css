@@ -67,6 +67,10 @@ a:focus {
   @apply text-white;
 }
 
+[colize] {
+  @apply opacity-0;
+}
+
 :is([cover]:hover, [cover]:focus) img {
   @apply filter-none;
 }
