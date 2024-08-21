@@ -3,7 +3,14 @@
 
   import { FocusTrap } from '../js/util.svelte'
 
-  const { tops = [], GOTO = () => {}, pulse, filter, color, ...props } = $props()
+  const {
+    tops = [],
+    GOTO = () => {},
+    pulse,
+    filter,
+    color,
+    ...props
+  } = $props()
 
   const { useFocusTrap } = new FocusTrap({
     immediate: true,
@@ -29,12 +36,12 @@
     {#each tops as top}
       <li>
         <button
-          style:transition="color {pulse}ms, border-color {pulse / 4}ms"
+          style:transition="color {pulse}ms, border-color 400ms, filter 400ms"
           style:color
-          b="b-1 transparent focus:white"
+          b="b-1 transparent [&:hover,&:focus]:white"
           bg-transparent
           ease
-          filter="[&:hover,&:focus]:(brightness-0 invert)"
+          fake="[&:hover,&:focus]:white"
           onclick={GOTO(top)}
           outline-none
         >
