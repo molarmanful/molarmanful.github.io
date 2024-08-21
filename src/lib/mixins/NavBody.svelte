@@ -27,6 +27,7 @@
   origin="top-right"
   p="4"
   role="navigation"
+  text="bord"
   transition="color"
   use:useFocusTrap
   transition:scale={{ duration: 200 }}
@@ -44,6 +45,7 @@
           fake="[&:hover,&:focus]:white"
           onclick={GOTO(top)}
           outline-none
+          text-bord
         >
           {top.toUpperCase()}
         </button>

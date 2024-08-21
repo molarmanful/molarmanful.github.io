@@ -25,19 +25,20 @@
   sfactor(x => (factor = x))
 
   let col = $state('#818cf8')
-  const pulse = $derived(factor > 0.8 ? 400 : 2000)
+  const pls = $state(2000)
+  const pulse = $derived(factor > 0.5 ? 0 : pls)
   const color = $derived(
-    `color-mix(in oklab, #818cf8 ${Math.min(1, factor) * 100}%, ${col})`
+    `color-mix(in oklab, #818cf8 ${Math.max(0, Math.min(1, factor * 2 - 1)) * 100}%, ${col})`
   )
 
   $effect(() => {
     let ic = 0
-    const iv = setInterval(() => {
+    const t = setInterval(() => {
       col = hexes[500][ic]
       ic = (ic + 1) % hexes[500].length
-    }, pulse)
+    }, pls)
 
-    return () => clearInterval(iv)
+    return () => clearInterval(t)
   })
 </script>
 
