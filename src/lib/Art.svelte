@@ -12,7 +12,7 @@
   }
 </script>
 
-<Section name="WORK" data-aos="fade-in" data-aos-anchor="#abt" nav="art" {top}>
+<Section name="WORK" nav="art" {top}>
   <div
     b="3xl:l bord"
     container="lg:"
