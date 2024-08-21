@@ -10,10 +10,8 @@
 <Image
   {name}
   b={D.covers}
-  brightness="69"
   draggable="false"
   mt="0"
-  saturate="20"
   transition="filter"
   {...props}
 />
