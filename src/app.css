@@ -67,16 +67,20 @@ a:focus {
   @apply text-white;
 }
 
-@media (hover: hover) {
-  [btn]:hover {
-    @apply text-white;
-  }
-}
-
 :is([cover]:hover, [cover]:focus) img {
   @apply filter-none;
 }
 
 :is([cover]:hover, [cover]:focus) [colize] {
   @apply opacity-0;
+}
+
+@media (hover: hover) {
+  [btn]:hover {
+    @apply text-white;
+  }
+  
+  [colize] {
+    @apply opacity-50;
+  }
 }
