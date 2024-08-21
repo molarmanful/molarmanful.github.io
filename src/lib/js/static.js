@@ -15,5 +15,5 @@ export const allColors = c.weights.flatMap(w =>
 )
 
 export const hexes = Object.fromEntries(
-  c.weights.map(w => [w, c.colors.map(c => [c, unoColors[c][w]])])
+  c.weights.map(w => [w, c.colors.map(c => unoColors[c][w])])
 )

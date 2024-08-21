@@ -117,6 +117,12 @@ export default {
       },
     ],
     [
+      'fake-white',
+      {
+        filter: 'contrast(0) brightness(2)',
+      },
+    ],
+    [
       /var_x-(.+)/,
       ([, x]) => ({
         '--x': x,

@@ -82,11 +82,11 @@ a:focus {
   [btn]:hover {
     @apply text-white;
   }
-  
+
   [cover] img {
     @apply brightness-69 saturation-20;
   }
-  
+
   [colize] {
     @apply opacity-50;
   }
