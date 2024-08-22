@@ -65,13 +65,9 @@ export default class {
           document.querySelector(el.dataset.aosAnchor) || el
         : el
       if (hard) {
-        el.classList.add('suppress')
         if (el1.getBoundingClientRect().top < innerHeight)
           el.classList.add('aos-animate')
         else el.classList.remove('aos-animate')
-        requestAnimationFrame(() => {
-          el.classList.remove('suppress')
-        })
       }
       this.io.observe(el1)
     }

@@ -78,6 +78,10 @@ a:focus {
   @apply opacity-0;
 }
 
+.suppress {
+  @apply transition-none!;
+}
+
 @media (hover: hover) {
   [btn]:hover {
     @apply text-white;

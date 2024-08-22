@@ -5,7 +5,7 @@
 
   import { FocusTrap } from '../js/util.svelte'
 
-  const { aos, chosen, ...props } = $props()
+  let { aos, anim = $bindable(), chosen, ...props } = $props()
 
   const D = getContext('D')
   const rfocus = getContext('focus')
@@ -69,6 +69,7 @@
           aria-label="clear all filtered tags"
           btn
           onclick={() => {
+            anim = void 0
             actives.x.clear()
           }}
           text-no
@@ -92,6 +93,7 @@
           btn
           disabled={not_xs.has(tag)}
           onclick={e => {
+            anim = void 0
             if (actives.x.has(tag)) actives.x.delete(tag)
             else actives.x.add(tag)
             e.target.blur()

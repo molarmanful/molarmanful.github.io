@@ -4,6 +4,7 @@
 
   import { browser } from '$app/environment'
   import Favicons from '$lib/Favicons.svelte'
+  import AOS from '$lib/js/aos.svelte'
   import D from '$lib/js/D'
   import { sfactor } from '$lib/js/util.svelte'
   import '@unocss/reset/tailwind-compat.css'
@@ -44,11 +45,14 @@
     )
   setContext('vloader', vloader)
 
+  let aos = new AOS()
+
   if (browser) {
     history.scrollRestoration = 'manual'
   }
 
   $effect(() => {
+    aos.init()
     scrollTo({ top: 0, behavior: 'instant' })
     loaded.x = true
   })

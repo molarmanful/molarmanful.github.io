@@ -63,6 +63,8 @@
   )
   const not_chosen = $derived(covers.difference(chosen))
   const ordered = $derived([chosen, not_chosen].flatMap(a => [...a]))
+
+  let anim = $state(true)
 </script>
 
 <svelte:window
@@ -90,7 +92,7 @@
 />
 <svelte:document bind:activeElement />
 
-<ArtFilter {aos} {chosen} mb="3.5 md:6.5" />
+<ArtFilter {aos} {chosen} mb="3.5 md:6.5" bind:anim />
 
 <div
   bind:this={el}
@@ -104,10 +106,15 @@
   {#each ordered as name, i (name)}
     {@const on = chosen.has(name)}
     <div
-      class={on ? '' : 'brightness-10 pointer-events-none!'}
-      data-aos={aos && `fade-${fo.matches ? 'in' : 'up'}`}
-      data-aos-delay={aos && 100 * (i % cs)}
+      class="{on ? '' : 'brightness-10 pointer-events-none!'} {anim ?
+        'aos-animate'
+      : 'suppress'}"
+      data-aos={aos && anim && `fade-${fo.matches ? 'in' : 'up'}`}
+      data-aos-delay={aos && anim && 100 * (i % cs)}
       flex
+      ontransitionend={() => {
+        anim = true
+      }}
       transition-filter,opacity,transform
     >
       {@render children(name, on, [(i / cs) | 0, i % cs])}

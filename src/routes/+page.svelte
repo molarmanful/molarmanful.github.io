@@ -1,5 +1,4 @@
 <script>
-  import AOS from 'aos'
   import { getContext } from 'svelte'
   import { derived } from 'svelte/store'
   import { classList } from 'svelte-body'
@@ -30,10 +29,6 @@
     },
     {}
   )
-
-  $effect(() => {
-    AOS.init()
-  })
 </script>
 
 <svelte:head>
