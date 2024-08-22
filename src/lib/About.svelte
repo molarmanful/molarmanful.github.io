@@ -55,7 +55,7 @@
     </div>
 
     <div divide="lg:x bord" flex="lg:" pb="16 lg:32">
-      <AboutStatement max-w="prose xl:[80ch]" mx="lt-lg:auto" px="2" />
+      <AboutStatement max-w="prose 2xl:[80ch]" mx="lt-lg:auto" px="2" />
 
       <AboutLinks
         m="t-8 x-auto lg:(t-12 l-auto r-unset)"
