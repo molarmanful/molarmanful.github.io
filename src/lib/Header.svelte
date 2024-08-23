@@ -47,8 +47,15 @@
 />
 
 <header id="top" relative screen>
-  <div style:filter="hue-rotate({factor.x * -69}deg)" fixed flex full>
+  <div
+    style:filter="hue-rotate({factor.x * -69}deg)"
+    fixed
+    flex
+    full
+    will-change-transform
+  >
     <HeaderSplash
+      class={factor.x >= 1 ? 'scale-100' : ''}
       absolute=""
       h="lvh"
       mx="auto"
@@ -56,28 +63,20 @@
       {scale}
       {splash_rel}
       top="0"
-      un-transform="~ translate-x-[var(--t-x,0%)] media-squarish:translate-x-[calc(50%+var(--t-x,0%))]"
+      un-transform="gpu translate-x-[var(--t-x,0%)] media-squarish:translate-x-[calc(50%+var(--t-x,0%))]"
     />
     <div
-      style:opacity={1 - factor.x * 4}
-      style:transform="skewX({title_rel.x}deg) skewY({title_rel.y}deg) rotateX({title_rel.x}deg)
-      rotateY({title_rel.y}deg) translateY({-!fo.matches * factor.x * 10}%)"
+      style:opacity={Math.max(0, 1 - factor.x * 2)}
+      style:--un-skew-x="{title_rel.x}deg"
+      style:--un-skew-y="{title_rel.y}deg"
+      style:--un-rotate-x="{title_rel.y}deg"
+      style:--un-rotate-y="{title_rel.y}deg"
+      style:--un-translate-y="{-!fo.matches * (1 - fac_inv) * 10}%"
       absolute
       inset-0
+      transform-gpu
     >
       <HeaderTitle {mouse_rel} />
     </div>
-    <!--
-      <div
-        style:opacity={1 - factor.x * 2}
-        bg="lt-xl:black/42"
-        m-auto
-        mix-blend-difference
-        p-8
-        transition="opacity-400 delay-100"
-      >
-        <HeaderSubtitle block="" m="t-4 l-1 lg:l-2" />
-      </div>
-      -->
   </div>
 </header>
