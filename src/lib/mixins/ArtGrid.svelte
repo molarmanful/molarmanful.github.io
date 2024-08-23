@@ -9,10 +9,8 @@
   import { ArtFilter } from '../mixins'
 
   const { aos, children, ...props } = $props()
-  const D = getContext('D')
+  const { D, actives, aos: AOS } = getContext('D')
   const rfocus = getContext('focus')
-  const actives = getContext('actives')
-  const AOS = getContext('aos')
 
   const { activate, deactivate, useFocusTrap } = new FocusTrap({
     clickOutsideDeactivates: true,

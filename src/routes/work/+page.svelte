@@ -3,7 +3,7 @@
 
   import { A, ArtGrid, CoverImg, Heading } from '$lib/mixins'
 
-  const D = getContext('D')
+  const { D } = getContext('D')
 </script>
 
 <svelte:head>

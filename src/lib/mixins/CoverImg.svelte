@@ -4,7 +4,7 @@
   import { Image } from '.'
 
   const { name, i, ...props } = $props()
-  const D = getContext('D')
+  const { D } = getContext('D')
 </script>
 
 <Image

@@ -5,7 +5,7 @@
   import { HeaderSplash, HeaderTitle } from './mixins'
 
   const { top = () => {} } = $props()
-  const factor = getContext('factor')
+  const { factor } = getContext('D')
 
   const rm = redmote()
   const fo = fadeonly()

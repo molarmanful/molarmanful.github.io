@@ -6,7 +6,7 @@
   import { A, ItemBar, ItemBody } from './mixins'
 
   const { selected } = $props()
-  const D = getContext('D')
+  const { D } = getContext('D')
 
   const Item = $derived(D.items.get(selected)?.default)
 

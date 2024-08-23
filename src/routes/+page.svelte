@@ -12,7 +12,7 @@
   import Modal from '$lib/Modal.svelte'
   import Nav from '$lib/Nav.svelte'
 
-  const D = getContext('D')
+  const { D } = getContext('D')
 
   const tops = $state([])
 

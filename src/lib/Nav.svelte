@@ -5,7 +5,7 @@
   import { NavBody, NavIcon } from './mixins'
 
   const { tops = [] } = $props()
-  const factor = getContext('factor')
+  const { factor } = getContext('D')
 
   let dropped = $state(false)
   const ON = e => {

@@ -14,21 +14,16 @@
 
   const { children } = $props()
 
-  setContext('D', D)
-
   const loaded = $state({ x: false })
-  setContext('loaded', loaded)
 
   const actives = $state({ x: new SvelteSet() })
   export const snapshot = {
     capture: () => [...actives.x],
     restore: x => (actives.x = new SvelteSet(x)),
   }
-  setContext('actives', actives)
 
   const factor = $state({ x: 0 })
   sfactor(x => (factor.x = x))
-  setContext('factor', factor)
 
   let vloader
   if (browser)
@@ -43,10 +38,10 @@
       },
       { threshold: 0.1 }
     )
-  setContext('vloader', vloader)
 
   let aos = new AOS()
-  setContext('aos', aos)
+
+  setContext('D', { D, loaded, actives, factor, vloader, aos })
 
   if (browser) {
     history.scrollRestoration = 'manual'

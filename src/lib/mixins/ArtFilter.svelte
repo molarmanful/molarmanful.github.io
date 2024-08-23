@@ -7,9 +7,8 @@
 
   let { aos, anim = $bindable(), chosen, ...props } = $props()
 
-  const D = getContext('D')
+  const { D, actives } = getContext('D')
   const rfocus = getContext('focus')
-  const actives = getContext('actives')
 
   const { activate, deactivate, useFocusTrap } = new FocusTrap({
     clickOutsideDeactivates: true,

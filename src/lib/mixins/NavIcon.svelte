@@ -3,7 +3,7 @@
 
   const { pulse, filter, color, ...props } = $props()
 
-  const loaded = getContext('loaded')
+  const { loaded } = getContext('D')
 </script>
 
 <button
