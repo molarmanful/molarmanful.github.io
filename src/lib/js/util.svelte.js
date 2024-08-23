@@ -7,7 +7,13 @@ export { default as FocusTrap } from './FocusTrap.svelte'
 export const sfactor = f => {
   if (!browser) return
 
-  const g = () => f(scrollY / innerHeight || 0)
+  let stop = false
+  const g = () => {
+    if (stop) return
+    stop = true
+    f(scrollY / innerHeight || 0)
+    setTimeout(() => (stop = false), 50)
+  }
 
   useEventListener(window, 'scroll', g)
   useEventListener(window, 'resize', g)
@@ -15,7 +21,7 @@ export const sfactor = f => {
 
 export const clickout = (node, { f = () => {} }) => {
   if (!browser) return
-  
+
   const g = e => {
     if (node && !node.contains(e.target) && !e.defaultPrevented) f(e)
   }

@@ -28,6 +28,7 @@
       object-contain
       rotate-z--10
       stroke="hsl(0, 100%, {(1 - dist) * 50 + 50}%)"
+      transition-filter-100
       un-stroke="4 md:2 lg:1"
     >
       <use href="/benpang.svg#main" vector-effect="non-scaling-stroke"></use>

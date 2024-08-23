@@ -13,7 +13,7 @@
 
   let innerWidth = $state(0)
   let innerHeight = $state(0)
-  const mouse = $state({ x: 0.5, y: 0.5 })
+  const mouse = $state({ x: 0.5, y: 0.5, stop: false })
   const mouse_rel = $derived(
     rm.matches || factor.x >= 1 ?
       { x: 0, y: 0 }
@@ -38,9 +38,11 @@
 
 <svelte:window
   onmousemove={({ clientX, clientY }) => {
-    if (fo.matches) return
+    if (fo.matches || mouse.stop) return
+    mouse.stop = true
     mouse.x = clientX / innerWidth
     mouse.y = clientY / innerHeight
+    setTimeout(() => (mouse.stop = false), 50)
   }}
   bind:innerWidth
   bind:innerHeight
@@ -49,10 +51,10 @@
 <header id="top" relative screen>
   <div
     style:filter="hue-rotate({factor.x * -69}deg)"
+    class={fo.matches || !fac_inv ? '' : 'will-change-transform,filter,opacity'}
     fixed
     flex
     full
-    will-change-transform
   >
     <HeaderSplash
       class={factor.x >= 1 ? 'scale-100' : ''}
@@ -63,7 +65,8 @@
       {scale}
       {splash_rel}
       top="0"
-      un-transform="gpu translate-x-[var(--t-x,0%)] media-squarish:translate-x-[calc(50%+var(--t-x,0%))]"
+      transition="transform-100"
+      un-transform="~ translate-x-[var(--t-x,0%)] media-squarish:translate-x-[calc(50%+var(--t-x,0%))]"
     />
     <div
       style:opacity={Math.max(0, 1 - factor.x * 2)}
@@ -73,8 +76,10 @@
       style:--un-rotate-y="{title_rel.y}deg"
       style:--un-translate-y="{-!fo.matches * (1 - fac_inv) * 10}%"
       absolute
+      duration-100
       inset-0
-      transform-gpu
+      transform
+      transition-transform,opacity
     >
       <HeaderTitle {mouse_rel} />
     </div>
