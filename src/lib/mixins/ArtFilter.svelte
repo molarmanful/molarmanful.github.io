@@ -33,6 +33,13 @@
   const alltags = $derived(
     [actives.x, not_actives, not_xs].flatMap(a => [...a].sort())
   )
+
+  const handleAnim = () => {
+    anim = void 0
+    setTimeout(() => {
+      anim = true
+    }, 250)
+  }
 </script>
 
 <svelte:window
@@ -69,7 +76,7 @@
           aria-label="clear all filtered tags"
           btn
           onclick={() => {
-            anim = void 0
+            handleAnim()
             actives.x.clear()
           }}
           text-no
@@ -93,7 +100,7 @@
           btn
           disabled={not_xs.has(tag)}
           onclick={e => {
-            anim = void 0
+            handleAnim()
             if (actives.x.has(tag)) actives.x.delete(tag)
             else actives.x.add(tag)
             e.target.blur()

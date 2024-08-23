@@ -16,7 +16,7 @@
   {...props}
 />
 <div
-  class={i[0] % 2 == i[1] % 2 ? 'bg-head' : 'bg-accent'}
+  class={i ? 'bg-head' : 'bg-accent'}
   absolute
   colize
   full

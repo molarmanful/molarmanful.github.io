@@ -64,12 +64,14 @@ export default class {
         el.dataset.aosAnchor ?
           document.querySelector(el.dataset.aosAnchor) || el
         : el
-      if (hard) {
-        if (el1.getBoundingClientRect().top < innerHeight)
-          el.classList.add('aos-animate')
-        else el.classList.remove('aos-animate')
-      }
+      if (hard) this.manual(el1, el)
       this.io.observe(el1)
     }
+  }
+
+  manual(a, b) {
+    if (a.getBoundingClientRect().top < innerHeight)
+      b.classList.add('aos-animate')
+    else b.classList.remove('aos-animate')
   }
 }

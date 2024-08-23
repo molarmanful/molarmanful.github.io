@@ -12,6 +12,7 @@
   const D = getContext('D')
   const rfocus = getContext('focus')
   const actives = getContext('actives')
+  const AOS = getContext('aos')
 
   const { activate, deactivate, useFocusTrap } = new FocusTrap({
     clickOutsideDeactivates: true,
@@ -65,6 +66,12 @@
   const ordered = $derived([chosen, not_chosen].flatMap(a => [...a]))
 
   let anim = $state(true)
+  let animels = $state([])
+
+  $effect(() => {
+    if (!anim) return
+    for (const el of animels) AOS.manual(el, el)
+  })
 </script>
 
 <svelte:window
@@ -106,18 +113,16 @@
   {#each ordered as name, i (name)}
     {@const on = chosen.has(name)}
     <div
-      class="{on ? '' : 'brightness-10 pointer-events-none!'} {anim ?
-        'aos-animate'
-      : 'suppress'}"
+      bind:this={animels[i]}
+      class="{on ? '' : 'brightness-10 pointer-events-none!'} {anim ? '' : (
+        'suppress'
+      )}"
       data-aos={aos && anim && `fade-${fo.matches ? 'in' : 'up'}`}
       data-aos-delay={aos && anim && 100 * (i % cs)}
       flex
-      ontransitionend={() => {
-        anim = true
-      }}
       transition-filter,opacity,transform
     >
-      {@render children(name, on, [(i / cs) | 0, i % cs])}
+      {@render children(name, on, ((i / cs) | 0) % 2 == (i % cs) % 2)}
     </div>
   {/each}
 </div>

@@ -46,6 +46,7 @@
   setContext('vloader', vloader)
 
   let aos = new AOS()
+  setContext('aos', aos)
 
   if (browser) {
     history.scrollRestoration = 'manual'
