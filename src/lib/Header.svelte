@@ -1,19 +1,13 @@
 <script>
   import { getContext } from 'svelte'
 
-  import { fadeonly, redmote } from './js/util.svelte'
   import { HeaderSplash, HeaderTitle } from './mixins'
 
   const { top = () => {} } = $props()
-  const { factor } = getContext('D')
+  const { factor, mouse, fo, rm } = getContext('D')
 
-  const rm = redmote()
-  const fo = fadeonly()
   const fac_inv = $derived(Math.max(0, 1 - factor.x))
 
-  let innerWidth = $state(0)
-  let innerHeight = $state(0)
-  const mouse = $state({ x: 0.5, y: 0.5, stop: false })
   const mouse_rel = $derived(
     rm.matches || factor.x >= 1 ?
       { x: 0, y: 0 }
@@ -35,18 +29,6 @@
 
   top('top')
 </script>
-
-<svelte:window
-  onmousemove={({ clientX, clientY }) => {
-    if (fo.matches || mouse.stop) return
-    mouse.stop = true
-    mouse.x = clientX / innerWidth
-    mouse.y = clientY / innerHeight
-    setTimeout(() => (mouse.stop = false), 50)
-  }}
-  bind:innerWidth
-  bind:innerHeight
-/>
 
 <header id="top" relative screen>
   <div

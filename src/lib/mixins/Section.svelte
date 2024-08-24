@@ -1,5 +1,5 @@
 <script>
-  import { fadeonly } from '../js/util.svelte'
+  import { getContext } from 'svelte'
 
   let {
     name = '',
@@ -9,8 +9,7 @@
     children,
     ...props
   } = $props()
-
-  const fo = fadeonly()
+  const { fo } = getContext('D')
 
   top(nav)
 </script>

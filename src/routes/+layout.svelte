@@ -2,12 +2,13 @@
   import { setContext } from 'svelte'
   import { SvelteSet } from 'svelte/reactivity'
 
+
   import { browser } from '$app/environment'
   import Favicons from '$lib/Favicons.svelte'
   import AOS from '$lib/js/aos.svelte'
   import D from '$lib/js/D'
-  import { sfactor } from '$lib/js/util.svelte'
-  import '@unocss/reset/tailwind-compat.css'
+  import { fadeonly, redmote , sfactor } from '$lib/js/util.svelte'
+    import '@unocss/reset/tailwind-compat.css'
   import 'uno.css'
   import 'aos/dist/aos.css'
   import '../app.css'
@@ -25,6 +26,9 @@
   const factor = $state({ x: 0 })
   sfactor(x => (factor.x = x))
 
+  const fo = fadeonly()
+  const rm = redmote()
+
   let vloader
   if (browser)
     vloader = new IntersectionObserver(
@@ -41,7 +45,12 @@
 
   let aos = new AOS()
 
-  setContext('D', { D, loaded, actives, factor, vloader, aos })
+  const mouse = $state({ x: 0.5, y: 0.5, stop: false })
+
+  let innerWidth = $state(0)
+  let innerHeight = $state(0)
+
+  setContext('D', { D, loaded, actives, factor, fo, rm, vloader, aos, mouse })
 
   if (browser) {
     history.scrollRestoration = 'manual'
@@ -52,6 +61,18 @@
     loaded.x = true
   })
 </script>
+
+<svelte:window
+  onmousemove={({ clientX, clientY }) => {
+    if (fo.matches || mouse.stop) return
+    mouse.stop = true
+    mouse.x = clientX / innerWidth
+    mouse.y = clientY / innerHeight
+    setTimeout(() => (mouse.stop = false), 50)
+  }}
+  bind:innerWidth
+  bind:innerHeight
+/>
 
 <svelte:head>
   <Favicons />

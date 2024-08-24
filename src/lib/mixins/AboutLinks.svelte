@@ -1,9 +1,10 @@
 <script>
-  import { fadeonly } from '../js/util.svelte'
+  import { getContext } from 'svelte'
 
   import { A } from '.'
 
   const { ...props } = $props()
+  const { fo } = getContext('D')
 
   const links = [
     [
@@ -39,8 +40,6 @@
       'https://docs.google.com/document/d/13Hy3akmfz9tvyFH6awZ8riWSCivtYQZa3TE-f_CGszI/edit?usp=sharing',
     ],
   ]
-
-  const fo = fadeonly()
 </script>
 
 <div prose="" {...props}>

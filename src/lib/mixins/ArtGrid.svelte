@@ -5,11 +5,11 @@
   import { getContext } from 'svelte'
   import { tabbable } from 'tabbable'
 
-  import { FocusTrap, fadeonly } from '../js/util.svelte'
+  import { FocusTrap } from '../js/util.svelte'
   import { ArtFilter } from '../mixins'
 
   const { aos, children, ...props } = $props()
-  const { D, actives, aos: AOS } = getContext('D')
+  const { D, actives, aos: AOS, fo } = getContext('D')
   const rfocus = getContext('focus')
 
   const { activate, deactivate, useFocusTrap } = new FocusTrap({
@@ -19,7 +19,6 @@
   let el = $state()
   let activeElement = $state()
   const focused = $derived(el?.contains(activeElement))
-  const fo = fadeonly()
 
   const wrap = (e, f) => {
     activate()
