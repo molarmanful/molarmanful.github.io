@@ -37,7 +37,8 @@
     {#each tops as top}
       <li>
         <button
-          style:transition="color {pulse}ms, border-color 400ms, filter 400ms"
+          style:transition="color {pulse || 100}ms, border-color 400ms, filter
+          400ms"
           style:color
           b="b-1 transparent [&:hover,&:focus]:white"
           bg-transparent
