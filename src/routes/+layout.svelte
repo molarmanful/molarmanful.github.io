@@ -48,7 +48,6 @@
   }
 
   $effect(() => {
-    aos.init()
     scrollTo({ top: 0, behavior: 'instant' })
     loaded.x = true
   })

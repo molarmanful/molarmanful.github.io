@@ -23,7 +23,7 @@
     <Heading data-aos="fade-in" mb="5 md:8" un-hidden="3xl:" un-text="center">
       <A href="/work" item un-text="stroked head! hover:white!">WORK</A>
     </Heading>
-    <ArtGrid aos>
+    <ArtGrid aos="up">
       {#snippet children(name, on, i)}
         <button
           aria-label="open project entry: {name}"

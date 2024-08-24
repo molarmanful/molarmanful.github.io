@@ -7,6 +7,7 @@ export default class {
     easing: 'ease',
     duration: 400,
   }
+  on = false
 
   constructor() {
     if (!browser) return
@@ -56,6 +57,7 @@ export default class {
     })
 
     this.observeAll()
+    this.on = true
   }
 
   observeAll(parent, hard = false) {

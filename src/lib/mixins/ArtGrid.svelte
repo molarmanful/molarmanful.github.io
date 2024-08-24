@@ -67,7 +67,7 @@
   let animels = $state([])
 
   $effect(() => {
-    if (!anim) return
+    if (!anim || !AOS.on) return
     for (const el of animels) AOS.manual(el, el)
   })
 </script>
@@ -115,7 +115,7 @@
       class="{on ? '' : 'brightness-10 pointer-events-none!'} {anim ? '' : (
         'suppress'
       )}"
-      data-aos={aos && anim && `fade-${fo.matches ? 'in' : 'up'}`}
+      data-aos={aos && anim && `fade-${fo.matches ? 'in' : aos}`}
       data-aos-delay={aos && anim && 100 * (i % cs)}
       flex
       transition-filter,opacity,transform
