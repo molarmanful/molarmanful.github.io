@@ -32,3 +32,5 @@ export { default as ArtFilter } from './ArtFilter.svelte'
 export { default as ArtGrid } from './ArtGrid.svelte'
 export { default as ItemBar } from './ItemBar.svelte'
 export { default as ItemBody } from './ItemBody.svelte'
+
+export { default as Cursor } from './Cursor.svelte'
