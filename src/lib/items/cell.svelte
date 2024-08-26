@@ -24,13 +24,44 @@
 
   <Sp />
   <Subheading bold>3-Species Ecosystem</Subheading>
-  <MediaImg name="3species" alt="Screenshot of 3-Species Ecosystem." />
+  <IVideo a="hnEuirk" />
   <Text>
     <A href="https://bennyboy.tech/RobotaPsyche/midterm">Website</A>
     <br />
     <A href="https://github.com/molarmanful/RobotaPsyche/tree/main/midterm">
       Source
     </A>
+  </Text>
+
+  <Sp />
+  <Subheading bold>10-State Brain's Brain</Subheading>
+  <MediaImg
+    name="brian10"
+    alt="Screenshot of 10-State Brian's Brain."
+    image-render="pixel"
+  />
+  <Text>
+    <A href="https://editor.p5js.org/BandidoJim/full/_YeeANOn_">p5.js Sketch</A>
+    (<span bold>WARNING</span>: flashing lights)
+  </Text>
+
+  <Sp />
+  <Subheading bold>Brian's Brain</Subheading>
+  <IVideo a="RrI149j" px />
+  <Text>
+    <A href="https://editor.p5js.org/BandidoJim/full/iJmQ7Gazy">p5.js Sketch</A>
+  </Text>
+
+  <Sp />
+  <Subheading bold>Stable Volatility</Subheading>
+  <MediaImg
+    name="stablevol"
+    alt="Screenshot of Stable Volatility."
+    image-render="pixel"
+  />
+  <Text>
+    <A href="https://editor.p5js.org/BandidoJim/full/YS3amIiay">p5.js Sketch</A>
+    (<span bold>WARNING</span>: flashing lights)
   </Text>
 
   <Sp />
@@ -42,14 +73,7 @@
   />
   <Text>
     <A href="https://editor.p5js.org/BandidoJim/full/XgeJRhRpX">p5.js Sketch</A>
-    (WARNING: flashing lights)
-  </Text>
-
-  <Sp />
-  <Subheading bold>Brian's Brain</Subheading>
-  <IVideo a="RrI149j" px />
-  <Text>
-    <A href="https://editor.p5js.org/BandidoJim/full/iJmQ7Gazy">p5.js Sketch</A>
+    (<span bold>WARNING</span>: flashing lights)
   </Text>
 
   <Sp />
