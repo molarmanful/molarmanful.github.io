@@ -24,7 +24,7 @@
   <Subheading>{desc}</Subheading>
 
   <Subheading bold>Nihilism</Subheading>
-  <MediaImg name="nihilism" alt={artalt('NIHILISM')} />
+  <MediaImg name="nihilism" alt={artalt('Nihilism')} />
   <Text>
     <A
       href="https://colab.research.google.com/drive/1DjUw9jp47cCAorEm0pN2cj4_1ksG8hBS?usp=sharing"
@@ -48,8 +48,14 @@
   -->
 
   <Subheading bold>Bezier Pulse</Subheading>
-  <IVideo a="Z04vm99" aspect="video" title="Bezier Pulse" />
+  <IVideo a="Z04vm99" aspect="video" />
   <Text>
     <A href="https://github.com/molarmanful/bezier-pulse">Source</A>
+  </Text>
+
+  <Subheading bold>Self-Portrait</Subheading>
+  <MediaImg name="selfportrait" alt={artalt('Self-Portrait')} />
+  <Text>
+    <A href="https://editor.p5js.org/BandidoJim/full/IQG4jN2Kz">Source</A>
   </Text>
 </Prose>
