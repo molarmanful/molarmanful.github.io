@@ -13,6 +13,7 @@
     IVideo,
     MediaImg,
     Prose,
+    Sp,
     Subheading,
     Text,
     // YTVideo,
@@ -23,6 +24,14 @@
   <Heading>THE GENERATIVE COLLECTION</Heading>
   <Subheading>{desc}</Subheading>
 
+  <Sp />
+  <Subheading bold>Self-Portrait</Subheading>
+  <MediaImg name="selfportrait" alt={artalt('Self-Portrait')} />
+  <Text>
+    <A href="https://editor.p5js.org/BandidoJim/full/IQG4jN2Kz">p5.js Sketch</A>
+  </Text>
+
+  <Sp />
   <Subheading bold>Nihilism</Subheading>
   <MediaImg name="nihilism" alt={artalt('Nihilism')} />
   <Text>
@@ -33,6 +42,7 @@
     </A>
   </Text>
 
+  <Sp />
   <Subheading bold>Entanglement</Subheading>
   <IVideo a="QmXN4z9" aspect="video" />
   <Text>
@@ -40,6 +50,7 @@
   </Text>
 
   <!--
+  <Sp />
   <Subheading bold>Joy of Abstract Art with Rob Boss</Subheading>
   <YTVideo a="f_mWTjxUbqk" title="Joy of Abstract Art with Rob Boss" />
   <Text>
@@ -47,15 +58,10 @@
   </Text>
   -->
 
+  <Sp />
   <Subheading bold>Bezier Pulse</Subheading>
   <IVideo a="Z04vm99" aspect="video" />
   <Text>
     <A href="https://github.com/molarmanful/bezier-pulse">Source</A>
-  </Text>
-
-  <Subheading bold>Self-Portrait</Subheading>
-  <MediaImg name="selfportrait" alt={artalt('Self-Portrait')} />
-  <Text>
-    <A href="https://editor.p5js.org/BandidoJim/full/IQG4jN2Kz">Source</A>
   </Text>
 </Prose>

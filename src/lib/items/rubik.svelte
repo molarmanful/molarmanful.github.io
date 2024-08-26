@@ -14,13 +14,14 @@
 </script>
 
 <script>
-  import { A, Heading, MediaImg, Prose, Subheading, Text } from '../mixins'
+  import { A, Heading, MediaImg, Prose, Sp, Subheading, Text } from '../mixins'
 </script>
 
 <Prose>
   <Heading>THE RUBIK COLLECTION</Heading>
   <Subheading>{desc}</Subheading>
 
+  <Sp />
   <Subheading bold>A Cube Tutorial</Subheading>
   <MediaImg name="cubetut" alt="The Cube Tutorial website." />
   <Text>
@@ -33,6 +34,7 @@
     <A href="https://github.com/molarmanful/cubetut">Source</A>
   </Text>
 
+  <Sp />
   <Subheading bold>pycube</Subheading>
   <MediaImg name="pycube" alt="The pycube interface." />
   <Text>
@@ -43,6 +45,7 @@
     <A href="https://github.com/molarmanful/pycube">Source</A>
   </Text>
 
+  <Sp />
   <Subheading bold>gCube</Subheading>
   <MediaImg name="gcube" alt="Sample of gCube's text sticker capability." />
   <Text>
@@ -55,6 +58,7 @@
     <A href="https://github.com/molarmanful/pycube">Source</A>
   </Text>
 
+  <Sp />
   <Subheading bold>MinimalisTimer</Subheading>
   <MediaImg name="minimalistimer" alt="The MinimalisTimer website." />
   <Text>
@@ -70,6 +74,7 @@
   </Text>
 
   <!--
+  <Sp />
   <Subheading bold>PLL Trainer</Subheading>
   <MediaImg name="pll" alt="The PLL Trainer interface." />
   <Text>

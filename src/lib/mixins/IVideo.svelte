@@ -3,7 +3,7 @@
 
   import { Video } from '.'
 
-  const { a, aspect = 'square' } = $props()
+  const { a, px, aspect = 'square' } = $props()
   const { vloader } = getContext('D')
 
   let el = $state()
@@ -20,7 +20,8 @@
   <div class="aspect-{aspect}" max-full mx-auto>
     <video
       bind:this={el}
-      class={loaded ? 'opacity-100' : 'opacity-0'}
+      class="{loaded ? 'opacity-100' : 'opacity-0'} {px ? 'image-render-pixel'
+      : ''}"
       full
       loop
       muted

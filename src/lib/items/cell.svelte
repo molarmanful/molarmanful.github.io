@@ -6,7 +6,16 @@
 </script>
 
 <script>
-  import { A, Heading, MediaImg, Prose, Sp, Subheading, Text } from '../mixins'
+  import {
+    A,
+    Heading,
+    IVideo,
+    MediaImg,
+    Prose,
+    Sp,
+    Subheading,
+    Text,
+  } from '../mixins'
 </script>
 
 <Prose>
@@ -25,8 +34,31 @@
   </Text>
 
   <Sp />
+  <Subheading bold>Fading Clamp Game of Life</Subheading>
+  <MediaImg
+    name="fcgol"
+    alt="Screenshot of Fading Clamp Game of Life."
+    image-render="pixel"
+  />
+  <Text>
+    <A href="https://editor.p5js.org/BandidoJim/full/XgeJRhRpX">p5.js Sketch</A>
+    (WARNING: flashing lights)
+  </Text>
+
+  <Sp />
+  <Subheading bold>Brian's Brain</Subheading>
+  <IVideo a="RrI149j" px />
+  <Text>
+    <A href="https://editor.p5js.org/BandidoJim/full/iJmQ7Gazy">p5.js Sketch</A>
+  </Text>
+
+  <Sp />
   <Subheading bold>Reddit Rainbow (feat. Adham Chakohi)</Subheading>
-  <MediaImg name="rainbow" alt="Screenshot of Reddit Rainbow." />
+  <MediaImg
+    name="rainbow"
+    alt="Screenshot of Reddit Rainbow."
+    image-render="pixel"
+  />
   <Text>
     <A href="https://bennyboy.tech/rainbow">Website</A>
     <br />
