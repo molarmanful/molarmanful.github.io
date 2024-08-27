@@ -8,8 +8,8 @@
 <script>
   import {
     A,
-    BVideo,
     Heading,
+    IVideo,
     MediaImg,
     Prose,
     Sp,
@@ -24,10 +24,7 @@
 
   <Sp />
   <Subheading bold>3-Species Ecosystem</Subheading>
-  <BVideo
-    a="5809f873-225a-45c9-a8fd-f185ea8390ba"
-    title="3-Species Ecosystem"
-  />
+  <IVideo a="hnEuirk" />
   <Text>
     <A href="https://bennyboy.tech/RobotaPsyche/midterm">Website</A>
     <br />
@@ -50,7 +47,7 @@
 
   <Sp />
   <Subheading bold>Brian's Brain</Subheading>
-  <BVideo a="5b3e7300-ee4d-4c86-94cf-cbfba7940a91" px title="Brian's Brain" />
+  <IVideo a="RrI149j" px />
   <Text>
     <A href="https://editor.p5js.org/BandidoJim/full/iJmQ7Gazy">p5.js Sketch</A>
   </Text>
