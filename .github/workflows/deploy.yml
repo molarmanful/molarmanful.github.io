@@ -45,8 +45,10 @@ jobs:
         uses: actions/cache@v3
         with:
           path: '**/node_modules/.cache'
-          key: ${{ runner.os }}-node-cache-${{ hashFiles('**/pnpm-lock.yaml') }}
-          restore-keys: ${{ runner.os }}-node-cache-
+          key: ${{ runner.os }}-node-cache-${{ hashFiles('**/pnpm-lock.yaml') }}-${{
+            github.run_id }}
+          restore-keys: ${{ runner.os }}-node-cache-${{ hashFiles('**/pnpm-lock.yaml')
+            }}-
       - name: build
         run: |
           pnpm build
