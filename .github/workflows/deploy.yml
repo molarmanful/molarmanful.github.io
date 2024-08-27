@@ -36,14 +36,17 @@ jobs:
       - name: setup pnpm cache
         uses: actions/cache@v3
         with:
-          path: |
-            node_modules/.cache
-            ${{ steps.pnpm-cache.outputs.STORE_PATH }}
+          path: ${{ steps.pnpm-cache.outputs.STORE_PATH }}
           key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
-          restore-keys: |
-            ${{ runner.os }}-pnpm-store-
+          restore-keys: ${{ runner.os }}-pnpm-store-
       - name: pnpm deps
         run: pnpm i
+      - name: setup node_modules/.cache
+        uses: actions/cache@v3
+        with:
+          path: node_modules/.cache
+          key: ${{ runner.os }}-node-cache-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: ${{ runner.os }}-node-cache-
       - name: build
         run: |
           pnpm build
