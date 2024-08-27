@@ -16,6 +16,7 @@ export { default as PxImg } from './PxImg.svelte'
 export { default as Video } from './Video.svelte'
 export { default as IVideo } from './IVideo.svelte'
 export { default as YTVideo } from './YTVideo.svelte'
+export { default as BVideo } from './BVideo.svelte'
 
 export { default as NavIcon } from './NavIcon.svelte'
 export { default as NavBody } from './NavBody.svelte'
