@@ -24,7 +24,7 @@
 
   <Subheading bold>lin</Subheading>
   <Text>
-    This was one of my few attempts at creating anything remotely close to a
+    This was one of my first attempts at creating anything remotely close to a
     practical language. lin was a stack-based functional language which is
     designed to be easily implemented and used, even with its unconventional
     syntax patterns.
