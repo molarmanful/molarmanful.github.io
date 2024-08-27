@@ -41,7 +41,9 @@
     image-render="pixel"
   />
   <Text>
-    <A href="https://editor.p5js.org/BandidoJim/full/_YeeANOn_">p5.js Sketch</A>
+    <A href="https://editor.p5js.org/BandidoJim/sketches/_YeeANOn_">
+      p5.js Sketch
+    </A>
     (<span bold>WARNING</span>: flashing lights)
   </Text>
 
@@ -49,7 +51,9 @@
   <Subheading bold>Brian's Brain</Subheading>
   <IVideo a="RrI149j" px />
   <Text>
-    <A href="https://editor.p5js.org/BandidoJim/full/iJmQ7Gazy">p5.js Sketch</A>
+    <A href="https://editor.p5js.org/BandidoJim/sketches/iJmQ7Gazy">
+      p5.js Sketch
+    </A>
   </Text>
 
   <Sp />
@@ -60,7 +64,9 @@
     image-render="pixel"
   />
   <Text>
-    <A href="https://editor.p5js.org/BandidoJim/full/YS3amIiay">p5.js Sketch</A>
+    <A href="https://editor.p5js.org/BandidoJim/sketches/YS3amIiay">
+      p5.js Sketch
+    </A>
     (<span bold>WARNING</span>: flashing lights)
   </Text>
 
@@ -72,7 +78,9 @@
     image-render="pixel"
   />
   <Text>
-    <A href="https://editor.p5js.org/BandidoJim/full/XgeJRhRpX">p5.js Sketch</A>
+    <A href="https://editor.p5js.org/BandidoJim/sketches/XgeJRhRpX">
+      p5.js Sketch
+    </A>
     (<span bold>WARNING</span>: flashing lights)
   </Text>
 
@@ -85,13 +93,14 @@
   />
   <Text>
     <A href="https://bennyboy.tech/rainbow">Website</A>
+    (No longer works due to changes in Reddit's API)
     <br />
     <A href="https://github.com/molarmanful/rainbow">Source</A>
   </Text>
 
   <Sp />
   <Subheading bold>Waterworks</Subheading>
-  <MediaImg name="waterworks" alt="Screenshot of Waterworks." />
+  <IVideo a="ri9fp39" px />
   <Text>
     <A href="https://codepen.io/molarmanful/full/XzbwpP">Website</A>
   </Text>
