@@ -18,9 +18,7 @@
     No, it's not a typo; the language really is called Coding. Conceived from <A
       href="https://www.reddit.com/r/ProgrammerHumor/comments/5gfomg/til_most_people_go_to_special_training_for_years/"
       >a running joke on r/ProgrammerHumor</A
-    >, I quickly cobbled together what is best described as "stack-based HTML."
-    Another reasonable descriptor would be "Pug's weird adoptive little
-    brother."
+    >, I quickly cobbled together what one might describe as "stack-based HTML."
   </Text>
   <Text><A href="https://github.com/molarmanful/codinglang">Source</A></Text>
 
