@@ -44,7 +44,7 @@ jobs:
       - name: setup node_modules/.cache
         uses: actions/cache@v3
         with:
-          path: node_modules/.cache
+          path: '**/node_modules/.cache'
           key: ${{ runner.os }}-node-cache-${{ hashFiles('**/pnpm-lock.yaml') }}
           restore-keys: ${{ runner.os }}-node-cache-
       - name: build
