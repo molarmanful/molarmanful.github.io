@@ -13,6 +13,10 @@
 
 <svelte:head>
   <title>work | {D.title}</title>
+  <meta
+    name="description"
+    content="Gallery of creative and technical works by Ben Pang, featuring projects in programming, design, multimedia art, and more."
+  />
 </svelte:head>
 
 <div container="lg:" m-auto p="x-5 y-5 lg:y-16" w-full>
