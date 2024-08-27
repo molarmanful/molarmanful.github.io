@@ -1,18 +1,15 @@
+---
 name: deploy
-
 on:
   push:
   workflow_dispatch:
-
 permissions:
   contents: read
   pages: write
   id-token: write
-
 concurrency:
-  group: "pages"
+  group: pages
   cancel-in-progress: true
-
 jobs:
   deploy:
     environment:
@@ -25,7 +22,7 @@ jobs:
       - name: node
         uses: actions/setup-node@v3
         with:
-          node-version: "*"
+          node-version: '*'
       - name: pnpm
         uses: pnpm/action-setup@v2
         with:
@@ -35,11 +32,13 @@ jobs:
         id: pnpm-cache
         shell: bash
         run: |
-          echo "STORE_PATH=$(pnpm store path)" >> $GITHUB_OUTPUT
+          echo "STORE_PATH=$(pnpm store path)" >> "$GITHUB_OUTPUT"
       - name: setup pnpm cache
         uses: actions/cache@v3
         with:
-          path: ${{ steps.pnpm-cache.outputs.STORE_PATH }}
+          path: |
+            **/node_modules/.cache
+            ${{ steps.pnpm-cache.outputs.STORE_PATH }}
           key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
           restore-keys: |
             ${{ runner.os }}-pnpm-store-
