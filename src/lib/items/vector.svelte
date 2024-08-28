@@ -1,6 +1,5 @@
 <script context='module'>
-  export const desc
-    = 'Scalable compositions of geometries and abstract oddities. Made with Illustrator and Hexels.'
+  export const desc = 'Scalable compositions of geometries and abstract oddities. Made with Illustrator and Hexels.'
   export const tags = ['2d', 'digital', 'design', 'art', 'collection']
   export const year = 2021
 </script>

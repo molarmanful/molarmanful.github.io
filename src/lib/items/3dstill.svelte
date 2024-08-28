@@ -1,6 +1,5 @@
 <script context='module'>
-  export const desc
-    = 'Optical oddities that bend the rules of virtual reality. Rendered in Cinema 4D + Redshift.'
+  export const desc = 'Optical oddities that bend the rules of virtual reality. Rendered in Cinema 4D + Redshift.'
   export const tags = ['3d', 'digital', 'art', 'collection']
   export const year = 2024
 </script>
@@ -27,12 +26,7 @@
 <ArtImg name='crazyplantman' alt={artalt('NATURAL HABITAT')} />
 <ArtImg name='robohead_side' alt={artalt('IT\'S JUST A HEAD 1')} />
 <ArtImg name='robohead_man' alt={artalt('IT\'S JUST A HEAD 3')} />
-<ArtImg
-  name='barren'
-  alt={artalt(
-    'NOT ALL WHO WANDER ARE LOST BUT THIS WANDERER IS DEFINITELY LOST',
-  )}
-/>
+<ArtImg name='barren' alt={artalt('NOT ALL WHO WANDER ARE LOST BUT THIS WANDERER IS DEFINITELY LOST')} />
 <ArtImg name='polyexp' alt={artalt('AMBIVALENCE')} />
 <ArtImg name='cataflow' alt={artalt('TO NEED A WAY OUT')} />
 <ArtImg name='sittingflowers' alt={artalt('HOW TO SEE FLOWERS')} />
@@ -79,12 +73,7 @@
 <ArtImg name='oceanthoughts' alt={artalt('TIDAL DRIFT')} />
 <ArtImg name='sirensong' alt={artalt('STOCKHOLM')} />
 <ArtImg name='cantunsee' alt={artalt('I CAN\'T UNSEE YOU')} />
-<ArtImg
-  name='smoothvolumedude'
-  alt={artalt(
-    'CFOFFABNUC (CURIOUS FOREIGNER, ORIGINALLY FROM FAR AWAY BUT NOW UP CLOSE)',
-  )}
-/>
+<ArtImg name='smoothvolumedude' alt={artalt('CFOFFABNUC (CURIOUS FOREIGNER, ORIGINALLY FROM FAR AWAY BUT NOW UP CLOSE)')} />
 <ArtImg name='matblend' alt={artalt('METALWORK')} />
 <ArtImg name='tongueplants' alt={artalt('MICROBIOME')} />
 <ArtImg name='adrift' alt={artalt('THE WILL TO LIVE')} />

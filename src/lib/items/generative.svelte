@@ -1,6 +1,5 @@
 <script context='module'>
-  export const desc
-    = 'From code blossoms art. Works created with autonomous systems to spawn infinite variation.'
+  export const desc = 'From code blossoms art. Works created with autonomous systems to spawn infinite variation.'
   export const tags = ['digital', 'dev', 'art', 'collection']
   export const year = 2021
 </script>
@@ -78,9 +77,7 @@
   <Subheading bold>Nihilism</Subheading>
   <MediaImg name='nihilism' alt={artalt('Nihilism')} />
   <Text>
-    <A
-      href='https://colab.research.google.com/drive/1DjUw9jp47cCAorEm0pN2cj4_1ksG8hBS?usp=sharing'
-    >
+    <A href='https://colab.research.google.com/drive/1DjUw9jp47cCAorEm0pN2cj4_1ksG8hBS?usp=sharing'>
       Source
     </A>
   </Text>

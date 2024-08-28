@@ -53,9 +53,6 @@ importers:
       core-js:
         specifier: ^3.38.1
         version: 3.38.1
-      eslint-plugin-svelte:
-        specifier: 2.43.0
-        version: 2.43.0(eslint@9.9.1(jiti@1.21.6))(svelte@5.0.0-next.222)
       favicons:
         specifier: ^7.2.0
         version: 7.2.0
@@ -80,9 +77,6 @@ importers:
       svelte-body:
         specifier: ^1.4.0
         version: 1.4.0(svelte@5.0.0-next.222)
-      svelte-eslint-parser:
-        specifier: ^0.41.0
-        version: 0.41.0(svelte@5.0.0-next.222)
       svelte-sitemap:
         specifier: ^2.6.0
         version: 2.6.0
@@ -4631,6 +4625,7 @@ snapshots:
       svelte: 5.0.0-next.222
     transitivePeerDependencies:
       - ts-node
+    optional: true
 
   eslint-plugin-toml@0.11.1(eslint@9.9.1(jiti@1.21.6)):
     dependencies:
@@ -5074,7 +5069,8 @@ snapshots:
 
   known-css-properties@0.31.0: {}
 
-  known-css-properties@0.34.0: {}
+  known-css-properties@0.34.0:
+    optional: true
 
   kolorist@1.8.0: {}
 
@@ -5083,7 +5079,8 @@ snapshots:
       prelude-ls: 1.2.1
       type-check: 0.4.0
 
-  lilconfig@2.1.0: {}
+  lilconfig@2.1.0:
+    optional: true
 
   lines-and-columns@1.2.4: {}
 
@@ -5309,6 +5306,7 @@ snapshots:
       yaml: 1.10.2
     optionalDependencies:
       postcss: 8.4.41
+    optional: true
 
   postcss-resolve-nested-selector@0.1.6: {}
 
@@ -5323,6 +5321,7 @@ snapshots:
   postcss-scss@4.0.9(postcss@8.4.41):
     dependencies:
       postcss: 8.4.41
+    optional: true
 
   postcss-selector-parser@6.1.2:
     dependencies:
@@ -5629,6 +5628,7 @@ snapshots:
       postcss-scss: 4.0.9(postcss@8.4.41)
     optionalDependencies:
       svelte: 5.0.0-next.222
+    optional: true
 
   svelte-sitemap@2.6.0:
     dependencies:
@@ -5865,7 +5865,8 @@ snapshots:
       lodash: 4.17.21
       yaml: 2.5.0
 
-  yaml@1.10.2: {}
+  yaml@1.10.2:
+    optional: true
 
   yaml@2.5.0: {}
 

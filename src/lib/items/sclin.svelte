@@ -1,6 +1,5 @@
 <script context='module'>
-  export const desc
-    = '2024. Functional and array programming paradigms packaged into a stack-based language. Tuned for maximum expressiveness. Features a web-based interpreter and tree-sitter grammar.'
+  export const desc = '2024. Functional and array programming paradigms packaged into a stack-based language. Tuned for maximum expressiveness. Features a web-based interpreter and tree-sitter grammar.'
   export const tags = [
     'digital',
     'dev',

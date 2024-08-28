@@ -1,6 +1,5 @@
 <script context='module'>
-  export const desc
-    = 'Monochrome artwork drawn with pen and paper or a mouse in Krita/MS Paint. Studies of contrast, shading, and value blending techniques.'
+  export const desc = 'Monochrome artwork drawn with pen and paper or a mouse in Krita/MS Paint. Studies of contrast, shading, and value blending techniques.'
   export const tags = ['2d', 'digital', 'art', 'collection']
   export const year = 2022
 </script>
@@ -19,10 +18,7 @@
 <ArtImg name='entropia' alt={artalt('ENTROPIA')} />
 <ArtImg name='ruler' />
 <ArtImg name='sketchedfaces' alt='Quick stylized character sketches.' />
-<ArtImg
-  name='sketchedfaces2'
-  alt='Quick character sketches and notes done during an art museum excursion in Sharjah, UAE.'
-/>
+<ArtImg name='sketchedfaces2' alt='Quick character sketches and notes done during an art museum excursion in Sharjah, UAE.' />
 <ArtImg name='hand' alt={artalt('HAND')} />
 <ArtImg name='valueblending' alt={artalt('SPHERE')} />
 <ArtImg name='blackpanther' alt={artalt('BLACK PANTHER')} />

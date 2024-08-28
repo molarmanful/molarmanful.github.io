@@ -68,10 +68,9 @@ export default class {
 
   observeAll(parent, hard = false) {
     for (const el of (parent || document).querySelectorAll('[data-aos]')) {
-      const el1
-        = el.dataset.aosAnchor
-          ? document.querySelector(el.dataset.aosAnchor) || el
-          : el
+      const el1 = el.dataset.aosAnchor
+        ? document.querySelector(el.dataset.aosAnchor) || el
+        : el
       if (hard)
         this.manual(el1, el)
       this.io.observe(el1)

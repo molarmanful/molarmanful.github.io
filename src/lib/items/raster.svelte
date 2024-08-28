@@ -1,6 +1,5 @@
 <script context='module'>
-  export const desc
-    = 'Because black & white is fun, but so is color. Drawn with a mouse in HEAVYPAINT/Krita/MS Paint.'
+  export const desc = 'Because black & white is fun, but so is color. Drawn with a mouse in HEAVYPAINT/Krita/MS Paint.'
   export const tags = ['2d', 'digital', 'art', 'collection']
   export const year = 2021
 </script>

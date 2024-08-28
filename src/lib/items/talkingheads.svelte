@@ -1,6 +1,5 @@
 <script context='module'>
-  export const desc
-    = '2023. An experimental chatroom that enables mere mortals to communicate with the gods.'
+  export const desc = '2023. An experimental chatroom that enables mere mortals to communicate with the gods.'
   export const tags = [
     'digital',
     'full-stack',

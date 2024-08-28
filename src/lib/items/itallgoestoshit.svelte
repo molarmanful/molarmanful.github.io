@@ -1,6 +1,5 @@
 <script context='module'>
-  export const desc
-    = '2023. An interactive 3D web experience inspired by the slow yet frighteningly inevitable progression of dementia.'
+  export const desc = '2023. An interactive 3D web experience inspired by the slow yet frighteningly inevitable progression of dementia.'
   export const tags = ['digital', '3d', 'front-end', 'dev', 'art']
   export const year = 2023
 </script>

@@ -1,5 +1,4 @@
 import antfu from '@antfu/eslint-config'
-import svelte from 'eslint-plugin-svelte'
 
 export default antfu({
   stylistic: true,
@@ -11,7 +10,7 @@ export default antfu({
   unocss: true,
 }, {
   rules: {
-    'style/top-level-functions': 'off',
+    'style/top-level-functions': 0,
     'import/order': [1, {
       'alphabetize': {
         order: 'asc',
@@ -21,9 +20,3 @@ export default antfu({
     }],
   },
 })
-  .override('antfu/svelte/setup', {
-    plugins: { svelte },
-  })
-  .override('antfu/svelte/rules', {
-    files: ['**/*.svelte', '**/*.svelte.{js,ts}'],
-  })

@@ -1,6 +1,5 @@
 <script context='module'>
-  export const desc
-    = 'Weird and wholly impractical. Programming languages which I\'ve made throughout the years for recreational - NOT PRODUCTION - purposes.'
+  export const desc = 'Weird and wholly impractical. Programming languages which I\'ve made throughout the years for recreational - NOT PRODUCTION - purposes.'
   export const tags = ['digital', 'dev', 'proglang', 'collection']
   export const year = 2022
 </script>
@@ -15,10 +14,11 @@
 
   <Subheading bold>Coding</Subheading>
   <Text>
-    No, it's not a typo; the language really is called Coding. Conceived from <A
-      href='https://www.reddit.com/r/ProgrammerHumor/comments/5gfomg/til_most_people_go_to_special_training_for_years/'
-    >a running joke on r/ProgrammerHumor</A
-    >, I quickly cobbled together what one might describe as "stack-based HTML."
+    No, it's not a typo; the language really is called Coding. Conceived from
+    <A
+      href='https://www.reddit.com/r/ProgrammerHumor/comments/5gfomg/til_most_people_go_to_special_training_for_years/'>a
+      running joke on r/ProgrammerHumor</A>, I quickly cobbled together what
+    one might describe as "stack-based HTML."
   </Text>
   <Text><A href='https://github.com/molarmanful/codinglang'>Source</A></Text>
 
@@ -52,17 +52,17 @@
 
   <Subheading bold>RETURN</Subheading>
   <Text>
-    RETURN was an extension of DUP, a barebones stack-based esolang. Its purpose
-    was to make DUP more viable for code challenges by adding more commands and
-    stacks.
+    RETURN was an extension of DUP, a barebones stack-based esolang. Its
+    purpose was to make DUP more viable for code challenges by adding more
+    commands and stacks.
   </Text>
   <Text><A href='https://github.com/molarmanful/RETURN'>Source</A></Text>
 
   <Subheading bold>bitman</Subheading>
   <Text>
-    bitman was another offshoot of DUP made specifically to manipulate bits. Its
-    main feature was its ability to store arbitrary bit sizes, theoretically
-    allowing for things like bignumber math.
+    bitman was another offshoot of DUP made specifically to manipulate bits.
+    Its main feature was its ability to store arbitrary bit sizes,
+    theoretically allowing for things like bignumber math.
   </Text>
   <Text><A href='https://github.com/molarmanful/bitman'>Source</A></Text>
 </Prose>

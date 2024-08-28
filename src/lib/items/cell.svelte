@@ -1,6 +1,5 @@
 <script context='module'>
-  export const desc
-    = 'Zero-player games with squares that live many, many lives.'
+  export const desc = 'Zero-player games with squares that live many, many lives.'
   export const tags = ['digital', 'dev', 'art', 'collection']
   export const year = 2022
 </script>

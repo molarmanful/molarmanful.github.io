@@ -1,6 +1,5 @@
 <script context='module'>
-  export const desc
-    = '2024. A web art piece centered around the premise of an anti-social, self-destructive website.'
+  export const desc = '2024. A web art piece centered around the premise of an anti-social, self-destructive website.'
   export const tags = ['front-end', 'digital', 'dev', 'art']
   export const year = 2024
 </script>
