@@ -1,6 +1,6 @@
-<script context="module">
-  export const desc =
-    '2022. An Internet-powered backscratcher that converts clicks and taps to scratches.'
+<script context='module'>
+  export const desc
+    = '2022. An Internet-powered backscratcher that converts clicks and taps to scratches.'
   export const tags = [
     'physical',
     'digital',
@@ -31,9 +31,9 @@
   <Heading>FEEL THE HIVE</Heading>
   <Subheading>{desc}</Subheading>
   <Text>
-    <A href="https://wp.nyu.edu/itp_multisensory_design/project-ben">Devblog</A>
+    <A href='https://wp.nyu.edu/itp_multisensory_design/project-ben'>Devblog</A>
     <br />
-    <A href="https://github.com/molarmanful/feelthehive">Source</A>
+    <A href='https://github.com/molarmanful/feelthehive'>Source</A>
   </Text>
   <Text>
     <em>Feel the Hive</em> is an IoT project that uses the premise of an Internet-powered
@@ -52,8 +52,8 @@
 
   <Sp />
   <MediaImg
-    name="fth"
-    alt="Ben Pang wearing the Feel the Hive backscratcher rig."
+    name='fth'
+    alt='Ben Pang wearing the Feel the Hive backscratcher rig.'
   />
-  <YTVideo a="r74HAS_mBL0" title="FEEL THE HIVE" />
+  <YTVideo a='r74HAS_mBL0' title='FEEL THE HIVE' />
 </Prose>

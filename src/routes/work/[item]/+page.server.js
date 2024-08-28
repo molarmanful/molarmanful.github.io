@@ -1,3 +1,3 @@
-export const load = ({ params: { item: name } }) => {
+export function load({ params: { item: name } }) {
   return { name }
 }

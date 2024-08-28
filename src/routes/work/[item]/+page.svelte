@@ -12,7 +12,7 @@
 <svelte:head>
   <title>{name} | {D.title}</title>
   {#if desc}
-    <meta name="description" content={desc} />
+    <meta name='description' content={desc} />
   {/if}
 </svelte:head>
 

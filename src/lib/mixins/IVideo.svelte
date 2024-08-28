@@ -17,11 +17,12 @@
 </script>
 
 <Video {aspect}>
-  <div class="aspect-{aspect}" max-full mx-auto>
+  <div class='aspect-{aspect}' max-full mx-auto>
     <video
       bind:this={el}
-      class="{loaded ? 'opacity-100' : 'opacity-0'} {px ? 'image-render-pixel'
-      : ''}"
+      class="{loaded ? 'opacity-100' : 'opacity-0'} {px
+        ? 'image-render-pixel'
+        : ''}"
       full
       loop
       muted
@@ -29,9 +30,9 @@
       ofade-200
       oncanplaythrough={() => (loaded = true)}
       playsinline
-      preload="none"
+      preload='none'
     >
-      <source src="https://i.imgur.com/{a}.mp4" type="video/mp4" />
+      <source src='https://i.imgur.com/{a}.mp4' type='video/mp4' />
     </video>
   </div>
 </Video>

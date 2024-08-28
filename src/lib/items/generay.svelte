@@ -1,6 +1,6 @@
-<script context="module">
-  export const desc =
-    "2021. A procedurally-generated website based on Gene Ray's Time Cube."
+<script context='module'>
+  export const desc
+    = '2021. A procedurally-generated website based on Gene Ray\'s Time Cube.'
   export const tags = ['digital', 'front-end', 'dev', 'design', 'art']
   export const year = 2021
 </script>
@@ -13,13 +13,13 @@
   <Heading>INFINITE GENE RAY</Heading>
   <Subheading>{desc}</Subheading>
   <Text>
-    <A href="https://bennyboy.tech/infinite-gene-ray">Website</A>
+    <A href='https://bennyboy.tech/infinite-gene-ray'>Website</A>
     <br />
-    <A href="https://github.com/molarmanful/infinite-gene-ray">Source</A>
+    <A href='https://github.com/molarmanful/infinite-gene-ray'>Source</A>
     <br />
-    <A href="https://timecube.2enp.com">Inspiration</A>
+    <A href='https://timecube.2enp.com'>Inspiration</A>
   </Text>
 
   <Sp />
-  <MediaImg name="generay" alt="The Infinite Gene Ray website." />
+  <MediaImg name='generay' alt='The Infinite Gene Ray website.' />
 </Prose>

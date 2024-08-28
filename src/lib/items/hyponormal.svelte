@@ -1,6 +1,6 @@
-<script context="module">
-  export const desc =
-    '2022. An abstract Unity study of worldbuilding centered around non-Euclidean traversal mechanics.'
+<script context='module'>
+  export const desc
+    = '2022. An abstract Unity study of worldbuilding centered around non-Euclidean traversal mechanics.'
   export const tags = ['3d', 'digital', 'game', 'dev', 'art']
   export const year = 2022
 </script>
@@ -22,7 +22,7 @@
   <Heading>HYPO<wbr />NORMAL</Heading>
   <Subheading>{desc}</Subheading>
   <Text>
-    <A href="https://bandidojim.itch.io/hyponormal">Website</A>
+    <A href='https://bandidojim.itch.io/hyponormal'>Website</A>
   </Text>
   <Text>
     <em>There's normal, there's paranormal, and then there's... HYPONORMAL.</em>
@@ -43,27 +43,27 @@
   </Text>
 
   <Sp />
-  <MediaImg name="hyponormal0" alt="Mountain shrouded in red sandstorm." />
+  <MediaImg name='hyponormal0' alt='Mountain shrouded in red sandstorm.' />
   <MediaImg
-    name="hyponormal1"
-    alt="Kneeling figures shrouded in red sandstorm."
+    name='hyponormal1'
+    alt='Kneeling figures shrouded in red sandstorm.'
   />
   <MediaImg
-    name="hyponormal2"
-    alt="Classical Greco-Roman style statue with glowing blue eyes."
+    name='hyponormal2'
+    alt='Classical Greco-Roman style statue with glowing blue eyes.'
   />
   <MediaImg
-    name="hyponormal3"
-    alt="Figures reaching out towards a glowing blue portal."
+    name='hyponormal3'
+    alt='Figures reaching out towards a glowing blue portal.'
   />
   <MediaImg
-    name="hyponormal4"
-    alt="Glowing red portal surrounded by a ruined building."
+    name='hyponormal4'
+    alt='Glowing red portal surrounded by a ruined building.'
   />
-  <MediaImg name="hyponormal5" alt="Glowing blue Egyptian style obelisk." />
+  <MediaImg name='hyponormal5' alt='Glowing blue Egyptian style obelisk.' />
   <MediaImg
-    name="hyponormal6"
-    alt="Figures prostrating in front of glowing blue obelisk."
+    name='hyponormal6'
+    alt='Figures prostrating in front of glowing blue obelisk.'
   />
-  <YTVideo a="EeSWXgkycRY" title="HYPONORMAL" />
+  <YTVideo a='EeSWXgkycRY' title='HYPONORMAL' />
 </Prose>

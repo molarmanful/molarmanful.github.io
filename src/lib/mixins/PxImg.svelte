@@ -7,7 +7,7 @@
   const rsz = () => {
     const w = el.naturalWidth
     const pw = el.parentElement.clientWidth
-    el.style.width = w * ~~Math.max(1, el.parentElement.clientWidth / w) + 'px'
+    el.style.width = `${w * ~~Math.max(1, el.parentElement.clientWidth / w)}px`
     el.style.imageRendering = 'initial'
     if (pw >= w) {
       el.style.imageRendering = 'pixelated'
@@ -29,11 +29,11 @@
     bind:this={el}
     class={loaded ? 'opacity-100' : 'opacity-0'}
     block=""
-    decoding="async"
-    loading="lazy"
-    m="x-auto t-6 md:t-8"
-    max-w="full"
-    ofade="200"
+    decoding='async'
+    loading='lazy'
+    m='x-auto t-6 md:t-8'
+    max-w='full'
+    ofade='200'
     onload={rsz}
     {src}
     {...props}

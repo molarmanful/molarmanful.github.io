@@ -23,11 +23,12 @@
 
   const pstate = derived(
     page,
-    (_, set) => {
-      if (!browser) return
+    ($page, set) => {
+      if (!browser)
+        return
       set(history.state['sveltekit:states'] ?? {})
     },
-    {}
+    {},
   )
 
   $effect(() => {
@@ -38,8 +39,8 @@
 <svelte:head>
   <title>{D.title}</title>
   <meta
-    name="description"
-    content="Creative technologist, experimental artist, digital designer, font creator, programming language enthusiast."
+    name='description'
+    content='Creative technologist, experimental artist, digital designer, font creator, programming language enthusiast.'
   />
 </svelte:head>
 

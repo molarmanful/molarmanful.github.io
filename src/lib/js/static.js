@@ -7,13 +7,13 @@ const c = {
 }
 
 export const colors = Object.fromEntries(
-  c.weights.map(w => [w, c.colors.map(c => `text-${c}-${w}`)])
+  c.weights.map(w => [w, c.colors.map(c => `text-${c}-${w}`)]),
 )
 
 export const allColors = c.weights.flatMap(w =>
-  c.colors.map(c => `text-${c}-${w}`)
+  c.colors.map(c => `text-${c}-${w}`),
 )
 
 export const hexes = Object.fromEntries(
-  c.weights.map(w => [w, c.colors.map(c => unoColors[c][w])])
+  c.weights.map(w => [w, c.colors.map(c => unoColors[c][w])]),
 )

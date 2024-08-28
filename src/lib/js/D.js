@@ -1,12 +1,13 @@
-const makeMap = (x, f = x => x) =>
-  new Map(
+function makeMap(x, f = x => x) {
+  return new Map(
     f(
       Object.entries(x).map(([a, b]) => [
-        a.replace(/^.+\/(.+?)\.\w+$/, '$1'),
+        a.replace(/^.+\/([^/]+)\.\w+$/, '$1'),
         b,
-      ])
-    )
+      ]),
+    ),
   )
+}
 
 const items = makeMap(import.meta.glob('$lib/items/*', { eager: true }))
 
@@ -21,8 +22,8 @@ export default {
     x =>
       x.sort(
         ([a], [b]) =>
-          (items.get(b).year || 1 / 0) - (items.get(a).year || 1 / 0)
-      )
+          (items.get(b).year || 1 / 0) - (items.get(a).year || 1 / 0),
+      ),
   ),
   items,
   tags: new Map([...items].map(([k, v]) => [k, new Set(v.tags)])),
@@ -31,13 +32,13 @@ export default {
       eager: true,
       import: 'default',
       query: { url: true, as: 'run:32' },
-    })
+    }),
   ),
   media: makeMap(
     import.meta.glob('$lib/media/*', {
       eager: true,
       import: 'default',
       query: { url: true, as: 'run:32' },
-    })
+    }),
   ),
 }

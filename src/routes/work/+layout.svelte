@@ -11,8 +11,8 @@
   const crumbs = $derived(
     data.pathname.split`/`
       .slice(1)
-      .reduce((a, x) => [...a, [x, a[a.length - 1][1] + '/' + x]], [['', '']])
-      .slice(1)
+      .reduce((a, x) => [...a, [x, `${a[a.length - 1][1]}/${x}`]], [['', '']])
+      .slice(1),
   )
 
   const el = $state({ x: void 0 })
@@ -24,21 +24,22 @@
 </script>
 
 <svelte:window
-  onkeydown={e => {
-    if (e.key == 'Tab') activate()
+  onkeydown={(e) => {
+    if (e.key === 'Tab')
+      activate()
   }}
 />
 
 <div contents use:useFocusTrap>
   <ItemBar>
-    <nav aria-label="breadcrumbs" flex h-full ml-4>
-      <ol flex="~ nowrap" list-none m-auto>
-        <li><A data-sveltekit-reload href="/" item t>ben</A></li>
+    <nav aria-label='breadcrumbs' flex h-full ml-4>
+      <ol flex='~ nowrap' list-none m-auto>
+        <li><A data-sveltekit-reload href='/' item t>ben</A></li>
         {#each crumbs as [name, href], i}
           <li transition:fade={{ duration: 200 }}>
-            <span aria-hidden="true">&nbsp;&gt;</span>
-            {#if i == crumbs.length - 1}
-              <span aria-current="page">{name}</span>
+            <span aria-hidden='true'>&nbsp;&gt;</span>
+            {#if i === crumbs.length - 1}
+              <span aria-current='page'>{name}</span>
             {:else}
               <A {href} item t>
                 {name}

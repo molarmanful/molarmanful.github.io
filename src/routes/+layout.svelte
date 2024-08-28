@@ -29,20 +29,22 @@
   const rm = redmote()
 
   let vloader
-  if (browser)
+  if (browser) {
     vloader = new IntersectionObserver(
-      entries => {
-        for (const { isIntersecting, target } of entries)
+      (entries) => {
+        for (const { isIntersecting, target } of entries) {
           if (isIntersecting) {
             target.load()
             target.autoplay = true
             vloader.unobserve(target)
           }
+        }
       },
-      { threshold: 0.1 }
+      { threshold: 0.1 },
     )
+  }
 
-  let aos = new AOS()
+  const aos = new AOS()
 
   const mouse = $state({
     x: 0.5,
@@ -94,7 +96,8 @@
   onmouseenter={() => (mouse.on = true)}
   onmouseleave={() => (mouse.on = false)}
   onmousemove={({ clientX, clientY }) => {
-    if (fo.matches || mouse.stop) return
+    if (fo.matches || mouse.stop)
+      return
     mouse.on = true
     mouse.stop = true
     mouse.px = clientX

@@ -53,6 +53,9 @@ importers:
       core-js:
         specifier: ^3.38.1
         version: 3.38.1
+      eslint-plugin-svelte:
+        specifier: 2.43.0
+        version: 2.43.0(eslint@9.9.1(jiti@1.21.6))(svelte@5.0.0-next.222)
       favicons:
         specifier: ^7.2.0
         version: 7.2.0
@@ -65,12 +68,6 @@ importers:
       postcss-html:
         specifier: ^1.7.0
         version: 1.7.0
-      prettier:
-        specifier: ^3.3.3
-        version: 3.3.3
-      prettier-plugin-svelte:
-        specifier: ^3.2.6
-        version: 3.2.6(prettier@3.3.3)(svelte@5.0.0-next.222)
       runed:
         specifier: ^0.15.1
         version: 0.15.1(svelte@5.0.0-next.222)
@@ -83,6 +80,9 @@ importers:
       svelte-body:
         specifier: ^1.4.0
         version: 1.4.0(svelte@5.0.0-next.222)
+      svelte-eslint-parser:
+        specifier: ^0.41.0
+        version: 0.41.0(svelte@5.0.0-next.222)
       svelte-sitemap:
         specifier: ^2.6.0
         version: 2.6.0
@@ -2431,17 +2431,6 @@ packages:
     resolution: {integrity: sha512-vkcDPrRZo1QZLbn5RLGPpg/WmIQ65qoWWhcGKf/b5eplkkarX0m9z8ppCat4mlOqUsWpyNuYgO3VRyrYHSzX5g==}
     engines: {node: '>= 0.8.0'}
 
-  prettier-plugin-svelte@3.2.6:
-    resolution: {integrity: sha512-Y1XWLw7vXUQQZmgv1JAEiLcErqUniAF2wO7QJsw8BVMvpLET2dI5WpEIEJx1r11iHVdSMzQxivyfrH9On9t2IQ==}
-    peerDependencies:
-      prettier: ^3.0.0
-      svelte: ^3.2.0 || ^4.0.0-next.0 || ^5.0.0-next.0
-
-  prettier@3.3.3:
-    resolution: {integrity: sha512-i2tDNA0O5IrMO757lfrdQZCc2jPNDVntV0m/+4whiDfWaTKfMNgR7Qz0NAeGz/nRqF4m5/6CLzbP4/liHt12Ew==}
-    engines: {node: '>=14'}
-    hasBin: true
-
   punycode@2.3.1:
     resolution: {integrity: sha512-vYt7UD1U9Wg6138shLtLOvdAu+8DsC/ilFtEVHcH+wydcSpNE20AfSOduf6MkRFahL5FY7X1oU7nKVZFtfq8Fg==}
     engines: {node: '>=6'}
@@ -4642,7 +4631,6 @@ snapshots:
       svelte: 5.0.0-next.222
     transitivePeerDependencies:
       - ts-node
-    optional: true
 
   eslint-plugin-toml@0.11.1(eslint@9.9.1(jiti@1.21.6)):
     dependencies:
@@ -5086,8 +5074,7 @@ snapshots:
 
   known-css-properties@0.31.0: {}
 
-  known-css-properties@0.34.0:
-    optional: true
+  known-css-properties@0.34.0: {}
 
   kolorist@1.8.0: {}
 
@@ -5096,8 +5083,7 @@ snapshots:
       prelude-ls: 1.2.1
       type-check: 0.4.0
 
-  lilconfig@2.1.0:
-    optional: true
+  lilconfig@2.1.0: {}
 
   lines-and-columns@1.2.4: {}
 
@@ -5323,7 +5309,6 @@ snapshots:
       yaml: 1.10.2
     optionalDependencies:
       postcss: 8.4.41
-    optional: true
 
   postcss-resolve-nested-selector@0.1.6: {}
 
@@ -5338,7 +5323,6 @@ snapshots:
   postcss-scss@4.0.9(postcss@8.4.41):
     dependencies:
       postcss: 8.4.41
-    optional: true
 
   postcss-selector-parser@6.1.2:
     dependencies:
@@ -5354,13 +5338,6 @@ snapshots:
       source-map-js: 1.2.0
 
   prelude-ls@1.2.1: {}
-
-  prettier-plugin-svelte@3.2.6(prettier@3.3.3)(svelte@5.0.0-next.222):
-    dependencies:
-      prettier: 3.3.3
-      svelte: 5.0.0-next.222
-
-  prettier@3.3.3: {}
 
   punycode@2.3.1: {}
 
@@ -5652,7 +5629,6 @@ snapshots:
       postcss-scss: 4.0.9(postcss@8.4.41)
     optionalDependencies:
       svelte: 5.0.0-next.222
-    optional: true
 
   svelte-sitemap@2.6.0:
     dependencies:
@@ -5889,8 +5865,7 @@ snapshots:
       lodash: 4.17.21
       yaml: 2.5.0
 
-  yaml@1.10.2:
-    optional: true
+  yaml@1.10.2: {}
 
   yaml@2.5.0: {}
 

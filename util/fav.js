@@ -1,6 +1,6 @@
-import fs from 'fs/promises'
-import path from 'path'
-import url from 'url'
+import fs from 'node:fs/promises'
+import path from 'node:path'
+import url from 'node:url'
 
 import favicons from 'favicons'
 
@@ -21,11 +21,11 @@ await fs.mkdir(out)
 
 await Promise.all(
   [...res.images, ...res.files].map(
-    async f => await fs.writeFile(path.join(out, f.name), f.contents)
-  )
+    async f => await fs.writeFile(path.join(out, f.name), f.contents),
+  ),
 )
 
 await fs.writeFile(
   path.resolve(cwd, '../src/lib/Favicons.svelte'),
-  res.html.join`\n`
+  res.html.join`\n`,
 )

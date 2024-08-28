@@ -1,4 +1,4 @@
-<svelte:options namespace="svg" />
+<svelte:options namespace='svg' />
 
 <script>
   import { getContext } from 'svelte'
@@ -24,7 +24,8 @@
   }
 
   $effect(() => {
-    if (!loaded.x) return
+    if (!loaded.x)
+      return
 
     len_o = len
 
@@ -40,10 +41,10 @@
 <svelte:element
   this={name}
   bind:this={el}
-  style:transition="color, stroke-dashoffset ease-out"
-  style:transition-duration="{t}ms"
+  style:transition='color, stroke-dashoffset ease-out'
+  style:transition-duration='{t}ms'
   style:stroke-dasharray={len}
   style:stroke-dashoffset={len_o}
-  class="{c} fill-transparent stroke-1 stroke-current"
+  class='{c} fill-transparent stroke-1 stroke-current'
   {...props}
 />

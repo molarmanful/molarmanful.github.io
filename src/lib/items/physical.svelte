@@ -1,6 +1,6 @@
-<script context="module">
-  export const desc =
-    'Sculptures and installations which follow arbitrary rules and fulfill arbitrary purposes.'
+<script context='module'>
+  export const desc
+    = 'Sculptures and installations which follow arbitrary rules and fulfill arbitrary purposes.'
   export const tags = ['physical', 'art', 'collection']
   export const year = 2021
 </script>
@@ -15,9 +15,9 @@
   <Subheading>{desc}</Subheading>
 </Prose>
 
-<ArtImg name="wireball" alt={artalt('WIREBALL')} />
-<ArtImg name="pangolin" alt={artalt('PROJECT PANGOLIN')} />
+<ArtImg name='wireball' alt={artalt('WIREBALL')} />
+<ArtImg name='pangolin' alt={artalt('PROJECT PANGOLIN')} />
 <MediaImg
-  name="pangolin_stare"
-  alt="Ben Pang peeking out from underneath Project Pangolin."
+  name='pangolin_stare'
+  alt='Ben Pang peeking out from underneath Project Pangolin.'
 />

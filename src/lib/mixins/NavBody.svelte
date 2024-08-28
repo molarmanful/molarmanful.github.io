@@ -19,16 +19,16 @@
 </script>
 
 <div
-  style:transition-duration="{pulse}ms"
+  style:transition-duration='{pulse}ms'
   style:filter
   style:color
-  b="1 current"
-  bg="black"
-  origin="top-right"
-  p="4"
-  role="navigation"
-  text="bord"
-  transition="color"
+  b='1 current'
+  bg='black'
+  origin='top-right'
+  p='4'
+  role='navigation'
+  text='bord'
+  transition='color'
   use:useFocusTrap
   transition:scale={{ duration: 200 }}
   {...props}
@@ -37,13 +37,13 @@
     {#each tops as top}
       <li>
         <button
-          style:transition="color {pulse || 100}ms, border-color 400ms, filter
-          400ms"
+          style:transition='color {pulse || 100}ms, border-color 400ms, filter
+            400ms'
           style:color
-          b="b-1 transparent [&:hover,&:focus]:white"
+          b='b-1 transparent [&:hover,&:focus]:white'
           bg-transparent
           ease
-          fake="[&:hover,&:focus]:white"
+          fake='[&:hover,&:focus]:white'
           onclick={GOTO(top)}
           outline-none
           text-bord

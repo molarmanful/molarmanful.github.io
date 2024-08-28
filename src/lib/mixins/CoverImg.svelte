@@ -10,9 +10,9 @@
 <Image
   {name}
   b={D.covers}
-  draggable="false"
-  mt="0"
-  transition="filter"
+  draggable='false'
+  mt='0'
+  transition='filter'
   {...props}
 />
 <div

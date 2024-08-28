@@ -9,9 +9,9 @@
 <svg
   style:--un-scale-x={scale}
   style:--un-scale-y={scale}
-  style:--t-x="{splash_rel.x}%"
-  style:--un-translate-y="{splash_rel.y}%"
-  viewBox="0 0 1587 1080"
+  style:--t-x='{splash_rel.x}%'
+  style:--un-translate-y='{splash_rel.y}%'
+  viewBox='0 0 1587 1080'
   {...props}
 >
   {#each me as el}

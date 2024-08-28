@@ -21,8 +21,9 @@
     word = bank[i]
     i = (i + 1) % bank.length
     const steps = lev(word, bank[i])
-    let n = setInterval(() => {
-      if (steps.length) word = steps.pop()
+    const n = setInterval(() => {
+      if (steps.length)
+        word = steps.pop()
       else clearInterval(n)
     }, 50)
   }, 1500)

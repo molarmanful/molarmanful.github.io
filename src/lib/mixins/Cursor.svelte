@@ -9,10 +9,10 @@
   const freeze = $state({ px: 0, py: 0, on: false })
   const pos = $derived(freeze.on ? freeze : mouse)
 
-  cursorFs.on = e => {
+  cursorFs.on = (e) => {
     const { height: h, width: w, top, left } = e.target.getBoundingClientRect()
-    height = h + 'px'
-    width = w + 'px'
+    height = `${h}px`
+    width = `${w}px`
     freeze.px = left + w / 2
     freeze.py = top + h / 2
     freeze.col = e.target.dataset.col
@@ -44,23 +44,23 @@
 </script>
 
 <div
-  style:transform="translate({pos.px}px, {pos.py}px)"
-  style:transition="transform {on * (on_a ? 200 : 100)}ms, opacity 400ms"
+  style:transform='translate({pos.px}px, {pos.py}px)'
+  style:transition='transform {on * (on_a ? 200 : 100)}ms, opacity 400ms'
   style:opacity={on ? 1 : 0}
   class={freeze.on || 'mix-blend-difference'}
-  bg="transparent"
+  bg='transparent'
   fixed=""
-  left="0"
-  pointer-events="none"
-  top="0"
+  left='0'
+  pointer-events='none'
+  top='0'
   {...props}
 >
   <div
     style:height
     style:width
-    style:transition="height 200ms, width 200ms, color 200ms"
+    style:transition='height 200ms, width 200ms, color 200ms'
     class={freeze.col || 'text-bord'}
-    b="1 current"
-    translate="x--1/2 y--1/2"
+    b='1 current'
+    translate='x--1/2 y--1/2'
   ></div>
 </div>

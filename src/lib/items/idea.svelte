@@ -1,6 +1,6 @@
-<script context="module">
-  export const desc =
-    '2019 - made in collaboration with Jana Počuchová. An interactive webcomic about creative block and ideation.'
+<script context='module'>
+  export const desc
+    = '2019 - made in collaboration with Jana Počuchová. An interactive webcomic about creative block and ideation.'
   export const tags = ['digital', 'front-end', 'dev', 'design', 'art']
   export const year = 2019
 </script>
@@ -13,9 +13,9 @@
   <Heading>IDEA</Heading>
   <Subheading>{desc}</Subheading>
   <Text>
-    <A href="http://www.bp1574.nyuadim.com/comic/">Website</A>
+    <A href='http://www.bp1574.nyuadim.com/comic/'>Website</A>
   </Text>
 
   <Sp />
-  <MediaImg name="idea" alt="The Idea website." />
+  <MediaImg name='idea' alt='The Idea website.' />
 </Prose>

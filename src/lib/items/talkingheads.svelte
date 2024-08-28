@@ -1,6 +1,6 @@
-<script context="module">
-  export const desc =
-    '2023. An experimental chatroom that enables mere mortals to communicate with the gods.'
+<script context='module'>
+  export const desc
+    = '2023. An experimental chatroom that enables mere mortals to communicate with the gods.'
   export const tags = [
     'digital',
     'full-stack',
@@ -21,9 +21,9 @@
   <Heading>TALKING-HEADS</Heading>
   <Subheading>{desc}</Subheading>
   <Text>
-    <A href="https://talking-heads.fly.dev">Website</A>
+    <A href='https://talking-heads.fly.dev'>Website</A>
     <br />
-    <A href="https://github.com/molarmanful/talking-heads">Source</A>
+    <A href='https://github.com/molarmanful/talking-heads'>Source</A>
   </Text>
-  <MediaImg name="talking-heads" alt="The talking-heads chatroom." />
+  <MediaImg name='talking-heads' alt='The talking-heads chatroom.' />
 </Prose>

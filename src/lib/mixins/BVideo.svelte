@@ -10,14 +10,14 @@
 </script>
 
 <Video {aspect}>
-  <div class="aspect-{aspect}" max-full mx-auto>
+  <div class='aspect-{aspect}' max-full mx-auto>
     <iframe
       class={px ? 'image-render-pixel' : ''}
-      allow="autoplay;"
+      allow='autoplay;'
       full
-      loading="lazy"
+      loading='lazy'
       object-contain
-      src="https://iframe.mediadelivery.net/embed/296935/{a}?{q}"
+      src='https://iframe.mediadelivery.net/embed/296935/{a}?{q}'
       title=""
     ></iframe>
   </div>

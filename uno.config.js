@@ -26,7 +26,7 @@ export default {
     presetScrollbar(),
     presetIcons({
       extraProperties: {
-        display: 'inline-block',
+        'display': 'inline-block',
         'vertical-align': 'middle',
       },
     }),
@@ -45,23 +45,23 @@ export default {
       no: colors.pink,
     },
     breakpoints: {
-      xs: '320px',
-      xs1: '390px',
-      xs2: '520px',
-      sm: '640px',
-      md: '768px',
-      lg: '1024px',
-      xl: '1280px',
+      'xs': '320px',
+      'xs1': '390px',
+      'xs2': '520px',
+      'sm': '640px',
+      'md': '768px',
+      'lg': '1024px',
+      'xl': '1280px',
       '2xl': '1536px',
       '3xl': '1792px',
     },
     container: {
       maxWidth: {
-        xs: '320px',
-        sm: '640px',
-        md: '768px',
-        lg: '1024px',
-        xl: '1280px',
+        'xs': '320px',
+        'sm': '640px',
+        'md': '768px',
+        'lg': '1024px',
+        'xl': '1280px',
         '2xl': '1536px',
         '3xl': '1536px',
       },
@@ -111,8 +111,8 @@ export default {
       {
         filter:
           // 'drop-shadow(var(--aber0) var(--aber1) var(--shad) #f00) ' +
-          'drop-shadow(var(--aber0) var(--aber1) var(--shad) #0f0) ' +
-          'drop-shadow(var(--aber0) var(--aber1) var(--shad) #00f)',
+          'drop-shadow(var(--aber0) var(--aber1) var(--shad) #0f0) '
+          + 'drop-shadow(var(--aber0) var(--aber1) var(--shad) #00f)',
         // '-webkit-text-fill-color': '#000',
       },
     ],
@@ -132,17 +132,17 @@ export default {
 
   shortcuts: [
     {
-      scroll: 'scrollbar-(~ thumb-color-bord track-color-black)',
-      bold: 'font-400 font-2',
-      prose: 'hyphens-auto',
-      cover:
+      'scroll': 'scrollbar-(~ thumb-color-bord track-color-black)',
+      'bold': 'font-400 font-2',
+      'prose': 'hyphens-auto',
+      'cover':
         'transition [&:hover,&:focus]:b-bord outline-none b-(1 transparent) relative',
-      under: 'underline decoration-(1 offset-[.25rem])',
-      focunder:
+      'under': 'underline decoration-(1 offset-[.25rem])',
+      'focunder':
         '[&:hover,&:focus]:text-white focus:decoration-white decoration-transparent outline-none b-(1 transparent) focus:b-current',
-      screen: 'w-screen h-lvh',
-      dscreen: 'w-screen h-dvh',
-      full: 'w-full h-full',
+      'screen': 'w-screen h-lvh',
+      'dscreen': 'w-screen h-dvh',
+      'full': 'w-full h-full',
       'max-full': 'max-w-full max-h-full',
       'max-screen': 'max-w-screen max-h-lvh',
       'max-dscreen': 'max-w-screen max-h-dvh',
@@ -153,7 +153,7 @@ export default {
       'type-7': 'text-4xl  md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl',
       'type-8': 'text-6xl  md:text-7xl lg:text-8xl             2xl:text-9xl',
     },
-    [/^ofade-([\d]*)$/, ([, c]) => `transition-opacity duration-${c}`],
+    [/^ofade-(\d*)$/, ([, c]) => `transition-opacity duration-${c}`],
   ],
   extractors: [extractorSvelte],
 }

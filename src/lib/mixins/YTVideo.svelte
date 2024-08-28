@@ -6,11 +6,11 @@
 
 <Video {aspect}>
   <iframe
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
     allowfullscreen
-    frameborder="0"
+    frameborder='0'
     full
-    loading="lazy"
+    loading='lazy'
     src={`https://youtube.com/embed/${a}`}
     {title}
   ></iframe>

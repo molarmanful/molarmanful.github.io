@@ -1,6 +1,6 @@
-<script context="module">
-  export const desc =
-    '2023. An eccentric bitmap microfont for all your spellcasting needs.'
+<script context='module'>
+  export const desc
+    = '2023. An eccentric bitmap microfont for all your spellcasting needs.'
   export const tags = ['typography', 'design']
   export const year = 2023
 </script>
@@ -27,10 +27,10 @@
 <Prose>
   <Heading>ELDUR</Heading>
   <Subheading>{desc}</Subheading>
-  <Text><A href="https://github.com/molarmanful/eldur">Source</A></Text>
+  <Text><A href='https://github.com/molarmanful/eldur'>Source</A></Text>
 </Prose>
 
 {#each srcs as [s, a]}
   {@const src = `https://github.com/molarmanful/eldur/raw/main/img/eldur${s}.png`}
-  <PxImg alt="{a} sample for the eldur font." {src} x="1" />
+  <PxImg alt='{a} sample for the eldur font.' {src} x='1' />
 {/each}

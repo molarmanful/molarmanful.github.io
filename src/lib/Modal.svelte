@@ -22,8 +22,9 @@
 </script>
 
 <svelte:window
-  onkeydown={e => {
-    if (!selected) return
+  onkeydown={(e) => {
+    if (!selected)
+      return
 
     switch (e.key) {
       case 'Tab':
@@ -34,7 +35,10 @@
         if (active) {
           deactivate()
           active = false
-        } else OFF()
+        }
+        else {
+          OFF()
+        }
         break
     }
   }}
@@ -42,7 +46,7 @@
 
 {#if selected && D.items.has(selected)}
   <div
-    aria-label="entry: {selected}"
+    aria-label='entry: {selected}'
     bg-black
     dscreen
     fixed
@@ -50,7 +54,7 @@
     overflow-hidden
     overscroll-contain
     pt-16
-    role="dialog"
+    role='dialog'
     z-50
     use:useFocusTrap
     transition:fade={{ duration: 200 }}
@@ -59,35 +63,35 @@
       <div flex h-full ml-4>
         <span m-auto>
           {selected} -
-          <A decoration="current" href="/work/{selected}" item>permalink</A>
+          <A decoration='current' href='/work/{selected}' item>permalink</A>
         </span>
       </div>
       <button
-        aria-label="close entry"
-        b="1 current"
+        aria-label='close entry'
+        b='1 current'
         bg-transparent
         box-content
         duration-500
         flex
         h-full
-        m="l-auto t--1px r--1px"
+        m='l-auto t--1px r--1px'
         onclick={OFF}
         outline-none
-        text="[&:hover,&:focus]:white"
+        text='[&:hover,&:focus]:white'
         transition-color
         w-16
       >
         <svg
-          alt="close"
+          alt='close'
           fill-current
-          h="1/2"
+          h='1/2'
           m-auto
-          viewBox="0 0 100 100"
-          w="1/2"
+          viewBox='0 0 100 100'
+          w='1/2'
         >
-          <g transform="rotate(45, 50, 50)">
-            <rect height="20" width="100" y="40"></rect>
-            <rect height="100" width="20" x="40"></rect>
+          <g transform='rotate(45, 50, 50)'>
+            <rect height='20' width='100' y='40'></rect>
+            <rect height='100' width='20' x='40'></rect>
           </g>
         </svg>
       </button>

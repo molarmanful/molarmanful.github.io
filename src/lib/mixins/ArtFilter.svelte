@@ -24,13 +24,13 @@
         const c = D.tags.get(b)
         return [a0.union(c), chosen.has(b) ? a1.union(c) : a1]
       },
-      [new Set(), new Set()]
-    )
+      [new Set(), new Set()],
+    ),
   )
   const not_actives = $derived(xs.difference(actives.x))
   const not_xs = $derived(all.difference(xs))
   const alltags = $derived(
-    [actives.x, not_actives, not_xs].flatMap(a => [...a].sort())
+    [actives.x, not_actives, not_xs].flatMap(a => [...a].sort()),
   )
 
   const handleAnim = () => {
@@ -42,8 +42,9 @@
 </script>
 
 <svelte:window
-  onkeydown={e => {
-    if (!focused) return
+  onkeydown={(e) => {
+    if (!focused)
+      return
     switch (e.key) {
       case ' ':
       case 'Enter':
@@ -63,16 +64,16 @@
 
 <div {...props}>
   <h3 bold data-aos={aos && 'fade-in'} mb-1.5 text-bord-500>Filter:</h3>
-  <menu bind:this={el} id="anchor-filter" use:autoAnimate use:useFocusTrap>
+  <menu bind:this={el} id='anchor-filter' use:autoAnimate use:useFocusTrap>
     {#if actives.x.size}
       <li
         data-aos={aos && 'fade-in'}
-        data-aos-anchor="#anchor-filter"
+        data-aos-anchor='#anchor-filter'
         inline-block
         m-1.5
       >
         <button
-          aria-label="clear all filtered tags"
+          aria-label='clear all filtered tags'
           btn
           onclick={() => {
             handleAnim()
@@ -86,21 +87,24 @@
     {/if}{#each alltags as tag, i (tag)}
       <li
         data-aos={aos && 'fade-in'}
-        data-aos-anchor="#anchor-filter"
+        data-aos-anchor='#anchor-filter'
         data-aos-delay={50 * (i + !!actives.x.size)}
         inline-block
         m-1.5
       >
         <button
-          class={actives.x.has(tag) ? 'text-yes'
-          : xs.has(tag) ? 'text-bord'
-          : 'text-bord-900 pointer-events-none'}
-          aria-label="filter by tag: {tag}"
+          class={actives.x.has(tag)
+            ? 'text-yes'
+            : xs.has(tag)
+            ? 'text-bord'
+            : 'text-bord-900 pointer-events-none'}
+          aria-label='filter by tag: {tag}'
           btn
           disabled={not_xs.has(tag)}
-          onclick={e => {
+          onclick={(e) => {
             handleAnim()
-            if (actives.x.has(tag)) actives.x.delete(tag)
+            if (actives.x.has(tag))
+              actives.x.delete(tag)
             else actives.x.add(tag)
             e.target.blur()
           }}
