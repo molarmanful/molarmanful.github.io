@@ -14,7 +14,7 @@ export function sfactor(f) {
       return
     stop = true
     f(scrollY / innerHeight || 0)
-    setTimeout(() => (stop = false), 50)
+    requestAnimationFrame(() => (stop = false))
   }
 
   useEventListener(window, 'scroll', g)

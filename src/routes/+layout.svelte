@@ -104,7 +104,7 @@
     mouse.py = clientY
     mouse.x = clientX / innerWidth
     mouse.y = clientY / innerHeight
-    setTimeout(() => (mouse.stop = false), 50)
+    requestAnimationFrame(() => (mouse.stop = false))
   }}
 />
 
