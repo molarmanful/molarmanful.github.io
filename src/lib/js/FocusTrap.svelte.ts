@@ -1,12 +1,16 @@
-import { createFocusTrap as cft } from 'focus-trap'
+import { type FocusTrap, type Options, createFocusTrap } from 'focus-trap'
+
+interface Opts extends Options {
+  immediate?: boolean
+}
 
 export default class {
-  #config
-  #trap
+  #config?: Opts
+  #trap?: FocusTrap
   #hasFocus = $state(false)
   #isPaused = $state(false)
 
-  constructor(config = {}) {
+  constructor(config: Opts = {}) {
     this.#config = config
   }
 
@@ -20,10 +24,10 @@ export default class {
     }
   }
 
-  useFocusTrap(node) {
+  useFocusTrap(node: HTMLElement) {
     const { immediate, ...opts } = this.#config
 
-    this.#trap = cft(node, {
+    this.#trap = createFocusTrap(node, {
       ...opts,
       onActivate: () => {
         this.#hasFocus = true
