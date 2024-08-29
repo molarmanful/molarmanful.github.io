@@ -1,5 +1,4 @@
 import { MediaQuery, useEventListener } from 'runed'
-import { getContext, setContext } from 'svelte'
 
 import { browser } from '$app/environment'
 
@@ -34,23 +33,10 @@ export const clickout = (node: Element, { f = (_?: Event) => {} }) => {
   useEventListener(document.body, 'click', g)
 }
 
-export const fadeonly = () =>
-  browser && new MediaQuery('(hover: none), (prefers-reduced-motion: reduce)')
+const wrapMQ = (q: string) => browser ? new MediaQuery(q) : void 0
 
-export const redmote = () =>
-  browser && new MediaQuery('(prefers-reduced-motion: reduce)')
+export const fadeonly = () => wrapMQ('(hover: none), (prefers-reduced-motion: reduce)')
+
+export const redmote = () => wrapMQ('(prefers-reduced-motion: reduce)')
 
 export const artalt = (name: string) => `Artwork: "${name}" by BandidoJim.`
-
-interface Context<T> {
-  get: () => T
-  set: (v: T) => void
-}
-
-export const context = <T>(s: string): Context<T> => {
-  const k = Symbol(s)
-  return {
-    get: () => getContext(k),
-    set: v => setContext(k, v),
-  }
-}
