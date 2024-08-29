@@ -5,7 +5,7 @@ interface Opts extends Options {
 }
 
 export default class {
-  #config?: Opts
+  #config: Opts
   #trap?: FocusTrap
   #hasFocus = $state(false)
   #isPaused = $state(false)
@@ -59,12 +59,12 @@ export default class {
     return this.#isPaused
   }
 
-  activate(opts) {
-    this.#trap.activate(opts)
+  activate() {
+    this.#trap?.activate()
   }
 
-  deactivate(opts) {
-    this.#trap.deactivate(opts)
+  deactivate() {
+    this.#trap?.deactivate()
   }
 
   pause() {

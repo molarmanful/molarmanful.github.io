@@ -1,9 +1,11 @@
-<script>
+<script lang='ts'>
   import { getContext } from 'svelte'
 
   import { A } from '.'
 
-  const { ...props } = $props()
+  interface Props {}
+
+  const { ...props }: Props = $props()
   const { fo } = getContext('D')
 
   const links = [

@@ -29,9 +29,8 @@ export default {
       query: { url: true, as: 'run:32' },
     }),
     x =>
-      x.sort(
-        ([a], [b]) =>
-          (items.get(b).year || 1 / 0) - (items.get(a).year || 1 / 0),
+      x.sort(([a], [b]) =>
+        (items.get(b)?.year || 1 / 0) - (items.get(a)?.year || 1 / 0),
       ),
   ),
   items,

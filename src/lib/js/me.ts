@@ -1,3 +1,32 @@
+interface El {
+  len: number
+  attr: Record<string, string>
+}
+
+interface Polyline extends El {
+  this: 'polyline'
+  attr: {
+    points: string
+  }
+}
+
+interface Line extends El {
+  this: 'line'
+  attr: {
+    x1: string
+    x2: string
+    y1: string
+    y2: string
+  }
+}
+
+interface Path extends El {
+  this: 'path'
+  attr: {
+    d: string
+  }
+}
+
 export default [
   {
     this: 'polyline',
@@ -2318,4 +2347,4 @@ export default [
     attr: { x1: '768.64', y1: '809.61', x2: '760.27', y2: '809.75' },
     len: 8.371166229248047,
   },
-]
+] as (Polyline | Line | Path)[]
