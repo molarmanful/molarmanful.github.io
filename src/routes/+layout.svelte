@@ -104,12 +104,12 @@
     mouse.py = clientY
     mouse.x = clientX / innerWidth
     mouse.y = clientY / innerHeight
-    setTimeout(() => (mouse.stop = false), 50)
+    requestAnimationFrame(() => (mouse.stop = false))
   }}
 />
 
 <!-- <Cursor {cursorFs} {mouse} z="100" /> -->
-<div scanlines text-bord></div>
+<!-- <div scanlines text-bord></div> -->
 
 <main class={loaded.x ? 'opacity-100' : 'opacity-0'} ofade-500 overflow-x-clip>
   {@render children()}

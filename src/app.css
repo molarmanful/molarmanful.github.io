@@ -36,7 +36,8 @@ a:focus {
 }
 
 [scanlines] {
-  @apply fixed inset-0 z-100 h-[200lvh] w-[200vw] pointer-events-none bg-blend-multiply mix-blend-screen opacity-30;
+  @apply fixed inset-0 z-100 pointer-events-none bg-current mix-blend-screen opacity-10;
+  /*
   background: repeating-linear-gradient(
       0deg,
       currentColor 0,
@@ -51,6 +52,7 @@ a:focus {
       #000 1px,
       #000 2px
     );
+  */
 }
 
 :is(.prose, [prose]) :is(h1, h2, h3, h4, h5, h6, p):not([noprose]) {
