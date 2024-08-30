@@ -33,7 +33,7 @@
   class='{0} origin-top-right b-(1 current) bg-black p-4 text-bord transition-color {clazz}'
   role='navigation'
   use:useFocusTrap
-  transition:scale={{ duration: 200 }}
+  transition:scale={{ duration: 300 }}
   {...props}
 >
   <menu class='text-3xl leading-8 font-1'>

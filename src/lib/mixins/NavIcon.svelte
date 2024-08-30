@@ -24,7 +24,7 @@
   <svg class='m-auto h-1/2 w-1/2' viewBox='0 0 5 5'>
     {#each Array(3).keys() as i}
       <rect
-        style:transition='color {pulse / 4 || 100}ms {(pulse / 4) * (i + 1)}ms, fill 400ms'
+        style:transition='color {pulse / 4 || 100}ms {(pulse / 8) * (i + 2)}ms, fill 400ms'
         style:color
         fill='var(--x, currentColor)'
         height='1'

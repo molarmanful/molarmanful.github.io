@@ -34,14 +34,21 @@
     `color-mix(in oklab, #818cf8 ${Math.max(0, Math.min(1, factor.x * 2 - 1)) * 100}%, ${col})`,
   )
 
-  $effect(() => {
-    let ic = 0
-    const t = setInterval(() => {
-      col = hexes[500][ic]
-      ic = (ic + 1) % hexes[500].length
-    }, pls)
+  let ic = 0
+  let to: ReturnType<typeof setTimeout> | undefined
+  const f = () => {
+    if (factor.x > 0.5)
+      return
+    col = hexes[500][ic]
+    ic = (ic + 1) % hexes[500].length
+    to = setTimeout(f, pls)
+  }
 
-    return () => clearInterval(t)
+  $effect(() => {
+    ((_) => {})(factor)
+    f()
+
+    return () => clearTimeout(to)
   })
 </script>
 
