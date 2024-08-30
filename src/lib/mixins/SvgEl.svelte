@@ -20,7 +20,7 @@
   let t = $state(0)
   let len_o = $state(0)
 
-  let to: number | undefined
+  let to: ReturnType<typeof setTimeout> | undefined
   const loop = () => {
     t = rt()
     c = cs[0 | (Math.random() * cs.length)]

@@ -31,5 +31,5 @@
 
 {#each srcs as [s, a]}
   {@const src = `https://github.com/molarmanful/eldur/raw/main/img/eldur${s}.png`}
-  <PxImg alt='{a} sample for the eldur font.' {src} x='1' />
+  <PxImg alt='{a} sample for the eldur font.' {src} />
 {/each}

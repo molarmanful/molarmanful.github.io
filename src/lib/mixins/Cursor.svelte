@@ -20,7 +20,7 @@
 
   let on = $state(false)
   let on_a = $state(false)
-  let t_on_a: number | undefined = $state()
+  let t_on_a: ReturnType<typeof setTimeout> | undefined = $state()
   let height = $state('2rem')
   let width = $state('2rem')
   const freeze: Freeze = $state({ px: 0, py: 0, on: false })

@@ -11,7 +11,7 @@
     i?: boolean
   }
 
-  const { name, i, ...props }: Props = $props()
+  const { name, i = false, ...props }: Props = $props()
   const { D } = cD.get()
 </script>
 

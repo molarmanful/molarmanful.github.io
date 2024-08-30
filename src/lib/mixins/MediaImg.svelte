@@ -8,10 +8,11 @@
 
   interface Props extends ComponentProps<Img> {
     name: string
+    px?: boolean
   }
 
-  const { name, ...props }: Props = $props()
+  const { name, px = false, ...props }: Props = $props()
   const { D } = cD.get()
 </script>
 
-<Image {name} b={D.media} {...props} />
+<Image {name} b={D.media} clazz={px ? 'image-render-pixel' : ''} {...props} />

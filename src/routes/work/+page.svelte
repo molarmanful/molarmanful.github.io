@@ -19,9 +19,9 @@
 </svelte:head>
 
 <div class='m-auto w-full p-5 lg:container lg:py-16'>
-  <Heading align='center' mb='5 md:8'>WORK</Heading>
-  <ArtGrid aos='in'>
-    {#snippet children(name, on, i)}
+  <Heading clazz='align-center mb-5 md:mb-8'>WORK</Heading>
+  <ArtGrid aosS='in'>
+    {#snippet children(name, on, i: boolean)}
       <A
         class='cover'
         aria-disabled={!on}

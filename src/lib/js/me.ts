@@ -4,7 +4,7 @@ interface Base {
 }
 
 interface Polyline extends Base {
-  this: 'polyline'
+  this: 'polyline' | 'polygon'
   attr: {
     points: string
   }
