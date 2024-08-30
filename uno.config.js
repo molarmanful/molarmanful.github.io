@@ -137,7 +137,7 @@ export default {
         'transition [&:hover,&:focus]:b-bord outline-none b-(1 transparent) relative',
       'under': 'underline decoration-(1 offset-[.25rem])',
       'focunder':
-        '[&:hover,&:focus]:text-white focus:decoration-white decoration-transparent outline-none b-(1 transparent) focus:b-current',
+        'decoration-transparent outline-none b-(1 transparent) [&:hover,&:focus]:text-white focus:(decoration-white b-current)',
       'screen': 'w-screen h-lvh',
       'dscreen': 'w-screen h-dvh',
       'full': 'w-full h-full',

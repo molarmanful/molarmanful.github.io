@@ -63,7 +63,7 @@
         data-aos-anchor='#anchor-abt-links'
         data-aos-delay={i * 100}
       >
-        <A class='{color} decoration-none!' href={link} item>
+        <A clazz='{color} decoration-none' href={link} item>
           <div class={icon}></div>
           <span class='under'>{name}</span>
         </A>
