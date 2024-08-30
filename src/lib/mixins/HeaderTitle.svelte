@@ -1,5 +1,14 @@
-<script>
-  const { mouse_rel, ...props } = $props()
+<script lang='ts'>
+  import type { HTMLAttributes } from 'svelte/elements'
+
+  interface Props extends HTMLAttributes<HTMLHeadingElement> {
+    mouse_rel: {
+      x: number
+      y: number
+    }
+  }
+
+  const { mouse_rel, ...props }: Props = $props()
 
   const aber = 4
   const shad = 4
@@ -14,23 +23,15 @@
 </script>
 
 <h1 {...props}>
-  <div absolute inset-0 p-8 screen>
+  <div class='absolute inset-0 screen p-8'>
     <svg
       style:--aber0='{aber_rel.x}px'
       style:--aber1='{aber_rel.y}px'
       style:--shad='{shad_rel}px'
-      aber-drop
-      alt='BEN PANG'
-      container='lg:'
-      fill-transparent
-      full
-      m-auto
-      object-contain
-      rotate-z--10
+      class='pointer-events-none m-auto full rotate-z--10 fill-transparent stroke-4 object-contain transition-filter-100 aber-drop lg:container lg:stroke-1 md:stroke-2'
       stroke='hsl(0, 100%, {(1 - dist) * 50 + 50}%)'
-      transition-filter-100
-      un-stroke='4 md:2 lg:1'
     >
+      <title>BEN PANG</title>
       <use href='/benpang.svg#main' vector-effect='non-scaling-stroke'></use>
     </svg>
   </div>

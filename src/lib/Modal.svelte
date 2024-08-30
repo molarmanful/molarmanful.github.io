@@ -1,17 +1,22 @@
-<script>
-  import { getContext } from 'svelte'
+<script lang='ts'>
   import { fade } from 'svelte/transition'
 
+  import { cD } from './js/contexts'
   import { FocusTrap } from './js/util.svelte'
   import { A, ItemBar, ItemBody } from './mixins'
 
-  const { selected } = $props()
-  const { D } = getContext('D')
+  interface Props {
+    selected?: string
+  }
 
-  const Item = $derived(D.items.get(selected)?.default)
+  const { selected }: Props = $props()
+  const { D } = cD.get()
+
+  const It = $derived(selected && D.items.get(selected)?.default)
 
   let el = $state({ x: void 0 })
   let active = false
+
   const { activate, deactivate, useFocusTrap } = new FocusTrap({
     setReturnFocus: () => el.x || false,
   }).fns
@@ -46,24 +51,17 @@
 
 {#if selected && D.items.has(selected)}
   <div
+    class='fixed inset-0 z-50 dscreen overflow-hidden overscroll-contain bg-black pt-16'
     aria-label='entry: {selected}'
-    bg-black
-    dscreen
-    fixed
-    inset-0
-    overflow-hidden
-    overscroll-contain
-    pt-16
     role='dialog'
-    z-50
     use:useFocusTrap
     transition:fade={{ duration: 200 }}
   >
     <ItemBar>
-      <div flex h-full ml-4>
-        <span m-auto>
+      <div class='ml-4 h-full flex'>
+        <span class='m-auto'>
           {selected} -
-          <A decoration='current' href='/work/{selected}' item>permalink</A>
+          <A class='decoration-current' href='/work/{selected}' item>permalink</A>
         </span>
       </div>
       <button
@@ -99,7 +97,7 @@
 
     <ItemBody bind:el>
       <div full in:fade={{ duration: 200 }}>
-        <Item />
+        <It />
       </div>
     </ItemBody>
   </div>

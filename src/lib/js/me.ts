@@ -27,7 +27,7 @@ interface Path extends El {
   }
 }
 
-export default [
+const me: (Polyline | Line | Path)[] = [
   {
     this: 'polyline',
     attr: {
@@ -2347,4 +2347,6 @@ export default [
     attr: { x1: '768.64', y1: '809.61', x2: '760.27', y2: '809.75' },
     len: 8.371166229248047,
   },
-] as (Polyline | Line | Path)[]
+]
+
+export default me

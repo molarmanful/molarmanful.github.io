@@ -26,6 +26,7 @@ export { default as HeaderTitle } from './HeaderTitle.svelte'
 export { default as SvgEl } from './SvgEl.svelte'
 export { default as HeaderSplash } from './HeaderSplash.svelte'
 
+export { default as AboutTitle } from './AboutTitle.svelte'
 export { default as AboutStatement } from './AboutStatement.svelte'
 export { default as AboutLinks } from './AboutLinks.svelte'
 

@@ -1,24 +1,25 @@
-<script>
+<script lang='ts'>
   import Img from '@zerodevx/svelte-img'
+  import type { ComponentProps } from 'svelte'
 
-  const { name, b, x = false, mt, ...props } = $props()
+  interface Props extends ComponentProps<Img> {
+    name?: string
+    b: string | Map<string, string>
+    mt?: boolean
+    clazz?: string
+  }
+
+  const { name, b, mt = false, clazz = '', ...props }: Props = $props()
 
   let loaded = $state(false)
 </script>
 
 <Img
-  class="{loaded ? 'loaded' : ''} laz"
+  class="{loaded ? 'loaded' : ''} {mt ? 'mt-0' : 'mt-6 md:mt-8'} laz bg-contain! image-render-quality mx-auto max-h-full object-contain text-0 w-full {clazz}"
   alt={name}
-  bg='contain!'
-  image-render='quality'
-  m="x-auto {mt ? 't-0' : 't-6 md:t-8'}"
-  max-h='full'
-  object='contain'
   onload={() => {
     loaded = true
   }}
-  src={x ? b : b.get(name)}
-  text='0'
-  w='full'
+  src={b instanceof Map ? b.get(name ?? '') : b}
   {...props}
 />

@@ -18,13 +18,14 @@ const shades = [
   'purple',
   'fuchsia',
   'pink',
-] satisfies (keyof typeof unoColors)[]
+] as const satisfies (keyof typeof unoColors)[]
 
-const weights = [500, 700] satisfies (keyof typeof unoColors.rose)[]
+const weights = [500, 700] as const satisfies (keyof typeof unoColors.rose)[]
+type Weight = keyof typeof weights
 
 export const colors = Object.fromEntries(
   weights.map(w => [w, shades.map(c => `text-${c}-${w}`)]),
-)
+) as Record<Weight, string[]>
 
 export const allColors = weights.flatMap(w =>
   shades.map(c => `text-${c}-${w}`),
@@ -32,4 +33,4 @@ export const allColors = weights.flatMap(w =>
 
 export const hexes = Object.fromEntries(
   weights.map(w => [w, shades.map(c => unoColors[c][w])]),
-)
+) as Record<Weight, string[]>

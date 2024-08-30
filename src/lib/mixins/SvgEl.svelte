@@ -1,12 +1,11 @@
 <svelte:options namespace='svg' />
 
 <script>
-  import { getContext } from 'svelte'
-
+  import { cD } from '../js/contexts'
   import { colors } from '../js/static'
 
   const { len, name, ...props } = $props()
-  const { loaded } = getContext('D')
+  const { loaded } = cD.get()
 
   const b = 500
   const rt = (a = 3000, b = 1000) => 0 | (Math.random() * a + b)

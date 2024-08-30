@@ -1,18 +1,18 @@
 <script>
-  import { getContext } from 'svelte'
+  import { cD } from '../js/contexts'
 
   import { Video } from '.'
 
   const { a, px, aspect = 'square' } = $props()
-  const { vloader } = getContext('D')
+  const { vloader } = cD.get()
 
   let el = $state()
   let loaded = $state(false)
 
   $effect(() => {
-    vloader.observe(el)
+    vloader?.observe(el)
 
-    return () => vloader.unobserve(el)
+    return () => vloader?.unobserve(el)
   })
 </script>
 

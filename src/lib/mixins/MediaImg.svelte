@@ -1,10 +1,10 @@
 <script>
-  import { getContext } from 'svelte'
+  import { cD } from '../js/contexts'
 
   import { Image } from '.'
 
   const { name, ...props } = $props()
-  const { D } = getContext('D')
+  const { D } = cD.get()
 </script>
 
 <Image {name} b={D.media} {...props} />

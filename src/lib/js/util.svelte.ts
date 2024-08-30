@@ -4,7 +4,7 @@ import { browser } from '$app/environment'
 
 export { default as FocusTrap } from './FocusTrap.svelte'
 
-export const sfactor = (f: (x: number) => void) => {
+export const sfactor = (f: (a: number) => void) => {
   if (!browser)
     return
 

@@ -32,9 +32,8 @@ export default class {
             el.classList.add('aos-animate')
           else el.classList.remove('aos-animate')
         }
-        const t = target as HTMLElement
-        if (t.dataset.aos) {
-          f(t)
+        if ((target as HTMLElement).dataset.aos) {
+          f(target)
           continue
         }
         for (const el of document.querySelectorAll(
@@ -48,18 +47,20 @@ export default class {
 
     this.mo = new MutationObserver((muts) => {
       for (const { addedNodes, removedNodes, target } of muts) {
-        for (const node of [...addedNodes, ...removedNodes] as HTMLElement[]) {
-          if (node.dataset?.aos) {
-            this.observeAll(target as Element, true)
-            break
-          }
+        const nodes = [...addedNodes, ...removedNodes] as HTMLElement[]
+        for (const node of nodes) {
+          if (!node.dataset?.aos)
+            continue
+          this.observeAll(target as Element, true)
+          break
         }
       }
     })
   }
 
   init() {
-    for (const k of ['duration', 'delay', 'easing'] as (keyof Opts)[])
+    const ks: (keyof Opts)[] = ['duration', 'delay', 'easing']
+    for (const k of ks)
       document.body.setAttribute(`data-aos-${k}`, `${this.opts[k]}`)
 
     this.mo?.observe(document.body, {
@@ -72,7 +73,8 @@ export default class {
   }
 
   observeAll(parent?: Element, hard = false) {
-    for (const el of (parent ?? document).querySelectorAll('[data-aos]') as NodeListOf<HTMLElement>) {
+    const els: NodeListOf<HTMLElement> = (parent ?? document).querySelectorAll('[data-aos]')
+    for (const el of els) {
       const el1 = el.dataset.aosAnchor
         ? document.querySelector(el.dataset.aosAnchor) ?? el
         : el

@@ -1,23 +1,26 @@
-<script>
-  import { getContext } from 'svelte'
-
+<script lang='ts'>
+  import { cD } from './js/contexts'
   import { hexes } from './js/static'
   import { NavBody, NavIcon } from './mixins'
 
-  const { tops = [] } = $props()
-  const { factor } = getContext('D')
+  interface Props {
+    tops: string[]
+  }
+
+  const { tops = [] }: Props = $props()
+  const { factor } = cD.get()
 
   let dropped = $state(false)
-  const ON = (e) => {
+  const ON = ({ target }: Event) => {
     dropped = true
-    e.target.blur()
+    ;(target as HTMLElement).blur()
   }
   const OFF = () => {
     dropped = false
   }
-  const GOTO = top => () => {
+  const GOTO = (top: string) => () => {
     dropped = false
-    scrollTo({ top: document.getElementById(top).offsetTop })
+    scrollTo({ top: document.getElementById(top)?.offsetTop })
   }
 
   // const filter = $derived(
@@ -52,40 +55,29 @@
 <nav>
   <NavIcon
     aria-expanded={dropped}
+    clazz='fixed flex right-2 top-2 z-30'
     {color}
-    fixed=""
-    flex=""
     onclick={ON}
     onmouseenter={ON}
     {pulse}
-    right='2'
-    top='2'
-    z='30'
   ></NavIcon>
 
   {#if dropped}
     <button
-      cursor-initial
-      fixed
+      class='fixed z-30 screen cursor-initial opacity-0'
       onmousedown={OFF}
       ontouchstart={OFF}
-      opacity-0
-      screen
       tabindex='-1'
-      z-30
     >
       Close Navigation
     </button>
     <NavBody
       {GOTO}
+      clazz='fixed right-2 top-2 z-40'
       {color}
-      fixed=""
       onmouseleave={OFF}
       {pulse}
-      right='2'
-      top='2'
       {tops}
-      z='40'
     />
   {/if}
 </nav>

@@ -5,9 +5,11 @@
 
   import { A } from '.'
 
-  interface Props extends HTMLAttributes<HTMLDivElement> {}
+  interface Props extends HTMLAttributes<HTMLDivElement> {
+    clazz?: string
+  }
 
-  const { ...props }: Props = $props()
+  const { clazz, ...props }: Props = $props()
   const { fo } = cD.get()
 
   const links = [
@@ -46,7 +48,7 @@
   ]
 </script>
 
-<div class='prose' {...props}>
+<div class='{0} prose {clazz}' {...props}>
   <h2
     class='noprose text-(head stroked) type-6'
     data-aos="fade-{fo?.matches ? 'in' : 'left'}"

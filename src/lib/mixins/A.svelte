@@ -5,11 +5,11 @@
   interface Props extends HTMLAnchorAttributes {
     t?: boolean
     item?: boolean
-    class?: string
+    clazz?: string
     children: Snippet
   }
 
-  const { t, item = false, class: clazz = '', children, ...props }: Props = $props()
+  const { t, item = false, clazz = '', children, ...props }: Props = $props()
 </script>
 
 <a
