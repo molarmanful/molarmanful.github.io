@@ -12,15 +12,18 @@
   let pw = $state(1)
   const px = $derived(pw >= w)
 
-  let to: ReturnType<typeof setTimeout> | undefined
+  let stop = false
   const rsz = () => {
-    clearTimeout(to)
+    if (stop)
+      return
     setTimeout(() => {
       if (!el)
         return
       w = el.naturalWidth
       pw = el.parentElement?.clientWidth || 0
-    }, 100)
+      stop = false
+    }, 50)
+    stop = true
     loaded = true
   }
 
