@@ -109,8 +109,8 @@ export default {
       {
         filter:
           // 'drop-shadow(var(--aber0) var(--aber1) var(--shad) #f00) ' +
-          'drop-shadow(var(--aber0) var(--aber1) var(--shad) #0f0) '
-          + 'drop-shadow(var(--aber0) var(--aber1) var(--shad) #00f)',
+          `drop-shadow(var(--aber0) var(--aber1) var(--shad) ${colors.teal[400]}) `
+          + `drop-shadow(var(--aber0) var(--aber1) var(--shad) ${colors.indigo[400]})`,
         // '-webkit-text-fill-color': '#000',
       },
     ],

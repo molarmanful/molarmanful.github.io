@@ -29,7 +29,7 @@
       style:--aber1='{aber_rel.y}px'
       style:--shad='{shad_rel}px'
       class='pointer-events-none m-auto full rotate-z--10 fill-transparent stroke-4 object-contain transition-filter-100 aber-drop lg:container lg:stroke-1 md:stroke-2'
-      stroke='hsl(0, 100%, {(1 - dist) * 50 + 50}%)'
+      stroke='hsl(328.6deg, 85.5%, {(1 - dist) * 30 + 70}%)'
     >
       <title>BEN PANG</title>
       <use href='/benpang.svg#main' vector-effect='non-scaling-stroke'></use>
