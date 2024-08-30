@@ -27,28 +27,28 @@
   //   `hue-rotate(${factor.x * -69}deg) grayscale(${factor.x * 1.2})`
   // )
 
-  let col = $state('#818cf8')
+  const cols: string[] = $state(Array(4).fill('#818cf8'))
   const pls = $state(2000)
-  const pulse = $derived(factor.x > 0.5 ? 0 : pls)
-  const color = $derived(
-    `color-mix(in oklab, #818cf8 ${Math.max(0, Math.min(1, factor.x * 2 - 1)) * 100}%, ${col})`,
+  const pulse = $derived(factor.x >= 0.95 ? pls / 2 : pls)
+  const colors = $derived(
+    cols.map(c =>
+      `color-mix(in oklab, #818cf8 ${Math.max(0, Math.min(1, factor.x * 2 - 1)) * 100}%, ${c})`),
   )
 
   let ic = 0
-  let to: ReturnType<typeof setTimeout> | undefined
-  const f = () => {
-    if (factor.x > 0.5)
-      return
-    col = hexes[500][ic]
-    ic = (ic + 1) % hexes[500].length
-    to = setTimeout(f, pls)
-  }
-
+  let i = 0
   $effect(() => {
-    ((_) => {})(factor)
-    f()
+    const t = setInterval(() => {
+      cols[i] = hexes[500][ic]
+      i++
+      i %= 4
+      if (i <= 0) {
+        ic++
+        ic %= hexes[500].length
+      }
+    }, pls / 4)
 
-    return () => clearTimeout(to)
+    return () => clearInterval(t)
   })
 </script>
 
@@ -63,7 +63,7 @@
   <NavIcon
     aria-expanded={dropped}
     clazz='fixed flex right-2 top-2 z-30'
-    {color}
+    {colors}
     onclick={ON}
     onmouseenter={ON}
     {pulse}
@@ -81,7 +81,7 @@
     <NavBody
       {GOTO}
       clazz='fixed right-2 top-2 z-40'
-      {color}
+      {colors}
       onmouseleave={OFF}
       {pulse}
       {tops}

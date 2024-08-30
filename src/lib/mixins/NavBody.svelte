@@ -8,7 +8,7 @@
     tops: string[]
     GOTO: (s: string) => (e: Event) => void
     pulse: number
-    color: string
+    colors: string[]
     clazz?: string
   }
 
@@ -16,7 +16,7 @@
     tops = [],
     GOTO,
     pulse,
-    color,
+    colors,
     clazz = '',
     ...props
   }: Props = $props()
@@ -29,7 +29,7 @@
 
 <div
   style:transition-duration='{pulse}ms'
-  style:color
+  style:color={colors[0]}
   class='{0} origin-top-right b-(1 current) bg-black p-4 text-bord transition-color {clazz}'
   role='navigation'
   use:useFocusTrap
@@ -42,7 +42,7 @@
         <button
           style:transition='color {pulse || 100}ms, border-color 400ms, filter
             400ms'
-          style:color
+          style:color={colors[0]}
           class='b-(b-1 transparent) bg-transparent text-bord outline-none ease [&:hover,&:focus]:b-white [&:hover,&:focus]:fake-white'
           onclick={GOTO(top)}
         >
