@@ -13,7 +13,7 @@
 </script>
 
 <a
-  class="{item ? 'text-inherit focunder' : ''} under {clazz}"
+  class="{item ? 'text-inherit' : ''} under focunder {clazz}"
   target={t ? void 0 : '_blank'}
   {...props}
 >

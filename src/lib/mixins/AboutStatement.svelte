@@ -42,7 +42,6 @@
   </Text>
   <Text clazz='italic text-text-500' data-aos='fade-in'>
     This website is <A
-      clazz='b-(1 transparent) outline-none transition-colors duration-500 focus:b-current'
       href='https://github.com/molarmanful/molarmanful.github.io'
     >open-source</A>!
   </Text>
