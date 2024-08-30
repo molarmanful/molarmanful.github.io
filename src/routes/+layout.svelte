@@ -102,13 +102,13 @@
   onmousemove={({ clientX, clientY }: MouseEvent) => {
     if (fo?.matches || mouse.stop)
       return
-    requestAnimationFrame(() => {
+    setTimeout(() => {
       mouse.px = clientX
       mouse.py = clientY
       mouse.x = clientX / innerWidth
       mouse.y = clientY / innerHeight
       mouse.stop = false
-    })
+    }, 50)
     mouse.on = true
     mouse.stop = true
   }}

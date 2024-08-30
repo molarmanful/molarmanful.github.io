@@ -19,7 +19,7 @@
 </svelte:head>
 
 <div class='m-auto w-full p-5 lg:container lg:py-16'>
-  <Heading clazz='align-center mb-5 md:mb-8'>WORK</Heading>
+  <Heading clazz='text-center mb-5 md:mb-8'>WORK</Heading>
   <ArtGrid aosS='in'>
     {#snippet children(name, on, i: boolean)}
       <A

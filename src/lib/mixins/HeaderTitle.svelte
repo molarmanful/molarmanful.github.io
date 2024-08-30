@@ -28,7 +28,7 @@
       style:--aber0='{aber_rel.x}px'
       style:--aber1='{aber_rel.y}px'
       style:--shad='{shad_rel}px'
-      class='pointer-events-none m-auto full rotate-z--10 fill-transparent stroke-4 object-contain aber-drop lg:container lg:stroke-1 md:stroke-2'
+      class='pointer-events-none m-auto full rotate-z--10 fill-transparent stroke-4 object-contain transition-filter-100 aber-drop lg:container lg:stroke-1 md:stroke-2'
       stroke='hsl(0, 100%, {(1 - dist) * 50 + 50}%)'
     >
       <title>BEN PANG</title>

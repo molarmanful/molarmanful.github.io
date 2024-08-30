@@ -12,10 +12,10 @@ export const sfactor = (f: (a: number) => void) => {
   const g = () => {
     if (stop)
       return
-    requestAnimationFrame(() => {
+    setTimeout(() => {
       f(scrollY / innerHeight || 0)
       stop = false
-    })
+    }, 50)
     stop = true
   }
 

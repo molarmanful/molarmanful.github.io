@@ -14,7 +14,7 @@
 
   const {
     tops = [],
-    GOTO = () => () => {},
+    GOTO,
     pulse,
     color,
     clazz = '',

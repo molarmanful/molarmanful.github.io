@@ -18,9 +18,9 @@
   const OFF = () => {
     dropped = false
   }
-  const GOTO = (top: string) => () => {
-    dropped = false
+  const GOTO = (top: string) => ({ target }: Event) => {
     scrollTo({ top: document.getElementById(top)?.offsetTop })
+    ;(target as HTMLElement).blur()
   }
 
   // const filter = $derived(
