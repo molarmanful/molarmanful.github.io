@@ -1,1 +1,1 @@
-<div mt='6 lg:12'></div>
+<div class='mt-6 lg:mt-12'></div>
