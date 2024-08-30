@@ -49,14 +49,19 @@ jobs:
             github.run_id }}
           restore-keys: ${{ runner.os }}-node-cache-${{ hashFiles('**/pnpm-lock.yaml')
             }}-
+      - name: check
+        run: |
+          pnpm check
       - name: build
         run: |
           pnpm build
           touch build/.nojekyll
       - name: upload
+        if: github.ref_name == github.event.repository.default_branch
         uses: actions/upload-pages-artifact@v3
         with:
           path: build
       - name: deploy
+        if: github.ref_name == github.event.repository.default_branch
         id: deployment
         uses: actions/deploy-pages@v4
