@@ -1,7 +1,6 @@
 import extractorSvelte from '@unocss/extractor-svelte'
 import { colors } from '@unocss/preset-uno/colors'
 import {
-  presetAttributify,
   presetIcons,
   presetUno,
   presetWebFonts,
@@ -14,7 +13,6 @@ import { allColors } from './src/lib/js/static.js'
 
 export default {
   presets: [
-    presetAttributify(),
     presetUno(),
     presetWebFonts({
       provider: 'google',

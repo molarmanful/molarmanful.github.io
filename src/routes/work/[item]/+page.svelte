@@ -1,12 +1,19 @@
-<script>
-  import { getContext } from 'svelte'
+<script lang='ts'>
+  import type { PageServerData } from './$types'
 
-  const { data } = $props()
-  const { D } = getContext('D')
+  import { cD } from '$lib/js/contexts'
+  import type { Item } from '$lib/js/D'
 
-  const { name } = data
+  interface Props {
+    data: PageServerData
+  }
 
-  const { default: Item, desc } = $derived(D.items.get(name))
+  const { data }: Props = $props()
+  const { D } = cD.get()
+
+  const name: string = data.name
+
+  const { default: It, desc } = $derived(D.items.get(name) as Item)
 </script>
 
 <svelte:head>
@@ -16,4 +23,4 @@
   {/if}
 </svelte:head>
 
-<Item />
+<It />

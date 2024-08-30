@@ -1,32 +1,39 @@
-<script>
+<script lang='ts'>
   import 'core-js/proposals/set-methods-v2'
   import autoAnimate from '@formkit/auto-animate'
   import { useEventListener } from 'runed'
-  import { getContext } from 'svelte'
+  import type { Snippet } from 'svelte'
   import { tabbable } from 'tabbable'
 
+  import { cD, cfocus } from '../js/contexts'
   import { FocusTrap } from '../js/util.svelte'
   import { ArtFilter } from '../mixins'
 
-  const { aos, children, ...props } = $props()
-  const { D, actives, aos: AOS, fo } = getContext('D')
-  const rfocus = getContext('focus')
+  interface Props {
+    aosS?: string
+    children: Snippet<[string, boolean, boolean]>
+  }
+
+  const { aosS, children, ...props }: Props = $props()
+  const { D, actives, aos, fo } = cD.get()
+  const rfocus = cfocus.get()
 
   const { activate, deactivate, useFocusTrap } = new FocusTrap({
     clickOutsideDeactivates: true,
     setReturnFocus: () => rfocus?.x || false,
   }).fns
-  let el = $state()
-  let activeElement = $state()
-  const focused = $derived(el?.contains(activeElement))
 
-  let ts = $state([])
+  let el: HTMLElement | undefined = $state()
+  let activeElement: HTMLElement | undefined = $state()
+  const focused = $derived(!!(activeElement && el?.contains(activeElement)))
+
+  let ts: HTMLElement[] = $state([])
   let cs = $state(1)
 
-  const wrap = (e, f) => {
+  const wrap = (e: Event, f: (a: number) => number) => {
     activate()
     e.preventDefault()
-    const i = ts.indexOf(activeElement)
+    const i = ts.indexOf(activeElement as HTMLElement)
     const i1 = f(i)
     if (i1 >= 0 && i1 < ts.length)
       ts[i1].focus()
@@ -36,8 +43,8 @@
     if (!el)
       return
     const styles = getComputedStyle(el)
-    const p = v =>
-      styles.getPropertyValue(v).split` `.filter(x => x !== '0px').length
+    const p = (v: string) =>
+      styles.getPropertyValue(v).split(' ').filter(x => x !== '0px').length
     // const length = el.childElementCount
     // const rows = p('grid-template-rows')
     const cols = p('grid-template-columns')
@@ -47,7 +54,7 @@
   $effect(() => {
     if (!el)
       return
-    ts = tabbable(el)
+    ts = tabbable(el) as HTMLElement[]
     calcgrid()
   })
 
@@ -57,8 +64,13 @@
   const chosen = $derived(
     actives.x.size
       ? [...covers].reduce(
-        (a, b) => (actives.x.isSubsetOf(D.tags.get(b)) ? a.add(b) : a),
-        new Set(),
+        (a, b) => {
+          const c = D.tags.get(b)
+          if (c === void 0)
+            throw new Error('c is undefined')
+          return actives.x.isSubsetOf(c) ? a.add(b) : a
+        },
+        new Set<string>(),
       )
       : covers,
   )
@@ -66,12 +78,12 @@
   const ordered = $derived([chosen, not_chosen].flatMap(a => [...a]))
 
   let anim = $state(true)
-  const animels = $state([])
+  const animels: Element[] = $state([])
 
   $effect(() => {
-    if (!anim || !AOS.on)
+    if (!anim || !aos.on)
       return
-    for (const el of animels) AOS.manual(el, el)
+    for (const el of animels) aos.manual(el, el)
   })
 </script>
 
@@ -82,7 +94,7 @@
     switch (e.key) {
       case 'Escape':
         deactivate()
-        activeElement.blur()
+        activeElement?.blur()
         break
       case 'ArrowUp':
         wrap(e, i => i - cs)
@@ -101,13 +113,11 @@
 />
 <svelte:document bind:activeElement />
 
-<ArtFilter {aos} {chosen} mb='3.5 md:6.5' bind:anim />
+<ArtFilter class='mb-3.5 md:mb-6.5' {aosS} {chosen} bind:anim />
 
 <div
   bind:this={el}
-  cols='1 sm:2 md:3 xl:4'
-  gap='5 md:8'
-  grid=""
+  class='grid cols-1 gap-5 md:(cols-3 gap-8) sm:cols-2 xl:cols-4'
   use:autoAnimate
   use:useFocusTrap
   {...props}
@@ -116,11 +126,9 @@
     {@const on = chosen.has(name)}
     <div
       bind:this={animels[i]}
-      class="{on ? '' : 'brightness-10 pointer-events-none!'} {anim ? '' : ('suppress')}"
-      data-aos={aos && anim && `fade-${fo.matches ? 'in' : aos}`}
-      data-aos-delay={aos && anim && 100 * (i % cs)}
-      flex
-      transition-filter,opacity,transform
+      class="{on ? '' : 'brightness-10 pointer-events-none!'} {anim ? '' : 'suppress'} flex transition-filter,opacity,transform"
+      data-aos={aosS && anim && `fade-${fo?.matches ? 'in' : aosS}`}
+      data-aos-delay={aosS && anim && 100 * (i % cs)}
     >
       {@render children(name, on, ((i / cs) | 0) % 2 === (i % cs) % 2)}
     </div>

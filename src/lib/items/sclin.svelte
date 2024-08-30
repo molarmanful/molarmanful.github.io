@@ -1,4 +1,4 @@
-<script context='module'>
+<script lang='ts' module>
   export const desc = '2024. Functional and array programming paradigms packaged into a stack-based language. Tuned for maximum expressiveness. Features a web-based interpreter and tree-sitter grammar.'
   export const tags = [
     'digital',
@@ -12,7 +12,7 @@
   export const year = 2024
 </script>
 
-<script>
+<script lang='ts'>
   import { A, Heading, MediaImg, Prose, Sp, Subheading, Text } from '../mixins'
 </script>
 

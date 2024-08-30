@@ -1,10 +1,10 @@
-<script context='module'>
+<script lang='ts' module>
   export const desc = '2020. Using visualization techniques to gain data-driven insights into Laruelle\'s Dictionary of Non-Philosophy.'
   export const tags = ['digital', 'data-sci', 'dev']
   export const year = 2020
 </script>
 
-<script>
+<script lang='ts'>
   import { A, Heading, MediaImg, Prose, Sp, Subheading, Text } from '../mixins'
 </script>
 

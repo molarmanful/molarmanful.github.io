@@ -1,10 +1,10 @@
-<script context='module'>
+<script lang='ts' module>
   export const desc = '2024. A versatile bitmap font with an organic flair. Features a comprehensive CI/CD system for generation of font files and image samples.'
   export const tags = ['typography', 'design', 'dev']
   export const year = 2024
 </script>
 
-<script>
+<script lang='ts'>
   import { A, Heading, Prose, PxImg, Subheading, Text } from '../mixins'
 </script>
 

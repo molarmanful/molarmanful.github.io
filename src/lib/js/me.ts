@@ -1,4 +1,35 @@
-export default [
+interface Base {
+  len: number
+  attr: Record<string, string>
+}
+
+interface Polyline extends Base {
+  this: 'polyline' | 'polygon'
+  attr: {
+    points: string
+  }
+}
+
+interface Line extends Base {
+  this: 'line'
+  attr: {
+    x1: string
+    x2: string
+    y1: string
+    y2: string
+  }
+}
+
+interface Path extends Base {
+  this: 'path'
+  attr: {
+    d: string
+  }
+}
+
+export type El = Polyline | Line | Path
+
+const me: El[] = [
   {
     this: 'polyline',
     attr: {
@@ -2319,3 +2350,5 @@ export default [
     len: 8.371166229248047,
   },
 ]
+
+export default me

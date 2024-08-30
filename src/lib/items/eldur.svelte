@@ -1,10 +1,10 @@
-<script context='module'>
+<script lang='ts' module>
   export const desc = '2023. An eccentric bitmap microfont for all your spellcasting needs.'
   export const tags = ['typography', 'design']
   export const year = 2023
 </script>
 
-<script>
+<script lang='ts'>
   import { A, Heading, Prose, PxImg, Subheading, Text } from '../mixins'
 
   const srcs = [
@@ -31,5 +31,5 @@
 
 {#each srcs as [s, a]}
   {@const src = `https://github.com/molarmanful/eldur/raw/main/img/eldur${s}.png`}
-  <PxImg alt='{a} sample for the eldur font.' {src} x='1' />
+  <PxImg alt='{a} sample for the eldur font.' {src} />
 {/each}

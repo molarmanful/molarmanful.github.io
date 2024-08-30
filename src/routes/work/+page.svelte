@@ -1,10 +1,9 @@
-<script>
-  import { getContext } from 'svelte'
-
+<script lang='ts'>
   import { afterNavigate } from '$app/navigation'
+  import { cD } from '$lib/js/contexts'
   import { A, ArtGrid, CoverImg, Heading } from '$lib/mixins'
 
-  const { D, aos } = getContext('D')
+  const { D, aos } = cD.get()
 
   afterNavigate(() => {
     aos.init()
@@ -19,13 +18,13 @@
   />
 </svelte:head>
 
-<div container='lg:' m-auto p='x-5 y-5 lg:y-16' w-full>
-  <Heading align='center' mb='5 md:8'>WORK</Heading>
-  <ArtGrid aos='in'>
-    {#snippet children(name, on, i)}
+<div class='m-auto w-full p-5 lg:container lg:py-16'>
+  <Heading clazz='align-center mb-5 md:mb-8'>WORK</Heading>
+  <ArtGrid aosS='in'>
+    {#snippet children(name, on, i: boolean)}
       <A
+        class='cover'
         aria-disabled={!on}
-        cover=""
         href={on ? `/work/${name}` : void 0}
         role='link'
         t

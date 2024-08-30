@@ -1,68 +1,23 @@
-<script>
-  import lev from './js/lev'
-  import { AboutLinks, AboutStatement, Heading, Section } from './mixins'
+<script lang='ts'>
+  import { AboutLinks, AboutStatement, AboutTitle, Section } from './mixins'
 
-  const { top = () => {} } = $props()
+  interface Props {
+    top: (a: string) => void
+  }
 
-  const bank = [
-    'WEIRD',
-    'WEIRD ART',
-    '2D ART',
-    '3D ART',
-    '4D ART',
-    'DYNAMIC',
-    'DIGITAL',
-    'PHYSICAL',
-    'RADICAL',
-    'WIZARD',
-  ]
-  let i = 0
-  let word = $state(bank[i])
-
-  $effect(() => {
-    const t = setInterval(() => {
-      word = bank[i]
-      i = (i + 1) % bank.length
-      const steps = lev(word, bank[i])
-      const n = setInterval(() => {
-        if (steps.length)
-          word = steps.pop()
-        else clearInterval(n)
-      }, 50)
-    }, 1500)
-
-    return () => clearInterval(t)
-  })
+  const { top }: Props = $props()
 </script>
 
 <Section bord nav='abt' {top}>
-  <div
-    b='3xl:(t l) bord'
-    container='lg:'
-    mx-auto
-    p='t-8 md:(x-8 t-16) xl:x-16'
-    w-screen
-  >
-    <div max-w='lt-lg:prose' mx='lt-lg:auto' prose>
-      <Heading data-aos='fade-in'>
-        I MAKE
-        <br un-hidden='xs1:' />
-        <span text-unstroked whitespace-nowrap>
-          {word}
-        </span>
-        <br un-hidden='xs2:' />
-        THINGS.
-      </Heading>
+  <div class='mx-auto w-screen b-bord pt-8 lg:container 3xl:(b-l b-t) md:(px-8 pt-16) xl:px-16'>
+    <div class='prose lt-lg:mx-auto lt-lg:max-w-prose'>
+      <AboutTitle />
     </div>
 
-    <div divide='lg:x bord' flex='lg:' pb='16 lg:32'>
-      <AboutStatement max-w='prose 2xl:[80ch]' mx='lt-lg:auto' px='2' />
+    <div class='pb-16 lg:(flex pb-32 divide-x) divide-bord'>
+      <AboutStatement clazz='max-w-prose px-2 lt-lg:mx-auto 2xl:max-w-80ch' />
 
-      <AboutLinks
-        m='t-8 x-auto lg:(t-12 l-auto r-unset)'
-        max-w='prose'
-        px='6 md:0 lg:8'
-      />
+      <AboutLinks clazz='mx-auto mt-8 max-w-prose px-6 lg:(ml-auto mr-unset mt-12 px-8) md:px-0' />
     </div>
   </div>
 </Section>

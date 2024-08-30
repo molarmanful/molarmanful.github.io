@@ -1,17 +1,17 @@
-export default (a, b) => {
-  const mat = [...Array(a.length + 1)].map(() => [...Array(b.length + 1)])
-  for (const i in `${a} `) mat[i][0] = +i
-  for (const i in `${b} `) mat[0][i] = +i
+export default (a: string, b: string) => {
+  const mat: number[][] = [...Array(a.length + 1)].map(() => [...Array(b.length + 1)])
+  for (const i in [...a, ' ']) mat[i][0] = +i
+  for (const i in [...b, ' ']) mat[0][i] = +i
 
-  for (let i in a) {
-    i = +i
-    for (let j in b) {
-      j = +j
-      const cost = a[i] !== b[j]
-      mat[i + 1][j + 1] = Math.min(
-        mat[i][j + 1] + 1,
-        mat[i + 1][j] + 1,
-        mat[i][j] + cost,
+  for (const i in [...a]) {
+    const i1 = +i
+    for (const j in [...b]) {
+      const j1 = +j
+      const cost = +(a[i1] !== b[j1])
+      mat[i1 + 1][j1 + 1] = Math.min(
+        mat[i1][j1 + 1] + 1,
+        mat[i1 + 1][j1] + 1,
+        mat[i1][j1] + cost,
       )
     }
   }
@@ -33,7 +33,7 @@ export default (a, b) => {
       j--
       steps.unshift(steps[0].slice(0, i) + b[j] + steps[0].slice(i))
     }
-    else if (cost === costS + (a[i - 1] !== b[j - 1])) {
+    else if (cost === costS + +(a[i - 1] !== b[j - 1])) {
       i--
       j--
       if (a[i] !== b[j])

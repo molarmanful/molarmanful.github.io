@@ -1,5 +1,16 @@
-<script>
-  import { getContext } from 'svelte'
+<script lang='ts'>
+  import type { Snippet } from 'svelte'
+  import type { HTMLAttributes } from 'svelte/elements'
+
+  import { cD } from '../js/contexts'
+
+  interface Props extends HTMLAttributes<HTMLElement> {
+    name?: string
+    nav: string
+    top: (a: string) => void
+    bord?: boolean
+    children: Snippet
+  }
 
   const {
     name = '',
@@ -8,44 +19,28 @@
     bord = false,
     children,
     ...props
-  } = $props()
-  const { fo } = getContext('D')
+  }: Props = $props()
+  const { fo } = cD.get()
 
   top(nav)
 </script>
 
 <section
   id={nav}
-  b={bord ? 'lt-3xl:t bord' : void 0}
-  backdrop='grayscale'
-  flex=""
-  relative=""
-  w='screen'
+  class="{bord ? 'lt-3xl:b-t b-bord' : ''} backdrop-grayscale flex relative w-screen"
   {...props}
 >
   <div
-    class='lt-3xl:hidden'
-    data-aos="fade-{fo.matches ? 'in' : 'right'}"
-    flex='~ 3xl:(1 col)'
+    class='flex 3xl:(flex-1 flex-col) lt-3xl:hidden'
+    data-aos="fade-{fo?.matches ? 'in' : 'right'}"
   >
-    <div ml-auto p='t-6 b-32 xl:x-4' sticky top-0 type-7 write-vertical-left>
+    <div class='sticky top-0 ml-auto pb-32 pt-6 write-vertical-left xl:px-4 type-7'>
       <svelte:element
         this={name ? 'h1' : 'div'}
-        inline='block'
-        origin='center'
-        rotate='180'
-        select='none'
-        text='stroked bord'
-      >
-        {name}
-      </svelte:element>
+        class='inline-block origin-center rotate-180 select-none text-(bord stroked)'
+      >{name}</svelte:element>
     </div>
   </div>
-  <div bg='black/80' flex='lt-3xl:1'>{@render children()}</div>
-  <div
-    class='lt-3xl:hidden'
-    b={bord ? 't bord' : void 0}
-    bg='black/80'
-    flex='3xl:1'
-  ></div>
+  <div class='bg-black/80 lt-3xl:flex-1'>{@render children()}</div>
+  <div class="{bord ? 'b-(t bord)' : ''} bg-black/80 3xl:flex-1 lt-3xl:hidden"></div>
 </section>

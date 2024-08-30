@@ -10,7 +10,7 @@ export default antfu({
   unocss: true,
 }, {
   rules: {
-    'style/top-level-functions': 0,
+    'antfu/top-level-function': 0,
     'import/order': [1, {
       'alphabetize': {
         order: 'asc',

@@ -1,26 +1,24 @@
-<script>
-  let { el = $bindable(), children, ...props } = $props()
+<script lang='ts'>
+  import type { Snippet } from 'svelte'
+  import type { HTMLAttributes } from 'svelte/elements'
+
+  interface Props extends HTMLAttributes<HTMLDivElement> {
+    el?: HTMLElement
+    children: Snippet
+  }
+
+  let { el = $bindable(), children, ...props }: Props = $props()
 </script>
 
 <div
-  absolute=""
-  bg='black'
-  dscreen=""
-  inset='0'
-  overflow='hidden'
-  p='2 t-18'
+  class='absolute inset-0 dscreen overflow-hidden bg-black p-2 pt-18'
   {...props}
 >
   <!-- svelte-ignore a11y_autofocus -->
   <article
     bind:this={el}
+    class='full overflow-x-hidden b-(1 t-0 bord) pb-4 outline-none lg:pb-0 scroll'
     autofocus
-    b='1 t-0 bord'
-    full
-    outline-none
-    overflow-x-hidden
-    pb='4 lg:0'
-    scroll
     tabindex='-1'
   >
     {@render children()}

@@ -1,10 +1,16 @@
-<script>
-  import { getContext } from 'svelte'
+<script lang='ts'>
+  import type { HTMLAttributes } from 'svelte/elements'
+
+  import { cD } from '../js/contexts'
 
   import { A } from '.'
 
-  const { ...props } = $props()
-  const { fo } = getContext('D')
+  interface Props extends HTMLAttributes<HTMLDivElement> {
+    clazz?: string
+  }
+
+  const { clazz, ...props }: Props = $props()
+  const { fo } = cD.get()
 
   const links = [
     [
@@ -42,26 +48,24 @@
   ]
 </script>
 
-<div prose="" {...props}>
+<div class='{0} prose {clazz}' {...props}>
   <h2
-    data-aos="fade-{fo.matches ? 'in' : 'left'}"
-    noprose
-    text='stroked head'
-    type-6
+    class='noprose text-(head stroked) type-6'
+    data-aos="fade-{fo?.matches ? 'in' : 'left'}"
   >
     LINKS
   </h2>
-  <menu id='anchor-abt-links' m='t-2 x-2 lg:t-4'>
+  <menu id='anchor-abt-links' class='m-(x-2 t-2) lg:m-t-4'>
     {#each links as [color, icon, name, link], i}
       <li
-        data-aos="fade-{fo.matches ? 'in' : 'left'}"
+        class='text-accent'
+        data-aos="fade-{fo?.matches ? 'in' : 'left'}"
         data-aos-anchor='#anchor-abt-links'
         data-aos-delay={i * 100}
-        text-accent
       >
-        <A class={color} decoration='none!' href={link} item>
+        <A class='{color} decoration-none!' href={link} item>
           <div class={icon}></div>
-          <span under>{name}</span>
+          <span class='under'>{name}</span>
         </A>
       </li>
     {/each}

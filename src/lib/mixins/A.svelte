@@ -1,11 +1,20 @@
-<script>
-  const { t, item = false, class: clazz = '', children, ...props } = $props()
+<script lang='ts'>
+  import type { Snippet } from 'svelte'
+  import type { HTMLAnchorAttributes } from 'svelte/elements'
+
+  interface Props extends HTMLAnchorAttributes {
+    t?: boolean
+    item?: boolean
+    clazz?: string
+    children: Snippet
+  }
+
+  const { t, item = false, clazz = '', children, ...props }: Props = $props()
 </script>
 
 <a
-  class="{item ? 'text-inherit focunder' : ''} {clazz}"
+  class="{item ? 'text-inherit focunder' : ''} under {clazz}"
   target={t ? void 0 : '_blank'}
-  under=""
   {...props}
 >
   {@render children()}

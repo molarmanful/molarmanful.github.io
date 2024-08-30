@@ -1,10 +1,10 @@
-<script context='module'>
+<script lang='ts' module>
   export const desc = '2022. An abstract Unity study of worldbuilding centered around non-Euclidean traversal mechanics.'
   export const tags = ['3d', 'digital', 'game', 'dev', 'art']
   export const year = 2022
 </script>
 
-<script>
+<script lang='ts'>
   import {
     A,
     Heading,

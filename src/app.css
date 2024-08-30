@@ -35,7 +35,7 @@ a:focus {
   @apply text-white;
 }
 
-[scanlines] {
+.scanlines {
   @apply fixed inset-0 z-100 pointer-events-none bg-current mix-blend-screen opacity-10;
   /*
   background: repeating-linear-gradient(
@@ -55,7 +55,7 @@ a:focus {
   */
 }
 
-:is(.prose, [prose]) :is(h1, h2, h3, h4, h5, h6, p):not([noprose]) {
+.prose :is(h1, h2, h3, h4, h5, h6, p):not(.noprose) {
   @apply mx-6 md:mx-0;
 }
 
@@ -67,23 +67,23 @@ a:focus {
   @apply bg-bord-900;
 }
 
-[btn] {
+.btn {
   @apply b-(1 current) bg-transparent outline-none px-2 py-1 transition-color whitespace-nowrap;
 }
 
-[btn]:focus {
+.btn:focus {
   @apply text-white;
 }
 
-[colize] {
+.colize {
   @apply opacity-0;
 }
 
-:is([cover]:hover, [cover]:focus) img {
+:is(.cover:hover, .cover:focus) img {
   @apply filter-none;
 }
 
-:is([cover]:hover, [cover]:focus) [colize] {
+:is(.cover:hover, .cover:focus) .colize {
   @apply opacity-0;
 }
 
@@ -92,15 +92,15 @@ a:focus {
 }
 
 @media (hover: hover) {
-  [btn]:hover {
+  .btn:hover {
     @apply text-white;
   }
 
-  [cover] img {
+  .cover img {
     filter: grayscale(1) contrast(0.8) brightness(0.5);
   }
 
-  [colize] {
+  .colize {
     @apply opacity-80;
   }
 }

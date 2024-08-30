@@ -1,5 +1,4 @@
-<script>
-  import { getContext } from 'svelte'
+<script lang='ts'>
   import { derived } from 'svelte/store'
   import { classList } from 'svelte-body'
 
@@ -8,20 +7,21 @@
   import About from '$lib/About.svelte'
   import Art from '$lib/Art.svelte'
   import Header from '$lib/Header.svelte'
+  import { cD } from '$lib/js/contexts'
   import { FocusTrap } from '$lib/js/util.svelte'
   import Modal from '$lib/Modal.svelte'
   import Nav from '$lib/Nav.svelte'
 
-  const { D, aos } = getContext('D')
+  const { D, aos } = cD.get()
 
-  const tops = $state([])
+  const tops: string[] = $state([])
 
   const { useFocusTrap } = new FocusTrap({
     immediate: true,
     initialFocus: false,
   }).fns
 
-  const pstate = derived(
+  const pstate = derived<typeof page, App.PageState>(
     page,
     ($page, set) => {
       if (!browser)
@@ -46,10 +46,10 @@
 
 <svelte:body use:classList={[$pstate.selected && 'overflow-hidden']} />
 
-<div contents use:useFocusTrap>
+<div class='contents' use:useFocusTrap>
   <Nav {tops} />
-  <Header top={x => (tops[0] = x)} />
-  <About top={x => (tops[1] = x)} />
-  <Art top={x => (tops[2] = x)} />
+  <Header top={(x: string) => (tops[0] = x)} />
+  <About top={(x: string) => (tops[1] = x)} />
+  <Art top={(x: string) => (tops[2] = x)} />
   <Modal selected={$pstate.selected} />
 </div>

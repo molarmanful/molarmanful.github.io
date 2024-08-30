@@ -1,17 +1,22 @@
-<script>
-  import { getContext } from 'svelte'
+<script lang='ts'>
   import { fade } from 'svelte/transition'
 
+  import { cD } from './js/contexts'
   import { FocusTrap } from './js/util.svelte'
   import { A, ItemBar, ItemBody } from './mixins'
 
-  const { selected } = $props()
-  const { D } = getContext('D')
+  interface Props {
+    selected?: string
+  }
 
-  const Item = $derived(D.items.get(selected)?.default)
+  const { selected }: Props = $props()
+  const { D } = cD.get()
 
-  let el = $state({ x: void 0 })
+  const It = $derived(selected ? D.items.get(selected)?.default : void 0)
+
+  const el: { x?: HTMLElement } = $state({ x: void 0 })
   let active = false
+
   const { activate, deactivate, useFocusTrap } = new FocusTrap({
     setReturnFocus: () => el.x || false,
   }).fns
@@ -46,49 +51,29 @@
 
 {#if selected && D.items.has(selected)}
   <div
+    class='fixed inset-0 z-50 dscreen overflow-hidden overscroll-contain bg-black pt-16'
     aria-label='entry: {selected}'
-    bg-black
-    dscreen
-    fixed
-    inset-0
-    overflow-hidden
-    overscroll-contain
-    pt-16
     role='dialog'
-    z-50
     use:useFocusTrap
     transition:fade={{ duration: 200 }}
   >
     <ItemBar>
-      <div flex h-full ml-4>
-        <span m-auto>
+      <div class='ml-4 h-full flex'>
+        <span class='m-auto'>
           {selected} -
-          <A decoration='current' href='/work/{selected}' item>permalink</A>
+          <A clazz='decoration-current' href='/work/{selected}' item>permalink</A>
         </span>
       </div>
       <button
+        class='ml-auto mr--1px mt--1px box-content h-full w-16 flex b-(1 current) bg-transparent outline-none transition-color duration-500 [&:hover,&:focus]:text-white'
         aria-label='close entry'
-        b='1 current'
-        bg-transparent
-        box-content
-        duration-500
-        flex
-        h-full
-        m='l-auto t--1px r--1px'
         onclick={OFF}
-        outline-none
-        text='[&:hover,&:focus]:white'
-        transition-color
-        w-16
       >
         <svg
-          alt='close'
-          fill-current
-          h='1/2'
-          m-auto
+          class='m-auto h-1/2 w-1/2 fill-current'
           viewBox='0 0 100 100'
-          w='1/2'
         >
+          <title>Close</title>
           <g transform='rotate(45, 50, 50)'>
             <rect height='20' width='100' y='40'></rect>
             <rect height='100' width='20' x='40'></rect>
@@ -97,9 +82,9 @@
       </button>
     </ItemBar>
 
-    <ItemBody bind:el>
-      <div full in:fade={{ duration: 200 }}>
-        <Item />
+    <ItemBody bind:el={el.x}>
+      <div class='full' in:fade={{ duration: 200 }}>
+        <It />
       </div>
     </ItemBody>
   </div>

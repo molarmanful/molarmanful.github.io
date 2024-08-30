@@ -1,10 +1,10 @@
-<script context='module'>
+<script lang='ts' module>
   export const desc = 'Zero-player games with squares that live many, many lives.'
   export const tags = ['digital', 'dev', 'art', 'collection']
   export const year = 2022
 </script>
 
-<script>
+<script lang='ts'>
   import {
     A,
     Heading,
@@ -37,13 +37,13 @@
   <MediaImg
     name='brian10'
     alt="Screenshot of 10-State Brian's Brain."
-    image-render='pixel'
+    px
   />
   <Text>
     <A href='https://editor.p5js.org/BandidoJim/sketches/_YeeANOn_'>
       p5.js Sketch
     </A>
-    (<span bold>WARNING</span>: flashing lights)
+    (<span class='bold'>WARNING</span>: flashing lights)
   </Text>
 
   <Sp />
@@ -60,13 +60,13 @@
   <MediaImg
     name='stablevol'
     alt='Screenshot of Stable Volatility.'
-    image-render='pixel'
+    px
   />
   <Text>
     <A href='https://editor.p5js.org/BandidoJim/sketches/YS3amIiay'>
       p5.js Sketch
     </A>
-    (<span bold>WARNING</span>: flashing lights)
+    (<span class='bold'>WARNING</span>: flashing lights)
   </Text>
 
   <Sp />
@@ -74,13 +74,13 @@
   <MediaImg
     name='fcgol'
     alt='Screenshot of Fading Clamp Game of Life.'
-    image-render='pixel'
+    px
   />
   <Text>
     <A href='https://editor.p5js.org/BandidoJim/sketches/XgeJRhRpX'>
       p5.js Sketch
     </A>
-    (<span bold>WARNING</span>: flashing lights)
+    (<span class='bold'>WARNING</span>: flashing lights)
   </Text>
 
   <Sp />
@@ -88,7 +88,7 @@
   <MediaImg
     name='rainbow'
     alt='Screenshot of Reddit Rainbow.'
-    image-render='pixel'
+    px
   />
   <Text>
     <A href='https://bennyboy.tech/rainbow'>Website</A>

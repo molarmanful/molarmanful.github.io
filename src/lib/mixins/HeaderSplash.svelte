@@ -1,9 +1,19 @@
-<script>
+<script lang='ts'>
+  import type { HTMLAttributes } from 'svelte/elements'
+
   import me from '../js/me'
 
   import { SvgEl } from '.'
 
-  const { scale, splash_rel, ...props } = $props()
+  interface Props extends HTMLAttributes<SVGElement> {
+    scale: number
+    splash_rel: {
+      x: number
+      y: number
+    }
+  }
+
+  const { scale, splash_rel, ...props }: Props = $props()
 </script>
 
 <svg
