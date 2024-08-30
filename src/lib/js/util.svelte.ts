@@ -12,9 +12,11 @@ export const sfactor = (f: (a: number) => void) => {
   const g = () => {
     if (stop)
       return
+    requestAnimationFrame(() => {
+      f(scrollY / innerHeight || 0)
+      stop = false
+    })
     stop = true
-    f(scrollY / innerHeight || 0)
-    setTimeout(() => (stop = false), 50)
   }
 
   useEventListener(window, 'scroll', g)
