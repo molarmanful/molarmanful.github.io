@@ -1,10 +1,10 @@
-<script context='module'>
+<script lang='ts' module>
   export const desc = 'Zero-player games with squares that live many, many lives.'
   export const tags = ['digital', 'dev', 'art', 'collection']
   export const year = 2022
 </script>
 
-<script>
+<script lang='ts'>
   import {
     A,
     Heading,

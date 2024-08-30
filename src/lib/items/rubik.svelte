@@ -1,4 +1,4 @@
-<script context='module'>
+<script lang='ts' module>
   export const desc = 'A simple puzzle that has stumped the world for decades. Digital gadgets for the aspiring cuber.'
   export const tags = [
     '3d',
@@ -12,7 +12,7 @@
   export const year = 2021
 </script>
 
-<script>
+<script lang='ts'>
   import { A, Heading, MediaImg, Prose, Sp, Subheading, Text } from '../mixins'
 </script>
 

@@ -22,7 +22,6 @@ export { default as NavIcon } from './NavIcon.svelte'
 export { default as NavBody } from './NavBody.svelte'
 
 export { default as HeaderTitle } from './HeaderTitle.svelte'
-// export { default as HeaderSubtitle } from './HeaderSubtitle.svelte'
 export { default as SvgEl } from './SvgEl.svelte'
 export { default as HeaderSplash } from './HeaderSplash.svelte'
 

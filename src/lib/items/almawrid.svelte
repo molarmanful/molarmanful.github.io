@@ -1,10 +1,10 @@
-<script context='module'>
+<script lang='ts' module>
   export const desc = '2021 - made in collaboration with the Yes Logo Spring 2021 class, under guidance from calligrapher/designer Wissam Shawkat and Prof. Goffredo Puccetti. Proposed logo and brand identity for al Mawrid Arab Center for the Study of Art.'
   export const tags = ['branding', 'design']
   export const year = 2021
 </script>
 
-<script>
+<script lang='ts'>
   import { Heading, IVideo, MediaImg, Prose, Sp, Subheading } from '../mixins'
 </script>
 

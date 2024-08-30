@@ -1,10 +1,10 @@
-<script context='module'>
+<script lang='ts' module>
   export const desc = 'Because black & white is fun, but so is color. Drawn with a mouse in HEAVYPAINT/Krita/MS Paint.'
   export const tags = ['2d', 'digital', 'art', 'collection']
   export const year = 2021
 </script>
 
-<script>
+<script lang='ts'>
   import { artalt } from '../js/util.svelte'
   import { ArtImg, Heading, Prose, Subheading, YTVideo } from '../mixins'
 </script>

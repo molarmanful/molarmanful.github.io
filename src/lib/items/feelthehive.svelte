@@ -1,4 +1,4 @@
-<script context='module'>
+<script lang='ts' module>
   export const desc = '2022. An Internet-powered backscratcher that converts clicks and taps to scratches.'
   export const tags = [
     'physical',
@@ -13,7 +13,7 @@
   export const year = 2022
 </script>
 
-<script>
+<script lang='ts'>
   import {
     A,
     Heading,

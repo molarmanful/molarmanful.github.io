@@ -39,7 +39,7 @@ declare global {
     aos: AOS
     mouse: Mouse
     cursorFs: {
-      on: () => void
+      on: (e: MouseEvent) => void
       off: () => void
     }
   }

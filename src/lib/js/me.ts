@@ -1,16 +1,16 @@
-interface El {
+interface Base {
   len: number
   attr: Record<string, string>
 }
 
-interface Polyline extends El {
+interface Polyline extends Base {
   this: 'polyline'
   attr: {
     points: string
   }
 }
 
-interface Line extends El {
+interface Line extends Base {
   this: 'line'
   attr: {
     x1: string
@@ -20,14 +20,16 @@ interface Line extends El {
   }
 }
 
-interface Path extends El {
+interface Path extends Base {
   this: 'path'
   attr: {
     d: string
   }
 }
 
-const me: (Polyline | Line | Path)[] = [
+export type El = Polyline | Line | Path
+
+const me: El[] = [
   {
     this: 'polyline',
     attr: {

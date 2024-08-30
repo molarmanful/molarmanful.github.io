@@ -1,10 +1,10 @@
-<script context='module'>
+<script lang='ts' module>
   export const desc = '2020 - made in collaboration with Li Cheng and Amy Kang. A concept for a virtual exhibition space that displays contemporary Asian art.'
   export const tags = ['digital', 'front-end', 'dev', 'design', 'art']
   export const year = 2020
 </script>
 
-<script>
+<script lang='ts'>
   import { A, Heading, MediaImg, Prose, Sp, Subheading, Text } from '../mixins'
 </script>
 

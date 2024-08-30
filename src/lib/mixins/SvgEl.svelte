@@ -1,24 +1,29 @@
 <svelte:options namespace='svg' />
 
-<script>
+<script lang='ts'>
   import { cD } from '../js/contexts'
+  import type { El } from '../js/me'
   import { colors } from '../js/static'
 
-  const { len, name, ...props } = $props()
+  interface Props {
+    len: El['len']
+    name?: El['this']
+  }
+
+  const { len, name, ...props }: Props = $props()
   const { loaded } = cD.get()
 
-  const b = 500
+  const cs = colors[500]
   const rt = (a = 3000, b = 1000) => 0 | (Math.random() * a + b)
 
   let c = $state('text-black')
   let t = $state(0)
   let len_o = $state(0)
-  let el = $state()
 
-  let to
+  let to: number | undefined
   const loop = () => {
     t = rt()
-    c = colors[b][0 | (Math.random() * colors[b].length)]
+    c = cs[0 | (Math.random() * cs.length)]
     to = setTimeout(loop, t)
   }
 
@@ -39,7 +44,6 @@
 
 <svelte:element
   this={name}
-  bind:this={el}
   style:transition='color, stroke-dashoffset ease-out'
   style:transition-duration='{t}ms'
   style:stroke-dasharray={len}

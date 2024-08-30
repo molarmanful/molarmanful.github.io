@@ -1,10 +1,10 @@
-<script context='module'>
+<script lang='ts' module>
   export const desc = '2019 - made in collaboration with Jana Počuchová. An interactive webcomic about creative block and ideation.'
   export const tags = ['digital', 'front-end', 'dev', 'design', 'art']
   export const year = 2019
 </script>
 
-<script>
+<script lang='ts'>
   import { A, Heading, MediaImg, Prose, Sp, Subheading, Text } from '../mixins'
 </script>
 

@@ -1,10 +1,10 @@
-<script context='module'>
+<script lang='ts' module>
   export const desc = '2022. An interactive installation in which generative visuals react in realtime to brain activity read from an EEG headset.'
   export const tags = ['3d', 'physical', 'digital', 'art', 'iot']
   export const year = 2022
 </script>
 
-<script>
+<script lang='ts'>
   import {
     A,
     Heading,

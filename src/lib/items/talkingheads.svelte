@@ -1,4 +1,4 @@
-<script context='module'>
+<script lang='ts' module>
   export const desc = '2023. An experimental chatroom that enables mere mortals to communicate with the gods.'
   export const tags = [
     'digital',
@@ -12,7 +12,7 @@
   export const year = 2023
 </script>
 
-<script>
+<script lang='ts'>
   import { A, Heading, MediaImg, Prose, Subheading, Text } from '../mixins'
 </script>
 
