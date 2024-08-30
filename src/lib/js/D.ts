@@ -1,6 +1,6 @@
 import type { Component } from 'svelte'
 
-interface Item {
+export interface Item {
   desc: string
   tags: string[]
   year: number

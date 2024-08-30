@@ -1,7 +1,7 @@
 <script lang='ts'>
   import { SvelteSet } from 'svelte/reactivity'
 
-  import type { Snapshot } from './$types.js'
+  import type { Snapshot } from './$types'
 
   import { browser } from '$app/environment'
   import Favicons from '$lib/Favicons.svelte'
@@ -115,6 +115,6 @@
 <!-- <Cursor {cursorFs} {mouse} z="100" /> -->
 <!-- <div scanlines text-bord></div> -->
 
-<main class={loaded.x ? 'opacity-100' : 'opacity-0'} ofade-500 overflow-x-clip>
+<main class="{loaded.x ? 'opacity-100' : 'opacity-0'} ofade-500 overflow-x-clip">
   {@render children()}
 </main>

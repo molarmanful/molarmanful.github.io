@@ -4,8 +4,8 @@
 
   interface Props extends HTMLAnchorAttributes {
     t?: boolean
-    item: boolean
-    class: string
+    item?: boolean
+    class?: string
     children: Snippet
   }
 

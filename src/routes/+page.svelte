@@ -46,7 +46,7 @@
 
 <svelte:body use:classList={[$pstate.selected && 'overflow-hidden']} />
 
-<div contents use:useFocusTrap>
+<div class='contents' use:useFocusTrap>
   <Nav {tops} />
   <Header top={(x: string) => (tops[0] = x)} />
   <About top={(x: string) => (tops[1] = x)} />
