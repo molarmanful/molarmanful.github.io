@@ -40,8 +40,7 @@
     {#each tops as top}
       <li>
         <button
-          style:transition='color {pulse || 100}ms, border-color 400ms, filter
-            400ms'
+          style:transition='color {pulse || 200}ms, border-color 400ms, filter 400ms'
           style:color={colors[0]}
           class='b-(b-1 transparent) bg-transparent text-bord outline-none ease [&:hover,&:focus]:b-white [&:hover,&:focus]:fake-white'
           onclick={GOTO(top)}

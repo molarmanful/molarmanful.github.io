@@ -15,7 +15,7 @@ export const sfactor = (f: (a: number) => void) => {
     setTimeout(() => {
       f(scrollY / innerHeight || 0)
       stop = false
-    }, 50)
+    }, 100)
     stop = true
   }
 

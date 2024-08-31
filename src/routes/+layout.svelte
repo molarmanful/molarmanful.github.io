@@ -102,13 +102,17 @@
   onmousemove={({ clientX, clientY }: MouseEvent) => {
     if (fo?.matches || mouse.stop)
       return
-    setTimeout(() => {
+    const f = () => {
       mouse.px = clientX
       mouse.py = clientY
       mouse.x = clientX / innerWidth
       mouse.y = clientY / innerHeight
+    }
+    f()
+    setTimeout(() => {
+      f()
       mouse.stop = false
-    }, 50)
+    }, 100)
     mouse.on = true
     mouse.stop = true
   }}
