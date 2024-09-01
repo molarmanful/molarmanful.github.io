@@ -1,7 +1,6 @@
 <script lang='ts'>
   import { afterNavigate } from '$app/navigation'
-  import { Grid } from '$lib/Art'
-  import { A, CoverImg, Heading } from '$lib/components'
+  import { A, CoverImg, Heading, ItemsGrid } from '$lib/components'
   import { cD } from '$lib/js/contexts'
 
   const { D, aos } = cD.get()
@@ -21,7 +20,7 @@
 
 <div class='m-auto w-full p-5 lg:container lg:py-16'>
   <Heading clazz='text-center mb-5 md:mb-8'>WORK</Heading>
-  <Grid aosS='in'>
+  <ItemsGrid aosS='in'>
     {#snippet children(name, on, i: boolean)}
       <A
         class='cover'
@@ -34,5 +33,5 @@
         <CoverImg {name} alt='Open project entry: {name}.' {i} />
       </A>
     {/snippet}
-  </Grid>
+  </ItemsGrid>
 </div>

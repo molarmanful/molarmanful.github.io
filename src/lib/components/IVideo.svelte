@@ -1,5 +1,5 @@
 <script lang='ts'>
-  import { cD } from '../js/contexts'
+  import { cD } from '$lib/js/contexts'
 
   import { Video } from '.'
 

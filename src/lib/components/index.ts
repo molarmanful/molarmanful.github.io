@@ -18,6 +18,9 @@ export { default as IVideo } from './IVideo.svelte'
 export { default as YTVideo } from './YTVideo.svelte'
 export { default as BVideo } from './BVideo.svelte'
 
+export { default as ItemsGrid } from './ItemsGrid.svelte'
+export { default as ItemsFilter } from './ItemsFilter.svelte'
+
 export { default as ItemBar } from './ItemBar.svelte'
 export { default as ItemBody } from './ItemBody.svelte'
 

@@ -1,8 +1,6 @@
 <script lang='ts'>
-  import { Grid } from '.'
-
   import { pushState } from '$app/navigation'
-  import { A, CoverImg, Heading, Section } from '$lib/components'
+  import { A, CoverImg, Heading, ItemsGrid, Section } from '$lib/components'
 
   interface Props {
     top: (a: string) => void
@@ -26,7 +24,7 @@
         item
       >WORK</A>
     </Heading>
-    <Grid aosS='up'>
+    <ItemsGrid aosS='up'>
       {#snippet children(name, on, i)}
         <button
           class='w-full bg-transparent cover'
@@ -37,6 +35,6 @@
           <CoverImg {name} alt='Open project entry: {name}.' {i} />
         </button>
       {/snippet}
-    </Grid>
+    </ItemsGrid>
   </div>
 </Section>

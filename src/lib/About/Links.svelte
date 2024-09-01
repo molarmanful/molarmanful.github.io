@@ -1,7 +1,7 @@
 <script lang='ts'>
   import type { HTMLAttributes } from 'svelte/elements'
 
-  import { cD } from '../js/contexts'
+  import { cD } from '$lib/js/contexts'
 
   import { A } from '$lib/components'
 

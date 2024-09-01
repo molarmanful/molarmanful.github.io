@@ -2,7 +2,7 @@
   import Img from '@zerodevx/svelte-img'
   import type { ComponentProps } from 'svelte'
 
-  import { cD } from '../js/contexts'
+  import { cD } from '$lib/js/contexts'
 
   import { Image } from '.'
 

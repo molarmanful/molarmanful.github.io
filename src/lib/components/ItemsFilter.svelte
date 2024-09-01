@@ -3,8 +3,8 @@
   import autoAnimate from '@formkit/auto-animate'
   import type { HTMLAttributes } from 'svelte/elements'
 
-  import { cD, cfocus } from '../js/contexts'
-  import { FocusTrap } from '../js/util.svelte'
+  import { cD, cfocus } from '$lib/js/contexts'
+  import { FocusTrap } from '$lib/js/util.svelte'
 
   interface Props extends HTMLAttributes<HTMLDivElement> {
     aosS?: string
