@@ -3,7 +3,7 @@
 
   import { cD } from './js/contexts'
   import { FocusTrap } from './js/util.svelte'
-  import { A, ItemBar, ItemBody } from './mixins'
+  import { A, ItemBar, ItemBody } from './components'
 
   interface Props {
     selected?: string

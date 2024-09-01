@@ -1,5 +1,5 @@
 <script lang='ts'>
-  import { A, ArtGrid, CoverImg, Heading, Section } from './mixins'
+  import { A, ArtGrid, CoverImg, Heading, Section } from './components'
 
   import { pushState } from '$app/navigation'
 

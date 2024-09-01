@@ -1,7 +1,7 @@
 <script lang='ts'>
   import { afterNavigate } from '$app/navigation'
   import { cD } from '$lib/js/contexts'
-  import { A, ArtGrid, CoverImg, Heading } from '$lib/mixins'
+  import { A, ArtGrid, CoverImg, Heading } from '$lib/components'
 
   const { D, aos } = cD.get()
 

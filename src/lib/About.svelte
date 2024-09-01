@@ -1,5 +1,5 @@
 <script lang='ts'>
-  import { AboutLinks, AboutStatement, AboutTitle, Section } from './mixins'
+  import { AboutLinks, AboutStatement, AboutTitle, Section } from './components'
 
   interface Props {
     top: (a: string) => void

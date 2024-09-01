@@ -14,7 +14,7 @@
     Subheading,
     Text,
     YTVideo,
-  } from '../mixins'
+  } from '../components'
 </script>
 
 <Prose>

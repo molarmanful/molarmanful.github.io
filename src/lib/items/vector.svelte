@@ -6,7 +6,7 @@
 
 <script lang='ts'>
   import { artalt } from '../js/util.svelte'
-  import { ArtImg, Heading, Prose, Subheading } from '../mixins'
+  import { ArtImg, Heading, Prose, Subheading } from '../components'
 </script>
 
 <Prose>

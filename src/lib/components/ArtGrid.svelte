@@ -7,7 +7,7 @@
 
   import { cD, cfocus } from '../js/contexts'
   import { FocusTrap } from '../js/util.svelte'
-  import { ArtFilter } from '../mixins'
+  import { ArtFilter } from '../components'
 
   interface Props {
     aosS?: string

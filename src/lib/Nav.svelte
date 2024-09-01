@@ -1,7 +1,7 @@
 <script lang='ts'>
   import { cD } from './js/contexts'
   import { hexes } from './js/static'
-  import { NavBody, NavIcon } from './mixins'
+  import { NavBody, NavIcon } from './components'
 
   interface Props {
     tops: string[]

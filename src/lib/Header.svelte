@@ -1,6 +1,6 @@
 <script lang='ts'>
   import { cD } from './js/contexts'
-  import { HeaderSplash, HeaderTitle } from './mixins'
+  import { HeaderSplash, HeaderTitle } from './components'
 
   interface Props {
     top: (a: string) => void
