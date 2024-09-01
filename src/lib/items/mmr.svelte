@@ -5,7 +5,7 @@
 </script>
 
 <script lang='ts'>
-  import { Heading, MediaImg, Prose, Sp, Subheading, YTVideo } from '../components'
+  import { Heading, MediaImg, Prose, Sp, Subheading, YTVideo } from '$lib/components'
 </script>
 
 <Prose>

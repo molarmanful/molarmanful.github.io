@@ -1,7 +1,7 @@
 <script lang='ts'>
   import type { HTMLButtonAttributes } from 'svelte/elements'
 
-  import { cD } from '../js/contexts'
+  import { cD } from '$lib/js/contexts'
 
   interface Props extends HTMLButtonAttributes {
     pulse: number

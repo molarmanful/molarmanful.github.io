@@ -2,7 +2,7 @@
   import type { HTMLAttributes } from 'svelte/elements'
   import { scale } from 'svelte/transition'
 
-  import { FocusTrap } from '../js/util.svelte'
+  import { FocusTrap } from '$lib/js/util.svelte'
 
   interface Props extends HTMLAttributes<HTMLDivElement> {
     tops: string[]

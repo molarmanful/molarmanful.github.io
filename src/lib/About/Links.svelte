@@ -3,7 +3,7 @@
 
   import { cD } from '../js/contexts'
 
-  import { A } from '.'
+  import { A } from '$lib/components'
 
   interface Props extends HTMLAttributes<HTMLDivElement> {
     clazz?: string

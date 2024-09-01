@@ -1,6 +1,7 @@
 <script lang='ts'>
-  import { cD } from './js/contexts'
-  import { HeaderSplash, HeaderTitle } from './components'
+  import { Splash, Title } from '.'
+
+  import { cD } from '$lib/js/contexts'
 
   interface Props {
     top: (a: string) => void
@@ -38,7 +39,7 @@
     style:filter='hue-rotate({factor.x * -69}deg)'
     class="{fo?.matches || !fac_inv ? '' : 'will-change-transform,filter,opacity'} fixed flex full"
   >
-    <HeaderSplash
+    <Splash
       class="{factor.x >= 1 ? 'scale-100' : ''} absolute right-0 top-0 mx-auto transform-translate-x-[var(--t-x,0%)] transform h-lvh media-squarish:right-40% media-squarish:transform-translate-x-[calc(50%+var(--t-x,0%))] transition-transform-200"
       {scale}
       {splash_rel}
@@ -52,7 +53,7 @@
       style:--un-translate-y='{-!fo?.matches * (1 - fac_inv) * 10}%'
       class='absolute inset-0 transform transition-transform,opacity duration-200'
     >
-      <HeaderTitle {mouse_rel} />
+      <Title {mouse_rel} />
     </div>
   </div>
 </header>

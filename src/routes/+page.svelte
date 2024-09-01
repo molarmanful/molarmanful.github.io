@@ -4,13 +4,9 @@
 
   import { browser } from '$app/environment'
   import { page } from '$app/stores'
-  import About from '$lib/About.svelte'
-  import Art from '$lib/Art.svelte'
-  import Header from '$lib/Header.svelte'
+  import { About, Art, Header, Modal, Nav } from '$lib'
   import { cD } from '$lib/js/contexts'
   import { FocusTrap } from '$lib/js/util.svelte'
-  import Modal from '$lib/Modal.svelte'
-  import Nav from '$lib/Nav.svelte'
 
   const { D, aos } = cD.get()
 

@@ -7,7 +7,8 @@
 
   import { cD, cfocus } from '../js/contexts'
   import { FocusTrap } from '../js/util.svelte'
-  import { ArtFilter } from '../components'
+
+  import { Filter } from '.'
 
   interface Props {
     aosS?: string
@@ -113,7 +114,7 @@
 />
 <svelte:document bind:activeElement />
 
-<ArtFilter class='mb-3.5 md:mb-6.5' {aosS} {chosen} bind:anim />
+<Filter class='mb-3.5 md:mb-6.5' {aosS} {chosen} bind:anim />
 
 <div
   bind:this={el}

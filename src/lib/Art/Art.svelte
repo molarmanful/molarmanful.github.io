@@ -1,7 +1,8 @@
 <script lang='ts'>
-  import { A, ArtGrid, CoverImg, Heading, Section } from './components'
+  import { Grid } from '.'
 
   import { pushState } from '$app/navigation'
+  import { A, CoverImg, Heading, Section } from '$lib/components'
 
   interface Props {
     top: (a: string) => void
@@ -25,7 +26,7 @@
         item
       >WORK</A>
     </Heading>
-    <ArtGrid aosS='up'>
+    <Grid aosS='up'>
       {#snippet children(name, on, i)}
         <button
           class='w-full bg-transparent cover'
@@ -36,6 +37,6 @@
           <CoverImg {name} alt='Open project entry: {name}.' {i} />
         </button>
       {/snippet}
-    </ArtGrid>
+    </Grid>
   </div>
 </Section>

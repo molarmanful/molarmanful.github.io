@@ -14,7 +14,7 @@
     Sp,
     Subheading,
     Text,
-  } from '../components'
+  } from '$lib/components'
 </script>
 
 <Prose>

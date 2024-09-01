@@ -4,7 +4,7 @@
   import type { Snapshot } from './$types'
 
   import { browser } from '$app/environment'
-  import Favicons from '$lib/Favicons.svelte'
+  import { Favicons } from '$lib'
   import AOS from '$lib/js/aos.svelte'
   import { cD } from '$lib/js/contexts'
   import D from '$lib/js/D'

@@ -5,7 +5,7 @@
 </script>
 
 <script lang='ts'>
-  import { Heading, IVideo, Prose, Subheading } from '../components'
+  import { Heading, IVideo, Prose, Subheading } from '$lib/components'
 </script>
 
 <Prose>

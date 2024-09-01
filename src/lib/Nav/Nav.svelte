@@ -1,7 +1,8 @@
 <script lang='ts'>
-  import { cD } from './js/contexts'
-  import { hexes } from './js/static'
-  import { NavBody, NavIcon } from './components'
+  import { Body, Icon } from '.'
+
+  import { cD } from '$lib/js/contexts'
+  import { hexes } from '$lib/js/static'
 
   interface Props {
     tops: string[]
@@ -60,14 +61,14 @@
 />
 
 <nav>
-  <NavIcon
+  <Icon
     aria-expanded={dropped}
     clazz='fixed flex right-2 top-2 z-30'
     {colors}
     onclick={ON}
     onmouseenter={ON}
     {pulse}
-  ></NavIcon>
+  ></Icon>
 
   {#if dropped}
     <button
@@ -78,7 +79,7 @@
     >
       Close Navigation
     </button>
-    <NavBody
+    <Body
       {GOTO}
       clazz='fixed right-2 top-2 z-40'
       {colors}

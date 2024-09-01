@@ -14,7 +14,7 @@
     Subheading,
     Text,
     YTVideo,
-  } from '../components'
+  } from '$lib/components'
 </script>
 
 <Prose>
