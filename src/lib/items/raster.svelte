@@ -5,8 +5,8 @@
 </script>
 
 <script lang='ts'>
-  import { artalt } from '$lib/js/util.svelte'
   import { ArtImg, Heading, Prose, Subheading, YTVideo } from '$lib/components'
+  import { artalt } from '$lib/js/util.svelte'
 </script>
 
 <Prose>

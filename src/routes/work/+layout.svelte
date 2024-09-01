@@ -4,9 +4,9 @@
 
   import type { LayoutServerData } from './$types'
 
+  import { A, ItemBar, ItemBody } from '$lib/components'
   import { receive, send } from '$lib/js/crossfade'
   import { FocusTrap } from '$lib/js/util.svelte'
-  import { A, ItemBar, ItemBody } from '$lib/components'
 
   interface Props {
     data: LayoutServerData

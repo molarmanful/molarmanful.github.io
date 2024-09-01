@@ -5,7 +5,6 @@
 </script>
 
 <script lang='ts'>
-  import { artalt } from '$lib/js/util.svelte'
   import {
     A,
     Heading,
@@ -17,6 +16,7 @@
     Text,
   // YTVideo,
   } from '$lib/components'
+  import { artalt } from '$lib/js/util.svelte'
 </script>
 
 <Prose>

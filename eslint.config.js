@@ -8,6 +8,7 @@ export default antfu({
     },
   },
   unocss: true,
+  css: true,
 }, {
   rules: {
     'antfu/top-level-function': 0,
