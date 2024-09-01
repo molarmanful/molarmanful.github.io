@@ -4,9 +4,15 @@ export default antfu(
   {
     stylistic: true,
     svelte: {
-      overrides: {
+      'overrides': {
         'svelte/sort-attributes': 1,
       },
+      'svelte/html-self-closing': [1, {
+        void: 'always',
+        normal: 'never',
+        component: 'always',
+        svelte: 'always',
+      }],
     },
     unocss: true,
     formatters: {
