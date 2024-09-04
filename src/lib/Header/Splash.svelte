@@ -1,9 +1,9 @@
 <script lang='ts'>
   import type { HTMLAttributes } from 'svelte/elements'
 
-  import me from '../js/me'
-
   import { SvgEl } from '.'
+
+  import me from '$lib/js/me'
 
   interface Props extends HTMLAttributes<SVGElement> {
     scale: number

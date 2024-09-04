@@ -1,7 +1,6 @@
 <script lang='ts'>
-  import { A, ArtGrid, CoverImg, Heading, Section } from './mixins'
-
   import { pushState } from '$app/navigation'
+  import { A, CoverImg, Heading, ItemsGrid, Section } from '$lib/components'
 
   interface Props {
     top: (a: string) => void
@@ -25,7 +24,7 @@
         item
       >WORK</A>
     </Heading>
-    <ArtGrid aosS='up'>
+    <ItemsGrid aosS='up'>
       {#snippet children(name, on, i)}
         <button
           class='w-full bg-transparent cover'
@@ -36,6 +35,6 @@
           <CoverImg {name} alt='Open project entry: {name}.' {i} />
         </button>
       {/snippet}
-    </ArtGrid>
+    </ItemsGrid>
   </div>
 </Section>

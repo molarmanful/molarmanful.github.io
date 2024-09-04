@@ -1,9 +1,9 @@
 <svelte:options namespace='svg' />
 
 <script lang='ts'>
-  import { cD } from '../js/contexts'
-  import type { El } from '../js/me'
-  import { colors } from '../js/static'
+  import { cD } from '$lib/js/contexts'
+  import type { El } from '$lib/js/me'
+  import { colors } from '$lib/js/static'
 
   interface Props {
     len: El['len']

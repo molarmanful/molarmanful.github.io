@@ -22,7 +22,7 @@
       w = el.naturalWidth
       pw = el.parentElement?.clientWidth || 0
       stop = false
-    }, 50)
+    }, 100)
     stop = true
     loaded = true
   }

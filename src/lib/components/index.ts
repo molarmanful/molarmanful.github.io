@@ -18,19 +18,9 @@ export { default as IVideo } from './IVideo.svelte'
 export { default as YTVideo } from './YTVideo.svelte'
 export { default as BVideo } from './BVideo.svelte'
 
-export { default as NavIcon } from './NavIcon.svelte'
-export { default as NavBody } from './NavBody.svelte'
+export { default as ItemsGrid } from './ItemsGrid.svelte'
+export { default as ItemsFilter } from './ItemsFilter.svelte'
 
-export { default as HeaderTitle } from './HeaderTitle.svelte'
-export { default as SvgEl } from './SvgEl.svelte'
-export { default as HeaderSplash } from './HeaderSplash.svelte'
-
-export { default as AboutTitle } from './AboutTitle.svelte'
-export { default as AboutStatement } from './AboutStatement.svelte'
-export { default as AboutLinks } from './AboutLinks.svelte'
-
-export { default as ArtFilter } from './ArtFilter.svelte'
-export { default as ArtGrid } from './ArtGrid.svelte'
 export { default as ItemBar } from './ItemBar.svelte'
 export { default as ItemBody } from './ItemBody.svelte'
 

@@ -1,7 +1,7 @@
 <script lang='ts'>
-  import { cD } from '../js/contexts'
-
   import { Video } from '.'
+
+  import { cD } from '$lib/js/contexts'
 
   interface Props {
     a: string

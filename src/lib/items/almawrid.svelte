@@ -5,7 +5,7 @@
 </script>
 
 <script lang='ts'>
-  import { Heading, IVideo, MediaImg, Prose, Sp, Subheading } from '../mixins'
+  import { Heading, IVideo, MediaImg, Prose, Sp, Subheading } from '$lib/components'
 </script>
 
 <Prose>

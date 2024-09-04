@@ -5,9 +5,10 @@
   import type { Snippet } from 'svelte'
   import { tabbable } from 'tabbable'
 
-  import { cD, cfocus } from '../js/contexts'
-  import { FocusTrap } from '../js/util.svelte'
-  import { ArtFilter } from '../mixins'
+  import { ItemsFilter } from '.'
+
+  import { cD, cfocus } from '$lib/js/contexts'
+  import { FocusTrap } from '$lib/js/util.svelte'
 
   interface Props {
     aosS?: string
@@ -113,7 +114,7 @@
 />
 <svelte:document bind:activeElement />
 
-<ArtFilter class='mb-3.5 md:mb-6.5' {aosS} {chosen} bind:anim />
+<ItemsFilter class='mb-3.5 md:mb-6.5' {aosS} {chosen} bind:anim />
 
 <div
   bind:this={el}

@@ -1,9 +1,8 @@
 <script lang='ts'>
   import type { HTMLAttributes } from 'svelte/elements'
 
-  import { cD } from '../js/contexts'
-
-  import { A } from '.'
+  import { A } from '$lib/components'
+  import { cD } from '$lib/js/contexts'
 
   interface Props extends HTMLAttributes<HTMLDivElement> {
     clazz?: string

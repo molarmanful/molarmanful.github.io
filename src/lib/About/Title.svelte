@@ -1,7 +1,6 @@
 <script lang='ts'>
-  import lev from '../js/lev'
-
-  import { Heading } from '.'
+  import { Heading } from '$lib/components'
+  import lev from '$lib/js/lev'
 
   const bank = [
     'WEIRD',

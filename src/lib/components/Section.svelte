@@ -2,7 +2,7 @@
   import type { Snippet } from 'svelte'
   import type { HTMLAttributes } from 'svelte/elements'
 
-  import { cD } from '../js/contexts'
+  import { cD } from '$lib/js/contexts'
 
   interface Props extends HTMLAttributes<HTMLElement> {
     name?: string

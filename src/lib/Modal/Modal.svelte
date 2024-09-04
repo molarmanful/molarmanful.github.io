@@ -1,9 +1,9 @@
 <script lang='ts'>
   import { fade } from 'svelte/transition'
 
-  import { cD } from './js/contexts'
-  import { FocusTrap } from './js/util.svelte'
-  import { A, ItemBar, ItemBody } from './mixins'
+  import { A, ItemBar, ItemBody } from '$lib/components'
+  import { cD } from '$lib/js/contexts'
+  import { FocusTrap } from '$lib/js/util.svelte'
 
   interface Props {
     selected?: string

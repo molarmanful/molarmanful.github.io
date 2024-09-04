@@ -14,7 +14,7 @@
     Sp,
     Subheading,
     Text,
-  } from '../mixins'
+  } from '$lib/components'
 </script>
 
 <Prose>
