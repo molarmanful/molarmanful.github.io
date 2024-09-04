@@ -7,7 +7,7 @@
     clazz?: string
   }
 
-  const { clazz = '', ...props }: Props = $props()
+  const { clazz = '', ...rest }: Props = $props()
 </script>
 
 {#snippet h3(text: string, c = 'text-bord')}
@@ -16,7 +16,7 @@
   </h3>
 {/snippet}
 
-<div class='{0} prose {clazz}' {...props}>
+<div class='{0} prose {clazz}' {...rest}>
   <Subheading data-aos='fade-in'>
     <span class='text-text-200 bold'>BENJAMIN PANG</span> is a creative
     technologist from the California Bay Area and a graduate of NYU ITP.

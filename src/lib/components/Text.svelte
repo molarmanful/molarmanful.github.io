@@ -7,9 +7,9 @@
     children: Snippet
   }
 
-  const { clazz = '', children, ...props }: Props = $props()
+  const { clazz = '', children, ...rest }: Props = $props()
 </script>
 
-<p class='{0} mt-4 lg:mt-8 {clazz}' {...props}>
+<p class='{0} mt-4 lg:mt-8 {clazz}' {...rest}>
   {@render children()}
 </p>

@@ -11,8 +11,8 @@
     px?: boolean
   }
 
-  const { name, px = false, ...props }: Props = $props()
+  const { name, px = false, ...rest }: Props = $props()
   const { D } = cD.get()
 </script>
 
-<Image {name} b={D.media} clazz={px ? 'image-render-pixel' : ''} {...props} />
+<Image {name} b={D.media} clazz={px ? 'image-render-pixel' : ''} {...rest} />

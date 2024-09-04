@@ -18,7 +18,7 @@
     pulse,
     colors,
     clazz = '',
-    ...props
+    ...rest
   }: Props = $props()
 
   const { useFocusTrap } = new FocusTrap({
@@ -34,7 +34,7 @@
   role='navigation'
   use:useFocusTrap
   transition:scale={{ duration: 300 }}
-  {...props}
+  {...rest}
 >
   <menu class='text-3xl leading-8 font-1'>
     {#each tops as top}

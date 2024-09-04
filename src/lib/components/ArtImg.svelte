@@ -10,8 +10,8 @@
     name: string
   }
 
-  const { name, ...props }: Props = $props()
+  const { name, ...rest }: Props = $props()
   const { D } = cD.get()
 </script>
 
-<Image {name} b={D.art} {...props} />
+<Image {name} b={D.art} {...rest} />

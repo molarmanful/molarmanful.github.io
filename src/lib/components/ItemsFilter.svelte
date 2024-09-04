@@ -12,7 +12,7 @@
     chosen: Set<string>
   }
 
-  let { aosS, anim = $bindable(), chosen, ...props }: Props = $props()
+  let { aosS, anim = $bindable(), chosen, ...rest }: Props = $props()
 
   const { D, actives } = cD.get()
   const rfocus = cfocus.get()
@@ -72,7 +72,7 @@
 />
 <svelte:document bind:activeElement />
 
-<div {...props}>
+<div {...rest}>
   <h3 class='mb-1.5 text-bord-500 bold' data-aos={aosS && 'fade-in'}>Filter:</h3>
   <menu bind:this={el} id='anchor-filter' use:autoAnimate use:useFocusTrap>
     {#if actives.x.size}

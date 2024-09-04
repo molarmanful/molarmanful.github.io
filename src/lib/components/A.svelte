@@ -9,13 +9,13 @@
     children: Snippet
   }
 
-  const { t, item = false, clazz = '', children, ...props }: Props = $props()
+  const { t, item = false, clazz = '', children, ...rest }: Props = $props()
 </script>
 
 <a
   class="{item ? 'text-inherit' : ''} under focunder {clazz}"
   target={t ? void 0 : '_blank'}
-  {...props}
+  {...rest}
 >
   {@render children()}
 </a>

@@ -9,7 +9,7 @@
     clazz?: string
   }
 
-  const { name, b, mt = false, clazz = '', ...props }: Props = $props()
+  const { name, b, mt = false, clazz = '', ...rest }: Props = $props()
 
   let loaded = $state(false)
 </script>
@@ -21,5 +21,5 @@
     loaded = true
   }}
   src={b instanceof Map ? b.get(name ?? '') : b}
-  {...props}
+  {...rest}
 />

@@ -13,7 +13,7 @@
     }
   }
 
-  const { scale, splash_rel, ...props }: Props = $props()
+  const { scale, splash_rel, ...rest }: Props = $props()
 </script>
 
 <svg
@@ -22,7 +22,7 @@
   style:--t-x='{splash_rel.x}%'
   style:--un-translate-y='{splash_rel.y}%'
   viewBox='0 0 1587 1080'
-  {...props}
+  {...rest}
 >
   {#each me as el}
     <SvgEl name={el.this} len={el.len} {...el.attr} />

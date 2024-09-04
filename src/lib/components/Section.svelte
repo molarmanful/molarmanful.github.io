@@ -18,7 +18,7 @@
     top = () => {},
     bord = false,
     children,
-    ...props
+    ...rest
   }: Props = $props()
   const { fo } = cD.get()
 
@@ -28,7 +28,7 @@
 <section
   id={nav}
   class="{bord ? 'lt-3xl:b-t b-bord' : ''} backdrop-grayscale flex relative w-screen"
-  {...props}
+  {...rest}
 >
   <div
     class='flex 3xl:(flex-1 flex-col) lt-3xl:hidden'

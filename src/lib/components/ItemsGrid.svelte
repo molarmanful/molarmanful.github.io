@@ -15,7 +15,7 @@
     children: Snippet<[string, boolean, boolean]>
   }
 
-  const { aosS, children, ...props }: Props = $props()
+  const { aosS, children, ...rest }: Props = $props()
   const { D, actives, aos, fo } = cD.get()
   const rfocus = cfocus.get()
 
@@ -121,7 +121,7 @@
   class='grid cols-1 gap-5 md:(cols-3 gap-8) sm:cols-2 xl:cols-4'
   use:autoAnimate
   use:useFocusTrap
-  {...props}
+  {...rest}
 >
   {#each ordered as name, i (name)}
     {@const on = chosen.has(name)}

@@ -7,9 +7,9 @@
     children: Snippet
   }
 
-  const { clazz = '', children, ...props }: Props = $props()
+  const { clazz = '', children, ...rest }: Props = $props()
 </script>
 
-<h1 class='{0} text-(head stroked) uppercase hyphens-manual type-7 {clazz}' {...props}>
+<h1 class='{0} text-(head stroked) uppercase hyphens-manual type-7 {clazz}' {...rest}>
   {@render children()}
 </h1>

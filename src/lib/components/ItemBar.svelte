@@ -6,11 +6,11 @@
     children: Snippet
   }
 
-  const { children, ...props }: Props = $props()
+  const { children, ...rest }: Props = $props()
 </script>
 
 <div class='fixed inset-x-0 top-0 z-10 h-18 p-2 pb-0'>
-  <div class='full flex flex-row b-(1 current) bg-black text-bord' {...props}>
+  <div class='full flex flex-row b-(1 current) bg-black text-bord' {...rest}>
     {@render children()}
   </div>
 </div>

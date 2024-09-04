@@ -4,7 +4,7 @@
 
   interface Props extends HTMLImgAttributes {}
 
-  const { src, ...props }: Props = $props()
+  const { src, ...rest }: Props = $props()
 
   let el: HTMLImageElement | undefined = $state()
   let loaded = $state(false)
@@ -40,6 +40,6 @@
     loading='lazy'
     onload={rsz}
     {src}
-    {...props}
+    {...rest}
   />
 </div>

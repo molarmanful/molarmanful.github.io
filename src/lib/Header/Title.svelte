@@ -8,7 +8,7 @@
     }
   }
 
-  const { mouse_rel, ...props }: Props = $props()
+  const { mouse_rel, ...rest }: Props = $props()
 
   const aber = 4
   const shad = 4
@@ -22,7 +22,7 @@
   const shad_rel = $derived(Math.max(0, (1 - dist) * shad))
 </script>
 
-<h1 {...props}>
+<h1 {...rest}>
   <div class='absolute inset-0 screen p-8'>
     <svg
       style:--aber0='{aber_rel.x}px'

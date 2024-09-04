@@ -6,12 +6,12 @@
     children: Snippet
   }
 
-  const { children, ...props }: Props = $props()
+  const { children, ...rest }: Props = $props()
 </script>
 
 <div
   class='mx-auto max-w-prose w-full pb-6 pt-8 prose lg:pb-12 md:pt-16'
-  {...props}
+  {...rest}
 >
   {@render children()}
 </div>

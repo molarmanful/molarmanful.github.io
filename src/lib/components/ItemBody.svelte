@@ -7,12 +7,12 @@
     children: Snippet
   }
 
-  let { el = $bindable(), children, ...props }: Props = $props()
+  let { el = $bindable(), children, ...rest }: Props = $props()
 </script>
 
 <div
   class='absolute inset-0 dscreen overflow-hidden bg-black p-2 pt-18'
-  {...props}
+  {...rest}
 >
   <!-- svelte-ignore a11y_autofocus -->
   <article

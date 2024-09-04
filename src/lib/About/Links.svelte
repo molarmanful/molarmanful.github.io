@@ -8,7 +8,7 @@
     clazz?: string
   }
 
-  const { clazz, ...props }: Props = $props()
+  const { clazz, ...rest }: Props = $props()
   const { fo } = cD.get()
 
   const links = [
@@ -47,7 +47,7 @@
   ]
 </script>
 
-<div class='{0} prose {clazz}' {...props}>
+<div class='{0} prose {clazz}' {...rest}>
   <h2
     class='noprose text-(head stroked) type-6'
     data-aos="fade-{fo?.matches ? 'in' : 'left'}"

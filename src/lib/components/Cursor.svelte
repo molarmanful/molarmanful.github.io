@@ -9,7 +9,7 @@
     }
   }
 
-  const { mouse, cursorFs, ...props }: Props = $props()
+  const { mouse, cursorFs, ...rest }: Props = $props()
 
   interface Freeze {
     px: number
@@ -67,7 +67,7 @@
   style:transition='transform {+on * (on_a ? 200 : 100)}ms, opacity 400ms'
   style:opacity={on ? 1 : 0}
   class="{freeze.on ? 'mix-blend-difference' : ''} bg-transparent fixed left-0 pointer-events-none top-0"
-  {...props}
+  {...rest}
 >
   <div
     style:height

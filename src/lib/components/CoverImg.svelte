@@ -11,7 +11,7 @@
     i?: boolean
   }
 
-  const { name, i = false, ...props }: Props = $props()
+  const { name, i = false, ...rest }: Props = $props()
   const { D } = cD.get()
 </script>
 
@@ -21,6 +21,6 @@
   clazz='transition-filter'
   draggable='false'
   mt
-  {...props}
+  {...rest}
 />
 <div class="{i ? 'bg-head' : 'bg-accent'} absolute colize full inset-0 mix-blend-color transition-400"></div>

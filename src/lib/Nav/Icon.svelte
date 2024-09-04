@@ -9,7 +9,7 @@
     clazz?: string
   }
 
-  const { pulse, colors, clazz, ...props }: Props = $props()
+  const { pulse, colors, clazz, ...rest }: Props = $props()
 
   const { loaded } = cD.get()
 </script>
@@ -19,7 +19,7 @@
   style:color={colors[0]}
   class="{loaded.x ? 'translate-x-0' : 'translate-x-17'} b-(1 current) focus:b-white bg-black h-16 w-16 outline-none text-bord focus:var_x-white {clazz}"
   aria-label='nav menu'
-  {...props}
+  {...rest}
 >
   <svg class='m-auto h-1/2 w-1/2' viewBox='0 0 5 5'>
     {#each Array(3).keys() as i}

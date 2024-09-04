@@ -10,7 +10,7 @@
     name?: El['this']
   }
 
-  const { len, name, ...props }: Props = $props()
+  const { len, name, ...rest }: Props = $props()
   const { loaded } = cD.get()
 
   const cs = colors[500]
@@ -49,5 +49,5 @@
   style:stroke-dasharray={len}
   style:stroke-dashoffset={len_o}
   class='{c} fill-transparent stroke-1 stroke-current'
-  {...props}
+  {...rest}
 />
