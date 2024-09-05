@@ -20,8 +20,10 @@
     <Heading clazz='mb-5 text-center md:mb-8 3xl:hidden' data-aos='fade-in'>
       <A
         clazz='decoration-transparent text-(stroked head!) [&:hover,&:focus]:text-white! focus:decoration-current!'
+        data-sveltekit-reload
         href='/work'
         item
+        t
       >WORK</A>
     </Heading>
     <ItemsGrid aosS='up'>

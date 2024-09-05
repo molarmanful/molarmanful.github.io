@@ -1,4 +1,5 @@
 <script lang='ts'>
+  import type { Snippet } from 'svelte'
   import { SvelteSet } from 'svelte/reactivity'
 
   import type { Snapshot } from './$types'
@@ -15,7 +16,11 @@
   import 'aos/dist/aos.css'
   import '../app.css'
 
-  const { children } = $props()
+  interface Props {
+    children: Snippet
+  }
+
+  const { children }: Props = $props()
 
   const loaded = $state({ x: false })
 
