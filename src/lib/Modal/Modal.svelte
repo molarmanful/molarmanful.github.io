@@ -61,7 +61,7 @@
       <div class='ml-4 h-full flex'>
         <span class='m-auto'>
           {selected} -
-          <A clazz='decoration-current' href='/work/{selected}' item>permalink</A>
+          <A clazz='decoration-current' data-sveltekit-reload href='/work/{selected}' item t>permalink</A>
         </span>
       </div>
       <button
