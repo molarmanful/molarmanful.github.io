@@ -34,6 +34,7 @@ export interface Opts {
   ease: string
   duration: number
   anchor?: string
+  scroller?: ScrollTrigger.Vars['scroller']
 }
 
 export default class {
@@ -60,7 +61,7 @@ export default class {
 
   aos(node: Element, opts: (() => Partial<Opts>) | Partial<Opts> = {}) {
     const opts1 = $derived(typeof opts === 'function' ? opts() : opts)
-    const { on, type, start, delay, ease, duration, anchor }: Opts = $derived({ ...this.opts, ...opts1 })
+    const { on, type, start, delay, ease, duration, scroller, anchor }: Opts = $derived({ ...this.opts, ...opts1 })
 
     $effect(() => {
       const [from, to] = trs[type]
@@ -77,6 +78,7 @@ export default class {
         delay,
         scrollTrigger: {
           trigger: anchor ? document.querySelector(anchor) : node,
+          scroller,
           toggleActions: 'play none none reset',
           start,
         },

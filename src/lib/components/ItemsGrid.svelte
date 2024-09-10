@@ -13,9 +13,10 @@
   interface Props {
     aosS?: 'up' | 'in'
     children: Snippet<[string, boolean, boolean]>
+    scroller?: ScrollTrigger.Vars['scroller']
   }
 
-  const { aosS, children, ...rest }: Props = $props()
+  const { aosS, scroller, children, ...rest }: Props = $props()
   const { D, actives, aos, fo } = cD.get()
   const rfocus = cfocus.get()
 
@@ -126,6 +127,7 @@
         on: !!(aosS && anim),
         type: `fade-${aosS && !fo?.matches ? aosS : 'in'}`,
         delay: 0.1 * (i % cs),
+        scroller,
       })}
     >
       {@render children(name, on, ((i / cs) | 0) % 2 === (i % cs) % 2)}

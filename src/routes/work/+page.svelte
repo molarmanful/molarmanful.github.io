@@ -15,7 +15,7 @@
 
 <div class='m-auto w-full p-5 lg:container lg:py-16'>
   <Heading clazz='text-center mb-5 md:mb-8'>WORK</Heading>
-  <ItemsGrid aosS='in'>
+  <ItemsGrid aosS='in' scroller='#itembody'>
     {#snippet children(name, on, i: boolean)}
       <A
         class='cover'
