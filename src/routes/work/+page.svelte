@@ -1,9 +1,8 @@
 <script lang='ts'>
   import { A, CoverImg, Heading, ItemsGrid } from '$lib/components'
-  import { cD, cfocus } from '$lib/js/contexts'
+  import { cD } from '$lib/js/contexts'
 
   const { D } = cD.get()
-  const focus = cfocus.get()
 </script>
 
 <svelte:head>
@@ -16,7 +15,7 @@
 
 <div class='m-auto w-full p-5 lg:container lg:py-16'>
   <Heading clazz='text-center mb-5 md:mb-8'>WORK</Heading>
-  <ItemsGrid aosS='in' scroller={focus.x}>
+  <ItemsGrid aosS='in'>
     {#snippet children(name, on, i: boolean)}
       <A
         class='cover'
