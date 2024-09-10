@@ -13,7 +13,6 @@
 
   import '@unocss/reset/tailwind-compat.css'
   import 'uno.css'
-  import 'aos/dist/aos.css'
   import '../app.css'
 
   interface Props {
@@ -53,7 +52,7 @@
     )
   }
 
-  const aos = new AOS()
+  const { aos } = new AOS().fns
 
   const mouse: Mouse = $state({
     x: 0.5,

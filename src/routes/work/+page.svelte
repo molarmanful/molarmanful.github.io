@@ -1,13 +1,8 @@
 <script lang='ts'>
-  import { afterNavigate } from '$app/navigation'
   import { A, CoverImg, Heading, ItemsGrid } from '$lib/components'
   import { cD } from '$lib/js/contexts'
 
-  const { D, aos } = cD.get()
-
-  afterNavigate(() => {
-    aos.init()
-  })
+  const { D } = cD.get()
 </script>
 
 <svelte:head>
