@@ -61,7 +61,7 @@
 
   {#key data.pathname}
     <div in:receive={{ key: 'a' }} out:send={{ key: 'a' }}>
-      <ItemBody id='itembody' bind:el={el.x}>
+      <ItemBody bind:el={el.x}>
         {@render children()}
       </ItemBody>
     </div>
