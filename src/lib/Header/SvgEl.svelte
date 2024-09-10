@@ -6,11 +6,10 @@
   import { colors } from '$lib/js/static'
 
   interface Props {
-    len: El['len']
-    name?: El['this']
+    el: El
   }
 
-  const { len, name, ...rest }: Props = $props()
+  const { el, ...rest }: Props = $props()
   const { loaded } = cD.get()
 
   const cs = colors[500]
@@ -18,7 +17,7 @@
 
   let c = $state('text-black')
   let t = $state(0)
-  let len_o = $state(0)
+  let len = $state(el.len)
 
   let to: ReturnType<typeof setTimeout> | undefined
   const loop = () => {
@@ -31,10 +30,8 @@
     if (!loaded.x)
       return
 
-    len_o = len
-
     to = setTimeout(() => {
-      len_o = 0
+      len = 0
       loop()
     }, 1000)
 
@@ -43,11 +40,12 @@
 </script>
 
 <svelte:element
-  this={name}
+  this={el.this}
   style:transition='color, stroke-dashoffset ease-out'
   style:transition-duration='{t}ms'
-  style:stroke-dasharray={len}
-  style:stroke-dashoffset={len_o}
+  style:stroke-dasharray={el.len}
+  style:stroke-dashoffset={len}
   class='{c} fill-transparent stroke-1 stroke-current'
+  {...el.attr}
   {...rest}
 />
