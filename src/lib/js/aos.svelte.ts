@@ -1,94 +1,90 @@
+import gsap from 'gsap'
+import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
+
 import { browser } from '$app/environment'
 
-interface Opts {
-  offset: number
+const trs = {
+  'fade-in': [
+    { opacity: 0 },
+    { opacity: 1 },
+  ],
+  'fade-up': [
+    { opacity: 0, y: 100 },
+    { opacity: 1, y: 0 },
+  ],
+  'fade-left': [
+    { opacity: 0, x: 100 },
+    { opacity: 1, x: 0 },
+  ],
+  'fade-down': [
+    { opacity: 0, y: -100 },
+    { opacity: 1, y: 0 },
+  ],
+  'fade-right': [
+    { opacity: 0, x: -100 },
+    { opacity: 1, x: 0 },
+  ],
+} as const satisfies Record<string, [gsap.CSSVars, gsap.CSSVars]>
+
+export interface Opts {
+  on: boolean
+  type: keyof typeof trs
+  start: ScrollTrigger.Vars['start']
   delay: number
-  easing: string
+  ease: string
   duration: number
+  anchor?: string
+  scroller?: ScrollTrigger.Vars['scroller']
 }
 
 export default class {
   opts: Opts = {
-    offset: 120,
+    on: true,
+    type: 'fade-in',
+    start: 'top bottom-=120px',
     delay: 0,
-    easing: 'ease',
-    duration: 400,
+    ease: 'ease',
+    duration: 0.4,
   }
 
-  on = false
-  io?: IntersectionObserver
-  mo?: MutationObserver
-
-  constructor(opts = {}) {
+  constructor() {
     if (!browser)
       return
-
-    Object.assign(this.opts, opts)
-
-    this.io = new IntersectionObserver((entries) => {
-      for (const { isIntersecting, target, boundingClientRect: { top } } of entries) {
-        const f = (el: Element) => {
-          if (isIntersecting || top < 0)
-            el.classList.add('aos-animate')
-          else el.classList.remove('aos-animate')
-        }
-        if ((target as HTMLElement).dataset.aos) {
-          f(target)
-          continue
-        }
-        for (const el of document.querySelectorAll(
-          `[data-aos-anchor="#${target.id}"]`,
-        ))
-          f(el)
-      }
-    }, {
-      rootMargin: `0% 0% -${this.opts.offset}px`,
-    })
-
-    this.mo = new MutationObserver((muts) => {
-      for (const { addedNodes, removedNodes, target } of muts) {
-        const nodes = [...addedNodes, ...removedNodes] as HTMLElement[]
-        for (const node of nodes) {
-          if (!node.dataset?.aos)
-            continue
-          this.observeAll(target as Element, true)
-          break
-        }
-      }
-    })
+    gsap.registerPlugin(ScrollTrigger)
   }
 
-  init() {
-    const ks: (keyof Opts)[] = ['duration', 'delay', 'easing']
-    for (const k of ks)
-      document.body.setAttribute(`data-aos-${k}`, `${this.opts[k]}`)
-
-    this.mo?.observe(document.body, {
-      childList: true,
-      subtree: true,
-    })
-
-    this.observeAll()
-    this.on = true
-  }
-
-  observeAll(parent?: Element, hard = false) {
-    const els: NodeListOf<HTMLElement> = (parent ?? document).querySelectorAll('[data-aos]')
-    for (const el of els) {
-      const el1 = el.dataset.aosAnchor
-        ? document.querySelector(el.dataset.aosAnchor) ?? el
-        : el
-      if (hard)
-        this.manual(el1, el)
-      this.io?.observe(el1)
+  get fns() {
+    return {
+      aos: this.aos.bind(this),
     }
   }
 
-  manual(a: Element, b: Element) {
-    if (a.getBoundingClientRect().top < innerHeight) {
-      b.classList.add('aos-animate')
-      return
-    }
-    b.classList.remove('aos-animate')
+  aos(node: Element, opts: (() => Partial<Opts>) | Partial<Opts> = {}) {
+    const opts1 = $derived(typeof opts === 'function' ? opts() : opts)
+    const { on, type, start, delay, ease, duration, scroller, anchor }: Opts = $derived({ ...this.opts, ...opts1 })
+
+    $effect(() => {
+      const [from, to] = trs[type]
+
+      if (!on)
+        return
+
+      const tw = gsap.fromTo(node, {
+        ...from,
+      }, {
+        ...to,
+        duration,
+        ease,
+        delay,
+        scrollTrigger: {
+          trigger: anchor ? document.querySelector(anchor) : node,
+          scroller,
+          toggleActions: 'restart none none reverse',
+          start,
+        },
+      })
+
+      return () => tw.kill()
+    })
   }
 }

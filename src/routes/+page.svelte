@@ -8,7 +8,7 @@
   import { cD } from '$lib/js/contexts'
   import { FocusTrap } from '$lib/js/util.svelte'
 
-  const { D, aos } = cD.get()
+  const { D } = cD.get()
 
   const tops: string[] = $state([])
 
@@ -26,10 +26,6 @@
     },
     {},
   )
-
-  $effect(() => {
-    aos.init()
-  })
 </script>
 
 <svelte:head>

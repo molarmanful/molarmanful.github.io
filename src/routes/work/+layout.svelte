@@ -1,10 +1,11 @@
 <script lang='ts'>
-  import { type Snippet, setContext } from 'svelte'
+  import { type Snippet } from 'svelte'
   import { fade } from 'svelte/transition'
 
   import type { LayoutServerData } from './$types'
 
   import { A, ItemBar, ItemBody } from '$lib/components'
+  import { cfocus, cscroll } from '$lib/js/contexts'
   import { receive, send } from '$lib/js/crossfade'
   import { FocusTrap } from '$lib/js/util.svelte'
 
@@ -22,8 +23,9 @@
       .slice(1),
   )
 
-  const el: { x?: HTMLElement } = $state({ x: void 0 })
-  setContext('focus', el)
+  const el = $state<{ x?: HTMLElement }>({})
+  cfocus.set(el)
+  cscroll.set(el)
 
   const { activate, useFocusTrap } = new FocusTrap({
     setReturnFocus: () => el.x ?? false,

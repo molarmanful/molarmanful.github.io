@@ -25,6 +25,6 @@
   {...rest}
 >
   {#each me as el}
-    <SvgEl name={el.this} len={el.len} {...el.attr} />
+    <SvgEl {el} />
   {/each}
 </svg>

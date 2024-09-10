@@ -17,7 +17,7 @@
 
 <Section name='WORK' nav='art' {top}>
   <div class='mx-auto w-screen b-bord px-5 pb-16 lg:(container pb-32) 3xl:b-l md:px-8 xl:px-16'>
-    <Heading clazz='mb-5 text-center md:mb-8 3xl:hidden' data-aos='fade-in'>
+    <Heading aoso={{}} clazz='mb-5 text-center md:mb-8 3xl:hidden'>
       <A
         clazz='decoration-transparent text-(stroked head!) [&:hover,&:focus]:text-white! focus:decoration-current!'
         data-sveltekit-reload

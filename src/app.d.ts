@@ -16,7 +16,7 @@ declare global {
   }
 
   declare namespace svelteHTML {
-    interface HTMLAttributes {}
+    interface HTMLAttributes { }
   }
 
   interface Mouse {
@@ -28,6 +28,12 @@ declare global {
     on: boolean
   }
 
+  namespace Aos {
+    interface Props {
+      aoso?: Partial<Opts>
+    }
+  }
+
   interface DContext {
     D: typeof D
     loaded: { x: boolean }
@@ -35,8 +41,7 @@ declare global {
     factor: { x: number }
     fo?: MediaQuery
     rm?: MediaQuery
-    vloader?: IntersectionObserver
-    aos: AOS
+    aos: AOS['aos']
     mouse: Mouse
     cursorFs: {
       on: (e: MouseEvent) => void
@@ -45,4 +50,4 @@ declare global {
   }
 }
 
-export {}
+export { }

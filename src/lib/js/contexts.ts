@@ -14,4 +14,5 @@ const context = <T>(s: string): Context<T> => {
 }
 
 export const cD = context<DContext>('D')
-export const cfocus = context<{ x: HTMLElement }>('focus')
+export const cfocus = context<{ x?: HTMLElement }>('focus')
+export const cscroll = context<{ x?: HTMLElement }>('scroll')

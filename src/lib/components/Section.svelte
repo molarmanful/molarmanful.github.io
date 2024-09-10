@@ -20,7 +20,7 @@
     children,
     ...rest
   }: Props = $props()
-  const { fo } = cD.get()
+  const { aos, fo } = cD.get()
 
   top(nav)
 </script>
@@ -32,7 +32,9 @@
 >
   <div
     class='flex 3xl:(flex-1 flex-col) lt-3xl:hidden'
-    data-aos="fade-{fo?.matches ? 'in' : 'right'}"
+    use:aos={{
+      type: `fade-${fo?.matches ? 'in' : 'right'}`,
+    }}
   >
     <div class='sticky top-0 ml-auto pb-32 pt-6 write-vertical-left xl:px-4 type-7'>
       <svelte:element

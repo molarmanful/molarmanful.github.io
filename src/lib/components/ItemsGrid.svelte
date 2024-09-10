@@ -7,17 +7,18 @@
 
   import { ItemsFilter } from '.'
 
-  import { cD, cfocus } from '$lib/js/contexts'
+  import { cD, cfocus, cscroll } from '$lib/js/contexts'
   import { FocusTrap } from '$lib/js/util.svelte'
 
   interface Props {
-    aosS?: string
+    aosS?: 'up' | 'in'
     children: Snippet<[string, boolean, boolean]>
   }
 
   const { aosS, children, ...rest }: Props = $props()
   const { D, actives, aos, fo } = cD.get()
   const rfocus = cfocus.get()
+  const scroller = cscroll.get()
 
   const { activate, deactivate, useFocusTrap } = new FocusTrap({
     clickOutsideDeactivates: true,
@@ -80,12 +81,6 @@
 
   let anim = $state(true)
   const animels: Element[] = $state([])
-
-  $effect(() => {
-    if (!anim || !aos.on)
-      return
-    for (const el of animels) aos.manual(el, el)
-  })
 </script>
 
 <svelte:window
@@ -127,9 +122,13 @@
     {@const on = chosen.has(name)}
     <div
       bind:this={animels[i]}
-      class="{on ? '' : 'brightness-10 pointer-events-none!'} {anim ? '' : 'suppress'} flex transition-filter,opacity,transform"
-      data-aos={aosS && anim && `fade-${fo?.matches ? 'in' : aosS}`}
-      data-aos-delay={aosS && anim && 100 * (i % cs)}
+      class="{on ? '' : 'brightness-10 pointer-events-none!'} {anim ? '' : 'suppress'} flex transition-filter"
+      use:aos={() => ({
+        on: !!(aosS && anim),
+        type: `fade-${aosS && !fo?.matches ? aosS : 'in'}`,
+        delay: 0.1 * (i % cs),
+        scroller: scroller?.x,
+      })}
     >
       {@render children(name, on, ((i / cs) | 0) % 2 === (i % cs) % 2)}
     </div>

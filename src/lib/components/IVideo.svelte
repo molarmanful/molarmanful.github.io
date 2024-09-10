@@ -1,7 +1,9 @@
 <script lang='ts'>
+  import ScrollTrigger from 'gsap/dist/ScrollTrigger'
+
   import { Video } from '.'
 
-  import { cD } from '$lib/js/contexts'
+  import { cscroll } from '$lib/js/contexts'
 
   interface Props {
     a: string
@@ -10,31 +12,41 @@
   }
 
   const { a, px, aspect = 'square' }: Props = $props()
-  const { vloader } = cD.get()
 
-  let el: Element | undefined = $state()
   let loaded = $state(false)
+  const scroller = cscroll.get()
 
-  $effect(() => {
-    if (!el)
-      return
+  let st = $state<ScrollTrigger>()
 
-    vloader?.observe(el)
+  const loader = (node: HTMLVideoElement) => {
+    const f = () => node.load()
 
-    return () => el && vloader?.unobserve(el)
-  })
+    st = ScrollTrigger.create({
+      trigger: node,
+      scroller: scroller?.x,
+      start: 'top bottom+=100px',
+      end: 'bottom top-=100px',
+      onToggle: f,
+    })
+
+    return { destroy: () => st?.kill() }
+  }
 </script>
 
 <Video {aspect}>
   <div class='aspect-{aspect} max-full mx-auto'>
     <video
-      bind:this={el}
       class="{loaded ? 'opacity-100' : 'opacity-0'} {px ? 'image-render-pixel' : ''} full object-contain ofade-200"
+      autoplay={loaded || void 0}
       loop
       muted
-      oncanplaythrough={() => (loaded = true)}
+      oncanplaythrough={() => {
+        loaded = true
+        st?.kill()
+      }}
       playsinline
       preload='none'
+      use:loader
     >
       <source src='https://i.imgur.com/{a}.mp4' type='video/mp4' />
     </video>

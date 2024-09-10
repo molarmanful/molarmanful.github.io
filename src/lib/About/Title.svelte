@@ -35,7 +35,7 @@
   })
 </script>
 
-<Heading data-aos='fade-in'>
+<Heading aoso={{}}>
   I MAKE
   <br class='xs1:hidden' />
   <span class='whitespace-nowrap text-unstroked'>

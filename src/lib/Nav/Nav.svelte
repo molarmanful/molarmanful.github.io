@@ -60,30 +60,31 @@
   }}
 />
 
-<nav>
+{#if dropped}
+  <button
+    class='fixed z-30 screen cursor-initial opacity-0'
+    onmousedown={OFF}
+    ontouchstart={OFF}
+    tabindex='-1'
+  >
+    Close Navigation
+  </button>
+{/if}
+
+<nav onmouseenter={ON} onmouseleave={OFF}>
   <Icon
     aria-expanded={dropped}
     clazz='fixed flex right-2 top-2 z-30'
     {colors}
     onclick={ON}
-    onmouseenter={ON}
     {pulse}
   ></Icon>
 
   {#if dropped}
-    <button
-      class='fixed z-30 screen cursor-initial opacity-0'
-      onmousedown={OFF}
-      ontouchstart={OFF}
-      tabindex='-1'
-    >
-      Close Navigation
-    </button>
     <Body
       {GOTO}
       clazz='fixed right-2 top-2 z-40'
       {colors}
-      onmouseleave={OFF}
       {pulse}
       {tops}
     />
