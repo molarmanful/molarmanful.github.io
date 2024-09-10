@@ -62,10 +62,9 @@ export default class {
   aos(node: Element, opts: (() => Partial<Opts>) | Partial<Opts> = {}) {
     const opts1 = $derived(typeof opts === 'function' ? opts() : opts)
     const { on, type, start, delay, ease, duration, scroller, anchor }: Opts = $derived({ ...this.opts, ...opts1 })
+    const [from, to] = $derived(trs[type])
 
     $effect(() => {
-      const [from, to] = trs[type]
-
       if (!on)
         return
 

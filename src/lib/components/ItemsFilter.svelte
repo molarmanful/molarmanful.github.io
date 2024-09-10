@@ -8,7 +8,7 @@
 
   interface Props extends HTMLAttributes<HTMLDivElement> {
     aosS?: string
-    anim?: boolean
+    anim: boolean
     chosen: Set<string>
   }
 
@@ -45,7 +45,7 @@
   )
 
   const handleAnim = () => {
-    anim = void 0
+    anim = false
     setTimeout(() => {
       anim = true
     }, 250)
@@ -104,12 +104,12 @@
     {/if}{#each alltags as tag, i (tag)}
       <li
         class='m-1.5 inline-block'
-        use:aos={{
+        use:aos={() => ({
           on: !!aosS,
           anchor: '#anchor-filter',
           delay: 0.05 * (i + +!!actives.x.size),
           scroller: scroller?.x,
-        }}
+        })}
       >
         <button
           class="{actives.x.has(tag)
