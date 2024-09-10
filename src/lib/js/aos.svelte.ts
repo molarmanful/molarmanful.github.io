@@ -41,7 +41,7 @@ export default class {
   opts: Opts = {
     on: true,
     type: 'fade-in',
-    start: 'top bottom -= 120px',
+    start: 'top bottom-=120px',
     delay: 0,
     ease: 'ease',
     duration: 0.4,
@@ -79,7 +79,7 @@ export default class {
         scrollTrigger: {
           trigger: anchor ? document.querySelector(anchor) : node,
           scroller,
-          toggleActions: 'play none none reset',
+          toggleActions: 'restart none none reverse',
           start,
         },
       })
