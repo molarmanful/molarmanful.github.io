@@ -8,6 +8,22 @@ const trs = {
     { opacity: 0 },
     { opacity: 1 },
   ],
+  'fade-up': [
+    { opacity: 0, y: 100 },
+    { opacity: 1, y: 0 },
+  ],
+  'fade-left': [
+    { opacity: 0, x: 100 },
+    { opacity: 1, x: 0 },
+  ],
+  'fade-down': [
+    { opacity: 0, y: -100 },
+    { opacity: 1, y: 0 },
+  ],
+  'fade-right': [
+    { opacity: 0, x: -100 },
+    { opacity: 1, x: 0 },
+  ],
 } as const satisfies Record<string, [gsap.CSSVars, gsap.CSSVars]>
 
 export interface Opts {
@@ -27,7 +43,7 @@ export default class {
     start: 'top bottom -= 120px',
     delay: 0,
     ease: 'ease',
-    duration: 400,
+    duration: 0.4,
   }
 
   constructor() {
@@ -53,11 +69,11 @@ export default class {
       ...from,
     }, {
       ...to,
-      duration: duration / 1000,
+      duration,
       ease,
       delay,
       scrollTrigger: {
-        trigger: anchor ? document.getElementById(anchor) : node,
+        trigger: anchor ? document.querySelector(anchor) : node,
         toggleActions: 'play none none reset',
         start,
       },

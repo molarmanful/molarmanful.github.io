@@ -9,7 +9,7 @@
   }
 
   const { clazz, ...rest }: Props = $props()
-  const { fo } = cD.get()
+  const { fo, aos } = cD.get()
 
   const links = [
     [
@@ -50,7 +50,9 @@
 <div class='{0} prose {clazz}' {...rest}>
   <h2
     class='noprose text-(head stroked) type-6'
-    data-aos="fade-{fo?.matches ? 'in' : 'left'}"
+    use:aos={{
+      type: `fade-${fo?.matches ? 'in' : 'left'}`,
+    }}
   >
     LINKS
   </h2>
@@ -58,9 +60,11 @@
     {#each links as [color, icon, name, link], i}
       <li
         class='text-accent'
-        data-aos="fade-{fo?.matches ? 'in' : 'left'}"
-        data-aos-anchor='#anchor-abt-links'
-        data-aos-delay={i * 100}
+        use:aos={{
+          type: `fade-${fo?.matches ? 'in' : 'left'}`,
+          delay: i * 0.1,
+          anchor: '#anchor-abt-links',
+        }}
       >
         <A clazz='{color} decoration-none' href={link} item>
           <div class={icon}></div>
