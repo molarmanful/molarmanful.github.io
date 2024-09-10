@@ -58,27 +58,31 @@ export default class {
     }
   }
 
-  aos(node: Element, opts: Partial<Opts> = {}) {
-    const { on, type, start, delay, ease, duration, anchor }: Opts = { ...this.opts, ...opts }
-    const [from, to] = trs[type]
+  aos(node: Element, opts: (() => Partial<Opts>) | Partial<Opts> = {}) {
+    const opts1 = $derived(typeof opts === 'function' ? opts() : opts)
+    const { on, type, start, delay, ease, duration, anchor }: Opts = $derived({ ...this.opts, ...opts1 })
 
-    if (!on)
-      return
+    $effect(() => {
+      const [from, to] = trs[type]
 
-    const tw = gsap.fromTo(node, {
-      ...from,
-    }, {
-      ...to,
-      duration,
-      ease,
-      delay,
-      scrollTrigger: {
-        trigger: anchor ? document.querySelector(anchor) : node,
-        toggleActions: 'play none none reset',
-        start,
-      },
+      if (!on)
+        return
+
+      const tw = gsap.fromTo(node, {
+        ...from,
+      }, {
+        ...to,
+        duration,
+        ease,
+        delay,
+        scrollTrigger: {
+          trigger: anchor ? document.querySelector(anchor) : node,
+          toggleActions: 'play none none reset',
+          start,
+        },
+      })
+
+      return () => tw.kill()
     })
-
-    return { destroy: () => tw.kill() }
   }
 }

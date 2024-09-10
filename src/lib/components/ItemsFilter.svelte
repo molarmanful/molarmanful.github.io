@@ -14,7 +14,7 @@
 
   let { aosS, anim = $bindable(), chosen, ...rest }: Props = $props()
 
-  const { D, actives } = cD.get()
+  const { D, aos, actives } = cD.get()
   const rfocus = cfocus.get()
 
   const { activate, deactivate, useFocusTrap } = new FocusTrap({
@@ -73,13 +73,15 @@
 <svelte:document bind:activeElement />
 
 <div {...rest}>
-  <h3 class='mb-1.5 text-bord-500 bold' data-aos={aosS && 'fade-in'}>Filter:</h3>
+  <h3 class='mb-1.5 text-bord-500 bold' use:aos={{ on: !!aosS }}>Filter:</h3>
   <menu bind:this={el} id='anchor-filter' use:autoAnimate use:useFocusTrap>
     {#if actives.x.size}
       <li
         class='m-1.5 inline-block'
-        data-aos={aosS && 'fade-in'}
-        data-aos-anchor='#anchor-filter'
+        use:aos={{
+          on: !!aosS,
+          anchor: '#anchor-filter',
+        }}
       >
         <button
           class='btn text-no'
@@ -95,9 +97,11 @@
     {/if}{#each alltags as tag, i (tag)}
       <li
         class='m-1.5 inline-block'
-        data-aos={aosS && 'fade-in'}
-        data-aos-anchor='#anchor-filter'
-        data-aos-delay={50 * (i + +!!actives.x.size)}
+        use:aos={{
+          on: !!aosS,
+          anchor: '#anchor-filter',
+          delay: 0.05 * (i + +!!actives.x.size),
+        }}
       >
         <button
           class="{actives.x.has(tag)
@@ -118,7 +122,6 @@
           }}
         >
           {tag}
-        </button>
       </li>
     {/each}
   </menu>
