@@ -2,7 +2,7 @@
   import { fade } from 'svelte/transition'
 
   import { A, ItemBar, ItemBody } from '$lib/components'
-  import { cD } from '$lib/js/contexts'
+  import { cD, cscroll } from '$lib/js/contexts'
   import { FocusTrap } from '$lib/js/util.svelte'
 
   interface Props {
@@ -16,6 +16,7 @@
 
   const el: { x?: HTMLElement } = $state({ x: void 0 })
   let active = false
+  cscroll.set(el)
 
   const { activate, deactivate, useFocusTrap } = new FocusTrap({
     setReturnFocus: () => el.x || false,

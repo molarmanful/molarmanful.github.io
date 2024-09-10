@@ -35,23 +35,6 @@
   const fo = fadeonly()
   const rm = redmote()
 
-  let vloader: IntersectionObserver | undefined
-  if (browser) {
-    vloader = new IntersectionObserver(
-      (entries) => {
-        for (const { isIntersecting, target } of entries) {
-          if (!isIntersecting)
-            continue
-          const t = target as HTMLVideoElement
-          t.load()
-          t.autoplay = true
-          vloader?.unobserve(t)
-        }
-      },
-      { threshold: 0.1 },
-    )
-  }
-
   const { aos } = new AOS().fns
 
   const mouse: Mouse = $state({
@@ -78,7 +61,6 @@
     factor,
     fo,
     rm,
-    vloader,
     aos,
     mouse,
     cursorFs,

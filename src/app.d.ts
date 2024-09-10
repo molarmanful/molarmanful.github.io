@@ -41,7 +41,6 @@ declare global {
     factor: { x: number }
     fo?: MediaQuery
     rm?: MediaQuery
-    vloader?: IntersectionObserver
     aos: AOS['aos']
     mouse: Mouse
     cursorFs: {

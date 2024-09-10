@@ -5,7 +5,7 @@
   import type { LayoutServerData } from './$types'
 
   import { A, ItemBar, ItemBody } from '$lib/components'
-  import { cfocus } from '$lib/js/contexts'
+  import { cfocus, cscroll } from '$lib/js/contexts'
   import { receive, send } from '$lib/js/crossfade'
   import { FocusTrap } from '$lib/js/util.svelte'
 
@@ -25,6 +25,7 @@
 
   const el = $state<{ x?: HTMLElement }>({})
   cfocus.set(el)
+  cscroll.set(el)
 
   const { activate, useFocusTrap } = new FocusTrap({
     setReturnFocus: () => el.x ?? false,

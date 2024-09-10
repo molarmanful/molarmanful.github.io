@@ -7,18 +7,18 @@
 
   import { ItemsFilter } from '.'
 
-  import { cD, cfocus } from '$lib/js/contexts'
+  import { cD, cfocus, cscroll } from '$lib/js/contexts'
   import { FocusTrap } from '$lib/js/util.svelte'
 
   interface Props {
     aosS?: 'up' | 'in'
     children: Snippet<[string, boolean, boolean]>
-    scroller?: ScrollTrigger.Vars['scroller']
   }
 
-  const { aosS, scroller, children, ...rest }: Props = $props()
+  const { aosS, children, ...rest }: Props = $props()
   const { D, actives, aos, fo } = cD.get()
   const rfocus = cfocus.get()
+  const scroller = cscroll.get()
 
   const { activate, deactivate, useFocusTrap } = new FocusTrap({
     clickOutsideDeactivates: true,
@@ -127,7 +127,7 @@
         on: !!(aosS && anim),
         type: `fade-${aosS && !fo?.matches ? aosS : 'in'}`,
         delay: 0.1 * (i % cs),
-        scroller,
+        scroller: scroller?.x,
       })}
     >
       {@render children(name, on, ((i / cs) | 0) % 2 === (i % cs) % 2)}
