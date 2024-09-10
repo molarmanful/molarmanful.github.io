@@ -47,7 +47,7 @@ export default class {
     const [from, to] = trs[type]
 
     if (!on)
-      return { destroy: () => { } }
+      return
 
     const tw = gsap.fromTo(node, {
       ...from,
