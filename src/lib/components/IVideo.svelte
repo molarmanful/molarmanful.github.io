@@ -19,14 +19,16 @@
   let st = $state<ScrollTrigger>()
 
   const loader = (node: HTMLVideoElement) => {
-    const f = () => node.load()
-
     st = ScrollTrigger.create({
       trigger: node,
       scroller: scroller?.x,
       start: 'top bottom+=100px',
       end: 'bottom top-=100px',
-      onToggle: f,
+      onToggle() {
+        node.load()
+        node.autoplay = true
+        st?.kill()
+      },
     })
 
     return { destroy: () => st?.kill() }
@@ -37,12 +39,10 @@
   <div class='aspect-{aspect} max-full mx-auto'>
     <video
       class="{loaded ? 'opacity-100' : 'opacity-0'} {px ? 'image-render-pixel' : ''} full object-contain ofade-200"
-      autoplay={loaded || void 0}
       loop
       muted
       oncanplaythrough={() => {
         loaded = true
-        st?.kill()
       }}
       playsinline
       preload='none'
