@@ -124,7 +124,7 @@
       bind:this={animels[i]}
       class="{on ? '' : 'brightness-10 pointer-events-none!'} {anim ? '' : 'suppress'} flex transition-filter"
       use:aos={() => ({
-        on: !!(aosS && anim),
+        on: !!aosS && anim,
         type: `fade-${aosS && !fo?.matches ? aosS : 'in'}`,
         delay: 0.1 * (i % cs),
         scroller: scroller?.x,
