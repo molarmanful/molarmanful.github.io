@@ -1,59 +1,124 @@
 <script lang='ts'>
+  import gsap from 'gsap'
+  import { Observer } from 'gsap/dist/Observer'
+
   import { Splash, Title } from '.'
 
+  import { browser } from '$app/environment'
   import { cD } from '$lib/js/contexts'
+
+  if (browser)
+    gsap.registerPlugin(Observer)
 
   interface Props {
     top: (a: string) => void
   }
 
   const { top = () => {} }: Props = $props()
-  const { factor, mouse, fo, rm } = cD.get()
+  const { fo } = cD.get()
 
-  const fac_inv = $derived(Math.max(0, 1 - factor.x))
+  $effect(() => {
+    const ctx = gsap.context(() => {
+      const titleTo = (v: string) => gsap.quickTo('[data-title]', v, { duration: 0.1 })
+      const titleTos = {
+        skewX: titleTo('skewX'),
+        skewY: titleTo('skewY'),
+        rotX: titleTo('rotationX'),
+        rotY: titleTo('rotationY'),
+      }
 
-  const mouse_rel = $derived(
-    rm?.matches || factor.x >= 1
-      ? { x: 0, y: 0 }
-      : {
-        x: (mouse.x * 2 - 1) * fac_inv,
-        y: (mouse.y * 2 - 1) * fac_inv,
-      },
-  )
-  const scale = $derived(1 + 0.1 * fac_inv)
+      const splashTo = (v: string) => gsap.quickTo('[data-splash]', v, { duration: 0.2 })
+      const splashTos = {
+        x: splashTo('xPercent'),
+        y: splashTo('yPercent'),
+      }
 
-  const splash_rel = $derived({
-    x: -mouse_rel.x,
-    y: -mouse_rel.y,
-  })
-  const title_rel = $derived({
-    x: 0.5 * mouse_rel.x,
-    y: 0.5 * mouse_rel.y,
+      const aberTo = (v: string) => gsap.quickTo('[data-aber]', v, { duration: 0.1 })
+      const aberTos = {
+        x: aberTo('--aber0'),
+        y: aberTo('--aber1'),
+        shad: aberTo('--shad'),
+        light: aberTo('--light'),
+      }
+
+      gsap.fromTo('[data-splash]', {
+        scale: 1.1,
+        filter: 'hue-rotate(0deg)',
+      }, {
+        scale: 1,
+        filter: 'hue-rotate(-69deg)',
+        scrollTrigger: {
+          scrub: 0.4,
+          start: 'top top',
+          end: '+=100%',
+        },
+      })
+
+      gsap.fromTo('[data-title]', {
+        opacity: 1,
+        yPercent: 0,
+      }, {
+        opacity: 0,
+        yPercent: -!fo?.matches * 10,
+        scrollTrigger: {
+          scrub: 0.2,
+          start: 'top top',
+          end: '+=50%',
+        },
+      })
+
+      gsap.set('[data-aber]', { '--light': 100, 'attr': { stroke: `hsl(328.6deg, 85.5%, calc(var(--light) * 1%))` } })
+
+      Observer.create({
+        type: 'pointer',
+        onMove(self) {
+          if (fo?.matches || scrollY >= innerHeight)
+            return
+
+          const prog = 1 - scrollY / innerHeight
+          const relX = self.x === void 0 ? 0 : (self.x / innerWidth * 2 - 1) * prog
+          const relY = self.y === void 0 ? 0 : (self.y / innerHeight * 2 - 1) * prog
+
+          const titleX = relX * 0.5
+          const titleY = relY * 0.5
+          titleTos.skewX(titleX)
+          titleTos.skewY(titleY)
+          titleTos.rotX(titleY)
+          titleTos.rotY(titleY)
+
+          const splashX = -relX
+          const splashY = -relY
+          splashTos.x(splashX)
+          splashTos.y(splashY)
+
+          const aber = 4
+          const shad = 4
+          const dist = Math.min(1, Math.hypot(relX, relY) * 2)
+          const aberX = -Math.min(0.5, Math.max(-0.5, relX)) * 2 * aber
+          const aberY = -Math.min(0.5, Math.max(-0.5, relY)) * 2 * aber
+          const aberShad = Math.max(0, (1 - dist) * shad)
+          const aberLight = (1 - dist) * 30 + 70
+          aberTos.x(aberX)
+          aberTos.y(aberY)
+          aberTos.shad(aberShad)
+          aberTos.light(aberLight)
+        },
+      })
+    })
+
+    return () => ctx.revert()
   })
 
   top('top')
 </script>
 
 <header id='top' class='relative screen'>
-  <div
-    style:filter='hue-rotate({factor.x * -69}deg)'
-    class="{fo?.matches || !fac_inv ? '' : 'will-change-transform,filter,opacity'} fixed flex full"
-  >
-    <Splash
-      class="{factor.x >= 1 ? 'scale-100' : ''} absolute right-0 top-0 mx-auto transform-translate-x-[var(--t-x,0%)] transform h-lvh media-squarish:right-40% media-squarish:transform-translate-x-[calc(50%+var(--t-x,0%))] transition-transform-200"
-      {scale}
-      {splash_rel}
-    />
-    <div
-      style:opacity={Math.max(0, 1 - factor.x * 2)}
-      style:--un-skew-x='{title_rel.x}deg'
-      style:--un-skew-y='{title_rel.y}deg'
-      style:--un-rotate-x='{title_rel.y}deg'
-      style:--un-rotate-y='{title_rel.y}deg'
-      style:--un-translate-y='{-!fo?.matches * (1 - fac_inv) * 10}%'
-      class='absolute inset-0 transform transition-transform,opacity duration-200'
-    >
-      <Title {mouse_rel} />
+  <div class='fixed full flex'>
+    <div class='absolute inset-x-0 top-0 h-lvh' data-splash>
+      <Splash clazz='absolute right-0 top-0 media-squarish:right-40% media-squarish:translate-x-1/2' />
+    </div>
+    <div class='absolute inset-0' data-title>
+      <Title />
     </div>
   </div>
 </header>

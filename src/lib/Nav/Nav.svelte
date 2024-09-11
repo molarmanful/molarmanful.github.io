@@ -7,6 +7,9 @@
   import { browser } from '$app/environment'
   import { hexes } from '$lib/js/static'
 
+  if (browser)
+    gsap.registerPlugin(ScrollTrigger)
+
   interface Props {
     tops: string[]
   }
@@ -25,9 +28,6 @@
     scrollTo({ top: document.getElementById(top)?.offsetTop })
     ;(target as HTMLElement).blur()
   }
-
-  if (browser)
-    gsap.registerPlugin(ScrollTrigger)
 
   const breathe = (node: Element) => {
     const xs = node.querySelectorAll('[data-breathe]')

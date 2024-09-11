@@ -1,35 +1,16 @@
 <script lang='ts'>
   import type { HTMLAttributes } from 'svelte/elements'
 
-  interface Props extends HTMLAttributes<HTMLHeadingElement> {
-    mouse_rel: {
-      x: number
-      y: number
-    }
-  }
+  interface Props extends HTMLAttributes<HTMLHeadingElement> {}
 
-  const { mouse_rel, ...rest }: Props = $props()
-
-  const aber = 4
-  const shad = 4
-
-  const aber_rel = $derived({
-    x: -Math.min(0.5, Math.max(-0.5, mouse_rel.x)) * 2 * aber,
-    y: -Math.min(0.5, Math.max(-0.5, mouse_rel.y)) * 2 * aber,
-  })
-
-  const dist = $derived(Math.min(1, Math.hypot(mouse_rel.x, mouse_rel.y) * 2))
-  const shad_rel = $derived(Math.max(0, (1 - dist) * shad))
+  const { ...rest }: Props = $props()
 </script>
 
 <h1 {...rest}>
   <div class='absolute inset-0 screen p-8'>
     <svg
-      style:--aber0='{aber_rel.x}px'
-      style:--aber1='{aber_rel.y}px'
-      style:--shad='{shad_rel}px'
-      class='pointer-events-none m-auto full rotate--7 skew-x--7 fill-transparent stroke-4 object-contain transition-filter-200 aber-drop lg:container lg:stroke-1 md:stroke-2'
-      stroke='hsl(328.6deg, 85.5%, {(1 - dist) * 30 + 70}%)'
+      class='pointer-events-none m-auto full rotate--7 skew-x--7 fill-transparent stroke-4 object-contain aber-drop lg:container lg:stroke-1 md:stroke-2'
+      data-aber
     >
       <title>BEN PANG</title>
       <use href='/benpang.svg#main' vector-effect='non-scaling-stroke'></use>

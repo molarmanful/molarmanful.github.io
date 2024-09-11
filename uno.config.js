@@ -107,10 +107,13 @@ export default {
     [
       'aber-drop',
       {
-        filter:
-          // 'drop-shadow(var(--aber0) var(--aber1) var(--shad) #f00) ' +
-          `drop-shadow(var(--aber0) var(--aber1) var(--shad) ${colors.teal[400]}) `
-          + `drop-shadow(var(--aber0) var(--aber1) var(--shad) ${colors.indigo[400]})`,
+        '--aber0px': 'calc(var(--aber0) * 1px)',
+        '--aber1px': 'calc(var(--aber1) * 1px)',
+        '--shadpx': 'calc(var(--shad) * 1px)',
+        'filter':
+          // `drop-shadow(var(--aber0px) var(--aber1px) var(--shadpx) ${colors.pink[400]}) ` +
+          `drop-shadow(var(--aber0px) var(--aber1px) var(--shadpx) ${colors.teal[400]}) `
+          + `drop-shadow(var(--aber0px) var(--aber1px) var(--shadpx) ${colors.indigo[400]})`,
         // '-webkit-text-fill-color': '#000',
       },
     ],
