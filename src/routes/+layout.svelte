@@ -5,6 +5,7 @@
   import type { Snapshot } from './$types'
 
   import { browser } from '$app/environment'
+  import { afterNavigate } from '$app/navigation'
   import { Favicons } from '$lib'
   import AOS from '$lib/js/aos.svelte'
   import { cD } from '$lib/js/contexts'
@@ -70,7 +71,7 @@
     history.scrollRestoration = 'manual'
   }
 
-  $effect(() => {
+  afterNavigate(() => {
     scrollTo({ top: 0, behavior: 'instant' })
     loaded.x = true
   })

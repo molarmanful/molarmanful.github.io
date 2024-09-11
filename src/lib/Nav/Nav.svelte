@@ -1,7 +1,10 @@
 <script lang='ts'>
+  import gsap from 'gsap'
+  import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
+
   import { Body, Icon } from '.'
 
-  import { cD } from '$lib/js/contexts'
+  import { browser } from '$app/environment'
   import { hexes } from '$lib/js/static'
 
   interface Props {
@@ -9,7 +12,6 @@
   }
 
   const { tops = [] }: Props = $props()
-  const { factor } = cD.get()
 
   let dropped = $state(false)
   const ON = ({ target }: Event) => {
@@ -24,33 +26,51 @@
     ;(target as HTMLElement).blur()
   }
 
-  // const filter = $derived(
-  //   `hue-rotate(${factor.x * -69}deg) grayscale(${factor.x * 1.2})`
-  // )
+  if (browser)
+    gsap.registerPlugin(ScrollTrigger)
 
-  const cols: string[] = $state(Array(4).fill('#818cf8'))
-  const pls = $state(2000)
-  const pulse = $derived(factor.x >= 0.95 ? pls / 2 : pls)
-  const colors = $derived(
-    cols.map(c =>
-      `color-mix(in oklab, #818cf8 ${Math.max(0, Math.min(1, factor.x * 2 - 1)) * 100}%, ${c})`),
-  )
+  const breathe = (node: Element) => {
+    const xs = node.querySelectorAll('[data-breathe]')
+    const chs = node.querySelectorAll('[data-breathe-a]')
+    const tl = gsap.timeline({
+      repeat: -1,
+      repeatRefresh: true,
+      defaults: {
+        duration: 2,
+        ease: 'linear',
+      },
+    })
 
-  let ic = 0
-  let i = 0
-  $effect(() => {
-    const t = setInterval(() => {
-      cols[i] = hexes[500][ic]
-      i++
-      i %= 4
-      if (i <= 0) {
-        ic++
-        ic %= hexes[500].length
+    gsap.fromTo(node, {
+      '--sfactor': '0%',
+    }, {
+      '--sfactor': '100%',
+      'scrollTrigger': {
+        scrub: 0.5,
+        start: 'top top',
+        end: '+=100%',
+      },
+    })
+
+    gsap.set([...xs, ...chs], {
+      '--breath': '#818cf8',
+      'color': `color-mix(in oklab, #818cf8 var(--sfactor), var(--breath))`,
+    })
+
+    for (const c of hexes[500]) {
+      tl.to(xs, {
+        '--breath': c,
+      })
+      if (chs.length > 0) {
+        tl.to(chs, {
+          '--breath': c,
+          'stagger': 0.5,
+        }, '<0.5')
       }
-    }, pls / 4)
+    }
 
-    return () => clearInterval(t)
-  })
+    return { destroy: () => tl.kill() }
+  }
 </script>
 
 <svelte:window
@@ -71,21 +91,17 @@
   </button>
 {/if}
 
-<nav onmouseenter={ON} onmouseleave={OFF}>
+<nav onmouseenter={ON} onmouseleave={OFF} use:breathe>
   <Icon
     aria-expanded={dropped}
     clazz='fixed flex right-2 top-2 z-30'
-    {colors}
     onclick={ON}
-    {pulse}
   ></Icon>
 
   {#if dropped}
     <Body
       {GOTO}
       clazz='fixed right-2 top-2 z-40'
-      {colors}
-      {pulse}
       {tops}
     />
   {/if}

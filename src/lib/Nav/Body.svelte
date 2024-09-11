@@ -1,4 +1,5 @@
 <script lang='ts'>
+  import type { Action } from 'svelte/action'
   import type { HTMLAttributes } from 'svelte/elements'
   import { scale } from 'svelte/transition'
 
@@ -7,16 +8,12 @@
   interface Props extends HTMLAttributes<HTMLDivElement> {
     tops: string[]
     GOTO: (s: string) => (e: Event) => void
-    pulse: number
-    colors: string[]
     clazz?: string
   }
 
   const {
     tops = [],
     GOTO,
-    pulse,
-    colors,
     clazz = '',
     ...rest
   }: Props = $props()
@@ -28,9 +25,8 @@
 </script>
 
 <div
-  style:transition-duration='{pulse}ms'
-  style:color={colors[0]}
-  class='{0} origin-top-right b-(1 current) bg-black p-4 text-bord transition-color {clazz}'
+  class='{0} origin-top-right b-(1 current) bg-black p-4 text-bord {clazz}'
+  data-breathe
   role='navigation'
   use:useFocusTrap
   transition:scale={{ duration: 300 }}
@@ -40,9 +36,8 @@
     {#each tops as top}
       <li>
         <button
-          style:transition='color {pulse || 200}ms, border-color 400ms, filter 400ms'
-          style:color={colors[0]}
-          class='b-(b-1 transparent) bg-transparent text-bord outline-none ease [&:hover,&:focus]:b-white [&:hover,&:focus]:fake-white'
+          style:transition='border-color 400ms, filter 400ms'
+          class='b-(b-1 transparent) bg-transparent text-bord color-inherit outline-none ease [&:hover,&:focus]:b-white [&:hover,&:focus]:fake-white'
           onclick={GOTO(top)}
         >
           {top.toUpperCase()}

@@ -1,31 +1,42 @@
 <script lang='ts'>
+  import gsap from 'gsap'
+  import type { Action } from 'svelte/action'
   import type { HTMLButtonAttributes } from 'svelte/elements'
 
   import { cD } from '$lib/js/contexts'
 
   interface Props extends HTMLButtonAttributes {
-    pulse: number
-    colors: string[]
     clazz?: string
   }
 
-  const { pulse, colors, clazz, ...rest }: Props = $props()
+  const { clazz, ...rest }: Props = $props()
 
   const { loaded } = cD.get()
+
+  const slide = (node: Element) => {
+    gsap.set(node, { x: '17rem' })
+
+    $effect(() => {
+      if (!loaded.x)
+        return
+      gsap.to(node, { x: 0, duration: 0.4 })
+    })
+  }
 </script>
 
 <button
-  style:transition='color {pulse || 200}ms, border-color 400ms, transform {pulse / 5 || 200}ms'
-  style:color={colors[0]}
-  class="{loaded.x ? 'translate-x-0' : 'translate-x-17'} b-(1 current) focus:b-white bg-black h-16 w-16 outline-none text-bord focus:var_x-white {clazz}"
+  style:transition='border-color 400ms'
+  class='{0} h-16 w-16 b-(1 current) bg-black text-bord outline-none focus:b-white focus:var_x-white {clazz}'
   aria-label='nav menu'
+  data-breathe
+  use:slide
   {...rest}
 >
   <svg class='m-auto h-1/2 w-1/2' viewBox='0 0 5 5'>
     {#each Array(3).keys() as i}
       <rect
-        style:transition='color {pulse - 100 || 200}ms, fill 400ms'
-        style:color={colors[i + 1]}
+        style:transition='fill 400ms'
+        data-breathe-a
         fill='var(--x, currentColor)'
         height='1'
         width='5'
