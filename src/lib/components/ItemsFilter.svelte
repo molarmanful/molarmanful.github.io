@@ -114,6 +114,7 @@
         </button>
       </li>
     {/if}
+
     {#each alltags as tag, i}
       <li
         data-flip-id='filter-{tag}'
