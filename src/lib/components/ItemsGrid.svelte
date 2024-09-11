@@ -1,6 +1,5 @@
 <script lang='ts'>
   import 'core-js/proposals/set-methods-v2'
-  import autoAnimate from '@formkit/auto-animate'
   import { useEventListener } from 'runed'
   import type { Snippet } from 'svelte'
   import { tabbable } from 'tabbable'
@@ -8,6 +7,7 @@
   import { ItemsFilter } from '.'
 
   import { cD, cfocus, cscroll } from '$lib/js/contexts'
+  import Flip from '$lib/js/flip.svelte'
   import { FocusTrap } from '$lib/js/util.svelte'
 
   interface Props {
@@ -81,6 +81,9 @@
 
   let anim = $state(true)
   const animels: Element[] = $state([])
+
+  const itemsFlip = new Flip('items')
+  const { flip } = itemsFlip.fns
 </script>
 
 <svelte:window
@@ -109,20 +112,21 @@
 />
 <svelte:document bind:activeElement />
 
-<ItemsFilter class='mb-3.5 md:mb-6.5' {aosS} {chosen} bind:anim />
+<ItemsFilter class='mb-3.5 md:mb-6.5' {aosS} {chosen} {itemsFlip} bind:anim />
 
 <div
   bind:this={el}
   class='grid cols-1 gap-5 md:(cols-3 gap-8) sm:cols-2 xl:cols-4'
-  use:autoAnimate
+  use:flip
   use:useFocusTrap
   {...rest}
 >
-  {#each ordered as name, i (name)}
+  {#each ordered as name, i}
     {@const on = chosen.has(name)}
     <div
       bind:this={animels[i]}
       class="{on ? '' : 'brightness-10 pointer-events-none!'} {anim ? '' : 'suppress'} flex transition-filter"
+      data-flip-id='item-{name}'
       use:aos={() => ({
         on: !!aosS && anim,
         type: `fade-${aosS && !fo?.matches ? aosS : 'in'}`,

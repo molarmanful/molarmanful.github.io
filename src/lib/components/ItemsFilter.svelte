@@ -1,18 +1,19 @@
 <script lang='ts'>
   import 'core-js/proposals/set-methods-v2'
-  import autoAnimate from '@formkit/auto-animate'
   import type { HTMLAttributes } from 'svelte/elements'
 
   import { cD, cfocus, cscroll } from '$lib/js/contexts'
+  import Flip from '$lib/js/flip.svelte'
   import { FocusTrap } from '$lib/js/util.svelte'
 
   interface Props extends HTMLAttributes<HTMLDivElement> {
     aosS?: string
+    itemsFlip: Flip
     anim: boolean
     chosen: Set<string>
   }
 
-  let { aosS, anim = $bindable(), chosen, ...rest }: Props = $props()
+  let { aosS, itemsFlip, anim = $bindable(), chosen, ...rest }: Props = $props()
 
   const { D, aos, actives } = cD.get()
   const rfocus = cfocus.get()
@@ -44,11 +45,19 @@
     [actives.x, not_actives, not_xs].flatMap(a => [...a].sort()),
   )
 
+  const filtersFlip = new Flip('filters')
+  const { flip } = filtersFlip.fns
+
   const handleAnim = () => {
-    anim = false
-    setTimeout(() => {
-      anim = true
-    }, 250)
+    filtersFlip.batch?.getState()
+    itemsFlip.batch?.getState()
+  }
+
+  const handleRun = () => {
+    requestAnimationFrame(() => {
+      filtersFlip.batch?.run(true)
+      itemsFlip.batch?.run(true)
+    })
   }
 </script>
 
@@ -80,7 +89,8 @@
   }}>
     Filter:
   </h3>
-  <menu bind:this={el} id='anchor-filter' use:autoAnimate use:useFocusTrap>
+
+  <menu bind:this={el} id='anchor-filter' use:flip use:useFocusTrap>
     {#if actives.x.size}
       <li
         class='m-1.5 inline-block'
@@ -93,17 +103,20 @@
         <button
           class='btn text-no'
           aria-label='clear all filtered tags'
+          data-flip-id='filter@clear'
           onclick={() => {
             handleAnim()
             actives.x.clear()
+            handleRun()
           }}
         >
           clear
         </button>
       </li>
-    {/if}{#each alltags as tag, i (tag)}
+    {/if}{#each alltags as tag, i}
       <li
         class='m-1.5 inline-block'
+        data-flip-id='filter-{tag}'
         use:aos={() => ({
           on: !!aosS,
           anchor: '#anchor-filter',
@@ -127,6 +140,7 @@
             }
             actives.x.add(tag)
             ;(e.target as HTMLElement).blur()
+            handleRun()
           }}
         >
           {tag}
