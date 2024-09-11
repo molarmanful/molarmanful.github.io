@@ -26,7 +26,6 @@
   },
   "devDependencies": {
     "@antfu/eslint-config": "^2.27.3",
-    "@formkit/auto-animate": "^0.8.2",
     "@iconify-json/ph": "^1.2.0",
     "@sveltejs/adapter-static": "^3.0.4",
     "@sveltejs/kit": "^2.5.26",

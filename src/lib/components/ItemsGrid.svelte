@@ -115,7 +115,7 @@
 />
 <svelte:document bind:activeElement />
 
-<ItemsFilter class='mb-3.5 md:mb-6.5' {aosS} {chosen} {itemsFlip} bind:anim />
+<ItemsFilter class='mb-5 md:mb-8' {aosS} {chosen} {itemsFlip} bind:anim />
 
 <div
   bind:this={el}

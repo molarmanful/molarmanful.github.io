@@ -78,17 +78,23 @@
 <svelte:document bind:activeElement />
 
 <div {...rest}>
-  <h3 class='mb-1.5 text-bord-500 bold' use:aos={{
+  <h3 class='mb-3 text-bord-500 bold' use:aos={{
     on: !!aosS,
     scroller: scroller?.x,
   }}>
     Filter:
   </h3>
 
-  <menu bind:this={el} id='anchor-filter' data-flip use:useFocusTrap>
-    {#if actives.x.size}
+  <menu
+    bind:this={el}
+    id='anchor-filter'
+    class='flex flex-wrap gap-3 px-1'
+    data-flip
+    use:useFocusTrap
+  >
+    {#if actives.x.size > 0}
       <li
-        class='m-1.5 inline-block'
+        data-flip-id='filter@clear'
         use:aos={{
           on: !!aosS,
           anchor: '#anchor-filter',
@@ -98,7 +104,6 @@
         <button
           class='btn text-no'
           aria-label='clear all filtered tags'
-          data-flip-id='filter@clear'
           onclick={() => {
             handleAnim()
             actives.x.clear()
@@ -108,14 +113,14 @@
           clear
         </button>
       </li>
-    {/if}{#each alltags as tag, i}
+    {/if}
+    {#each alltags as tag, i}
       <li
-        class='m-1.5 inline-block'
         data-flip-id='filter-{tag}'
         use:aos={() => ({
           on: !!aosS,
           anchor: '#anchor-filter',
-          delay: 0.05 * (i + +!!actives.x.size),
+          delay: 0.05 * (i + 1),
           scroller: scroller?.x,
         })}
       >
