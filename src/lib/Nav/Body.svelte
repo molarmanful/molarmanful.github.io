@@ -1,5 +1,4 @@
 <script lang='ts'>
-  import type { Action } from 'svelte/action'
   import type { HTMLAttributes } from 'svelte/elements'
   import { scale } from 'svelte/transition'
 

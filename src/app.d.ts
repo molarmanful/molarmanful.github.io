@@ -19,15 +19,6 @@ declare global {
     interface HTMLAttributes { }
   }
 
-  interface Mouse {
-    x: number
-    y: number
-    px: number
-    py: number
-    stop: boolean
-    on: boolean
-  }
-
   namespace Aos {
     interface Props {
       aoso?: Partial<Opts>
@@ -42,7 +33,6 @@ declare global {
     fo?: MediaQuery
     rm?: MediaQuery
     aos: AOS['aos']
-    mouse: Mouse
     cursorFs: {
       on: (e: MouseEvent) => void
       off: () => void

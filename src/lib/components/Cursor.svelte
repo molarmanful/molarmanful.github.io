@@ -1,3 +1,4 @@
+<!--
 <script lang='ts'>
   import type { HTMLAttributes } from 'svelte/elements'
 
@@ -76,3 +77,4 @@
     class="{freeze.col || 'text-bord'} b-(1 current) translate-(x--1/2 y--1/2)"
   ></div>
 </div>
+-->

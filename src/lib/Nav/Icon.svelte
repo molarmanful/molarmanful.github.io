@@ -1,6 +1,5 @@
 <script lang='ts'>
   import gsap from 'gsap'
-  import type { Action } from 'svelte/action'
   import type { HTMLButtonAttributes } from 'svelte/elements'
 
   import { cD } from '$lib/js/contexts'

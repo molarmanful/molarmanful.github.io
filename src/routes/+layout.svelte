@@ -38,15 +38,6 @@
 
   const { aos } = new AOS().fns
 
-  const mouse: Mouse = $state({
-    x: 0.5,
-    y: 0.5,
-    px: 0,
-    py: 0,
-    stop: false,
-    on: false,
-  })
-
   let innerWidth = $state(0)
   let innerHeight = $state(0)
 
@@ -63,7 +54,6 @@
     fo,
     rm,
     aos,
-    mouse,
     cursorFs,
   })
 
@@ -82,28 +72,6 @@
 <svelte:head>
   <Favicons />
 </svelte:head>
-
-<svelte:body
-  onmouseenter={() => (mouse.on = true)}
-  onmouseleave={() => (mouse.on = false)}
-  onmousemove={({ clientX, clientY }: MouseEvent) => {
-    if (fo?.matches || mouse.stop)
-      return
-    const f = () => {
-      mouse.px = clientX
-      mouse.py = clientY
-      mouse.x = clientX / innerWidth
-      mouse.y = clientY / innerHeight
-    }
-    f()
-    setTimeout(() => {
-      f()
-      mouse.stop = false
-    }, 100)
-    mouse.on = true
-    mouse.stop = true
-  }}
-/>
 
 <!-- <Cursor {cursorFs} {mouse} z="100" /> -->
 <!-- <div scanlines text-bord></div> -->
