@@ -45,17 +45,12 @@
     [actives.x, not_actives, not_xs].flatMap(a => [...a].sort()),
   )
 
-  const filtersFlip = new Flip('filters')
-  const { flip } = filtersFlip.fns
-
   const handleAnim = () => {
-    filtersFlip.batch?.getState()
     itemsFlip.batch?.getState()
   }
 
   const handleRun = () => {
     requestAnimationFrame(() => {
-      filtersFlip.batch?.run(true)
       itemsFlip.batch?.run(true)
     })
   }
@@ -90,7 +85,7 @@
     Filter:
   </h3>
 
-  <menu bind:this={el} id='anchor-filter' use:flip use:useFocusTrap>
+  <menu bind:this={el} id='anchor-filter' data-flip use:useFocusTrap>
     {#if actives.x.size}
       <li
         class='m-1.5 inline-block'

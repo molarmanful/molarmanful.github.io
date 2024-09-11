@@ -83,7 +83,10 @@
   const animels: Element[] = $state([])
 
   const itemsFlip = new Flip('items')
-  const { flip } = itemsFlip.fns
+
+  $effect(() => {
+    itemsFlip.flip()
+  })
 </script>
 
 <svelte:window
@@ -117,7 +120,7 @@
 <div
   bind:this={el}
   class='grid cols-1 gap-5 md:(cols-3 gap-8) sm:cols-2 xl:cols-4'
-  use:flip
+  data-flip
   use:useFocusTrap
   {...rest}
 >

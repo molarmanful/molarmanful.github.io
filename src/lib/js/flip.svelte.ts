@@ -13,23 +13,16 @@ export default class {
     this.batch = Flip.batch(id)
   }
 
-  get fns() {
-    return {
-      flip: this.flip.bind(this),
-    }
-  }
-
-  flip(node: Element, opts?: Flip.BatchActionConfig) {
+  flip(opts?: Flip.BatchActionConfig) {
     const act = this.batch?.add({
       getState() {
-        return Flip.getState(node.children, {
+        return Flip.getState('[data-flip] > *', {
           simple: true,
         })
       },
 
       animate(self) {
         Flip.from(self.state, {
-          absolute: true,
           duration: 0.25,
           simple: true,
         })
@@ -38,6 +31,6 @@ export default class {
       ...opts,
     })
 
-    return { destroy: () => act?.kill() }
+    return () => act?.kill()
   }
 }
