@@ -25,7 +25,6 @@
 
 <div
   class='{0} origin-top-right b-(1 current) bg-black p-4 text-bord {clazz}'
-  data-breathe
   role='navigation'
   use:useFocusTrap
   transition:scale={{ duration: 300 }}
@@ -36,7 +35,7 @@
       <li>
         <button
           style:transition='border-color 400ms, filter 400ms'
-          class='b-(b-1 transparent) bg-transparent text-bord color-inherit outline-none ease [&:hover,&:focus]:b-white [&:hover,&:focus]:fake-white'
+          class='b-(b-1 transparent) bg-transparent text-bord outline-none ease [&:hover,&:focus]:b-white [&:hover,&:focus]:fake-white'
           onclick={GOTO(top)}
         >
           {top.toUpperCase()}

@@ -31,7 +31,7 @@
 
   const breathe = (node: Element) => {
     const xs = node.querySelectorAll('[data-breathe]')
-    const chs = node.querySelectorAll('[data-breathe-a]')
+    const xxs = node.querySelectorAll('[data-breathe-a]')
     const tl = gsap.timeline({
       repeat: -1,
       repeatRefresh: true,
@@ -39,6 +39,11 @@
         duration: 2,
         ease: 'linear',
       },
+    })
+
+    gsap.set([...xs, ...xxs], {
+      '--breath': '#818cf8',
+      'color': `color-mix(in oklab, #818cf8 var(--sfactor), var(--breath))`,
     })
 
     gsap.fromTo(node, {
@@ -52,17 +57,12 @@
       },
     })
 
-    gsap.set([...xs, ...chs], {
-      '--breath': '#818cf8',
-      'color': `color-mix(in oklab, #818cf8 var(--sfactor), var(--breath))`,
-    })
-
     for (const c of hexes[500]) {
       tl.to(xs, {
         '--breath': c,
       })
-      if (chs.length > 0) {
-        tl.to(chs, {
+      if (xxs.length > 0) {
+        tl.to(xxs, {
           '--breath': c,
           'stagger': 0.5,
         }, '<0.5')
