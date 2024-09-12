@@ -119,7 +119,7 @@
 
 <div
   bind:this={el}
-  class='grid cols-1 gap-5 md:(cols-3 gap-8) sm:cols-2 xl:cols-4'
+  class='grid cols-1 gap-5 md:cols-3 sm:cols-2 xl:cols-4 2xl:gap-8'
   data-flip
   use:batch={{
     on: !!aosS,
