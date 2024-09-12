@@ -78,12 +78,12 @@
 <svelte:document bind:activeElement />
 
 <div {...rest}>
-  <h3 class='mb-3 text-bord-500 bold' use:aos={{
-    on: !!aosS,
-    scroller: scroller?.x,
-  }}>
+  <h2
+    class='mb-3 text-bord-500 bold'
+    use:aos={{ on: !!aosS, scroller: scroller?.x }}
+  >
     Filter:
-  </h3>
+  </h2>
 
   <menu
     bind:this={el}
