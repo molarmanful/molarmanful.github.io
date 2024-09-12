@@ -9,7 +9,7 @@
     clazz?: string
   }
 
-  const { name, b, mt = false, clazz = '', ...rest }: Props = $props()
+  const { loading, name, b, mt = false, clazz = '', ...rest }: Props = $props()
 
   let loaded = $state(false)
 </script>
@@ -17,6 +17,7 @@
 <Img
   class="{loaded ? 'loaded' : ''} {mt ? 'mt-0' : 'mt-6 md:mt-8'} laz bg-contain! mx-auto max-h-full object-contain text-0 w-full {clazz}"
   alt={name}
+  {loading}
   onload={() => {
     loaded = true
   }}
