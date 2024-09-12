@@ -100,7 +100,7 @@ export default class {
       },
     })
 
-    return () => tw.kill()
+    return { destroy: () => tw.kill() }
   }
 
   batch(node: Element, opts: Partial<BatchOpts> = {}) {
