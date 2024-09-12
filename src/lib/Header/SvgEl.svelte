@@ -19,23 +19,25 @@
       strokeDashoffset: el.len,
     })
 
-    const f = (delay: number) => () => {
+    const f = (delay: number) => {
       gsap.to(node, {
         strokeDashoffset: 0,
-        delay,
         color: gsap.utils.random(hexes[500]),
+        delay,
         duration: gsap.utils.random(1, 4),
         ease: delay > 0 ? 'ease-out' : 'ease',
-        onComplete: f(0),
+        onComplete() {
+          f(0)
+        },
       })
     }
-    f(1)()
+    f(1)
   }
 </script>
 
 <svelte:element
   this={el.this}
-  class='fill-transparent stroke-1 stroke-current text-black'
+  class='fill-transparent stroke-1 stroke-current text-white'
   use:anim
   {...el.attr}
   {...rest}

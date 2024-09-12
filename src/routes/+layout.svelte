@@ -5,7 +5,7 @@
   import type { Snapshot } from './$types'
 
   import { browser } from '$app/environment'
-  import { afterNavigate } from '$app/navigation'
+  import { afterNavigate, beforeNavigate, onNavigate } from '$app/navigation'
   import { Favicons } from '$lib'
   import AOS from '$lib/js/aos.svelte'
   import { cD } from '$lib/js/contexts'
@@ -66,6 +66,14 @@
     scrollTo({ top: 0, behavior: 'instant' })
     loaded.x = true
   })
+
+  onNavigate(({ from, to }) => {
+    if (from?.route.id?.startsWith('/work') && to?.route.id?.startsWith('/work'))
+      return
+
+    loaded.x = false
+    return new Promise(res => setTimeout(res, 200))
+  })
 </script>
 
 <svelte:window bind:innerWidth bind:innerHeight />
@@ -77,6 +85,6 @@
 <!-- <Cursor {cursorFs} {mouse} z="100" /> -->
 <!-- <div scanlines text-bord></div> -->
 
-<main class="{loaded.x ? 'opacity-100' : 'opacity-0'} ofade-500 overflow-x-clip">
+<main class="{loaded.x ? 'opacity-100 ofade-500' : 'opacity-0 ofade-200'} overflow-x-clip">
   {@render children()}
 </main>
