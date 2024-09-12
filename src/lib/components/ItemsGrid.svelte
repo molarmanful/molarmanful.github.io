@@ -25,8 +25,8 @@
     setReturnFocus: () => rfocus?.x || false,
   }).fns
 
-  let el: HTMLElement | undefined = $state()
-  let activeElement: HTMLElement | undefined = $state()
+  let el = $state<HTMLElement>()
+  let activeElement = $state<HTMLElement>()
   const focused = $derived(!!(activeElement && el?.contains(activeElement)))
 
   let ts: HTMLElement[] = $state([])
@@ -131,7 +131,7 @@
       class="{on ? '' : 'brightness-10 pointer-events-none!'} {anim ? '' : 'suppress'} flex transition-filter"
       data-flip-id='item-{name}'
       use:aos={() => ({
-        on: !!aosS && anim,
+        on: !!aosS,
         type: `fade-${aosS && !fo?.matches ? aosS : 'in'}`,
         delay: 0.1 * (i % cs),
         scroller: scroller?.x,

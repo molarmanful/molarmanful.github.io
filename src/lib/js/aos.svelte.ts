@@ -28,20 +28,18 @@ const trs = {
 
 export interface Opts {
   on: boolean
-  f: (tw: gsap.core.Tween) => void
   type: keyof typeof trs
   start: ScrollTrigger.Vars['start']
-  delay: number
-  ease: string
-  duration: number
-  anchor?: string
+  delay: gsap.TweenVars['delay']
+  ease: gsap.TweenVars['ease']
+  duration: gsap.TweenVars['duration']
+  trigger?: gsap.DOMTarget
   scroller?: ScrollTrigger.Vars['scroller']
 }
 
 export default class {
   opts: Opts = {
     on: true,
-    f() { },
     type: 'fade-in',
     start: 'top bottom-=120px',
     delay: 0,
@@ -65,14 +63,13 @@ export default class {
     const opts1 = $derived(typeof opts === 'function' ? opts() : opts)
     const {
       on,
-      f,
       type,
       start,
       delay,
       ease,
       duration,
       scroller,
-      anchor,
+      trigger,
     }: Opts = $derived({ ...this.opts, ...opts1 })
     const [from, to] = $derived(trs[type])
 
@@ -86,14 +83,12 @@ export default class {
         ease,
         delay,
         scrollTrigger: {
-          trigger: anchor ? document.querySelector(anchor) : node,
+          trigger: trigger ?? node,
           scroller,
           toggleActions: 'restart none none reverse',
           start,
         },
       })
-
-      f(tw)
 
       return () => tw.kill()
     })

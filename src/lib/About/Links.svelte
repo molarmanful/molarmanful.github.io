@@ -63,7 +63,7 @@
         use:aos={{
           type: `fade-${fo?.matches ? 'in' : 'left'}`,
           delay: i * 0.1,
-          anchor: '#anchor-abt-links',
+          trigger: '#anchor-abt-links',
         }}
       >
         <A clazz='{color} decoration-none' href={link} item>

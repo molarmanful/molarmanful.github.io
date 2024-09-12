@@ -20,6 +20,7 @@
   b={D.covers}
   clazz='transition-filter'
   draggable='false'
+  loading='eager'
   mt
   {...rest}
 />

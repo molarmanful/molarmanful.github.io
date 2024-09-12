@@ -97,7 +97,7 @@
         data-flip-id='filter@clear'
         use:aos={{
           on: !!aosS,
-          anchor: '#anchor-filter',
+          trigger: '#anchor-filter',
           scroller: scroller?.x,
         }}
       >
@@ -120,7 +120,7 @@
         data-flip-id='filter-{tag}'
         use:aos={() => ({
           on: !!aosS,
-          anchor: '#anchor-filter',
+          trigger: '#anchor-filter',
           delay: 0.05 * (i + 1),
           scroller: scroller?.x,
         })}
