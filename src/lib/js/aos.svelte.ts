@@ -37,6 +37,11 @@ export interface Opts {
   scroller?: ScrollTrigger.Vars['scroller']
 }
 
+export interface BatchOpts extends Opts {
+  stagger: gsap.TweenVars['stagger']
+  all: boolean
+}
+
 export default class {
   opts: Opts = {
     on: true,
@@ -45,6 +50,12 @@ export default class {
     delay: 0,
     ease: 'ease',
     duration: 0.4,
+  }
+
+  bopts: BatchOpts = {
+    ...this.opts,
+    stagger: 0,
+    all: false,
   }
 
   constructor() {
@@ -56,11 +67,11 @@ export default class {
   get fns() {
     return {
       aos: this.aos.bind(this),
+      batch: this.batch.bind(this),
     }
   }
 
-  aos(node: Element, opts: (() => Partial<Opts>) | Partial<Opts> = {}) {
-    const opts1 = $derived(typeof opts === 'function' ? opts() : opts)
+  aos(node: Element, opts: Partial<Opts> = {}) {
     const {
       on,
       type,
@@ -70,27 +81,67 @@ export default class {
       duration,
       scroller,
       trigger,
-    }: Opts = $derived({ ...this.opts, ...opts1 })
+    }: Opts = { ...this.opts, ...opts }
     const [from, to] = $derived(trs[type])
 
-    $effect(() => {
-      if (!on)
-        return
+    if (!on)
+      return
 
-      const tw = gsap.fromTo(node, { ...from }, {
-        ...to,
-        duration,
-        ease,
-        delay,
-        scrollTrigger: {
-          trigger: trigger ?? node,
-          scroller,
-          toggleActions: 'restart none none reverse',
-          start,
-        },
-      })
-
-      return () => tw.kill()
+    const tw = gsap.fromTo(node, { ...from }, {
+      ...to,
+      duration,
+      ease,
+      delay,
+      scrollTrigger: {
+        trigger: trigger ?? node,
+        scroller,
+        toggleActions: 'restart none none reverse',
+        start,
+      },
     })
+
+    return () => tw.kill()
+  }
+
+  batch(node: Element, opts: Partial<BatchOpts> = {}) {
+    const {
+      on,
+      all,
+      type,
+      start,
+      ease,
+      duration,
+      stagger,
+      scroller,
+    }: BatchOpts = $derived({ ...this.bopts, ...opts })
+    const [from, to] = $derived(trs[type])
+
+    if (!on)
+      return
+
+    const xs = node.querySelectorAll('[data-batch]')
+    gsap.set(xs, { ...from })
+
+    const sts = ScrollTrigger.batch(xs, {
+      onEnter(batch) {
+        if (all) {
+          for (const el of batch)
+            gsap.to(el, { ...to, duration, stagger, ease })
+          return
+        }
+        gsap.to(batch, { ...to, duration, stagger, ease })
+      },
+      onLeaveBack(batch) {
+        gsap.to(batch, { ...from, duration, stagger, ease })
+      },
+      scroller,
+      start,
+    })
+
+    return {
+      destroy() {
+        for (const st of sts) st.kill()
+      },
+    }
   }
 }

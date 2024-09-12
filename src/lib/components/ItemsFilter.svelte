@@ -118,12 +118,12 @@
     {#each alltags as tag, i}
       <li
         data-flip-id='filter-{tag}'
-        use:aos={() => ({
+        use:aos={{
           on: !!aosS,
           trigger: '#anchor-filter',
-          delay: 0.05 * (i + 1),
+          delay: 0.03 * (i + 1),
           scroller: scroller?.x,
-        })}
+        }}
       >
         <button
           class="{actives.x.has(tag)

@@ -36,7 +36,7 @@
   const fo = fadeonly()
   const rm = redmote()
 
-  const { aos } = new AOS().fns
+  const { aos, batch } = new AOS().fns
 
   let innerWidth = $state(0)
   let innerHeight = $state(0)
@@ -54,6 +54,7 @@
     fo,
     rm,
     aos,
+    batch,
     cursorFs,
   })
 

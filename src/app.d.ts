@@ -33,6 +33,7 @@ declare global {
     fo?: MediaQuery
     rm?: MediaQuery
     aos: AOS['aos']
+    batch: AOS['batch']
     cursorFs: {
       on: (e: MouseEvent) => void
       off: () => void

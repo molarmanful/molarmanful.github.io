@@ -16,7 +16,7 @@
   }
 
   const { aosS, children, ...rest }: Props = $props()
-  const { D, actives, aos, fo } = cD.get()
+  const { D, actives, batch, fo } = cD.get()
   const rfocus = cfocus.get()
   const scroller = cscroll.get()
 
@@ -121,6 +121,12 @@
   bind:this={el}
   class='grid cols-1 gap-5 md:(cols-3 gap-8) sm:cols-2 xl:cols-4'
   data-flip
+  use:batch={{
+    on: !!aosS,
+    type: `fade-${aosS && !fo?.matches ? aosS : 'in'}`,
+    stagger: 0.1,
+    scroller: scroller?.x,
+  }}
   use:useFocusTrap
   {...rest}
 >
@@ -129,13 +135,8 @@
     <div
       bind:this={animels[i]}
       class="{on ? '' : 'brightness-10 pointer-events-none!'} {anim ? '' : 'suppress'} flex transition-filter"
+      data-batch
       data-flip-id='item-{name}'
-      use:aos={() => ({
-        on: !!aosS,
-        type: `fade-${aosS && !fo?.matches ? aosS : 'in'}`,
-        delay: 0.1 * (i % cs),
-        scroller: scroller?.x,
-      })}
     >
       {@render children(name, on, ((i / cs) | 0) % 2 === (i % cs) % 2)}
     </div>
