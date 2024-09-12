@@ -5,7 +5,7 @@
   import type { Snapshot } from './$types'
 
   import { browser } from '$app/environment'
-  import { afterNavigate, beforeNavigate, onNavigate } from '$app/navigation'
+  import { afterNavigate, onNavigate } from '$app/navigation'
   import { Favicons } from '$lib'
   import AOS from '$lib/js/aos.svelte'
   import { cD } from '$lib/js/contexts'
