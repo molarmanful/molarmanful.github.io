@@ -13,13 +13,16 @@
   const tops = ['top', 'abt', 'art']
 
   let dropped = $state(false)
+
   const ON = ({ target }: Event) => {
     dropped = true
     ;(target as HTMLElement).blur()
   }
+
   const OFF = () => {
     dropped = false
   }
+
   const GOTO = (top: string) => ({ target }: Event) => {
     scrollTo({ top: document.getElementById(top)?.offsetTop })
     ;(target as HTMLElement).blur()
