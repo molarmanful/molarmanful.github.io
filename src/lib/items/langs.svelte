@@ -1,5 +1,5 @@
 <script lang='ts' module>
-  export const desc = 'Weird and wholly impractical. Programming languages which I\'ve made throughout the years for recreational - NOT PRODUCTION - purposes.'
+  export const desc = 'Weird and wholly impractical. Programming languages which I\'ve made throughout the years for recreational (NON-PRODUCTION) purposes.'
   export const tags = ['digital', 'dev', 'proglang', 'collection']
   export const year = 2022
 </script>
