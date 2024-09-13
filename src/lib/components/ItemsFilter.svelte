@@ -135,12 +135,9 @@
           disabled={not_xs.has(tag)}
           onclick={(e) => {
             handleAnim()
-            if (actives.x.has(tag)) {
+            if (actives.x.has(tag))
               actives.x.delete(tag)
-            }
-            else {
-              actives.x.add(tag)
-            }
+            else actives.x.add(tag)
             ;(e.target as HTMLElement).blur()
             handleRun()
           }}
