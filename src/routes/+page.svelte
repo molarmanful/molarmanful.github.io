@@ -10,8 +10,6 @@
 
   const { D } = cD.get()
 
-  const tops: string[] = $state([])
-
   const { useFocusTrap } = new FocusTrap({
     immediate: true,
     initialFocus: false,
@@ -39,9 +37,9 @@
 <svelte:body use:classList={[$pstate.selected && 'overflow-hidden']} />
 
 <div class='contents' use:useFocusTrap>
-  <Nav {tops} />
-  <Header top={(x: string) => (tops[0] = x)} />
-  <About top={(x: string) => (tops[1] = x)} />
-  <Art top={(x: string) => (tops[2] = x)} />
+  <Nav />
+  <Header />
+  <About />
+  <Art />
   <Modal selected={$pstate.selected} />
 </div>

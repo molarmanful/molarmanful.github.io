@@ -7,7 +7,6 @@
   interface Props extends HTMLAttributes<HTMLElement> {
     name?: string
     nav: string
-    top: (a: string) => void
     bord?: boolean
     children: Snippet
   }
@@ -15,14 +14,11 @@
   const {
     name = '',
     nav = '',
-    top = () => {},
     bord = false,
     children,
     ...rest
   }: Props = $props()
   const { aos, fo } = cD.get()
-
-  top(nav)
 </script>
 
 <section

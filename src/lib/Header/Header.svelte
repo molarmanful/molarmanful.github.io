@@ -10,11 +10,6 @@
   if (browser)
     gsap.registerPlugin(Observer)
 
-  interface Props {
-    top: (a: string) => void
-  }
-
-  const { top = () => {} }: Props = $props()
   const { fo } = cD.get()
 
   $effect(() => {
@@ -108,8 +103,6 @@
 
     return () => ctx.revert()
   })
-
-  top('top')
 </script>
 
 <header id='top' class='relative screen'>

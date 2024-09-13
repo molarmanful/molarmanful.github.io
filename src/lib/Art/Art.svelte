@@ -2,12 +2,6 @@
   import { pushState } from '$app/navigation'
   import { A, CoverImg, Heading, ItemsGrid, Section } from '$lib/components'
 
-  interface Props {
-    top: (a: string) => void
-  }
-
-  const { top }: Props = $props()
-
   const ON = (x: string) => (e: Event) => {
     e.preventDefault()
     ;(e.target as HTMLElement).blur()
@@ -15,7 +9,7 @@
   }
 </script>
 
-<Section name='WORK' nav='art' {top}>
+<Section name='WORK' nav='art'>
   <div class='mx-auto w-screen b-bord px-5 pb-16 pt-6 lg:(container pb-32) 3xl:b-l md:px-8 xl:px-16'>
     <Heading aoso={{}} clazz='mb-5 text-center md:mb-8 3xl:hidden'>
       <A

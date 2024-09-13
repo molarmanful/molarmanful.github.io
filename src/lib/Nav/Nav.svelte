@@ -10,11 +10,7 @@
   if (browser)
     gsap.registerPlugin(ScrollTrigger)
 
-  interface Props {
-    tops: string[]
-  }
-
-  const { tops = [] }: Props = $props()
+  const tops = ['top', 'abt', 'art']
 
   let dropped = $state(false)
   const ON = ({ target }: Event) => {

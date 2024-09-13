@@ -2,15 +2,9 @@
   import { Links, Statement, Title } from '.'
 
   import { Section } from '$lib/components'
-
-  interface Props {
-    top: (a: string) => void
-  }
-
-  const { top }: Props = $props()
 </script>
 
-<Section bord nav='abt' {top}>
+<Section bord nav='abt'>
   <div class='mx-auto w-screen b-bord pt-8 lg:container 3xl:(b-l b-t) md:(px-8 pt-16) xl:px-16'>
     <div class='prose lt-lg:mx-auto lt-lg:max-w-prose'>
       <Title />
