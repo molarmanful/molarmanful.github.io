@@ -137,9 +137,10 @@
             handleAnim()
             if (actives.x.has(tag)) {
               actives.x.delete(tag)
-              return
             }
-            actives.x.add(tag)
+            else {
+              actives.x.add(tag)
+            }
             ;(e.target as HTMLElement).blur()
             handleRun()
           }}
