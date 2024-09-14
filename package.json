@@ -19,7 +19,7 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "postbuild": "pnpm dlx svelte-sitemap --domain https://bennyboy.tech",
+    "postbuild": "pnpm dlx svelte-sitemap --domain https://benpa.ng",
     "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
     "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
     "lint": "eslint --fix"

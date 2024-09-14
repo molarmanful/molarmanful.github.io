@@ -12,7 +12,7 @@
   <Heading>MIND<wbr />READER'S DIGEST</Heading>
   <Subheading>{desc}</Subheading>
   <Text>
-    <A href='https://bennyboy.tech/mindreaders-digest'>Website</A>
+    <A href='https://benpa.ng/mindreaders-digest'>Website</A>
     (best viewed with a physical keyboard)
     <br />
     <A href='https://github.com/molarmanful/mindreaders-digest'>Source</A>

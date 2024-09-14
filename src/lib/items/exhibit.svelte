@@ -12,7 +12,7 @@
   <Heading>PERFORMING IDENTITY</Heading>
   <Subheading>{desc}</Subheading>
   <Text>
-    <A href='https://bennyboy.tech/exhibit'>Website</A>
+    <A href='https://benpa.ng/exhibit'>Website</A>
     (best viewed with a physical keyboard)
     <br />
     <A href='https://github.com/molarmanful/exhibit'>Source</A>

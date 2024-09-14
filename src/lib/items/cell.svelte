@@ -25,7 +25,7 @@
   <Subheading bold>3-Species Ecosystem</Subheading>
   <IVideo a='hnEuirk' />
   <Text>
-    <A href='https://bennyboy.tech/RobotaPsyche/midterm'>Website</A>
+    <A href='https://benpa.ng/RobotaPsyche/midterm'>Website</A>
     <br />
     <A href='https://github.com/molarmanful/RobotaPsyche/tree/main/midterm'>
       Source
@@ -91,7 +91,7 @@
     px
   />
   <Text>
-    <A href='https://bennyboy.tech/rainbow'>Website</A>
+    <A href='https://benpa.ng/rainbow'>Website</A>
     (No longer works due to changes in Reddit's API)
     <br />
     <A href='https://github.com/molarmanful/rainbow'>Source</A>

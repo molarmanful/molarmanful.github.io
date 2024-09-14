@@ -12,7 +12,7 @@
   <Heading>SIMIAN</Heading>
   <Subheading>{desc}</Subheading>
   <Text>
-    <A href='https://bennyboy.tech/simian'>Website</A>
+    <A href='https://benpa.ng/simian'>Website</A>
     (best viewed with a physical keyboard)
     <br />
     <A href='https://github.com/molarmanful/simian'>Source</A>

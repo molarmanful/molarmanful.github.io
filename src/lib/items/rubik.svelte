@@ -28,7 +28,7 @@
     and a companion cube that hides pieces based on the step.
   </Text>
   <Text>
-    <A href='https://bennyboy.tech/cubetut'>Website</A> (best viewed on desktop)
+    <A href='https://benpa.ng/cubetut'>Website</A> (best viewed on desktop)
     <br />
     <A href='https://github.com/molarmanful/cubetut'>Source</A>
   </Text>
@@ -67,7 +67,7 @@
     mobile and desktop devices.
   </Text>
   <Text>
-    <A href='https://bennyboy.tech/minimalistimer'>Website</A>
+    <A href='https://benpa.ng/minimalistimer'>Website</A>
     <br />
     <A href='https://github.com/molarmanful/minimalistimer'>Source</A>
   </Text>
@@ -82,7 +82,7 @@
     algorithms execution.
   </Text>
   <Text>
-    <A href="https://bennyboy.tech/minimalistimer">Website</A>
+    <A href="https://benpa.ng/minimalistimer">Website</A>
   </Text>
   -->
 </Prose>

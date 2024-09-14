@@ -12,7 +12,7 @@
   <Heading>BAREBONES</Heading>
   <Subheading>{desc}</Subheading>
   <Text>
-    <A href='https://bennyboy.tech/barebones'>Website</A>
+    <A href='https://benpa.ng/barebones'>Website</A>
     <br />
     <A href='https://github.com/molarmanful/barebones'>Source</A>
   </Text>

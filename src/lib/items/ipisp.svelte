@@ -12,7 +12,7 @@
   <Heading>10K IPS</Heading>
   <Subheading>{desc}</Subheading>
   <Text>
-    <A href='https://bennyboy.tech/ipisp'>Website</A>
+    <A href='https://benpa.ng/ipisp'>Website</A>
     <br />
     <A href='https://github.com/molarmanful/ipisp'>Source</A>
   </Text>

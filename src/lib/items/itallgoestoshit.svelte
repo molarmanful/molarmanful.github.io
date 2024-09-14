@@ -12,7 +12,7 @@
   <Heading>IT ALL GOES TO SHIT</Heading>
   <Subheading>{desc}</Subheading>
   <Text>
-    <A href='https://bennyboy.tech/itallgoestoshit'>Website</A> (best viewed on desktop)
+    <A href='https://benpa.ng/itallgoestoshit'>Website</A> (best viewed on desktop)
     <br />
     <A href='https://github.com/molarmanful/itallgoestoshit'>Source</A>
   </Text>

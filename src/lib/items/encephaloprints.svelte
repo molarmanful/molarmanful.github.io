@@ -20,7 +20,7 @@
 <Prose>
   <Heading>ENCEPHALO<wbr />PRINTS</Heading>
   <Subheading>{desc}</Subheading>
-  <Text><A href='https://bennyboy.tech/capstone'>Devblog</A></Text>
+  <Text><A href='https://benpa.ng/capstone'>Devblog</A></Text>
   <Text>
     Throughout the day, our mind flows between different states of focus,
     distraction, stress, relaxation, and so on. How the mind flows between
