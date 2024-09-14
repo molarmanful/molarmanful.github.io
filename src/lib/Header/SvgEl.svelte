@@ -37,7 +37,7 @@
 
 <svelte:element
   this={el.this}
-  class='fill-transparent stroke-1 stroke-current text-white'
+  class='fill-transparent stroke-1 stroke-current text-transparent'
   use:anim
   {...el.attr}
   {...rest}
