@@ -17,9 +17,7 @@
 <Img
   class="{loaded ? 'loaded' : ''} {mt ? 'mt-0' : 'mt-6 md:mt-8'} laz bg-contain! mx-auto max-h-full object-contain text-0 w-full {clazz}"
   alt={name}
-  onload={() => {
-    loaded = true
-  }}
+  onload={() => loaded = true}
   src={b instanceof Map ? b.get(name ?? '') : b}
   {...rest}
 />
