@@ -107,7 +107,7 @@
 
 <header id='top' class='relative screen'>
   <div class='fixed full flex'>
-    <div class='absolute inset-x-0 top-0 h-lvh' data-splash>
+    <div class='absolute inset-x-0 top-0 h-s-lvh' data-splash>
       <Splash clazz='absolute right-0 top-0 media-squarish:right-40% media-squarish:translate-x-1/2' />
     </div>
     <div class='absolute inset-0' data-title>
