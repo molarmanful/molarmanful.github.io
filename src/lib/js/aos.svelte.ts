@@ -5,23 +5,23 @@ import { browser } from '$app/environment'
 
 const trs = {
   'fade-in': [
-    { opacity: 0.01 },
+    { opacity: 0 },
     { opacity: 1 },
   ],
   'fade-up': [
-    { opacity: 0.01, y: 100 },
+    { opacity: 0, y: 100 },
     { opacity: 1, y: 0 },
   ],
   'fade-left': [
-    { opacity: 0.01, x: 100 },
+    { opacity: 0, x: 100 },
     { opacity: 1, x: 0 },
   ],
   'fade-down': [
-    { opacity: 0.01, y: -100 },
+    { opacity: 0, y: -100 },
     { opacity: 1, y: 0 },
   ],
   'fade-right': [
-    { opacity: 0.01, x: -100 },
+    { opacity: 0, x: -100 },
     { opacity: 1, x: 0 },
   ],
 } as const satisfies Record<string, [gsap.CSSVars, gsap.CSSVars]>

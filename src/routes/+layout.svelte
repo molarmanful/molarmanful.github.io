@@ -76,6 +76,6 @@
 <!-- <Cursor {cursorFs} {mouse} z="100" /> -->
 <!-- <div scanlines text-bord></div> -->
 
-<main class="{loaded.x ? 'opacity-100 ofade-500' : 'opacity-1'} overflow-x-clip">
+<main class="{loaded.x ? 'opacity-100 ofade-500' : 'opacity-0'} overflow-x-clip">
   {@render children()}
 </main>
