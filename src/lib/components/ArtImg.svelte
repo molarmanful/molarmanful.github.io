@@ -1,10 +1,11 @@
 <script lang='ts'>
-  import type { ComponentProps } from 'svelte'
+  import type { HTMLImgAttributes } from 'svelte/elements'
 
   import { Image } from '.'
 
-  interface Props extends ComponentProps<Image> {
+  interface Props extends HTMLImgAttributes {
     name: string
+    sizes?: string
   }
 
   const { name, ...rest }: Props = $props()
@@ -12,6 +13,6 @@
 
 <Image
   {name}
-  {...rest}
   b={['art']}
+  {...rest}
 />

@@ -1,11 +1,12 @@
 <script lang='ts'>
-  import type { ComponentProps } from 'svelte'
+  import type { HTMLImgAttributes } from 'svelte/elements'
 
   import { Image } from '.'
 
-  interface Props extends ComponentProps<Image> {
+  interface Props extends HTMLImgAttributes {
     name: string
     px?: boolean
+    sizes?: string
   }
 
   const { name, px = false, ...rest }: Props = $props()
@@ -13,7 +14,7 @@
 
 <Image
   {name}
+  b={['media']}
   clazz={px ? 'image-render-pixel' : ''}
   {...rest}
-  b={['media']}
 />
