@@ -1,27 +1,24 @@
 <script lang='ts'>
-  import Img from '@zerodevx/svelte-img'
   import type { ComponentProps } from 'svelte'
 
   import { Image } from '.'
 
-  import { cD } from '$lib/js/contexts'
-
-  interface Props extends ComponentProps<Img> {
+  interface Props extends ComponentProps<Image> {
     name: string
     i?: boolean
   }
 
   const { name, i = false, ...rest }: Props = $props()
-  const { D } = cD.get()
 </script>
 
 <Image
   {name}
-  b={D.covers}
   clazz='transition-filter'
   draggable='false'
   loading='eager'
   mt
+  sizes='(min-width: 1280px) 25vw, (min-width: 768px) 33vw, (min-width: 640px) 50vw, 100vw'
   {...rest}
+  b={['covers']}
 />
 <div class="{i ? 'bg-head' : 'bg-accent'} absolute colize full inset-0 mix-blend-color transition-400"></div>

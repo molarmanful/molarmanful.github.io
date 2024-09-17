@@ -29,7 +29,7 @@
   const focused = $derived(!!(activeElement && el?.contains(activeElement)))
 
   const [all, xs] = $derived(
-    [...D.covers.keys()].reduce(
+    [...D.covers[0].keys()].reduce(
       ([a0, a1], b) => {
         const c = D.tags.get(b)
         if (c === void 0)

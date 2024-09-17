@@ -1,17 +1,17 @@
 <script lang='ts'>
-  import type Img from '@zerodevx/svelte-img'
   import type { ComponentProps } from 'svelte'
 
   import { Image } from '.'
 
-  import { cD } from '$lib/js/contexts'
-
-  interface Props extends ComponentProps<Img> {
+  interface Props extends ComponentProps<Image> {
     name: string
   }
 
   const { name, ...rest }: Props = $props()
-  const { D } = cD.get()
 </script>
 
-<Image {name} b={D.art} {...rest} />
+<Image
+  {name}
+  {...rest}
+  b={['art']}
+/>

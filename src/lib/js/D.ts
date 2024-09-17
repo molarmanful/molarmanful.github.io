@@ -1,10 +1,22 @@
 import type { Component } from 'svelte'
+import type { ImageMetadata } from 'vite-imagetools'
 
 export interface Item {
   desc: string
   tags: string[]
   year: number
   default: Component
+}
+
+type Imgs = [Map<string, string>, Map<string, ImageMetadata>]
+
+interface DType {
+  title: string
+  items: typeof items
+  tags: Map<string, Set<string>>
+  covers: Imgs
+  art: Imgs
+  media: Imgs
 }
 
 const makeMap = <T>(
@@ -20,33 +32,62 @@ const makeMap = <T>(
 
 const items = makeMap(import.meta.glob<Item>('$lib/items/*', { eager: true }))
 
-export default {
+const D: DType = {
   title: 'Ben Pang / BandidoJim / Molarmanful',
-  covers: makeMap<string>(
-    import.meta.glob('$lib/covers/*', {
-      eager: true,
-      import: 'default',
-      query: { url: true, as: 'run:32' },
-    }),
-    x =>
-      x.sort(([a], [b]) =>
-        (items.get(b)?.year || 1 / 0) - (items.get(a)?.year || 1 / 0),
-      ),
-  ),
   items,
   tags: new Map([...items].map(([k, v]) => [k, new Set(v.tags)])),
-  art: makeMap(
-    import.meta.glob<string>('$lib/art/*', {
-      eager: true,
-      import: 'default',
-      query: { url: true, as: 'run:32' },
-    }),
-  ),
-  media: makeMap(
-    import.meta.glob<string>('$lib/media/*', {
-      eager: true,
-      import: 'default',
-      query: { url: true, as: 'run:32' },
-    }),
-  ),
+  covers: [
+    makeMap(
+      import.meta.glob('$lib/covers/*', {
+        eager: true,
+        import: 'default',
+        query: { inline: true, w: 32, h: 32, fit: 'inside', quality: 20, format: 'webp' },
+      }),
+      x =>
+        x.sort(([a], [b]) =>
+          (items.get(b)?.year || 1 / 0) - (items.get(a)?.year || 1 / 0),
+        ),
+    ),
+    makeMap(
+      import.meta.glob('$lib/covers/*', {
+        eager: true,
+        import: 'default',
+        query: { as: 'meta:height;width' },
+      }),
+    ),
+  ],
+  art: [
+    makeMap(
+      import.meta.glob('$lib/art/*', {
+        eager: true,
+        import: 'default',
+        query: { inline: true, w: 32, h: 32, fit: 'inside', quality: 20, format: 'webp' },
+      }),
+    ),
+    makeMap(
+      import.meta.glob('$lib/art/*', {
+        eager: true,
+        import: 'default',
+        query: { as: 'meta:height;width' },
+      }),
+    ),
+  ],
+  media: [
+    makeMap(
+      import.meta.glob('$lib/media/*', {
+        eager: true,
+        import: 'default',
+        query: { inline: true, w: 32, h: 32, fit: 'inside', quality: 20, format: 'webp' },
+      }),
+    ),
+    makeMap(
+      import.meta.glob('$lib/media/*', {
+        eager: true,
+        import: 'default',
+        query: { as: 'meta:height;width' },
+      }),
+    ),
+  ],
 }
+
+export default D

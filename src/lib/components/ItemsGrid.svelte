@@ -62,7 +62,7 @@
 
   useEventListener(() => window, 'resize', calcgrid)
 
-  const covers = new Set(D.covers.keys())
+  const covers = new Set(D.covers[0].keys())
   const chosen = $derived(
     actives.x.size
       ? [...covers].reduce(
