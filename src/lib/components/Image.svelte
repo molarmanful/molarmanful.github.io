@@ -43,7 +43,7 @@
   {/if}
   <img
     style:background={lqip && `url(${lqip}) center center / cover no-repeat`}
-    class="{loaded ? 'loaded' : ''} {mt ? 'mt-0' : 'mt-6 md:mt-8'} laz bg-contain! mx-auto max-h-full object-contain text-0 w-full {clazz}"
+    class="{loaded ? 'loaded' : ''} {mt ? 'mt-0' : 'mt-6 md:mt-8'} laz bg-contain! mx-auto max-h-full object-contain text-0 w-screen max-w-full {clazz}"
     alt={name}
     decoding='async'
     height={meta?.height}
