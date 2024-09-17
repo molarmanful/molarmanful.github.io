@@ -4,6 +4,7 @@
 
   import { browser } from '$app/environment'
   import { page } from '$app/stores'
+  import { desc } from '$common/meta'
   import { About, Art, Header, Modal, Nav } from '$lib'
   import { cD } from '$lib/js/contexts'
   import { FocusTrap } from '$lib/js/util.svelte'
@@ -30,7 +31,7 @@
   <title>{D.title}</title>
   <meta
     name='description'
-    content='Creative technologist, experimental artist, digital designer, font creator, programming language enthusiast.'
+    content={desc}
   />
 </svelte:head>
 

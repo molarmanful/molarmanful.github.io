@@ -1,13 +1,13 @@
 {
   "name": "Ben Pang",
   "short_name": "Ben Pang",
-  "description": "Programmer/artist and graduate student at NYU ITP.",
+  "description": "Creative technologist, experimental artist, digital designer, font creator, programming language enthusiast.",
   "dir": "auto",
   "lang": "en-US",
   "display": "standalone",
   "orientation": "any",
   "start_url": "/?homescreen=1",
-  "background_color": "#fff",
+  "background_color": "#000",
   "theme_color": "#000",
   "icons": [
     {

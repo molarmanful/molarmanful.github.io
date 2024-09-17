@@ -23,7 +23,7 @@
     "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
     "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
     "lint": "eslint --fix",
-    "gen": "scripts/gen.sh"
+    "gen": "util/gen.sh"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^2.27.3",

@@ -1,17 +1,18 @@
 import fs from 'node:fs/promises'
 import path from 'node:path'
-import url from 'node:url'
 
 import favicons from 'favicons'
 
-const cwd = url.fileURLToPath(new URL('.', import.meta.url))
-const out = path.resolve(cwd, '../static/favicons')
+import { desc } from '../src/common/meta.js'
 
-const res = await favicons(path.resolve(cwd, '../static/logo.png'), {
+const out = path.resolve('static/favicons')
+
+const res = await favicons(path.resolve('static/logo.svg'), {
   path: '/favicons',
   appName: 'Ben Pang',
   shortAppName: 'Ben Pang',
-  appDescription: 'Programmer/artist and graduate student at NYU ITP.',
+  appDescription: desc,
+  background: '#000',
   theme_color: '#000',
   appleStatusBarStyle: 'black',
 })
@@ -26,6 +27,6 @@ await Promise.all(
 )
 
 await fs.writeFile(
-  path.resolve(cwd, '../src/lib/Favicons.svelte'),
+  path.resolve('src/lib/Favicons.svelte'),
   res.html.join`\n`,
 )

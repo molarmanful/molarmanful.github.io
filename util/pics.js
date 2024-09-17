@@ -1,9 +1,11 @@
+/* eslint no-console: 0 */
+
 import path from 'node:path'
 import process from 'node:process'
 
 import sharp from 'sharp'
 
-import { ws } from '../src/common/ws.js'
+import { ws } from '../src/common/meta.js'
 
 const [file, out, n] = process.argv.slice(2)
 process.env.UV_THREADPOOL_SIZE = n

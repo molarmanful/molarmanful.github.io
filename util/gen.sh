@@ -5,7 +5,7 @@ cores="$(nproc --all)"
 gen() {
   local file="${2##*/}"
   local name="${file%%.*}"
-  node scripts/pics "$2" "out/$1@$name" "$cores"
+  node util/pics "$2" "out/$1@$name" "$cores"
 }
 
 mkdir -p out
