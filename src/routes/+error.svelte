@@ -32,7 +32,7 @@
 </svelte:head>
 
 <div
-  class='pointer-events-none invisible fixed'
+  class='pointer-events-none invisible fixed select-none'
   aria-hidden='true'
   bind:clientWidth={cw}
   bind:clientHeight={ch}
@@ -41,7 +41,7 @@
 </div>
 
 <div
-  class='pointer-events-none fixed inset-0 flex items-center justify-center text-text-900 opacity-20'
+  class='pointer-events-none fixed inset-0 flex select-none items-center justify-center text-text-900 opacity-20'
   aria-hidden='true'
 >
   <div class='overflow-hidden'>

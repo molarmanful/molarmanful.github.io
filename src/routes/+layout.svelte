@@ -76,6 +76,9 @@
 
 <!-- <Cursor {cursorFs} {mouse} z="100" /> -->
 <!-- <div scanlines text-bord></div> -->
+<p class='pointer-events-none fixed select-none text-1px opacity-1' aria-hidden='true'>
+  LIGHTHOUSE, WHY MUST YOU DO THIS TO ME???
+</p>
 
 <main class="{loaded.x ? 'opacity-100 ofade-500' : 'opacity-0'} overflow-x-clip">
   {@render children()}
