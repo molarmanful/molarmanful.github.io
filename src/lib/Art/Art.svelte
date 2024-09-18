@@ -28,7 +28,7 @@
           disabled={!on}
           onclick={ON(name)}
         >
-          <CoverImg {name} alt='Open project entry: {name}.' {i} />
+          <CoverImg {name} alt='Cover image for project entry: {name}.' {i} />
         </button>
       {/snippet}
     </ItemsGrid>
