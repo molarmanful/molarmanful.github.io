@@ -73,11 +73,12 @@
   <Favicons />
 </svelte:head>
 
-<!-- <Cursor {cursorFs} {mouse} z="100" /> -->
-<!-- <div scanlines text-bord></div> -->
 <span class='pointer-events-none fixed select-none text-.1px' aria-hidden='true'>
   LIGHTHOUSE, WHY MUST YOU DO THIS TO ME???
 </span>
+
+<!-- <Cursor {cursorFs} {mouse} z="100" /> -->
+<!-- <div scanlines text-bord></div> -->
 
 <main class="{loaded.x ? 'opacity-100 ofade-500' : 'opacity-0'} overflow-x-clip">
   {@render children()}
