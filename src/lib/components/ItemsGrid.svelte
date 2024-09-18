@@ -16,7 +16,7 @@
   }
 
   const { aosS, children, ...rest }: Props = $props()
-  const { D, actives, batch, fo } = cD.get()
+  const { D, actives, batch, fo, rm } = cD.get()
   const rfocus = cfocus.get()
   const scroller = cscroll.get()
 
@@ -85,6 +85,9 @@
   const itemsFlip = new Flip('items')
 
   $effect(() => {
+    if (rm?.matches)
+      return
+
     itemsFlip.flip()
   })
 </script>

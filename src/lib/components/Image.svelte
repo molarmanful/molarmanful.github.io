@@ -21,16 +21,17 @@
 
   const ws1 = ws.reverse()
 
-  const url = (w = ws1.at(-1), x = 'jpg') =>
+  const url = (name?: string, w = ws1.at(-1), x = 'jpg') =>
     `https://cdn.benpa.ng/${b[0]}@${name}@${w}.${x}`
-  const urls = (x = 'jpg') => ws1.map(w => `${url(w, x)} ${w}w`).join(', ')
+  const urls = (name?: string, x = 'jpg') =>
+    ws1.map(w => `${url(name, w, x)} ${w}w`).join(', ')
 
-  const src = Array.isArray(b) ? url() : b
-  const srcsets: Record<string, string> = {
-    avif: urls('avif'),
-    webp: urls('webp'),
-    jpg: urls('jpg'),
-  }
+  const src = $derived(Array.isArray(b) ? url(name) : b)
+  const srcsets: Record<string, string> = $derived({
+    avif: urls(name, 'avif'),
+    webp: urls(name, 'webp'),
+    jpg: urls(name, 'jpg'),
+  })
 
   let loaded = $state(false)
 </script>
