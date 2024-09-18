@@ -54,7 +54,7 @@
 </div>
 
 <div class='screen flex items-center justify-center mix-blend-lighten'>
-  <div class='text-center'>
+  <div class='pb-8 text-center'>
     <Heading
       clazz='text-50vmin leading-none scale-100'
     >
