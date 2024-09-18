@@ -7,6 +7,9 @@ export default {
     adapter: adapter({
       fallback: '404.html',
     }),
+    paths: {
+      relative: false,
+    },
     alias: {
       $common: 'src/common',
     },
