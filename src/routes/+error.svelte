@@ -54,9 +54,9 @@
 </div>
 
 <div class='screen flex items-center justify-center mix-blend-lighten'>
-  <div class='pb-8 text-center'>
+  <div class='pb-16 text-center'>
     <Heading
-      clazz='text-50vmin leading-none scale-100'
+      clazz='text-50vmin leading-none relative mb-8'
     >
       {#if s[0] === s[2] && '08'.includes(s[1])}
         <span class='text-accent'
@@ -69,8 +69,8 @@
         {s}
       {/if}
     </Heading>
-    <Text>
-      <a class='btn' data-sveltekit-reload href='/'>HOME</a>
+    <Text class='relative z-10'>
+      <a class='btn' data-sveltekit-reload href='/'>home</a>
     </Text>
   </div>
 </div>
