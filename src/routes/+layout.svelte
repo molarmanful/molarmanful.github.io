@@ -73,10 +73,6 @@
   <Favicons />
 </svelte:head>
 
-<span class='pointer-events-none fixed select-none text-.1px' aria-hidden='true'>
-  LIGHTHOUSE, WHY MUST YOU DO THIS TO ME???
-</span>
-
 <!-- <Cursor {cursorFs} {mouse} z="100" /> -->
 <!-- <div scanlines text-bord></div> -->
 
