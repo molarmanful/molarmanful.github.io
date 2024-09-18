@@ -9,6 +9,12 @@ body {
   @apply position-relative bg-black;
 }
 
+@media (prefers-color-scheme: dark) {
+  body {
+    @apply bg-black;
+  }
+}
+
 html {
   @apply scroll-smooth motion-reduce:scroll-auto;
 }
