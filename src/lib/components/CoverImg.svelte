@@ -17,6 +17,7 @@
   b={['covers']}
   clazz='transition-filter'
   draggable='false'
+  loading='eager'
   mt
   sizes='
     (min-width: 1536px) calc((1536px - 2rem * 3) / 4),
