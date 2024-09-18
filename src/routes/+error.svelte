@@ -10,7 +10,6 @@
 
   let ch = $state(1)
   let cw = $state(1)
-  $inspect(ch, cw)
 
   const s = `${$page.status}`
 
@@ -27,6 +26,10 @@
 </script>
 
 <svelte:window bind:innerHeight bind:innerWidth />
+
+<svelte:head>
+  <title>ERR: {s}</title>
+</svelte:head>
 
 <div
   class='pointer-events-none invisible fixed'
@@ -58,19 +61,14 @@
     <Heading
       clazz='text-50vmin leading-none relative mb-8'
     >
-      {#if s[0] === s[2] && '08'.includes(s[1])}
-        <span class='text-accent'
-        >{s[0]}</span
-        ><span class='text-head'
-        >{s[1]}</span
-        ><span class='inline-block scale-x--100 text-bord'
-        >{s[2]}</span>
-      {:else}
-        {s}
-      {/if}
+      <span class='text-accent'>{s[0]}</span
+      ><span class='text-accent'
+      >{s[1]}</span
+      ><span class="{s[0] === s[2] && '08'.includes(s[1]) ? 'scale-x--100' : ''} inline-block text-accent"
+      >{s[2]}</span>
     </Heading>
     <Text class='relative z-10'>
-      <a class='btn' data-sveltekit-reload href='/'>home</a>
+      <a class='btn text-bord' data-sveltekit-reload href='/'>home</a>
     </Text>
   </div>
 </div>
