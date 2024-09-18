@@ -71,6 +71,7 @@
 
 <svelte:head>
   <Favicons />
+  <meta name='color-scheme' content='dark'>
 </svelte:head>
 
 <!-- <Cursor {cursorFs} {mouse} z="100" /> -->

@@ -4,15 +4,13 @@
   text-fill-color: #000;
 }
 
+:root {
+  color-scheme: dark;
+}
+
 html,
 body {
   @apply position-relative bg-black;
-}
-
-@media (prefers-color-scheme: dark) {
-  body {
-    @apply bg-black;
-  }
 }
 
 html {
