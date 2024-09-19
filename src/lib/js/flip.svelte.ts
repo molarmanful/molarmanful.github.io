@@ -8,7 +8,7 @@ export default class Flip {
   constructor(id: string) {
     if (!browser)
       return
-    gsap.registerPlugin(Flip)
+    gsap.registerPlugin(gFlip)
     this.batch = gFlip.batch(id)
   }
 
