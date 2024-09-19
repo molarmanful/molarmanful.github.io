@@ -1,12 +1,12 @@
 <script lang='ts'>
+  import type { LayoutServerData } from './$types'
+
   import { A, ItemBar, ItemBody } from '$lib/components'
   import { cfocus, cscroll } from '$lib/js/contexts'
   import { receive, send } from '$lib/js/crossfade'
   import { FocusTrap } from '$lib/js/util.svelte'
   import { type Snippet } from 'svelte'
   import { fade } from 'svelte/transition'
-
-  import type { LayoutServerData } from './$types'
 
   interface Props {
     data: LayoutServerData

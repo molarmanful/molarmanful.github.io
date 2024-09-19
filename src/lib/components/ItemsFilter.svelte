@@ -4,6 +4,7 @@
   import { cD, cfocus, cscroll } from '$lib/js/contexts'
   import Flip from '$lib/js/flip.svelte'
   import { FocusTrap } from '$lib/js/util.svelte'
+
   import 'core-js/proposals/set-methods-v2'
 
   interface Props extends HTMLAttributes<HTMLDivElement> {

@@ -1,9 +1,9 @@
 <script lang='ts'>
   import type { Item } from '$lib/js/D'
 
-  import { cD } from '$lib/js/contexts'
-
   import type { PageServerData } from './$types'
+
+  import { cD } from '$lib/js/contexts'
 
   interface Props {
     data: PageServerData

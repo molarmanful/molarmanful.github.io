@@ -23,18 +23,21 @@ export default antfu(
   {
     rules: {
       'antfu/top-level-function': 0,
-      'perfectionist/sort-exports': [2, {
-        type: 'alphabetical',
-      }],
       'perfectionist/sort-imports': [2, {
+        groups: [
+          'type',
+          ['parent-type', 'sibling-type', 'index-type'],
+
+          'builtin',
+          'external',
+          ['internal', 'internal-type'],
+          ['parent', 'sibling', 'index'],
+          'side-effect',
+          'object',
+          'unknown',
+        ],
         newlinesBetween: 'always',
-        type: 'alphabetical',
-      }],
-      'perfectionist/sort-named-exports': [2, {
-        type: 'alphabetical',
-      }],
-      'perfectionist/sort-named-imports': [2, {
-        type: 'alphabetical',
+        type: 'natural',
       }],
     },
   },
