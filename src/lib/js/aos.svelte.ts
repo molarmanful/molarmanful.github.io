@@ -41,7 +41,7 @@ export interface BatchOpts extends Opts {
   all: boolean
 }
 
-export default class {
+export default class AOS {
   opts: Opts = {
     on: true,
     type: 'fade-in',

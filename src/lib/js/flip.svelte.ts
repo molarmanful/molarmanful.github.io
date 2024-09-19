@@ -1,27 +1,27 @@
 import { browser } from '$app/environment'
 import gsap from 'gsap'
-import { Flip } from 'gsap/dist/Flip'
+import { Flip as gFlip } from 'gsap/dist/Flip'
 
-export default class {
+export default class Flip {
   batch?: FlipBatch
 
   constructor(id: string) {
     if (!browser)
       return
     gsap.registerPlugin(Flip)
-    this.batch = Flip.batch(id)
+    this.batch = gFlip.batch(id)
   }
 
   flip(opts?: Flip.BatchActionConfig) {
     const act = this.batch?.add({
       getState() {
-        return Flip.getState('[data-flip] > *', {
+        return gFlip.getState('[data-flip] > *', {
           simple: true,
         })
       },
 
       animate(self) {
-        Flip.from(self.state, {
+        gFlip.from(self.state, {
           duration: 0.25,
           simple: true,
         })

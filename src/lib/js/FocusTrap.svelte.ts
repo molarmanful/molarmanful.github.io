@@ -1,12 +1,12 @@
-import { createFocusTrap, type FocusTrap, type Options } from 'focus-trap'
+import { createFocusTrap, type FocusTrap as FTType, type Options } from 'focus-trap'
 
 interface Opts extends Options {
   immediate?: boolean
 }
 
-export default class {
+export default class FocusTrap {
   #config: Opts
-  #trap?: FocusTrap
+  #trap?: FTType
   #hasFocus = $state(false)
   #isPaused = $state(false)
 
