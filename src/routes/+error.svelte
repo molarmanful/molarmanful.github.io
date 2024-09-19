@@ -1,9 +1,9 @@
 <script lang='ts'>
-  import gsap from 'gsap'
-
   import { page } from '$app/stores'
+
   import { Heading, Text } from '$lib/components'
   import { hexes } from '$lib/js/static'
+  import gsap from 'gsap'
 
   let innerHeight = $state(1)
   let innerWidth = $state(1)

@@ -1,14 +1,14 @@
 <script lang='ts'>
-  import 'core-js/proposals/set-methods-v2'
-  import { useEventListener } from 'runed'
   import type { Snippet } from 'svelte'
-  import { tabbable } from 'tabbable'
-
-  import { ItemsFilter } from '.'
-
   import { cD, cfocus, cscroll } from '$lib/js/contexts'
   import Flip from '$lib/js/flip.svelte'
   import { FocusTrap } from '$lib/js/util.svelte'
+
+  import { useEventListener } from 'runed'
+
+  import { tabbable } from 'tabbable'
+  import { ItemsFilter } from '.'
+  import 'core-js/proposals/set-methods-v2'
 
   interface Props {
     aosS?: 'up' | 'in'

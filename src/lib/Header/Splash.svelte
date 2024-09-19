@@ -1,9 +1,9 @@
 <script lang='ts'>
   import type { HTMLAttributes } from 'svelte/elements'
 
-  import { SvgEl } from '.'
-
   import me from '$lib/js/me'
+
+  import { SvgEl } from '.'
 
   interface Props extends HTMLAttributes<SVGElement> {
     clazz?: string

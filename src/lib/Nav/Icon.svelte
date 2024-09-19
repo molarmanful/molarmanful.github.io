@@ -1,8 +1,8 @@
 <script lang='ts'>
-  import gsap from 'gsap'
   import type { HTMLButtonAttributes } from 'svelte/elements'
-
   import { cD } from '$lib/js/contexts'
+
+  import gsap from 'gsap'
 
   interface Props extends HTMLButtonAttributes {
     clazz?: string
@@ -32,7 +32,7 @@
   {...rest}
 >
   <svg class='m-auto h-1/2 w-1/2' viewBox='0 0 5 5'>
-    {#each Array(3).keys() as i}
+    {#each Array.from({ length: 3 }).keys() as i}
       <rect
         style:transition='fill 400ms'
         data-breathe-a

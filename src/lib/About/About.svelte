@@ -1,7 +1,7 @@
 <script lang='ts'>
-  import { Links, Statement, Title } from '.'
-
   import { Section } from '$lib/components'
+
+  import { Links, Statement, Title } from '.'
 </script>
 
 <Section bord nav='abt'>

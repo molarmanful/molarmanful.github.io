@@ -23,13 +23,6 @@ export default antfu(
   {
     rules: {
       'antfu/top-level-function': 0,
-      'import/order': [1, {
-        'alphabetize': {
-          order: 'asc',
-          caseInsensitive: true,
-        },
-        'newlines-between': 'always',
-      }],
     },
   },
 )

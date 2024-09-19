@@ -1,7 +1,7 @@
-import gsap from 'gsap'
-import { Flip } from 'gsap/dist/Flip'
-
 import { browser } from '$app/environment'
+import gsap from 'gsap'
+
+import { Flip } from 'gsap/dist/Flip'
 
 export default class {
   batch?: FlipBatch

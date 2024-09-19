@@ -1,11 +1,11 @@
 <script lang='ts'>
-  import gsap from 'gsap'
-  import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
-
-  import { Body, Icon } from '.'
-
   import { browser } from '$app/environment'
   import { hexes } from '$lib/js/static'
+
+  import gsap from 'gsap'
+
+  import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
+  import { Body, Icon } from '.'
 
   if (browser)
     gsap.registerPlugin(ScrollTrigger)

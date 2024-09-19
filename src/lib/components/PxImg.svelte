@@ -1,6 +1,6 @@
 <script lang='ts'>
-  import { useEventListener } from 'runed'
   import type { HTMLImgAttributes } from 'svelte/elements'
+  import { useEventListener } from 'runed'
 
   interface Props extends HTMLImgAttributes {}
 

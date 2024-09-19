@@ -1,10 +1,10 @@
 <svelte:options namespace='svg' />
 
 <script lang='ts'>
-  import gsap from 'gsap'
-
   import type { El } from '$lib/js/me'
+
   import { hexes } from '$lib/js/static'
+  import gsap from 'gsap'
 
   interface Props {
     el: El

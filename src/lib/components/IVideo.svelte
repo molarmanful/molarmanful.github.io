@@ -1,9 +1,9 @@
 <script lang='ts'>
+  import { cscroll } from '$lib/js/contexts'
+
   import ScrollTrigger from 'gsap/dist/ScrollTrigger'
 
   import { Video } from '.'
-
-  import { cscroll } from '$lib/js/contexts'
 
   interface Props {
     a: string
