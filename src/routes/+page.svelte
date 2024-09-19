@@ -25,7 +25,9 @@
   )
 
   $effect(() => {
-    document.body.classList.toggle('overflow-hidden', !!$pstate.selected)
+    pstate.subscribe(({ selected }) => {
+      document.body.classList.toggle('overflow-hidden', !!selected)
+    })
   })
 </script>
 
