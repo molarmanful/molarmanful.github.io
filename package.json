@@ -50,7 +50,7 @@
     "sharp": "^0.33.5",
     "simple-git-hooks": "^2.11.1",
     "stylelint-config-standard": "^36.0.1",
-    "svelte": "5.0.0-next.244",
+    "svelte": "5.0.0-next.246",
     "svelte-check": "^3.8.6",
     "svelte-sitemap": "^2.6.0",
     "tabbable": "^6.2.0",
