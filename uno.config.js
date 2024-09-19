@@ -136,7 +136,7 @@ export default {
       'scroll': 'scrollbar-(~ thumb-color-bord track-color-black)',
       'bold': 'font-400 font-2',
       'prose': 'hyphens-auto',
-      'cover': 'transition [&:hover,&:focus]:b-bord outline-none b-(1 transparent) relative',
+      'cover': 'transition [&:hover,&:focus]:b-bord outline-none b-(1 transparent) relative isolate',
       'under': 'underline decoration-(1 offset-[.25rem])',
       'focunder': 'decoration-current outline-none b-(1 transparent) [&:hover,&:focus]:text-white focus:b-current',
       'h-s-lvh': 'h-vh supports-[(height:100lvh)]:h-lvh',
