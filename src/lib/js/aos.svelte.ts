@@ -1,6 +1,5 @@
 import { browser } from '$app/environment'
 import gsap from 'gsap'
-
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
 
 const trs = {

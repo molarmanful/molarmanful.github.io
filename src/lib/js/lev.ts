@@ -1,5 +1,6 @@
 export default (a: string, b: string) => {
-  const mat: number[][] = [...Array.from({ length: a.length + 1 })].map(() => [...Array.from({ length: b.length + 1 })])
+  const mat: number[][]
+    = Array.from({ length: a.length + 1 }).map(() => Array.from({ length: b.length + 1 }))
   for (const i in [...a, ' ']) mat[i][0] = +i
   for (const i in [...b, ' ']) mat[0][i] = +i
 

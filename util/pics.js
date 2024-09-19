@@ -2,7 +2,6 @@
 
 import path from 'node:path'
 import process from 'node:process'
-
 import sharp from 'sharp'
 
 import { ws } from '../src/common/meta.js'

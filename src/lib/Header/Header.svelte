@@ -1,10 +1,9 @@
 <script lang='ts'>
   import { browser } from '$app/environment'
   import { cD } from '$lib/js/contexts'
-
   import gsap from 'gsap'
-
   import { Observer } from 'gsap/dist/Observer'
+
   import { Splash, Title } from '.'
 
   if (browser)

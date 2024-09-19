@@ -1,13 +1,11 @@
 <script lang='ts'>
   import { browser } from '$app/environment'
   import { page } from '$app/stores'
-
   import { desc } from '$common/meta'
   import { About, Art, Header, Modal, Nav } from '$lib'
   import { cD } from '$lib/js/contexts'
   import { FocusTrap } from '$lib/js/util.svelte'
   import { derived } from 'svelte/store'
-  import { classList } from 'svelte-body'
 
   const { D } = cD.get()
 
@@ -25,6 +23,10 @@
     },
     {},
   )
+
+  $effect(() => {
+    document.body.classList.toggle('overflow-hidden', !!$pstate.selected)
+  })
 </script>
 
 <svelte:head>
@@ -34,8 +36,6 @@
     content={desc}
   />
 </svelte:head>
-
-<svelte:body use:classList={[$pstate.selected && 'overflow-hidden']} />
 
 <div class='contents' use:useFocusTrap>
   <Nav />

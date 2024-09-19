@@ -1,5 +1,4 @@
 import { browser } from '$app/environment'
-
 import { MediaQuery, useEventListener } from 'runed'
 
 export { default as FocusTrap } from './FocusTrap.svelte'

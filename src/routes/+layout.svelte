@@ -1,18 +1,18 @@
 <script lang='ts'>
   import type { Snippet } from 'svelte'
-  import type { Snapshot } from './$types'
 
+  import '@unocss/reset/tailwind-compat.css'
   import { browser } from '$app/environment'
-
   import { Favicons } from '$lib'
   import AOS from '$lib/js/aos.svelte'
   import { cD } from '$lib/js/contexts'
   import D from '$lib/js/D'
   import { fadeonly, redmote, sfactor } from '$lib/js/util.svelte'
   import { SvelteSet } from 'svelte/reactivity'
-
-  import '@unocss/reset/tailwind-compat.css'
   import 'uno.css'
+
+  import type { Snapshot } from './$types'
+
   import '../app.css'
 
   interface Props {

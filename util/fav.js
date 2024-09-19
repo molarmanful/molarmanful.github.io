@@ -1,7 +1,6 @@
+import favicons from 'favicons'
 import fs from 'node:fs/promises'
 import path from 'node:path'
-
-import favicons from 'favicons'
 
 import { desc } from '../src/common/meta.js'
 

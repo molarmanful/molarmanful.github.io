@@ -1,6 +1,5 @@
 import { browser } from '$app/environment'
 import gsap from 'gsap'
-
 import { Flip } from 'gsap/dist/Flip'
 
 export default class {

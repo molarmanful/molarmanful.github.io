@@ -1,6 +1,5 @@
 import type AOS from '$lib/js/aos.svelte'
 import type D from '$lib/js/D'
-
 import type { MediaQuery } from 'runed'
 import type { SvelteSet } from 'svelte/reactivity'
 

@@ -1,6 +1,5 @@
 <script lang='ts'>
   import { page } from '$app/stores'
-
   import { Heading, Text } from '$lib/components'
   import { hexes } from '$lib/js/static'
   import gsap from 'gsap'

@@ -1,7 +1,7 @@
 <script lang='ts'>
   import type { HTMLAttributes } from 'svelte/elements'
-  import { FocusTrap } from '$lib/js/util.svelte'
 
+  import { FocusTrap } from '$lib/js/util.svelte'
   import { scale } from 'svelte/transition'
 
   interface Props extends HTMLAttributes<HTMLDivElement> {
