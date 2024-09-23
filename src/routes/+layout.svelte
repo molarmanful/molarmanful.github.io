@@ -11,6 +11,7 @@
   import { fadeonly, redmote, sfactor } from '$lib/js/util.svelte'
   import { SvelteSet } from 'svelte/reactivity'
 
+  import 'core-js/proposals/set-methods-v2'
   import '@unocss/reset/tailwind-compat.css'
   import 'uno.css'
   import '../app.css'

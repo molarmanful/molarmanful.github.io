@@ -9,8 +9,6 @@
 
   import { ItemsFilter } from '.'
 
-  import 'core-js/proposals/set-methods-v2'
-
   interface Props {
     aosS?: 'up' | 'in'
     children: Snippet<[string, boolean, boolean]>

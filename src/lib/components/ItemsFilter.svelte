@@ -5,8 +5,6 @@
   import Flip from '$lib/js/flip.svelte'
   import { FocusTrap } from '$lib/js/util.svelte'
 
-  import 'core-js/proposals/set-methods-v2'
-
   interface Props extends HTMLAttributes<HTMLDivElement> {
     aosS?: string
     itemsFlip: Flip
