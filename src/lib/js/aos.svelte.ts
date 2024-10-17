@@ -1,6 +1,7 @@
 import { browser } from '$app/environment'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
+import { tick } from 'svelte'
 
 const trs = {
   'fade-in': [
@@ -38,7 +39,6 @@ export interface Opts {
 
 export interface BatchOpts extends Opts {
   stagger: gsap.TweenVars['stagger']
-  all: boolean
 }
 
 export default class AOS {
@@ -54,7 +54,6 @@ export default class AOS {
   bopts: BatchOpts = {
     ...this.opts,
     stagger: 0,
-    all: false,
   }
 
   constructor() {
@@ -105,7 +104,6 @@ export default class AOS {
   batch(node: Element, opts: Partial<BatchOpts> = {}) {
     const {
       on,
-      all,
       type,
       start,
       ease,
@@ -121,26 +119,25 @@ export default class AOS {
     const xs = node.querySelectorAll('[data-batch]')
     gsap.set(xs, { ...from })
 
-    const sts = ScrollTrigger.batch(xs, {
-      onEnter(batch) {
-        if (all) {
-          for (const el of batch)
-            gsap.to(el, { ...to, duration, stagger, ease })
-          return
-        }
-        gsap.to(batch, { ...to, duration, stagger, ease })
-      },
-      onLeaveBack(batch) {
-        gsap.to(batch, { ...from, duration, stagger, ease })
-      },
-      scroller,
-      start,
+    let destroy = () => { }
+
+    tick().then(() => {
+      const sts = ScrollTrigger.batch(xs, {
+        onEnter(batch) {
+          gsap.to(batch, { ...to, duration, stagger, ease })
+        },
+        onLeaveBack(batch) {
+          gsap.to(batch, { ...from, duration, stagger, ease })
+        },
+        scroller,
+        start,
+      })
+
+      destroy = () => {
+        for (const st of sts) st.kill()
+      }
     })
 
-    return {
-      destroy() {
-        for (const st of sts) st.kill()
-      },
-    }
+    return { destroy }
   }
 }
