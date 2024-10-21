@@ -1,4 +1,4 @@
-/* eslint no-console: 0 */
+/* eslint no-console: 0, antfu/no-top-level-await: 0 */
 
 import path from 'node:path'
 import process from 'node:process'
