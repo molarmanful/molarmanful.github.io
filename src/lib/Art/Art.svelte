@@ -1,12 +1,6 @@
 <script lang='ts'>
   import { pushState } from '$app/navigation'
   import { A, CoverImg, Heading, ItemsGrid, Section } from '$lib/components'
-
-  const ON = (x: string) => (e: Event) => {
-    e.preventDefault()
-    ;(e.target as HTMLElement).blur()
-    pushState('', { selected: x })
-  }
 </script>
 
 <Section name='WORK' nav='art'>
@@ -26,7 +20,11 @@
           class='w-full bg-transparent cover'
           aria-label='open project entry: {name}'
           disabled={!on}
-          onclick={ON(name)}
+          onclick={(e) => {
+            e.preventDefault()
+            e.currentTarget.blur()
+            pushState('', { selected: name })
+          }}
         >
           <CoverImg {name} alt='Cover image for project entry: {name}.' {i} />
         </button>

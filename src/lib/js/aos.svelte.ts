@@ -126,6 +126,9 @@ export default class AOS {
         onEnter(batch) {
           gsap.to(batch, { ...to, duration, stagger, ease })
         },
+        onEnterBack(batch) {
+          gsap.to(batch, { ...to, duration, stagger, ease })
+        },
         onLeaveBack(batch) {
           gsap.to(batch, { ...from, duration, stagger, ease })
         },

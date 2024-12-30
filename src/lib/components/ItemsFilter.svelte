@@ -92,27 +92,28 @@
     data-flip
     use:useFocusTrap
   >
-    <li
-      class={actives.x.size > 0 ? '' : 'hidden'}
-      data-flip-id='filter@clear'
-      use:aos={{
-        on: !!aosS,
-        trigger: '#anchor-filter',
-        scroller: () => scroller?.x,
-      }}
-    >
-      <button
-        class='btn text-no'
-        aria-label='clear all filtered tags'
-        onclick={() => {
-          handleAnim()
-          actives.x.clear()
-          handleRun()
+    {#if actives.x.size > 0}
+      <li
+        data-flip-id='filter@clear'
+        use:aos={{
+          on: !!aosS,
+          trigger: '#anchor-filter',
+          scroller: () => scroller?.x,
         }}
       >
-        clear
-      </button>
-    </li>
+        <button
+          class='btn text-no'
+          aria-label='clear all filtered tags'
+          onclick={() => {
+            handleAnim()
+            actives.x.clear()
+            handleRun()
+          }}
+        >
+          clear
+        </button>
+      </li>
+    {/if}
 
     {#each alltags as tag, i}
       <li
@@ -137,7 +138,7 @@
             if (actives.x.has(tag))
               actives.x.delete(tag)
             else actives.x.add(tag)
-            ;(e.target as HTMLElement).blur()
+            e.currentTarget.blur()
             handleRun()
           }}
         >

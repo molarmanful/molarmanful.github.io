@@ -1,4 +1,5 @@
 <script lang='ts'>
+  import { browser } from '$app/environment'
   import { page } from '$app/state'
   import { desc } from '$common/meta'
   import { About, Art, Header, Modal, Nav } from '$lib'
@@ -12,8 +13,16 @@
     initialFocus: false,
   }).fns
 
+  const selected = $derived.by<App.PageState['selected']>(() => {
+    if (!browser)
+      return
+
+    ((_) => {})(page.state)
+    return history.state?.['sveltekit:states']?.selected
+  })
+
   $effect(() => {
-    document.body.classList.toggle('overflow-hidden', !!page.state.selected)
+    document.body.classList.toggle('overflow-hidden', !!selected)
   })
 </script>
 
@@ -30,5 +39,5 @@
   <Header />
   <About />
   <Art />
-  <Modal selected={page.state.selected} />
+  <Modal {selected} />
 </div>

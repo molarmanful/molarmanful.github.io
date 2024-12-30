@@ -1,6 +1,7 @@
 <script lang='ts'>
   import { cscroll } from '$lib/js/contexts'
   import ScrollTrigger from 'gsap/dist/ScrollTrigger'
+  import { tick } from 'svelte'
 
   import { Video } from '.'
 
@@ -15,22 +16,26 @@
   let loaded = $state(false)
   const scroller = cscroll.get()
 
-  let st = $state<ScrollTrigger>()
-
   const loader = (node: HTMLVideoElement) => {
-    st = ScrollTrigger.create({
-      trigger: node,
-      scroller: scroller?.x,
-      start: 'top bottom+=100px',
-      end: 'bottom top-=100px',
-      onToggle() {
-        node.load()
-        node.autoplay = true
-        st?.kill()
-      },
+    let st: ScrollTrigger
+    let destroy = () => {}
+
+    tick().then(() => {
+      st = ScrollTrigger.create({
+        trigger: node,
+        scroller: scroller?.x,
+        start: 'top bottom+=100px',
+        end: 'bottom top-=100px',
+        onToggle() {
+          node.load()
+          node.autoplay = true
+          st.kill()
+        },
+      })
+      destroy = () => st.kill()
     })
 
-    return { destroy: () => st?.kill() }
+    return { destroy }
   }
 </script>
 
