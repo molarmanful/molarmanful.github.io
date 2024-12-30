@@ -36,7 +36,7 @@
     bind:this={el}
     style:width='{w * ~~Math.max(1, pw / w)}px'
     style:image-rendering={px ? 'pixelated' : ''}
-    class="{loaded ? 'opacity-100' : 'opacity-0'} block mx-auto mt-6 md:mt-8' max-w-full ofade-200"
+    class="mx-auto mt-6 block max-w-full ofade-200 md:mt-8 {loaded ? 'opacity-100' : 'opacity-0'}"
     decoding='async'
     loading='lazy'
     onload={rsz}

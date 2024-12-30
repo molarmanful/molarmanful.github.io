@@ -23,13 +23,13 @@
 
 <section
   id={nav}
-  class="{bord ? 'lt-3xl:b-t b-bord' : ''} backdrop-grayscale flex relative w-screen"
+  class="relative w-screen flex backdrop-grayscale {bord ? 'b-bord lt-3xl:b-t' : ''}"
   {...rest}
 >
   <div
     class='flex 3xl:(flex-1 flex-col) lt-3xl:hidden'
     use:aos={{
-      type: `fade-${fo?.matches ? 'in' : 'right'}`,
+      type: `fade-${fo?.current ? 'in' : 'right'}`,
     }}
   >
     <div class='sticky top-0 ml-auto pb-32 pt-6 write-vertical-left xl:px-4 type-7'>
@@ -40,5 +40,5 @@
     </div>
   </div>
   <div class='bg-black/80 lt-3xl:flex-1'>{@render children()}</div>
-  <div class="{bord ? 'b-(t bord)' : ''} bg-black/80 3xl:flex-1 lt-3xl:hidden"></div>
+  <div class="bg-black/80 3xl:flex-1 lt-3xl:hidden {bord ? 'b-(t bord)' : ''}"></div>
 </section>

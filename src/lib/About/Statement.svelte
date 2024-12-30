@@ -13,12 +13,12 @@
 </script>
 
 {#snippet h3(text: string, c = 'text-bord')}
-  <h3 class='{c} mt-4 lg:mt-8 bold' use:aos>
+  <h3 class='mt-4 bold lg:mt-8 {c}' use:aos>
     {text}
   </h3>
 {/snippet}
 
-<div class='{0} prose {clazz}' {...rest}>
+<div class='prose {clazz}' {...rest}>
   <Subheading aoso={{}}>
     <span class='text-text-200 bold'>BENJAMIN PANG</span> is a creative
     technologist from the California Bay Area and a graduate of NYU ITP.

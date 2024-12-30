@@ -17,9 +17,9 @@
 </script>
 
 <Video {aspect}>
-  <div class='aspect-{aspect} max-full mx-auto'>
+  <div class='mx-auto max-full {`aspect-${aspect}`}'>
     <iframe
-      class="{px ? 'image-render-pixel' : ''} full object-contain"
+      class="full object-contain {px ? 'image-render-pixel' : ''}"
       allow='autoplay;'
       loading='lazy'
       src='https://iframe.mediadelivery.net/embed/296935/{a}?{q}'

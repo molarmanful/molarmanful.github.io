@@ -125,11 +125,11 @@
         }}
       >
         <button
-          class="{actives.x.has(tag)
+          class="btn {actives.x.has(tag)
             ? 'text-yes'
             : xs.has(tag)
             ? 'text-bord'
-            : 'text-bord-900 pointer-events-none'} btn"
+            : 'pointer-events-none text-bord-900'}"
           aria-label='filter by tag: {tag}'
           disabled={not_xs.has(tag)}
           onclick={(e) => {

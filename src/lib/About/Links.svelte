@@ -47,11 +47,11 @@
   ]
 </script>
 
-<div class='{0} prose {clazz}' {...rest}>
+<div class='prose {clazz}' {...rest}>
   <h2
     class='noprose text-(head stroked) type-6'
     use:aos={{
-      type: `fade-${fo?.matches ? 'in' : 'left'}`,
+      type: `fade-${fo?.current ? 'in' : 'left'}`,
     }}
   >
     LINKS
@@ -61,7 +61,7 @@
       <li
         class='text-accent'
         use:aos={{
-          type: `fade-${fo?.matches ? 'in' : 'left'}`,
+          type: `fade-${fo?.current ? 'in' : 'left'}`,
           delay: i * 0.1,
           trigger: '#anchor-abt-links',
         }}

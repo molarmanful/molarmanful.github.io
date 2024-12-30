@@ -15,7 +15,7 @@
 </script>
 
 <h2
-  class="{bold ? 'bold text-head' : 'font-200 text-text-300'} case-normal font-2 mt-6 lg:mt-12 type-5 {clazz}"
+  class="mt-6 font-2 case-normal lg:mt-12 type-5 {bold ? 'text-head bold' : 'text-text-300 font-200'} {clazz}"
   use:aos={aoso}
   {...rest}
 >

@@ -84,7 +84,7 @@
   const itemsFlip = new Flip('items')
 
   $effect(() => {
-    if (rm?.matches)
+    if (rm?.current)
       return
 
     itemsFlip.flip()
@@ -125,7 +125,7 @@
   data-flip
   use:batch={{
     on: !!aosS,
-    type: `fade-${aosS && !fo?.matches ? aosS : 'in'}`,
+    type: `fade-${aosS && !fo?.current ? aosS : 'in'}`,
     stagger: 0.1,
     scroller: scroller?.x,
   }}
@@ -136,7 +136,7 @@
     {@const on = chosen.has(name)}
     <div
       bind:this={animels[i]}
-      class="{on ? '' : 'brightness-10 pointer-events-none!'} {anim ? '' : 'suppress'} flex transition-filter"
+      class="flex transition-filter {on ? '' : 'brightness-10 pointer-events-none!'} {anim ? '' : 'suppress'}"
       data-batch
       data-flip-id='item-{name}'
     >

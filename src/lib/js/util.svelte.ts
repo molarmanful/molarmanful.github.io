@@ -1,5 +1,6 @@
 import { browser } from '$app/environment'
-import { MediaQuery, useEventListener } from 'runed'
+import { useEventListener } from 'runed'
+import { MediaQuery } from 'svelte/reactivity'
 
 export { default as FocusTrap } from './FocusTrap.svelte'
 
@@ -22,7 +23,7 @@ export const sfactor = (f: (a: number) => void) => {
   useEventListener(window, 'resize', g)
 }
 
-export const clickout = (node: Element, { f = (_?: Event) => {} }) => {
+export const clickout = (node: Element, { f = (_?: Event) => { } }) => {
   if (!browser)
     return
 
@@ -34,10 +35,8 @@ export const clickout = (node: Element, { f = (_?: Event) => {} }) => {
   useEventListener(document.body, 'click', g)
 }
 
-const wrapMQ = (q: string) => browser ? new MediaQuery(q) : void 0
+export const fadeonly = () => new MediaQuery('(hover: none), (prefers-reduced-motion: reduce)')
 
-export const fadeonly = () => wrapMQ('(hover: none), (prefers-reduced-motion: reduce)')
-
-export const redmote = () => wrapMQ('(prefers-reduced-motion: reduce)')
+export const redmote = () => new MediaQuery('(prefers-reduced-motion: reduce)')
 
 export const artalt = (name: string) => `Artwork: "${name}" by BandidoJim.`

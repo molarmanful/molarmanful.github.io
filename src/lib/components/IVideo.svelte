@@ -35,9 +35,9 @@
 </script>
 
 <Video {aspect}>
-  <div class='aspect-{aspect} max-full mx-auto'>
+  <div class='mx-auto max-full {`aspect-${aspect}`}'>
     <video
-      class="{loaded ? 'opacity-100' : 'opacity-0'} {px ? 'image-render-pixel' : ''} full object-contain ofade-200"
+      class="full object-contain ofade-200 {loaded ? 'opacity-100' : 'opacity-0'} {px ? 'image-render-pixel' : ''}"
       loop
       muted
       oncanplaythrough={() => {

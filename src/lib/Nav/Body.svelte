@@ -24,7 +24,7 @@
 </script>
 
 <div
-  class='{0} origin-top-right b-(1 current) bg-black p-4 text-bord {clazz}'
+  class='origin-top-right b-(1 current) bg-black p-4 text-bord {clazz}'
   role='navigation'
   use:useFocusTrap
   transition:scale={{ duration: 300 }}

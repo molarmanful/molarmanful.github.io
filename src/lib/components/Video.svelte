@@ -10,6 +10,6 @@
   const { aspect = 'video', children }: Props = $props()
 </script>
 
-<div class='aspect-{aspect} bg-bord-950 mt-6 md:mt-8 max-full mx-auto'>
+<div class='mx-auto mt-6 max-full bg-bord-950 md:mt-8 {`aspect-${aspect}`}'>
   {@render children()}
 </div>

@@ -13,6 +13,6 @@
   const { aos } = cD.get()
 </script>
 
-<h1 class='{0} text-(head stroked) uppercase hyphens-manual type-7 {clazz}' use:aos={aoso} {...rest}>
+<h1 class='text-(head stroked) uppercase hyphens-manual type-7 {clazz}' use:aos={aoso} {...rest}>
   {@render children()}
 </h1>

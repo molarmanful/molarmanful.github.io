@@ -13,6 +13,6 @@
   const { aos } = cD.get()
 </script>
 
-<p class='{0} mt-4 lg:mt-8 {clazz}' use:aos={aoso} {...rest}>
+<p class='mt-4 lg:mt-8 {clazz}' use:aos={aoso} {...rest}>
   {@render children()}
 </p>

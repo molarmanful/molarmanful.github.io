@@ -53,7 +53,7 @@
         yPercent: 0,
       }, {
         opacity: 0,
-        yPercent: -!fo?.matches * 10,
+        yPercent: -!fo?.current * 10,
         scrollTrigger: {
           scrub: 0.2,
           start: 'top top',
@@ -66,7 +66,7 @@
       Observer.create({
         type: 'pointer',
         onMove(self) {
-          if (fo?.matches || scrollY >= innerHeight)
+          if (fo?.current || scrollY >= innerHeight)
             return
 
           const prog = 1 - scrollY / innerHeight

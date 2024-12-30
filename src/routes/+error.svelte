@@ -63,7 +63,7 @@
       <span class='text-accent'>{s[0]}</span
       ><span class='text-accent'
       >{s[1]}</span
-      ><span class="{s[0] === s[2] && '08'.includes(s[1]) ? 'scale-x--100' : ''} inline-block text-accent"
+      ><span class="inline-block text-accent {s[0] === s[2] && '08'.includes(s[1]) ? 'scale-x--100' : ''}"
       >{s[2]}</span>
     </Heading>
     <Text class='relative z-10'>

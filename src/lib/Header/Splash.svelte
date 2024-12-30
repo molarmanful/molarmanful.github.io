@@ -12,7 +12,7 @@
   const { clazz = '', ...rest }: Props = $props()
 </script>
 
-<svg class='{0} h-full {clazz}' viewBox='0 0 1587 1080' {...rest}>
+<svg class='h-full {clazz}' viewBox='0 0 1587 1080' {...rest}>
   {#each me as el}
     <SvgEl {el} />
   {/each}

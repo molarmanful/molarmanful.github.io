@@ -25,7 +25,7 @@
 
 <button
   style:transition='border-color 400ms'
-  class='{0} h-16 w-16 b-(1 current) bg-black text-bord outline-none focus:b-white focus:var_x-white {clazz}'
+  class='h-16 w-16 b-(1 current) bg-black text-bord outline-none focus:b-white focus:var_x-white {clazz}'
   aria-label='nav menu'
   data-breathe
   use:slide

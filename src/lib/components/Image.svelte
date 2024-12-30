@@ -44,7 +44,7 @@
   {/if}
   <img
     style:background={lqip && `url(${lqip}) center center / cover no-repeat`}
-    class="{loaded ? 'loaded' : ''} {mt ? 'mt-0' : 'mt-6 md:mt-8'} laz bg-contain! mx-auto max-h-full object-contain text-0 w-screen max-w-full {clazz}"
+    class="laz  mx-auto max-h-full max-w-full w-screen object-contain text-0 bg-contain! {loaded ? 'loaded' : ''} {mt ? 'mt-0' : 'mt-6 md:mt-8'} {clazz}"
     alt={name}
     decoding='async'
     height={meta?.height}
