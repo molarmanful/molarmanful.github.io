@@ -34,7 +34,7 @@ export interface Opts {
   ease: gsap.TweenVars['ease']
   duration: gsap.TweenVars['duration']
   trigger?: gsap.DOMTarget
-  scroller?: ScrollTrigger.Vars['scroller']
+  scroller?: () => ScrollTrigger.Vars['scroller']
 }
 
 export interface BatchOpts extends Opts {
@@ -92,7 +92,7 @@ export default class AOS {
       delay,
       scrollTrigger: {
         trigger: trigger ?? node,
-        scroller,
+        scroller: scroller?.(),
         toggleActions: 'restart none none reverse',
         start,
       },
@@ -129,7 +129,7 @@ export default class AOS {
         onLeaveBack(batch) {
           gsap.to(batch, { ...from, duration, stagger, ease })
         },
-        scroller,
+        scroller: scroller?.(),
         start,
       })
 

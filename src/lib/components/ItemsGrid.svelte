@@ -127,7 +127,7 @@
     on: !!aosS,
     type: `fade-${aosS && !fo?.current ? aosS : 'in'}`,
     stagger: 0.1,
-    scroller: scroller?.x,
+    scroller: () => scroller?.x,
   }}
   use:useFocusTrap
   {...rest}

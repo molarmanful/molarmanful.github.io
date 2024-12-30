@@ -4,6 +4,7 @@
   import { cD, cfocus, cscroll } from '$lib/js/contexts'
   import Flip from '$lib/js/flip.svelte'
   import { FocusTrap } from '$lib/js/util.svelte'
+  import { tick } from 'svelte'
 
   interface Props extends HTMLAttributes<HTMLDivElement> {
     aosS?: string
@@ -49,7 +50,7 @@
   }
 
   const handleRun = () => {
-    requestAnimationFrame(() => {
+    tick().then(() => {
       itemsFlip.batch?.run(true)
     })
   }
@@ -79,7 +80,7 @@
 <div {...rest}>
   <h2
     class='mb-3 text-bord-500 bold'
-    use:aos={{ on: !!aosS, scroller: scroller?.x }}
+    use:aos={{ on: !!aosS, scroller: () => scroller?.x }}
   >
     Filter:
   </h2>
@@ -97,7 +98,7 @@
         use:aos={{
           on: !!aosS,
           trigger: '#anchor-filter',
-          scroller: scroller?.x,
+          scroller: () => scroller?.x,
         }}
       >
         <button
@@ -121,7 +122,7 @@
           on: !!aosS,
           trigger: '#anchor-filter',
           delay: 0.03 * (i + 1),
-          scroller: scroller?.x,
+          scroller: () => scroller?.x,
         }}
       >
         <button
