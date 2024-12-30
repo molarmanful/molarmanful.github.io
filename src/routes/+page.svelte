@@ -1,11 +1,9 @@
 <script lang='ts'>
-  import { browser } from '$app/environment'
-  import { page } from '$app/stores'
+  import { page } from '$app/state'
   import { desc } from '$common/meta'
   import { About, Art, Header, Modal, Nav } from '$lib'
   import { cD } from '$lib/js/contexts'
   import { FocusTrap } from '$lib/js/util.svelte'
-  import { derived } from 'svelte/store'
 
   const { D } = cD.get()
 
@@ -14,20 +12,8 @@
     initialFocus: false,
   }).fns
 
-  const pstate = derived<typeof page, App.PageState>(
-    page,
-    ($page, set) => {
-      if (!browser)
-        return
-      set(history.state['sveltekit:states'] ?? {})
-    },
-    {},
-  )
-
   $effect(() => {
-    pstate.subscribe(({ selected }) => {
-      document.body.classList.toggle('overflow-hidden', !!selected)
-    })
+    document.body.classList.toggle('overflow-hidden', !!page.state.selected)
   })
 </script>
 
@@ -44,5 +30,5 @@
   <Header />
   <About />
   <Art />
-  <Modal selected={$pstate.selected} />
+  <Modal selected={page.state.selected} />
 </div>

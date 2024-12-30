@@ -1,5 +1,5 @@
 <script lang='ts'>
-  import { page } from '$app/stores'
+  import { page } from '$app/state'
   import { Heading, Text } from '$lib/components'
   import { hexes } from '$lib/js/static'
   import gsap from 'gsap'
@@ -10,7 +10,7 @@
   let ch = $state(1)
   let cw = $state(1)
 
-  const s = `${$page.status}`
+  const s = `${page.status}`
 
   const woo = (node: Element) => {
     const f = () => {
