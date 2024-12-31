@@ -8,6 +8,7 @@
   const { src, ...rest }: Props = $props()
 
   let el: HTMLImageElement | undefined = $state()
+  let devicePixelRatio = $state(1)
   let loaded = $state(false)
   let w = $state(1)
   let pw = $state(1)
@@ -31,10 +32,12 @@
   useEventListener(() => window, 'resize', rsz)
 </script>
 
+<svelte:window bind:devicePixelRatio />
+
 <div class='w-full'>
   <img
     bind:this={el}
-    style:width='{w * ~~Math.max(1, pw / w)}px'
+    style:width='{w * ~~devicePixelRatio / devicePixelRatio * ~~Math.max(1, pw / w)}px'
     style:image-rendering={px ? 'pixelated' : ''}
     class="mx-auto mt-6 block max-w-full ofade-200 md:mt-8 {loaded ? 'opacity-100' : 'opacity-0'}"
     decoding='async'
