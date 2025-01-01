@@ -18,3 +18,7 @@
   alt='Sample of the kirsch font.'
   src='https://github.com/molarmanful/kirsch/raw/master/img/all.png'
 />
+<PxImg
+  alt='All glyphs in the kirsch font.'
+  src='https://github.com/molarmanful/kirsch/raw/master/img/chars.png'
+/>
