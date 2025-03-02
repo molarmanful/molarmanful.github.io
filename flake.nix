@@ -11,8 +11,7 @@
   outputs =
     inputs@{ flake-parts, ... }:
     flake-parts.lib.mkFlake { inherit inputs; } {
-      imports = [
-      ];
+      imports = [ inputs.devshell.flakeModule ];
       systems = import inputs.systems;
       perSystem =
         {
@@ -43,10 +42,33 @@
                 package = deadnix;
                 category = "linter";
               }
+              { package = nodejs_latest; }
               { package = pnpm; }
+              {
+                package = vscode-langservers-extracted;
+                category = "lsp";
+              }
+              {
+                package = vtsls;
+                category = "lsp";
+              }
+              {
+                package = svelte-language-server;
+                category = "lsp";
+              }
+              {
+                package = tailwindcss-language-server;
+                category = "lsp";
+              }
+              {
+                package = emmet-language-server;
+                category = "lsp";
+              }
+              {
+                package = eslint;
+                category = "linter";
+              }
             ];
-
-            packages = with pkgs; [ ];
           };
         };
     };
