@@ -57,11 +57,11 @@
                 category = "lsp";
               }
               {
-                package = tailwindcss-language-server;
+                package = emmet-language-server;
                 category = "lsp";
               }
               {
-                package = emmet-language-server;
+                package = stylelint-language-server;
                 category = "lsp";
               }
               {
