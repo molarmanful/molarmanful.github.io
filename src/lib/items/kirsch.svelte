@@ -16,9 +16,9 @@
 
 <PxImg
   alt='Sample of the kirsch font.'
-  src='https://github.com/molarmanful/kirsch/raw/master/img/all.png'
+  src='https://github.com/molarmanful/kirsch/raw/main/img/all.png'
 />
 <PxImg
   alt='All glyphs in the kirsch font.'
-  src='https://github.com/molarmanful/kirsch/raw/master/img/chars.png'
+  src='https://github.com/molarmanful/kirsch/raw/main/img/chars.png'
 />

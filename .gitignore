@@ -4,3 +4,4 @@ dist
 build
 .svelte-kit
 OLD
+.direnv
