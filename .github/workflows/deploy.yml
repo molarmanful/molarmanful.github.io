@@ -1,4 +1,3 @@
----
 name: deploy
 on:
   push:
@@ -17,14 +16,13 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
-      - name: checkout
-        uses: actions/checkout@v4
-      - name: node
-        uses: actions/setup-node@v4
+      - uses: actions/checkout@v4
+        with:
+          lfs: true
+      - uses: actions/setup-node@v4
         with:
           node-version: '*'
-      - name: pnpm
-        uses: pnpm/action-setup@v4
+      - uses: pnpm/action-setup@v4
         with:
           version: latest
           run_install: false
@@ -39,8 +37,7 @@ jobs:
           path: ${{ steps.pnpm-cache.outputs.STORE_PATH }}
           key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
           restore-keys: ${{ runner.os }}-pnpm-store-
-      - name: pnpm deps
-        run: pnpm i
+      - run: pnpm i
       - name: setup node_modules/.cache
         uses: actions/cache@v4
         with:
@@ -49,19 +46,14 @@ jobs:
             github.run_id }}
           restore-keys: ${{ runner.os }}-node-cache-${{ hashFiles('**/pnpm-lock.yaml')
             }}-
-      - name: check
-        run: |
-          pnpm check
-      - name: build
-        run: |
+      - run: pnpm check
+      - run: |
           pnpm build
           touch build/.nojekyll
-      - name: upload
-        if: github.ref_name == github.event.repository.default_branch
+      - if: github.ref_name == github.event.repository.default_branch
         uses: actions/upload-pages-artifact@v3
         with:
           path: build
-      - name: deploy
-        if: github.ref_name == github.event.repository.default_branch
+      - if: github.ref_name == github.event.repository.default_branch
         id: deployment
         uses: actions/deploy-pages@v4
