@@ -3,7 +3,7 @@ import { colors } from '@unocss/preset-uno/colors'
 import { presetIcons, presetUno, presetWebFonts, transformerDirectives, transformerVariantGroup } from 'unocss'
 import { presetScrollbar } from 'unocss-preset-scrollbar'
 
-import { allColors } from './src/lib/js/static.js'
+import { allColors } from './src/lib/js/static'
 
 export default {
   presets: [

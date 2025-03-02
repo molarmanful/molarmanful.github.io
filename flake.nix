@@ -18,6 +18,9 @@
           pkgs,
           ...
         }:
+        let
+          unocss-language-server = pkgs.callPackage ./unocss-language-server.nix { };
+        in
         {
           devshells.default = {
 
@@ -61,7 +64,11 @@
                 category = "lsp";
               }
               {
-                package = stylelint-language-server;
+                package = unocss-language-server;
+                category = "lsp";
+              }
+              {
+                package = stylelint-lsp;
                 category = "lsp";
               }
               {
