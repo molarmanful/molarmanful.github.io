@@ -1,7 +1,6 @@
 {
   stdenvNoCC,
   fetchFromGitHub,
-  makeWrapper,
   nodejs_latest,
   pnpm_9,
 }:
@@ -18,9 +17,8 @@ stdenvNoCC.mkDerivation (finalAttrs: {
   };
 
   nativeBuildInputs = [
-    pnpm_9.configHook
     nodejs_latest
-    makeWrapper
+    pnpm_9.configHook
   ];
 
   pnpmDeps = pnpm_9.fetchDeps {
