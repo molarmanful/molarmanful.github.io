@@ -23,4 +23,4 @@
   {...rest}
 />
 
-<div class="colize  absolute inset-0 full mix-blend-color transition-opacity,background-color-400 {i ? 'bg-head' : 'bg-accent'}"></div>
+<div class='{i ? 'bg-head' : 'bg-accent'} colize absolute inset-0 full mix-blend-color transition-opacity,background-color-400'></div>

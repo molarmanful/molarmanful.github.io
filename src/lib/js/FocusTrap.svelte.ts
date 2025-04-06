@@ -1,4 +1,6 @@
-import { createFocusTrap, type FocusTrap as FTType, type Options } from 'focus-trap'
+import type { FocusTrap as FTType, Options } from 'focus-trap'
+
+import { createFocusTrap } from 'focus-trap'
 
 interface Opts extends Options {
   immediate?: boolean
