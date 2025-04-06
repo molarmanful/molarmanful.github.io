@@ -22,6 +22,8 @@
           unocss-language-server = pkgs.callPackage ./unocss-language-server.nix { };
         in
         {
+          packages.default = pkgs.callPackage ./default.nix { };
+
           devshells.default = {
 
             commands = with pkgs; [
