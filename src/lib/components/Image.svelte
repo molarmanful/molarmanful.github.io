@@ -3,7 +3,6 @@
 
   import { ws } from '$common/meta'
   import { cD } from '$lib/js/contexts'
-  import shasRaw from '$lib/js/shas.json'
 
   interface Props extends HTMLImgAttributes {
     name?: string
@@ -16,8 +15,6 @@
   const { name, b, sizes, mt = false, clazz = '', ...rest }: Props = $props()
   const { D } = cD.get()
 
-  const shas = shasRaw as Record<'covers' | 'art' | 'media', Record<string, string>>
-
   const [lqip, meta] = $derived(
     Array.isArray(b) ? [D[b[0]][0].get(name ?? ''), D[b[0]][1].get(name ?? '')] : [],
   )
@@ -26,7 +23,7 @@
 
   const url = (name?: string, w = ws1.at(-1), x = 'jpg') =>
     Array.isArray(b)
-      ? `https://cdn.benpa.ng/${b[0]}@${name}@${w}.${x}?hash=${shas[b[0]][name!] ?? ''}`
+      ? `https://cdn.benpa.ng/${b[0]}@${name}@${w}.${x}`
       : 'INVALID'
   const urls = (name?: string, x = 'jpg') =>
     ws1.map(w => `${url(name, w, x)} ${w}w`).join(', ')
