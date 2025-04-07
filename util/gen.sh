@@ -8,14 +8,14 @@ gen() {
   node util/pics "$2" "out/$1@$name" "$cores"
 }
 
+rm -rf out
 mkdir -p out
+util/ha.sh
 
-if [ $# -gt 0 ]; then
-  gen "$1" src/lib/"$1/$2"
-else
-  for x in media art covers; do
-    for f in src/lib/"$x"/*; do
+for x in media art covers; do
+  for f in src/lib/"$x"/*; do
+    if [[ -n $(git status --porcelain "$f") ]]; then
       gen "$x" "$f"
-    done
+    fi
   done
-fi
+done
