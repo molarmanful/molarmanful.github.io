@@ -77,8 +77,6 @@
                 package = eslint;
                 category = "linter";
               }
-              { package = xxd; }
-              { package = dasel; }
             ];
           };
         };

@@ -5,7 +5,8 @@ cores="$(nproc --all)"
 gen() {
   local file="${2##*/}"
   local name="${file%%.*}"
-  node util/pics "$2" "out/$1@$name" "$cores"
+  v=$(node util/ver "$1" "$name")
+  node util/pics "$2" "out/$1@$name@$v" "$cores"
 }
 
 rm -rf out
