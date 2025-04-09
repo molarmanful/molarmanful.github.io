@@ -1,7 +1,7 @@
 <script lang='ts' module>
-  export const desc = '2024. A versatile bitmap font with an organic flair. Features a comprehensive CI/CD system for generation of font files and image samples.'
-  export const tags = ['typography', 'design', 'dev']
-  export const year = 2024
+  export const desc = '2024. A versatile bitmap font with an organic flair. Features extensive Unicode and Nerd Fonts support.'
+  export const tags = ['typography', 'design']
+  export const year = 2025
 </script>
 
 <script lang='ts'>

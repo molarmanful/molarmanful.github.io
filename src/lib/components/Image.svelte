@@ -25,7 +25,7 @@
   const hashes = hashesRaw as Record<'covers' | 'art' | 'media', Record<string, number>>
   const url = (name?: string, w = ws1.at(-1), x = 'jpg') =>
     Array.isArray(b)
-      ? `https://cdn.benpa.ng/${b[0]}@${name}@v${hashes[b[0]][name!]}@${w}.${x}`
+      ? `https://cdn.benpa.ng/${b[0]}%40${name}%40v${hashes[b[0]][name!]}%40${w}.${x}`
       : 'INVALID'
   const urls = (name?: string, x = 'jpg') =>
     ws1.map(w => `${url(name, w, x)} ${w}w`).join(', ')

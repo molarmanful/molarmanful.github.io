@@ -176,7 +176,8 @@
     "simian": 0,
     "talkingheads": 0,
     "vector": 0,
-    "violetventures": 0
+    "violetventures": 0,
+    "bited": 0
   },
   "media": {
     "30mff": 0,
@@ -263,6 +264,7 @@
     "vv_generic": 0,
     "vv_knockout": 0,
     "vv_landscape": 0,
-    "waterworks": 0
+    "waterworks": 0,
+    "bited_ui": 0
   }
 }

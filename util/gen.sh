@@ -6,7 +6,7 @@ gen() {
   local file="${2##*/}"
   local name="${file%%.*}"
   v=$(node util/ver "$1" "$name")
-  node util/pics "$2" "out/$1@$name@$v" "$cores"
+  node util/pics "$2" "out/$1@$name@v$v" "$cores"
 }
 
 rm -rf out
