@@ -77,7 +77,7 @@
                 package = eslint;
                 category = "linter";
               }
-              { package = dasel; }
+              { package = nushell; }
             ];
           };
         };

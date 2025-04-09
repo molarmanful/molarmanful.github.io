@@ -19,6 +19,7 @@ export default antfu(
       css: true,
       html: true,
     },
+    ignores: ['src/common/hashes.json'],
   },
   {
     rules: {
