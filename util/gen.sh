@@ -12,6 +12,8 @@ gen() {
 rm -rf out
 mkdir -p out
 
+util/ha.sh
+
 for x in media art covers; do
   for f in src/lib/"$x"/*; do
     if [[ -n $(git status --porcelain "$f") ]]; then
