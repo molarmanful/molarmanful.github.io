@@ -5,8 +5,8 @@ cores="$(nproc --all)"
 gen() {
   local file="${2##*/}"
   local name="${file%%.*}"
-  v=$(node util/ver "$1" "$name")
-  node util/pics "$2" "out/$1@$name@v$v" "$cores"
+  hash=$(cat src/common/hashes.json | jq -r ".$1.\"$name\"")
+  node util/pics "$2" "out/$1@$name@$hash" "$cores"
 }
 
 rm -rf out
