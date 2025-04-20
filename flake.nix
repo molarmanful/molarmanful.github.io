@@ -33,6 +33,7 @@
               vscode-langservers-extracted
               vtsls
               svelte-language-server
+              emmet-language-server
               unocss-language-server
               stylelint-lsp
               # formatters
