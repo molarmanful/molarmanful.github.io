@@ -2,83 +2,55 @@
   description = "Description for the project";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
-    flake-parts.url = "github:hercules-ci/flake-parts";
-    systems.url = "systems";
-    devshell.url = "github:numtide/devshell";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    systems.url = "github:nix-systems/default";
+    flake-parts = {
+      url = "github:hercules-ci/flake-parts";
+      inputs.nixpkgs-lib.follows = "nixpkgs";
+    };
   };
 
   outputs =
     inputs@{ flake-parts, ... }:
     flake-parts.lib.mkFlake { inherit inputs; } {
-      imports = [ inputs.devshell.flakeModule ];
       systems = import inputs.systems;
       perSystem =
-        {
-          pkgs,
-          ...
-        }:
+        { pkgs, self', ... }:
         let
           unocss-language-server = pkgs.callPackage ./unocss-language-server.nix { };
         in
         {
           packages.default = pkgs.callPackage ./default.nix { };
 
-          devshells.default = {
-
-            commands = with pkgs; [
-              {
-                package = nil;
-                category = "lsp";
-              }
-              {
-                package = nixd;
-                category = "lsp";
-              }
-              {
-                package = nixfmt-rfc-style;
-                category = "formatter";
-              }
-              {
-                package = statix;
-                category = "linter";
-              }
-              {
-                package = deadnix;
-                category = "linter";
-              }
-              { package = nodejs_latest; }
-              { package = pnpm; }
-              {
-                package = vscode-langservers-extracted;
-                category = "lsp";
-              }
-              {
-                package = vtsls;
-                category = "lsp";
-              }
-              {
-                package = svelte-language-server;
-                category = "lsp";
-              }
-              {
-                package = emmet-language-server;
-                category = "lsp";
-              }
-              {
-                package = unocss-language-server;
-                category = "lsp";
-              }
-              {
-                package = stylelint-lsp;
-                category = "lsp";
-              }
-              {
-                package = eslint;
-                category = "linter";
-              }
-              { package = nushell; }
+          devShells.default = pkgs.mkShell {
+            packages = with pkgs; [
+              nodejs_latest
+              pnpm
+              nushell
+              # lsps
+              nil
+              nixd
+              vscode-langservers-extracted
+              vtsls
+              svelte-language-server
+              unocss-language-server
+              stylelint-lsp
+              # formatters
+              nixfmt-rfc-style
+              # linters
+              statix
+              deadnix
+              eslint
             ];
+          };
+
+          formatter = pkgs.writeShellApplication {
+            name = "linter";
+            runtimeInputs = self'.devShells.default.nativeBuildInputs;
+            text = ''
+              find . -iname '*.nix' -exec nixfmt {} \; -exec deadnix -e {} \; -exec statix fix {} \;
+              pnpm lint
+            '';
           };
         };
     };
