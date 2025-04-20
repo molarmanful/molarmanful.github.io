@@ -7,13 +7,13 @@
 
 stdenvNoCC.mkDerivation (finalAttrs: {
   pname = "unocss-language-server";
-  version = "0.1.5";
+  version = "0.1.7";
 
   src = fetchFromGitHub {
     owner = "xna00";
     repo = finalAttrs.pname;
     tag = "v${finalAttrs.version}";
-    hash = "sha256-WRCvpBpLLjpLucpTk2N+6RILsx7a6F143D4XBDU0wKk=";
+    hash = "sha256-zvRRK7KvI011cmUpJXsynx0cNDDOMVCVRxsBVeYCMqI=";
   };
 
   nativeBuildInputs = [
@@ -23,7 +23,7 @@ stdenvNoCC.mkDerivation (finalAttrs: {
 
   pnpmDeps = pnpm_9.fetchDeps {
     inherit (finalAttrs) pname version src;
-    hash = "sha256-w46qG+7B7sYSzJXHNslrUxzTAg0mNEXVEZP1vSEEohA=";
+    hash = "sha256-QxSRoWlhtTzDd4DmhkTomE7+E37E7Pb3TR8SEScQnlw=";
   };
 
   buildPhase = ''
