@@ -1,16 +1,19 @@
 <script lang='ts' module>
+  export const title = 'THE BLACK & WHITE COLLECTION'
   export const desc = 'Monochrome artwork drawn with pen and paper or a mouse in Krita/MS Paint. Studies of contrast, shading, and value blending techniques.'
   export const tags = ['2d', 'digital', 'art', 'collection']
   export const year = 2022
 </script>
 
 <script lang='ts'>
-  import { ArtImg, Heading, Prose, Subheading } from '$lib/components'
-  import { artalt } from '$lib/js/util.svelte'
+  import ArtImg from '$lib/components/ArtImg.svelte'
+  import Prose from '$lib/components/Prose.svelte'
+  import Subheading from '$lib/components/Subheading.svelte'
+  import { artalt } from '$lib/ts/util.svelte'
 </script>
 
 <Prose>
-  <Heading>THE BLACK & WHITE COLLECTION</Heading>
+  <h1>{title}</h1>
   <Subheading>{desc}</Subheading>
 </Prose>
 

@@ -18,7 +18,7 @@ export default {
     presetIcons({
       extraProperties: {
         'display': 'inline-block',
-        'vertical-align': 'middle',
+        'vertical-align': '-0.125em',
       },
     }),
   ],
@@ -38,5 +38,5 @@ export default {
     }
   },
 
-  extractors: [extractorSvelte],
+  extractors: [extractorSvelte()],
 }

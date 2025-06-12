@@ -1,4 +1,5 @@
 <script lang='ts' module>
+  export const title = 'TALKING-HEADS'
   export const desc = '2023. An experimental chatroom that enables mere mortals to communicate with the gods.'
   export const tags = [
     'digital',
@@ -13,18 +14,20 @@
 </script>
 
 <script lang='ts'>
-  import { A, Heading, MediaImg, Prose, Sp, Subheading, Text } from '$lib/components'
+  import A from '$lib/components/A.svelte'
+  import MediaImg from '$lib/components/MediaImg.svelte'
+  import Prose from '$lib/components/Prose.svelte'
+  import Subheading from '$lib/components/Subheading.svelte'
 </script>
 
 <Prose>
-  <Heading>TALKING-HEADS</Heading>
+  <h1>{title}</h1>
   <Subheading>{desc}</Subheading>
-  <Text>
+  <p>
     <A href='https://talking-heads.fly.dev'>Website</A>
     <br />
     <A href='https://github.com/molarmanful/talking-heads'>Source</A>
-  </Text>
+  </p>
 
-  <Sp />
   <MediaImg name='talking-heads' alt='The talking-heads chatroom.' />
 </Prose>

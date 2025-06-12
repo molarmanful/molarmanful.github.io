@@ -1,18 +1,17 @@
 <script lang='ts'>
-  import { Video } from '.'
+  import Video from './Video.svelte'
 
   interface Props {
     title?: string
     a: string
-    aspect?: string
+    aspectClass?: string
   }
 
-  const { title, a, aspect = 'video' }: Props = $props()
+  const { title, a, aspectClass = 'aspect-video' }: Props = $props()
 </script>
 
-<Video {aspect}>
+<Video {aspectClass}>
   <iframe
-    class='full'
     allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
     allowfullscreen
     frameborder='0'

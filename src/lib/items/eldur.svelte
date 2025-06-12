@@ -1,11 +1,15 @@
 <script lang='ts' module>
+  export const title = 'ELDUR'
   export const desc = '2023. An eccentric bitmap microfont for all your spellcasting needs.'
   export const tags = ['typography', 'design']
   export const year = 2023
 </script>
 
 <script lang='ts'>
-  import { A, Heading, Prose, PxImg, Subheading, Text } from '$lib/components'
+  import A from '$lib/components/A.svelte'
+  import Prose from '$lib/components/Prose.svelte'
+  import PxImg from '$lib/components/PxImg.svelte'
+  import Subheading from '$lib/components/Subheading.svelte'
 
   const srcs = [
     ['', 'Main'],
@@ -24,9 +28,10 @@
 </script>
 
 <Prose>
-  <Heading>ELDUR</Heading>
+  <h1>{title}</h1>
   <Subheading>{desc}</Subheading>
-  <Text><A href='https://github.com/molarmanful/eldur'>Source</A></Text>
+
+  <p><A href='https://github.com/molarmanful/eldur'>Source</A></p>
 </Prose>
 
 {#each srcs as [s, a]}

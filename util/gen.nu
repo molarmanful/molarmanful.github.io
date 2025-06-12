@@ -1,7 +1,7 @@
 #!/usr/bin/env nu
 
 def main [] {
-  source ./hash.nu
+  util/hash.nu
   let hashes = open src/common/hashes.json
   let cores = sys cpu | length
 
@@ -15,7 +15,9 @@ def main [] {
       | each {|file|
           let name = $file | path parse | get stem
           let hash = $hashes | get $dir | get $name
-          node $file $'out/($dir)@($name)@($hash)' $cores
+          node util/pics $file $'out/($dir)@($name)@($hash)' $cores | print
         }
     }
+
+  return
 }

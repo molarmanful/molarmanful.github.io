@@ -1,8 +1,6 @@
 <script lang='ts'>
   import type { HTMLImgAttributes } from 'svelte/elements'
 
-  import { useEventListener } from 'runed'
-
   interface Props extends HTMLImgAttributes {}
 
   const { src, ...rest }: Props = $props()
@@ -28,22 +26,25 @@
     stop = true
     loaded = true
   }
-
-  useEventListener(() => window, 'resize', rsz)
 </script>
 
-<svelte:window bind:devicePixelRatio />
+<svelte:window onresize={rsz} bind:devicePixelRatio />
 
-<div class='w-full'>
+{#snippet img(script: boolean)}
   <img
     bind:this={el}
-    style:width='{w * ~~devicePixelRatio / devicePixelRatio * ~~Math.max(1, pw / w)}px'
     style:image-rendering={px ? 'pixelated' : ''}
-    class="mx-auto mt-6 block max-w-full ofade-200 md:mt-8 {loaded ? 'opacity-100' : 'opacity-0'}"
+    class="block transition-opacity {script ? loaded ? 'opacity-100' : 'opacity-0' : ''}"
+    class:script
     decoding='async'
     loading='lazy'
     onload={rsz}
     {src}
     {...rest}
   />
-</div>
+{/snippet}
+
+{@render img(true)}
+<noscript>
+  {@render img(false)}
+</noscript>

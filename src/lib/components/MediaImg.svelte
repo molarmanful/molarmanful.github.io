@@ -1,7 +1,7 @@
 <script lang='ts'>
   import type { HTMLImgAttributes } from 'svelte/elements'
 
-  import { Image } from '.'
+  import Image from './Image.svelte'
 
   interface Props extends HTMLImgAttributes {
     name: string

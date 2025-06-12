@@ -1,4 +1,5 @@
 <script lang='ts' module>
+  export const title = 'SCLIN'
   export const desc = '2024. Functional and array programming paradigms packaged into a stack-based language. Tuned for maximum expressiveness. Features a web-based interpreter and tree-sitter grammar.'
   export const tags = [
     'digital',
@@ -13,19 +14,21 @@
 </script>
 
 <script lang='ts'>
-  import { A, Heading, MediaImg, Prose, Sp, Subheading, Text } from '$lib/components'
+  import A from '$lib/components/A.svelte'
+  import MediaImg from '$lib/components/MediaImg.svelte'
+  import Prose from '$lib/components/Prose.svelte'
+  import Subheading from '$lib/components/Subheading.svelte'
 </script>
 
 <Prose>
-  <Heading>SCLIN</Heading>
+  <h1>{title}</h1>
   <Subheading>{desc}</Subheading>
-  <Text>
+  <p>
     <A href='https://scline.fly.dev'>Online Interpreter</A>
     <br />
     <A href='https://github.com/molarmanful/sclin'>Source</A>
-  </Text>
+  </p>
 
-  <Sp />
   <MediaImg
     name='sclin_code'
     alt='sclin code for generating an ASCII Mandelbrot set.'

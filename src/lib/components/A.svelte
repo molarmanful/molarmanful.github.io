@@ -13,7 +13,8 @@
 </script>
 
 <a
-  class="under focunder {item ? 'text-inherit' : ''} {clazz}"
+  class='underline {clazz}'
+  class:text-inherit={item}
   target={t ? void 0 : '_blank'}
   {...rest}
 >

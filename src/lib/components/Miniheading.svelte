@@ -10,9 +10,7 @@
   const { clazz = '', children, ...rest }: Props = $props()
 </script>
 
-<p
-  class='text-2xl text-text-300 font-normal font-x2 md:text-3xl {clazz}'
+<h2
+  class='mt-3 xl:mt-5 {clazz}'
   {...rest}
->
-  {@render children()}
-</p>
+>{@render children()}</h2>

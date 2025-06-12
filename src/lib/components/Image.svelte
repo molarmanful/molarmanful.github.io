@@ -3,7 +3,7 @@
 
   import hashesRaw from '$common/hashes.json'
   import { ws } from '$common/meta'
-  import { cD } from '$lib/js/contexts'
+  import { art, covers, media } from '$lib/ts/meta'
 
   interface Props extends HTMLImgAttributes {
     name?: string
@@ -13,22 +13,22 @@
     sizes?: string
   }
 
-  const { name, b, sizes, mt = false, clazz = '', ...rest }: Props = $props()
-  const { D } = cD.get()
+  const { name, b, sizes, clazz = '', ...rest }: Props = $props()
 
-  const [lqip, meta] = $derived(
-    Array.isArray(b) ? [D[b[0]][0].get(name ?? ''), D[b[0]][1].get(name ?? '')] : [],
-  )
+  const imgs = { covers, art, media }
+  const hashes = hashesRaw as Record<'covers' | 'art' | 'media', Record<string, string>>
 
   const ws1 = ws.reverse()
-
-  const hashes = hashesRaw as Record<'covers' | 'art' | 'media', Record<string, string>>
   const url = (name?: string, w = ws1.at(-1), x = 'jpg') =>
     Array.isArray(b)
       ? `https://cdn.benpa.ng/${b[0]}%40${name}%40${hashes[b[0]][name!]}%40${w}.${x}`
       : 'INVALID'
   const urls = (name?: string, x = 'jpg') =>
     ws1.map(w => `${url(name, w, x)} ${w}w`).join(', ')
+
+  const [lqip, meta] = $derived(
+    Array.isArray(b) ? [imgs[b[0]][0].get(name ?? ''), imgs[b[0]][1].get(name ?? '')] : [],
+  )
 
   const src = $derived(Array.isArray(b) ? url(name) : b)
   const srcsets: Record<string, string> = $derived({
@@ -48,12 +48,12 @@
 <picture>
   {#if Array.isArray(b)}
     {#each ['avif', 'webp'] as x}
-      <source {sizes} srcset={srcsets[x]} type='image/{x}' />
+      <source {sizes} srcset={srcsets[x]} type='image/{x}'>
     {/each}
   {/if}
   <img
-    style:background={lqip && `url(${lqip}) center center / cover no-repeat`}
-    class='{mt ? 'mt-0' : 'mt-6 md:mt-8'} {clazz} laz mx-auto max-h-full max-w-full w-screen object-contain text-0 bg-contain!'
+    style:background={lqip && `url(${lqip}) center center / contain no-repeat`}
+    class='lazy  text-0 max-h-screen w-screen object-contain {clazz}'
     class:loaded
     alt={name}
     decoding='async'

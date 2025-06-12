@@ -1,106 +1,96 @@
 <script lang='ts' module>
+  export const title = 'THE CELL COLLECTION'
   export const desc = 'Zero-player games with squares that live many, many lives.'
   export const tags = ['digital', 'dev', 'art', 'collection']
   export const year = 2022
 </script>
 
 <script lang='ts'>
-  import {
-    A,
-    Heading,
-    IVideo,
-    MediaImg,
-    Prose,
-    Sp,
-    Subheading,
-    Text,
-  } from '$lib/components'
+  import A from '$lib/components/A.svelte'
+  import IVideo from '$lib/components/IVideo.svelte'
+  import MediaImg from '$lib/components/MediaImg.svelte'
+  import Miniheading from '$lib/components/Miniheading.svelte'
+  import Prose from '$lib/components/Prose.svelte'
+  import Subheading from '$lib/components/Subheading.svelte'
 </script>
 
 <Prose>
-  <Heading>THE CELL COLLECTION</Heading>
+  <h1>{title}</h1>
   <Subheading>{desc}</Subheading>
 
-  <Sp />
-  <Subheading bold>3-Species Ecosystem</Subheading>
+  <Miniheading>3-Species Ecosystem</Miniheading>
   <IVideo a='hnEuirk' />
-  <Text>
+  <p>
     <A href='https://benpa.ng/RobotaPsyche/midterm'>Website</A>
     <br />
     <A href='https://github.com/molarmanful/RobotaPsyche/tree/main/midterm'>
       Source
     </A>
-  </Text>
+  </p>
 
-  <Sp />
-  <Subheading bold>10-State Brain's Brain</Subheading>
+  <Miniheading>10-State Brain's Brain</Miniheading>
   <MediaImg
     name='brian10'
     alt="Screenshot of 10-State Brian's Brain."
     px
   />
-  <Text>
+  <p>
     <A href='https://editor.p5js.org/BandidoJim/sketches/_YeeANOn_'>
       p5.js Sketch
     </A>
     (<span class='bold'>WARNING</span>: flashing lights)
-  </Text>
+  </p>
 
-  <Sp />
-  <Subheading bold>Brian's Brain</Subheading>
+  <Miniheading>Brian's Brain</Miniheading>
   <IVideo a='RrI149j' px />
-  <Text>
+  <p>
     <A href='https://editor.p5js.org/BandidoJim/sketches/iJmQ7Gazy'>
       p5.js Sketch
     </A>
-  </Text>
+  </p>
 
-  <Sp />
-  <Subheading bold>Stable Volatility</Subheading>
+  <Miniheading>Stable Volatility</Miniheading>
   <MediaImg
     name='stablevol'
     alt='Screenshot of Stable Volatility.'
     px
   />
-  <Text>
+  <p>
     <A href='https://editor.p5js.org/BandidoJim/sketches/YS3amIiay'>
       p5.js Sketch
     </A>
     (<span class='bold'>WARNING</span>: flashing lights)
-  </Text>
+  </p>
 
-  <Sp />
-  <Subheading bold>Fading Clamp Game of Life</Subheading>
+  <Miniheading>Fading Clamp Game of Life</Miniheading>
   <MediaImg
     name='fcgol'
     alt='Screenshot of Fading Clamp Game of Life.'
     px
   />
-  <Text>
+  <p>
     <A href='https://editor.p5js.org/BandidoJim/sketches/XgeJRhRpX'>
       p5.js Sketch
     </A>
     (<span class='bold'>WARNING</span>: flashing lights)
-  </Text>
+  </p>
 
-  <Sp />
-  <Subheading bold>Reddit Rainbow (feat. Adham Chakohi)</Subheading>
+  <Miniheading>Reddit Rainbow (feat. Adham Chakohi)</Miniheading>
   <MediaImg
     name='rainbow'
     alt='Screenshot of Reddit Rainbow.'
     px
   />
-  <Text>
+  <p>
     <A href='https://benpa.ng/rainbow'>Website</A>
     (No longer works due to changes in Reddit's API)
     <br />
     <A href='https://github.com/molarmanful/rainbow'>Source</A>
-  </Text>
+  </p>
 
-  <Sp />
-  <Subheading bold>Waterworks</Subheading>
+  <Miniheading>Waterworks</Miniheading>
   <IVideo a='ri9fp39' px />
-  <Text>
+  <p>
     <A href='https://codepen.io/molarmanful/full/XzbwpP'>Website</A>
-  </Text>
+  </p>
 </Prose>

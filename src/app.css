@@ -4,34 +4,59 @@
   text-fill-color: #000;
 }
 
+@property --100vw {
+  syntax: '<length>';
+  initial-value: 0px;
+  inherits: false;
+}
+
 :root {
+  --100vw: 100vw;
+  --100vw-px: tan(atan2(var(--100vw), 1px));
   color-scheme: dark;
+}
+
+.noscript .script {
+  display: none;
 }
 
 html,
 body {
-  @apply position-relative bg-black;
-}
-
-html {
-  @apply scroll-smooth motion-reduce:scroll-auto;
+  @apply bg-black;
 }
 
 body {
-  @apply scroll font-2 font-300 tracking-wide select-text text-text type-4;
+  @apply font-x2 select-text text-text md:text-lg;
+}
+
+section {
+  @apply container mx-auto;
 }
 
 h1,
 h2,
-h3,
-h4,
-h5,
-h6 {
-  @apply uppercase font-1;
+h3 {
+  @apply font-x1 font-bold text-head text-balance;
+}
+
+h1 {
+  @apply uppercase text-3xl md:text-5xl;
+}
+
+h2 {
+  @apply text-2xl md:text-3xl;
+}
+
+h3 {
+  @apply text-xl md:text-2xl;
+}
+
+.bigger {
+  @apply text-lg md:text-xl text-text-300;
 }
 
 a {
-  @apply text-accent duration-500 transition-colors no-underline;
+  @apply text-accent transition-colors no-underline;
 }
 
 a:hover,
@@ -39,72 +64,14 @@ a:focus {
   @apply text-white;
 }
 
-.scanlines {
-  @apply fixed inset-0 z-100 pointer-events-none bg-current mix-blend-screen opacity-10;
-  /*
-  background: repeating-linear-gradient(
-      0deg,
-      currentColor 0,
-      currentColor 1px,
-      #000 1px,
-      #000 2px
-    ),
-    repeating-linear-gradient(
-      90deg,
-      currentColor 0,
-      currentColor 1px,
-      #000 1px,
-      #000 2px
-    );
-  */
-}
-
-.prose :is(h1, h2, h3, h4, h5, h6, p):not(.noprose) {
-  @apply mx-6 md:mx-0;
-}
-
-:is(.lazy, .laz):not(.loaded) {
-  @apply image-render-pixel;
-}
-
 .lazy:not(.loaded, [src]) {
   @apply bg-bord-900;
 }
 
-.btn {
-  @apply b-(1 current) bg-transparent outline-none px-2 py-1 transition-color whitespace-nowrap;
+.lazy:not(.loaded) {
+  @apply image-render-pixel;
 }
 
-.btn:focus {
-  @apply text-white;
-}
-
-.colize {
-  @apply opacity-0;
-}
-
-:is(.cover:hover, .cover:focus) img {
-  @apply filter-none;
-}
-
-:is(.cover:hover, .cover:focus) .colize {
-  @apply opacity-0;
-}
-
-.suppress {
-  @apply transition-none!;
-}
-
-@media (hover: hover) {
-  .btn:hover {
-    @apply text-white;
-  }
-
-  .cover img {
-    filter: grayscale(1) contrast(0.8) brightness(0.5);
-  }
-
-  .colize {
-    @apply opacity-80;
-  }
+.noscript .lazy {
+  @apply image-render-auto;
 }

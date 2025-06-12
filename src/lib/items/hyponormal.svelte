@@ -1,48 +1,46 @@
 <script lang='ts' module>
+  export const title = 'HYPONORMAL'
   export const desc = '2022. An abstract Unity study of worldbuilding centered around non-Euclidean traversal mechanics.'
   export const tags = ['3d', 'digital', 'game', 'dev', 'art']
   export const year = 2022
 </script>
 
 <script lang='ts'>
-  import {
-    A,
-    Heading,
-    MediaImg,
-    Prose,
-    Sp,
-    Subheading,
-    Text,
-    YTVideo,
-  } from '$lib/components'
+  import A from '$lib/components/A.svelte'
+  import MediaImg from '$lib/components/MediaImg.svelte'
+  import Prose from '$lib/components/Prose.svelte'
+  import Subheading from '$lib/components/Subheading.svelte'
+  import YTVideo from '$lib/components/YTVideo.svelte'
 </script>
 
 <Prose>
-  <Heading>HYPO<wbr />NORMAL</Heading>
+  <h1>{title}</h1>
   <Subheading>{desc}</Subheading>
-  <Text>
+
+  <p>
     <A href='https://bandidojim.itch.io/hyponormal'>Website</A>
-  </Text>
-  <Text>
+  </p>
+
+  <MediaImg name='hyponormal0' alt='Mountain shrouded in red sandstorm.' />
+
+  <p>
     <em>There's normal, there's paranormal, and then there's... HYPONORMAL.</em>
-  </Text>
-  <Text>
+  </p>
+  <p>
     Imagine a world encapsulated inside a sphere such that gravity &mdash;
     rather than attracting towards the center of mass &mdash; instead repels
     outwards. What would walking in such a counterintuitive world feel like?
     How would people inhabit and develop this world over time? What kind of
     stories does this world have to tell?
-  </Text>
-  <Text>
+  </p>
+  <p>
     This non-Newtonian, non-Euclidean premise formed the basis for HYPONORMAL,
     a barren desert microworld battered and beaten by perpetual sandstorms. You
     are granted a unique opportunity to tread across these unforgiving lands
     and experience the spherical prison that eternally tethers you &mdash; and
     the ones who fell before you &mdash; to the ground.
-  </Text>
+  </p>
 
-  <Sp />
-  <MediaImg name='hyponormal0' alt='Mountain shrouded in red sandstorm.' />
   <MediaImg
     name='hyponormal1'
     alt='Kneeling figures shrouded in red sandstorm.'

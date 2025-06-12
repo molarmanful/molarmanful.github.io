@@ -1,16 +1,19 @@
 <script lang='ts' module>
+  export const title = 'THE VECTOR COLLECTION'
   export const desc = 'Scalable compositions of geometries and abstract oddities. Made with Illustrator and Hexels.'
   export const tags = ['2d', 'digital', 'design', 'art', 'collection']
   export const year = 2021
 </script>
 
 <script lang='ts'>
-  import { ArtImg, Heading, Prose, Subheading } from '$lib/components'
-  import { artalt } from '$lib/js/util.svelte'
+  import ArtImg from '$lib/components/ArtImg.svelte'
+  import Prose from '$lib/components/Prose.svelte'
+  import Subheading from '$lib/components/Subheading.svelte'
+  import { artalt } from '$lib/ts/util.svelte'
 </script>
 
 <Prose>
-  <Heading>THE VECTOR COLLECTION</Heading>
+  <h1>{title}</h1>
   <Subheading>{desc}</Subheading>
 </Prose>
 

@@ -1,16 +1,20 @@
 <script lang='ts' module>
+  export const title = 'THE PHYSICAL COLLECTION'
   export const desc = 'Sculptures and installations which follow arbitrary rules and fulfill arbitrary purposes.'
   export const tags = ['physical', 'art', 'collection']
   export const year = 2021
 </script>
 
 <script lang='ts'>
-  import { ArtImg, Heading, MediaImg, Prose, Subheading } from '$lib/components'
-  import { artalt } from '$lib/js/util.svelte'
+  import ArtImg from '$lib/components/ArtImg.svelte'
+  import MediaImg from '$lib/components/MediaImg.svelte'
+  import Prose from '$lib/components/Prose.svelte'
+  import Subheading from '$lib/components/Subheading.svelte'
+  import { artalt } from '$lib/ts/util.svelte'
 </script>
 
 <Prose>
-  <Heading>THE PHYSICAL COLLECTION</Heading>
+  <h1>{title}</h1>
   <Subheading>{desc}</Subheading>
 </Prose>
 

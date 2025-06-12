@@ -1,16 +1,19 @@
 <script lang='ts' module>
+  export const title = 'THE 3D STILL COLLECTION'
   export const desc = 'Optical oddities that bend the rules of virtual reality. Rendered in Cinema 4D + Redshift.'
   export const tags = ['3d', 'digital', 'art', 'collection']
   export const year = 2024
 </script>
 
 <script lang='ts'>
-  import { ArtImg, Heading, Prose, Subheading } from '$lib/components'
-  import { artalt } from '$lib/js/util.svelte'
+  import ArtImg from '$lib/components/ArtImg.svelte'
+  import Prose from '$lib/components/Prose.svelte'
+  import Subheading from '$lib/components/Subheading.svelte'
+  import { artalt } from '$lib/ts/util.svelte'
 </script>
 
 <Prose>
-  <Heading>THE 3D STILL COLLECTION</Heading>
+  <h1>{title}</h1>
   <Subheading>{desc}</Subheading>
 </Prose>
 

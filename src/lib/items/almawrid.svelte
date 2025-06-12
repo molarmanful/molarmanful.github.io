@@ -1,18 +1,21 @@
 <script lang='ts' module>
+  export const title = 'AL MAWRID'
   export const desc = '2021 - made in collaboration with the Yes Logo Spring 2021 class, under guidance from calligrapher/designer Wissam Shawkat and Prof. Goffredo Puccetti. Proposed logo and brand identity for al Mawrid Arab Center for the Study of Art.'
   export const tags = ['branding', 'design']
   export const year = 2021
 </script>
 
 <script lang='ts'>
-  import { Heading, IVideo, MediaImg, Prose, Sp, Subheading } from '$lib/components'
+  import IVideo from '$lib/components/IVideo.svelte'
+  import MediaImg from '$lib/components/MediaImg.svelte'
+  import Prose from '$lib/components/Prose.svelte'
+  import Subheading from '$lib/components/Subheading.svelte'
 </script>
 
 <Prose>
-  <Heading>AL MAWRID</Heading>
+  <h1>{title}</h1>
   <Subheading>{desc}</Subheading>
 
-  <Sp />
   <MediaImg
     name='almawrid_logo'
     alt='Proposed logo for al Mawrid Arab Center for the Study of Art.'
