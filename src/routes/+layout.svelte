@@ -24,7 +24,9 @@
   })
 
   afterNavigate(() => {
-    loaded = true
+    requestAnimationFrame(() => {
+      loaded = true
+    })
   })
 </script>
 
