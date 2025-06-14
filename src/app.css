@@ -1,3 +1,21 @@
+/* m-plus-1-code-regular - latin_latin-ext */
+@font-face {
+  font-display: swap;
+  font-family: 'M PLUS 1 Code';
+  font-style: normal;
+  font-weight: 400;
+  src: url('/MPLUS1Code/m-plus-1-code-v15-latin_latin-ext-regular.woff2') format('woff2');
+}
+
+/* m-plus-1-code-700 - latin_latin-ext */
+@font-face {
+  font-display: swap;
+  font-family: 'M PLUS 1 Code';
+  font-style: normal;
+  font-weight: 700;
+  src: url('/MPLUS1Code/m-plus-1-code-v15-latin_latin-ext-700.woff2') format('woff2');
+}
+
 ::selection {
   @apply bg-current;
   -webkit-text-fill-color: #000;
@@ -26,7 +44,7 @@ body {
 }
 
 body {
-  @apply font-x2 select-text text-text md:text-lg;
+  @apply font-['M_PLUS_1_Code'] select-text text-text md:text-lg;
 }
 
 section {
@@ -36,7 +54,7 @@ section {
 h1,
 h2,
 h3 {
-  @apply font-x1 font-bold text-head text-balance;
+  @apply font-bold text-head text-balance;
 }
 
 h1 {
