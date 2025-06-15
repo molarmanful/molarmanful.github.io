@@ -68,7 +68,7 @@
     {/each}
   </ul>
 
-  <ul class='mx-auto gap-3 grid cols-1 [&_a:is(:hover,:focus)]:(b-bord opacity-100!) [&:has(:hover,:focus)_a]:opacity-50 xl:gap-5 lg:cols-4 md:cols-3 xs:cols-2 [&_a.pointer-events-none]:opacity-25!'>
+  <ul class='mx-auto gap-3 grid cols-1 [&:has(a:focus)_a]:opacity-50 xl:gap-5 lg:cols-4 md:cols-3 xs:cols-2 media-touch:[&:has(a:hover)_a]:opacity-50'>
     {#each nameSel as [name, isSel] (name)}
       {@const { title } = items.get(name)!}
       <li
@@ -77,12 +77,12 @@
         animate:flip={{ duration: prefersReducedMotion.current ? 0 : 300, delay: prefersReducedMotion.current ? 0 : 50 }}
       >
         <a
-          class='b b-transparent transition relative'
+          class='b b-transparent transition relative focus:(b-bord opacity-100!) media-mouse:hover:(b-bord opacity-100!) [&.pointer-events-none]:opacity-25!'
           class:pointer-events-none={!isSel}
           aria-disabled={!isSel}
           href={isSel ? `/work/${name}` : void 0}
         >
-          <span class='text-accent p-2 outline-bord outline bg-black opacity-0 w-full pointer-events-none transition bottom-full absolute xl:p-3 [:is(:hover,:focus)>&]:(opacity-100 translate-y-0) motion-safe:translate-y-1/2'>
+          <span class='text-accent p-2 outline-bord outline bg-black opacity-0 w-full pointer-events-none transition bottom-full absolute xl:p-3 [:focus>&]:(opacity-100 translate-y-0) motion-safe:translate-y-1/2 media-mouse:[:hover>&]:(opacity-100 translate-y-0)'>
             {title}
           </span>
           <CoverImg {name} aria-hidden />
