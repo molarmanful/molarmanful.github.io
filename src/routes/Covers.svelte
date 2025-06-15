@@ -68,7 +68,7 @@
     {/each}
   </ul>
 
-  <ul class='mx-auto gap-3 grid cols-1 [&:has(a:focus)_a]:opacity-50 xl:gap-5 lg:cols-4 md:cols-3 xs:cols-2 media-touch:[&:has(a:hover)_a]:opacity-50'>
+  <ul class='mx-auto gap-3 grid cols-1 [&:has(a:focus)_a]:opacity-50 xl:gap-5 lg:cols-4 md:cols-3 xs:cols-2 media-mouse:[&:has(a:hover)_a]:opacity-50'>
     {#each nameSel as [name, isSel] (name)}
       {@const { title } = items.get(name)!}
       <li
