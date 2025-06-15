@@ -3,10 +3,9 @@
   import { covers, items, tags, tagsSet } from '$lib/ts/meta'
   import { flip } from 'svelte/animate'
   import { prefersReducedMotion } from 'svelte/motion'
-  import { SvelteSet } from 'svelte/reactivity'
   import { fade } from 'svelte/transition'
 
-  const selTagsSet = new SvelteSet<string>()
+  import { selTagsSet } from './states.svelte'
 
   const ableTagsSet = $derived(
     selTagsSet.size
