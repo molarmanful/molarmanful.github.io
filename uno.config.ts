@@ -1,4 +1,5 @@
 import extractorSvelte from '@unocss/extractor-svelte'
+import { Theme } from '@unocss/preset-wind4'
 import { colors } from '@unocss/preset-wind4/colors'
 import { presetIcons, presetWind4, transformerDirectives, transformerVariantGroup } from 'unocss'
 import { presetScrollbar } from 'unocss-preset-scrollbar'
@@ -17,8 +18,8 @@ export default {
 
   transformers: [transformerDirectives(), transformerVariantGroup()],
 
-  extendTheme(theme) {
-    theme.breakpoint.xs = '32rem'
+  extendTheme(theme: Theme) {
+    if (theme.breakpoint) theme.breakpoint.xs = '32rem'
     theme.colors = {
       ...theme.colors,
       accent: colors.pink,

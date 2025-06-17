@@ -1,5 +1,3 @@
-/* eslint no-console: 0, antfu/no-top-level-await: 0 */
-
 import fs from 'node:fs/promises'
 import path from 'node:path'
 

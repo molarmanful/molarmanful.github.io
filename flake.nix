@@ -1,6 +1,4 @@
 {
-  description = "Description for the project";
-
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     systems.url = "github:nix-systems/default";
@@ -38,6 +36,7 @@
               stylelint-lsp
               # formatters
               nixfmt-rfc-style
+              dprint
               # linters
               statix
               deadnix

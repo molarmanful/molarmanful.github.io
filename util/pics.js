@@ -1,5 +1,3 @@
-/* eslint no-console: 0, antfu/no-top-level-await: 0 */
-
 import path from 'node:path'
 import process from 'node:process'
 
@@ -29,9 +27,7 @@ for (const w of ws) {
     rsz.clone().webp().toFile(path.resolve(`${out}@${w}.webp`)),
   )
   q_a.push(
-    (x => () =>
-      x.toFile(path.resolve(`${out}@${w}.avif`))
-    )(rsz.clone().avif()),
+    (x => () => x.toFile(path.resolve(`${out}@${w}.avif`)))(rsz.clone().avif()),
   )
 }
 
@@ -45,7 +41,6 @@ try {
     console.log(`\t,\t${out} avif ${i}/${q_a.length}`)
   }
   console.log(`.\t${out}`)
-}
-catch (e) {
-  console.error(e)
+} catch (error) {
+  console.error(error)
 }
