@@ -1,6 +1,6 @@
 <script lang='ts'>
   import CoverImg from '$lib/components/CoverImg.svelte'
-  import { covers, items, tags, tagsSet } from '$lib/ts/meta'
+  import { items, sortedKeys, tags, tagsSet } from '$lib/ts/meta'
   import { flip } from 'svelte/animate'
   import { prefersReducedMotion } from 'svelte/motion'
   import { fade } from 'svelte/transition'
@@ -8,24 +8,34 @@
   import { selTagsSet } from './states.svelte'
 
   const ableTagsSet = $derived(
-    selTagsSet.size
+    selTagsSet.size > 0
       ? new Set([
-        ...tags.values().reduce((a, b) => selTagsSet.isSubsetOf(b) ? a.union(b) : a, new Set()),
+        ...Object.values(tags).reduce(
+          (a, b) => selTagsSet.isSubsetOf(b) ? a.union(b) : a,
+          new Set(),
+        ),
       ].sort())
       : tagsSet,
   )
 
-  const sortedTags = $derived([...selTagsSet, ...ableTagsSet.difference(selTagsSet), ...tagsSet.difference(ableTagsSet)])
+  const sortedTags = $derived([
+    ...selTagsSet,
+    ...ableTagsSet.difference(selTagsSet),
+    ...tagsSet.difference(ableTagsSet),
+  ])
 
   const nameSel = $derived.by(() => {
     const nameParts = Map.groupBy(
-      covers[0].keys(),
-      name => selTagsSet.size ? selTagsSet.isSubsetOf(tags.get(name)!) : true,
+      sortedKeys,
+      name =>
+        selTagsSet.size > 0 ? selTagsSet.isSubsetOf(tags[name]) : true,
     )
     return ([
       [true, nameParts.get(true) ?? []],
       [false, nameParts.get(false) ?? []],
-    ] as const).flatMap(([isSel, names]) => names.map(name => [name, isSel] as const))
+    ] as const).flatMap(([isSel, names]) =>
+      names.map(name => [name, isSel] as const)
+    )
   })
 </script>
 
@@ -37,8 +47,12 @@
       <li in:fade={{ duration: 150 }}>
         <button
           class='text-accent px-2 py-1 b b-current cursor-pointer transition [&:is(:hover,:focus)]:text-accent-200'
-          onclick={() => selTagsSet.clear()}
-        >CLEAR</button>
+          onclick={() => {
+            selTagsSet.clear()
+          }}
+        >
+          CLEAR
+        </button>
       </li>
     {/if}
 
@@ -52,7 +66,7 @@
         animate:flip={{ duration: prefersReducedMotion.current ? 0 : 150 }}
       >
         <button
-          class='px-2 py-1 b b-current cursor-pointer transition {isSel ? 'text-head [&:is(:hover,:focus)]:text-head-200' : 'text-bord [&:is(:hover,:focus)]:text-bord-200'}'
+          class="px-2 py-1 b b-current cursor-pointer transition {isSel ? 'text-head [&:is(:hover,:focus)]:text-head-200' : 'text-bord [&:is(:hover,:focus)]:text-bord-200'}"
           class:opacity-50={disabled}
           class:pointer-events-none={disabled}
           {disabled}
@@ -62,18 +76,23 @@
             else selTagsSet.add(tag)
             currentTarget.blur()
           }}
-        >{tag}</button>
+        >
+          {tag}
+        </button>
       </li>
     {/each}
   </ul>
 
   <ul class='mx-auto gap-3 grid cols-1 [&:has(a:focus)_a]:opacity-50 xl:gap-5 lg:cols-4 md:cols-3 xs:cols-2 media-mouse:[&:has(a:hover)_a]:opacity-50'>
     {#each nameSel as [name, isSel] (name)}
-      {@const { title } = items.get(name)!}
+      {@const { title } = items[name]}
       <li
         class='flex'
         class:will-change-transform={!prefersReducedMotion.current}
-        animate:flip={{ duration: prefersReducedMotion.current ? 0 : 300, delay: prefersReducedMotion.current ? 0 : 50 }}
+        animate:flip={{
+          duration: prefersReducedMotion.current ? 0 : 300,
+          delay: prefersReducedMotion.current ? 0 : 50,
+        }}
       >
         <a
           class='b b-transparent transition relative focus:(b-bord opacity-100!) media-mouse:hover:(b-bord opacity-100!) [&.pointer-events-none]:opacity-25!'
@@ -81,7 +100,9 @@
           aria-disabled={!isSel}
           href={isSel ? `/work/${name}` : void 0}
         >
-          <span class='text-accent p-2 outline-bord outline bg-black opacity-0 w-full pointer-events-none transition bottom-full absolute xl:p-3 [:focus>&]:(opacity-100 translate-y-0) motion-safe:translate-y-1/2 media-mouse:[:hover>&]:(opacity-100 translate-y-0)'>
+          <span
+            class='text-accent p-2 outline-bord outline bg-black opacity-0 w-full pointer-events-none transition bottom-full absolute xl:p-3 [:focus>&]:(opacity-100 translate-y-0) motion-safe:translate-y-1/2 media-mouse:[:hover>&]:(opacity-100 translate-y-0)'
+          >
             {title}
           </span>
           <CoverImg {name} aria-hidden />

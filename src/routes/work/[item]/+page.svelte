@@ -9,7 +9,11 @@
 
   const { data }: Props = $props()
 
-  const { title: itemTitle, default: It, desc } = $derived(items.get(data.name)!)
+  const {
+    title: itemTitle,
+    default: It,
+    desc,
+  } = $derived(items[data.name])
 </script>
 
 <svelte:head>
