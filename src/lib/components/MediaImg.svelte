@@ -12,9 +12,4 @@
   const { name, px = false, ...rest }: Props = $props()
 </script>
 
-<Image
-  {name}
-  b={['media']}
-  clazz={px ? 'image-render-pixel' : ''}
-  {...rest}
-/>
+<Image type='media' {name} clazz={px ? 'image-render-pixel' : ''} {...rest} />

@@ -18,11 +18,11 @@
 
 {#snippet video(script: boolean, rest: HTMLVideoAttributes = {})}
   <video
-    class="transition-opacity {script ? loaded ? 'opacity-100' : 'opacity-0' : ''} {px ? 'image-render-pixel' : ''}"
+    class="transition-opacity {script ? (loaded ? 'opacity-100' : 'opacity-0') : ''} {px ? 'image-render-pixel' : ''}"
     class:script
     loop
     muted
-    oncanplaythrough={() => { loaded = true }}
+    oncanplaythrough={() => loaded = true}
     playsinline
     {...rest}
     use:vload
@@ -32,8 +32,10 @@
 {/snippet}
 
 <Video {aspectClass}>
+  <!-- eslint-disable-next-line @typescript-eslint/no-confusing-void-expression -->
   {@render video(true, { preload: 'none' })}
   <noscript>
+    <!-- eslint-disable-next-line @typescript-eslint/no-confusing-void-expression -->
     {@render video(false, { controls: true })}
   </noscript>
 </Video>

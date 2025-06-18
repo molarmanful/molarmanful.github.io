@@ -11,8 +11,4 @@
   const { name, ...rest }: Props = $props()
 </script>
 
-<Image
-  {name}
-  b={['art']}
-  {...rest}
-/>
+<Image type='art' {name} {...rest} />

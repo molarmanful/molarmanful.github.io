@@ -11,7 +11,7 @@
 </script>
 
 <p
-  class='text-2xl text-text-300 font-normal font-x2 md:text-3xl {clazz}'
+  class='text-2xl text-text-300 font-normal md:text-3xl {clazz}'
   {...rest}
 >
   {@render children()}
