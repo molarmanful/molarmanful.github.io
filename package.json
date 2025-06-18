@@ -6,6 +6,7 @@
   "description": "Personal site",
   "author": "Benjamin Pang",
   "license": "MIT",
+  "packageManager": "pnpm@10.12.1",
   "homepage": "https://github.com/molarmanful/molarmanful.github.io#readme",
   "repository": {
     "type": "git",
