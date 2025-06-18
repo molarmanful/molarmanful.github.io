@@ -9,40 +9,35 @@ export interface Item {
   default: Component
 }
 
-export type Imgs = [Map<string, string>, Map<string, ImageMetadata>]
+export type Imgs = [Record<string, string>, Record<string, ImageMetadata>]
 
-const makeMap = <T>(
-  x: { [k: string]: T },
-  f = (x: [string, T][]): [string, T][] => x,
-) =>
-  new Map(f(
-    Object.entries(x).map(([a, b]) => [
-      a.replace(/^.+\/([^/]+)\.\w+$/, '$1'),
-      b,
+const makeRecord = <V>(obj: Record<string, V>) =>
+  Object.fromEntries(
+    Object.entries(obj).map(([k, v]) => [
+      k.replace(/^.+\/([^/]+)\.\w+$/, '$1'),
+      v,
     ]),
-  ))
+  )
 
 export const title = 'Ben Pang / BandidoJim / Molarmanful'
 
-export const items = makeMap(import.meta.glob<Item>('$lib/items/*', { eager: true }))
+export const items = makeRecord(import.meta.glob<Item>('$lib/items/*', { eager: true }))
 
-export const tags = new Map([...items].map(([k, v]) => [k, new Set(v.tags)]))
+export const sortedKeys = Object.keys(items).sort((a, b) => (items[b].year || 1 / 0) - (items[a].year || 1 / 0))
 
-export const tagsSet = new Set([...tags.values().reduce((a, b) => a.union(b), new Set())].sort())
+export const tags = Object.fromEntries(Object.entries(items).map(([k, v]) => [k, new Set(v.tags)]))
+
+export const tagsSet = new Set([...Object.values(tags).reduce((a, b) => a.union(b), new Set())].sort())
 
 export const covers: Imgs = [
-  makeMap(
+  makeRecord(
     import.meta.glob('$lib/covers/*', {
       eager: true,
       import: 'default',
       query: { inline: true, w: 32, h: 32, fit: 'inside', quality: 20, format: 'webp' },
     }),
-    x =>
-      x.sort(([a], [b]) =>
-        (items.get(b)?.year || 1 / 0) - (items.get(a)?.year || 1 / 0),
-      ),
   ),
-  makeMap(
+  makeRecord(
     import.meta.glob('$lib/covers/*', {
       eager: true,
       import: 'default',
@@ -52,14 +47,14 @@ export const covers: Imgs = [
 ]
 
 export const art: Imgs = [
-  makeMap(
+  makeRecord(
     import.meta.glob('$lib/art/*', {
       eager: true,
       import: 'default',
       query: { inline: true, w: 32, h: 32, fit: 'inside', quality: 20, format: 'webp' },
     }),
   ),
-  makeMap(
+  makeRecord(
     import.meta.glob('$lib/art/*', {
       eager: true,
       import: 'default',
@@ -69,14 +64,14 @@ export const art: Imgs = [
 ]
 
 export const media: Imgs = [
-  makeMap(
+  makeRecord(
     import.meta.glob('$lib/media/*', {
       eager: true,
       import: 'default',
       query: { inline: true, w: 32, h: 32, fit: 'inside', quality: 20, format: 'webp' },
     }),
   ),
-  makeMap(
+  makeRecord(
     import.meta.glob('$lib/media/*', {
       eager: true,
       import: 'default',
