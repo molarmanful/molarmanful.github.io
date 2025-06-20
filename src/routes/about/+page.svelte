@@ -14,6 +14,8 @@
 
     <div>
       <svg class='b b-b-0 b-bord w-full' viewBox='0 0 1080 1080'>
+        <title>Ben Pang</title>
+        <desc>Frustrated self-portrait</desc>
         <use
           style:transform-box='fill-box'
           class='origin-c translate--1/2 fill-none stroke-[calc(1080/min(var(--100vw-px),656)*1px)] stroke-bord'
