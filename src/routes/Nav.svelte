@@ -7,6 +7,8 @@
             class='align--0.1em size-1em inline-block scale-125'
             viewBox='0 0 128 128'
           >
+            <title>Ben Pang</title>
+            <desc>Beta symbol cut-out over a rounded square background</desc>
             <use href='/logo_fill.svg#main' />
           </svg>
         </a>

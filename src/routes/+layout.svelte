@@ -34,7 +34,7 @@
   <Favicons />
 </svelte:head>
 
-<main class="transition-opacity-300 {loaded ? 'opacity-100' : '[html:not(.noscript)_&]:opacity-1'}">
+<main class="transition-opacity-300 {loaded ? 'opacity-100' : '[html:not(.noscript)_&]:opacity-0.01'}">
   <Nav />
 
   {@render children()}

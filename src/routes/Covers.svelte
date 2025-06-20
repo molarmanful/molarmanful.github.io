@@ -98,13 +98,15 @@
           class='b b-transparent transition relative focus:(b-bord opacity-100!) media-mouse:hover:(b-bord opacity-100!) [&.pointer-events-none]:opacity-25!'
           class:pointer-events-none={!isSel}
           aria-disabled={!isSel}
+          aria-label={title}
           href={isSel ? `/work/${name}` : void 0}
         >
-          <span
+          <div
             class='text-accent p-2 outline-bord outline bg-black opacity-0 w-full pointer-events-none transition bottom-full absolute xl:p-3 [:focus>&]:(opacity-100 translate-y-0) motion-safe:translate-y-1/2 media-mouse:[:hover>&]:(opacity-100 translate-y-0)'
+            aria-hidden={true}
           >
             {title}
-          </span>
+          </div>
           <CoverImg {name} aria-hidden />
         </a>
       </li>
