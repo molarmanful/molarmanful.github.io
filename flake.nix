@@ -18,8 +18,6 @@
           unocss-language-server = pkgs.callPackage ./unocss-language-server.nix { };
         in
         {
-          packages.default = pkgs.callPackage ./default.nix { };
-
           devShells.default = pkgs.mkShell {
             packages = with pkgs; [
               nodejs_latest
