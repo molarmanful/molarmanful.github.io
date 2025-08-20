@@ -13,7 +13,7 @@ importers:
         version: 1.2.2
       '@molarmanful/fe-tools':
         specifier: ^0.2.0
-        version: 0.2.0(eslint-plugin-svelte@3.11.0(eslint@9.33.0(jiti@2.5.1))(svelte@5.38.2)(ts-node@10.9.2(@types/node@24.0.3)(typescript@5.9.2)))(eslint@9.33.0(jiti@2.5.1))(typescript-eslint@8.40.0(eslint@9.33.0(jiti@2.5.1))(typescript@5.9.2))(typescript@5.9.2)
+        version: 0.2.0(@unocss/eslint-config@66.4.2(eslint@9.33.0(jiti@2.5.1))(typescript@5.9.2))(eslint-plugin-svelte@3.11.0(eslint@9.33.0(jiti@2.5.1))(svelte@5.38.2)(ts-node@10.9.2(@types/node@24.0.3)(typescript@5.9.2)))(eslint@9.33.0(jiti@2.5.1))(typescript-eslint@8.40.0(eslint@9.33.0(jiti@2.5.1))(typescript@5.9.2))(typescript@5.9.2)
       '@sveltejs/adapter-static':
         specifier: ^3.0.9
         version: 3.0.9(@sveltejs/kit@2.33.0(@sveltejs/vite-plugin-svelte@6.1.2(svelte@5.38.2)(vite@7.1.2(@types/node@24.0.3)(jiti@2.5.1)(tsx@4.19.3)(yaml@2.8.0)))(svelte@5.38.2)(vite@7.1.2(@types/node@24.0.3)(jiti@2.5.1)(tsx@4.19.3)(yaml@2.8.0)))
@@ -23,7 +23,7 @@ importers:
       '@sveltejs/vite-plugin-svelte':
         specifier: 6.1.2
         version: 6.1.2(svelte@5.38.2)(vite@7.1.2(@types/node@24.0.3)(jiti@2.5.1)(tsx@4.19.3)(yaml@2.8.0))
-      '@unocss/eslint-plugin':
+      '@unocss/eslint-config':
         specifier: 66.4.2
         version: 66.4.2(eslint@9.33.0(jiti@2.5.1))(typescript@5.9.2)
       '@unocss/extractor-svelte':
@@ -955,6 +955,10 @@ packages:
 
   '@unocss/core@66.4.2':
     resolution: {integrity: sha512-cYgMQrLhB9nRekv5c+yPDDa+5dzlMkA2UMQRil0s5D9Lb5n7NsCMcr6+nfxkcSYVLy92SbwDV45c6T7vIxFTOA==}
+
+  '@unocss/eslint-config@66.4.2':
+    resolution: {integrity: sha512-DKIpN8vRKqQvN0I99BwpfvmULMl0xSrjNlNbevZXfJzyLHq7UF5J+xV02wtG+po8oGO/+xq2NCMKzdIbCUpmQg==}
+    engines: {node: '>=14'}
 
   '@unocss/eslint-plugin@66.4.2':
     resolution: {integrity: sha512-NH8oahBRCOhf50F3MUgDlXie4VlVeR9PxOROhYddz7b2UXUwpLMz5vRnq+I8VM/APsJq/r7/539yfJEf8RudIA==}
@@ -2720,7 +2724,7 @@ snapshots:
       '@jridgewell/sourcemap-codec': 1.5.5
     optional: true
 
-  '@molarmanful/fe-tools@0.2.0(eslint-plugin-svelte@3.11.0(eslint@9.33.0(jiti@2.5.1))(svelte@5.38.2)(ts-node@10.9.2(@types/node@24.0.3)(typescript@5.9.2)))(eslint@9.33.0(jiti@2.5.1))(typescript-eslint@8.40.0(eslint@9.33.0(jiti@2.5.1))(typescript@5.9.2))(typescript@5.9.2)':
+  '@molarmanful/fe-tools@0.2.0(@unocss/eslint-config@66.4.2(eslint@9.33.0(jiti@2.5.1))(typescript@5.9.2))(eslint-plugin-svelte@3.11.0(eslint@9.33.0(jiti@2.5.1))(svelte@5.38.2)(ts-node@10.9.2(@types/node@24.0.3)(typescript@5.9.2)))(eslint@9.33.0(jiti@2.5.1))(typescript-eslint@8.40.0(eslint@9.33.0(jiti@2.5.1))(typescript@5.9.2))(typescript@5.9.2)':
     dependencies:
       '@eslint/js': 9.33.0
       '@stylistic/eslint-plugin': 5.2.3(eslint@9.33.0(jiti@2.5.1))
@@ -2732,6 +2736,7 @@ snapshots:
       eslint-plugin-unicorn: 60.0.0(eslint@9.33.0(jiti@2.5.1))
       globals: 16.3.0
     optionalDependencies:
+      '@unocss/eslint-config': 66.4.2(eslint@9.33.0(jiti@2.5.1))(typescript@5.9.2)
       eslint-plugin-svelte: 3.11.0(eslint@9.33.0(jiti@2.5.1))(svelte@5.38.2)(ts-node@10.9.2(@types/node@24.0.3)(typescript@5.9.2))
       typescript-eslint: 8.40.0(eslint@9.33.0(jiti@2.5.1))(typescript@5.9.2)
     transitivePeerDependencies:
@@ -3052,6 +3057,14 @@ snapshots:
   '@unocss/core@65.5.0': {}
 
   '@unocss/core@66.4.2': {}
+
+  '@unocss/eslint-config@66.4.2(eslint@9.33.0(jiti@2.5.1))(typescript@5.9.2)':
+    dependencies:
+      '@unocss/eslint-plugin': 66.4.2(eslint@9.33.0(jiti@2.5.1))(typescript@5.9.2)
+    transitivePeerDependencies:
+      - eslint
+      - supports-color
+      - typescript
 
   '@unocss/eslint-plugin@66.4.2(eslint@9.33.0(jiti@2.5.1))(typescript@5.9.2)':
     dependencies:
