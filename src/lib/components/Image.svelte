@@ -21,7 +21,7 @@
     Record<string, string>
   >
 
-  const ws1 = ws.reverse()
+  const ws1 = ws.toReversed()
   const url = (name: string, w = ws1.at(-1) ?? 0, x = 'jpg') =>
     `https://cdn.benpa.ng/${type}%40${name}%40${
       hashes[type][name]
