@@ -40,8 +40,7 @@
   display: none;
 }
 
-html,
-body {
+html, body {
   @apply bg-black;
 }
 
@@ -53,9 +52,7 @@ section {
   @apply container mx-auto;
 }
 
-h1,
-h2,
-h3 {
+h1, h2, h3 {
   @apply font-bold text-head text-balance;
 }
 
@@ -79,8 +76,7 @@ a {
   @apply text-accent transition-colors no-underline;
 }
 
-a:hover,
-a:focus {
+a:hover, a:focus {
   @apply text-white;
 }
 
