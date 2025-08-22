@@ -62,7 +62,6 @@
       {@const isAble = ableTagsSet.has(tag)}
       {@const disabled = !isSel && !isAble}
       <li
-        class={clsx(prefersReducedMotion.current || 'will-change-transform')}
         aria-hidden={disabled}
         animate:flip={{ duration: prefersReducedMotion.current ? 0 : 150 }}
       >
@@ -92,10 +91,7 @@
     {#each nameSel as [name, isSel] (name)}
       {@const { title } = items[name]}
       <li
-        class={clsx(
-          'flex',
-          prefersReducedMotion.current || 'will-change-transform',
-        )}
+        class='flex'
         animate:flip={{
           duration: prefersReducedMotion.current ? 0 : 300,
           delay: prefersReducedMotion.current ? 0 : 50,
