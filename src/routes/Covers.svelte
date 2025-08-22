@@ -1,6 +1,7 @@
 <script lang='ts'>
   import CoverImg from '$lib/components/CoverImg.svelte'
   import { items, sortedKeys, tags, tagsSet } from '$lib/ts/meta'
+  import { clsx } from '$lib/ts/util.svelte'
   import { flip } from 'svelte/animate'
   import { prefersReducedMotion } from 'svelte/motion'
   import { fade } from 'svelte/transition'
@@ -61,14 +62,18 @@
       {@const isAble = ableTagsSet.has(tag)}
       {@const disabled = !isSel && !isAble}
       <li
-        class:will-change-transform={!prefersReducedMotion.current}
+        class={clsx(prefersReducedMotion.current || 'will-change-transform')}
         aria-hidden={disabled}
         animate:flip={{ duration: prefersReducedMotion.current ? 0 : 150 }}
       >
         <button
-          class="px-2 py-1 b b-current cursor-pointer transition {isSel ? 'text-head [&:is(:hover,:focus)]:text-head-200' : 'text-bord [&:is(:hover,:focus)]:text-bord-200'}"
-          class:opacity-50={disabled}
-          class:pointer-events-none={disabled}
+          class={clsx(
+            'px-2 py-1 b b-current cursor-pointer transition',
+            isSel
+              ? 'text-head [&:is(:hover,:focus)]:text-head-200'
+              : 'text-bord [&:is(:hover,:focus)]:text-bord-200',
+            disabled && 'opacity-50 pointer-events-none',
+          )}
           {disabled}
           onclick={({ currentTarget }) => {
             if (isSel)
@@ -87,16 +92,20 @@
     {#each nameSel as [name, isSel] (name)}
       {@const { title } = items[name]}
       <li
-        class='flex'
-        class:will-change-transform={!prefersReducedMotion.current}
+        class={clsx(
+          'flex',
+          prefersReducedMotion.current || 'will-change-transform',
+        )}
         animate:flip={{
           duration: prefersReducedMotion.current ? 0 : 300,
           delay: prefersReducedMotion.current ? 0 : 50,
         }}
       >
         <a
-          class='b b-transparent transition relative focus:(b-bord opacity-100!) media-mouse:hover:(b-bord opacity-100!) [&.pointer-events-none]:opacity-25!'
-          class:pointer-events-none={!isSel}
+          class={clsx(
+            'b b-transparent transition relative focus:(b-bord opacity-100!) media-mouse:hover:(b-bord opacity-100!) [&.pointer-events-none]:opacity-25!',
+            isSel || 'pointer-events-none',
+          )}
           aria-disabled={!isSel}
           aria-label={title}
           href={isSel ? `/work/${name}` : void 0}

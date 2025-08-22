@@ -1,6 +1,8 @@
 <script lang='ts'>
   import type { HTMLImgAttributes } from 'svelte/elements'
 
+  import { clsx } from '$lib/ts/util.svelte'
+
   type Props = HTMLImgAttributes
 
   const { src, ...rest }: Props = $props()
@@ -34,8 +36,10 @@
   <img
     bind:this={el}
     style:image-rendering={px ? 'pixelated' : ''}
-    class="block transition-opacity {script ? (loaded ? 'opacity-100' : 'opacity-0') : ''}"
-    class:script
+    class={clsx(
+      'block transition-opacity',
+      script && ['script', loaded ? 'opacity-100' : 'opacity-0'],
+    )}
     decoding='async'
     loading='lazy'
     onload={rsz}

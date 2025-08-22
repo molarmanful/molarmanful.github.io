@@ -4,6 +4,7 @@
   import hashesRaw from '$common/hashes.json'
   import { ws } from '$common/meta'
   import { art, covers, media } from '$lib/ts/meta'
+  import { clsx } from '$lib/ts/util.svelte'
 
   interface Props extends HTMLImgAttributes {
     type: 'covers' | 'art' | 'media'
@@ -48,8 +49,11 @@
 
   <img
     style:background={lqip && `url(${lqip}) center center / contain no-repeat`}
-    class='lazy text-0 max-h-screen w-screen object-contain {clazz}'
-    class:loaded
+    class={clsx(
+      'lazy text-0 max-h-screen w-screen object-contain',
+      { loaded },
+      clazz,
+    )}
     alt={name}
     decoding='async'
     height={meta.height}

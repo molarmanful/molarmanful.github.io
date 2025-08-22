@@ -2,6 +2,8 @@
   import type { Snippet } from 'svelte'
   import type { HTMLAnchorAttributes } from 'svelte/elements'
 
+  import { clsx } from '$lib/ts/util.svelte'
+
   interface Props extends HTMLAnchorAttributes {
     t?: boolean
     item?: boolean
@@ -13,8 +15,7 @@
 </script>
 
 <a
-  class='underline {clazz}'
-  class:text-inherit={item}
+  class={clsx('underline', item && 'text-inherit', clazz)}
   target={t ? void 0 : '_blank'}
   {...rest}
 >

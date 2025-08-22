@@ -2,6 +2,7 @@
   import type { Snippet } from 'svelte'
 
   import { afterNavigate, onNavigate } from '$app/navigation'
+  import { clsx } from '$lib/ts/util.svelte'
 
   import Favicons from './Favicons.svelte'
   import Nav from './Nav.svelte'
@@ -34,7 +35,12 @@
   <Favicons />
 </svelte:head>
 
-<main class="transition-opacity-300 {loaded ? 'opacity-100' : '[html:not(.noscript)_&]:opacity-0.01'}">
+<main
+  class={clsx(
+    'transition-opacity-300',
+    loaded ? 'opacity-100' : '[html:not(.noscript)_&]:opacity-0.01',
+  )}
+>
   <Nav />
 
   {@render children()}
