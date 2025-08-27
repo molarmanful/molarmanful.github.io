@@ -30,7 +30,7 @@ jobs:
       - run: pnpm build
       - run: touch build/.nojekyll
       - if: github.ref_name == github.event.repository.default_branch
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v4
         with:
           path: build
       - if: github.ref_name == github.event.repository.default_branch
