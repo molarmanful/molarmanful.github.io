@@ -20,7 +20,7 @@
   <video
     class={[
       'transition-opacity',
-      script && ['noscript:hidden', loaded ? 'opacity-100' : 'opacity-0'],
+      script && ['noscript:hidden', loaded || 'opacity-0'],
       px && 'image-render-pixel',
     ]}
     loop
