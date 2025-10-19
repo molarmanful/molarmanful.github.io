@@ -41,7 +41,7 @@
 
 <section
   class='
-    relative bg-black bg-linear-to-b p-5 pt-0!
+    relative bg-bg bg-linear-to-b p-5 pt-0!
     xl:p-8
   '
 >
@@ -150,7 +150,7 @@
         >
           <div
             class='
-              pointer-events-none absolute bottom-full w-full bg-black p-2
+              pointer-events-none absolute bottom-full w-full bg-bg p-2
               text-accent-400 opacity-0 outline outline-bord-400 transition
               group-hover:translate-y-0 group-hover:opacity-100
               group-focus:translate-y-0 group-focus:opacity-100

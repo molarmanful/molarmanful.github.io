@@ -74,7 +74,10 @@
           </tr>
           <tr>
             <th>Terminal Emulator</th>
-            <td>alacritty-sixel</td>
+            <td>
+              alacritty (<A href='https://github.com/ayosec/alacritty'
+              >ayosec</A>)
+            </td>
           </tr>
           <tr>
             <th>Editor</th>
@@ -108,8 +111,8 @@
     </p>
 
     <p>
-      I am an avid contributor and consumer of open-source software. I am
-      morally opposed to slop.
+      I am a contributor to and consumer of open-source software. I am morally
+      opposed to slop.
     </p>
 
     <p>

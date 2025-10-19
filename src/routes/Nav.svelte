@@ -1,6 +1,8 @@
-<header class='
-  sticky top-0 z-50 w-full overflow-x-hidden bg-black leading-tight
-'>
+<script lang='ts'>
+  import LogoFill from '$lib/components/LogoFill.svelte'
+</script>
+
+<header class='sticky top-0 z-50 w-full overflow-x-hidden bg-bg leading-tight'>
   <nav
     class='
       container mx-auto px-5
@@ -21,14 +23,7 @@
     >
       <li class='ms-1' data-nohide>
         <a aria-label='Home' href='/'>
-          <svg
-            class='inline-block size-[1em] scale-125 align-[-0.1em]'
-            viewBox='0 0 128 128'
-          >
-            <title>Ben Pang</title>
-            <desc>Beta symbol cut-out over a rounded square background</desc>
-            <use href='/logo_fill.svg#main' />
-          </svg>
+          <LogoFill class='inline-block size-[1em] scale-125 align-[-0.1em]' />
         </a>
       </li>
 

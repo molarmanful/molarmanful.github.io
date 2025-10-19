@@ -8,7 +8,7 @@
 
 <script lang='ts'>
   import ArtImg from '$lib/components/ArtImg.svelte'
-  import MediaImg from '$lib/components/MediaImg.svelte'
+  // import MediaImg from '$lib/components/MediaImg.svelte'
   import Prose from '$lib/components/Prose.svelte'
   import Subheading from '$lib/components/Subheading.svelte'
   import { artalt } from '$lib/ts/meta'
@@ -20,8 +20,8 @@
 </Prose>
 
 <ArtImg name='wireball' alt={artalt('WIREBALL')} />
-<ArtImg name='pangolin' alt={artalt('PROJECT PANGOLIN')} />
-<MediaImg
+<!-- <ArtImg name='pangolin' alt={artalt('PROJECT PANGOLIN')} /> -->
+<!-- <MediaImg
   name='pangolin_stare'
   alt='Ben Pang peeking out from underneath Project Pangolin.'
-/>
+/> -->

@@ -6,6 +6,8 @@
   --breakpoint-xs: 32rem;
   --default-transition-duration: 300ms;
 
+  --color-bg: var(--color-stone-950);
+
   --color-accent-50: var(--color-pink-50);
   --color-accent-100: var(--color-pink-100);
   --color-accent-200: var(--color-pink-200);
@@ -106,6 +108,10 @@
       format('woff2');
   }
 
+  * {
+    scrollbar-color: --alpha(var(--color-bord-400) / 50%) var(--color-bg);
+  }
+
   ::selection {
     @apply bg-current;
     -webkit-text-fill-color: #000;
@@ -125,7 +131,7 @@
   }
 
   html, body {
-    @apply bg-black;
+    @apply bg-bg;
   }
 
   body {
