@@ -1,6 +1,7 @@
 <script lang='ts' module>
   export const title = 'THE RASTER COLLECTION'
-  export const desc = 'Because black & white is fun, but so is color. Drawn with a mouse in HEAVYPAINT/Krita/MS Paint.'
+  export const desc =
+    'Because black & white is fun, but so is color. Drawn with a mouse in HEAVYPAINT/Krita/MS Paint.'
   export const tags = ['2d', 'digital', 'art', 'collection']
   export const year = 2021
 </script>
@@ -10,7 +11,7 @@
   import Prose from '$lib/components/Prose.svelte'
   import Subheading from '$lib/components/Subheading.svelte'
   import YTVideo from '$lib/components/YTVideo.svelte'
-  import { artalt } from '$lib/ts/util.svelte'
+  import { artalt } from '$lib/ts/meta'
 </script>
 
 <Prose>

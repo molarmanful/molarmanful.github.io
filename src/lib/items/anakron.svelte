@@ -1,6 +1,7 @@
 <script lang='ts' module>
   export const title = 'ANAKRON'
-  export const desc = '2025. A thicc retrofuturistic bitmap font made for the modern screen.'
+  export const desc =
+    '2025. A thicc retrofuturistic bitmap font made for the modern screen.'
   export const tags = ['typography', 'design']
   export const year = 2025
 </script>

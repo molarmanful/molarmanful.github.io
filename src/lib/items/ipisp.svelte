@@ -1,6 +1,7 @@
 <script lang='ts' module>
   export const title = '10K IPS'
-  export const desc = '2020 - Made in collaboration with Leo El-Azhab and Mai Khaled. Data visualization of the UAE\'s ISPs and their constituent IP addresses to provoke discussions about net neutrality and security.'
+  export const desc =
+    "2020 - Made in collaboration with Leo El-Azhab and Mai Khaled. Data visualization of the UAE's ISPs and their constituent IP addresses to provoke discussions about net neutrality and security."
   export const tags = ['digital', 'front-end', 'dev', 'data-sci', 'art']
   export const year = 2020
 </script>

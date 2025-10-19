@@ -1,6 +1,7 @@
 <script lang='ts' module>
   export const title = 'HYPONORMAL'
-  export const desc = '2022. An abstract Unity study of worldbuilding centered around non-Euclidean traversal mechanics.'
+  export const desc =
+    '2022. An abstract Unity study of worldbuilding centered around non-Euclidean traversal mechanics.'
   export const tags = ['3d', 'digital', 'game', 'dev', 'art']
   export const year = 2022
 </script>
@@ -29,16 +30,16 @@
   <p>
     Imagine a world encapsulated inside a sphere such that gravity &mdash;
     rather than attracting towards the center of mass &mdash; instead repels
-    outwards. What would walking in such a counterintuitive world feel like?
-    How would people inhabit and develop this world over time? What kind of
-    stories does this world have to tell?
+    outwards. What would walking in such a counterintuitive world feel like? How
+    would people inhabit and develop this world over time? What kind of stories
+    does this world have to tell?
   </p>
   <p>
-    This non-Newtonian, non-Euclidean premise formed the basis for HYPONORMAL,
-    a barren desert microworld battered and beaten by perpetual sandstorms. You
-    are granted a unique opportunity to tread across these unforgiving lands
-    and experience the spherical prison that eternally tethers you &mdash; and
-    the ones who fell before you &mdash; to the ground.
+    This non-Newtonian, non-Euclidean premise formed the basis for HYPONORMAL, a
+    barren desert microworld battered and beaten by perpetual sandstorms. You
+    are granted a unique opportunity to tread across these unforgiving lands and
+    experience the spherical prison that eternally tethers you &mdash; and the
+    ones who fell before you &mdash; to the ground.
   </p>
 
   <MediaImg

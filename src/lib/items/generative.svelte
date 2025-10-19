@@ -1,6 +1,7 @@
 <script lang='ts' module>
   export const title = 'THE GENERATIVE COLLECTION'
-  export const desc = 'From code blossoms art. Works created with autonomous systems to spawn infinite variation.'
+  export const desc =
+    'From code blossoms art. Works created with autonomous systems to spawn infinite variation.'
   export const tags = ['digital', 'dev', 'art', 'collection']
   export const year = 2021
 </script>
@@ -12,7 +13,7 @@
   import Miniheading from '$lib/components/Miniheading.svelte'
   import Prose from '$lib/components/Prose.svelte'
   import Subheading from '$lib/components/Subheading.svelte'
-  import { artalt } from '$lib/ts/util.svelte'
+  import { artalt } from '$lib/ts/meta'
 </script>
 
 <Prose>
@@ -66,7 +67,9 @@
   <Miniheading>Nihilism</Miniheading>
   <MediaImg name='nihilism' alt={artalt('Nihilism')} />
   <p>
-    <A href='https://colab.research.google.com/drive/1DjUw9jp47cCAorEm0pN2cj4_1ksG8hBS?usp=sharing'>
+    <A
+      href='https://colab.research.google.com/drive/1DjUw9jp47cCAorEm0pN2cj4_1ksG8hBS?usp=sharing'
+    >
       Source
     </A>
   </p>

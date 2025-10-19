@@ -2,20 +2,19 @@
   import type { Snippet } from 'svelte'
   import type { HTMLAnchorAttributes } from 'svelte/elements'
 
-  import { clsx } from '$lib/ts/util.svelte'
-
   interface Props extends HTMLAnchorAttributes {
     t?: boolean
     item?: boolean
-    clazz?: string
+    class?: string
     children: Snippet
   }
 
-  const { t, item = false, clazz = '', children, ...rest }: Props = $props()
+  const { t, item = false, class: clazz = '', children, ...rest }: Props =
+    $props()
 </script>
 
 <a
-  class={clsx('underline', item && 'text-inherit', clazz)}
+  class={['underline', item && 'text-inherit', clazz]}
   target={t ? void 0 : '_blank'}
   {...rest}
 >

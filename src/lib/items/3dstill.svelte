@@ -1,6 +1,7 @@
 <script lang='ts' module>
   export const title = 'THE 3D STILL COLLECTION'
-  export const desc = 'Optical oddities that bend the rules of virtual reality. Rendered in Cinema 4D + Redshift.'
+  export const desc =
+    'Optical oddities that bend the rules of virtual reality. Rendered in Cinema 4D + Redshift.'
   export const tags = ['3d', 'digital', 'art', 'collection']
   export const year = 2024
 </script>
@@ -9,7 +10,7 @@
   import ArtImg from '$lib/components/ArtImg.svelte'
   import Prose from '$lib/components/Prose.svelte'
   import Subheading from '$lib/components/Subheading.svelte'
-  import { artalt } from '$lib/ts/util.svelte'
+  import { artalt } from '$lib/ts/meta'
 </script>
 
 <Prose>
@@ -27,9 +28,12 @@
 <ArtImg name='wiseman' alt={artalt('SEARCHING FOR STILLNESS')} />
 <ArtImg name='nodetest' alt={artalt('ABERRATION')} />
 <ArtImg name='crazyplantman' alt={artalt('NATURAL HABITAT')} />
-<ArtImg name='robohead_side' alt={artalt('IT\'S JUST A HEAD 1')} />
-<ArtImg name='robohead_man' alt={artalt('IT\'S JUST A HEAD 3')} />
-<ArtImg name='barren' alt={artalt('NOT ALL WHO WANDER ARE LOST BUT THIS WANDERER IS DEFINITELY LOST')} />
+<ArtImg name='robohead_side' alt={artalt("IT'S JUST A HEAD 1")} />
+<ArtImg name='robohead_man' alt={artalt("IT'S JUST A HEAD 3")} />
+<ArtImg
+  name='barren'
+  alt={artalt('NOT ALL WHO WANDER ARE LOST BUT THIS WANDERER IS DEFINITELY LOST')}
+/>
 <ArtImg name='polyexp' alt={artalt('AMBIVALENCE')} />
 <ArtImg name='cataflow' alt={artalt('TO NEED A WAY OUT')} />
 <ArtImg name='sittingflowers' alt={artalt('HOW TO SEE FLOWERS')} />
@@ -58,7 +62,7 @@
 <ArtImg name='masochist' alt={artalt('MASOCHISMANIA')} />
 <ArtImg name='allovertheplace' alt={artalt('ALL OVER THE PLACE')} />
 <ArtImg name='oldman0' alt='Untitled hair experiment by BandidoJim.' />
-<ArtImg name='room' alt={artalt('DREAMER\'S CAVE')} />
+<ArtImg name='room' alt={artalt("DREAMER'S CAVE")} />
 <ArtImg name='gargoyle' alt={artalt('DAEDALUS')} />
 <ArtImg name='dragonwings' alt={artalt('ICARUS')} />
 <ArtImg name='floorman' alt={artalt('PROTO')} />
@@ -75,13 +79,18 @@
 <ArtImg name='multiarm' alt={artalt('COMPLEX EXPRESSION')} />
 <ArtImg name='oceanthoughts' alt={artalt('TIDAL DRIFT')} />
 <ArtImg name='sirensong' alt={artalt('STOCKHOLM')} />
-<ArtImg name='cantunsee' alt={artalt('I CAN\'T UNSEE YOU')} />
-<ArtImg name='smoothvolumedude' alt={artalt('CFOFFABNUC (CURIOUS FOREIGNER, ORIGINALLY FROM FAR AWAY BUT NOW UP CLOSE)')} />
+<ArtImg name='cantunsee' alt={artalt("I CAN'T UNSEE YOU")} />
+<ArtImg
+  name='smoothvolumedude'
+  alt={artalt(
+    'CFOFFABNUC (CURIOUS FOREIGNER, ORIGINALLY FROM FAR AWAY BUT NOW UP CLOSE)',
+  )}
+/>
 <ArtImg name='matblend' alt={artalt('METALWORK')} />
 <ArtImg name='tongueplants' alt={artalt('MICROBIOME')} />
 <ArtImg name='adrift' alt={artalt('THE WILL TO LIVE')} />
 <ArtImg name='bipolar' alt={artalt('BIPOLAR TAPESTRY')} />
-<ArtImg name='junji' alt={artalt('HIT \'EM WHERE IT HURTS')} />
+<ArtImg name='junji' alt={artalt("HIT 'EM WHERE IT HURTS")} />
 <ArtImg name='mogrify' alt='Artwork of unknown title by BandidoJim.' />
 <ArtImg name='nordic' alt={artalt('STUCK IN MOTION')} />
 <ArtImg name='palmface' alt={artalt('SCRAMBLED EXISTENCES')} />

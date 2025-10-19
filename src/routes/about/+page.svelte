@@ -8,17 +8,29 @@
   <title>ABOUT | {title}</title>
 </svelte:head>
 
-<section class='pb-8 pt-5 *:mx-auto xl:(pb-13 pt-8)'>
+<section
+  class='
+    pt-5 pb-8
+    *:mx-auto
+    xl:pt-8 xl:pb-13
+  '
+>
   <Prose>
     <h1>Benjamin Pang</h1>
 
     <div>
-      <svg class='b b-b-0 b-bord w-full' viewBox='0 0 1080 1080'>
+      <svg
+        class='w-full border border-b-0 border-bord-400'
+        viewBox='0 0 1080 1080'
+      >
         <title>Ben Pang</title>
         <desc>Frustrated self-portrait</desc>
         <use
           style:transform-box='fill-box'
-          class='origin-c translate--1/2 fill-none stroke-[calc(1080/min(var(--100vw-px),656)*1px)] stroke-bord'
+          class='
+            origin-center -translate-1/2 fill-none stroke-bord-400
+            stroke-[calc(1080/min(var(--100vw-px),656)*1px)]
+          '
           href='/me.svg#main'
           shape-rendering='crispEdges'
           vector-effect='non-scaling-stroke'
@@ -28,7 +40,17 @@
         />
       </svg>
 
-      <table class='text-left b b-bord w-full [table-layout:fixed] border-collapse [&_th]:(text-head font-bold text-right) [&_:is(th,td)]:(p-2 b-y b-bord) xl:[&_:is(th,td)]:p-3'>
+      <table
+        class='
+          w-full
+          [table-layout:fixed]
+          border-collapse border border-bord-400 text-left
+          [&_:is(th,td)]:border-y [&_:is(th,td)]:border-bord-400
+          [&_:is(th,td)]:p-2
+          xl:[&_:is(th,td)]:p-3
+          [&_th]:text-right [&_th]:font-bold [&_th]:text-head-400
+        '
+      >
         <tbody>
           <tr>
             <th>Location</th>
@@ -36,7 +58,7 @@
           </tr>
           <tr>
             <th>Occupation</th>
-            <td>Front-End Eng @ <A href='https://updoc.ai'>UpDoc</A></td>
+            <td>Front-End Eng @ <A href='https://updoc.com'>UpDoc</A></td>
           </tr>
           <tr>
             <th>Machine</th>

@@ -1,6 +1,7 @@
 <script lang='ts' module>
   export const title = 'KIRSCH'
-  export const desc = '2024. A versatile bitmap font with an organic flair. Features extensive Unicode and Nerd Fonts support.'
+  export const desc =
+    '2024. A versatile bitmap font with an organic flair. Features extensive Unicode and Nerd Fonts support.'
   export const tags = ['typography', 'design']
   export const year = 2025
 </script>

@@ -1,7 +1,6 @@
 <script lang='ts'>
   import CoverImg from '$lib/components/CoverImg.svelte'
   import { items, sortedKeys, tags, tagsSet } from '$lib/ts/meta'
-  import { clsx } from '$lib/ts/util.svelte'
   import { flip } from 'svelte/animate'
   import { prefersReducedMotion } from 'svelte/motion'
   import { fade } from 'svelte/transition'
@@ -40,14 +39,37 @@
   })
 </script>
 
-<section class='p-5 bg-black relative bg-linear-to-b xl:p-8 pt-0!'>
-  <p class='script text-bord font-bold mb-2 xl:mb-3'>FILTER BY TAG:</p>
+<section
+  class='
+    relative bg-black bg-linear-to-b p-5 pt-0!
+    xl:p-8
+  '
+>
+  <p
+    class='
+      mb-2 font-bold text-bord-400
+      xl:mb-3
+      noscript:hidden
+    '
+  >
+    FILTER BY TAG:
+  </p>
 
-  <ul class='script mb-5 flex flex-wrap gap-2 xl:(mb-8 gap-3)'>
+  <ul
+    class='
+      mb-5 flex flex-wrap gap-2
+      xl:mb-8 xl:gap-3
+      noscript:hidden
+    '
+  >
     {#if selTagsSet.size}
       <li in:fade={{ duration: 150 }}>
         <button
-          class='text-accent px-2 py-1 b b-current cursor-pointer transition [&:is(:hover,:focus)]:text-accent-200'
+          class='
+            cursor-pointer border border-current px-2 py-1 text-accent-400
+            transition
+            [:hover,:focus]:text-accent-200
+          '
           onclick={() => {
             selTagsSet.clear()
           }}
@@ -66,13 +88,19 @@
         animate:flip={{ duration: prefersReducedMotion.current ? 0 : 150 }}
       >
         <button
-          class={clsx(
-            'px-2 py-1 b b-current cursor-pointer transition',
+          class={[
+            'cursor-pointer border border-current px-2 py-1 transition',
             isSel
-              ? 'text-head [&:is(:hover,:focus)]:text-head-200'
-              : 'text-bord [&:is(:hover,:focus)]:text-bord-200',
-            disabled && 'opacity-50 pointer-events-none',
-          )}
+              ? `
+                text-head-400
+                [:hover,:focus]:text-head-200
+              `
+              : `
+                text-bord-400
+                [:hover,:focus]:text-bord-200
+              `,
+            disabled && 'pointer-events-none opacity-50',
+          ]}
           {disabled}
           onclick={({ currentTarget }) => {
             if (isSel)
@@ -87,7 +115,16 @@
     {/each}
   </ul>
 
-  <ul class='mx-auto gap-3 grid cols-1 [&:has(a:focus)_a]:opacity-50 xl:gap-5 lg:cols-4 md:cols-3 xs:cols-2 media-mouse:[&:has(a:hover)_a]:opacity-50'>
+  <ul
+    class='
+      mx-auto grid grid-cols-1 gap-3
+      xs:grid-cols-2
+      md:grid-cols-3
+      lg:grid-cols-4
+      xl:gap-5
+      [&:has(a:focus)_a]:opacity-50 [&:has(a:hover)_a]:media-hover:opacity-50
+    '
+  >
     {#each nameSel as [name, isSel] (name)}
       {@const { title } = items[name]}
       <li
@@ -98,16 +135,28 @@
         }}
       >
         <a
-          class={clsx(
-            'b b-transparent transition relative focus:(b-bord opacity-100!) media-mouse:hover:(b-bord opacity-100!) [&.pointer-events-none]:opacity-25!',
+          class={[
+            `
+              group relative border border-transparent transition
+              hover:border-bord-400 hover:opacity-100!
+              focus:border-bord-400 focus:opacity-100!
+              [.pointer-events-none]:opacity-25!
+            `,
             isSel || 'pointer-events-none',
-          )}
+          ]}
           aria-disabled={!isSel}
           aria-label={title}
           href={isSel ? `/work/${name}` : void 0}
         >
           <div
-            class='text-accent p-2 outline-bord outline bg-black opacity-0 w-full pointer-events-none transition bottom-full absolute xl:p-3 [:focus>&]:(opacity-100 translate-y-0) motion-safe:translate-y-1/2 media-mouse:[:hover>&]:(opacity-100 translate-y-0)'
+            class='
+              pointer-events-none absolute bottom-full w-full bg-black p-2
+              text-accent-400 opacity-0 outline outline-bord-400 transition
+              group-hover:translate-y-0 group-hover:opacity-100
+              group-focus:translate-y-0 group-focus:opacity-100
+              motion-safe:translate-y-1/2
+              xl:p-3
+            '
             aria-hidden={true}
           >
             {title}

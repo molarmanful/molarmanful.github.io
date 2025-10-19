@@ -1,11 +1,11 @@
 import { sveltekit } from '@sveltejs/kit/vite'
-import unocss from 'unocss/vite'
+import tailwindcss from '@tailwindcss/vite'
 import { imagetools } from 'vite-imagetools'
 
 export default {
   plugins: [
     imagetools(),
-    unocss(),
+    tailwindcss(),
     sveltekit(),
   ],
 }

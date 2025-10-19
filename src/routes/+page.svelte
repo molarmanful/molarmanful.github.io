@@ -8,10 +8,7 @@
 
 <svelte:head>
   <title>{title}</title>
-  <meta
-    name='description'
-    content={desc}
-  />
+  <meta name='description' content={desc} />
 </svelte:head>
 
 <Splash />

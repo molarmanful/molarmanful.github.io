@@ -4,17 +4,16 @@
   import hashesRaw from '$common/hashes.json'
   import { ws } from '$common/meta'
   import { art, covers, media } from '$lib/ts/meta'
-  import { clsx } from '$lib/ts/util.svelte'
 
-  interface Props extends HTMLImgAttributes {
+  interface Props extends Omit<HTMLImgAttributes, 'class'> {
     type: 'covers' | 'art' | 'media'
     name: string
     mt?: boolean
-    clazz?: string
+    class?: string | unknown[]
     sizes?: string
   }
 
-  const { type, name, sizes, clazz = '', ...rest }: Props = $props()
+  const { type, name, sizes, class: clazz = [], ...rest }: Props = $props()
 
   const imgs = { covers, art, media }
   const hashes = hashesRaw as Record<
@@ -49,11 +48,11 @@
 
   <img
     style:background={lqip && `url(${lqip}) center center / contain no-repeat`}
-    class={clsx(
-      'lazy text-0 max-h-screen w-screen object-contain',
+    class={[
+      'max-h-screen w-screen lazy object-contain text-[0rem]',
       { loaded },
       clazz,
-    )}
+    ]}
     alt={name}
     decoding='async'
     height={meta.height}

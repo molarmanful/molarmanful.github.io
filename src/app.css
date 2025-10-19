@@ -1,93 +1,178 @@
-/* m-plus-1-code-regular - latin_latin-ext */
-@font-face {
-  font-display: swap;
-  font-family: 'M PLUS 1 Code';
-  font-style: normal;
-  font-weight: 400;
-  src: url('/MPLUS1Code/m-plus-1-code-v15-latin_latin-ext-regular.woff2')
-    format('woff2');
+@import 'tailwindcss';
+@plugin '@iconify/tailwind4';
+
+@theme {
+  --font-mono: 'M PLUS 1 Code';
+  --breakpoint-xs: 32rem;
+  --default-transition-duration: 300ms;
+
+  --color-accent-50: var(--color-pink-50);
+  --color-accent-100: var(--color-pink-100);
+  --color-accent-200: var(--color-pink-200);
+  --color-accent-300: var(--color-pink-300);
+  --color-accent-300: var(--color-pink-300);
+  --color-accent-400: var(--color-pink-400);
+  --color-accent-500: var(--color-pink-500);
+  --color-accent-600: var(--color-pink-600);
+  --color-accent-700: var(--color-pink-700);
+  --color-accent-800: var(--color-pink-800);
+  --color-accent-900: var(--color-pink-900);
+  --color-accent-950: var(--color-pink-950);
+
+  --color-bord-50: var(--color-indigo-50);
+  --color-bord-100: var(--color-indigo-100);
+  --color-bord-200: var(--color-indigo-200);
+  --color-bord-300: var(--color-indigo-300);
+  --color-bord-300: var(--color-indigo-300);
+  --color-bord-400: var(--color-indigo-400);
+  --color-bord-500: var(--color-indigo-500);
+  --color-bord-600: var(--color-indigo-600);
+  --color-bord-700: var(--color-indigo-700);
+  --color-bord-800: var(--color-indigo-800);
+  --color-bord-900: var(--color-indigo-900);
+  --color-bord-950: var(--color-indigo-950);
+
+  --color-head-50: var(--color-teal-50);
+  --color-head-100: var(--color-teal-100);
+  --color-head-200: var(--color-teal-200);
+  --color-head-300: var(--color-teal-300);
+  --color-head-300: var(--color-teal-300);
+  --color-head-400: var(--color-teal-400);
+  --color-head-500: var(--color-teal-500);
+  --color-head-600: var(--color-teal-600);
+  --color-head-700: var(--color-teal-700);
+  --color-head-800: var(--color-teal-800);
+  --color-head-900: var(--color-teal-900);
+  --color-head-950: var(--color-teal-950);
+
+  --color-text-50: var(--color-slate-50);
+  --color-text-100: var(--color-slate-100);
+  --color-text-200: var(--color-slate-200);
+  --color-text-300: var(--color-slate-300);
+  --color-text-300: var(--color-slate-300);
+  --color-text-400: var(--color-slate-400);
+  --color-text-500: var(--color-slate-500);
+  --color-text-600: var(--color-slate-600);
+  --color-text-700: var(--color-slate-700);
+  --color-text-800: var(--color-slate-800);
+  --color-text-900: var(--color-slate-900);
+  --color-text-950: var(--color-slate-950);
+
+  --color-yes-50: var(--color-teal-50);
+  --color-yes-100: var(--color-teal-100);
+  --color-yes-200: var(--color-teal-200);
+  --color-yes-300: var(--color-teal-300);
+  --color-yes-300: var(--color-teal-300);
+  --color-yes-400: var(--color-teal-400);
+  --color-yes-500: var(--color-teal-500);
+  --color-yes-600: var(--color-teal-600);
+  --color-yes-700: var(--color-teal-700);
+  --color-yes-800: var(--color-teal-800);
+  --color-yes-900: var(--color-teal-900);
+  --color-yes-950: var(--color-teal-950);
+
+  --color-no-50: var(--color-pink-50);
+  --color-no-100: var(--color-pink-100);
+  --color-no-200: var(--color-pink-200);
+  --color-no-300: var(--color-pink-300);
+  --color-no-300: var(--color-pink-300);
+  --color-no-400: var(--color-pink-400);
+  --color-no-500: var(--color-pink-500);
+  --color-no-600: var(--color-pink-600);
+  --color-no-700: var(--color-pink-700);
+  --color-no-800: var(--color-pink-800);
+  --color-no-900: var(--color-pink-900);
+  --color-no-950: var(--color-pink-950);
 }
 
-/* m-plus-1-code-700 - latin_latin-ext */
-@font-face {
-  font-display: swap;
-  font-family: 'M PLUS 1 Code';
-  font-style: normal;
-  font-weight: 700;
-  src: url('/MPLUS1Code/m-plus-1-code-v15-latin_latin-ext-700.woff2')
-    format('woff2');
+@layer base {
+  /* m-plus-1-code-regular - latin_latin-ext */
+  @font-face {
+    font-display: swap;
+    font-family: 'M PLUS 1 Code';
+    font-style: normal;
+    font-weight: 400;
+    src: url('/MPLUS1Code/m-plus-1-code-v15-latin_latin-ext-regular.woff2')
+      format('woff2');
+  }
+
+  /* m-plus-1-code-700 - latin_latin-ext */
+  @font-face {
+    font-display: swap;
+    font-family: 'M PLUS 1 Code';
+    font-style: normal;
+    font-weight: 700;
+    src: url('/MPLUS1Code/m-plus-1-code-v15-latin_latin-ext-700.woff2')
+      format('woff2');
+  }
+
+  ::selection {
+    @apply bg-current;
+    -webkit-text-fill-color: #000;
+    text-fill-color: #000;
+  }
+
+  @property --100vw {
+    syntax: '<length>';
+    initial-value: 0px;
+    inherits: false;
+  }
+
+  :root {
+    --100vw: 100vw;
+    --100vw-px: tan(atan2(var(--100vw), 1px));
+    color-scheme: dark;
+  }
+
+  html, body {
+    @apply bg-black;
+  }
+
+  body {
+    @apply font-mono select-text text-text-400 md:text-lg;
+  }
+
+  section {
+    @apply container mx-auto;
+  }
+
+  h1, h2, h3 {
+    @apply font-bold text-head-400 text-balance;
+  }
+
+  h1 {
+    @apply uppercase text-3xl md:text-5xl;
+  }
+
+  h2 {
+    @apply text-2xl md:text-3xl;
+  }
+
+  h3 {
+    @apply text-xl md:text-2xl;
+  }
+
+  a {
+    @apply text-accent-400 transition-colors no-underline hover:text-white
+      focus:text-white;
+  }
 }
 
-::selection {
-  @apply bg-current;
-  -webkit-text-fill-color: #000;
-  text-fill-color: #000;
+@utility lazy {
+  @apply not-[.loaded,[src]]:bg-bord-900 not-[.loaded]:image-render-pixel
+    noscript:image-render-auto;
 }
 
-@property --100vw {
-  syntax: '<length>';
-  initial-value: 0px;
-  inherits: false;
+@utility image-render-auto {
+  image-rendering: auto;
 }
 
-:root {
-  --100vw: 100vw;
-  --100vw-px: tan(atan2(var(--100vw), 1px));
-  color-scheme: dark;
+@utility image-render-pixel {
+  image-rendering: pixelated;
 }
 
-.noscript .script {
-  display: none;
-}
-
-html, body {
-  @apply bg-black;
-}
-
-body {
-  @apply font-['M_PLUS_1_Code'] select-text text-text md:text-lg;
-}
-
-section {
-  @apply container mx-auto;
-}
-
-h1, h2, h3 {
-  @apply font-bold text-head text-balance;
-}
-
-h1 {
-  @apply uppercase text-3xl md:text-5xl;
-}
-
-h2 {
-  @apply text-2xl md:text-3xl;
-}
-
-h3 {
-  @apply text-xl md:text-2xl;
-}
-
-.bigger {
-  @apply text-lg md:text-xl text-text-300;
-}
-
-a {
-  @apply text-accent transition-colors no-underline;
-}
-
-a:hover, a:focus {
-  @apply text-white;
-}
-
-.lazy:not(.loaded, [src]) {
-  @apply bg-bord-900;
-}
-
-.lazy:not(.loaded) {
-  @apply image-render-pixel;
-}
-
-.noscript .lazy {
-  @apply image-render-auto;
+@custom-variant media-hover {
+  @media (hover: hover) {
+    @slot;
+  }
 }

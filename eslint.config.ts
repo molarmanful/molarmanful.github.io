@@ -10,7 +10,7 @@ export default molarmanfulLint({
         tsconfigRootDir: import.meta.dirname,
         allowDefaultProject: [
           'eslint.config.ts',
-          'uno.config.ts',
+          'svelte.config.ts',
         ],
       },
     },
@@ -23,4 +23,10 @@ export default molarmanfulLint({
 }).append({
   files: ['util/**/*.js'],
   languageOptions: { globals: globals.node },
+}).append({
+  settings: {
+    'better-tailwindcss': {
+      entryPoint: 'src/app.css',
+    },
+  },
 })

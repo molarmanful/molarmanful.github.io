@@ -1,6 +1,7 @@
 <script lang='ts' module>
   export const title = 'THE PHYSICAL COLLECTION'
-  export const desc = 'Sculptures and installations which follow arbitrary rules and fulfill arbitrary purposes.'
+  export const desc =
+    'Sculptures and installations which follow arbitrary rules and fulfill arbitrary purposes.'
   export const tags = ['physical', 'art', 'collection']
   export const year = 2021
 </script>
@@ -10,7 +11,7 @@
   import MediaImg from '$lib/components/MediaImg.svelte'
   import Prose from '$lib/components/Prose.svelte'
   import Subheading from '$lib/components/Subheading.svelte'
-  import { artalt } from '$lib/ts/util.svelte'
+  import { artalt } from '$lib/ts/meta'
 </script>
 
 <Prose>

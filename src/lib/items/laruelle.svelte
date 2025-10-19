@@ -1,6 +1,7 @@
 <script lang='ts' module>
   export const title = 'LARUELLE'
-  export const desc = '2020. Using visualization techniques to gain data-driven insights into Laruelle\'s Dictionary of Non-Philosophy.'
+  export const desc =
+    "2020. Using visualization techniques to gain data-driven insights into Laruelle's Dictionary of Non-Philosophy."
   export const tags = ['digital', 'data-sci', 'dev']
   export const year = 2020
 </script>

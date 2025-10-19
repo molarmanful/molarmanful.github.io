@@ -6,6 +6,6 @@
   <title>ERR: {page.status}</title>
 </svelte:head>
 
-<div class='flex items-center inset-0 justify-center absolute'>
-  <h1 class='text-[50vmin] text-accent'>{page.status}</h1>
+<div class='absolute inset-0 flex items-center justify-center'>
+  <h1 class='text-[50vmin] text-accent-400'>{page.status}</h1>
 </div>

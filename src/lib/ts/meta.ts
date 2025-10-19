@@ -21,6 +21,8 @@ const makeRecord = <V>(obj: Record<string, V>) =>
 
 export const title = 'Ben Pang / BandidoJim / Molarmanful'
 
+export const artalt = (name: string) => `Artwork: "${name}" by BandidoJim.`
+
 export const items = makeRecord(import.meta.glob<Item>('$lib/items/*', { eager: true }))
 
 export const sortedKeys = Object.keys(items).sort((a, b) => (items[b].year || 1 / 0) - (items[a].year || 1 / 0))

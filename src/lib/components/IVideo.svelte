@@ -1,7 +1,6 @@
 <script lang='ts'>
   import type { HTMLVideoAttributes } from 'svelte/elements'
 
-  import { clsx } from '$lib/ts/util.svelte'
   import { vload } from '$lib/ts/vload.svelte'
 
   import Video from './Video.svelte'
@@ -19,11 +18,11 @@
 
 {#snippet video(script: boolean, rest: HTMLVideoAttributes = {})}
   <video
-    class={clsx(
+    class={[
       'transition-opacity',
-      script && ['script', loaded ? 'opacity-100' : 'opacity-0'],
+      script && ['noscript:hidden', loaded ? 'opacity-100' : 'opacity-0'],
       px && 'image-render-pixel',
-    )}
+    ]}
     loop
     muted
     oncanplaythrough={() => loaded = true}

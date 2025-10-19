@@ -23,6 +23,11 @@
   {/if}
 </svelte:head>
 
-<div class='py-8 flex flex-col gap-5 items-center xl:(py-13 gap-8)'>
+<div
+  class='
+    flex flex-col items-center gap-5 py-8
+    xl:gap-8 xl:py-13
+  '
+>
   <It />
 </div>

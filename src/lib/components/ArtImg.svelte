@@ -3,7 +3,7 @@
 
   import Image from './Image.svelte'
 
-  interface Props extends HTMLImgAttributes {
+  interface Props extends Omit<HTMLImgAttributes, 'class'> {
     name: string
     sizes?: string
   }

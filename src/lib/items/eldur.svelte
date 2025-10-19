@@ -1,6 +1,7 @@
 <script lang='ts' module>
   export const title = 'ELDUR'
-  export const desc = '2023. An eccentric bitmap microfont for all your spellcasting needs.'
+  export const desc =
+    '2023. An eccentric bitmap microfont for all your spellcasting needs.'
   export const tags = ['typography', 'design']
   export const year = 2023
 </script>

@@ -16,32 +16,27 @@
         { pkgs, self', ... }:
         {
           devShells.default = pkgs.mkShell {
-            packages =
-              let
-                unocss-language-server = pkgs.callPackage ./unocss-language-server.nix { };
-              in
-              with pkgs;
-              [
-                nodejs_latest
-                pnpm
-                nushell
-                # lsps
-                nil
-                nixd
-                vscode-langservers-extracted
-                vtsls
-                svelte-language-server
-                emmet-language-server
-                unocss-language-server
-                stylelint-lsp
-                # formatters
-                nixfmt-rfc-style
-                dprint
-                # linters
-                statix
-                deadnix
-                eslint
-              ];
+            packages = with pkgs; [
+              nodejs_latest
+              pnpm
+              nushell
+              # lsps
+              nil
+              nixd
+              vscode-langservers-extracted
+              vtsls
+              svelte-language-server
+              emmet-language-server
+              tailwindcss-language-server
+              stylelint-lsp
+              # formatters
+              nixfmt-rfc-style
+              dprint
+              # linters
+              statix
+              deadnix
+              eslint
+            ];
           };
 
           formatter = pkgs.writeShellApplication {

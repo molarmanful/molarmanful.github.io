@@ -1,6 +1,7 @@
 <script lang='ts' module>
   export const title = 'VIOLET VENTURES'
-  export const desc = '2021. Logo and brand identity for a student-oriented VC fund at NYUAD.'
+  export const desc =
+    '2021. Logo and brand identity for a student-oriented VC fund at NYUAD.'
   export const tags = ['branding', 'design']
   export const year = 2021
 </script>
@@ -16,7 +17,9 @@
   <h1>{title}</h1>
   <Subheading>{desc}</Subheading>
   <p>
-    <A href='https://www.figma.com/design/ZjsqZfDeTUMQLtFFgoDzTg/Logo-Color-Tests?node-id=0-1&t=JcY5bpPQAfCSU6VQ-1'>
+    <A
+      href='https://www.figma.com/design/ZjsqZfDeTUMQLtFFgoDzTg/Logo-Color-Tests?node-id=0-1&t=JcY5bpPQAfCSU6VQ-1'
+    >
       Figma
     </A>
   </p>

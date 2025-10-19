@@ -1,6 +1,7 @@
 <script lang='ts' module>
   export const title = 'THE 3D ANIM COLLECTION'
-  export const desc = 'Blurring the lines between real and unreal, one render at a time. Rendered in Cinema 4D + Redshift.'
+  export const desc =
+    'Blurring the lines between real and unreal, one render at a time. Rendered in Cinema 4D + Redshift.'
   export const tags = ['3d', 'digital', 'art', 'collection']
   export const year = 2024
 </script>

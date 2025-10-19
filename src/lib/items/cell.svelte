@@ -1,6 +1,7 @@
 <script lang='ts' module>
   export const title = 'THE CELL COLLECTION'
-  export const desc = 'Zero-player games with squares that live many, many lives.'
+  export const desc =
+    'Zero-player games with squares that live many, many lives.'
   export const tags = ['digital', 'dev', 'art', 'collection']
   export const year = 2022
 </script>
@@ -38,7 +39,7 @@
     <A href='https://editor.p5js.org/BandidoJim/sketches/_YeeANOn_'>
       p5.js Sketch
     </A>
-    (<span class='bold'>WARNING</span>: flashing lights)
+    (<strong>WARNING</strong>: flashing lights)
   </p>
 
   <Miniheading>Brian's Brain</Miniheading>
@@ -59,7 +60,7 @@
     <A href='https://editor.p5js.org/BandidoJim/sketches/YS3amIiay'>
       p5.js Sketch
     </A>
-    (<span class='bold'>WARNING</span>: flashing lights)
+    (<strong>WARNING</strong>: flashing lights)
   </p>
 
   <Miniheading>Fading Clamp Game of Life</Miniheading>
@@ -72,7 +73,7 @@
     <A href='https://editor.p5js.org/BandidoJim/sketches/XgeJRhRpX'>
       p5.js Sketch
     </A>
-    (<span class='bold'>WARNING</span>: flashing lights)
+    (<strong>WARNING</strong>: flashing lights)
   </p>
 
   <Miniheading>Reddit Rainbow (feat. Adham Chakohi)</Miniheading>

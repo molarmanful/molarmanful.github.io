@@ -1,6 +1,7 @@
 <script lang='ts' module>
   export const title = 'THE RUBIK COLLECTION'
-  export const desc = 'A simple puzzle that has stumped the world for decades. Digital gadgets for the aspiring cuber.'
+  export const desc =
+    'A simple puzzle that has stumped the world for decades. Digital gadgets for the aspiring cuber.'
   export const tags = [
     '3d',
     'digital',
