@@ -14,11 +14,11 @@
         flex gap-3
         *:*:inline-block *:*:py-5 *:transition-[opacity,visibility]
         xl:gap-5 xl:*:*:py-8
-        [&_a]:text-bord-400
-        [&_a:focus]:text-accent-400 [&_a:hover]:media-hover:text-accent-400
+        [&_a]:text-bord-400 [&_a]:hover:text-accent-400
+        [&_a]:focus:text-accent-400
         [&_i]:mx-0.25 [&_i]:scale-110
-        max-sm:[&:not(:has(:checked))>li:not([data-nohide]):has(a)]:invisible
-        max-sm:[&:not(:has(:checked))>li:not([data-nohide]):has(a)]:opacity-0
+        max-sm:not-has-checked:[&>li]:not-[[data-nohide]]:has-[a]:invisible
+        max-sm:not-has-checked:[&>li]:not-[[data-nohide]]:has-[a]:opacity-0
       '
     >
       <li class='ms-1' data-nohide>
