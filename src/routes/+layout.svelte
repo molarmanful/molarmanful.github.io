@@ -5,6 +5,7 @@
   import Favicons from './Favicons.svelte'
   import Nav from './Nav.svelte'
 
+  import 'core-js/proposals/set-methods-v2'
   import '../app.css'
 
   interface Props {
