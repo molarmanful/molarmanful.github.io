@@ -1,7 +1,6 @@
 <script lang='ts'>
-  import type { Snippet } from 'svelte'
-
   import { afterNavigate, onNavigate } from '$app/navigation'
+  import { type Snippet, tick } from 'svelte'
 
   import Favicons from './Favicons.svelte'
   import Nav from './Nav.svelte'
@@ -23,9 +22,10 @@
   })
 
   afterNavigate(() => {
-    requestAnimationFrame(() => {
+    void (async () => {
+      await tick()
       loaded = true
-    })
+    })()
   })
 </script>
 
