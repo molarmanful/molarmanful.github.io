@@ -1,8 +1,8 @@
-import type { Action } from 'svelte/action'
+import type { Attachment } from 'svelte/attachments'
 
-let loader = $state<IntersectionObserver>()
+let loader: IntersectionObserver | undefined
 
-export const vload: Action = node => {
+export const vload: Attachment = node => {
   if (!loader) {
     loader = new IntersectionObserver(entries => {
       for (const entry of entries) {

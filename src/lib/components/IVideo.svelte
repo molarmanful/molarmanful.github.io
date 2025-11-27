@@ -1,7 +1,7 @@
 <script lang='ts'>
   import type { HTMLVideoAttributes } from 'svelte/elements'
 
-  import { vload } from '$lib/ts/vload.svelte'
+  import { vload } from '$lib/ts/vload'
 
   import Video from './Video.svelte'
 
@@ -28,7 +28,7 @@
     oncanplaythrough={() => loaded = true}
     playsinline
     {...rest}
-    use:vload
+    {@attach vload}
   >
     <source src='https://i.imgur.com/{a}.mp4' type='video/mp4' />
   </video>
