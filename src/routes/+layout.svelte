@@ -36,7 +36,7 @@
 <main
   class={[
     'transition-opacity',
-    loaded || 'not-noscript:opacity-[0.01%]',
+    !loaded && 'not-noscript:opacity-[0.01%]',
   ]}
 >
   <Nav />
