@@ -16,7 +16,7 @@
 
   let loaded = $state(false)
 
-  onNavigate(async () => {
+  onNavigate(() => {
     loaded = false
     return new Promise(res => setTimeout(res, 300))
   })

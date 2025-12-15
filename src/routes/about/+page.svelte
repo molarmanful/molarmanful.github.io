@@ -70,12 +70,12 @@
           </tr>
           <tr>
             <th>Compositor / WM</th>
-            <td>river</td>
+            <td><A href='https://codeberg.org/river/river'>river</A></td>
           </tr>
           <tr>
             <th>Terminal Emulator</th>
             <td>
-              alacritty (<A href='https://github.com/ayosec/alacritty'
+              Alacritty (<A href='https://github.com/ayosec/alacritty'
               >ayosec</A>)
             </td>
           </tr>
