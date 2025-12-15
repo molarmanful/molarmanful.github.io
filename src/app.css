@@ -135,7 +135,7 @@
   }
 
   body {
-    @apply font-mono select-text text-text-400 md:text-lg;
+    @apply font-mono select-text text-text-300 md:text-lg;
   }
 
   section {

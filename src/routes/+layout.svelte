@@ -1,6 +1,6 @@
 <script lang='ts'>
   import { afterNavigate, onNavigate } from '$app/navigation'
-  import { type Snippet, tick } from 'svelte'
+  import { onMount, type Snippet } from 'svelte'
 
   import Favicons from './Favicons.svelte'
   import Nav from './Nav.svelte'
@@ -16,17 +16,14 @@
 
   let loaded = $state(false)
 
-  onNavigate(() => {
+  onNavigate(async () => {
     loaded = false
-    return new Promise(res => setTimeout(res, 300))
+    await new Promise(res => setTimeout(res, 300))
   })
 
-  afterNavigate(() => {
-    void (async () => {
-      await tick()
-      loaded = true
-    })()
-  })
+  const load = () => requestAnimationFrame(() => loaded = true)
+  onMount(load)
+  afterNavigate(load)
 </script>
 
 <svelte:head>

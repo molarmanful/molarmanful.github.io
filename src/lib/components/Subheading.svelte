@@ -13,7 +13,7 @@
 <p
   class={[
     `
-      text-2xl font-normal text-text-300
+      text-2xl font-normal text-text-200
       md:text-3xl
     `,
     clazz,
