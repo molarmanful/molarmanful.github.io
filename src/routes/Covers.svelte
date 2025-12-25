@@ -1,42 +1,12 @@
 <script lang='ts'>
   import CoverImg from '$lib/components/CoverImg.svelte'
-  import { items, sortedKeys, tags, tagsSet } from '$lib/ts/meta'
+  import { tags } from '$lib/states'
+  import { items } from '$lib/ts/meta'
   import { flip } from 'svelte/animate'
   import { prefersReducedMotion } from 'svelte/motion'
   import { fade } from 'svelte/transition'
 
-  import { selTagsSet } from './states.svelte'
-
-  const ableTagsSet = $derived(
-    selTagsSet.size > 0
-      ? new Set([
-        ...Object.values(tags).reduce(
-          (a, b) => selTagsSet.isSubsetOf(b) ? a.union(b) : a,
-          new Set(),
-        ),
-      ].sort())
-      : tagsSet,
-  )
-
-  const sortedTags = $derived([
-    ...selTagsSet,
-    ...ableTagsSet.difference(selTagsSet),
-    ...tagsSet.difference(ableTagsSet),
-  ])
-
-  const nameSel = $derived.by(() => {
-    const nameParts = Map.groupBy(
-      sortedKeys,
-      name =>
-        selTagsSet.size > 0 ? selTagsSet.isSubsetOf(tags[name]) : true,
-    )
-    return ([
-      [true, nameParts.get(true) ?? []],
-      [false, nameParts.get(false) ?? []],
-    ] as const).flatMap(([isSel, names]) =>
-      names.map(name => [name, isSel] as const)
-    )
-  })
+  const { sel, able, sorted, nameSel } = $derived(tags)
 </script>
 
 <section
@@ -62,7 +32,7 @@
       noscript:hidden
     '
   >
-    {#if selTagsSet.size}
+    {#if sel.size > 0}
       <li in:fade={{ duration: 150 }}>
         <button
           class='
@@ -71,7 +41,7 @@
             [:hover,:focus]:text-accent-200
           '
           onclick={() => {
-            selTagsSet.clear()
+            sel.clear()
           }}
         >
           CLEAR
@@ -79,9 +49,9 @@
       </li>
     {/if}
 
-    {#each sortedTags as tag (tag)}
-      {@const isSel = selTagsSet.has(tag)}
-      {@const isAble = ableTagsSet.has(tag)}
+    {#each sorted as tag (tag)}
+      {@const isSel = sel.has(tag)}
+      {@const isAble = able.has(tag)}
       {@const disabled = !isSel && !isAble}
       <li
         aria-hidden={disabled}
@@ -104,8 +74,8 @@
           {disabled}
           onclick={({ currentTarget }) => {
             if (isSel)
-              selTagsSet.delete(tag)
-            else selTagsSet.add(tag)
+              sel.delete(tag)
+            else sel.add(tag)
             currentTarget.blur()
           }}
         >

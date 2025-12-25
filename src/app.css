@@ -6,7 +6,7 @@
   --breakpoint-xs: 32rem;
   --default-transition-duration: 300ms;
 
-  --color-bg: var(--color-stone-950);
+  --color-bg: var(--color-black);
 
   --color-accent-50: var(--color-pink-50);
   --color-accent-100: var(--color-pink-100);

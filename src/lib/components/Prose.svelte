@@ -3,7 +3,7 @@
   import type { HTMLAttributes } from 'svelte/elements'
 
   interface Props extends HTMLAttributes<HTMLDivElement> {
-    children: Snippet
+    children?: Snippet
   }
 
   const { children, ...rest }: Props = $props()
@@ -17,5 +17,5 @@
   '
   {...rest}
 >
-  {@render children()}
+  {@render children?.()}
 </div>

@@ -9,7 +9,7 @@
   import '../app.css'
 
   interface Props {
-    children: Snippet
+    children?: Snippet
   }
 
   const { children }: Props = $props()
@@ -38,5 +38,5 @@
 >
   <Nav />
 
-  {@render children()}
+  {@render children?.()}
 </main>

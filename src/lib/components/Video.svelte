@@ -4,7 +4,7 @@
 
   interface Props extends HTMLAttributes<HTMLDivElement> {
     aspect?: string
-    children: Snippet
+    children?: Snippet
     aspectClass?: unknown
   }
 
@@ -22,5 +22,5 @@
     aspectClass,
   ]}
 >
-  {@render children()}
+  {@render children?.()}
 </div>

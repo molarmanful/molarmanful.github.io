@@ -4,7 +4,7 @@
 
   type Props = HTMLAttributes<HTMLHeadingElement> & {
     class?: string
-    children: Snippet
+    children?: Snippet
   }
 
   const { class: clazz = '', children, ...rest }: Props = $props()
@@ -20,5 +20,5 @@
   ]}
   {...rest}
 >
-  {@render children()}
+  {@render children?.()}
 </h2>

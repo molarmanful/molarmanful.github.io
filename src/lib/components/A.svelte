@@ -6,7 +6,7 @@
     t?: boolean
     item?: boolean
     class?: string
-    children: Snippet
+    children?: Snippet
   }
 
   const { t, item = false, class: clazz = '', children, ...rest }: Props =
@@ -18,5 +18,5 @@
   target={t ? void 0 : '_blank'}
   {...rest}
 >
-  {@render children()}
+  {@render children?.()}
 </a>
