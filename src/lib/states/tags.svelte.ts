@@ -28,6 +28,8 @@ export class Tags {
     return ([
       [true, nameParts.get(true) ?? []],
       [false, nameParts.get(false) ?? []],
-    ] as const).flatMap(([isSel, names]) => names.map(name => [name, isSel] as const))
+    ] as const).flatMap(([isSel, names]) =>
+      names.map(name => [name, isSel] as const)
+    )
   })
 }

@@ -1,4 +1,5 @@
-export const desc = 'Creative technologist, experimental artist, digital designer, font creator, programming language enthusiast.'
+export const desc =
+  'Creative technologist, experimental artist, digital designer, font creator, programming language enthusiast.'
 
 export const ws = [
   2048,
