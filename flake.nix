@@ -30,8 +30,8 @@
               tailwindcss-language-server
               stylelint-lsp
               # formatters
-              nixfmt-rfc-style
               dprint
+              yamlfmt
               # linters
               statix
               deadnix
