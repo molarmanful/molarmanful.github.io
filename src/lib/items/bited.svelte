@@ -2,7 +2,7 @@
   export const title = 'BITED'
   export const desc = '2025. A bitmap font editor.'
   export const tags = ['typography', 'design', 'dev']
-  export const year = 2025
+  export const year = 2026
 </script>
 
 <script lang='ts'>
