@@ -73,8 +73,7 @@
           ]}
           {disabled}
           onclick={({ currentTarget }) => {
-            if (isSel)
-              sel.delete(tag)
+            if (isSel) sel.delete(tag)
             else sel.add(tag)
             currentTarget.blur()
           }}
