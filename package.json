@@ -42,7 +42,7 @@
     "favicons": "^7.2.0",
     "globals": "^17.0.0",
     "sharp": "^0.34.5",
-    "stylelint-config-standard": "^39.0.1",
+    "stylelint-config-standard": "^40.0.0",
     "svelte": "5.46.4",
     "svelte-check": "^4.3.5",
     "svelte-sitemap": "^2.7.1",
