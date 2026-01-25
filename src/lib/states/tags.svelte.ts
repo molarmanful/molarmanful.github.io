@@ -1,5 +1,6 @@
-import { sortedKeys, tags, tagsSet } from '$lib/ts/meta'
 import { SvelteSet } from 'svelte/reactivity'
+
+import { sortedKeys, tags, tagsSet } from '$lib/ts/meta'
 
 export class Tags {
   sel = new SvelteSet<string>()

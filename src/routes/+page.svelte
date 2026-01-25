@@ -1,5 +1,6 @@
 <script lang='ts'>
   import { desc } from '$common/meta'
+
   import { title } from '$lib/ts/meta'
 
   import Covers from './Covers.svelte'

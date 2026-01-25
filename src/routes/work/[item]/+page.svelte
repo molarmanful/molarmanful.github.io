@@ -1,7 +1,7 @@
 <script lang='ts'>
-  import type { PageServerData } from './$types'
-
   import { items, title } from '$lib/ts/meta'
+
+  import type { PageServerData } from './$types'
 
   interface Props {
     data: PageServerData

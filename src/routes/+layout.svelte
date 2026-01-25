@@ -1,12 +1,11 @@
 <script lang='ts'>
+  import '../app.css'
+  import 'core-js/proposals/set-methods-v2'
   import { afterNavigate, onNavigate } from '$app/navigation'
   import { onMount, type Snippet } from 'svelte'
 
   import Favicons from './Favicons.svelte'
   import Nav from './Nav.svelte'
-
-  import 'core-js/proposals/set-methods-v2'
-  import '../app.css'
 
   interface Props {
     children?: Snippet

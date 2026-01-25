@@ -42,9 +42,7 @@
 
       <table
         class='
-          w-full
-          [table-layout:fixed]
-          border-collapse border border-bord-400 text-left
+          w-full table-fixed border-collapse border border-bord-400 text-left
           [&_:is(th,td)]:border-y [&_:is(th,td)]:border-bord-400
           [&_:is(th,td)]:p-2
           xl:[&_:is(th,td)]:p-3

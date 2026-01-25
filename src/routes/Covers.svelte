@@ -1,10 +1,11 @@
 <script lang='ts'>
-  import CoverImg from '$lib/components/CoverImg.svelte'
-  import { tags } from '$lib/states'
-  import { items } from '$lib/ts/meta'
   import { flip } from 'svelte/animate'
   import { prefersReducedMotion } from 'svelte/motion'
   import { fade } from 'svelte/transition'
+
+  import CoverImg from '$lib/components/CoverImg.svelte'
+  import { tags } from '$lib/states'
+  import { items } from '$lib/ts/meta'
 
   const { sel, able, sorted, nameSel } = $derived(tags)
 </script>
@@ -91,7 +92,8 @@
       md:grid-cols-3
       lg:grid-cols-4
       xl:gap-5
-      [&:has(a:focus)_a]:opacity-50 [&:has(a:hover)_a]:media-hover:opacity-50
+      [&:has(a:focus)_a]:opacity-50
+      [&:has(a:hover)_a]:media-hover:opacity-50
     '
   >
     {#each nameSel as [name, isSel] (name)}
