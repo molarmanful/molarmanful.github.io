@@ -37,7 +37,7 @@
     "@tailwindcss/vite": "^4.1.18",
     "core-js": "^3.48.0",
     "eslint": "^9.39.2",
-    "eslint-plugin-better-tailwindcss": "^4.0.1",
+    "eslint-plugin-better-tailwindcss": "^4.0.2",
     "eslint-plugin-svelte": "^3.14.0",
     "favicons": "^7.2.0",
     "globals": "^17.1.0",
