@@ -35,4 +35,4 @@ jobs:
           path: build
       - if: github.ref_name == github.event.repository.default_branch
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5
