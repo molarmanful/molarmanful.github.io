@@ -25,7 +25,7 @@ jobs:
         with:
           node-version: "*"
           cache: pnpm
-      - run: pnpm i --frozen-lockfile
+      - run: pnpm i
       - run: pnpm check
       - run: pnpm build
       - run: touch build/.nojekyll
