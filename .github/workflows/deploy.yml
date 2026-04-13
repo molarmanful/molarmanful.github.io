@@ -25,7 +25,7 @@ jobs:
         with:
           node-version: "*"
           cache: pnpm
-      - run: pnpm i
+      - run: pnpm ci
       - run: pnpm check
       - run: pnpm build
       - run: touch build/.nojekyll
