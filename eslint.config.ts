@@ -11,7 +11,6 @@ export default molarmanfulLint({
         allowDefaultProject: [
           'eslint.config.ts',
           'svelte.config.ts',
-          'svelte-sitemap.config.ts',
         ],
       },
     },
