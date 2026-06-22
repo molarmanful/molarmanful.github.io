@@ -32,7 +32,7 @@
     "@iconify/tailwind4": "^1.2.3",
     "@molarmanful/fe-tools": "^0.4.3",
     "@sveltejs/adapter-static": "^3.0.10",
-    "@sveltejs/kit": "^2.65.1",
+    "@sveltejs/kit": "^2.66.0",
     "@sveltejs/vite-plugin-svelte": "7.1.2",
     "@tailwindcss/vite": "^4.3.1",
     "core-js": "^3.49.0",
@@ -41,15 +41,15 @@
     "eslint-plugin-svelte": "^3.19.0",
     "favicons": "^7.3.0",
     "globals": "^17.6.0",
-    "sharp": "^0.35.1",
+    "sharp": "^0.35.2",
     "svelte": "5.56.3",
     "svelte-check": "^4.6.0",
     "svelte-sitemap": "^4.0.3",
     "tailwindcss": "^4.3.1",
     "typescript": "^6.0.3",
-    "typescript-eslint": "^8.61.0",
+    "typescript-eslint": "^8.61.1",
     "typescript-svelte-plugin": "^0.3.52",
     "vite": "^8.0.16",
-    "vite-imagetools": "^10.0.0"
+    "vite-imagetools": "^10.0.1"
   }
 }
