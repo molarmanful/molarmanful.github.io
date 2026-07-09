@@ -6,7 +6,7 @@
   "description": "Personal site",
   "author": "Benjamin Pang",
   "license": "MIT",
-  "packageManager": "pnpm@11.0.0-rc.0+sha512.1f08eadeea025e91448de6d5dee42a6c94764257000c043a9e36b8ff12849a72ebcb9c65fc1885094747249e52f53d8b73ada1181446bba81866810c8a4d3f6c",
+  "packageManager": "pnpm@11.10.0+sha512.0b7f8b98060031904c017e3a41eb187a16d40eeb829b95c4f8cb03681761fc4ab53dd219115b9b447f4dce1a05a214764461e7d3703392a9f32f9511ce8c86c8",
   "homepage": "https://github.com/molarmanful/molarmanful.github.io#readme",
   "repository": {
     "type": "git",
