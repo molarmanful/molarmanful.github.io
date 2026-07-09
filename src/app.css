@@ -113,9 +113,7 @@
   }
 
   ::selection {
-    @apply bg-current;
-    -webkit-text-fill-color: #000;
-    text-fill-color: #000;
+    @apply bg-current color-bg;
   }
 
   @property --100vw {
