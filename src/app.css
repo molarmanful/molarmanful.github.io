@@ -113,7 +113,7 @@
   }
 
   ::selection {
-    @apply bg-bord-400 text-bg;
+    @apply bg-white text-bg;
   }
 
   @property --100vw {
