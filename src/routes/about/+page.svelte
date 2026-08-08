@@ -116,7 +116,7 @@
     <p>
       Outside of my programming/art practice, I find personal enjoyment in
       <A href='https://store.steampowered.com/app/233860/Kenshi/'>Kenshi</A>,
-      Rubik's Cubes, pen spinning, steak cooking, and Muay Thai.
+      electric bass, Rubik's Cubes, pen spinning, steak cooking, and Muay Thai.
     </p>
   </Prose>
 </section>
