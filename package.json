@@ -50,6 +50,6 @@
     "typescript-eslint": "^8.65.0",
     "typescript-svelte-plugin": "^0.3.52",
     "vite": "^8.2.0",
-    "vite-imagetools": "^10.0.1"
+    "vite-imagetools": "^11.0.0"
   }
 }
