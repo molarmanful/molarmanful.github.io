@@ -1,5 +1,4 @@
 import type { Component } from 'svelte'
-import type { ImageMetadata } from 'vite-imagetools'
 
 export interface Item {
   title: string
@@ -9,7 +8,10 @@ export interface Item {
   default: Component
 }
 
-export type Imgs = [Record<string, string>, Record<string, ImageMetadata>]
+export type Imgs = [
+  Record<string, string>,
+  Record<string, { width: number; height: number }>,
+]
 
 const makeRecord = <V>(obj: Record<string, V>) =>
   Object.fromEntries(
