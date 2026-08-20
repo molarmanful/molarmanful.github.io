@@ -56,13 +56,13 @@
     ]}
     alt={name}
     decoding='async'
-    height={meta.height}
+    height={meta.info.height}
     loading='lazy'
     onload={() => loaded = true}
     {sizes}
     src={url(name)}
     srcset={srcsets.jpg}
-    width={meta.width}
+    width={meta.info.height}
     {...rest}
   />
 </picture>

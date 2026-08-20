@@ -12,7 +12,7 @@ export class Tags {
           (a, b) => this.sel.isSubsetOf(b) ? a.union(b) : a,
           new Set(),
         ),
-      ].sort())
+      ].toSorted())
       : tagsSet,
   )
 

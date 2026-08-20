@@ -27,7 +27,7 @@ export const items = makeRecord(
   import.meta.glob<Item>('$lib/items/*', { eager: true }),
 )
 
-export const sortedKeys = Object.keys(items).sort((a, b) =>
+export const sortedKeys = Object.keys(items).toSorted((a, b) =>
   (items[b].year || 1 / 0) - (items[a].year || 1 / 0)
 )
 
@@ -36,7 +36,7 @@ export const tags = Object.fromEntries(
 )
 
 export const tagsSet = new Set(
-  [...Object.values(tags).reduce((a, b) => a.union(b), new Set())].sort(),
+  [...Object.values(tags).reduce((a, b) => a.union(b), new Set())].toSorted(),
 )
 
 export const covers: Imgs = [

@@ -7,7 +7,6 @@ export default molarmanfulLint({
   ts: {
     parserOptions: {
       projectService: {
-        tsconfigRootDir: import.meta.dirname,
         allowDefaultProject: [
           'eslint.config.ts',
           'svelte.config.ts',
