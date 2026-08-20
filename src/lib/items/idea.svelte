@@ -18,7 +18,7 @@
   <Subheading>{desc}</Subheading>
 
   <p>
-    <A href='http://www.bp1574.nyuadim.com/comic/'>Website</A>
+    <A href='https://www.bp1574.nyuadim.com/comic/'>Website</A>
   </p>
 
   <MediaImg name='idea' alt='The Idea website.' />

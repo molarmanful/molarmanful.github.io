@@ -39,7 +39,7 @@
     jpg: urls(name, 'jpg'),
   })
 
-  let loaded = $state(false)
+  let isLoaded = $state(false)
 </script>
 
 <picture>
@@ -51,14 +51,14 @@
     style:background={lqip && `url(${lqip}) center center / contain no-repeat`}
     class={[
       'max-h-screen w-screen lazy object-contain text-[0rem]',
-      { loaded },
+      { loaded: isLoaded },
       clazz,
     ]}
     alt={name}
     decoding='async'
     height={meta.info.height}
     loading='lazy'
-    onload={() => loaded = true}
+    onload={() => isLoaded = true}
     {sizes}
     src={url(name)}
     srcset={srcsets.jpg}

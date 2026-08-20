@@ -13,14 +13,14 @@
 
   const { children }: Props = $props()
 
-  let loaded = $state(false)
+  let isLoaded = $state(false)
 
   onNavigate(async () => {
-    loaded = false
+    isLoaded = false
     await new Promise(res => setTimeout(res, 300))
   })
 
-  const load = () => requestAnimationFrame(() => loaded = true)
+  const load = () => requestAnimationFrame(() => isLoaded = true)
   onMount(load)
   afterNavigate(load)
 </script>
@@ -32,7 +32,7 @@
 <main
   class={[
     'transition-opacity',
-    !loaded && 'not-noscript:opacity-[0.01%]',
+    !isLoaded && 'not-noscript:opacity-[0.01%]',
   ]}
 >
   <Nav />

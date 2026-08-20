@@ -18,7 +18,7 @@
   <Subheading>{desc}</Subheading>
 
   <p>
-    <A href='http://bp1574.nyuadim.com/30mff'>Website</A>
+    <A href='https://bp1574.nyuadim.com/30mff'>Website</A>
     (best viewed on desktop)
   </p>
 

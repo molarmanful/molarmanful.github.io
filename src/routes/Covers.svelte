@@ -53,9 +53,9 @@
     {#each sorted as tag (tag)}
       {@const isSel = sel.has(tag)}
       {@const isAble = able.has(tag)}
-      {@const disabled = !isSel && !isAble}
+      {@const isDisabled = !isSel && !isAble}
       <li
-        aria-hidden={disabled}
+        aria-hidden={isDisabled}
         animate:flip={{ duration: prefersReducedMotion.current ? 0 : 150 }}
       >
         <button
@@ -70,9 +70,9 @@
                 text-bord-400
                 [:hover,:focus]:text-bord-200
               `,
-            disabled && 'pointer-events-none opacity-50',
+            isDisabled && 'pointer-events-none opacity-50',
           ]}
-          {disabled}
+          disabled={isDisabled}
           onclick={({ currentTarget }) => {
             if (isSel) sel.delete(tag)
             else sel.add(tag)

@@ -36,7 +36,8 @@ export const tags = Object.fromEntries(
 )
 
 export const tagsSet = new Set(
-  [...Object.values(tags).reduce((a, b) => a.union(b), new Set())].toSorted(),
+  [...Object.values(tags).reduce((a, b) => a.union(b), new Set())]
+    .toSorted((a, b) => a.localeCompare(b)),
 )
 
 export const covers: Imgs = [

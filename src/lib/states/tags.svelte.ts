@@ -5,22 +5,20 @@ import { sortedKeys, tags, tagsSet } from '$lib/ts/meta'
 export class Tags {
   sel = new SvelteSet<string>()
 
-  able = $derived(
-    this.sel.size > 0
-      ? new Set([
-        ...Object.values(tags).reduce(
-          (a, b) => this.sel.isSubsetOf(b) ? a.union(b) : a,
-          new Set(),
-        ),
-      ].toSorted())
-      : tagsSet,
-  )
+  able = $derived.by(() => {
+    if (this.sel.size === 0) return tagsSet
+    return new Set([
+      ...Object.values(tags).reduce(
+        (a, b) => this.sel.isSubsetOf(b) ? a.union(b) : a,
+        new Set(),
+      ),
+    ].toSorted((a, b) => a.localeCompare(b)))
+  })
 
   sorted = $derived(
     this.sel.union(this.able).union(tagsSet),
   )
 
-  // eslint-disable-next-line unicorn/consistent-function-scoping
   nameSel = $derived.by(() => {
     const nameParts = Map.groupBy(
       sortedKeys,

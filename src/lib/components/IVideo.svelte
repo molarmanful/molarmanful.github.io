@@ -13,19 +13,19 @@
 
   const { a, px, aspectClass = 'aspect-square' }: Props = $props()
 
-  let loaded = $state(false)
+  let isLoaded = $state(false)
 </script>
 
-{#snippet video(script: boolean, rest: HTMLVideoAttributes = {})}
+{#snippet video(isScript: boolean, rest: HTMLVideoAttributes = {})}
   <video
     class={[
       'transition-opacity',
-      script && ['noscript:hidden', !loaded && 'opacity-0'],
+      isScript && ['noscript:hidden', !isLoaded && 'opacity-0'],
       px && 'image-render-pixel',
     ]}
     loop
     muted
-    oncanplaythrough={() => loaded = true}
+    oncanplaythrough={() => isLoaded = true}
     playsinline
     {...rest}
     {@attach vload}
