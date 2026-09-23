@@ -52,7 +52,7 @@
         <tbody>
           <tr>
             <th>Location</th>
-            <td>SF Bay Area / NYC</td>
+            <td>SF Bay Area</td>
           </tr>
           <tr>
             <th>Occupation</th>
