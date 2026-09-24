@@ -43,10 +43,9 @@
       <table
         class='
           w-full table-fixed border-collapse border border-bord-400 text-left
-          [&_:is(th,td)]:border-y [&_:is(th,td)]:border-bord-400
-          [&_:is(th,td)]:p-2
-          xl:[&_:is(th,td)]:p-3
-          [&_th]:text-right [&_th]:font-bold [&_th]:text-head-400
+          **:[th]:text-right **:[th]:font-bold **:[th]:text-head-400
+          **:[th,td]:border-y **:[th,td]:border-bord-400 **:[th,td]:p-2
+          xl:**:[th,td]:p-3
         '
       >
         <tbody>

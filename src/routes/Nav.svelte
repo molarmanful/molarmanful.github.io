@@ -18,12 +18,12 @@
         *:transition-[opacity,visibility]
         xl:gap-5
         xl:*:*:py-8
-        [&_a]:text-bord-400
-        [&_a]:hover:text-accent-400
-        [&_a]:focus:text-accent-400
-        [&_i]:mx-px [&_i]:scale-110
-        max-sm:not-has-checked:[&>li]:not-data-nohide:has-[a]:invisible
-        max-sm:not-has-checked:[&>li]:not-data-nohide:has-[a]:opacity-0
+        **:[a]:text-bord-400
+        **:[a]:hover:text-accent-400
+        **:[a]:focus:text-accent-400
+        **:[i]:mx-px **:[i]:scale-110
+        max-sm:not-has-checked:*:[li]:not-data-nohide:has-[a]:invisible
+        max-sm:not-has-checked:*:[li]:not-data-nohide:has-[a]:opacity-0
       '
     >
       <li class='ms-1' data-nohide>

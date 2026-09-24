@@ -15,9 +15,9 @@
   class={[
     `
       max-h-screen bg-bord-950
-      [&_:is(video,iframe)]:h-full [&_:is(video,iframe)]:w-[1080px]
-      [&_:is(video,iframe)]:max-w-full [&_:is(video,iframe)]:object-contain
-      [&.aspect-video_:is(video,iframe)]:w-[1920px]
+      **:[video,iframe]:h-full **:[video,iframe]:w-270
+      **:[video,iframe]:max-w-full **:[video,iframe]:object-contain
+      [.aspect-video]:**:[video,iframe]:w-480
     `,
     aspectClass,
   ]}
