@@ -108,8 +108,9 @@
       class='
         pointer-events-none absolute top-full right-0 z-10 mt-1 border
         border-bord-400 bg-bg p-1 text-xs text-bord-400 opacity-0 transition
-        group-hover:opacity-100
-        group-focus:opacity-100
+        group-hover:translate-y-0 group-hover:opacity-100
+        group-focus:translate-y-0 group-focus:opacity-100
+        motion-safe:-translate-y-1
       '
       aria-hidden={true}
     >
