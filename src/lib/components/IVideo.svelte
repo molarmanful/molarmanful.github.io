@@ -35,10 +35,8 @@
 {/snippet}
 
 <Video {aspectClass}>
-  <!-- eslint-disable-next-line @typescript-eslint/no-confusing-void-expression -->
   {@render video(true, { preload: 'none' })}
   <noscript>
-    <!-- eslint-disable-next-line @typescript-eslint/no-confusing-void-expression -->
     {@render video(false, { controls: true })}
   </noscript>
 </Video>

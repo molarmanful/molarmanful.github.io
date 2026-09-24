@@ -174,9 +174,3 @@
 @utility image-render-pixel {
   image-rendering: pixelated;
 }
-
-@custom-variant media-hover {
-  @media (hover: hover) {
-    @slot;
-  }
-}

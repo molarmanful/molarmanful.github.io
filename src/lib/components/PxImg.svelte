@@ -46,9 +46,7 @@
   />
 {/snippet}
 
-<!-- eslint-disable-next-line @typescript-eslint/no-confusing-void-expression -->
 {@render img(true)}
 <noscript>
-  <!-- eslint-disable-next-line @typescript-eslint/no-confusing-void-expression -->
   {@render img(false)}
 </noscript>
