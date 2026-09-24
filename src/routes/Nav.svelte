@@ -1,8 +1,10 @@
 <script lang='ts'>
+  import type { ClassValue } from 'svelte/elements'
+
   import LogoFill from '$lib/components/LogoFill.svelte'
 </script>
 
-<header class='sticky top-0 z-50 w-full overflow-x-hidden bg-bg leading-tight'>
+<header class='sticky top-0 z-50 w-full overflow-x-clip bg-bg leading-tight'>
   <nav
     class='
       container mx-auto px-5
@@ -41,53 +43,78 @@
       </li>
 
       <li class='ml-auto delay-250'>
-        <a href='https://github.com/molarmanful' target='_blank'>
-          <i class='icon-[ph--github-logo]'>GitHub</i>
+        <a href='https://github.com/molarmanful' target='_blank' class='group'>
+          {@render icon('Github', 'icon-[ph--github-logo]')}
         </a>
       </li>
       <li class='delay-200'>
-        <a href='https://instagram.com/bandidojim' target='_blank'>
-          <i class='icon-[ph--instagram-logo]'>Instagram</i>
+        <a
+          href='https://instagram.com/bandidojim'
+          target='_blank'
+          class='group'
+        >
+          {@render icon('Instagram', 'icon-[ph--instagram-logo]')}
         </a>
       </li>
       <li class='delay-150'>
-        <a href='https://linkedin.com/in/molarmanful' target='_blank'>
-          <i class='icon-[ph--linkedin-logo]'>Linkedin</i>
+        <a
+          href='https://linkedin.com/in/molarmanful'
+          target='_blank'
+          class='group'
+        >
+          {@render icon('LinkedIn', 'icon-[ph--linkedin-logo]')}
         </a>
       </li>
       <li class='delay-100'>
         <a
           href='https://codegolf.stackexchange.com/users/41247/mama-fun-roll'
           target='_blank'
+          class='group'
         >
-          <i class='icon-[ph--golf]'>PPCG.SE</i>
+          {@render icon('CGCC.SE', 'icon-[ph--golf]')}
         </a>
       </li>
       <li class='delay-50'>
         <a
           href='https://docs.google.com/document/d/13Hy3akmfz9tvyFH6awZ8riWSCivtYQZa3TE-f_CGszI/edit?usp=sharing'
           target='_blank'
+          class='group'
         >
-          <i class='icon-[ph--read-cv-logo]'>CV</i>
+          {@render icon('CV', 'icon-[ph--read-cv-logo]')}
         </a>
       </li>
 
       <li class='sm:hidden'>
         <label
           class='
-            cursor-pointer text-bord-400 transition-colors
+            group cursor-pointer text-bord-400 transition-colors
             has-checked:text-accent-400
           '
         >
           <input class='peer hidden' type='checkbox'>
-          <i
-            class='
-              icon-[ph--plus] size-[1em] scale-125! transition
-              motion-safe:peer-checked:-rotate-45
-            '
-          >Links</i>
+          {@render icon(
+              'Links',
+              'icon-[ph--plus] size-[1em] scale-125! transition motion-safe:peer-checked:-rotate-45',
+            )}
         </label>
       </li>
     </ul>
   </nav>
 </header>
+
+{#snippet icon(label: string, clazz: ClassValue)}
+  <span class='relative'>
+    <div
+      class='
+        pointer-events-none absolute top-full right-0 z-10 mt-1 border
+        border-bord-400 bg-bg p-1 text-xs text-bord-400 opacity-0 transition
+        group-hover:opacity-100
+        group-focus:opacity-100
+      '
+      aria-hidden={true}
+    >
+      {label}
+    </div>
+    <i class={clazz}>{label}</i>
+  </span>
+{/snippet}
