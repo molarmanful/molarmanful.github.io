@@ -173,8 +173,8 @@ importers:
         specifier: ^1.2.3
         version: 1.2.3(tailwindcss@4.3.3)
       '@molarmanful/fe-tools':
-        specifier: ^0.6.0
-        version: 0.6.0(@eslint/js@10.0.1(eslint@10.12.0(jiti@2.7.0)(supports-color@7.2.0)))(@stylistic/eslint-plugin@5.10.0(eslint@10.12.0(jiti@2.7.0)(supports-color@7.2.0)))(eslint-config-flat-gitignore@2.4.0(eslint@10.12.0(jiti@2.7.0)(supports-color@7.2.0)))(eslint-flat-config-utils@3.2.0)(eslint-plugin-better-tailwindcss@4.9.0(eslint@10.12.0(jiti@2.7.0)(supports-color@7.2.0))(tailwindcss@4.3.3)(typescript@6.0.3))(eslint-plugin-perfectionist@5.12.1(eslint@10.12.0(jiti@2.7.0)(supports-color@7.2.0))(supports-color@7.2.0)(typescript@6.0.3))(eslint-plugin-regexp@3.3.1(eslint@10.12.0(jiti@2.7.0)(supports-color@7.2.0)))(eslint-plugin-svelte@3.23.0(eslint@10.12.0(jiti@2.7.0)(supports-color@7.2.0))(svelte@5.57.2(@typescript-eslint/types@8.71.1)))(eslint-plugin-unicorn@77.0.0(eslint@10.12.0(jiti@2.7.0)(supports-color@7.2.0)))(eslint@10.12.0(jiti@2.7.0)(supports-color@7.2.0))(typescript-eslint@8.71.1(eslint@10.12.0(jiti@2.7.0)(supports-color@7.2.0))(supports-color@7.2.0)(typescript@6.0.3))
+        specifier: ^0.6.1
+        version: 0.6.1(@eslint/js@10.0.1(eslint@10.12.0(jiti@2.7.0)(supports-color@7.2.0)))(@stylistic/eslint-plugin@5.10.0(eslint@10.12.0(jiti@2.7.0)(supports-color@7.2.0)))(eslint-config-flat-gitignore@2.4.0(eslint@10.12.0(jiti@2.7.0)(supports-color@7.2.0)))(eslint-flat-config-utils@3.2.0)(eslint-plugin-better-tailwindcss@4.9.0(eslint@10.12.0(jiti@2.7.0)(supports-color@7.2.0))(tailwindcss@4.3.3)(typescript@6.0.3))(eslint-plugin-perfectionist@5.12.1(eslint@10.12.0(jiti@2.7.0)(supports-color@7.2.0))(supports-color@7.2.0)(typescript@6.0.3))(eslint-plugin-regexp@3.3.1(eslint@10.12.0(jiti@2.7.0)(supports-color@7.2.0)))(eslint-plugin-svelte@3.23.0(eslint@10.12.0(jiti@2.7.0)(supports-color@7.2.0))(svelte@5.57.2(@typescript-eslint/types@8.71.1)))(eslint-plugin-unicorn@77.0.0(eslint@10.12.0(jiti@2.7.0)(supports-color@7.2.0)))(eslint@10.12.0(jiti@2.7.0)(supports-color@7.2.0))(typescript-eslint@8.71.1(eslint@10.12.0(jiti@2.7.0)(supports-color@7.2.0))(supports-color@7.2.0)(typescript@6.0.3))
       '@sveltejs/adapter-static':
         specifier: ^4.0.0
         version: 4.0.0(@sveltejs/kit@3.0.1(@sveltejs/vite-plugin-svelte@7.3.1(svelte@5.57.2(@typescript-eslint/types@8.71.1))(vite@8.3.3(@types/node@26.6.4)(jiti@2.7.0)(yaml@2.9.1)))(svelte@5.57.2(@typescript-eslint/types@8.71.1))(typescript@6.0.3)(vite@8.3.3(@types/node@26.6.4)(jiti@2.7.0)(yaml@2.9.1)))
@@ -533,8 +533,8 @@ packages:
   '@keyv/serialize@1.1.1':
     resolution: {integrity: sha512-dXn3FZhPv0US+7dtJsIi2R+c7qWYiReoEh5zUntWCf4oSpMNib8FDhSoed6m3QyZdx5hK7iLFkYk3rNxwt8vTA==}
 
-  '@molarmanful/fe-tools@0.6.0':
-    resolution: {integrity: sha512-Z1pW6056TVZRLfr+yiJTL9Xw0/fWpR+AuSnvZD8MJitNMkWiO8RmK+w5HEt8/lIYS2AwwGE2ao5skxN2cslVWQ==}
+  '@molarmanful/fe-tools@0.6.1':
+    resolution: {integrity: sha512-5xvU+vDSDmCDvOGARNrUsDD8phz8fdAEAS97Xg5CPatyTWFOYYi3jQRqALU+H3zuwl6iO2x0sMptb0M0W26dRg==}
     peerDependencies:
       '@eslint/js': ^10.0.1
       '@stylistic/eslint-plugin': ^5.10.0
@@ -2314,7 +2314,7 @@ snapshots:
 
   '@keyv/serialize@1.1.1': {}
 
-  '@molarmanful/fe-tools@0.6.0(@eslint/js@10.0.1(eslint@10.12.0(jiti@2.7.0)(supports-color@7.2.0)))(@stylistic/eslint-plugin@5.10.0(eslint@10.12.0(jiti@2.7.0)(supports-color@7.2.0)))(eslint-config-flat-gitignore@2.4.0(eslint@10.12.0(jiti@2.7.0)(supports-color@7.2.0)))(eslint-flat-config-utils@3.2.0)(eslint-plugin-better-tailwindcss@4.9.0(eslint@10.12.0(jiti@2.7.0)(supports-color@7.2.0))(tailwindcss@4.3.3)(typescript@6.0.3))(eslint-plugin-perfectionist@5.12.1(eslint@10.12.0(jiti@2.7.0)(supports-color@7.2.0))(supports-color@7.2.0)(typescript@6.0.3))(eslint-plugin-regexp@3.3.1(eslint@10.12.0(jiti@2.7.0)(supports-color@7.2.0)))(eslint-plugin-svelte@3.23.0(eslint@10.12.0(jiti@2.7.0)(supports-color@7.2.0))(svelte@5.57.2(@typescript-eslint/types@8.71.1)))(eslint-plugin-unicorn@77.0.0(eslint@10.12.0(jiti@2.7.0)(supports-color@7.2.0)))(eslint@10.12.0(jiti@2.7.0)(supports-color@7.2.0))(typescript-eslint@8.71.1(eslint@10.12.0(jiti@2.7.0)(supports-color@7.2.0))(supports-color@7.2.0)(typescript@6.0.3))':
+  '@molarmanful/fe-tools@0.6.1(@eslint/js@10.0.1(eslint@10.12.0(jiti@2.7.0)(supports-color@7.2.0)))(@stylistic/eslint-plugin@5.10.0(eslint@10.12.0(jiti@2.7.0)(supports-color@7.2.0)))(eslint-config-flat-gitignore@2.4.0(eslint@10.12.0(jiti@2.7.0)(supports-color@7.2.0)))(eslint-flat-config-utils@3.2.0)(eslint-plugin-better-tailwindcss@4.9.0(eslint@10.12.0(jiti@2.7.0)(supports-color@7.2.0))(tailwindcss@4.3.3)(typescript@6.0.3))(eslint-plugin-perfectionist@5.12.1(eslint@10.12.0(jiti@2.7.0)(supports-color@7.2.0))(supports-color@7.2.0)(typescript@6.0.3))(eslint-plugin-regexp@3.3.1(eslint@10.12.0(jiti@2.7.0)(supports-color@7.2.0)))(eslint-plugin-svelte@3.23.0(eslint@10.12.0(jiti@2.7.0)(supports-color@7.2.0))(svelte@5.57.2(@typescript-eslint/types@8.71.1)))(eslint-plugin-unicorn@77.0.0(eslint@10.12.0(jiti@2.7.0)(supports-color@7.2.0)))(eslint@10.12.0(jiti@2.7.0)(supports-color@7.2.0))(typescript-eslint@8.71.1(eslint@10.12.0(jiti@2.7.0)(supports-color@7.2.0))(supports-color@7.2.0)(typescript@6.0.3))':
     dependencies:
       '@eslint/js': 10.0.1(eslint@10.12.0(jiti@2.7.0)(supports-color@7.2.0))
       '@stylistic/eslint-plugin': 5.10.0(eslint@10.12.0(jiti@2.7.0)(supports-color@7.2.0))

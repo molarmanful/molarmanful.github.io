@@ -3,7 +3,6 @@
 
   import hashesRaw from '#common/hashes.json'
   import { ws } from '#common/meta.js'
-
   import { art, covers, media } from '#lib/ts/meta.ts'
 
   interface Props extends Omit<HTMLImgAttributes, 'class'> {
