@@ -26,7 +26,7 @@ export const title = 'Ben Pang / BandidoJim / Molarmanful'
 export const artalt = (name: string) => `Artwork: "${name}" by BandidoJim.`
 
 export const items = makeRecord(
-  import.meta.glob<Item>('$lib/items/*', { eager: true }),
+  import.meta.glob<Item>('#lib/items/*', { eager: true }),
 )
 
 export const sortedKeys = Object.keys(items).toSorted((a, b) =>
@@ -44,7 +44,7 @@ export const tagsSet = new Set(
 
 export const covers: Imgs = [
   makeRecord(
-    import.meta.glob('$lib/covers/*', {
+    import.meta.glob('#lib/covers/*', {
       eager: true,
       import: 'default',
       query: {
@@ -58,7 +58,7 @@ export const covers: Imgs = [
     }),
   ),
   makeRecord(
-    import.meta.glob('$lib/covers/*', {
+    import.meta.glob('#lib/covers/*', {
       eager: true,
       import: 'default',
       query: { as: 'meta:height;width' },
@@ -68,7 +68,7 @@ export const covers: Imgs = [
 
 export const art: Imgs = [
   makeRecord(
-    import.meta.glob('$lib/art/*', {
+    import.meta.glob('#lib/art/*', {
       eager: true,
       import: 'default',
       query: {
@@ -82,7 +82,7 @@ export const art: Imgs = [
     }),
   ),
   makeRecord(
-    import.meta.glob('$lib/art/*', {
+    import.meta.glob('#lib/art/*', {
       eager: true,
       import: 'default',
       query: { as: 'meta:height;width' },
@@ -92,7 +92,7 @@ export const art: Imgs = [
 
 export const media: Imgs = [
   makeRecord(
-    import.meta.glob('$lib/media/*', {
+    import.meta.glob('#lib/media/*', {
       eager: true,
       import: 'default',
       query: {
@@ -106,7 +106,7 @@ export const media: Imgs = [
     }),
   ),
   makeRecord(
-    import.meta.glob('$lib/media/*', {
+    import.meta.glob('#lib/media/*', {
       eager: true,
       import: 'default',
       query: { as: 'meta:height;width' },

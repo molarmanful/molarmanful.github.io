@@ -1,7 +1,7 @@
 <script lang='ts'>
   import type { HTMLVideoAttributes } from 'svelte/elements'
 
-  import { vload } from '$lib/ts/vload'
+  import { vload } from '#lib/ts/vload.ts'
 
   import Video from './Video.svelte'
 

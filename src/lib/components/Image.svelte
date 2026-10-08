@@ -1,10 +1,10 @@
 <script lang='ts'>
   import type { HTMLImgAttributes } from 'svelte/elements'
 
-  import hashesRaw from '$common/hashes.json'
-  import { ws } from '$common/meta'
+  import hashesRaw from '#common/hashes.json'
+  import { ws } from '#common/meta.js'
 
-  import { art, covers, media } from '$lib/ts/meta'
+  import { art, covers, media } from '#lib/ts/meta.ts'
 
   interface Props extends Omit<HTMLImgAttributes, 'class'> {
     type: 'covers' | 'art' | 'media'
@@ -23,20 +23,20 @@
   >
 
   const ws1 = ws.toReversed()
-  const url = (name: string, w = ws1.at(-1) ?? 0, x = 'jpg') =>
+  const url = (w = ws1.at(-1) ?? 0, x = 'jpg') =>
     `https://cdn.benpa.ng/${type}%40${name}%40${
       hashes[type][name]
     }%40${w.toString()}.${x}`
-  const urls = (name: string, x = 'jpg') =>
-    ws1.map(w => `${url(name, w, x)} ${w.toString()}w`).join(', ')
+  const urls = (x = 'jpg') =>
+    ws1.map(w => `${url(w, x)} ${w.toString()}w`).join(', ')
 
   const lqip = $derived(imgs[type][0][name])
   const meta = $derived(imgs[type][1][name])
 
   const srcsets = $derived({
-    avif: urls(name, 'avif'),
-    webp: urls(name, 'webp'),
-    jpg: urls(name, 'jpg'),
+    avif: urls('avif'),
+    webp: urls('webp'),
+    jpg: urls('jpg'),
   })
 
   let isLoaded = $state(false)
@@ -60,7 +60,7 @@
     loading='lazy'
     onload={() => isLoaded = true}
     {sizes}
-    src={url(name)}
+    src={url()}
     srcset={srcsets.jpg}
     width={meta.width}
     {...rest}

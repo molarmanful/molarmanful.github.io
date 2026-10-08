@@ -1,6 +1,6 @@
 import { SvelteSet } from 'svelte/reactivity'
 
-import { sortedKeys, tags, tagsSet } from '$lib/ts/meta'
+import { sortedKeys, tags, tagsSet } from '#lib/ts/meta.ts'
 
 export class Tags {
   sel = new SvelteSet<string>()
@@ -22,7 +22,7 @@ export class Tags {
   nameSel = $derived.by(() => {
     const nameParts = Map.groupBy(
       sortedKeys,
-      name => this.sel.size > 0 ? this.sel.isSubsetOf(tags[name]) : true,
+      name => this.sel.size === 0 || this.sel.isSubsetOf(tags[name]),
     )
     return ([
       [true, nameParts.get(true) ?? []],

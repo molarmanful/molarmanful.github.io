@@ -15,7 +15,8 @@
 
   let isLoaded = $state(false)
 
-  onNavigate(async () => {
+  onNavigate(async ({ shallow, type }) => {
+    if (shallow && type === 'goto') return
     isLoaded = false
     await new Promise(res => setTimeout(res, 300))
   })

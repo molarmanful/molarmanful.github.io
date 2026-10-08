@@ -1,7 +1,7 @@
 <script lang='ts'>
   import type { ClassValue } from 'svelte/elements'
 
-  import LogoFill from '$lib/components/LogoFill.svelte'
+  import LogoFill from '#lib/components/LogoFill.svelte'
 </script>
 
 <header class='sticky top-0 z-50 w-full overflow-x-clip bg-bg leading-tight'>

@@ -1,9 +1,13 @@
 import { molarmanfulLint } from '@molarmanful/fe-tools'
+import { loadConfig } from '@sveltejs/load-config'
 import globals from 'globals'
 
-import svelteConfig from './svelte.config'
+const svelteCfgLoad = await loadConfig('./', { traverse: false })
+const svelteConfig = svelteCfgLoad && 'config' in svelteCfgLoad
+  ? svelteCfgLoad.config
+  : void 0
 
-export default molarmanfulLint({
+const cfg = molarmanfulLint({
   ts: {
     parserOptions: {
       projectService: {
@@ -29,3 +33,5 @@ export default molarmanfulLint({
     },
   },
 })
+
+export default cfg

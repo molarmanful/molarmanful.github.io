@@ -7,10 +7,10 @@
 </script>
 
 <script lang='ts'>
-  import ArtImg from '$lib/components/ArtImg.svelte'
-  import Prose from '$lib/components/Prose.svelte'
-  import Subheading from '$lib/components/Subheading.svelte'
-  import { artalt } from '$lib/ts/meta'
+  import ArtImg from '#lib/components/ArtImg.svelte'
+  import Prose from '#lib/components/Prose.svelte'
+  import Subheading from '#lib/components/Subheading.svelte'
+  import { artalt } from '#lib/ts/meta.ts'
 </script>
 
 <Prose>

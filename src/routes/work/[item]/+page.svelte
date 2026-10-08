@@ -1,5 +1,5 @@
 <script lang='ts'>
-  import { items, title } from '$lib/ts/meta'
+  import { items, title } from '#lib/ts/meta.ts'
 
   import type { PageServerData } from './$types'
 

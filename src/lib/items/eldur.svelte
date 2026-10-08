@@ -7,10 +7,10 @@
 </script>
 
 <script lang='ts'>
-  import A from '$lib/components/A.svelte'
-  import Prose from '$lib/components/Prose.svelte'
-  import PxImg from '$lib/components/PxImg.svelte'
-  import Subheading from '$lib/components/Subheading.svelte'
+  import A from '#lib/components/A.svelte'
+  import Prose from '#lib/components/Prose.svelte'
+  import PxImg from '#lib/components/PxImg.svelte'
+  import Subheading from '#lib/components/Subheading.svelte'
 
   const srcs = [
     ['', 'Main'],

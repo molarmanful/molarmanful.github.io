@@ -1,7 +1,7 @@
 <script lang='ts'>
-  import A from '$lib/components/A.svelte'
-  import Prose from '$lib/components/Prose.svelte'
-  import { title } from '$lib/ts/meta'
+  import A from '#lib/components/A.svelte'
+  import Prose from '#lib/components/Prose.svelte'
+  import { title } from '#lib/ts/meta.ts'
 </script>
 
 <svelte:head>

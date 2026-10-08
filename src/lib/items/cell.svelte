@@ -7,12 +7,12 @@
 </script>
 
 <script lang='ts'>
-  import A from '$lib/components/A.svelte'
-  import IVideo from '$lib/components/IVideo.svelte'
-  import MediaImg from '$lib/components/MediaImg.svelte'
-  import Miniheading from '$lib/components/Miniheading.svelte'
-  import Prose from '$lib/components/Prose.svelte'
-  import Subheading from '$lib/components/Subheading.svelte'
+  import A from '#lib/components/A.svelte'
+  import IVideo from '#lib/components/IVideo.svelte'
+  import MediaImg from '#lib/components/MediaImg.svelte'
+  import Miniheading from '#lib/components/Miniheading.svelte'
+  import Prose from '#lib/components/Prose.svelte'
+  import Subheading from '#lib/components/Subheading.svelte'
 </script>
 
 <Prose>

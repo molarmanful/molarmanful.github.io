@@ -2,7 +2,7 @@ import favicons from 'favicons'
 import fs from 'node:fs/promises'
 import path from 'node:path'
 
-import { desc } from '../src/common/meta.js'
+import { desc } from '../src/common/meta'
 
 const out = path.resolve('public/favicons')
 

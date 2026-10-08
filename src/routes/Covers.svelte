@@ -3,9 +3,9 @@
   import { prefersReducedMotion } from 'svelte/motion'
   import { fade } from 'svelte/transition'
 
-  import CoverImg from '$lib/components/CoverImg.svelte'
-  import { tags } from '$lib/states'
-  import { items } from '$lib/ts/meta'
+  import CoverImg from '#lib/components/CoverImg.svelte'
+  import { tags } from '#lib/states/index.ts'
+  import { items } from '#lib/ts/meta.ts'
 
   const { sel, able, sorted, nameSel } = $derived(tags)
 </script>

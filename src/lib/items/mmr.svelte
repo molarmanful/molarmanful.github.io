@@ -7,10 +7,10 @@
 </script>
 
 <script lang='ts'>
-  import MediaImg from '$lib/components/MediaImg.svelte'
-  import Prose from '$lib/components/Prose.svelte'
-  import Subheading from '$lib/components/Subheading.svelte'
-  import YTVideo from '$lib/components/YTVideo.svelte'
+  import MediaImg from '#lib/components/MediaImg.svelte'
+  import Prose from '#lib/components/Prose.svelte'
+  import Subheading from '#lib/components/Subheading.svelte'
+  import YTVideo from '#lib/components/YTVideo.svelte'
 </script>
 
 <Prose>

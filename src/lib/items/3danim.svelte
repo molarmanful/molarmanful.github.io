@@ -7,9 +7,9 @@
 </script>
 
 <script lang='ts'>
-  import IVideo from '$lib/components/IVideo.svelte'
-  import Prose from '$lib/components/Prose.svelte'
-  import Subheading from '$lib/components/Subheading.svelte'
+  import IVideo from '#lib/components/IVideo.svelte'
+  import Prose from '#lib/components/Prose.svelte'
+  import Subheading from '#lib/components/Subheading.svelte'
 </script>
 
 <Prose>
