@@ -2,7 +2,7 @@ import favicons from 'favicons'
 import fs from 'node:fs/promises'
 import path from 'node:path'
 
-import { desc } from '../src/common/meta'
+import { desc } from '../src/common/meta.js'
 
 const out = path.resolve('static/favicons')
 
@@ -14,6 +14,14 @@ const res = await favicons(path.resolve('static/logo.svg'), {
   background: '#000',
   theme_color: '#000',
   appleStatusBarStyle: 'black',
+  icons: {
+    android: ['android-chrome-192x192.png', 'android-chrome-512x512.png'],
+    appleIcon: ['apple-touch-icon-180x180.png'],
+    appleStartup: false,
+    favicons: ['favicon.ico', 'favicon-32x32.png'],
+    windows: false,
+    yandex: false,
+  },
 })
 
 await fs.rm(out, { recursive: true, force: true })
@@ -26,6 +34,6 @@ await Promise.all(
 )
 
 await fs.writeFile(
-  path.resolve('src/lib/Favicons.svelte'),
-  res.html.join`\n`,
+  path.resolve('src/routes/Favicons.svelte'),
+  res.html.join('\n'),
 )
