@@ -1,6 +1,5 @@
 <script lang='ts'>
   import '../app.css'
-  import 'core-js/proposals/set-methods-v2'
   import { afterNavigate, onNavigate } from '$app/navigation'
   import { onMount, type Snippet } from 'svelte'
 
