@@ -110,9 +110,10 @@
       >
         <a
           class='
-            group/a relative border border-transparent transition
+            group/a relative border border-transparent
+            transition-[opacity,border-color]
             group-focus-within/ul:opacity-50
-            group-has-[a:hover]/ul:opacity-50
+            group-hover/ul:opacity-50
             hover:border-bord-400 hover:opacity-100!
             focus:border-bord-400 focus:opacity-100!
             aria-disabled:pointer-events-none aria-disabled:opacity-25!
