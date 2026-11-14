@@ -2,11 +2,9 @@
   import type { Snippet } from 'svelte'
   import type { HTMLAttributes } from 'svelte/elements'
 
-  interface Props extends HTMLAttributes<HTMLDivElement> {
+  const { children, ...rest }: HTMLAttributes<HTMLDivElement> & {
     children?: Snippet
-  }
-
-  const { children, ...rest }: Props = $props()
+  } = $props()
 </script>
 
 <div

@@ -1,9 +1,11 @@
 <script lang='ts' module>
-  export const title = 'THE VECTOR COLLECTION'
-  export const desc =
-    'Scalable compositions of geometries and abstract oddities. Made with Illustrator and Hexels.'
-  export const tags = ['2d', 'digital', 'design', 'art', 'collection']
-  export const year = 2021
+  export const meta = {
+    title: 'THE VECTOR COLLECTION',
+    desc:
+      'Scalable compositions of geometries and abstract oddities. Made with Illustrator and Hexels.',
+    tags: ['2d', 'digital', 'design', 'art', 'collection'],
+    year: 2021,
+  }
 </script>
 
 <script lang='ts'>
@@ -14,8 +16,8 @@
 </script>
 
 <Prose>
-  <h1>{title}</h1>
-  <Subheading>{desc}</Subheading>
+  <h1>{meta.title}</h1>
+  <Subheading>{meta.desc}</Subheading>
 </Prose>
 
 <ArtImg name='plane' alt={artalt('SEABIRD')} />

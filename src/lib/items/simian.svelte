@@ -1,9 +1,11 @@
 <script lang='ts' module>
-  export const title = 'SIMIAN'
-  export const desc =
-    '2021. Somewhat Interesting Machine with Intelligence of Artificial Nature, a frontend-only train-your-own-chatbot interface that pushed the limits of what was possible in client-side AI at the time.'
-  export const tags = ['digital', 'front-end', 'dev', 'design', 'art']
-  export const year = 2021
+  export const meta = {
+    title: 'SIMIAN',
+    desc:
+      '2021. Somewhat Interesting Machine with Intelligence of Artificial Nature, a frontend-only train-your-own-chatbot interface that pushed the limits of what was possible in client-side AI at the time.',
+    tags: ['digital', 'front-end', 'dev', 'design', 'art'],
+    year: 2021,
+  }
 </script>
 
 <script lang='ts'>
@@ -14,8 +16,8 @@
 </script>
 
 <Prose>
-  <h1>{title}</h1>
-  <Subheading>{desc}</Subheading>
+  <h1>{meta.title}</h1>
+  <Subheading>{meta.desc}</Subheading>
   <p>
     <A href='https://benpa.ng/simian'>Website</A>
     (best viewed with a physical keyboard)

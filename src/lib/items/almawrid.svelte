@@ -1,9 +1,11 @@
 <script lang='ts' module>
-  export const title = 'AL MAWRID'
-  export const desc =
-    '2021 - made in collaboration with the Yes Logo Spring 2021 class, under guidance from calligrapher/designer Wissam Shawkat and Prof. Goffredo Puccetti. Proposed logo and brand identity for al Mawrid Arab Center for the Study of Art.'
-  export const tags = ['branding', 'design']
-  export const year = 2021
+  export const meta = {
+    title: 'AL MAWRID',
+    desc:
+      '2021 - made in collaboration with the Yes Logo Spring 2021 class, under guidance from calligrapher/designer Wissam Shawkat and Prof. Goffredo Puccetti. Proposed logo and brand identity for al Mawrid Arab Center for the Study of Art.',
+    tags: ['branding', 'design'],
+    year: 2021,
+  }
 </script>
 
 <script lang='ts'>
@@ -14,8 +16,8 @@
 </script>
 
 <Prose>
-  <h1>{title}</h1>
-  <Subheading>{desc}</Subheading>
+  <h1>{meta.title}</h1>
+  <Subheading>{meta.desc}</Subheading>
 
   <MediaImg
     name='almawrid_logo'

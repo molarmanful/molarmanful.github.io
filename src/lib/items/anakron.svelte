@@ -1,9 +1,11 @@
 <script lang='ts' module>
-  export const title = 'ANAKRON'
-  export const desc =
-    '2025. A thicc retrofuturistic bitmap font made for the modern screen.'
-  export const tags = ['typography', 'design']
-  export const year = 2025
+  export const meta = {
+    title: 'ANAKRON',
+    desc:
+      '2025. A thicc retrofuturistic bitmap font made for the modern screen.',
+    tags: ['typography', 'design'],
+    year: 2025,
+  }
 </script>
 
 <script lang='ts'>
@@ -14,8 +16,8 @@
 </script>
 
 <Prose>
-  <h1>{title}</h1>
-  <Subheading>{desc}</Subheading>
+  <h1>{meta.title}</h1>
+  <Subheading>{meta.desc}</Subheading>
 
   <p><A href='https://github.com/molarmanful/ANAKRON'>Source</A></p>
 </Prose>

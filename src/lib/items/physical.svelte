@@ -1,9 +1,11 @@
 <script lang='ts' module>
-  export const title = 'THE PHYSICAL COLLECTION'
-  export const desc =
-    'Sculptures and installations which follow arbitrary rules and fulfill arbitrary purposes.'
-  export const tags = ['physical', 'art', 'collection']
-  export const year = 2021
+  export const meta = {
+    title: 'THE PHYSICAL COLLECTION',
+    desc:
+      'Sculptures and installations which follow arbitrary rules and fulfill arbitrary purposes.',
+    tags: ['physical', 'art', 'collection'],
+    year: 2021,
+  }
 </script>
 
 <script lang='ts'>
@@ -15,8 +17,8 @@
 </script>
 
 <Prose>
-  <h1>{title}</h1>
-  <Subheading>{desc}</Subheading>
+  <h1>{meta.title}</h1>
+  <Subheading>{meta.desc}</Subheading>
 </Prose>
 
 <ArtImg name='wireball' alt={artalt('WIREBALL')} />

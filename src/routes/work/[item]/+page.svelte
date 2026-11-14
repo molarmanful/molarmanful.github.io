@@ -1,19 +1,13 @@
 <script lang='ts'>
-  import { items, title } from '#lib/ts/meta.ts'
+  import { title } from '#lib/ts/meta.ts'
 
-  import type { PageServerData } from './$types'
+  import type { PageData } from './$types'
 
-  interface Props {
-    data: PageServerData
-  }
+  const { data }: {
+    data: PageData
+  } = $props()
 
-  const { data }: Props = $props()
-
-  const {
-    title: itemTitle,
-    default: It,
-    desc,
-  } = $derived(items[data.name])
+  const { title: itemTitle, component: It, desc } = $derived(data)
 </script>
 
 <svelte:head>

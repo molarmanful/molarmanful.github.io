@@ -1,4 +1,5 @@
 <script lang='ts'>
+  import { resolve } from '$app/paths'
   import { flip } from 'svelte/animate'
   import { prefersReducedMotion } from 'svelte/motion'
   import { fade } from 'svelte/transition'
@@ -120,7 +121,7 @@
           '
           aria-disabled={!isSel}
           aria-label={title}
-          href={isSel ? `/work/${name}` : void 0}
+          href={isSel ? resolve(`/work/[item]`, { item: name }) : void 0}
         >
           <div
             class='

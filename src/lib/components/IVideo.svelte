@@ -1,17 +1,17 @@
 <script lang='ts'>
+  import type { ComponentProps } from 'svelte'
   import type { HTMLVideoAttributes } from 'svelte/elements'
 
   import { vload } from '#lib/ts/vload.ts'
 
   import Video from './Video.svelte'
 
-  interface Props {
-    a: string
-    px?: boolean
-    aspectClass?: string
-  }
-
-  const { a, px, aspectClass = 'aspect-square' }: Props = $props()
+  const { a, px, class: clazz = 'aspect-square' }:
+    & ComponentProps<typeof Video>
+    & {
+      a: string
+      px?: boolean
+    } = $props()
 
   let isLoaded = $state(false)
 </script>
@@ -34,7 +34,7 @@
   </video>
 {/snippet}
 
-<Video {aspectClass}>
+<Video class={clazz}>
   {@render video(true, { preload: 'none' })}
   <noscript>
     {@render video(false, { controls: true })}

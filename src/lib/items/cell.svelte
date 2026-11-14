@@ -1,9 +1,10 @@
 <script lang='ts' module>
-  export const title = 'THE CELL COLLECTION'
-  export const desc =
-    'Zero-player games with squares that live many, many lives.'
-  export const tags = ['digital', 'dev', 'art', 'collection']
-  export const year = 2022
+  export const meta = {
+    title: 'THE CELL COLLECTION',
+    desc: 'Zero-player games with squares that live many, many lives.',
+    tags: ['digital', 'dev', 'art', 'collection'],
+    year: 2022,
+  }
 </script>
 
 <script lang='ts'>
@@ -16,8 +17,8 @@
 </script>
 
 <Prose>
-  <h1>{title}</h1>
-  <Subheading>{desc}</Subheading>
+  <h1>{meta.title}</h1>
+  <Subheading>{meta.desc}</Subheading>
 
   <Miniheading>3-Species Ecosystem</Miniheading>
   <IVideo a='hnEuirk' />

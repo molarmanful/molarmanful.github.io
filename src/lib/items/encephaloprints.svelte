@@ -1,9 +1,11 @@
 <script lang='ts' module>
-  export const title = 'ENCEPHALOPRINTS'
-  export const desc =
-    '2022. An interactive installation in which generative visuals react in realtime to brain activity read from an EEG headset.'
-  export const tags = ['3d', 'physical', 'digital', 'art', 'iot']
-  export const year = 2022
+  export const meta = {
+    title: 'ENCEPHALOPRINTS',
+    desc:
+      '2022. An interactive installation in which generative visuals react in realtime to brain activity read from an EEG headset.',
+    tags: ['3d', 'physical', 'digital', 'art', 'iot'],
+    year: 2022,
+  }
 </script>
 
 <script lang='ts'>
@@ -15,8 +17,8 @@
 </script>
 
 <Prose>
-  <h1>ENCEPHALO<wbr>PRINTS</h1>
-  <Subheading>{desc}</Subheading>
+  <h1>ENCEPHALO<wbr />PRINTS</h1>
+  <Subheading>{meta.desc}</Subheading>
 
   <p><A href='https://benpa.ng/capstone'>Devblog</A></p>
 

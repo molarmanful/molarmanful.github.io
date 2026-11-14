@@ -1,9 +1,11 @@
 <script lang='ts' module>
-  export const title = 'PERFORMING IDENTITY'
-  export const desc =
-    '2020 - made in collaboration with Li Cheng and Amy Kang. A concept for a virtual exhibition space that displays contemporary Asian art.'
-  export const tags = ['digital', 'front-end', 'dev', 'design', 'art']
-  export const year = 2020
+  export const meta = {
+    title: 'PERFORMING IDENTITY',
+    desc:
+      '2020 - made in collaboration with Li Cheng and Amy Kang. A concept for a virtual exhibition space that displays contemporary Asian art.',
+    tags: ['digital', 'front-end', 'dev', 'design', 'art'],
+    year: 2020,
+  }
 </script>
 
 <script lang='ts'>
@@ -14,8 +16,8 @@
 </script>
 
 <Prose>
-  <h1>{title}</h1>
-  <Subheading>{desc}</Subheading>
+  <h1>{meta.title}</h1>
+  <Subheading>{meta.desc}</Subheading>
 
   <p>
     <A href='https://benpa.ng/exhibit'>Website</A>

@@ -1,9 +1,11 @@
 <script lang='ts' module>
-  export const title = 'AIRPOD ADDICTION'
-  export const desc =
-    "2019 - made in collaboration with Ganjina Oripova and Fay Zhuang. Website for a silent short film made in 30 minutes which poked fun at the fanatical culture around Apple's AirPods."
-  export const tags = ['front-end', 'digital', 'dev', 'design']
-  export const year = 2019
+  export const meta = {
+    title: 'AIRPOD ADDICTION',
+    desc:
+      "2019 - made in collaboration with Ganjina Oripova and Fay Zhuang. Website for a silent short film made in 30 minutes which poked fun at the fanatical culture around Apple's AirPods.",
+    tags: ['front-end', 'digital', 'dev', 'design'],
+    year: 2019,
+  }
 </script>
 
 <script lang='ts'>
@@ -14,8 +16,8 @@
 </script>
 
 <Prose>
-  <h1>{title}</h1>
-  <Subheading>{desc}</Subheading>
+  <h1>{meta.title}</h1>
+  <Subheading>{meta.desc}</Subheading>
 
   <p>
     <A href='https://bp1574.nyuadim.com/30mff'>Website</A>

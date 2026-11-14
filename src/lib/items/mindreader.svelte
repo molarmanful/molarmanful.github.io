@@ -1,9 +1,11 @@
 <script lang='ts' module>
-  export const title = "MINDREADER'S DIGEST"
-  export const desc =
-    '2020. An e-magazine from a hypothetical retro-future in which thought-based communication is made possible via brain implants.'
-  export const tags = ['digital', 'front-end', 'dev', 'design', 'art']
-  export const year = 2020
+  export const meta = {
+    title: "MINDREADER'S DIGEST",
+    desc:
+      '2020. An e-magazine from a hypothetical retro-future in which thought-based communication is made possible via brain implants.',
+    tags: ['digital', 'front-end', 'dev', 'design', 'art'],
+    year: 2020,
+  }
 </script>
 
 <script lang='ts'>
@@ -14,8 +16,8 @@
 </script>
 
 <Prose>
-  <h1>{title}</h1>
-  <Subheading>{desc}</Subheading>
+  <h1>{meta.title}</h1>
+  <Subheading>{meta.desc}</Subheading>
 
   <p>
     <A href='https://benpa.ng/mindreaders-digest'>Website</A>

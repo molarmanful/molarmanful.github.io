@@ -1,19 +1,18 @@
 <script lang='ts'>
-  import type { HTMLImgAttributes } from 'svelte/elements'
+  import type { ClassValue, HTMLImgAttributes } from 'svelte/elements'
 
   import hashesRaw from '#common/hashes.json'
   import { ws } from '#common/meta.js'
   import { art, covers, media } from '#lib/ts/meta.ts'
 
-  interface Props extends Omit<HTMLImgAttributes, 'class'> {
-    type: 'covers' | 'art' | 'media'
-    name: string
-    mt?: boolean
-    class?: string | unknown[]
-    sizes?: string
-  }
-
-  const { type, name, sizes, class: clazz = [], ...rest }: Props = $props()
+  const { type, name, sizes, class: clazz, ...rest }:
+    & Omit<HTMLImgAttributes, 'class'>
+    & {
+      type: 'covers' | 'art' | 'media'
+      name: string
+      class?: ClassValue
+      sizes?: string
+    } = $props()
 
   const imgs = { covers, art, media }
   const hashes = hashesRaw as Record<
@@ -42,8 +41,8 @@
 </script>
 
 <picture>
-  {#each ['avif', 'webp'] as const as x}
-    <source {sizes} srcset={srcsets[x]} type='image/{x}'>
+  {#each ['avif', 'webp'] as const as x (x)}
+    <source {sizes} srcset={srcsets[x]} type='image/{x}' />
   {/each}
 
   <img

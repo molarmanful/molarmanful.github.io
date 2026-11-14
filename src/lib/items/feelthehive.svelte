@@ -1,18 +1,20 @@
 <script lang='ts' module>
-  export const title = 'FEEL THE HIVE'
-  export const desc =
-    '2022. An Internet-powered backscratcher that converts clicks and taps to scratches.'
-  export const tags = [
-    'physical',
-    'digital',
-    'full-stack',
-    'front-end',
-    'back-end',
-    'dev',
-    'art',
-    'iot',
-  ]
-  export const year = 2022
+  export const meta = {
+    title: 'FEEL THE HIVE',
+    desc:
+      '2022. An Internet-powered backscratcher that converts clicks and taps to scratches.',
+    tags: [
+      'physical',
+      'digital',
+      'full-stack',
+      'front-end',
+      'back-end',
+      'dev',
+      'art',
+      'iot',
+    ],
+    year: 2022,
+  }
 </script>
 
 <script lang='ts'>
@@ -24,8 +26,8 @@
 </script>
 
 <Prose>
-  <h1>{title}</h1>
-  <Subheading>{desc}</Subheading>
+  <h1>{meta.title}</h1>
+  <Subheading>{meta.desc}</Subheading>
 
   <p>
     <A href='https://wp.nyu.edu/itp_multisensory_design/project-ben'>Devblog</A>

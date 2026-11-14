@@ -2,12 +2,10 @@
   import type { Snippet } from 'svelte'
   import type { HTMLAttributes } from 'svelte/elements'
 
-  type Props = HTMLAttributes<HTMLHeadingElement> & {
+  const { clazz, children, ...rest }: HTMLAttributes<HTMLHeadingElement> & {
     clazz?: string
     children?: Snippet
-  }
-
-  const { clazz = '', children, ...rest }: Props = $props()
+  } = $props()
 </script>
 
 <p

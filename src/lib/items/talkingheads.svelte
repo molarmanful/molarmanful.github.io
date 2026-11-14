@@ -1,17 +1,19 @@
 <script lang='ts' module>
-  export const title = 'TALKING-HEADS'
-  export const desc =
-    '2023. An experimental chatroom that enables mere mortals to communicate with the gods.'
-  export const tags = [
-    'digital',
-    'full-stack',
-    'front-end',
-    'back-end',
-    'dev',
-    'design',
-    'art',
-  ]
-  export const year = 2023
+  export const meta = {
+    title: 'TALKING-HEADS',
+    desc:
+      '2023. An experimental chatroom that enables mere mortals to communicate with the gods.',
+    tags: [
+      'digital',
+      'full-stack',
+      'front-end',
+      'back-end',
+      'dev',
+      'design',
+      'art',
+    ],
+    year: 2023,
+  }
 </script>
 
 <script lang='ts'>
@@ -22,8 +24,8 @@
 </script>
 
 <Prose>
-  <h1>{title}</h1>
-  <Subheading>{desc}</Subheading>
+  <h1>{meta.title}</h1>
+  <Subheading>{meta.desc}</Subheading>
   <p>
     <A href='https://talking-heads.fly.dev'>Website</A>
     <br />

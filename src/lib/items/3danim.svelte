@@ -1,9 +1,11 @@
 <script lang='ts' module>
-  export const title = 'THE 3D ANIM COLLECTION'
-  export const desc =
-    'Blurring the lines between real and unreal, one render at a time. Rendered in Cinema 4D + Redshift.'
-  export const tags = ['3d', 'digital', 'art', 'collection']
-  export const year = 2024
+  export const meta = {
+    title: 'THE 3D ANIM COLLECTION',
+    desc:
+      'Blurring the lines between real and unreal, one render at a time. Rendered in Cinema 4D + Redshift.',
+    tags: ['3d', 'digital', 'art', 'collection'],
+    year: 2024,
+  }
 </script>
 
 <script lang='ts'>
@@ -13,21 +15,21 @@
 </script>
 
 <Prose>
-  <h1>{title}</h1>
-  <Subheading>{desc}</Subheading>
+  <h1>{meta.title}</h1>
+  <Subheading>{meta.desc}</Subheading>
 </Prose>
 
-<IVideo a='t4gBwsT' aspectClass='aspect-9/16' />
+<IVideo class='aspect-9/16' a='t4gBwsT' />
 <IVideo a='qMIbiqD' />
 <IVideo a='SRZ9d2t' />
 <IVideo a='pbyDbK9' />
 <IVideo a='bvQ3ZzI' />
-<IVideo a='Q8fgrni' aspectClass='aspect-9/16' />
-<IVideo a='y0Oq0PO' aspectClass='aspect-9/16' />
-<IVideo a='agHKJ2v' aspectClass='aspect-9/16' />
-<IVideo a='w7IX9su' aspectClass='aspect-9/16' />
-<IVideo a='oYMfkuN' aspectClass='aspect-9/16' />
-<IVideo a='EoKZMzB' aspectClass='aspect-9/16' />
+<IVideo class='aspect-9/16' a='Q8fgrni' />
+<IVideo class='aspect-9/16' a='y0Oq0PO' />
+<IVideo class='aspect-9/16' a='agHKJ2v' />
+<IVideo class='aspect-9/16' a='w7IX9su' />
+<IVideo class='aspect-9/16' a='oYMfkuN' />
+<IVideo class='aspect-9/16' a='EoKZMzB' />
 <IVideo a='rB07cpT' />
 <IVideo a='I3wS09x' />
 <IVideo a='m5pFFvV' />

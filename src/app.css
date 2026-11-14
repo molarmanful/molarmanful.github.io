@@ -12,7 +12,6 @@
   --color-accent-100: var(--color-pink-100);
   --color-accent-200: var(--color-pink-200);
   --color-accent-300: var(--color-pink-300);
-  --color-accent-300: var(--color-pink-300);
   --color-accent-400: var(--color-pink-400);
   --color-accent-500: var(--color-pink-500);
   --color-accent-600: var(--color-pink-600);
@@ -24,7 +23,6 @@
   --color-bord-50: var(--color-indigo-50);
   --color-bord-100: var(--color-indigo-100);
   --color-bord-200: var(--color-indigo-200);
-  --color-bord-300: var(--color-indigo-300);
   --color-bord-300: var(--color-indigo-300);
   --color-bord-400: var(--color-indigo-400);
   --color-bord-500: var(--color-indigo-500);
@@ -38,7 +36,6 @@
   --color-head-100: var(--color-teal-100);
   --color-head-200: var(--color-teal-200);
   --color-head-300: var(--color-teal-300);
-  --color-head-300: var(--color-teal-300);
   --color-head-400: var(--color-teal-400);
   --color-head-500: var(--color-teal-500);
   --color-head-600: var(--color-teal-600);
@@ -50,7 +47,6 @@
   --color-text-50: var(--color-slate-50);
   --color-text-100: var(--color-slate-100);
   --color-text-200: var(--color-slate-200);
-  --color-text-300: var(--color-slate-300);
   --color-text-300: var(--color-slate-300);
   --color-text-400: var(--color-slate-400);
   --color-text-500: var(--color-slate-500);
@@ -64,7 +60,6 @@
   --color-yes-100: var(--color-teal-100);
   --color-yes-200: var(--color-teal-200);
   --color-yes-300: var(--color-teal-300);
-  --color-yes-300: var(--color-teal-300);
   --color-yes-400: var(--color-teal-400);
   --color-yes-500: var(--color-teal-500);
   --color-yes-600: var(--color-teal-600);
@@ -76,7 +71,6 @@
   --color-no-50: var(--color-pink-50);
   --color-no-100: var(--color-pink-100);
   --color-no-200: var(--color-pink-200);
-  --color-no-300: var(--color-pink-300);
   --color-no-300: var(--color-pink-300);
   --color-no-400: var(--color-pink-400);
   --color-no-500: var(--color-pink-500);

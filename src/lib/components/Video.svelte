@@ -1,14 +1,11 @@
 <script lang='ts'>
   import type { Snippet } from 'svelte'
-  import type { HTMLAttributes } from 'svelte/elements'
+  import type { ClassValue, HTMLAttributes } from 'svelte/elements'
 
-  interface Props extends HTMLAttributes<HTMLDivElement> {
-    aspect?: string
+  const { class: clazz, children }: HTMLAttributes<HTMLDivElement> & {
+    class?: ClassValue
     children?: Snippet
-    aspectClass?: unknown
-  }
-
-  const { aspectClass = 'aspect-video', children }: Props = $props()
+  } = $props()
 </script>
 
 <div
@@ -19,7 +16,7 @@
       **:[video,iframe]:max-w-full **:[video,iframe]:object-contain
       [.aspect-video]:**:[video,iframe]:w-480
     `,
-    aspectClass,
+    clazz,
   ]}
 >
   {@render children?.()}

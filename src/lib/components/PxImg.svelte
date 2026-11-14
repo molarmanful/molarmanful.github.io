@@ -1,12 +1,9 @@
 <script lang='ts'>
   import type { HTMLImgAttributes } from 'svelte/elements'
 
-  type Props = HTMLImgAttributes
-
-  const { src, ...rest }: Props = $props()
+  const { src, ...rest }: HTMLImgAttributes = $props()
 
   let el: HTMLImageElement | undefined = $state()
-  let devicePixelRatio = $state(1)
   let isLoaded = $state(false)
   let w = $state(1)
   let pw = $state(1)
@@ -28,7 +25,7 @@
   }
 </script>
 
-<svelte:window onresize={rsz} bind:devicePixelRatio />
+<svelte:window onresize={rsz} />
 
 {#snippet img(isScript: boolean)}
   <img

@@ -1,9 +1,11 @@
 <script lang='ts' module>
-  export const title = '10K IPS'
-  export const desc =
-    "2020 - Made in collaboration with Leo El-Azhab and Mai Khaled. Data visualization of the UAE's ISPs and their constituent IP addresses to provoke discussions about net neutrality and security."
-  export const tags = ['digital', 'front-end', 'dev', 'data-sci', 'art']
-  export const year = 2020
+  export const meta = {
+    title: '10K IPS',
+    desc:
+      "2020 - Made in collaboration with Leo El-Azhab and Mai Khaled. Data visualization of the UAE's ISPs and their constituent IP addresses to provoke discussions about net neutrality and security.",
+    tags: ['digital', 'front-end', 'dev', 'data-sci', 'art'],
+    year: 2020,
+  }
 </script>
 
 <script lang='ts'>
@@ -14,8 +16,8 @@
 </script>
 
 <Prose>
-  <h1>{title}</h1>
-  <Subheading>{desc}</Subheading>
+  <h1>{meta.title}</h1>
+  <Subheading>{meta.desc}</Subheading>
 
   <p>
     <A href='https://benpa.ng/ipisp'>Website</A>

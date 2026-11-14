@@ -1,9 +1,11 @@
 <script lang='ts' module>
-  export const title = 'CUSTOM LANGUAGES'
-  export const desc =
-    "Weird and wholly impractical. Programming languages which I've made throughout the years for recreational (NON-PRODUCTION) purposes."
-  export const tags = ['digital', 'dev', 'proglang', 'collection']
-  export const year = 2022
+  export const meta = {
+    title: 'CUSTOM LANGUAGES',
+    desc:
+      "Weird and wholly impractical. Programming languages which I've made throughout the years for recreational (NON-PRODUCTION) purposes.",
+    tags: ['digital', 'dev', 'proglang', 'collection'],
+    year: 2022,
+  }
 </script>
 
 <script lang='ts'>
@@ -14,8 +16,8 @@
 </script>
 
 <Prose>
-  <h1>{title}</h1>
-  <Subheading>{desc}</Subheading>
+  <h1>{meta.title}</h1>
+  <Subheading>{meta.desc}</Subheading>
 
   <Miniheading>Coding</Miniheading>
   <p>

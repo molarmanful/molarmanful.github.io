@@ -3,18 +3,16 @@
 
   import Image from './Image.svelte'
 
-  interface Props extends Omit<HTMLImgAttributes, 'class'> {
+  const { name, px = false, ...rest }: Omit<HTMLImgAttributes, 'class'> & {
     name: string
     px?: boolean
     sizes?: string
-  }
-
-  const { name, px = false, ...rest }: Props = $props()
+  } = $props()
 </script>
 
 <Image
-  type='media'
   {name}
   class={[px && 'image-render-pixel']}
+  type='media'
   {...rest}
 />

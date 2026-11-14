@@ -1,9 +1,11 @@
 <script lang='ts' module>
-  export const title = 'THE GENERATIVE COLLECTION'
-  export const desc =
-    'From code blossoms art. Works created with autonomous systems to spawn infinite variation.'
-  export const tags = ['digital', 'dev', 'art', 'collection']
-  export const year = 2021
+  export const meta = {
+    title: 'THE GENERATIVE COLLECTION',
+    desc:
+      'From code blossoms art. Works created with autonomous systems to spawn infinite variation.',
+    tags: ['digital', 'dev', 'art', 'collection'],
+    year: 2021,
+  }
 </script>
 
 <script lang='ts'>
@@ -17,8 +19,8 @@
 </script>
 
 <Prose>
-  <h1>{title}</h1>
-  <Subheading>{desc}</Subheading>
+  <h1>{meta.title}</h1>
+  <Subheading>{meta.desc}</Subheading>
 
   <Miniheading>Chaotic Retro Spaceship Noise Machine</Miniheading>
   <IVideo a='9PGgByI' />
@@ -45,7 +47,7 @@
   </p>
 
   <Miniheading>Entanglement</Miniheading>
-  <IVideo a='QmXN4z9' aspectClass='aspect-video' />
+  <IVideo class='aspect-video' a='QmXN4z9' />
   <p>
     <A href='https://github.com/molarmanful/entanglement'>Source</A>
   </p>
@@ -59,7 +61,7 @@
   -->
 
   <Miniheading>Bezier Pulse</Miniheading>
-  <IVideo a='Z04vm99' aspectClass='aspect-video' />
+  <IVideo class='aspect-video' a='Z04vm99' />
   <p>
     <A href='https://github.com/molarmanful/bezier-pulse'>Source</A>
   </p>

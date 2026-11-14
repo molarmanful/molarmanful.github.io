@@ -1,14 +1,14 @@
 <script lang='ts'>
-  interface Props {
-    class?: unknown
-  }
+  import type { ClassValue } from 'svelte/elements'
 
-  const { class: clazz = '' }: Props = $props()
+  const { class: clazz }: {
+    class?: ClassValue
+  } = $props()
 </script>
 
 <svg
-  viewBox='0 0 128 128'
   class={['fill-current', clazz]}
+  viewBox='0 0 128 128'
 >
   <title>Ben Pang</title>
   <desc>Beta symbol cut-out over a rounded square background</desc>

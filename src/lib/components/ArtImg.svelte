@@ -3,12 +3,10 @@
 
   import Image from './Image.svelte'
 
-  interface Props extends Omit<HTMLImgAttributes, 'class'> {
+  const { name, ...rest }: Omit<HTMLImgAttributes, 'class'> & {
     name: string
     sizes?: string
-  }
-
-  const { name, ...rest }: Props = $props()
+  } = $props()
 </script>
 
-<Image type='art' {name} {...rest} />
+<Image {name} type='art' {...rest} />

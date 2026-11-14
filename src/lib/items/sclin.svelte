@@ -1,17 +1,19 @@
 <script lang='ts' module>
-  export const title = 'SCLIN'
-  export const desc =
-    '2024. Functional and array programming paradigms packaged into a stack-based language. Tuned for maximum expressiveness. Features a web-based interpreter and tree-sitter grammar.'
-  export const tags = [
-    'digital',
-    'dev',
-    'proglang',
-    'front-end',
-    'back-end',
-    'full-stack',
-    'design',
-  ]
-  export const year = 2024
+  export const meta = {
+    title: 'SCLIN',
+    desc:
+      '2024. Functional and array programming paradigms packaged into a stack-based language. Tuned for maximum expressiveness. Features a web-based interpreter and tree-sitter grammar.',
+    tags: [
+      'digital',
+      'dev',
+      'proglang',
+      'front-end',
+      'back-end',
+      'full-stack',
+      'design',
+    ],
+    year: 2024,
+  }
 </script>
 
 <script lang='ts'>
@@ -22,8 +24,8 @@
 </script>
 
 <Prose>
-  <h1>{title}</h1>
-  <Subheading>{desc}</Subheading>
+  <h1>{meta.title}</h1>
+  <Subheading>{meta.desc}</Subheading>
   <p>
     <A href='https://scline.fly.dev'>Online Interpreter</A>
     <br />

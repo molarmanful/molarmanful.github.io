@@ -1,9 +1,11 @@
 <script lang='ts' module>
-  export const title = 'LARUELLE'
-  export const desc =
-    "2020. Using visualization techniques to gain data-driven insights into Laruelle's Dictionary of Non-Philosophy."
-  export const tags = ['digital', 'data-sci', 'dev']
-  export const year = 2020
+  export const meta = {
+    title: 'LARUELLE',
+    desc:
+      "2020. Using visualization techniques to gain data-driven insights into Laruelle's Dictionary of Non-Philosophy.",
+    tags: ['digital', 'data-sci', 'dev'],
+    year: 2020,
+  }
 </script>
 
 <script lang='ts'>
@@ -14,8 +16,8 @@
 </script>
 
 <Prose>
-  <h1>{title}</h1>
-  <Subheading>{desc}</Subheading>
+  <h1>{meta.title}</h1>
+  <Subheading>{meta.desc}</Subheading>
 
   <p><A href='https://github.com/molarmanful/laruelle'>Source</A></p>
 

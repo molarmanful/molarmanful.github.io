@@ -1,9 +1,11 @@
 <script lang='ts' module>
-  export const title = 'HYPONORMAL'
-  export const desc =
-    '2022. An abstract Unity study of worldbuilding centered around non-Euclidean traversal mechanics.'
-  export const tags = ['3d', 'digital', 'game', 'dev', 'art']
-  export const year = 2022
+  export const meta = {
+    title: 'HYPONORMAL',
+    desc:
+      '2022. An abstract Unity study of worldbuilding centered around non-Euclidean traversal mechanics.',
+    tags: ['3d', 'digital', 'game', 'dev', 'art'],
+    year: 2022,
+  }
 </script>
 
 <script lang='ts'>
@@ -15,8 +17,8 @@
 </script>
 
 <Prose>
-  <h1>{title}</h1>
-  <Subheading>{desc}</Subheading>
+  <h1>{meta.title}</h1>
+  <Subheading>{meta.desc}</Subheading>
 
   <p>
     <A href='https://bandidojim.itch.io/hyponormal'>Website</A>

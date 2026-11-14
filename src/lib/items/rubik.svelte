@@ -1,17 +1,19 @@
 <script lang='ts' module>
-  export const title = 'THE RUBIK COLLECTION'
-  export const desc =
-    'A simple puzzle that has stumped the world for decades. Digital gadgets for the aspiring cuber.'
-  export const tags = [
-    '3d',
-    'digital',
-    'front-end',
-    'dev',
-    'design',
-    'game',
-    'collection',
-  ]
-  export const year = 2021
+  export const meta = {
+    title: 'THE RUBIK COLLECTION',
+    desc:
+      'A simple puzzle that has stumped the world for decades. Digital gadgets for the aspiring cuber.',
+    tags: [
+      '3d',
+      'digital',
+      'front-end',
+      'dev',
+      'design',
+      'game',
+      'collection',
+    ],
+    year: 2021,
+  }
 </script>
 
 <script lang='ts'>
@@ -23,8 +25,8 @@
 </script>
 
 <Prose>
-  <h1>{title}</h1>
-  <Subheading>{desc}</Subheading>
+  <h1>{meta.title}</h1>
+  <Subheading>{meta.desc}</Subheading>
 
   <Miniheading>A Cube Tutorial</Miniheading>
   <MediaImg name='cubetut' alt='The Cube Tutorial website.' />

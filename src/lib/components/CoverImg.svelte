@@ -3,16 +3,13 @@
 
   import Image from './Image.svelte'
 
-  interface Props extends Omit<HTMLImgAttributes, 'class'> {
+  const { name, ...rest }: Omit<HTMLImgAttributes, 'class'> & {
     name: string
     sizes?: string
-  }
-
-  const { name, ...rest }: Props = $props()
+  } = $props()
 </script>
 
 <Image
-  type='covers'
   {name}
   draggable={false}
   sizes='
@@ -22,5 +19,6 @@
     (min-width: 768px) calc((768px - 1.25rem * 2) / 3), 
     (min-width: 640px) calc((640px - 1.25rem) / 2), calc(100vw)
   '
+  type='covers'
   {...rest}
 />

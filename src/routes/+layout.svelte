@@ -6,11 +6,9 @@
   import Favicons from './Favicons.svelte'
   import Nav from './Nav.svelte'
 
-  interface Props {
+  const { children }: {
     children?: Snippet
-  }
-
-  const { children }: Props = $props()
+  } = $props()
 
   let isLoaded = $state(false)
 

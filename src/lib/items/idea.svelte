@@ -1,9 +1,11 @@
 <script lang='ts' module>
-  export const title = 'IDEA'
-  export const desc =
-    '2019 - made in collaboration with Jana Počuchová. An interactive webcomic about creative block and ideation.'
-  export const tags = ['digital', 'front-end', 'dev', 'design', 'art']
-  export const year = 2019
+  export const meta = {
+    title: 'IDEA',
+    desc:
+      '2019 - made in collaboration with Jana Počuchová. An interactive webcomic about creative block and ideation.',
+    tags: ['digital', 'front-end', 'dev', 'design', 'art'],
+    year: 2019,
+  }
 </script>
 
 <script lang='ts'>
@@ -14,8 +16,8 @@
 </script>
 
 <Prose>
-  <h1>{title}</h1>
-  <Subheading>{desc}</Subheading>
+  <h1>{meta.title}</h1>
+  <Subheading>{meta.desc}</Subheading>
 
   <p>
     <A href='https://www.bp1574.nyuadim.com/comic/'>Website</A>

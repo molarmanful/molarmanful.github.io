@@ -1,9 +1,11 @@
 <script lang='ts' module>
-  export const title = 'BAREBONES'
-  export const desc =
-    '2024. A web art piece centered around the premise of an anti-social, self-destructive website.'
-  export const tags = ['front-end', 'digital', 'dev', 'art']
-  export const year = 2024
+  export const meta = {
+    title: 'BAREBONES',
+    desc:
+      '2024. A web art piece centered around the premise of an anti-social, self-destructive website.',
+    tags: ['front-end', 'digital', 'dev', 'art'],
+    year: 2024,
+  }
 </script>
 
 <script lang='ts'>
@@ -14,8 +16,8 @@
 </script>
 
 <Prose>
-  <h1>{title}</h1>
-  <Subheading>{desc}</Subheading>
+  <h1>{meta.title}</h1>
+  <Subheading>{meta.desc}</Subheading>
 
   <p>
     <A href='https://benpa.ng/barebones'>Website</A>

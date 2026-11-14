@@ -1,9 +1,11 @@
 <script lang='ts' module>
-  export const title = 'IT ALL GOES TO SHIT'
-  export const desc =
-    '2023. An interactive 3D web experience inspired by the slow yet frighteningly inevitable progression of dementia.'
-  export const tags = ['digital', '3d', 'front-end', 'dev', 'art']
-  export const year = 2023
+  export const meta = {
+    title: 'IT ALL GOES TO SHIT',
+    desc:
+      '2023. An interactive 3D web experience inspired by the slow yet frighteningly inevitable progression of dementia.',
+    tags: ['digital', '3d', 'front-end', 'dev', 'art'],
+    year: 2023,
+  }
 </script>
 
 <script lang='ts'>
@@ -14,8 +16,8 @@
 </script>
 
 <Prose>
-  <h1>{title}</h1>
-  <Subheading>{desc}</Subheading>
+  <h1>{meta.title}</h1>
+  <Subheading>{meta.desc}</Subheading>
 
   <p>
     <A href='https://benpa.ng/itallgoestoshit'>Website</A> (best viewed on

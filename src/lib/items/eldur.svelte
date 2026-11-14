@@ -1,9 +1,11 @@
 <script lang='ts' module>
-  export const title = 'ELDUR'
-  export const desc =
-    '2023. An eccentric bitmap microfont for all your spellcasting needs.'
-  export const tags = ['typography', 'design']
-  export const year = 2023
+  export const meta = {
+    title: 'ELDUR',
+    desc:
+      '2023. An eccentric bitmap microfont for all your spellcasting needs.',
+    tags: ['typography', 'design'],
+    year: 2023,
+  }
 </script>
 
 <script lang='ts'>
@@ -29,13 +31,13 @@
 </script>
 
 <Prose>
-  <h1>{title}</h1>
-  <Subheading>{desc}</Subheading>
+  <h1>{meta.title}</h1>
+  <Subheading>{meta.desc}</Subheading>
 
   <p><A href='https://github.com/molarmanful/eldur'>Source</A></p>
 </Prose>
 
-{#each srcs as [s, a]}
+{#each srcs as [s, a] (s)}
   {@const src = `https://github.com/molarmanful/eldur/raw/main/img/eldur${s}.png`}
   <PxImg alt='{a} sample for the eldur font.' {src} />
 {/each}

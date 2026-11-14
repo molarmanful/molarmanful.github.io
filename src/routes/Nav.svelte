@@ -1,6 +1,8 @@
 <script lang='ts'>
   import type { ClassValue } from 'svelte/elements'
 
+  import { resolve } from '$app/paths'
+
   import LogoFill from '#lib/components/LogoFill.svelte'
 </script>
 
@@ -27,7 +29,7 @@
       '
     >
       <li class='ms-1' data-nohide>
-        <a aria-label='Home' href='/'>
+        <a aria-label='Home' href={resolve('/')}>
           <LogoFill class='inline-block size-[1em] scale-125 align-[-0.1em]' />
         </a>
       </li>
@@ -39,46 +41,46 @@
         '
         data-nohide
       >
-        <a href='/about'>ABOUT</a>
+        <a href={resolve('/about')}>ABOUT</a>
       </li>
 
       <li class='ml-auto delay-250'>
-        <a href='https://github.com/molarmanful' target='_blank' class='group'>
+        <a class='group' href='https://github.com/molarmanful' target='_blank'>
           {@render icon('Github', 'icon-[ph--github-logo]')}
         </a>
       </li>
       <li class='delay-200'>
         <a
+          class='group'
           href='https://instagram.com/bandidojim'
           target='_blank'
-          class='group'
         >
           {@render icon('Instagram', 'icon-[ph--instagram-logo]')}
         </a>
       </li>
       <li class='delay-150'>
         <a
+          class='group'
           href='https://linkedin.com/in/molarmanful'
           target='_blank'
-          class='group'
         >
           {@render icon('LinkedIn', 'icon-[ph--linkedin-logo]')}
         </a>
       </li>
       <li class='delay-100'>
         <a
+          class='group'
           href='https://codegolf.stackexchange.com/users/41247/mama-fun-roll'
           target='_blank'
-          class='group'
         >
           {@render icon('CGCC.SE', 'icon-[ph--golf]')}
         </a>
       </li>
       <li class='delay-50'>
         <a
+          class='group'
           href='https://docs.google.com/document/d/13Hy3akmfz9tvyFH6awZ8riWSCivtYQZa3TE-f_CGszI/edit?usp=sharing'
           target='_blank'
-          class='group'
         >
           {@render icon('CV', 'icon-[ph--read-cv-logo]')}
         </a>
@@ -91,7 +93,7 @@
             has-checked:text-accent-400
           '
         >
-          <input class='peer hidden' type='checkbox'>
+          <input class='peer hidden' type='checkbox' />
           {@render icon(
               'Links',
               'icon-[ph--plus] size-[1em] scale-125! transition motion-safe:peer-checked:-rotate-45',

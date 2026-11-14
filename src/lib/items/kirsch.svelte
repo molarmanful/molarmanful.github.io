@@ -1,9 +1,11 @@
 <script lang='ts' module>
-  export const title = 'KIRSCH'
-  export const desc =
-    '2024. A versatile bitmap font with an organic flair. Features extensive Unicode and Nerd Fonts support.'
-  export const tags = ['typography', 'design']
-  export const year = 2026
+  export const meta = {
+    title: 'KIRSCH',
+    desc:
+      '2024. A versatile bitmap font with an organic flair. Features extensive Unicode and Nerd Fonts support.',
+    tags: ['typography', 'design'],
+    year: 2026,
+  }
 </script>
 
 <script lang='ts'>
@@ -14,8 +16,8 @@
 </script>
 
 <Prose>
-  <h1>{title}</h1>
-  <Subheading>{desc}</Subheading>
+  <h1>{meta.title}</h1>
+  <Subheading>{meta.desc}</Subheading>
 
   <p><A href='https://github.com/molarmanful/kirsch'>Source</A></p>
 </Prose>

@@ -1,8 +1,10 @@
 <script lang='ts' module>
-  export const title = 'BITED'
-  export const desc = '2025. A bitmap font editor.'
-  export const tags = ['typography', 'design', 'dev']
-  export const year = 2026
+  export const meta = {
+    title: 'BITED',
+    desc: '2025. A bitmap font editor.',
+    tags: ['typography', 'design', 'dev'],
+    year: 2026,
+  }
 </script>
 
 <script lang='ts'>
@@ -13,8 +15,8 @@
 </script>
 
 <Prose>
-  <h1>{title}</h1>
-  <Subheading>{desc}</Subheading>
+  <h1>{meta.title}</h1>
+  <Subheading>{meta.desc}</Subheading>
 
   <p>
     <A href='https://benpa.ng/bited'>Website</A>

@@ -1,11 +1,10 @@
 import type { Component } from 'svelte'
 
-export interface Item {
+export interface Meta {
   title: string
   desc: string
   tags: string[]
   year: number
-  default: Component
 }
 
 export type Imgs = [
@@ -26,7 +25,15 @@ export const title = 'Ben Pang / BandidoJim / Molarmanful'
 export const artalt = (name: string) => `Artwork: "${name}" by BandidoJim.`
 
 export const items = makeRecord(
-  import.meta.glob<Item>('#lib/items/*', { eager: true }),
+  import.meta.glob<Meta>('#lib/items/*', {
+    eager: true,
+    import: 'meta',
+    query: '?meta',
+  }),
+)
+
+export const pages = makeRecord(
+  import.meta.glob<{ meta: Meta; default: Component }>('#lib/items/*'),
 )
 
 export const sortedKeys = Object.keys(items).toSorted((a, b) =>

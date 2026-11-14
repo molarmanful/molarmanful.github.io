@@ -1,9 +1,11 @@
 <script lang='ts' module>
-  export const title = 'THE 3D STILL COLLECTION'
-  export const desc =
-    'Optical oddities that bend the rules of virtual reality. Rendered in Cinema 4D + Redshift.'
-  export const tags = ['3d', 'digital', 'art', 'collection']
-  export const year = 2024
+  export const meta = {
+    title: 'THE 3D STILL COLLECTION',
+    desc:
+      'Optical oddities that bend the rules of virtual reality. Rendered in Cinema 4D + Redshift.',
+    tags: ['3d', 'digital', 'art', 'collection'],
+    year: 2024,
+  }
 </script>
 
 <script lang='ts'>
@@ -14,8 +16,8 @@
 </script>
 
 <Prose>
-  <h1>{title}</h1>
-  <Subheading>{desc}</Subheading>
+  <h1>{meta.title}</h1>
+  <Subheading>{meta.desc}</Subheading>
 </Prose>
 
 <ArtImg name='dysmorphicdream' alt={artalt('DYSMORPHIC DREAM')} />

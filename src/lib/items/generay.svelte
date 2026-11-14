@@ -1,9 +1,11 @@
 <script lang='ts' module>
-  export const title = 'INFINITE GENE RAY'
-  export const desc =
-    "2021. A procedurally-generated website based on Gene Ray's Time Cube."
-  export const tags = ['digital', 'front-end', 'dev', 'design', 'art']
-  export const year = 2021
+  export const meta = {
+    title: 'INFINITE GENE RAY',
+    desc:
+      "2021. A procedurally-generated website based on Gene Ray's Time Cube.",
+    tags: ['digital', 'front-end', 'dev', 'design', 'art'],
+    year: 2021,
+  }
 </script>
 
 <script lang='ts'>
@@ -14,8 +16,8 @@
 </script>
 
 <Prose>
-  <h1>{title}</h1>
-  <Subheading>{desc}</Subheading>
+  <h1>{meta.title}</h1>
+  <Subheading>{meta.desc}</Subheading>
 
   <p>
     <A href='https://benpa.ng/infinite-gene-ray'>Website</A>
