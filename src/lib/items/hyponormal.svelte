@@ -1,19 +1,12 @@
-<script lang='ts' module>
-  export const meta = {
-    title: 'HYPONORMAL',
-    desc:
-      '2022. An abstract Unity study of worldbuilding centered around non-Euclidean traversal mechanics.',
-    tags: ['3d', 'digital', 'game', 'dev', 'art'],
-    year: 2022,
-  }
-</script>
-
 <script lang='ts'>
   import A from '#lib/components/A.svelte'
   import MediaImg from '#lib/components/MediaImg.svelte'
   import Prose from '#lib/components/Prose.svelte'
   import Subheading from '#lib/components/Subheading.svelte'
   import YTVideo from '#lib/components/YTVideo.svelte'
+  import { items } from '#lib/ts/items.ts'
+
+  const meta = items.hyponormal
 </script>
 
 <Prose>

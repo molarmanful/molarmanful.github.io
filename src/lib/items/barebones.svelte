@@ -1,18 +1,11 @@
-<script lang='ts' module>
-  export const meta = {
-    title: 'BAREBONES',
-    desc:
-      '2024. A web art piece centered around the premise of an anti-social, self-destructive website.',
-    tags: ['front-end', 'digital', 'dev', 'art'],
-    year: 2024,
-  }
-</script>
-
 <script lang='ts'>
   import A from '#lib/components/A.svelte'
   import MediaImg from '#lib/components/MediaImg.svelte'
   import Prose from '#lib/components/Prose.svelte'
   import Subheading from '#lib/components/Subheading.svelte'
+  import { items } from '#lib/ts/items.ts'
+
+  const meta = items.barebones
 </script>
 
 <Prose>

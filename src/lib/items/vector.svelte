@@ -1,18 +1,11 @@
-<script lang='ts' module>
-  export const meta = {
-    title: 'THE VECTOR COLLECTION',
-    desc:
-      'Scalable compositions of geometries and abstract oddities. Made with Illustrator and Hexels.',
-    tags: ['2d', 'digital', 'design', 'art', 'collection'],
-    year: 2021,
-  }
-</script>
-
 <script lang='ts'>
   import ArtImg from '#lib/components/ArtImg.svelte'
   import Prose from '#lib/components/Prose.svelte'
   import Subheading from '#lib/components/Subheading.svelte'
+  import { items } from '#lib/ts/items.ts'
   import { artalt } from '#lib/ts/meta.ts'
+
+  const meta = items.vector
 </script>
 
 <Prose>

@@ -1,6 +1,7 @@
 #!/usr/bin/env nu
 
 def main [] {
+  mkdir src/common/hashes
   [media art covers] | par-each {|dir|
       ls $'src/lib/($dir)' | get name
       | par-each {|file|
@@ -9,7 +10,8 @@ def main [] {
             (open $file | hash md5)
           ]
         }
-      | into record | sort | [$dir $in]
+      | into record | sort | to json
+      | save -f $'src/common/hashes/($dir).json'
     }
-  | into record | to json | save -f src/common/hashes.json
+  | ignore
 }

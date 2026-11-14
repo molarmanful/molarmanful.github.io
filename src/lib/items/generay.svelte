@@ -1,18 +1,11 @@
-<script lang='ts' module>
-  export const meta = {
-    title: 'INFINITE GENE RAY',
-    desc:
-      "2021. A procedurally-generated website based on Gene Ray's Time Cube.",
-    tags: ['digital', 'front-end', 'dev', 'design', 'art'],
-    year: 2021,
-  }
-</script>
-
 <script lang='ts'>
   import A from '#lib/components/A.svelte'
   import MediaImg from '#lib/components/MediaImg.svelte'
   import Prose from '#lib/components/Prose.svelte'
   import Subheading from '#lib/components/Subheading.svelte'
+  import { items } from '#lib/ts/items.ts'
+
+  const meta = items.generay
 </script>
 
 <Prose>

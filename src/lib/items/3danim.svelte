@@ -1,17 +1,10 @@
-<script lang='ts' module>
-  export const meta = {
-    title: 'THE 3D ANIM COLLECTION',
-    desc:
-      'Blurring the lines between real and unreal, one render at a time. Rendered in Cinema 4D + Redshift.',
-    tags: ['3d', 'digital', 'art', 'collection'],
-    year: 2024,
-  }
-</script>
-
 <script lang='ts'>
   import IVideo from '#lib/components/IVideo.svelte'
   import Prose from '#lib/components/Prose.svelte'
   import Subheading from '#lib/components/Subheading.svelte'
+  import { items } from '#lib/ts/items.ts'
+
+  const meta = items['3danim']
 </script>
 
 <Prose>

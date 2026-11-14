@@ -1,18 +1,11 @@
-<script lang='ts' module>
-  export const meta = {
-    title: 'CUSTOM LANGUAGES',
-    desc:
-      "Weird and wholly impractical. Programming languages which I've made throughout the years for recreational (NON-PRODUCTION) purposes.",
-    tags: ['digital', 'dev', 'proglang', 'collection'],
-    year: 2022,
-  }
-</script>
-
 <script lang='ts'>
   import A from '#lib/components/A.svelte'
   import Miniheading from '#lib/components/Miniheading.svelte'
   import Prose from '#lib/components/Prose.svelte'
   import Subheading from '#lib/components/Subheading.svelte'
+  import { items } from '#lib/ts/items.ts'
+
+  const meta = items.langs
 </script>
 
 <Prose>

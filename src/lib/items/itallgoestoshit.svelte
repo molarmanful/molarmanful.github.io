@@ -1,18 +1,11 @@
-<script lang='ts' module>
-  export const meta = {
-    title: 'IT ALL GOES TO SHIT',
-    desc:
-      '2023. An interactive 3D web experience inspired by the slow yet frighteningly inevitable progression of dementia.',
-    tags: ['digital', '3d', 'front-end', 'dev', 'art'],
-    year: 2023,
-  }
-</script>
-
 <script lang='ts'>
   import A from '#lib/components/A.svelte'
   import MediaImg from '#lib/components/MediaImg.svelte'
   import Prose from '#lib/components/Prose.svelte'
   import Subheading from '#lib/components/Subheading.svelte'
+  import { items } from '#lib/ts/items.ts'
+
+  const meta = items.itallgoestoshit
 </script>
 
 <Prose>

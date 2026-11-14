@@ -1,40 +1,14 @@
-import type { Component } from 'svelte'
+import { items } from '#lib/ts/items.ts'
 
-export interface Meta {
-  title: string
-  desc: string
-  tags: string[]
-  year: number
+export interface Imgs {
+  lqip: Record<string, string>
+  size: Record<string, { width: number; height: number }>
+  hash: Record<string, string>
 }
-
-export type Imgs = [
-  Record<string, string>,
-  Record<string, { width: number; height: number }>,
-]
-
-const makeRecord = <V>(obj: Record<string, V>) =>
-  Object.fromEntries(
-    Object.entries(obj).map(([k, v]) => [
-      k.replace(/^.+\/([^/]+)\.\w+$/, '$1'),
-      v,
-    ]),
-  )
 
 export const title = 'Ben Pang / BandidoJim / Molarmanful'
 
 export const artalt = (name: string) => `Artwork: "${name}" by BandidoJim.`
-
-export const items = makeRecord(
-  import.meta.glob<Meta>('#lib/items/*', {
-    eager: true,
-    import: 'meta',
-    query: '?meta',
-  }),
-)
-
-export const pages = makeRecord(
-  import.meta.glob<{ meta: Meta; default: Component }>('#lib/items/*'),
-)
 
 export const sortedKeys = Object.keys(items).toSorted((a, b) =>
   (items[b].year || 1 / 0) - (items[a].year || 1 / 0)
@@ -48,75 +22,3 @@ export const tagsSet = new Set(
   [...Object.values(tags).reduce((a, b) => a.union(b), new Set())]
     .toSorted((a, b) => a.localeCompare(b)),
 )
-
-export const covers: Imgs = [
-  makeRecord(
-    import.meta.glob('#lib/covers/*', {
-      eager: true,
-      import: 'default',
-      query: {
-        inline: true,
-        w: 32,
-        h: 32,
-        fit: 'inside',
-        quality: 20,
-        format: 'webp',
-      },
-    }),
-  ),
-  makeRecord(
-    import.meta.glob('#lib/covers/*', {
-      eager: true,
-      import: 'default',
-      query: { as: 'meta:height;width' },
-    }),
-  ),
-]
-
-export const art: Imgs = [
-  makeRecord(
-    import.meta.glob('#lib/art/*', {
-      eager: true,
-      import: 'default',
-      query: {
-        inline: true,
-        w: 32,
-        h: 32,
-        fit: 'inside',
-        quality: 20,
-        format: 'webp',
-      },
-    }),
-  ),
-  makeRecord(
-    import.meta.glob('#lib/art/*', {
-      eager: true,
-      import: 'default',
-      query: { as: 'meta:height;width' },
-    }),
-  ),
-]
-
-export const media: Imgs = [
-  makeRecord(
-    import.meta.glob('#lib/media/*', {
-      eager: true,
-      import: 'default',
-      query: {
-        inline: true,
-        w: 32,
-        h: 32,
-        fit: 'inside',
-        quality: 20,
-        format: 'webp',
-      },
-    }),
-  ),
-  makeRecord(
-    import.meta.glob('#lib/media/*', {
-      eager: true,
-      import: 'default',
-      query: { as: 'meta:height;width' },
-    }),
-  ),
-]

@@ -1,18 +1,11 @@
-<script lang='ts' module>
-  export const meta = {
-    title: 'KIRSCH',
-    desc:
-      '2024. A versatile bitmap font with an organic flair. Features extensive Unicode and Nerd Fonts support.',
-    tags: ['typography', 'design'],
-    year: 2026,
-  }
-</script>
-
 <script lang='ts'>
   import A from '#lib/components/A.svelte'
   import Prose from '#lib/components/Prose.svelte'
   import PxImg from '#lib/components/PxImg.svelte'
   import Subheading from '#lib/components/Subheading.svelte'
+  import { items } from '#lib/ts/items.ts'
+
+  const meta = items.kirsch
 </script>
 
 <Prose>

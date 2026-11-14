@@ -1,18 +1,11 @@
-<script lang='ts' module>
-  export const meta = {
-    title: 'SIMIAN',
-    desc:
-      '2021. Somewhat Interesting Machine with Intelligence of Artificial Nature, a frontend-only train-your-own-chatbot interface that pushed the limits of what was possible in client-side AI at the time.',
-    tags: ['digital', 'front-end', 'dev', 'design', 'art'],
-    year: 2021,
-  }
-</script>
-
 <script lang='ts'>
   import A from '#lib/components/A.svelte'
   import MediaImg from '#lib/components/MediaImg.svelte'
   import Prose from '#lib/components/Prose.svelte'
   import Subheading from '#lib/components/Subheading.svelte'
+  import { items } from '#lib/ts/items.ts'
+
+  const meta = items.simian
 </script>
 
 <Prose>

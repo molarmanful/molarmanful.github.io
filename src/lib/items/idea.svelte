@@ -1,18 +1,11 @@
-<script lang='ts' module>
-  export const meta = {
-    title: 'IDEA',
-    desc:
-      '2019 - made in collaboration with Jana Počuchová. An interactive webcomic about creative block and ideation.',
-    tags: ['digital', 'front-end', 'dev', 'design', 'art'],
-    year: 2019,
-  }
-</script>
-
 <script lang='ts'>
   import A from '#lib/components/A.svelte'
   import MediaImg from '#lib/components/MediaImg.svelte'
   import Prose from '#lib/components/Prose.svelte'
   import Subheading from '#lib/components/Subheading.svelte'
+  import { items } from '#lib/ts/items.ts'
+
+  const meta = items.idea
 </script>
 
 <Prose>

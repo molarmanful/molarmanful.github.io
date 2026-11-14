@@ -1,35 +1,30 @@
 <script lang='ts'>
   import type { ClassValue, HTMLImgAttributes } from 'svelte/elements'
 
-  import hashesRaw from '#common/hashes.json'
-  import { ws } from '#common/meta.js'
-  import { art, covers, media } from '#lib/ts/meta.ts'
+  import type { Imgs } from '#lib/ts/meta.ts'
 
-  const { type, name, sizes, class: clazz, ...rest }:
+  import { ws } from '#common/meta.js'
+
+  const { type, imgs, name, sizes, class: clazz, ...rest }:
     & Omit<HTMLImgAttributes, 'class'>
     & {
       type: 'covers' | 'art' | 'media'
+      imgs: Imgs
       name: string
       class?: ClassValue
       sizes?: string
     } = $props()
 
-  const imgs = { covers, art, media }
-  const hashes = hashesRaw as Record<
-    'covers' | 'art' | 'media',
-    Record<string, string>
-  >
-
   const ws1 = ws.toReversed()
   const url = (w = ws1.at(-1) ?? 0, x = 'jpg') =>
     `https://cdn.benpa.ng/${type}%40${name}%40${
-      hashes[type][name]
+      imgs.hash[name]
     }%40${w.toString()}.${x}`
   const urls = (x = 'jpg') =>
     ws1.map(w => `${url(w, x)} ${w.toString()}w`).join(', ')
 
-  const lqip = $derived(imgs[type][0][name])
-  const meta = $derived(imgs[type][1][name])
+  const lqip = $derived(imgs.lqip[name])
+  const meta = $derived(imgs.size[name])
 
   const srcsets = $derived({
     avif: urls('avif'),

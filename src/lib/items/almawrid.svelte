@@ -1,18 +1,11 @@
-<script lang='ts' module>
-  export const meta = {
-    title: 'AL MAWRID',
-    desc:
-      '2021 - made in collaboration with the Yes Logo Spring 2021 class, under guidance from calligrapher/designer Wissam Shawkat and Prof. Goffredo Puccetti. Proposed logo and brand identity for al Mawrid Arab Center for the Study of Art.',
-    tags: ['branding', 'design'],
-    year: 2021,
-  }
-</script>
-
 <script lang='ts'>
   import IVideo from '#lib/components/IVideo.svelte'
   import MediaImg from '#lib/components/MediaImg.svelte'
   import Prose from '#lib/components/Prose.svelte'
   import Subheading from '#lib/components/Subheading.svelte'
+  import { items } from '#lib/ts/items.ts'
+
+  const meta = items.almawrid
 </script>
 
 <Prose>

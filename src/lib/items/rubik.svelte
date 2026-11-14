@@ -1,27 +1,12 @@
-<script lang='ts' module>
-  export const meta = {
-    title: 'THE RUBIK COLLECTION',
-    desc:
-      'A simple puzzle that has stumped the world for decades. Digital gadgets for the aspiring cuber.',
-    tags: [
-      '3d',
-      'digital',
-      'front-end',
-      'dev',
-      'design',
-      'game',
-      'collection',
-    ],
-    year: 2021,
-  }
-</script>
-
 <script lang='ts'>
   import A from '#lib/components/A.svelte'
   import MediaImg from '#lib/components/MediaImg.svelte'
   import Miniheading from '#lib/components/Miniheading.svelte'
   import Prose from '#lib/components/Prose.svelte'
   import Subheading from '#lib/components/Subheading.svelte'
+  import { items } from '#lib/ts/items.ts'
+
+  const meta = items.rubik
 </script>
 
 <Prose>

@@ -1,18 +1,11 @@
-<script lang='ts' module>
-  export const meta = {
-    title: 'MMR',
-    desc:
-      '2022. Mechanically Minimalist Recliner, a prototype chair that plays with the contrast between rigidity and flexibility. Made from clear acrylic and bungee cords.',
-    tags: ['physical', 'design', 'art'],
-    year: 2022,
-  }
-</script>
-
 <script lang='ts'>
   import MediaImg from '#lib/components/MediaImg.svelte'
   import Prose from '#lib/components/Prose.svelte'
   import Subheading from '#lib/components/Subheading.svelte'
   import YTVideo from '#lib/components/YTVideo.svelte'
+  import { items } from '#lib/ts/items.ts'
+
+  const meta = items.mmr
 </script>
 
 <Prose>

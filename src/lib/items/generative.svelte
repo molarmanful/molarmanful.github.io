@@ -1,13 +1,3 @@
-<script lang='ts' module>
-  export const meta = {
-    title: 'THE GENERATIVE COLLECTION',
-    desc:
-      'From code blossoms art. Works created with autonomous systems to spawn infinite variation.',
-    tags: ['digital', 'dev', 'art', 'collection'],
-    year: 2021,
-  }
-</script>
-
 <script lang='ts'>
   import A from '#lib/components/A.svelte'
   import IVideo from '#lib/components/IVideo.svelte'
@@ -15,7 +5,10 @@
   import Miniheading from '#lib/components/Miniheading.svelte'
   import Prose from '#lib/components/Prose.svelte'
   import Subheading from '#lib/components/Subheading.svelte'
+  import { items } from '#lib/ts/items.ts'
   import { artalt } from '#lib/ts/meta.ts'
+
+  const meta = items.generative
 </script>
 
 <Prose>

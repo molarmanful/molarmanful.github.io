@@ -1,26 +1,11 @@
-<script lang='ts' module>
-  export const meta = {
-    title: 'SCLIN',
-    desc:
-      '2024. Functional and array programming paradigms packaged into a stack-based language. Tuned for maximum expressiveness. Features a web-based interpreter and tree-sitter grammar.',
-    tags: [
-      'digital',
-      'dev',
-      'proglang',
-      'front-end',
-      'back-end',
-      'full-stack',
-      'design',
-    ],
-    year: 2024,
-  }
-</script>
-
 <script lang='ts'>
   import A from '#lib/components/A.svelte'
   import MediaImg from '#lib/components/MediaImg.svelte'
   import Prose from '#lib/components/Prose.svelte'
   import Subheading from '#lib/components/Subheading.svelte'
+  import { items } from '#lib/ts/items.ts'
+
+  const meta = items.sclin
 </script>
 
 <Prose>

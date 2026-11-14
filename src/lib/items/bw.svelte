@@ -1,18 +1,11 @@
-<script lang='ts' module>
-  export const meta = {
-    title: 'THE BLACK & WHITE COLLECTION',
-    desc:
-      'Monochrome artwork drawn with pen and paper or a mouse in Krita/MS Paint. Studies of contrast, shading, and value blending techniques.',
-    tags: ['2d', 'digital', 'art', 'collection'],
-    year: 2022,
-  }
-</script>
-
 <script lang='ts'>
   import ArtImg from '#lib/components/ArtImg.svelte'
   import Prose from '#lib/components/Prose.svelte'
   import Subheading from '#lib/components/Subheading.svelte'
+  import { items } from '#lib/ts/items.ts'
   import { artalt } from '#lib/ts/meta.ts'
+
+  const meta = items.bw
 </script>
 
 <Prose>

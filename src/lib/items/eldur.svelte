@@ -1,18 +1,9 @@
-<script lang='ts' module>
-  export const meta = {
-    title: 'ELDUR',
-    desc:
-      '2023. An eccentric bitmap microfont for all your spellcasting needs.',
-    tags: ['typography', 'design'],
-    year: 2023,
-  }
-</script>
-
 <script lang='ts'>
   import A from '#lib/components/A.svelte'
   import Prose from '#lib/components/Prose.svelte'
   import PxImg from '#lib/components/PxImg.svelte'
   import Subheading from '#lib/components/Subheading.svelte'
+  import { items } from '#lib/ts/items.ts'
 
   const srcs = [
     ['', 'Main'],
@@ -28,6 +19,8 @@
     ['-box', 'Box drawings'],
     ['-braille', 'Braille'],
   ]
+
+  const meta = items.eldur
 </script>
 
 <Prose>

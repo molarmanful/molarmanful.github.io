@@ -6,7 +6,7 @@
 
   import CoverImg from '#lib/components/CoverImg.svelte'
   import { tags } from '#lib/states/index.ts'
-  import { items } from '#lib/ts/meta.ts'
+  import { items } from '#lib/ts/items.ts'
 
   const { sel, able, sorted, nameSel } = $derived(tags)
 </script>

@@ -1,28 +1,12 @@
-<script lang='ts' module>
-  export const meta = {
-    title: 'FEEL THE HIVE',
-    desc:
-      '2022. An Internet-powered backscratcher that converts clicks and taps to scratches.',
-    tags: [
-      'physical',
-      'digital',
-      'full-stack',
-      'front-end',
-      'back-end',
-      'dev',
-      'art',
-      'iot',
-    ],
-    year: 2022,
-  }
-</script>
-
 <script lang='ts'>
   import A from '#lib/components/A.svelte'
   import MediaImg from '#lib/components/MediaImg.svelte'
   import Prose from '#lib/components/Prose.svelte'
   import Subheading from '#lib/components/Subheading.svelte'
   import YTVideo from '#lib/components/YTVideo.svelte'
+  import { items } from '#lib/ts/items.ts'
+
+  const meta = items.feelthehive
 </script>
 
 <Prose>

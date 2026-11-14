@@ -1,12 +1,3 @@
-<script lang='ts' module>
-  export const meta = {
-    title: 'THE CELL COLLECTION',
-    desc: 'Zero-player games with squares that live many, many lives.',
-    tags: ['digital', 'dev', 'art', 'collection'],
-    year: 2022,
-  }
-</script>
-
 <script lang='ts'>
   import A from '#lib/components/A.svelte'
   import IVideo from '#lib/components/IVideo.svelte'
@@ -14,6 +5,9 @@
   import Miniheading from '#lib/components/Miniheading.svelte'
   import Prose from '#lib/components/Prose.svelte'
   import Subheading from '#lib/components/Subheading.svelte'
+  import { items } from '#lib/ts/items.ts'
+
+  const meta = items.cell
 </script>
 
 <Prose>

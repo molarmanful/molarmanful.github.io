@@ -1,18 +1,11 @@
-<script lang='ts' module>
-  export const meta = {
-    title: 'ANAKRON',
-    desc:
-      '2025. A thicc retrofuturistic bitmap font made for the modern screen.',
-    tags: ['typography', 'design'],
-    year: 2025,
-  }
-</script>
-
 <script lang='ts'>
   import A from '#lib/components/A.svelte'
   import Prose from '#lib/components/Prose.svelte'
   import PxImg from '#lib/components/PxImg.svelte'
   import Subheading from '#lib/components/Subheading.svelte'
+  import { items } from '#lib/ts/items.ts'
+
+  const meta = items.anakron
 </script>
 
 <Prose>

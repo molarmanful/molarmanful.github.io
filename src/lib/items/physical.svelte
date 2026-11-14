@@ -1,19 +1,12 @@
-<script lang='ts' module>
-  export const meta = {
-    title: 'THE PHYSICAL COLLECTION',
-    desc:
-      'Sculptures and installations which follow arbitrary rules and fulfill arbitrary purposes.',
-    tags: ['physical', 'art', 'collection'],
-    year: 2021,
-  }
-</script>
-
 <script lang='ts'>
   import ArtImg from '#lib/components/ArtImg.svelte'
   // import MediaImg from '#lib/components/MediaImg.svelte'
   import Prose from '#lib/components/Prose.svelte'
   import Subheading from '#lib/components/Subheading.svelte'
+  import { items } from '#lib/ts/items.ts'
   import { artalt } from '#lib/ts/meta.ts'
+
+  const meta = items.physical
 </script>
 
 <Prose>

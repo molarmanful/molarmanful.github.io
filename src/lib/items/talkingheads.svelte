@@ -1,26 +1,11 @@
-<script lang='ts' module>
-  export const meta = {
-    title: 'TALKING-HEADS',
-    desc:
-      '2023. An experimental chatroom that enables mere mortals to communicate with the gods.',
-    tags: [
-      'digital',
-      'full-stack',
-      'front-end',
-      'back-end',
-      'dev',
-      'design',
-      'art',
-    ],
-    year: 2023,
-  }
-</script>
-
 <script lang='ts'>
   import A from '#lib/components/A.svelte'
   import MediaImg from '#lib/components/MediaImg.svelte'
   import Prose from '#lib/components/Prose.svelte'
   import Subheading from '#lib/components/Subheading.svelte'
+  import { items } from '#lib/ts/items.ts'
+
+  const meta = items.talkingheads
 </script>
 
 <Prose>

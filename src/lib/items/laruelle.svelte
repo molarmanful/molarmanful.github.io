@@ -1,18 +1,11 @@
-<script lang='ts' module>
-  export const meta = {
-    title: 'LARUELLE',
-    desc:
-      "2020. Using visualization techniques to gain data-driven insights into Laruelle's Dictionary of Non-Philosophy.",
-    tags: ['digital', 'data-sci', 'dev'],
-    year: 2020,
-  }
-</script>
-
 <script lang='ts'>
   import A from '#lib/components/A.svelte'
   import MediaImg from '#lib/components/MediaImg.svelte'
   import Prose from '#lib/components/Prose.svelte'
   import Subheading from '#lib/components/Subheading.svelte'
+  import { items } from '#lib/ts/items.ts'
+
+  const meta = items.laruelle
 </script>
 
 <Prose>

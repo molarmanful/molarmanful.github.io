@@ -1,18 +1,11 @@
-<script lang='ts' module>
-  export const meta = {
-    title: 'THE 3D STILL COLLECTION',
-    desc:
-      'Optical oddities that bend the rules of virtual reality. Rendered in Cinema 4D + Redshift.',
-    tags: ['3d', 'digital', 'art', 'collection'],
-    year: 2024,
-  }
-</script>
-
 <script lang='ts'>
   import ArtImg from '#lib/components/ArtImg.svelte'
   import Prose from '#lib/components/Prose.svelte'
   import Subheading from '#lib/components/Subheading.svelte'
+  import { items } from '#lib/ts/items.ts'
   import { artalt } from '#lib/ts/meta.ts'
+
+  const meta = items['3dstill']
 </script>
 
 <Prose>

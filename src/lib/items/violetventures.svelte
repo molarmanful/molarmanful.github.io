@@ -1,18 +1,11 @@
-<script lang='ts' module>
-  export const meta = {
-    title: 'VIOLET VENTURES',
-    desc:
-      '2021. Logo and brand identity for a student-oriented VC fund at NYUAD.',
-    tags: ['branding', 'design'],
-    year: 2021,
-  }
-</script>
-
 <script lang='ts'>
   import A from '#lib/components/A.svelte'
   import MediaImg from '#lib/components/MediaImg.svelte'
   import Prose from '#lib/components/Prose.svelte'
   import Subheading from '#lib/components/Subheading.svelte'
+  import { items } from '#lib/ts/items.ts'
+
+  const meta = items.violetventures
 </script>
 
 <Prose>

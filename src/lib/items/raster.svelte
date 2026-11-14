@@ -1,19 +1,12 @@
-<script lang='ts' module>
-  export const meta = {
-    title: 'THE RASTER COLLECTION',
-    desc:
-      'Because black & white is fun, but so is color. Drawn with a mouse in HEAVYPAINT/Krita/MS Paint.',
-    tags: ['2d', 'digital', 'art', 'collection'],
-    year: 2021,
-  }
-</script>
-
 <script lang='ts'>
   import ArtImg from '#lib/components/ArtImg.svelte'
   import Prose from '#lib/components/Prose.svelte'
   import Subheading from '#lib/components/Subheading.svelte'
   import YTVideo from '#lib/components/YTVideo.svelte'
+  import { items } from '#lib/ts/items.ts'
   import { artalt } from '#lib/ts/meta.ts'
+
+  const meta = items.raster
 </script>
 
 <Prose>
