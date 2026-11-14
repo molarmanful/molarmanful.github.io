@@ -17,7 +17,7 @@
   onNavigate(async ({ shallow, type }) => {
     if (shallow && type === 'goto') return
     isLoaded = false
-    await new Promise(res => setTimeout(res, 300))
+    await new Promise(res => setTimeout(res, 150))
   })
 
   const load = () => requestAnimationFrame(() => isLoaded = true)
