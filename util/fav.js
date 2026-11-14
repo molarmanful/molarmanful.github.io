@@ -4,9 +4,9 @@ import path from 'node:path'
 
 import { desc } from '../src/common/meta'
 
-const out = path.resolve('public/favicons')
+const out = path.resolve('static/favicons')
 
-const res = await favicons(path.resolve('public/logo.svg'), {
+const res = await favicons(path.resolve('static/logo.svg'), {
   path: '/favicons',
   appName: 'Ben Pang',
   shortAppName: 'Ben Pang',
